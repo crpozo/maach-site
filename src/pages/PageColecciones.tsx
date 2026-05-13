@@ -44,106 +44,163 @@ export default function PageColecciones() {
         <Link
           key={c.id}
           to={`/colecciones/${c.id}`}
+          className="invert"
           style={{
             position: 'relative',
             display: 'block',
             width: '100%',
             height: '85vh',
-            minHeight: 640,
-            borderBottom: '1px solid var(--line)',
+            minHeight: 600,
+            borderBottom: '1px solid var(--jet-black)',
             overflow: 'hidden',
-            background: 'var(--off-white)',
+            background: 'var(--jet-black)',
+            color: 'var(--off-white)',
+          }}
+          onMouseEnter={(e) => {
+            const img = e.currentTarget.querySelector<HTMLImageElement>('img[data-coll-bg]');
+            if (img) img.style.transform = 'scale(1.04)';
+          }}
+          onMouseLeave={(e) => {
+            const img = e.currentTarget.querySelector<HTMLImageElement>('img[data-coll-bg]');
+            if (img) img.style.transform = '';
           }}
         >
-          <div style={{ position: 'absolute', inset: 0 }}>
-            <img
-              src={c.img}
-              alt=""
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                opacity: 0.35,
-                filter: 'grayscale(.5)',
-                transition: 'opacity .8s, transform .8s, filter .8s',
-              }}
-            />
-          </div>
-          <div className={c.tex} style={{ position: 'absolute', inset: 0, pointerEvents: 'none', opacity: 0.25 }} />
-
-          <div
+          {/* Background photo — full bleed, no fading */}
+          <img
+            src={c.img}
+            alt=""
+            data-coll-bg
+            aria-hidden
             style={{
               position: 'absolute',
               inset: 0,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: 48,
-              textAlign: 'center',
-              pointerEvents: 'none',
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              transition: 'transform 1.2s ease',
+            }}
+          />
+          {/* Diagonal dark gradient for left-side legibility */}
+          <div
+            aria-hidden
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background:
+                'linear-gradient(95deg, rgba(22,22,22,.85) 0%, rgba(22,22,22,.6) 35%, rgba(22,22,22,.25) 65%, rgba(22,22,22,.05) 100%)',
+            }}
+          />
+
+          {/* Side index — huge faded number on the right */}
+          <span
+            aria-hidden
+            style={{
+              position: 'absolute',
+              right: 48,
+              top: '50%',
+              transform: 'translateY(-50%)',
+              fontFamily: 'var(--display)',
+              fontWeight: 700,
+              fontSize: 'clamp(180px, 22vw, 360px)',
+              color: 'var(--off-white)',
+              opacity: 0.08,
+              lineHeight: 1,
+              letterSpacing: '-.04em',
             }}
           >
-            <span className="maach-mono" style={{ marginBottom: 24, background: 'var(--off-white)', padding: '6px 12px' }}>
-              COL_{c.id.split('-')[1]} · {c.year}
+            {String(i + 1).padStart(2, '0')}
+          </span>
+
+          {/* Top tags */}
+          <div style={{ position: 'absolute', top: 32, left: 48, display: 'flex', gap: 8 }}>
+            <span
+              className="maach-mono"
+              style={{ background: 'var(--off-white)', color: 'var(--jet-black)', padding: '6px 10px' }}
+            >
+              COL_{c.id.split('-')[1]}
+            </span>
+            <span
+              className="maach-mono"
+              style={{ background: 'var(--lava-orange)', color: 'var(--off-white)', padding: '6px 10px' }}
+            >
+              {c.year}
+            </span>
+          </div>
+          <div style={{ position: 'absolute', top: 32, right: 48 }}>
+            <span className="maach-mono" style={{ color: 'var(--off-white)' }}>
+              {String(i + 1).padStart(2, '0')} / {String(collections.length).padStart(2, '0')}
+            </span>
+          </div>
+
+          {/* Orange L corner — top-right of section */}
+          <div
+            aria-hidden
+            style={{
+              position: 'absolute',
+              top: 16,
+              right: 16,
+              width: 22,
+              height: 22,
+              borderTop: '2px solid var(--lava-orange)',
+              borderRight: '2px solid var(--lava-orange)',
+            }}
+          />
+
+          {/* Bottom content block — left-aligned */}
+          <div style={{ position: 'absolute', bottom: 48, left: 48, right: 48 }}>
+            <span className="maach-mono" style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 16 }}>
+              § Sistema MAACH · {c.year}
             </span>
             <h2
               className="h-display"
               style={{
-                fontSize: 'clamp(80px, 14vw, 240px)',
-                color: 'var(--jet-black)',
-                mixBlendMode: 'difference',
-                filter: 'invert(1)',
-                textTransform: 'uppercase',
+                fontSize: 'clamp(72px, 12vw, 200px)',
+                color: 'var(--off-white)',
+                lineHeight: 0.92,
+                margin: 0,
               }}
             >
-              {c.name}
+              {c.name}.
             </h2>
-            <p
+            <div
               style={{
-                fontSize: 18,
-                color: 'var(--fg)',
-                maxWidth: 560,
-                marginTop: 16,
-                fontFamily: 'var(--display)',
-                fontWeight: 500,
-                lineHeight: 1.2,
+                marginTop: 24,
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'flex-end',
+                gap: 32,
+                flexWrap: 'wrap',
+                paddingTop: 16,
+                borderTop: '1px solid rgba(228,226,227,.35)',
               }}
             >
-              {c.caption}
-            </p>
-          </div>
-
-          <div
-            style={{
-              position: 'absolute',
-              bottom: 32,
-              left: 48,
-              right: 48,
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'flex-end',
-              pointerEvents: 'none',
-            }}
-          >
-            <span
-              className="maach-mono"
-              style={{ background: 'var(--jet-black)', color: 'var(--off-white)', padding: '6px 12px' }}
-            >
-              {String(i + 1).padStart(2, '0')} / {String(collections.length).padStart(2, '0')}
-            </span>
-            <span
-              className="maach-mono"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 12,
-                borderBottom: '1.5px solid var(--fg)',
-                paddingBottom: 4,
-              }}
-            >
-              Explorar colección <IconArrow size={14} />
-            </span>
+              <p
+                style={{
+                  fontFamily: 'var(--display)',
+                  fontWeight: 500,
+                  fontSize: 20,
+                  color: 'var(--off-white)',
+                  maxWidth: 560,
+                  margin: 0,
+                  lineHeight: 1.2,
+                }}
+              >
+                {c.caption}
+              </p>
+              <span
+                className="maach-mono"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 12,
+                  color: 'var(--lava-orange)',
+                  paddingBottom: 4,
+                  borderBottom: '1.5px solid var(--lava-orange)',
+                }}
+              >
+                Explorar colección <IconArrow size={14} />
+              </span>
+            </div>
           </div>
         </Link>
       ))}
