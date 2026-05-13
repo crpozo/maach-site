@@ -25,18 +25,6 @@ export default function PageEspacios() {
           alignItems: 'center',
         }}
       >
-        {/* Sparse vertical orange accent stripes */}
-        <div
-          aria-hidden
-          style={{
-            position: 'absolute',
-            inset: 0,
-            pointerEvents: 'none',
-            backgroundImage:
-              'repeating-linear-gradient(90deg, transparent 0, transparent 112px, rgba(243,74,35,.05) 112px, rgba(243,74,35,.05) 114px)',
-            zIndex: 0,
-          }}
-        />
         {/* Orange edge bar */}
         <div
           aria-hidden
