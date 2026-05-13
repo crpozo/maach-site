@@ -371,3 +371,106 @@ html {
   font-weight: 400;
   color: var(--muted);
 }
+
+/* ────────────────────────────────────────────────────────────
+   RESPONSIVE
+   ──────────────────────────────────────────────────────────── */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .maach-container {
+    padding: 0 24px;
+  }
+  /* Soften the desktop hero left-spine + rotated label so it doesn't
+     crowd the content on narrower screens. */
+  .nav-links {
+    gap: 18px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .maach-container {
+    padding: 0 20px;
+  }
+
+  /* Show hamburger, hide desktop nav */
+  .nav-burger {
+    display: inline-flex !important;
+  }
+  .nav-links,
+  .nav-right {
+    display: none !important;
+  }
+  .nav-drawer {
+    display: block !important;
+  }
+
+  /* Stack any grid that's wider than 1 column. The site uses lots of
+     inline grid-template-columns; this collapses them to a single
+     column on mobile. */
+  [style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  /* Keep narrow utility grids intact when they explicitly opt-out */
+  .keep-grid[style*="grid-template-columns"] {
+    grid-template-columns: var(--keep-cols, repeat(2, 1fr)) !important;
+  }
+
+  /* Aspect-ratio'd visuals on mobile: cap their height so they don't
+     dominate the viewport, and let them be slightly wider than 4/5. */
+  [style*="aspect-ratio: 4/5"],
+  [style*="aspect-ratio: 4 / 5"] {
+    aspect-ratio: 4 / 3 !important;
+    max-height: 70vh !important;
+  }
+
+  /* Hide decorative side rails on mobile — they collide with content. */
+  .hide-on-mobile,
+  .hide-mobile {
+    display: none !important;
+  }
+
+  /* Tighten section vertical padding */
+  section[style*="padding: 128px"],
+  section[style*="padding: 144px"],
+  section[style*="padding: 160px"] {
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
+  }
+  section[style*="padding: 112px"],
+  section[style*="padding: 96px"] {
+    padding-top: 56px !important;
+    padding-bottom: 56px !important;
+  }
+
+  /* Drop the bottom orange L crosshair on the right since the visuals
+     stack — only top-right one should remain visible. */
+
+  /* Hero side rails (orange spine + rotated label) hide on mobile. */
+  .hero-spine,
+  .hero-rotated-label {
+    display: none !important;
+  }
+
+  /* Reduce sticky offsets and large negative margins */
+  [style*="position: sticky"] {
+    position: static !important;
+  }
+
+  /* Reduce big buttons / paddings */
+  .btn-primary,
+  .btn-ghost,
+  .btn-accent {
+    padding: 14px 20px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .maach-container {
+    padding: 0 16px;
+  }
+}
+

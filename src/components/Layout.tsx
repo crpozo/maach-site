@@ -1,7 +1,7 @@
 import { asset } from '../lib/asset';
 import { Fragment, useState, type ReactNode } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { IconArrow, IconChevronDown, IconSearch } from './icons';
+import { IconArrow, IconChevronDown, IconClose, IconMenu, IconSearch } from './icons';
 
 export function Logo({ inverted = false, height = 28 }: { inverted?: boolean; height?: number }) {
   if (inverted) {
@@ -45,6 +45,7 @@ const NAV_LINKS: { label: string; path: string; mega?: boolean }[] = [
   { label: 'Portafolio', path: '/portafolio' },
   { label: 'Investigación', path: '/investigacion' },
   { label: 'Sobre MAACH', path: '/sobre-maach' },
+  { label: 'Contacto', path: '/contacto' },
 ];
 
 function MegaMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
@@ -178,6 +179,7 @@ function MegaMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
 
 function Nav() {
   const [megaOpen, setMegaOpen] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const { pathname } = useLocation();
 
   return (
@@ -197,11 +199,11 @@ function Nav() {
         className="maach-container"
         style={{ height: 80, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
       >
-        <div style={{ display: 'flex', alignItems: 'center', gap: 56, height: '100%' }}>
+        <div className="nav-left" style={{ display: 'flex', alignItems: 'center', gap: 56, height: '100%' }}>
           <Link to="/" onClick={() => setMegaOpen(false)}>
             <Logo height={26} />
           </Link>
-          <div style={{ display: 'flex', alignItems: 'center', height: '100%', gap: 28 }}>
+          <div className="nav-links" style={{ display: 'flex', alignItems: 'center', height: '100%', gap: 28 }}>
             {NAV_LINKS.map((link) => {
               const active =
                 pathname === link.path || (link.path !== '/' && pathname.startsWith(link.path));
@@ -251,18 +253,95 @@ function Nav() {
           </div>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+        <div className="nav-right" style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <button style={{ padding: 10 }} aria-label="Buscar">
             <IconSearch />
           </button>
-          <div style={{ width: 1, height: 28, background: 'var(--line)', margin: '0 8px' }} />
-          <span className="maach-mono" style={{ color: 'var(--muted)' }}>
+          <div className="nav-divider" style={{ width: 1, height: 28, background: 'var(--line)', margin: '0 8px' }} />
+          <span className="maach-mono nav-lang" style={{ color: 'var(--muted)' }}>
             ES / EN
           </span>
         </div>
+
+        {/* Mobile hamburger — hidden on desktop via CSS */}
+        <button
+          className="nav-burger"
+          aria-label={drawerOpen ? 'Cerrar menú' : 'Abrir menú'}
+          onClick={() => setDrawerOpen((v) => !v)}
+          style={{ padding: 10, display: 'none' }}
+        >
+          {drawerOpen ? <IconClose size={20} /> : <IconMenu size={20} />}
+        </button>
       </div>
 
       <MegaMenu open={megaOpen} onClose={() => setMegaOpen(false)} />
+
+      {/* Mobile drawer */}
+      <div
+        className="nav-drawer"
+        style={{
+          position: 'fixed',
+          top: 80,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: 'var(--off-white)',
+          borderTop: '1px solid var(--line)',
+          transform: drawerOpen ? 'translateY(0)' : 'translateY(-100%)',
+          transition: 'transform .35s ease',
+          zIndex: 80,
+          overflowY: 'auto',
+          display: 'none',
+        }}
+      >
+        <div style={{ padding: '32px 32px 64px', display: 'flex', flexDirection: 'column' }}>
+          {NAV_LINKS.map((link) => {
+            const active =
+              pathname === link.path || (link.path !== '/' && pathname.startsWith(link.path));
+            return (
+              <Link
+                key={link.path}
+                to={link.path}
+                onClick={() => setDrawerOpen(false)}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  padding: '20px 0',
+                  borderBottom: '1px solid var(--line)',
+                  fontFamily: 'var(--display)',
+                  fontWeight: 600,
+                  fontSize: 28,
+                  letterSpacing: '-.01em',
+                  textTransform: 'uppercase',
+                  color: active ? 'var(--lava-orange)' : 'var(--fg)',
+                }}
+              >
+                {link.label}
+                <IconArrow size={18} rotate={-45} />
+              </Link>
+            );
+          })}
+          <div
+            style={{
+              marginTop: 32,
+              paddingTop: 24,
+              borderTop: '2px solid var(--lava-orange)',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              fontFamily: 'var(--mono)',
+              fontSize: 11,
+              letterSpacing: '.08em',
+              textTransform: 'uppercase',
+              color: 'var(--muted)',
+            }}
+          >
+            <span>MAACH · Sistema 2026</span>
+            <span>ES / EN</span>
+          </div>
+        </div>
+      </div>
     </nav>
   );
 }

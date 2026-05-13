@@ -4,27 +4,23 @@ import { IconArrow } from '../components/icons';
 
 type FormState = {
   nombre: string;
+  correo: string;
   empresa: string;
-  email: string;
-  telefono: string;
-  tipo: string;
-  proyecto: string;
+  mensaje: string;
 };
 
 export default function PageContacto() {
   const [form, setForm] = useState<FormState>({
     nombre: '',
+    correo: '',
     empresa: '',
-    email: '',
-    telefono: '',
-    tipo: '',
-    proyecto: '',
+    mensaje: '',
   });
   const set = <K extends keyof FormState>(k: K, v: FormState[K]) =>
     setForm((f) => ({ ...f, [k]: v }));
 
   return (
-    <Layout screenLabel="13 Contacto">
+    <Layout screenLabel="14 Contacto">
       <section style={{ padding: '112px 0', position: 'relative', overflow: 'hidden' }}>
         {/* Orange L crosshair */}
         <div
@@ -44,13 +40,18 @@ export default function PageContacto() {
           <div style={{ marginBottom: 80 }}>
             <span
               className="maach-tag"
-              style={{ marginBottom: 24, display: 'inline-flex', borderColor: 'var(--lava-orange)', color: 'var(--lava-orange)' }}
+              style={{
+                marginBottom: 24,
+                display: 'inline-flex',
+                borderColor: 'var(--lava-orange)',
+                color: 'var(--lava-orange)',
+              }}
             >
               MAACH · CONTACTO
             </span>
             <h1 className="h-display" style={{ fontSize: 'clamp(56px, 9vw, 168px)', marginBottom: 32 }}>
-              Ingeniería<br />
-              <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>de proyectos.</span>
+              Hablemos<br />
+              <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>de tu proyecto.</span>
             </h1>
             <p style={{ fontSize: 20, color: 'var(--muted)', maxWidth: 640, lineHeight: 1.5 }}>
               Desarrollamos soluciones de mobiliario técnico a gran escala. Integramos nuestros sistemas directamente a
@@ -58,7 +59,9 @@ export default function PageContacto() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 80 }}>
+          {/* Body */}
+          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 80 }}>
+            {/* FORM */}
             <form
               onSubmit={(e) => {
                 e.preventDefault();
@@ -68,46 +71,31 @@ export default function PageContacto() {
               <div
                 style={{
                   display: 'flex',
-                  gap: 16,
-                  marginBottom: 48,
-                  paddingBottom: 24,
+                  alignItems: 'center',
+                  gap: 8,
+                  marginBottom: 32,
+                  paddingBottom: 16,
                   borderBottom: '1px solid var(--line)',
                 }}
               >
-                {[
-                  { n: '01', l: 'Datos', active: true },
-                  { n: '02', l: 'Proyecto', active: false },
-                  { n: '03', l: 'Confirmación', active: false },
-                ].map((s) => (
-                  <div
-                    key={s.n}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: 8,
-                      color: s.active ? 'var(--lava-orange)' : 'var(--muted)',
-                    }}
-                  >
-                    <span
-                      className="maach-mono"
-                      style={{
-                        background: s.active ? 'var(--lava-orange)' : 'transparent',
-                        color: s.active ? 'var(--off-white)' : 'var(--muted)',
-                        border: '1px solid currentColor',
-                        padding: '3px 7px',
-                      }}
-                    >
-                      {s.n}
-                    </span>
-                    <span className="maach-mono">{s.l}</span>
-                  </div>
-                ))}
+                <span
+                  className="maach-mono"
+                  style={{ background: 'var(--lava-orange)', color: 'var(--off-white)', padding: '4px 8px' }}
+                >
+                  FORMULARIO
+                </span>
+                <span className="maach-mono" style={{ color: 'var(--muted)' }}>
+                  · Respuesta &lt; 24 hrs
+                </span>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32, marginBottom: 32 }}>
+              <div
+                className="grid-2"
+                style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32, marginBottom: 32 }}
+              >
                 <div>
                   <label htmlFor="nombre" className="maach-label">
-                    Nombre completo *
+                    Nombre y apellido *
                   </label>
                   <input
                     id="nombre"
@@ -120,93 +108,48 @@ export default function PageContacto() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="empresa" className="maach-label">
-                    Empresa / Estudio *
-                  </label>
-                  <input
-                    id="empresa"
-                    required
-                    type="text"
-                    value={form.empresa}
-                    onChange={(e) => set('empresa', e.target.value)}
-                    className="maach-input"
-                    placeholder="Estudio Alba"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="maach-label">
+                  <label htmlFor="correo" className="maach-label">
                     Correo electrónico *
                   </label>
                   <input
-                    id="email"
+                    id="correo"
                     required
                     type="email"
-                    value={form.email}
-                    onChange={(e) => set('email', e.target.value)}
+                    value={form.correo}
+                    onChange={(e) => set('correo', e.target.value)}
                     className="maach-input"
                     placeholder="r.salgado@empresa.com"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="telefono" className="maach-label">
-                    Teléfono (opcional)
-                  </label>
-                  <input
-                    id="telefono"
-                    type="tel"
-                    value={form.telefono}
-                    onChange={(e) => set('telefono', e.target.value)}
-                    className="maach-input"
-                    placeholder="+52 55 1234 5678"
                   />
                 </div>
               </div>
 
               <div style={{ marginBottom: 32 }}>
-                <span className="maach-label">Tipo de proyecto *</span>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8 }}>
-                  {[
-                    { v: 'corporativo', l: 'Corporativo' },
-                    { v: 'operativo', l: 'Operativo' },
-                    { v: 'directivo', l: 'Directivo' },
-                    { v: 'boutique', l: 'Boutique / Otro' },
-                  ].map((t) => (
-                    <button
-                      type="button"
-                      key={t.v}
-                      onClick={() => set('tipo', t.v)}
-                      style={{
-                        padding: '14px 16px',
-                        border: '1.5px solid ' + (form.tipo === t.v ? 'var(--lava-orange)' : 'var(--line)'),
-                        background: form.tipo === t.v ? 'rgba(243,74,35,.06)' : 'transparent',
-                        color: form.tipo === t.v ? 'var(--lava-orange)' : 'var(--fg)',
-                        fontFamily: 'var(--mono)',
-                        fontSize: 11,
-                        letterSpacing: '.1em',
-                        textTransform: 'uppercase',
-                        fontWeight: 600,
-                        textAlign: 'left',
-                        transition: 'all .2s',
-                      }}
-                    >
-                      {t.l}
-                    </button>
-                  ))}
-                </div>
+                <label htmlFor="empresa" className="maach-label">
+                  Empresa
+                </label>
+                <input
+                  id="empresa"
+                  type="text"
+                  value={form.empresa}
+                  onChange={(e) => set('empresa', e.target.value)}
+                  className="maach-input"
+                  placeholder="Estudio Alba"
+                />
               </div>
 
               <div style={{ marginBottom: 40 }}>
-                <label htmlFor="proyecto" className="maach-label">
-                  Detalles del proyecto *
+                <label htmlFor="mensaje" className="maach-label">
+                  Mensaje *
                 </label>
                 <textarea
-                  id="proyecto"
+                  id="mensaje"
+                  required
                   rows={5}
-                  value={form.proyecto}
-                  onChange={(e) => set('proyecto', e.target.value)}
+                  value={form.mensaje}
+                  onChange={(e) => set('mensaje', e.target.value)}
                   className="maach-input"
                   style={{ resize: 'vertical' }}
-                  placeholder="Volumen estimado, requerimientos técnicos, plazos, sede, m² aprox..."
+                  placeholder="Cuéntanos sobre tu proyecto: volumen estimado, plazos, sede, m² aprox..."
                 />
               </div>
 
@@ -228,11 +171,13 @@ export default function PageContacto() {
                 className="btn-primary"
                 style={{ width: '100%', justifyContent: 'space-between', padding: '20px 28px' }}
               >
-                Enviar especificaciones <IconArrow size={14} />
+                Enviar mensaje <IconArrow size={14} />
               </button>
             </form>
 
+            {/* SIDE INFO */}
             <aside
+              className="contact-aside"
               style={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -242,35 +187,50 @@ export default function PageContacto() {
               }}
             >
               <div>
-                <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 12 }}>
-                  Sede central
+                <span className="maach-mono" style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 16 }}>
+                  Información de contacto
                 </span>
-                <div style={{ fontSize: 16, lineHeight: 1.6 }}>
-                  Av. Industrial 450<br />
-                  Parque Tecnológico, C.P. 10293<br />
-                  Ciudad de México, CDMX
-                </div>
-              </div>
-
-              <div>
-                <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 12 }}>
-                  Contacto directo
-                </span>
-                <div style={{ fontSize: 16, lineHeight: 1.7 }}>
-                  T. +52 (55) 1234-5678<br />
-                  E. proyectos@maach.com.mx<br />
-                  E. info@maach.com.mx
-                </div>
+                <a
+                  href="mailto:ventas@maach.ec"
+                  style={{
+                    fontFamily: 'var(--display)',
+                    fontWeight: 600,
+                    fontSize: 28,
+                    letterSpacing: '-.01em',
+                    textTransform: 'lowercase',
+                    color: 'var(--fg)',
+                    display: 'inline-block',
+                    borderBottom: '1.5px solid var(--lava-orange)',
+                    paddingBottom: 4,
+                  }}
+                >
+                  ventas@maach.ec
+                </a>
               </div>
 
               <div style={{ paddingTop: 32, borderTop: '1px solid var(--line)' }}>
-                <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 12 }}>
-                  Horario operativo
+                <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 16 }}>
+                  Teléfonos
                 </span>
-                <div style={{ fontSize: 16, lineHeight: 1.6 }}>
-                  Lun–Vie · 08:00 a 18:00<br />
-                  Sáb · 09:00 a 14:00<br />
-                  <span style={{ color: 'var(--muted)' }}>(GMT-6)</span>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                  {['0997 200 455', '0979 514 286', '0999 441 139'].map((tel) => (
+                    <a
+                      key={tel}
+                      href={`tel:${tel.replace(/\s/g, '')}`}
+                      style={{
+                        fontFamily: 'var(--mono)',
+                        fontSize: 18,
+                        fontWeight: 500,
+                        letterSpacing: '.04em',
+                        color: 'var(--fg)',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: 12,
+                      }}
+                    >
+                      <span style={{ color: 'var(--lava-orange)' }}>+</span> {tel}
+                    </a>
+                  ))}
                 </div>
               </div>
 
@@ -278,7 +238,17 @@ export default function PageContacto() {
                 <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 12 }}>
                   Tiempo de respuesta
                 </span>
-                <div style={{ fontFamily: 'var(--display)', fontWeight: 700, fontSize: 48, lineHeight: 1, marginBottom: 8 }}>
+                <div
+                  style={{
+                    fontFamily: 'var(--display)',
+                    fontWeight: 700,
+                    fontSize: 48,
+                    lineHeight: 1,
+                    marginBottom: 8,
+                    color: 'var(--lava-orange)',
+                    letterSpacing: '-.02em',
+                  }}
+                >
                   &lt; 24 hrs
                 </div>
                 <span className="maach-mono" style={{ color: 'var(--muted)' }}>
@@ -286,9 +256,10 @@ export default function PageContacto() {
                 </span>
               </div>
 
+              {/* Rotating seal */}
               <div
                 style={{
-                  marginTop: 24,
+                  marginTop: 8,
                   width: 120,
                   height: 120,
                   borderRadius: '50%',
@@ -305,7 +276,7 @@ export default function PageContacto() {
                     <path id="circ-contacto" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0" />
                   </defs>
                   <text fill="var(--fg)" fontSize="11" letterSpacing="3" fontFamily="JetBrains Mono">
-                    <textPath href="#circ-contacto">MAACH · INGENIERÍA · PROYECTOS · 2026 · </textPath>
+                    <textPath href="#circ-contacto">MAACH · VENTAS · PROYECTOS · 2026 · </textPath>
                   </text>
                 </svg>
                 <div style={{ width: 16, height: 16, background: 'var(--lava-orange)' }} />
