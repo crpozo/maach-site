@@ -1,0 +1,344 @@
+import { asset } from '../lib/asset';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Layout } from '../components/Layout';
+import {
+  IconChevronDown,
+  IconChevronRight,
+  IconFilter,
+  IconMinus,
+  IconPlus,
+} from '../components/icons';
+
+export default function PageProducts() {
+  const catalogCategories = [
+    { name: 'Sillonería', items: ['Sillas presidente', 'Sillas gerenciales', 'Sillas operativas', 'Sillas de visita', 'Colectividades', 'Sofás'] },
+    { name: 'Escritorios + Estaciones', items: ['Escritorios gerente', 'Escritorios operativos', 'Estaciones de trabajo', 'Escritorios regulables'] },
+    { name: 'Mesas', items: ['Mesas de reunión', 'Mesas colaborativas', 'Mesas auxiliares'] },
+    { name: 'Almacenamiento', items: ['Credenzas', 'Módulos de archivación', 'Bibliotecas', 'Lockers', 'Archivo rodante'] },
+    { name: 'Divisiones de ambientes', items: ['Divisiones modulares', 'Divisiones de vidrio'] },
+  ];
+  const allSubs = catalogCategories.flatMap((c) => c.items);
+  const products = Array.from({ length: 12 }).map((_, i) => {
+    const sub = allSubs[i % allSubs.length];
+    return {
+      id: i,
+      name: `${sub} · Modelo ${String.fromCharCode(65 + (i % 5))}${i + 1}`,
+      category: catalogCategories.find((c) => c.items.includes(sub))?.name || 'General',
+      subcategory: sub,
+      sku: `MCH-${2000 + i}`,
+      img: asset(`biblioteca-${(i % 5) + 1}.webp`),
+    };
+  });
+
+  const [openCats, setOpenCats] = useState<string[]>(['Sillonería']);
+  const toggle = (n: string) =>
+    setOpenCats((p) => (p.includes(n) ? p.filter((x) => x !== n) : [...p, n]));
+  const [selectedSub, setSelectedSub] = useState<string | null>(null);
+
+  const filtered = selectedSub ? products.filter((p) => p.subcategory === selectedSub) : products;
+
+  return (
+    <Layout screenLabel="03 Productos">
+      <section
+        className="invert"
+        style={{
+          borderBottom: '1px solid var(--line)',
+          padding: '96px 0 80px',
+          position: 'relative',
+          overflow: 'hidden',
+          background: 'var(--jet-black)',
+          color: 'var(--off-white)',
+          minHeight: 420,
+        }}
+      >
+        {/* Background photo */}
+        <img
+          src={asset("biblioteca-2.webp")}
+          alt=""
+          aria-hidden
+          style={{
+            position: 'absolute',
+            inset: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            zIndex: 0,
+          }}
+        />
+        {/* Dark gradient for legibility */}
+        <div
+          aria-hidden
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background:
+              'linear-gradient(90deg, rgba(22,22,22,.85) 0%, rgba(22,22,22,.65) 45%, rgba(22,22,22,.25) 80%, rgba(22,22,22,.1) 100%)',
+            zIndex: 1,
+          }}
+        />
+        {/* Orange edge bar */}
+        <div
+          aria-hidden
+          style={{
+            position: 'absolute',
+            top: 0,
+            bottom: 0,
+            left: 0,
+            width: 6,
+            background: 'var(--lava-orange)',
+            zIndex: 2,
+          }}
+        />
+        {/* Orange L corner marks */}
+        <div
+          aria-hidden
+          style={{
+            position: 'absolute',
+            top: 20,
+            right: 24,
+            width: 22,
+            height: 22,
+            borderTop: '2px solid var(--lava-orange)',
+            borderRight: '2px solid var(--lava-orange)',
+            zIndex: 2,
+          }}
+        />
+        <div
+          aria-hidden
+          style={{
+            position: 'absolute',
+            bottom: 20,
+            right: 24,
+            width: 22,
+            height: 22,
+            borderBottom: '2px solid var(--lava-orange)',
+            borderRight: '2px solid var(--lava-orange)',
+            zIndex: 2,
+          }}
+        />
+        <div className="maach-container" style={{ position: 'relative', zIndex: 3 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 24 }}>
+            <span className="maach-mono" style={{ color: 'var(--sand-grey)' }}>
+              Inicio
+            </span>
+            <IconChevronRight size={11} style={{ color: 'var(--sand-grey)' }} />
+            <span className="maach-mono" style={{ color: 'var(--lava-orange)' }}>Catálogo</span>
+          </div>
+          <h1
+            className="h-display"
+            style={{ fontSize: 'clamp(56px, 8.5vw, 144px)', marginBottom: 32, color: 'var(--off-white)' }}
+          >
+            Catálogo<br />
+            <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>de Productos.</span>
+          </h1>
+          <p style={{ fontSize: 18, color: 'var(--sand-grey)', maxWidth: 640 }}>
+            Soluciones modulares diseñadas bajo estrictos criterios de ergonomía, ingeniería aplicada y desempeño en uso intensivo.
+          </p>
+        </div>
+      </section>
+
+      <section style={{ padding: '48px 0 128px' }}>
+        <div className="maach-container">
+          <div style={{ display: 'grid', gridTemplateColumns: '280px 1fr', gap: 56 }}>
+            <aside>
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 8,
+                  paddingBottom: 16,
+                  borderBottom: '1px solid var(--line)',
+                  marginBottom: 32,
+                }}
+              >
+                <IconFilter size={14} />
+                <span className="maach-mono" style={{ fontWeight: 700 }}>
+                  Catálogo · Filtros
+                </span>
+              </div>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+                {catalogCategories.map((cat) => {
+                  const isOpen = openCats.includes(cat.name);
+                  return (
+                    <div key={cat.name} style={{ paddingBottom: 20, borderBottom: '1px solid var(--line)' }}>
+                      <button
+                        onClick={() => toggle(cat.name)}
+                        style={{
+                          display: 'flex',
+                          justifyContent: 'space-between',
+                          alignItems: 'center',
+                          width: '100%',
+                          fontFamily: 'var(--display)',
+                          fontWeight: 600,
+                          fontSize: 18,
+                          textTransform: 'uppercase',
+                          letterSpacing: '-.01em',
+                        }}
+                      >
+                        {cat.name}
+                        {isOpen ? <IconMinus size={12} /> : <IconPlus size={12} />}
+                      </button>
+                      {isOpen && (
+                        <div
+                          style={{
+                            marginTop: 20,
+                            paddingLeft: 8,
+                            borderLeft: '1px solid var(--line)',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: 12,
+                          }}
+                        >
+                          {cat.items.map((it) => (
+                            <button
+                              key={it}
+                              onClick={() => setSelectedSub(selectedSub === it ? null : it)}
+                              style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: 12,
+                                paddingLeft: 12,
+                                textAlign: 'left',
+                                color: selectedSub === it ? 'var(--lava-orange)' : 'var(--muted)',
+                                fontFamily: 'var(--mono)',
+                                fontSize: 11,
+                                letterSpacing: '.1em',
+                                textTransform: 'uppercase',
+                              }}
+                            >
+                              <div
+                                style={{
+                                  width: 11,
+                                  height: 11,
+                                  border: '1.5px solid currentColor',
+                                  background: selectedSub === it ? 'currentColor' : 'transparent',
+                                  flexShrink: 0,
+                                }}
+                              />
+                              {it}
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </aside>
+
+            <div>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  marginBottom: 24,
+                  paddingBottom: 16,
+                  borderBottom: '1px solid var(--line)',
+                }}
+              >
+                <span className="maach-mono" style={{ color: 'var(--muted)' }}>
+                  {filtered.length} productos · {selectedSub || 'Todas las categorías'}
+                </span>
+                <div
+                  className="maach-mono"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: 8,
+                    border: '1px solid var(--line)',
+                    padding: '10px 16px',
+                    cursor: 'pointer',
+                  }}
+                >
+                  Ordenar por <IconChevronDown size={10} />
+                </div>
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+                {filtered.map((p) => {
+                  const catSlug = encodeURIComponent(p.category.toLowerCase().replace(/ /g, '-'));
+                  return (
+                    <Link key={p.id} to={`/productos/${catSlug}/${p.id}`} style={{ display: 'block' }}>
+                      <div
+                        style={{
+                          position: 'relative',
+                          aspectRatio: '4/5',
+                          border: '1px solid var(--line)',
+                          marginBottom: 16,
+                          overflow: 'hidden',
+                          background: 'var(--surface)',
+                        }}
+                      >
+                        <img
+                          src={p.img}
+                          alt={p.name}
+                          style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform .6s' }}
+                          onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.04)')}
+                          onMouseLeave={(e) => (e.currentTarget.style.transform = '')}
+                        />
+                        <span
+                          className="maach-mono"
+                          style={{ position: 'absolute', top: 12, right: 12, background: 'var(--off-white)', padding: '3px 7px' }}
+                        >
+                          {p.sku}
+                        </span>
+                      </div>
+                      <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 4 }}>
+                        {p.subcategory}
+                      </span>
+                      <h3
+                        style={{
+                          fontFamily: 'var(--display)',
+                          fontWeight: 600,
+                          fontSize: 22,
+                          textTransform: 'uppercase',
+                          letterSpacing: '-.01em',
+                          lineHeight: 1.05,
+                        }}
+                      >
+                        {p.name}
+                      </h3>
+                    </Link>
+                  );
+                })}
+              </div>
+
+              <div style={{ marginTop: 80, display: 'flex', justifyContent: 'center', gap: 6 }}>
+                {[
+                  { l: '‹', active: false },
+                  { l: '01', active: true },
+                  { l: '02', active: false },
+                  { l: '03', active: false },
+                  { l: '04', active: false },
+                  { l: '›', active: false },
+                ].map((b, i) => (
+                  <div
+                    key={i}
+                    style={{
+                      width: 48,
+                      height: 48,
+                      border: '1px solid var(--line)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      background: b.active ? 'var(--jet-black)' : 'transparent',
+                      color: b.active ? 'var(--off-white)' : 'var(--fg)',
+                      fontFamily: 'var(--mono)',
+                      fontSize: 12,
+                      cursor: 'pointer',
+                    }}
+                  >
+                    {b.l}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </Layout>
+  );
+}
