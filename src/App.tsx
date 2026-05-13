@@ -10,6 +10,7 @@ import PageEspacios from './pages/PageEspacios';
 import PagePortafolio from './pages/PagePortafolio';
 import PagePortafolioDetail from './pages/PagePortafolioDetail';
 import PageInvestigacion from './pages/PageInvestigacion';
+import PageBlogPost from './pages/PageBlogPost';
 import PageRecursos from './pages/PageRecursos';
 import PageAbout from './pages/PageAbout';
 import PageContacto from './pages/PageContacto';
@@ -37,6 +38,7 @@ export default function App() {
         <Route path="/portafolio" element={<PagePortafolio />} />
         <Route path="/portafolio/:id" element={<PagePortafolioDetail />} />
         <Route path="/investigacion" element={<PageInvestigacion />} />
+        <Route path="/investigacion/:slug" element={<PageBlogPost />} />
         <Route path="/recursos-diseno/biblioteca" element={<PageRecursos />} />
         <Route path="/sobre-maach" element={<PageAbout />} />
         <Route path="/contacto" element={<PageContacto />} />

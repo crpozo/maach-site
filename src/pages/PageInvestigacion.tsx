@@ -1,15 +1,13 @@
+import { asset } from '../lib/asset';
+import { Link } from 'react-router-dom';
 import { Layout } from '../components/Layout';
-import {
-  IconArrow,
-  IconBook,
-  IconChart,
-  IconChevronDown,
-  IconUsers,
-} from '../components/icons';
+import { IconArrow } from '../components/icons';
+import { BLOGS } from '../data/blogs';
 
 export default function PageInvestigacion() {
   return (
     <Layout screenLabel="10 Investigación">
+      {/* HERO */}
       <section
         style={{
           background: 'var(--soft)',
@@ -91,163 +89,134 @@ export default function PageInvestigacion() {
         </div>
       </section>
 
+      {/* BLOG LIST */}
       <section style={{ padding: '112px 0', borderBottom: '1px solid var(--line)' }}>
-        <div className="maach-container">
-          <div style={{ marginBottom: 56 }}>
-            <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 12 }}>
-              § 01 / Áreas de estudio
-            </span>
-            <h2 className="h-display" style={{ fontSize: 64 }}>
-              Pilares de investigación.
-            </h2>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 32 }}>
-            {[
-              { icon: <IconUsers size={32} />, title: 'Sociología del trabajo', desc: 'Estudio de interacciones humanas, necesidades de privacidad vs. colaboración, y bienestar cognitivo en el espacio físico.', n: '01' },
-              { icon: <IconChart size={32} />, title: 'Métricas de ocupación', desc: 'Análisis de densidad de planos, tasas de utilización de escritorios y eficiencia métrica de los espacios instalados.', n: '02' },
-              { icon: <IconBook size={32} />, title: 'Ergonomía aplicada', desc: 'Desarrollo continuo en biomecánica y posturas de trabajo prolongadas frente a pantallas para guiar el diseño de asientos y mesas.', n: '03' },
-            ].map((p) => (
-              <div key={p.n} style={{ borderTop: '2px solid var(--jet-black)', padding: '32px 0' }}>
-                <div
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'flex-start',
-                    marginBottom: 32,
-                  }}
-                >
-                  {p.icon}
-                  <span className="maach-mono" style={{ color: 'var(--muted)' }}>
-                    {p.n} / PILAR
-                  </span>
-                </div>
-                <h3
-                  style={{
-                    fontFamily: 'var(--display)',
-                    fontWeight: 600,
-                    fontSize: 32,
-                    textTransform: 'uppercase',
-                    letterSpacing: '-.01em',
-                    lineHeight: 1.05,
-                    marginBottom: 16,
-                  }}
-                >
-                  {p.title}
-                </h3>
-                <p style={{ fontSize: 16, color: 'var(--muted)', lineHeight: 1.55 }}>{p.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section style={{ padding: '112px 0', background: 'var(--soft)' }}>
         <div className="maach-container">
           <div
             style={{
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'flex-end',
-              marginBottom: 48,
+              marginBottom: 56,
               flexWrap: 'wrap',
               gap: 16,
             }}
           >
             <div>
               <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 12 }}>
-                § 02 / Reportes y publicaciones
+                § Editorial · MAACH Research
               </span>
-              <h2 className="h-display" style={{ fontSize: 64 }}>
-                Whitepapers.
+              <h2 className="h-display" style={{ fontSize: 'clamp(48px, 6vw, 88px)' }}>
+                Lecturas <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>recomendadas.</span>
               </h2>
             </div>
-            <div
-              className="maach-mono"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 8,
-                border: '1px solid var(--line)',
-                padding: '10px 16px',
-              }}
-            >
-              Filtrar por año <IconChevronDown size={10} />
-            </div>
+            <span className="maach-mono" style={{ color: 'var(--muted)' }}>
+              03 artículos · MAACH 2026
+            </span>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-            {[
-              { tag: 'WHITEPAPER', title: 'El futuro del espacio de concentración individual', date: 'Octubre 2025', read: '12 min', desc: 'Análisis cualitativo sobre la necesidad de cabinas acústicas y paneles divisorios en plantas de formato abierto.' },
-              { tag: 'REPORTE', title: 'Densidad y bienestar en plantas operativas', date: 'Julio 2025', read: '08 min', desc: 'Cómo la métrica de m²/usuario se relaciona con percepción de bienestar y productividad sostenida.' },
-              { tag: 'ESTUDIO', title: 'Adopción del escritorio regulable en LATAM', date: 'Mayo 2025', read: '15 min', desc: 'Datos de implementación, retorno de inversión y cambio cultural en compañías mexicanas y colombianas.' },
-              { tag: 'ENSAYO', title: 'Materiales que envejecen bien', date: 'Marzo 2025', read: '06 min', desc: 'Sobre la elección de materialidades resistentes al uso intensivo en entornos corporativos.' },
-            ].map((paper, i) => (
-              <a
-                key={i}
-                href="#"
-                onClick={(e) => e.preventDefault()}
-                style={{
-                  background: 'var(--off-white)',
-                  border: '1px solid var(--line)',
-                  padding: '28px 32px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 32,
-                  transition: 'border-color .2s',
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'var(--jet-black)')}
-                onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'var(--line)')}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 32 }}>
+            {BLOGS.map((b) => (
+              <Link
+                key={b.slug}
+                to={`/investigacion/${b.slug}`}
+                style={{ display: 'flex', flexDirection: 'column', height: '100%' }}
               >
-                <div style={{ width: 140, flexShrink: 0 }}>
+                <div
+                  style={{
+                    position: 'relative',
+                    aspectRatio: '4/3',
+                    overflow: 'hidden',
+                    border: '1px solid var(--line)',
+                    marginBottom: 20,
+                    background: 'var(--surface)',
+                  }}
+                >
+                  <img
+                    src={asset(b.img)}
+                    alt=""
+                    style={{
+                      position: 'absolute',
+                      inset: 0,
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      transition: 'transform .8s ease',
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
+                    onMouseLeave={(e) => (e.currentTarget.style.transform = '')}
+                  />
                   <span
                     className="maach-mono"
-                    style={{ background: 'var(--jet-black)', color: 'var(--off-white)', padding: '4px 8px' }}
+                    style={{
+                      position: 'absolute',
+                      top: 14,
+                      left: 14,
+                      background: 'var(--jet-black)',
+                      color: 'var(--off-white)',
+                      padding: '5px 10px',
+                    }}
                   >
-                    {paper.tag}
+                    BLOG · {b.number}
+                  </span>
+                  <span
+                    className="maach-mono"
+                    style={{
+                      position: 'absolute',
+                      bottom: 14,
+                      right: 14,
+                      background: 'var(--lava-orange)',
+                      color: 'var(--off-white)',
+                      padding: '5px 10px',
+                    }}
+                  >
+                    {b.readTime}
                   </span>
                 </div>
 
-                <div style={{ flex: 1 }}>
+                <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+                  <span className="maach-mono" style={{ color: 'var(--lava-orange)', marginBottom: 12 }}>
+                    {b.category}
+                  </span>
                   <h3
                     style={{
                       fontFamily: 'var(--display)',
                       fontWeight: 600,
-                      fontSize: 24,
-                      textTransform: 'uppercase',
+                      fontSize: 28,
+                      lineHeight: 1.05,
                       letterSpacing: '-.01em',
-                      marginBottom: 6,
+                      textTransform: 'uppercase',
+                      marginBottom: 16,
                     }}
                   >
-                    {paper.title}
+                    {b.title}
                   </h3>
-                  <p style={{ fontSize: 14, color: 'var(--muted)', lineHeight: 1.5, maxWidth: 720 }}>{paper.desc}</p>
-                </div>
+                  <p style={{ fontSize: 15, color: 'var(--muted)', lineHeight: 1.55, marginBottom: 24 }}>
+                    {b.intro.length > 180 ? b.intro.slice(0, 180).trimEnd() + '…' : b.intro}
+                  </p>
 
-                <div style={{ width: 160, flexShrink: 0, textAlign: 'right' }} className="maach-mono">
-                  <div style={{ color: 'var(--muted)', marginBottom: 4 }}>{paper.date}</div>
-                  <div style={{ color: 'var(--lava-orange)' }}>{paper.read}</div>
+                  <span
+                    className="maach-mono"
+                    style={{
+                      marginTop: 'auto',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: 10,
+                      paddingBottom: 4,
+                      borderBottom: '1.5px solid var(--fg)',
+                      alignSelf: 'flex-start',
+                    }}
+                  >
+                    Leer artículo <IconArrow size={14} />
+                  </span>
                 </div>
-
-                <div
-                  style={{
-                    width: 44,
-                    height: 44,
-                    border: '1px solid var(--line)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexShrink: 0,
-                  }}
-                >
-                  <IconArrow size={14} rotate={-45} />
-                </div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
+      {/* QUOTE BAND */}
       <section
         className="invert"
         style={{
