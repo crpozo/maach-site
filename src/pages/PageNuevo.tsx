@@ -83,8 +83,8 @@ export default function PageNuevo() {
           }}
         />
 
-        <div className="maach-container" style={{ position: 'relative', zIndex: 2, width: '100%' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1.15fr 1fr', gap: 80, alignItems: 'center' }}>
+        <div className="maach-container" style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 1400 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56, alignItems: 'center' }}>
             {/* LEFT: text */}
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 28 }}>
@@ -95,11 +95,11 @@ export default function PageNuevo() {
                   Drop / Lanzamiento
                 </span>
               </div>
-              <h1 className="h-display" style={{ fontSize: 'clamp(56px, 8.5vw, 144px)', marginBottom: 32 }}>
+              <h1 className="h-display" style={{ fontSize: 'clamp(56px, 7.5vw, 128px)', marginBottom: 32 }}>
                 Novedades<br />
                 <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>2026.</span>
               </h1>
-              <p style={{ fontSize: 19, color: 'var(--muted)', maxWidth: 560, lineHeight: 1.5, marginBottom: 48 }}>
+              <p style={{ fontSize: 19, color: 'var(--muted)', lineHeight: 1.5, marginBottom: 48 }}>
                 Tres incorporaciones al sistema MAACH diseñadas para responder a los retos del entorno de trabajo
                 contemporáneo. Co-diseñadas con estudios de arquitectura y validadas en uso real.
               </p>
@@ -110,7 +110,6 @@ export default function PageNuevo() {
                   display: 'grid',
                   gridTemplateColumns: 'repeat(3, 1fr)',
                   gap: 24,
-                  maxWidth: 520,
                   paddingTop: 28,
                   borderTop: '1px solid var(--line)',
                 }}

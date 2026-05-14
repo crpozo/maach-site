@@ -93,8 +93,8 @@ export default function PageContacto() {
           }}
         />
 
-        <div className="maach-container" style={{ position: 'relative', zIndex: 2, width: '100%' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: 64, alignItems: 'center' }}>
+        <div className="maach-container" style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 1400 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56, alignItems: 'center' }}>
             {/* LEFT: text */}
             <div>
               <span
@@ -108,11 +108,11 @@ export default function PageContacto() {
               >
                 MAACH · CONTACTO
               </span>
-              <h1 className="h-display" style={{ fontSize: 'clamp(56px, 8vw, 128px)', marginBottom: 32 }}>
+              <h1 className="h-display" style={{ fontSize: 'clamp(56px, 7vw, 112px)', marginBottom: 32 }}>
                 Hablemos<br />
                 <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>de tu proyecto.</span>
               </h1>
-              <p style={{ fontSize: 19, color: 'var(--muted)', maxWidth: 540, lineHeight: 1.5, marginBottom: 40 }}>
+              <p style={{ fontSize: 19, color: 'var(--muted)', lineHeight: 1.5, marginBottom: 40 }}>
                 Desarrollamos soluciones de mobiliario técnico a gran escala. Integramos nuestros sistemas directamente
                 a tus planos arquitectónicos.
               </p>
@@ -123,7 +123,6 @@ export default function PageContacto() {
                   display: 'grid',
                   gridTemplateColumns: 'repeat(3, 1fr)',
                   gap: 24,
-                  maxWidth: 540,
                   paddingTop: 28,
                   borderTop: '1px solid var(--line)',
                 }}

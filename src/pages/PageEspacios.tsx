@@ -84,17 +84,17 @@ export default function PageEspacios() {
           }}
         />
 
-        <div className="maach-container" style={{ position: 'relative', zIndex: 2, width: '100%' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: 80, alignItems: 'center' }}>
+        <div className="maach-container" style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 1400 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56, alignItems: 'center' }}>
             {/* LEFT: text */}
             <div>
               <span className="maach-mono" style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 16 }}>
                 § Planificación
               </span>
-              <h1 className="h-display" style={{ fontSize: 'clamp(56px, 8.5vw, 144px)', marginBottom: 32 }}>
+              <h1 className="h-display" style={{ fontSize: 'clamp(56px, 7.5vw, 128px)', marginBottom: 32 }}>
                 Es<span className="h-italic" style={{ color: 'var(--lava-orange)' }}>pacios.</span>
               </h1>
-              <p style={{ fontSize: 20, color: 'var(--muted)', maxWidth: 540, lineHeight: 1.5, marginBottom: 48 }}>
+              <p style={{ fontSize: 20, color: 'var(--muted)', lineHeight: 1.5, marginBottom: 48 }}>
                 Soluciones integrales que transforman metros cuadrados en entornos productivos, coherentes y listos
                 para escalar.
               </p>
@@ -105,7 +105,6 @@ export default function PageEspacios() {
                   display: 'grid',
                   gridTemplateColumns: 'repeat(4, 1fr)',
                   gap: 24,
-                  maxWidth: 540,
                   paddingTop: 28,
                   borderTop: '1px solid var(--line)',
                 }}
