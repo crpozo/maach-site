@@ -62,7 +62,7 @@ function MegaMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
     { title: 'Mesas', items: ['Mesas de Reunión', 'Mesas Colaborativas', 'Mesas Auxiliares'] },
     {
       title: 'Almacenamiento',
-      items: ['Credenzas', 'Módulos de Archivación', 'Bibliotecas', 'Lockers', 'Archivo Rodante'],
+      items: ['Biblioteca Alta', 'Biblioteca Baja', 'Credenza', 'Módulo 3 Gavetas', 'Arturito', 'Locker', 'Archivo Rodante'],
     },
     { title: 'Divisiones de Ambientes', items: ['Divisiones Modulares', 'Divisiones de Vidrio'] },
     { title: 'Recepciones', items: ['Counters de Recepción', 'Mostradores', 'Sistemas de Espera'] },

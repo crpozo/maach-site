@@ -15,7 +15,7 @@ export default function PageProducts() {
     { name: 'Sillonería', items: ['Sillas presidente', 'Sillas gerenciales', 'Sillas operativas', 'Sillas de visita', 'Colectividades', 'Sofás'] },
     { name: 'Escritorios + Estaciones de trabajo', items: ['Escritorios gerente', 'Escritorios operativos', 'Estaciones de trabajo', 'Escritorios regulables'] },
     { name: 'Mesas', items: ['Mesas de reunión', 'Mesas colaborativas', 'Mesas auxiliares'] },
-    { name: 'Almacenamiento', items: ['Credenzas', 'Módulos de archivación', 'Bibliotecas', 'Lockers', 'Archivo rodante'] },
+    { name: 'Almacenamiento', items: ['Biblioteca Alta', 'Biblioteca Baja', 'Credenza', 'Módulo 3 gavetas', 'Arturito', 'Locker', 'Archivo Rodante'] },
     { name: 'Divisiones de ambientes', items: ['Divisiones modulares', 'Divisiones de vidrio'] },
     { name: 'Recepciones', items: ['Counters de recepción', 'Mostradores', 'Sistemas de espera'] },
   ];
