@@ -9,20 +9,33 @@ import {
   IconRuler,
   IconTool,
 } from '../components/icons';
+import { getProductBySlug } from '../data/productos';
 
 export default function PageProductDetail() {
   const params = useParams();
-  const category = decodeURIComponent(params.category || 'categoria').replace(/-/g, ' ');
   const id = params.id || 'producto';
-  const productName = id.replace(/-/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase());
 
-  const images = [
-    asset('biblioteca-1.webp'),
-    asset('biblioteca-2.webp'),
-    asset('biblioteca-3.webp'),
-    asset('biblioteca-4.webp'),
-    asset('biblioteca-5.webp'),
-  ];
+  // Look up real product by slug first; fall back to placeholder behavior.
+  const real = getProductBySlug(id);
+
+  const category = real
+    ? real.category
+    : decodeURIComponent(params.category || 'categoria').replace(/-/g, ' ');
+  const productName = real
+    ? real.name
+    : id.replace(/-/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase());
+
+  const images = real
+    ? real.gallery
+    : [
+        asset('biblioteca-1.webp'),
+        asset('biblioteca-2.webp'),
+        asset('biblioteca-3.webp'),
+        asset('biblioteca-4.webp'),
+        asset('biblioteca-5.webp'),
+      ];
+  const description = real?.description;
+  const sku = real?.sku;
   const [idx, setIdx] = useState(0);
 
   return (
@@ -131,14 +144,14 @@ export default function PageProductDetail() {
 
             <div>
               <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 16 }}>
-                {category} · MCH-2026-{id.substring(0, 3).toUpperCase()}
+                {category} · {sku ?? `MCH-2026-${id.substring(0, 3).toUpperCase()}`}
               </span>
               <h1 className="h-display" style={{ fontSize: 64, marginBottom: 24 }}>
                 {productName}
               </h1>
               <p style={{ fontSize: 18, color: 'var(--muted)', lineHeight: 1.55, marginBottom: 32 }}>
-                Una solución de almacenamiento industrial enfocada en la optimización del espacio y la estética
-                corporativa. Estructura modular, herrajes ocultos y acabados validados para uso intensivo.
+                {description ??
+                  'Una solución de almacenamiento industrial enfocada en la optimización del espacio y la estética corporativa. Estructura modular, herrajes ocultos y acabados validados para uso intensivo.'}
               </p>
 
               <div

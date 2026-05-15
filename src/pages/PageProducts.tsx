@@ -9,6 +9,17 @@ import {
   IconMinus,
   IconPlus,
 } from '../components/icons';
+import { PRODUCTS } from '../data/productos';
+
+type GridProduct = {
+  id: string;
+  slug?: string;
+  name: string;
+  category: string;
+  subcategory: string;
+  sku: string;
+  img: string;
+};
 
 export default function PageProducts() {
   const catalogCategories = [
@@ -19,11 +30,26 @@ export default function PageProducts() {
     { name: 'Divisiones de ambientes', items: ['Divisiones modulares', 'Divisiones de vidrio'] },
     { name: 'Recepciones', items: ['Counters de recepción', 'Mostradores', 'Sistemas de espera'] },
   ];
-  const allSubs = catalogCategories.flatMap((c) => c.items);
-  const products = Array.from({ length: 12 }).map((_, i) => {
-    const sub = allSubs[i % allSubs.length];
+
+  // Real products from the catalog data
+  const realProducts: GridProduct[] = PRODUCTS.map((p) => ({
+    id: p.slug,
+    slug: p.slug,
+    name: p.name,
+    category: p.category,
+    subcategory: p.subcategory,
+    sku: p.sku,
+    img: p.gallery[0],
+  }));
+
+  // Generic placeholders to fill the grid for subcategories without real
+  // products yet. Skips any subcategory already covered by a real product.
+  const coveredSubs = new Set(realProducts.map((p) => p.subcategory));
+  const allSubs = catalogCategories.flatMap((c) => c.items).filter((s) => !coveredSubs.has(s));
+  const placeholders: GridProduct[] = Array.from({ length: Math.max(0, 12 - realProducts.length) }).map((_, i) => {
+    const sub = allSubs[i % Math.max(1, allSubs.length)] || 'General';
     return {
-      id: i,
+      id: `placeholder-${i}`,
       name: `${sub} · Modelo ${String.fromCharCode(65 + (i % 5))}${i + 1}`,
       category: catalogCategories.find((c) => c.items.includes(sub))?.name || 'General',
       subcategory: sub,
@@ -31,6 +57,7 @@ export default function PageProducts() {
       img: asset(`biblioteca-${(i % 5) + 1}.webp`),
     };
   });
+  const products: GridProduct[] = [...realProducts, ...placeholders];
 
   const [openCats, setOpenCats] = useState<string[]>(['Sillonería']);
   const toggle = (n: string) =>
@@ -261,8 +288,9 @@ export default function PageProducts() {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
                 {filtered.map((p) => {
                   const catSlug = encodeURIComponent(p.category.toLowerCase().replace(/ /g, '-'));
+                  const productId = p.slug ?? p.id;
                   return (
-                    <Link key={p.id} to={`/productos/${catSlug}/${p.id}`} style={{ display: 'block' }}>
+                    <Link key={p.id} to={`/productos/${catSlug}/${productId}`} style={{ display: 'block' }}>
                       <div
                         style={{
                           position: 'relative',
