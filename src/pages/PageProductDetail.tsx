@@ -260,10 +260,10 @@ export default function PageProductDetail() {
                 >
                   {(
                     [
-                      { name: 'Ficha técnica', ext: 'PDF' },
-                      { name: 'Modelo 3D', ext: 'SKP' },
-                      { name: 'Modelo Revit', ext: 'RFA' },
-                      { name: 'Plano CAD', ext: 'DWG', href: real?.sheet, fileName: `${real?.slug ?? id}.dwg` },
+                      { name: 'Ficha técnica', ext: 'PDF', href: real?.sheets?.pdf, fileName: `${real?.slug ?? id}.pdf` },
+                      { name: 'Modelo 3D', ext: 'SKP', href: real?.sheets?.skp, fileName: `${real?.slug ?? id}.skp` },
+                      { name: 'Modelo Revit', ext: 'RFA', href: real?.sheets?.rfa, fileName: `${real?.slug ?? id}.rfa` },
+                      { name: 'Plano CAD', ext: 'DWG', href: real?.sheets?.dwg, fileName: `${real?.slug ?? id}.dwg` },
                     ] as Array<{ name: string; ext: string; href?: string; fileName?: string }>
                   ).map((d) => {
                     const isLive = !!d.href;
