@@ -13,10 +13,11 @@ import {
 export default function PageProducts() {
   const catalogCategories = [
     { name: 'Sillonería', items: ['Sillas presidente', 'Sillas gerenciales', 'Sillas operativas', 'Sillas de visita', 'Colectividades', 'Sofás'] },
-    { name: 'Escritorios + Estaciones', items: ['Escritorios gerente', 'Escritorios operativos', 'Estaciones de trabajo', 'Escritorios regulables'] },
+    { name: 'Escritorios + Estaciones de trabajo', items: ['Escritorios gerente', 'Escritorios operativos', 'Estaciones de trabajo', 'Escritorios regulables'] },
     { name: 'Mesas', items: ['Mesas de reunión', 'Mesas colaborativas', 'Mesas auxiliares'] },
     { name: 'Almacenamiento', items: ['Credenzas', 'Módulos de archivación', 'Bibliotecas', 'Lockers', 'Archivo rodante'] },
     { name: 'Divisiones de ambientes', items: ['Divisiones modulares', 'Divisiones de vidrio'] },
+    { name: 'Recepciones', items: ['Counters de recepción', 'Mostradores', 'Sistemas de espera'] },
   ];
   const allSubs = catalogCategories.flatMap((c) => c.items);
   const products = Array.from({ length: 12 }).map((_, i) => {

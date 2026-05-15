@@ -51,20 +51,20 @@ const NAV_LINKS: { label: string; path: string; mega?: boolean }[] = [
 function MegaMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
   const columns = [
     {
-      title: 'Sillería',
-      items: ['Sillas Operativas', 'Sillas de Visita', 'Sillas Directivas', 'Bancos', 'Sistemas Lounge', 'Sofás'],
+      title: 'Sillonería',
+      items: ['Sillas Presidente', 'Sillas Gerenciales', 'Sillas Operativas', 'Sillas de Visita', 'Colectividades', 'Sofás'],
     },
     {
-      title: 'Escritorios & Estaciones',
-      items: ['Estaciones de Trabajo', 'Escritorios', 'Escritorios Regulables', 'Sistemas Benching', 'Oficinas Privadas'],
+      title: 'Escritorios + Estaciones',
+      items: ['Escritorios Gerente', 'Escritorios Operativos', 'Estaciones de Trabajo', 'Escritorios Regulables'],
     },
-    { title: 'Mesas', items: ['Mesas de Juntas', 'Mesas Colaborativas', 'Mesas Ocasionales'] },
+    { title: 'Mesas', items: ['Mesas de Reunión', 'Mesas Colaborativas', 'Mesas Auxiliares'] },
     {
       title: 'Almacenamiento',
-      items: ['Credenzas', 'Bibliotecas', 'Lockers', 'Archivo Rodante', 'Almacenamiento Personal'],
+      items: ['Credenzas', 'Módulos de Archivación', 'Bibliotecas', 'Lockers', 'Archivo Rodante'],
     },
-    { title: 'Arquitectura', items: ['Muros Modulares', 'Pods', 'Mamparas Divisorias'] },
-    { title: 'Accesorios', items: ['Brazos de Monitor', 'Gestión de Energía', 'Iluminación', 'Pizarrones'] },
+    { title: 'Divisiones de Ambientes', items: ['Divisiones Modulares', 'Divisiones de Vidrio'] },
+    { title: 'Recepciones', items: ['Counters de Recepción', 'Mostradores', 'Sistemas de Espera'] },
   ];
 
   return (
@@ -351,11 +351,12 @@ function Footer() {
     {
       title: 'Productos',
       items: [
-        { label: 'Sillería', path: '/productos' },
-        { label: 'Escritorios & Estaciones', path: '/productos' },
+        { label: 'Sillonería', path: '/productos' },
+        { label: 'Escritorios + Estaciones', path: '/productos' },
         { label: 'Mesas', path: '/productos' },
         { label: 'Almacenamiento', path: '/productos' },
-        { label: 'Divisiones', path: '/productos' },
+        { label: 'Divisiones de Ambientes', path: '/productos' },
+        { label: 'Recepciones', path: '/productos' },
       ],
     },
     {
