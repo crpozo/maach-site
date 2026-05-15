@@ -5,8 +5,8 @@ import { IconArrow, IconPin } from '../components/icons';
 
 export default function PagePortafolio() {
   const projects = [
-    { id: '01', title: 'Corporativo Norte', location: 'Monterrey, NL', scope: 'Estaciones operativas y sillería directiva', area: '2,400 m²', year: '2025', img: asset('biblioteca-1.webp') },
-    { id: '02', title: 'Torre Financiera Capital', location: 'Ciudad de México', scope: 'Mesas de juntas y espacios colaborativos', area: '5,800 m²', year: '2024', img: asset('biblioteca-2.webp') },
+    { id: '01', title: 'Proyecto CPN', location: 'Quito, EC', scope: 'Edificio corporativo matriz · Recepción, salas y áreas operativas', area: '2,400 m²', year: '2025', img: asset('proyectos/cpn/01.webp') },
+    { id: '02', title: 'Palladium', location: 'Quito, EC', scope: 'Estaciones operativas, mesas de juntas y zonas privadas', area: '1,200 m²', year: '2024', img: asset('proyectos/palladium/02.webp') },
     { id: '03', title: 'Centro de Innovación Tecnológica', location: 'Guadalajara, JAL', scope: 'Sistemas benching y áreas lounge', area: '1,200 m²', year: '2025', img: asset('biblioteca-3.webp') },
     { id: '04', title: 'Oficinas Boutique StartUp', location: 'Querétaro, QRO', scope: 'Mobiliario a medida y colecciones exclusivas', area: '780 m²', year: '2026', img: asset('biblioteca-4.webp') },
     { id: '05', title: 'Hub Logístico Industrial', location: 'Mérida, YUC', scope: 'Áreas operativas de alta densidad', area: '4,100 m²', year: '2024', img: asset('biblioteca-5.webp') },

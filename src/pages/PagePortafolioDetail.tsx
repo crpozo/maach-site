@@ -10,22 +10,88 @@ type ProjectData = {
   area: string;
   sector: string;
   arq: string;
+  /** Hero photo (top of detail page). */
+  hero: string;
+  /** Side photo (used in the Propuesta de Valor phase). */
+  side: string;
+  /** Optional gallery (Vista de instalación). Falls back to defaults. */
+  gallery?: [string, string, string];
 };
 
 const DATA: Record<string, ProjectData> = {
-  '01': { title: 'Corporativo Norte', location: 'Monterrey, NL', year: '2025', area: '2,400 m²', sector: 'Sector Financiero', arq: 'Estudio Alba' },
-  '02': { title: 'Torre Financiera Capital', location: 'CDMX', year: '2024', area: '5,800 m²', sector: 'Banca corporativa', arq: 'Pratt & Co' },
-  '03': { title: 'Centro de Innovación Tecnológica', location: 'Guadalajara, JAL', year: '2025', area: '1,200 m²', sector: 'Tech / R&D', arq: 'Sosa Studio' },
-  '04': { title: 'Oficinas Boutique StartUp', location: 'Querétaro, QRO', year: '2026', area: '780 m²', sector: 'Startup SaaS', arq: 'MAACH In-house' },
-  '05': { title: 'Hub Logístico Industrial', location: 'Mérida, YUC', year: '2024', area: '4,100 m²', sector: 'Logística', arq: 'Camargo & Hijos' },
+  '01': {
+    title: 'Proyecto CPN',
+    location: 'Quito, EC',
+    year: '2025',
+    area: '2,400 m²',
+    sector: 'Cooperativa financiera',
+    arq: 'MAACH + CPN',
+    hero: asset('proyectos/cpn/01.webp'),
+    side: asset('proyectos/cpn/04.webp'),
+    gallery: [
+      asset('proyectos/cpn/02.webp'),
+      asset('proyectos/cpn/03.webp'),
+      asset('proyectos/cpn/05.webp'),
+    ],
+  },
+  '02': {
+    title: 'Palladium',
+    location: 'Quito, EC',
+    year: '2024',
+    area: '1,200 m²',
+    sector: 'Corporate · Consultoría',
+    arq: 'MAACH In-house',
+    hero: asset('proyectos/palladium/02.webp'),
+    side: asset('proyectos/palladium/04.webp'),
+    gallery: [
+      asset('proyectos/palladium/05.webp'),
+      asset('proyectos/palladium/03.webp'),
+      asset('proyectos/palladium/01.webp'),
+    ],
+  },
+  '03': {
+    title: 'Centro de Innovación Tecnológica',
+    location: 'Guadalajara, JAL',
+    year: '2025',
+    area: '1,200 m²',
+    sector: 'Tech / R&D',
+    arq: 'Sosa Studio',
+    hero: asset('biblioteca-3.webp'),
+    side: asset('biblioteca-4.webp'),
+  },
+  '04': {
+    title: 'Oficinas Boutique StartUp',
+    location: 'Querétaro, QRO',
+    year: '2026',
+    area: '780 m²',
+    sector: 'Startup SaaS',
+    arq: 'MAACH In-house',
+    hero: asset('biblioteca-4.webp'),
+    side: asset('biblioteca-5.webp'),
+  },
+  '05': {
+    title: 'Hub Logístico Industrial',
+    location: 'Mérida, YUC',
+    year: '2024',
+    area: '4,100 m²',
+    sector: 'Logística',
+    arq: 'Camargo & Hijos',
+    hero: asset('biblioteca-5.webp'),
+    side: asset('biblioteca-1.webp'),
+  },
 };
 
 export default function PagePortafolioDetail() {
   const { id = '01' } = useParams();
   const p = DATA[id] || DATA['01'];
   const idNum = parseInt(id, 10) || 1;
-  const heroImg = asset(`biblioteca-${(idNum % 5) + 1}.webp`);
-  const sideImg = asset(`biblioteca-${((idNum + 1) % 5) + 1}.webp`);
+  const heroImg = p.hero;
+  const sideImg = p.side;
+  const galleryImgs = p.gallery ?? [
+    asset('biblioteca-1.webp'),
+    asset('biblioteca-3.webp'),
+    asset('biblioteca-5.webp'),
+  ];
   const nextId = String(idNum + 1).padStart(2, '0');
 
   return (
@@ -317,14 +383,14 @@ export default function PagePortafolioDetail() {
 
           <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 16 }}>
             <div style={{ aspectRatio: '1/1', border: '1px solid var(--line)', overflow: 'hidden' }}>
-              <img src={asset("biblioteca-1.webp")} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src={galleryImgs[0]} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
             <div style={{ display: 'grid', gridTemplateRows: '1fr 1fr', gap: 16 }}>
               <div style={{ border: '1px solid var(--line)', overflow: 'hidden' }}>
-                <img src={asset("biblioteca-3.webp")} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src={galleryImgs[1]} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <div style={{ border: '1px solid var(--line)', overflow: 'hidden' }}>
-                <img src={asset("biblioteca-5.webp")} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src={galleryImgs[2]} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
             </div>
           </div>

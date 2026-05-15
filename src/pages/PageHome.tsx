@@ -488,8 +488,8 @@ export default function PageHome() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8 }}>
             {[
-              { id: '01', img: asset('biblioteca-2.webp'), title: 'Corporativo Norte', location: 'Monterrey, NL', area: '2,400 m²', year: '2025' },
-              { id: '02', img: asset('biblioteca-3.webp'), title: 'Torre Financiera Capital', location: 'CDMX', area: '5,800 m²', year: '2024' },
+              { id: '01', img: asset('proyectos/cpn/01.webp'), title: 'Proyecto CPN', location: 'Quito, EC', area: '2,400 m²', year: '2025' },
+              { id: '02', img: asset('proyectos/palladium/02.webp'), title: 'Palladium', location: 'Quito, EC', area: '1,200 m²', year: '2024' },
               { id: '03', img: asset('biblioteca-4.webp'), title: 'Hub de Innovación', location: 'Guadalajara', area: '1,200 m²', year: '2025' },
             ].map((p) => (
               <Link
