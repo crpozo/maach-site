@@ -556,6 +556,168 @@ export default function PageHome() {
         </div>
       </section>
 
+      {/* CLIENTES */}
+      <section style={{ padding: '128px 0', borderBottom: '1px solid var(--line)' }}>
+        <div className="maach-container">
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'flex-end',
+              marginBottom: 56,
+              flexWrap: 'wrap',
+              gap: 16,
+            }}
+          >
+            <div>
+              <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 16 }}>
+                § 05 / Clientes
+              </span>
+              <h2 className="h-display" style={{ fontSize: 'clamp(48px, 6.5vw, 96px)' }}>
+                Confianza <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>industrial.</span>
+              </h2>
+            </div>
+            <span className="maach-mono" style={{ color: 'var(--muted)' }}>
+              +24 organizaciones · LATAM
+            </span>
+          </div>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(6, 1fr)',
+              gap: 0,
+              border: '1px solid var(--line)',
+            }}
+          >
+            {[
+              'Gran Comercio',
+              'Contract Workplaces',
+              'Induvallas',
+              'Sarmiento',
+              'Grupo KFC',
+              'UDLA',
+              'Cooperativa Policía Nacional',
+              'ConstruEcuador',
+              'Liga Deportiva U.',
+              'PUCE',
+              'Zaimella',
+              'CAME Arquitectos',
+              'Corporación Maresa',
+              'Kruger',
+              'Arroyo & Arroyo',
+              'Carsnack',
+              'UIDE',
+              'PMJ Arquitectos',
+              'Banco ProCredit',
+              'Grupo Puentes',
+              'Wesco',
+              'Palladium',
+              'Tropi Burger',
+              'Moreno & Valdivieso',
+            ].map((name, i) => {
+              // Slug used to look up an optional logo image. Drop a file at
+              //   public/assets/clientes/<slug>.png  (or .webp / .svg)
+              // and the <img> below will pick it up automatically.
+              const slug = name
+                .toLowerCase()
+                .normalize('NFD')
+                .replace(/[̀-ͯ]/g, '')
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/(^-|-$)/g, '');
+              const col = i % 6;
+              const row = Math.floor(i / 6);
+              const total = 24;
+              return (
+                <div
+                  key={name}
+                  title={name}
+                  style={{
+                    position: 'relative',
+                    aspectRatio: '3/2',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: 20,
+                    borderRight: col === 5 ? 0 : '1px solid var(--line)',
+                    borderBottom: row < Math.floor((total - 1) / 6) ? '1px solid var(--line)' : 0,
+                    background: 'var(--off-white)',
+                    overflow: 'hidden',
+                    transition: 'background .25s ease',
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--soft)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.background = 'var(--off-white)')}
+                >
+                  {/* Logo image — falls back to the name label if file is missing */}
+                  <img
+                    src={asset(`clientes/${slug}.png`)}
+                    alt={name}
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      target.style.display = 'none';
+                      const fallback = target.nextElementSibling as HTMLElement | null;
+                      if (fallback) fallback.style.display = 'flex';
+                    }}
+                    style={{
+                      maxWidth: '70%',
+                      maxHeight: '60%',
+                      objectFit: 'contain',
+                      filter: 'grayscale(1)',
+                      opacity: 0.85,
+                      transition: 'filter .2s, opacity .2s',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.filter = '';
+                      e.currentTarget.style.opacity = '1';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.filter = 'grayscale(1)';
+                      e.currentTarget.style.opacity = '0.85';
+                    }}
+                  />
+                  {/* Fallback text label */}
+                  <span
+                    className="maach-mono"
+                    style={{
+                      display: 'none',
+                      textAlign: 'center',
+                      fontSize: 11,
+                      letterSpacing: '.08em',
+                      color: 'var(--fg)',
+                      lineHeight: 1.3,
+                    }}
+                  >
+                    {name}
+                  </span>
+
+                  {/* Small index in the corner */}
+                  <span
+                    className="maach-mono"
+                    style={{
+                      position: 'absolute',
+                      top: 8,
+                      left: 10,
+                      fontSize: 9,
+                      color: 'var(--muted)',
+                      letterSpacing: '.1em',
+                    }}
+                  >
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+
+          <p
+            className="maach-mono"
+            style={{ color: 'var(--muted)', marginTop: 24, textAlign: 'center', fontSize: 11 }}
+          >
+            Marcas y organizaciones con las que MAACH ha colaborado · 2018 — 2026
+          </p>
+        </div>
+      </section>
+
       {/* CTA */}
       <section style={{ borderTop: '1px solid var(--line)', borderBottom: '1px solid var(--line)' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
