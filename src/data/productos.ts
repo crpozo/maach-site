@@ -41,6 +41,7 @@ export const PRODUCTS: Product[] = [
       asset('productos/almacenamiento/biblioteca-alta/04.webp'),
       asset('productos/almacenamiento/biblioteca-alta/05.webp'),
     ],
+    sheet: asset('productos/almacenamiento/biblioteca-alta/biblioteca-alta.dwg'),
   },
 ];
 

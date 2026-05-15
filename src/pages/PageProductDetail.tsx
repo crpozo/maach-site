@@ -258,37 +258,55 @@ export default function PageProductDetail() {
                     gap: 8,
                   }}
                 >
-                  {[
-                    { name: 'Ficha técnica', ext: 'PDF' },
-                    { name: 'Modelo 3D', ext: 'SKP' },
-                    { name: 'Modelo Revit', ext: 'RFA' },
-                    { name: 'Plano CAD', ext: 'DWG' },
-                  ].map((d) => (
-                    <a
-                      key={d.name}
-                      href="#"
-                      onClick={(e) => e.preventDefault()}
-                      style={{
-                        background: 'var(--surface)',
-                        border: '1px solid var(--line)',
-                        padding: '14px 18px',
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        alignItems: 'center',
-                        transition: 'border-color .2s',
-                      }}
-                      onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'var(--fg)')}
-                      onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'var(--line)')}
-                    >
-                      <div>
-                        <span style={{ fontFamily: 'var(--body)', fontSize: 14, fontWeight: 500 }}>{d.name}</span>
-                        <span className="maach-mono" style={{ color: 'var(--lava-orange)', marginLeft: 10 }}>
-                          .{d.ext.toLowerCase()}
-                        </span>
-                      </div>
-                      <IconDownload size={14} />
-                    </a>
-                  ))}
+                  {(
+                    [
+                      { name: 'Ficha técnica', ext: 'PDF' },
+                      { name: 'Modelo 3D', ext: 'SKP' },
+                      { name: 'Modelo Revit', ext: 'RFA' },
+                      { name: 'Plano CAD', ext: 'DWG', href: real?.sheet, fileName: `${real?.slug ?? id}.dwg` },
+                    ] as Array<{ name: string; ext: string; href?: string; fileName?: string }>
+                  ).map((d) => {
+                    const isLive = !!d.href;
+                    return (
+                      <a
+                        key={d.name}
+                        href={d.href ?? '#'}
+                        download={isLive ? d.fileName : undefined}
+                        onClick={isLive ? undefined : (e) => e.preventDefault()}
+                        style={{
+                          background: 'var(--surface)',
+                          border: '1px solid var(--line)',
+                          padding: '14px 18px',
+                          display: 'flex',
+                          justifyContent: 'space-between',
+                          alignItems: 'center',
+                          transition: 'border-color .2s',
+                          opacity: isLive ? 1 : 0.55,
+                          cursor: isLive ? 'pointer' : 'default',
+                        }}
+                        onMouseEnter={(e) =>
+                          isLive ? (e.currentTarget.style.borderColor = 'var(--fg)') : null
+                        }
+                        onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'var(--line)')}
+                      >
+                        <div>
+                          <span style={{ fontFamily: 'var(--body)', fontSize: 14, fontWeight: 500 }}>{d.name}</span>
+                          <span className="maach-mono" style={{ color: 'var(--lava-orange)', marginLeft: 10 }}>
+                            .{d.ext.toLowerCase()}
+                          </span>
+                          {!isLive && (
+                            <span
+                              className="maach-mono"
+                              style={{ color: 'var(--muted)', marginLeft: 12, fontSize: 10 }}
+                            >
+                              · próximamente
+                            </span>
+                          )}
+                        </div>
+                        <IconDownload size={14} />
+                      </a>
+                    );
+                  })}
                 </div>
               </div>
             </div>
