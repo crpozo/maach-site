@@ -39,9 +39,8 @@ export function Logo({ inverted = false, height = 28 }: { inverted?: boolean; he
 }
 
 const NAV_LINKS: { key: string; path: string; mega?: boolean }[] = [
-  // 'Nuevo' is intentionally hidden from the nav. Route still works.
+  // 'Nuevo' and 'Colecciones' are intentionally hidden from the nav. Routes still work.
   { key: 'nav.productos', path: '/productos', mega: true },
-  { key: 'nav.colecciones', path: '/colecciones' },
   { key: 'nav.espacios', path: '/espacios' },
   { key: 'nav.portafolio', path: '/portafolio' },
   { key: 'nav.investigacion', path: '/investigacion' },
@@ -133,7 +132,6 @@ function MegaMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
               Relacionado
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8, fontSize: 14, fontWeight: 500 }}>
-              <Link to="/colecciones" onClick={onClose}>Colecciones</Link>
               <Link to="/portafolio" onClick={onClose}>Portafolio</Link>
               <Link to="/recursos-diseno/biblioteca" onClick={onClose}>Documentos técnicos</Link>
             </div>
