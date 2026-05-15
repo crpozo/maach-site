@@ -2,8 +2,10 @@ import { asset } from '../lib/asset';
 import { Link } from 'react-router-dom';
 import { Layout, Marquee } from '../components/Layout';
 import { IconArrow, IconArrowDownRight } from '../components/icons';
+import { useT } from '../i18n/i18n';
 
 export default function PageHome() {
+  const t = useT();
   return (
     <Layout screenLabel="01 Home">
       {/* HERO — full-bleed photo with text overlay */}
@@ -138,10 +140,10 @@ export default function PageHome() {
                 className="maach-tag"
                 style={{ borderColor: 'var(--lava-orange)', color: 'var(--lava-orange)' }}
               >
-                Sistema 2026 / ID: MAACH-01
+                {t('home.hero.tag')}
               </span>
               <span className="maach-mono" style={{ color: 'var(--sand-grey)' }}>
-                — Otoño / Invierno
+                {t('home.hero.season')}
               </span>
             </div>
 
@@ -163,15 +165,15 @@ export default function PageHome() {
 
             <div style={{ display: 'flex', alignItems: 'center', gap: 24, flexWrap: 'wrap' }}>
               <Link to="/productos" className="btn-primary">
-                Explorar catálogo <IconArrow size={14} />
+                {t('cta.explore')} <IconArrow size={14} />
               </Link>
               <Link to="/contacto" className="btn-ghost">
-                Iniciar especificación
+                {t('cta.spec')}
               </Link>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                 <div style={{ width: 32, height: 1, background: 'var(--off-white)' }} />
                 <span className="maach-mono" style={{ color: 'var(--sand-grey)' }}>
-                  Scroll para descubrir
+                  {t('cta.scroll')}
                 </span>
               </div>
             </div>

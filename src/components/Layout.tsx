@@ -2,6 +2,7 @@ import { asset } from '../lib/asset';
 import { Fragment, useState, type ReactNode } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { IconArrow, IconChevronDown, IconClose, IconMenu, IconSearch } from './icons';
+import { useI18n } from '../i18n/i18n';
 
 export function Logo({ inverted = false, height = 28 }: { inverted?: boolean; height?: number }) {
   if (inverted) {
@@ -37,15 +38,15 @@ export function Logo({ inverted = false, height = 28 }: { inverted?: boolean; he
   return <img src={asset("logo-bicolor.png")} alt="MAACH" style={{ height, width: 'auto' }} />;
 }
 
-const NAV_LINKS: { label: string; path: string; mega?: boolean }[] = [
-  { label: 'Nuevo', path: '/nuevo' },
-  { label: 'Productos', path: '/productos', mega: true },
-  { label: 'Colecciones', path: '/colecciones' },
-  { label: 'Espacios', path: '/espacios' },
-  { label: 'Portafolio', path: '/portafolio' },
-  { label: 'Investigación', path: '/investigacion' },
-  { label: 'Sobre MAACH', path: '/sobre-maach' },
-  { label: 'Contacto', path: '/contacto' },
+const NAV_LINKS: { key: string; path: string; mega?: boolean }[] = [
+  // 'Nuevo' is intentionally hidden from the nav. Route still works.
+  { key: 'nav.productos', path: '/productos', mega: true },
+  { key: 'nav.colecciones', path: '/colecciones' },
+  { key: 'nav.espacios', path: '/espacios' },
+  { key: 'nav.portafolio', path: '/portafolio' },
+  { key: 'nav.investigacion', path: '/investigacion' },
+  { key: 'nav.sobre', path: '/sobre-maach' },
+  { key: 'nav.contacto', path: '/contacto' },
 ];
 
 function MegaMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
@@ -181,6 +182,7 @@ function Nav() {
   const [megaOpen, setMegaOpen] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const { pathname } = useLocation();
+  const { lang, setLang, t } = useI18n();
 
   return (
     <nav
@@ -226,7 +228,7 @@ function Nav() {
                         transition: 'color .2s',
                       }}
                     >
-                      {link.label}
+                      {t(link.key as Parameters<typeof t>[0])}
                       <IconChevronDown size={11} rotate={megaOpen ? 180 : 0} />
                     </span>
                   </div>
@@ -246,7 +248,7 @@ function Nav() {
                     transition: 'color .2s',
                   }}
                 >
-                  {link.label}
+                  {t(link.key as Parameters<typeof t>[0])}
                 </Link>
               );
             })}
@@ -258,9 +260,41 @@ function Nav() {
             <IconSearch />
           </button>
           <div className="nav-divider" style={{ width: 1, height: 28, background: 'var(--line)', margin: '0 8px' }} />
-          <span className="maach-mono nav-lang" style={{ color: 'var(--muted)' }}>
-            ES / EN
-          </span>
+          <div className="nav-lang" style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+            <button
+              type="button"
+              onClick={() => setLang('es')}
+              className="maach-mono"
+              aria-pressed={lang === 'es'}
+              style={{
+                padding: '4px 6px',
+                color: lang === 'es' ? 'var(--lava-orange)' : 'var(--muted)',
+                fontWeight: lang === 'es' ? 700 : 500,
+                cursor: 'pointer',
+                transition: 'color .2s',
+              }}
+            >
+              ES
+            </button>
+            <span className="maach-mono" style={{ color: 'var(--muted)' }}>
+              /
+            </span>
+            <button
+              type="button"
+              onClick={() => setLang('en')}
+              className="maach-mono"
+              aria-pressed={lang === 'en'}
+              style={{
+                padding: '4px 6px',
+                color: lang === 'en' ? 'var(--lava-orange)' : 'var(--muted)',
+                fontWeight: lang === 'en' ? 700 : 500,
+                cursor: 'pointer',
+                transition: 'color .2s',
+              }}
+            >
+              EN
+            </button>
+          </div>
         </div>
 
         {/* Mobile hamburger — hidden on desktop via CSS */}
@@ -317,7 +351,7 @@ function Nav() {
                   color: active ? 'var(--lava-orange)' : 'var(--fg)',
                 }}
               >
-                {link.label}
+                {t(link.key as Parameters<typeof t>[0])}
                 <IconArrow size={18} rotate={-45} />
               </Link>
             );
@@ -338,7 +372,41 @@ function Nav() {
             }}
           >
             <span>MAACH · Sistema 2026</span>
-            <span>ES / EN</span>
+            <span style={{ display: 'inline-flex', gap: 8 }}>
+              <button
+                type="button"
+                onClick={() => setLang('es')}
+                style={{
+                  padding: '0 4px',
+                  color: lang === 'es' ? 'var(--lava-orange)' : 'var(--muted)',
+                  fontWeight: lang === 'es' ? 700 : 500,
+                  fontFamily: 'var(--mono)',
+                  fontSize: 11,
+                  letterSpacing: '.08em',
+                  textTransform: 'uppercase',
+                  cursor: 'pointer',
+                }}
+              >
+                ES
+              </button>
+              /
+              <button
+                type="button"
+                onClick={() => setLang('en')}
+                style={{
+                  padding: '0 4px',
+                  color: lang === 'en' ? 'var(--lava-orange)' : 'var(--muted)',
+                  fontWeight: lang === 'en' ? 700 : 500,
+                  fontFamily: 'var(--mono)',
+                  fontSize: 11,
+                  letterSpacing: '.08em',
+                  textTransform: 'uppercase',
+                  cursor: 'pointer',
+                }}
+              >
+                EN
+              </button>
+            </span>
           </div>
         </div>
       </div>
@@ -347,9 +415,10 @@ function Nav() {
 }
 
 function Footer() {
+  const { t } = useI18n();
   const cols = [
     {
-      title: 'Productos',
+      title: t('footer.col.productos'),
       items: [
         { label: 'Sillonería', path: '/productos' },
         { label: 'Escritorios + Estaciones', path: '/productos' },
@@ -360,16 +429,16 @@ function Footer() {
       ],
     },
     {
-      title: 'Compañía',
+      title: t('footer.col.company'),
       items: [
-        { label: 'Sobre MAACH', path: '/sobre-maach' },
-        { label: 'Investigación', path: '/investigacion' },
-        { label: 'Portafolio', path: '/portafolio' },
-        { label: 'Contacto', path: '/contacto' },
+        { label: t('nav.sobre'), path: '/sobre-maach' },
+        { label: t('nav.investigacion'), path: '/investigacion' },
+        { label: t('nav.portafolio'), path: '/portafolio' },
+        { label: t('nav.contacto'), path: '/contacto' },
       ],
     },
     {
-      title: 'Recursos',
+      title: t('footer.col.resources'),
       items: [
         { label: 'Biblioteca de documentos', path: '/recursos-diseno/biblioteca' },
         { label: 'Modelos 3D / CAD', path: '/recursos-diseno/biblioteca' },
@@ -413,18 +482,20 @@ function Footer() {
               MAACH / 2026
             </div>
             <h2 className="h-display" style={{ fontSize: 'clamp(64px, 9vw, 144px)', color: 'var(--off-white)' }}>
-              Engineered<br />
-              <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>for work.</span>
+              {t('footer.manifesto.line1')}<br />
+              <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>
+                {t('footer.manifesto.line2')}
+              </span>
               <br />
-              Designed to last.
+              {t('footer.manifesto.line3')}
             </h2>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
             <p style={{ color: 'var(--sand-grey)', fontSize: 18, lineHeight: 1.5, maxWidth: 420 }}>
-              Mobiliario corporativo diseñado para el trabajo real. Diseño funcional, ingeniería aplicada y fabricación industrial.
+              {t('footer.intro')}
             </p>
             <Link to="/contacto" className="btn-primary" style={{ alignSelf: 'flex-start' }}>
-              Iniciar proyecto <IconArrow size={14} />
+              {t('cta.contact')} <IconArrow size={14} />
             </Link>
           </div>
         </div>
@@ -440,9 +511,9 @@ function Footer() {
           <div>
             <Logo inverted height={28} />
             <p style={{ color: 'var(--sand-grey)', marginTop: 32, maxWidth: 280 }}>
-              Av. Industrial 450 · Parque Tecnológico
+              {t('footer.address.line1')}
               <br />
-              C.P. 10293 · Ciudad de México, CDMX
+              {t('footer.address.line2')}
             </p>
             <p style={{ color: 'var(--sand-grey)', marginTop: 16 }}>
               proyectos@maach.com.mx
@@ -514,17 +585,17 @@ function Footer() {
           }}
         >
           <span className="maach-mono" style={{ color: 'var(--sand-grey)' }}>
-            © 2026 MAACH · Industrial Design, Real Performance
+            © 2026 MAACH · {t('footer.bottom.tagline')}
           </span>
           <div style={{ display: 'flex', gap: 32 }}>
             <a href="#" className="maach-mono" style={{ color: 'var(--sand-grey)' }}>
-              Términos
+              {t('footer.terms')}
             </a>
             <a href="#" className="maach-mono" style={{ color: 'var(--sand-grey)' }}>
-              Privacidad
+              {t('footer.privacy')}
             </a>
             <a href="#" className="maach-mono" style={{ color: 'var(--sand-grey)' }}>
-              Cookies
+              {t('footer.cookies')}
             </a>
           </div>
         </div>

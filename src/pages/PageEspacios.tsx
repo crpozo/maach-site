@@ -2,8 +2,10 @@ import { asset } from '../lib/asset';
 import { Link } from 'react-router-dom';
 import { Layout } from '../components/Layout';
 import { IconArrow } from '../components/icons';
+import { useT } from '../i18n/i18n';
 
 export default function PageEspacios() {
+  const t = useT();
   const spaces = [
     { id: '01', title: 'Áreas Operativas', desc: 'Sistemas bench y estaciones de alta densidad. Maximizan el área por usuario sin sacrificar la ergonomía individual ni la productividad.', tex: 'tex-stack-force', img: asset('biblioteca-2.webp') },
     { id: '02', title: 'Salas de Juntas', desc: 'Mesas ejecutivas y modulares con integración tecnológica oculta. Preparadas para reuniones presenciales e híbridas.', tex: 'tex-load-line', img: asset('biblioteca-3.webp') },
@@ -512,6 +514,73 @@ export default function PageEspacios() {
                 </span>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ callout — "¿Dudas para diseñar tu espacio?" */}
+      <section style={{ padding: '96px 0', borderBottom: '1px solid var(--line)' }}>
+        <div className="maach-container">
+          <div
+            style={{
+              border: '1px solid var(--line)',
+              padding: '56px 56px',
+              display: 'grid',
+              gridTemplateColumns: '1.4fr auto',
+              gap: 48,
+              alignItems: 'center',
+              position: 'relative',
+              overflow: 'hidden',
+            }}
+          >
+            <div
+              aria-hidden
+              style={{
+                position: 'absolute',
+                top: 18,
+                right: 18,
+                width: 22,
+                height: 22,
+                borderTop: '2px solid var(--lava-orange)',
+                borderRight: '2px solid var(--lava-orange)',
+              }}
+            />
+            <div
+              aria-hidden
+              style={{
+                position: 'absolute',
+                bottom: 18,
+                left: 18,
+                width: 22,
+                height: 22,
+                borderBottom: '2px solid var(--lava-orange)',
+                borderLeft: '2px solid var(--lava-orange)',
+              }}
+            />
+            <div>
+              <span
+                className="maach-mono"
+                style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 16 }}
+              >
+                § FAQ · Asesoría
+              </span>
+              <h3
+                className="h-display"
+                style={{ fontSize: 'clamp(32px, 4.5vw, 64px)', lineHeight: 1, margin: 0 }}
+              >
+                {t('faq.title')}{' '}
+                <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>
+                  {t('faq.subtitle')}
+                </span>
+              </h3>
+            </div>
+            <Link
+              to="/contacto"
+              className="btn-primary"
+              style={{ justifyContent: 'space-between', whiteSpace: 'nowrap' }}
+            >
+              {t('faq.cta')} <IconArrow size={14} />
+            </Link>
           </div>
         </div>
       </section>
