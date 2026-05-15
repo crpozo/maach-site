@@ -14,8 +14,64 @@ export default function PagePortafolio() {
 
   return (
     <Layout screenLabel="08 Portafolio">
-      <section style={{ padding: '128px 0 96px', borderBottom: '1px solid var(--line)', position: 'relative', overflow: 'hidden' }}>
-        {/* Orange L crosshair */}
+      {/* HERO — full-bleed background, brand-book style */}
+      <section
+        className="invert"
+        style={{
+          position: 'relative',
+          overflow: 'hidden',
+          minHeight: 'calc(100vh - 80px)',
+          display: 'flex',
+          alignItems: 'flex-end',
+          background: 'var(--jet-black)',
+          color: 'var(--off-white)',
+          borderBottom: '1px solid var(--line)',
+        }}
+      >
+        <img
+          src={asset('proyectos/palladium/04.webp')}
+          alt=""
+          aria-hidden
+          style={{
+            position: 'absolute',
+            inset: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            zIndex: 0,
+          }}
+        />
+        <div
+          aria-hidden
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background:
+              'linear-gradient(180deg, rgba(22,22,22,.3) 0%, rgba(22,22,22,.1) 25%, rgba(22,22,22,.45) 55%, rgba(22,22,22,.92) 100%)',
+            zIndex: 1,
+          }}
+        />
+        {/* Top header strip */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 28,
+            left: 48,
+            right: 48,
+            zIndex: 3,
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}
+        >
+          <span className="maach-mono" style={{ color: 'var(--lava-orange)' }}>
+            MAACH · PORTAFOLIO 2026
+          </span>
+          <span className="maach-mono" style={{ color: 'var(--off-white)' }}>
+            § 08 / Proyectos · 2024 — 2026
+          </span>
+        </div>
+        {/* Orange L corners */}
         <div
           aria-hidden
           style={{
@@ -26,27 +82,53 @@ export default function PagePortafolio() {
             height: 22,
             borderTop: '2px solid var(--lava-orange)',
             borderRight: '2px solid var(--lava-orange)',
-            zIndex: 1,
+            zIndex: 3,
           }}
         />
-        <div className="maach-container" style={{ textAlign: 'center', position: 'relative' }}>
-          <span className="maach-mono" style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 16 }}>
-            § Proyectos · 2024 – 2026
-          </span>
-          <h1 className="h-display" style={{ fontSize: 'clamp(64px, 10vw, 184px)', marginBottom: 32 }}>
-            Porta<span className="h-italic" style={{ color: 'var(--lava-orange)' }}>folio.</span>
-          </h1>
-          <p style={{ fontSize: 22, color: 'var(--muted)', maxWidth: 720, margin: '0 auto', lineHeight: 1.45 }}>
-            Selección de proyectos donde el diseño arquitectónico y la funcionalidad industrial convergen.
-          </p>
+        <div
+          aria-hidden
+          style={{
+            position: 'absolute',
+            bottom: 24,
+            left: 24,
+            width: 22,
+            height: 22,
+            borderBottom: '2px solid var(--lava-orange)',
+            borderLeft: '2px solid var(--lava-orange)',
+            zIndex: 3,
+          }}
+        />
 
+        <div className="maach-container" style={{ position: 'relative', zIndex: 3, width: '100%', paddingTop: 64, paddingBottom: 64 }}>
+          <div style={{ maxWidth: 1100, display: 'grid', gap: 32 }}>
+            <h1
+              className="h-display"
+              style={{ fontSize: 'clamp(64px, 9vw, 168px)', color: 'var(--off-white)', lineHeight: 0.92, margin: 0 }}
+            >
+              Porta<span className="h-italic" style={{ color: 'var(--lava-orange)' }}>folio.</span>
+            </h1>
+            <p
+              style={{
+                fontSize: 20,
+                color: 'var(--off-white)',
+                lineHeight: 1.5,
+                maxWidth: 640,
+                margin: 0,
+              }}
+            >
+              Selección de proyectos donde el diseño arquitectónico y la funcionalidad industrial convergen.
+            </p>
+          </div>
+
+          {/* Metrics strip */}
           <div
             style={{
+              marginTop: 48,
+              paddingTop: 28,
+              borderTop: '1px solid rgba(228,226,227,.35)',
               display: 'grid',
               gridTemplateColumns: 'repeat(4, 1fr)',
-              gap: 0,
-              marginTop: 80,
-              border: '1px solid var(--line)',
+              gap: 24,
             }}
           >
             {[
@@ -54,28 +136,22 @@ export default function PagePortafolio() {
               { n: '18', l: 'Países atendidos' },
               { n: '84,000', l: 'm² instalados' },
               { n: '97%', l: 'Clientes recurrentes' },
-            ].map((m, i) => (
-              <div
-                key={i}
-                style={{
-                  padding: '32px 24px',
-                  borderRight: i < 3 ? '1px solid var(--line)' : 0,
-                  textAlign: 'left',
-                }}
-              >
+            ].map((m) => (
+              <div key={m.l}>
                 <div
                   style={{
                     fontFamily: 'var(--display)',
                     fontWeight: 700,
-                    fontSize: 56,
+                    fontSize: 44,
                     letterSpacing: '-.02em',
                     lineHeight: 1,
                     marginBottom: 8,
+                    color: 'var(--lava-orange)',
                   }}
                 >
                   {m.n}
                 </div>
-                <span className="maach-mono" style={{ color: 'var(--muted)' }}>
+                <span className="maach-mono" style={{ color: 'var(--sand-grey)' }}>
                   {m.l}
                 </span>
               </div>

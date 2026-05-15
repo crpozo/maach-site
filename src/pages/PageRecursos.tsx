@@ -1,6 +1,7 @@
 import { useState, type CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
 import { Layout } from '../components/Layout';
+import { asset } from '../lib/asset';
 import {
   IconBookmark,
   IconCheck,
@@ -46,8 +47,64 @@ export default function PageRecursos() {
 
   return (
     <Layout screenLabel="11 Recursos">
-      <section style={{ padding: '112px 0 64px', borderBottom: '1px solid var(--line)', position: 'relative', overflow: 'hidden' }}>
-        {/* Orange L crosshair */}
+      {/* HERO — full-bleed background, brand-book style */}
+      <section
+        className="invert"
+        style={{
+          position: 'relative',
+          overflow: 'hidden',
+          minHeight: '60vh',
+          display: 'flex',
+          alignItems: 'flex-end',
+          background: 'var(--jet-black)',
+          color: 'var(--off-white)',
+          borderBottom: '1px solid var(--line)',
+        }}
+      >
+        <img
+          src={asset('biblioteca-1.webp')}
+          alt=""
+          aria-hidden
+          style={{
+            position: 'absolute',
+            inset: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            zIndex: 0,
+          }}
+        />
+        <div
+          aria-hidden
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background:
+              'linear-gradient(180deg, rgba(22,22,22,.35) 0%, rgba(22,22,22,.15) 25%, rgba(22,22,22,.5) 55%, rgba(22,22,22,.92) 100%)',
+            zIndex: 1,
+          }}
+        />
+        {/* Top header strip */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 28,
+            left: 48,
+            right: 48,
+            zIndex: 3,
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            color: 'var(--off-white)',
+          }}
+        >
+          <span className="maach-mono" style={{ color: 'var(--lava-orange)' }}>
+            MAACH · RECURSOS 2026
+          </span>
+          <span className="maach-mono" style={{ color: 'var(--off-white)' }}>
+            § 11 / Biblioteca
+          </span>
+        </div>
         <div
           aria-hidden
           style={{
@@ -58,23 +115,48 @@ export default function PageRecursos() {
             height: 22,
             borderTop: '2px solid var(--lava-orange)',
             borderRight: '2px solid var(--lava-orange)',
-            zIndex: 1,
+            zIndex: 3,
           }}
         />
-        <div className="maach-container" style={{ position: 'relative' }}>
+        <div
+          aria-hidden
+          style={{
+            position: 'absolute',
+            bottom: 24,
+            left: 24,
+            width: 22,
+            height: 22,
+            borderBottom: '2px solid var(--lava-orange)',
+            borderLeft: '2px solid var(--lava-orange)',
+            zIndex: 3,
+          }}
+        />
+
+        <div
+          className="maach-container"
+          style={{ position: 'relative', zIndex: 3, width: '100%', paddingTop: 64, paddingBottom: 64 }}
+        >
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 24 }} className="maach-mono">
-            <Link to="/" style={{ color: 'var(--muted)' }}>
+            <Link to="/" style={{ color: 'var(--sand-grey)' }}>
               Inicio
             </Link>
-            <IconChevronRight size={10} style={{ color: 'var(--muted)' }} />
+            <IconChevronRight size={10} style={{ color: 'var(--sand-grey)' }} />
             <span style={{ color: 'var(--lava-orange)' }}>Recursos de diseño</span>
-            <IconChevronRight size={10} style={{ color: 'var(--muted)' }} />
-            <span style={{ color: 'var(--muted)' }}>Biblioteca</span>
+            <IconChevronRight size={10} style={{ color: 'var(--sand-grey)' }} />
+            <span style={{ color: 'var(--off-white)' }}>Biblioteca</span>
           </div>
-          <h1 className="h-display" style={{ fontSize: 'clamp(56px, 8vw, 128px)', marginBottom: 16 }}>
+          <h1
+            className="h-display"
+            style={{
+              fontSize: 'clamp(56px, 8vw, 128px)',
+              marginBottom: 16,
+              color: 'var(--off-white)',
+              lineHeight: 0.95,
+            }}
+          >
             Biblioteca <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>de Documentos.</span>
           </h1>
-          <p style={{ fontSize: 18, color: 'var(--muted)', maxWidth: 640, lineHeight: 1.55 }}>
+          <p style={{ fontSize: 18, color: 'var(--off-white)', maxWidth: 640, lineHeight: 1.55 }}>
             Descarga folletos, especificaciones técnicas, fichas de producto, planos CAD y modelos 3D / BIM.
           </p>
         </div>

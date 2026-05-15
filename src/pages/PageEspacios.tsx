@@ -15,50 +15,70 @@ export default function PageEspacios() {
 
   return (
     <Layout screenLabel="07 Espacios">
-      {/* HERO — 2-column editorial */}
+      {/* HERO — full-bleed background image, brand-book style */}
       <section
+        className="invert"
         style={{
-          padding: '64px 0',
-          borderBottom: '1px solid var(--line)',
           position: 'relative',
           overflow: 'hidden',
           minHeight: 'calc(100vh - 80px)',
           display: 'flex',
-          alignItems: 'center',
+          alignItems: 'flex-end',
+          background: 'var(--jet-black)',
+          color: 'var(--off-white)',
+          borderBottom: '1px solid var(--line)',
         }}
       >
-        {/* Orange edge bar */}
+        {/* Background photo */}
+        <img
+          src={asset('proyectos/cpn/03.webp')}
+          alt=""
+          aria-hidden
+          style={{
+            position: 'absolute',
+            inset: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            zIndex: 0,
+          }}
+        />
+        {/* Dark gradient for legibility — vertical so text sits in the lower half */}
         <div
           aria-hidden
           style={{
             position: 'absolute',
-            top: 0,
-            bottom: 0,
-            left: 0,
-            width: 6,
-            background: 'var(--lava-orange)',
+            inset: 0,
+            background:
+              'linear-gradient(180deg, rgba(22,22,22,.25) 0%, rgba(22,22,22,.05) 25%, rgba(22,22,22,.45) 60%, rgba(22,22,22,.92) 100%)',
             zIndex: 1,
           }}
         />
-        {/* Rotated label */}
-        <span
-          aria-hidden
-          className="maach-mono"
+        {/* Top header strip — eyebrow left, page tag right */}
+        <div
           style={{
             position: 'absolute',
-            left: 16,
-            top: '50%',
-            transform: 'rotate(-90deg) translateX(50%)',
-            transformOrigin: 'left center',
-            color: 'var(--lava-orange)',
-            letterSpacing: '.32em',
-            fontWeight: 700,
-            zIndex: 1,
+            top: 28,
+            left: 48,
+            right: 48,
+            zIndex: 3,
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            color: 'var(--off-white)',
           }}
         >
-          PLANIFICACIÓN · 2026
-        </span>
-        {/* Corner crosshairs */}
+          <span
+            className="maach-mono"
+            style={{ color: 'var(--lava-orange)' }}
+          >
+            MAACH · PLANIFICACIÓN 2026
+          </span>
+          <span className="maach-mono" style={{ color: 'var(--off-white)' }}>
+            § 07 / Espacios
+          </span>
+        </div>
+        {/* Orange L crosshairs */}
         <div
           aria-hidden
           style={{
@@ -69,7 +89,7 @@ export default function PageEspacios() {
             height: 22,
             borderTop: '2px solid var(--lava-orange)',
             borderRight: '2px solid var(--lava-orange)',
-            zIndex: 1,
+            zIndex: 3,
           }}
         />
         <div
@@ -77,131 +97,82 @@ export default function PageEspacios() {
           style={{
             position: 'absolute',
             bottom: 24,
-            right: 24,
+            left: 24,
             width: 22,
             height: 22,
             borderBottom: '2px solid var(--lava-orange)',
-            borderRight: '2px solid var(--lava-orange)',
-            zIndex: 1,
+            borderLeft: '2px solid var(--lava-orange)',
+            zIndex: 3,
           }}
         />
 
-        <div className="maach-container" style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 1400 }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56, alignItems: 'center' }}>
-            {/* LEFT: text */}
-            <div>
-              <span className="maach-mono" style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 16 }}>
-                § Planificación
-              </span>
-              <h1 className="h-display" style={{ fontSize: 'clamp(56px, 7.5vw, 128px)', marginBottom: 32 }}>
-                Es<span className="h-italic" style={{ color: 'var(--lava-orange)' }}>pacios.</span>
-              </h1>
-              <p style={{ fontSize: 20, color: 'var(--muted)', lineHeight: 1.5, marginBottom: 48 }}>
-                Soluciones integrales que transforman metros cuadrados en entornos productivos, coherentes y listos
-                para escalar.
-              </p>
-
-              {/* Stat row */}
-              <div
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(4, 1fr)',
-                  gap: 24,
-                  paddingTop: 28,
-                  borderTop: '1px solid var(--line)',
-                }}
-              >
-                {[
-                  { n: '04', l: 'Tipologías' },
-                  { n: '12', l: 'Sistemas' },
-                  { n: '48', l: 'Configs.' },
-                  { n: '09', l: 'Acabados' },
-                ].map((s) => (
-                  <div key={s.l}>
-                    <div
-                      style={{
-                        fontFamily: 'var(--display)',
-                        fontWeight: 700,
-                        fontSize: 36,
-                        lineHeight: 1,
-                        marginBottom: 6,
-                        color: 'var(--lava-orange)',
-                        letterSpacing: '-.02em',
-                      }}
-                    >
-                      {s.n}
-                    </div>
-                    <span className="maach-mono" style={{ color: 'var(--muted)' }}>
-                      {s.l}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* RIGHT: tall photo */}
-            <div
+        <div
+          className="maach-container"
+          style={{ position: 'relative', zIndex: 3, width: '100%', paddingBottom: 64, paddingTop: 64 }}
+        >
+          <div style={{ maxWidth: 1100, display: 'grid', gap: 32 }}>
+            <h1
+              className="h-display"
               style={{
-                position: 'relative',
-                aspectRatio: '4/5',
-                maxHeight: 'calc(100vh - 200px)',
-                border: '1px solid var(--line)',
-                overflow: 'hidden',
-                background: 'var(--surface)',
+                fontSize: 'clamp(64px, 9vw, 168px)',
+                color: 'var(--off-white)',
+                lineHeight: 0.92,
+                margin: 0,
               }}
             >
-              <img
-                src={asset('biblioteca-2.webp')}
-                alt=""
-                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
-              />
-              <div
-                aria-hidden
-                style={{
-                  position: 'absolute',
-                  inset: 0,
-                  background:
-                    'linear-gradient(180deg, rgba(22,22,22,.25) 0%, rgba(22,22,22,0) 30%, rgba(22,22,22,0) 60%, rgba(22,22,22,.65) 100%)',
-                }}
-              />
-              <span
-                className="maach-mono"
-                style={{
-                  position: 'absolute',
-                  top: 20,
-                  left: 20,
-                  background: 'var(--off-white)',
-                  color: 'var(--jet-black)',
-                  padding: '6px 10px',
-                }}
-              >
-                RENDER · ÁREA OPERATIVA
-              </span>
-              <div style={{ position: 'absolute', bottom: 24, left: 24, right: 24, color: 'var(--off-white)' }}>
-                <span className="maach-mono" style={{ color: 'var(--sand-grey)', display: 'block', marginBottom: 8 }}>
-                  ESC 1:50 · MAACH SISTEMA
-                </span>
-                <h2
-                  className="h-display"
-                  style={{ fontSize: 'clamp(28px, 3.5vw, 48px)', color: 'var(--off-white)', margin: 0 }}
+              Es<span className="h-italic" style={{ color: 'var(--lava-orange)' }}>pacios.</span>
+            </h1>
+            <p
+              style={{
+                fontSize: 20,
+                color: 'var(--off-white)',
+                lineHeight: 1.5,
+                maxWidth: 640,
+                margin: 0,
+              }}
+            >
+              Soluciones integrales que transforman metros cuadrados en entornos productivos, coherentes y listos para
+              escalar.
+            </p>
+          </div>
+
+          {/* Stat strip — bottom bar */}
+          <div
+            style={{
+              marginTop: 48,
+              paddingTop: 28,
+              borderTop: '1px solid rgba(228,226,227,.35)',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(4, 1fr)',
+              gap: 24,
+              maxWidth: 720,
+            }}
+          >
+            {[
+              { n: '04', l: 'Tipologías' },
+              { n: '12', l: 'Sistemas' },
+              { n: '48', l: 'Configs.' },
+              { n: '09', l: 'Acabados' },
+            ].map((s) => (
+              <div key={s.l}>
+                <div
+                  style={{
+                    fontFamily: 'var(--display)',
+                    fontWeight: 700,
+                    fontSize: 40,
+                    lineHeight: 1,
+                    marginBottom: 6,
+                    color: 'var(--lava-orange)',
+                    letterSpacing: '-.02em',
+                  }}
                 >
-                  Áreas Operativas.
-                </h2>
+                  {s.n}
+                </div>
+                <span className="maach-mono" style={{ color: 'var(--sand-grey)' }}>
+                  {s.l}
+                </span>
               </div>
-              {/* Orange L corner on image */}
-              <div
-                aria-hidden
-                style={{
-                  position: 'absolute',
-                  top: 14,
-                  right: 14,
-                  width: 18,
-                  height: 18,
-                  borderTop: '2px solid var(--lava-orange)',
-                  borderRight: '2px solid var(--lava-orange)',
-                }}
-              />
-            </div>
+            ))}
           </div>
         </div>
       </section>

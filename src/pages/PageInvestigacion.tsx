@@ -7,17 +7,63 @@ import { BLOGS } from '../data/blogs';
 export default function PageInvestigacion() {
   return (
     <Layout screenLabel="10 Investigación">
-      {/* HERO */}
+      {/* HERO — full-bleed background, brand-book style */}
       <section
+        className="invert"
         style={{
-          background: 'var(--soft)',
-          padding: '128px 0 96px',
-          borderBottom: '1px solid var(--line)',
           position: 'relative',
           overflow: 'hidden',
+          minHeight: 'calc(100vh - 80px)',
+          display: 'flex',
+          alignItems: 'flex-end',
+          background: 'var(--jet-black)',
+          color: 'var(--off-white)',
+          borderBottom: '1px solid var(--line)',
         }}
       >
-        {/* Orange L crosshair */}
+        <img
+          src={asset('proyectos/palladium/02.webp')}
+          alt=""
+          aria-hidden
+          style={{
+            position: 'absolute',
+            inset: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            zIndex: 0,
+          }}
+        />
+        <div
+          aria-hidden
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background:
+              'linear-gradient(180deg, rgba(22,22,22,.35) 0%, rgba(22,22,22,.1) 25%, rgba(22,22,22,.5) 55%, rgba(22,22,22,.92) 100%)',
+            zIndex: 1,
+          }}
+        />
+        {/* Top header strip */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 28,
+            left: 48,
+            right: 48,
+            zIndex: 3,
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}
+        >
+          <span className="maach-mono" style={{ color: 'var(--lava-orange)' }}>
+            MAACH · WORK INSIGHTS 2026
+          </span>
+          <span className="maach-mono" style={{ color: 'var(--off-white)' }}>
+            § 10 / Investigación
+          </span>
+        </div>
         <div
           aria-hidden
           style={{
@@ -28,40 +74,72 @@ export default function PageInvestigacion() {
             height: 22,
             borderTop: '2px solid var(--lava-orange)',
             borderRight: '2px solid var(--lava-orange)',
-            zIndex: 1,
+            zIndex: 3,
           }}
         />
-        <div className="maach-container" style={{ position: 'relative' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: 80, alignItems: 'center' }}>
-            <div>
-              <span className="maach-mono" style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 16 }}>
-                § MAACH Work Insights
-              </span>
-              <h1 className="h-display" style={{ fontSize: 'clamp(56px, 9vw, 144px)', marginBottom: 32 }}>
+        <div
+          aria-hidden
+          style={{
+            position: 'absolute',
+            bottom: 24,
+            left: 24,
+            width: 22,
+            height: 22,
+            borderBottom: '2px solid var(--lava-orange)',
+            borderLeft: '2px solid var(--lava-orange)',
+            zIndex: 3,
+          }}
+        />
+
+        <div
+          className="maach-container"
+          style={{ position: 'relative', zIndex: 3, width: '100%', paddingTop: 64, paddingBottom: 64 }}
+        >
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: 64, alignItems: 'end' }}>
+            <div style={{ display: 'grid', gap: 32 }}>
+              <h1
+                className="h-display"
+                style={{
+                  fontSize: 'clamp(56px, 9vw, 144px)',
+                  margin: 0,
+                  color: 'var(--off-white)',
+                  lineHeight: 0.92,
+                }}
+              >
                 Investigación<br />
                 <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>y contexto.</span>
               </h1>
-              <p style={{ fontSize: 20, color: 'var(--muted)', lineHeight: 1.5 }}>
+              <p
+                style={{
+                  fontSize: 20,
+                  color: 'var(--off-white)',
+                  lineHeight: 1.5,
+                  maxWidth: 560,
+                  margin: 0,
+                }}
+              >
                 El diseño de nuestro mobiliario no surge de la intuición, sino de la observación sistemática y el
                 análisis de cómo cambian las dinámicas laborales a nivel global.
               </p>
             </div>
 
+            {/* Quote card — sits on top of the photo */}
             <div
               style={{
-                background: 'var(--off-white)',
-                border: '1px solid var(--line)',
-                padding: 56,
+                background: 'rgba(228,226,227,.06)',
+                border: '1px solid rgba(228,226,227,.25)',
+                padding: 40,
                 position: 'relative',
+                backdropFilter: 'blur(6px)',
               }}
             >
               <span
                 style={{
                   position: 'absolute',
-                  top: 24,
-                  right: 32,
+                  top: 16,
+                  right: 24,
                   fontFamily: 'var(--display)',
-                  fontSize: 96,
+                  fontSize: 80,
                   color: 'var(--lava-orange)',
                   lineHeight: 1,
                   letterSpacing: '-.04em',
@@ -73,15 +151,16 @@ export default function PageInvestigacion() {
                 style={{
                   fontFamily: 'var(--display)',
                   fontWeight: 600,
-                  fontSize: 36,
-                  lineHeight: 1.1,
-                  marginBottom: 24,
+                  fontSize: 28,
+                  lineHeight: 1.15,
+                  marginBottom: 20,
                   letterSpacing: '-.01em',
+                  color: 'var(--off-white)',
                 }}
               >
                 68% de las oficinas hoy requieren configuraciones adaptables a equipos híbridos.
               </div>
-              <span className="maach-mono" style={{ color: 'var(--muted)' }}>
+              <span className="maach-mono" style={{ color: 'var(--sand-grey)' }}>
                 — Reporte MAACH Work Insights 2025
               </span>
             </div>
