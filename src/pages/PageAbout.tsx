@@ -2,8 +2,10 @@ import { asset } from '../lib/asset';
 import { Link } from 'react-router-dom';
 import { Layout } from '../components/Layout';
 import { IconArrow } from '../components/icons';
+import { useT } from '../i18n/i18n';
 
 export default function PageAbout() {
+  const t = useT();
   return (
     <Layout screenLabel="12 Sobre MAACH">
       {/* BRANDBOOK-STYLE HERO */}
@@ -60,10 +62,10 @@ export default function PageAbout() {
               MAACH
             </span>
             <span className="maach-mono" style={{ color: 'var(--off-white)' }}>
-              Brandbook
+              {t('about.brandbook')}
             </span>
             <span className="maach-mono" style={{ color: 'var(--off-white)' }}>
-              Estratégia de Marca
+              {t('about.section')}
             </span>
           </div>
 
@@ -82,8 +84,7 @@ export default function PageAbout() {
                 margin: 0,
               }}
             >
-              Diseñar y fabricar mobiliario<br />
-              que funcione en el trabajo real.
+              {t('about.hero.h1')}
             </h1>
           </div>
 
@@ -102,16 +103,10 @@ export default function PageAbout() {
             }}
           >
             <p style={{ fontFamily: 'var(--mono)', fontSize: 14, lineHeight: 1.65, letterSpacing: '.01em', margin: 0 }}>
-              MAACH existe para diseñar, fabricar y desarrollar mobiliario corporativo a partir de procesos
-              industriales sólidos, criterios de ingeniería y una comprensión profunda del uso real en los espacios
-              de trabajo. La marca transforma la fabricación en un sistema de diseño funcional, donde cada decisión
-              responde a estructura, ergonomía, durabilidad y desempeño en el tiempo.
+              {t('about.hero.body.1')}
             </p>
             <p style={{ fontFamily: 'var(--mono)', fontSize: 14, lineHeight: 1.65, letterSpacing: '.01em', margin: 0 }}>
-              A través del co-diseño con arquitectos, interioristas y clientes, MAACH crea soluciones adaptables que
-              integran materiales, tecnología y producción local con estándares internacionales. Su propósito es
-              equipar entornos de trabajo eficientes, coherentes y preparados para evolucionar, asegurando productos
-              que se validan en el uso cotidiano, la productividad y la experiencia de las personas.
+              {t('about.hero.body.2')}
             </p>
           </div>
 
@@ -155,8 +150,8 @@ export default function PageAbout() {
               margin: 0,
             }}
           >
-            Propósito<br />
-            De&nbsp;&nbsp;Marca
+            {t('about.purpose.title.1')}<br />
+            {t('about.purpose.title.2')}
           </h2>
 
           <IconArrow size={48} rotate={-45} style={{ color: 'var(--off-white)' }} />
@@ -172,16 +167,10 @@ export default function PageAbout() {
             }}
           >
             <p style={{ margin: 0 }}>
-              El propósito de marca en MAACH funciona como un criterio rector que guía de forma consistente las
-              decisiones de diseño, fabricación y comunicación. Establece una lógica clara basada en el desempeño y
-              el uso real, asegurando coherencia entre el producto, la identidad visual y el mensaje de la marca. Al
-              mismo tiempo, permite alinear a los equipos
+              {t('about.purpose.body.1')}
             </p>
             <p style={{ margin: 0 }}>
-              internos y aliados estratégicos bajo una misma forma de trabajar, facilitando la toma de decisiones y
-              la evolución del portafolio. Más que una declaración conceptual, el propósito ayuda a MAACH a
-              diferenciarse en el mercado, sostener su identidad en el tiempo y construir una marca sólida,
-              funcional y preparada para escalar.
+              {t('about.purpose.body.2')}
             </p>
           </div>
 
@@ -234,10 +223,10 @@ export default function PageAbout() {
         <div className="maach-container">
           <div style={{ marginBottom: 64 }}>
             <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 12 }}>
-              § 01 / Valores
+              {t('about.values.eyebrow')}
             </span>
             <h2 className="h-display" style={{ fontSize: 'clamp(56px, 8vw, 128px)' }}>
-              Cómo trabajamos.
+              {t('about.values.title')}
             </h2>
           </div>
 
@@ -250,12 +239,12 @@ export default function PageAbout() {
             }}
           >
             {[
-              { n: '01', title: 'Diseño funcional', body: 'Cada decisión de diseño responde a una necesidad real de uso. La forma existe para cumplir una función y mejorar el desempeño del trabajo cotidiano.' },
-              { n: '02', title: 'Ingeniería aplicada', body: 'La marca se construye desde procesos industriales sólidos, precisión técnica y control productivo. La ingeniería garantiza durabilidad y consistencia.' },
-              { n: '03', title: 'Co-diseño colaborativo', body: 'MAACH trabaja junto a arquitectos, interioristas y clientes para desarrollar soluciones adaptables. El diseño es un proceso compartido.' },
-              { n: '04', title: 'Calidad que perdura', body: 'Productos pensados para resistir el uso intensivo y mantenerse vigentes en el tiempo. La durabilidad es criterio central en materiales y construcción.' },
-              { n: '05', title: 'Ergonomía y bienestar', body: 'El mobiliario se diseña considerando la relación entre cuerpo, espacio y trabajo. Confort y experiencia de uso son parte del desempeño.' },
-              { n: '06', title: 'Fabricación con visión', body: 'Integramos producción local con estándares internacionales, combinando eficiencia, tecnología y responsabilidad para las exigencias actuales.' },
+              { n: '01', title: t('about.value.01.title'), body: t('about.value.01.body') },
+              { n: '02', title: t('about.value.02.title'), body: t('about.value.02.body') },
+              { n: '03', title: t('about.value.03.title'), body: t('about.value.03.body') },
+              { n: '04', title: t('about.value.04.title'), body: t('about.value.04.body') },
+              { n: '05', title: t('about.value.05.title'), body: t('about.value.05.body') },
+              { n: '06', title: t('about.value.06.title'), body: t('about.value.06.body') },
             ].map((v, i) => (
               <div
                 key={v.n}
@@ -270,7 +259,7 @@ export default function PageAbout() {
                 }}
               >
                 <span className="maach-mono" style={{ color: 'var(--lava-orange)' }}>
-                  {v.n} / VALOR
+                  {v.n} / {t('about.value.label')}
                 </span>
                 <div>
                   <h3
@@ -310,21 +299,21 @@ export default function PageAbout() {
         />
         <div className="maach-container" style={{ position: 'relative', textAlign: 'center', maxWidth: 1200 }}>
           <span className="maach-mono" style={{ color: 'var(--sand-grey)', display: 'block', marginBottom: 32 }}>
-            MAACH · MANIFIESTO
+            {t('about.manifesto.eyebrow')}
           </span>
           <h2
             className="h-display"
             style={{ fontSize: 'clamp(40px, 6vw, 88px)', color: 'var(--off-white)', lineHeight: 1.1 }}
           >
-            "No diseñamos objetos para
-            <span style={{ color: 'var(--lava-orange)' }}> decorar espacios </span>
-            — diseñamos
-            <span className="h-italic" style={{ color: 'var(--sand-grey)' }}> herramientas estructurales </span>
-            que habilitan el trabajo."
+            {t('about.manifesto.body.1')}
+            <span style={{ color: 'var(--lava-orange)' }}>{t('about.manifesto.body.2')}</span>
+            {t('about.manifesto.body.3')}
+            <span className="h-italic" style={{ color: 'var(--sand-grey)' }}>{t('about.manifesto.body.4')}</span>
+            {t('about.manifesto.body.5')}
           </h2>
           <div style={{ width: 64, height: 1, background: 'var(--sand-grey)', margin: '48px auto 24px' }} />
           <span className="maach-mono" style={{ color: 'var(--sand-grey)' }}>
-            Estudio MAACH · 2026
+            {t('about.manifesto.source')}
           </span>
         </div>
       </section>
@@ -333,10 +322,10 @@ export default function PageAbout() {
         <div className="maach-container">
           <div style={{ marginBottom: 64 }}>
             <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 12 }}>
-              § 02 / Trayectoria
+              {t('about.timeline.eyebrow')}
             </span>
             <h2 className="h-display" style={{ fontSize: 64 }}>
-              Historia.
+              {t('about.timeline.title')}
             </h2>
           </div>
 
@@ -353,11 +342,11 @@ export default function PageAbout() {
             />
 
             {[
-              { y: '2018', title: 'Fundación', body: 'Nace MAACH como respuesta a la necesidad de mobiliario industrial corporativo fabricado en México con estándares internacionales.' },
-              { y: '2020', title: 'Primera planta productiva', body: 'Apertura de planta de 2,400 m² en CDMX. Integración de procesos de aluminio extruido y maderas técnicas.' },
-              { y: '2022', title: 'Co-diseño con arquitectos', body: 'Lanzamiento del programa de colaboración con estudios. Más de 40 proyectos co-desarrollados en 18 meses.' },
-              { y: '2024', title: 'Sistema BIM completo', body: 'Toda la línea disponible en formatos BIM/CAD para integración directa a planos arquitectónicos.' },
-              { y: '2026', title: 'Sistema MAACH 2026', body: 'Renovación completa del lenguaje de marca y portafolio. Tres colecciones nuevas: Coalesse, Viccarbe, West Elm.' },
+              { y: '2018', title: t('about.tl.2018.title'), body: t('about.tl.2018.body') },
+              { y: '2020', title: t('about.tl.2020.title'), body: t('about.tl.2020.body') },
+              { y: '2022', title: t('about.tl.2022.title'), body: t('about.tl.2022.body') },
+              { y: '2024', title: t('about.tl.2024.title'), body: t('about.tl.2024.body') },
+              { y: '2026', title: t('about.tl.2026.title'), body: t('about.tl.2026.body') },
             ].map((m, i) => (
               <div
                 key={m.y}
@@ -413,10 +402,10 @@ export default function PageAbout() {
           >
             <div>
               <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 12 }}>
-                § 03 / Equipo
+                {t('about.team.eyebrow')}
               </span>
               <h2 className="h-display" style={{ fontSize: 64 }}>
-                Liderazgo.
+                {t('about.team.title')}
               </h2>
             </div>
             <Link
@@ -430,16 +419,16 @@ export default function PageAbout() {
                 gap: 12,
               }}
             >
-              Únete al equipo <IconArrow size={14} />
+              {t('about.team.join')} <IconArrow size={14} />
             </Link>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16 }}>
             {[
-              { name: 'Roberto A. Salgado', role: 'Gerente Comercial', init: 'RS' },
-              { name: 'María Castellanos', role: 'Directora de Diseño', init: 'MC' },
-              { name: 'Daniel Pratt', role: 'Ingeniería de Producto', init: 'DP' },
-              { name: 'Sofía Alba', role: 'Dirección de Operaciones', init: 'SA' },
+              { name: 'Roberto A. Salgado', role: t('about.team.01.role'), init: 'RS' },
+              { name: 'María Castellanos', role: t('about.team.02.role'), init: 'MC' },
+              { name: 'Daniel Pratt', role: t('about.team.03.role'), init: 'DP' },
+              { name: 'Sofía Alba', role: t('about.team.04.role'), init: 'SA' },
             ].map((m) => (
               <div key={m.name} style={{ border: '1px solid var(--line)', background: 'var(--off-white)' }}>
                 <div
@@ -470,7 +459,7 @@ export default function PageAbout() {
                     className="maach-mono"
                     style={{ position: 'absolute', bottom: 12, left: 12, color: 'var(--muted)' }}
                   >
-                    RETRATO_OFICIAL
+                    {t('about.team.portrait')}
                   </span>
                 </div>
                 <div style={{ padding: 24 }}>

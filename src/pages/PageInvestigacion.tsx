@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import { Layout } from '../components/Layout';
 import { IconArrow } from '../components/icons';
 import { BLOGS } from '../data/blogs';
+import { useT } from '../i18n/i18n';
 
 export default function PageInvestigacion() {
+  const t = useT();
   return (
     <Layout screenLabel="10 Investigación">
       {/* HERO — full-bleed background, brand-book style */}
@@ -58,10 +60,10 @@ export default function PageInvestigacion() {
           }}
         >
           <span className="maach-mono" style={{ color: 'var(--lava-orange)' }}>
-            MAACH · WORK INSIGHTS 2026
+            {t('inv.hero.eyebrow')}
           </span>
           <span className="maach-mono" style={{ color: 'var(--off-white)' }}>
-            § 10 / Investigación
+            {t('inv.hero.section')}
           </span>
         </div>
         <div
@@ -106,8 +108,8 @@ export default function PageInvestigacion() {
                   lineHeight: 0.92,
                 }}
               >
-                Investigación<br />
-                <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>y contexto.</span>
+                {t('inv.hero.title.1')}<br />
+                <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>{t('inv.hero.title.2')}</span>
               </h1>
               <p
                 style={{
@@ -118,8 +120,7 @@ export default function PageInvestigacion() {
                   margin: 0,
                 }}
               >
-                El diseño de nuestro mobiliario no surge de la intuición, sino de la observación sistemática y el
-                análisis de cómo cambian las dinámicas laborales a nivel global.
+                {t('inv.hero.body')}
               </p>
             </div>
 
@@ -158,10 +159,10 @@ export default function PageInvestigacion() {
                   color: 'var(--off-white)',
                 }}
               >
-                68% de las oficinas hoy requieren configuraciones adaptables a equipos híbridos.
+                {t('inv.quote.body')}
               </div>
               <span className="maach-mono" style={{ color: 'var(--sand-grey)' }}>
-                — Reporte MAACH Work Insights 2025
+                {t('inv.quote.source')}
               </span>
             </div>
           </div>
@@ -183,14 +184,14 @@ export default function PageInvestigacion() {
           >
             <div>
               <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 12 }}>
-                § Editorial · MAACH Research
+                {t('inv.list.eyebrow')}
               </span>
               <h2 className="h-display" style={{ fontSize: 'clamp(48px, 6vw, 88px)' }}>
-                Lecturas <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>recomendadas.</span>
+                {t('inv.list.title.1')} <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>{t('inv.list.title.2')}</span>
               </h2>
             </div>
             <span className="maach-mono" style={{ color: 'var(--muted)' }}>
-              03 artículos · MAACH 2026
+              {t('inv.list.count')}
             </span>
           </div>
 
@@ -286,7 +287,7 @@ export default function PageInvestigacion() {
                       alignSelf: 'flex-start',
                     }}
                   >
-                    Leer artículo <IconArrow size={14} />
+                    {t('blog.read')} <IconArrow size={14} />
                   </span>
                 </div>
               </Link>
@@ -313,17 +314,17 @@ export default function PageInvestigacion() {
         />
         <div className="maach-container" style={{ position: 'relative', maxWidth: 1100 }}>
           <span className="maach-mono" style={{ color: 'var(--sand-grey)', display: 'block', marginBottom: 24 }}>
-            Manifiesto · MAACH 2026
+            {t('inv.manifesto.eyebrow')}
           </span>
           <h2
             className="h-display"
             style={{ fontSize: 'clamp(40px, 5vw, 72px)', color: 'var(--off-white)', lineHeight: 1.1 }}
           >
-            "Investigamos el trabajo real para diseñar
-            <span style={{ color: 'var(--lava-orange)' }}> mobiliario que responda</span> a sus exigencias verdaderas — no a tendencias estéticas."
+            {t('inv.manifesto.body.1')}
+            <span style={{ color: 'var(--lava-orange)' }}>{t('inv.manifesto.body.2')}</span>{t('inv.manifesto.body.3')}
           </h2>
           <span className="maach-mono" style={{ color: 'var(--sand-grey)', marginTop: 32, display: 'block' }}>
-            — Equipo MAACH Research
+            {t('inv.manifesto.source')}
           </span>
         </div>
       </section>

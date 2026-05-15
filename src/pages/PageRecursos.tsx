@@ -2,6 +2,7 @@ import { useState, type CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
 import { Layout } from '../components/Layout';
 import { asset } from '../lib/asset';
+import { useT } from '../i18n/i18n';
 import {
   IconBookmark,
   IconCheck,
@@ -24,6 +25,7 @@ const btnIcon: CSSProperties = {
 };
 
 export default function PageRecursos() {
+  const t = useT();
   const [selected, setSelected] = useState<Set<number>>(new Set([1, 3]));
   const toggle = (id: number) =>
     setSelected((s) => {
@@ -99,10 +101,10 @@ export default function PageRecursos() {
           }}
         >
           <span className="maach-mono" style={{ color: 'var(--lava-orange)' }}>
-            MAACH · RECURSOS 2026
+            {t('rec.hero.eyebrow')}
           </span>
           <span className="maach-mono" style={{ color: 'var(--off-white)' }}>
-            § 11 / Biblioteca
+            {t('rec.hero.section')}
           </span>
         </div>
         <div
@@ -138,12 +140,12 @@ export default function PageRecursos() {
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 24 }} className="maach-mono">
             <Link to="/" style={{ color: 'var(--sand-grey)' }}>
-              Inicio
+              {t('rec.hero.crumb.home')}
             </Link>
             <IconChevronRight size={10} style={{ color: 'var(--sand-grey)' }} />
-            <span style={{ color: 'var(--lava-orange)' }}>Recursos de diseño</span>
+            <span style={{ color: 'var(--lava-orange)' }}>{t('rec.hero.crumb.section')}</span>
             <IconChevronRight size={10} style={{ color: 'var(--sand-grey)' }} />
-            <span style={{ color: 'var(--off-white)' }}>Biblioteca</span>
+            <span style={{ color: 'var(--off-white)' }}>{t('rec.hero.crumb.current')}</span>
           </div>
           <h1
             className="h-display"
@@ -154,10 +156,10 @@ export default function PageRecursos() {
               lineHeight: 0.95,
             }}
           >
-            Biblioteca <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>de Documentos.</span>
+            {t('rec.hero.title.1')} <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>{t('rec.hero.title.2')}</span>
           </h1>
           <p style={{ fontSize: 18, color: 'var(--off-white)', maxWidth: 640, lineHeight: 1.55 }}>
-            Descarga folletos, especificaciones técnicas, fichas de producto, planos CAD y modelos 3D / BIM.
+            {t('rec.hero.body')}
           </p>
         </div>
       </section>
@@ -168,7 +170,7 @@ export default function PageRecursos() {
             <aside style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
               <div style={{ background: 'var(--off-white)', border: '1px solid var(--line)', padding: 24 }}>
                 <span className="maach-mono" style={{ display: 'block', marginBottom: 12 }}>
-                  Tipo de documento
+                  {t('rec.filter.type')}
                 </span>
                 <div
                   style={{
@@ -182,7 +184,7 @@ export default function PageRecursos() {
                     cursor: 'pointer',
                   }}
                 >
-                  Documentos & guías
+                  {t('rec.filter.docs_guides')}
                   <IconChevronDown size={11} />
                 </div>
                 <button
@@ -198,7 +200,7 @@ export default function PageRecursos() {
                   }}
                   className="maach-mono"
                 >
-                  APLICAR FILTRO <IconChevronRight size={10} />
+                  {t('rec.filter.apply')} <IconChevronRight size={10} />
                 </button>
               </div>
 
@@ -211,9 +213,9 @@ export default function PageRecursos() {
                     marginBottom: 16,
                   }}
                 >
-                  <span className="maach-mono">Buscar</span>
+                  <span className="maach-mono">{t('rec.filter.search')}</span>
                   <button className="maach-mono" style={{ color: 'var(--muted)' }}>
-                    Limpiar
+                    {t('rec.filter.clear')}
                   </button>
                 </div>
                 <div style={{ position: 'relative', marginBottom: 32 }}>
@@ -229,7 +231,7 @@ export default function PageRecursos() {
                   />
                   <input
                     type="text"
-                    placeholder="buscar..."
+                    placeholder={t('rec.filter.search_placeholder')}
                     style={{
                       width: '100%',
                       border: '1px solid var(--line)',
@@ -241,7 +243,7 @@ export default function PageRecursos() {
                 </div>
 
                 <div style={{ paddingBottom: 16, borderBottom: '1px solid var(--line)', marginBottom: 16 }}>
-                  <span className="maach-mono">Refinar resultados</span>
+                  <span className="maach-mono">{t('rec.filter.refine')}</span>
                 </div>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
@@ -249,7 +251,7 @@ export default function PageRecursos() {
                     style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}
                     className="maach-mono"
                   >
-                    Tipo de documento <IconChevronDown size={11} />
+                    {t('rec.filter.type')} <IconChevronDown size={11} />
                   </button>
                   {[
                     { l: 'Spec Guides', n: '34', checked: false },
@@ -293,7 +295,7 @@ export default function PageRecursos() {
                     </label>
                   ))}
                   <button className="maach-mono" style={{ color: 'var(--lava-orange)', textAlign: 'left', marginTop: 8 }}>
-                    + Mostrar más
+                    {t('rec.filter.show_more')}
                   </button>
                 </div>
               </div>
@@ -310,16 +312,16 @@ export default function PageRecursos() {
                 }}
               >
                 <div style={{ width: 140, flexShrink: 0 }} className="maach-mono">
-                  Tipo
+                  {t('rec.col.type')}
                 </div>
                 <div style={{ flex: 1 }} className="maach-mono">
-                  Nombre del documento
+                  {t('rec.col.name')}
                 </div>
                 <div style={{ width: 200, flexShrink: 0 }} className="maach-mono">
-                  Producto
+                  {t('rec.col.product')}
                 </div>
                 <div style={{ width: 70, flexShrink: 0 }} className="maach-mono">
-                  Tamaño
+                  {t('rec.col.size')}
                 </div>
                 <button
                   className="maach-mono"
@@ -331,7 +333,7 @@ export default function PageRecursos() {
                     padding: '6px 10px',
                   }}
                 >
-                  SELECCIONAR{' '}
+                  {t('rec.col.select')}{' '}
                   <span
                     style={{ width: 8, height: 8, borderRadius: '50%', border: '1px solid var(--muted)' }}
                   />
@@ -416,10 +418,10 @@ export default function PageRecursos() {
                 }}
               >
                 <span className="maach-mono" style={{ color: 'var(--muted)' }}>
-                  {selected.size} de {documents.length} seleccionados
+                  {selected.size} / {documents.length} {t('rec.footer.selected')}
                 </span>
                 <button className="btn-primary" style={{ padding: '12px 20px' }}>
-                  <IconDownload size={14} /> Descargar selección
+                  <IconDownload size={14} /> {t('rec.footer.download_selection')}
                 </button>
               </div>
             </div>

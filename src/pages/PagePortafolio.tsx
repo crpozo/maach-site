@@ -2,8 +2,10 @@ import { asset } from '../lib/asset';
 import { Link } from 'react-router-dom';
 import { Layout } from '../components/Layout';
 import { IconArrow, IconPin } from '../components/icons';
+import { useT } from '../i18n/i18n';
 
 export default function PagePortafolio() {
+  const t = useT();
   const projects = [
     { id: '01', title: 'Proyecto CPN', location: 'Quito, EC', scope: 'Edificio corporativo matriz · Recepción, salas y áreas operativas', area: '2,400 m²', year: '2025', img: asset('proyectos/cpn/01.webp') },
     { id: '02', title: 'Palladium', location: 'Quito, EC', scope: 'Estaciones operativas, mesas de juntas y zonas privadas', area: '1,200 m²', year: '2024', img: asset('proyectos/palladium/02.webp') },
@@ -65,10 +67,10 @@ export default function PagePortafolio() {
           }}
         >
           <span className="maach-mono" style={{ color: 'var(--lava-orange)' }}>
-            MAACH · PORTAFOLIO 2026
+            {t('port.hero.eyebrow')}
           </span>
           <span className="maach-mono" style={{ color: 'var(--off-white)' }}>
-            § 08 / Proyectos · 2024 — 2026
+            {t('port.hero.section')}
           </span>
         </div>
         {/* Orange L corners */}
@@ -105,7 +107,7 @@ export default function PagePortafolio() {
               className="h-display"
               style={{ fontSize: 'clamp(64px, 9vw, 168px)', color: 'var(--off-white)', lineHeight: 0.92, margin: 0 }}
             >
-              Porta<span className="h-italic" style={{ color: 'var(--lava-orange)' }}>folio.</span>
+              {t('port.hero.title.1')}<span className="h-italic" style={{ color: 'var(--lava-orange)' }}>{t('port.hero.title.2')}</span>
             </h1>
             <p
               style={{
@@ -116,7 +118,7 @@ export default function PagePortafolio() {
                 margin: 0,
               }}
             >
-              Selección de proyectos donde el diseño arquitectónico y la funcionalidad industrial convergen.
+              {t('port.hero.body')}
             </p>
           </div>
 
@@ -132,10 +134,10 @@ export default function PagePortafolio() {
             }}
           >
             {[
-              { n: '+ 240', l: 'Proyectos completados' },
-              { n: '18', l: 'Países atendidos' },
-              { n: '84,000', l: 'm² instalados' },
-              { n: '97%', l: 'Clientes recurrentes' },
+              { n: '+ 240', l: t('port.m.completed') },
+              { n: '18', l: t('port.m.countries') },
+              { n: '84,000', l: t('port.m.installed') },
+              { n: '97%', l: t('port.m.recurring') },
             ].map((m) => (
               <div key={m.l}>
                 <div
@@ -256,7 +258,7 @@ export default function PagePortafolio() {
                   paddingBottom: 4,
                 }}
               >
-                Descubrir proyecto <IconArrow size={14} />
+                {t('port.discover')} <IconArrow size={14} />
               </span>
             </div>
           </div>

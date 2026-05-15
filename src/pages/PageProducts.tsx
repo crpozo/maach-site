@@ -10,6 +10,7 @@ import {
   IconPlus,
 } from '../components/icons';
 import { PRODUCTS } from '../data/productos';
+import { useT } from '../i18n/i18n';
 
 type GridProduct = {
   id: string;
@@ -22,6 +23,7 @@ type GridProduct = {
 };
 
 export default function PageProducts() {
+  const t = useT();
   const catalogCategories = [
     { name: 'Sillonería', items: ['Sillas presidente', 'Sillas gerenciales', 'Sillas operativas', 'Sillas de visita', 'Colectividades', 'Sofás'] },
     { name: 'Escritorios + Estaciones de trabajo', items: ['Escritorios gerente', 'Escritorios operativos', 'Estaciones de trabajo', 'Escritorios regulables'] },
@@ -148,20 +150,20 @@ export default function PageProducts() {
         <div className="maach-container" style={{ position: 'relative', zIndex: 3 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 24 }}>
             <span className="maach-mono" style={{ color: 'var(--sand-grey)' }}>
-              Inicio
+              {t('prod.crumb.home')}
             </span>
             <IconChevronRight size={11} style={{ color: 'var(--sand-grey)' }} />
-            <span className="maach-mono" style={{ color: 'var(--lava-orange)' }}>Catálogo</span>
+            <span className="maach-mono" style={{ color: 'var(--lava-orange)' }}>{t('prod.crumb.catalog')}</span>
           </div>
           <h1
             className="h-display"
             style={{ fontSize: 'clamp(56px, 8.5vw, 144px)', marginBottom: 32, color: 'var(--off-white)' }}
           >
-            Catálogo<br />
-            <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>de Productos.</span>
+            {t('prod.hero.title.1')}<br />
+            <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>{t('prod.hero.title.2')}</span>
           </h1>
           <p style={{ fontSize: 18, color: 'var(--sand-grey)', maxWidth: 640 }}>
-            Soluciones modulares diseñadas bajo estrictos criterios de ergonomía, ingeniería aplicada y desempeño en uso intensivo.
+            {t('prod.hero.body')}
           </p>
         </div>
       </section>
@@ -182,7 +184,7 @@ export default function PageProducts() {
               >
                 <IconFilter size={14} />
                 <span className="maach-mono" style={{ fontWeight: 700 }}>
-                  Catálogo · Filtros
+                  {t('prod.filter.title')}
                 </span>
               </div>
 
@@ -268,7 +270,7 @@ export default function PageProducts() {
                 }}
               >
                 <span className="maach-mono" style={{ color: 'var(--muted)' }}>
-                  {filtered.length} productos · {selectedSub || 'Todas las categorías'}
+                  {filtered.length} {t('prod.count_label_n')} · {selectedSub || t('prod.count_label_all')}
                 </span>
                 <div
                   className="maach-mono"
@@ -281,7 +283,7 @@ export default function PageProducts() {
                     cursor: 'pointer',
                   }}
                 >
-                  Ordenar por <IconChevronDown size={10} />
+                  {t('prod.sort_by')} <IconChevronDown size={10} />
                 </div>
               </div>
 

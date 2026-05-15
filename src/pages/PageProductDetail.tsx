@@ -10,8 +10,10 @@ import {
   IconTool,
 } from '../components/icons';
 import { getProductBySlug } from '../data/productos';
+import { useT } from '../i18n/i18n';
 
 export default function PageProductDetail() {
+  const t = useT();
   const params = useParams();
   const id = params.id || 'producto';
 
@@ -118,7 +120,7 @@ export default function PageProductDetail() {
                     className="maach-mono"
                     style={{ background: 'var(--jet-black)', color: 'var(--off-white)', padding: '5px 10px' }}
                   >
-                    FOTOGRAFÍA_ESTUDIO
+                    {t('pd.photo')}
                   </span>
                 </div>
               </div>
@@ -164,17 +166,17 @@ export default function PageProductDetail() {
                 }}
               >
                 <button className="btn-primary" style={{ flex: 1, justifyContent: 'center' }}>
-                  Contactar asesor
+                  {t('pd.contact_advisor')}
                 </button>
                 <button className="btn-ghost" style={{ flex: 1, justifyContent: 'center' }}>
-                  <IconDownload size={14} /> BIM / CAD
+                  <IconDownload size={14} /> {t('pd.bim_cad')}
                 </button>
               </div>
 
               <div style={{ marginBottom: 32 }}>
                 <h3 style={{ marginBottom: 16 }} className="maach-mono">
                   <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
-                    <IconTool size={14} /> Características técnicas
+                    <IconTool size={14} /> {t('pd.tech_features')}
                   </span>
                 </h3>
                 <ul
@@ -211,7 +213,7 @@ export default function PageProductDetail() {
               <div style={{ marginBottom: 32 }}>
                 <h3 style={{ marginBottom: 16 }} className="maach-mono">
                   <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
-                    <IconRuler size={14} /> Dimensiones generales
+                    <IconRuler size={14} /> {t('pd.dimensions')}
                   </span>
                 </h3>
                 <div
@@ -225,12 +227,12 @@ export default function PageProductDetail() {
                   }}
                 >
                   {[
-                    ['Altura total', '750 mm'],
-                    ['Ancho total', '1200 — 1800 mm'],
-                    ['Profundidad', '450 — 500 mm'],
-                    ['Tolerancia', '± 2 mm'],
-                    ['Peso', '32 kg'],
-                    ['Carga máx.', '120 kg'],
+                    [t('pd.dim.height'), '750 mm'],
+                    [t('pd.dim.width'), '1200 — 1800 mm'],
+                    [t('pd.dim.depth'), '450 — 500 mm'],
+                    [t('pd.dim.tolerance'), '± 2 mm'],
+                    [t('pd.dim.weight'), '32 kg'],
+                    [t('pd.dim.load'), '120 kg'],
                   ].map(([k, v]) => (
                     <div key={k}>
                       <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 4 }}>
@@ -245,7 +247,7 @@ export default function PageProductDetail() {
               <div>
                 <h3 style={{ marginBottom: 16 }} className="maach-mono">
                   <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
-                    <IconFile size={14} /> Documentos & recursos
+                    <IconFile size={14} /> {t('pd.docs')}
                   </span>
                 </h3>
                 <div
@@ -260,10 +262,10 @@ export default function PageProductDetail() {
                 >
                   {(
                     [
-                      { name: 'Ficha técnica', ext: 'PDF', href: real?.sheets?.pdf, fileName: `${real?.slug ?? id}.pdf` },
-                      { name: 'Modelo 3D', ext: 'SKP', href: real?.sheets?.skp, fileName: `${real?.slug ?? id}.skp` },
-                      { name: 'Modelo Revit', ext: 'RFA', href: real?.sheets?.rfa, fileName: `${real?.slug ?? id}.rfa` },
-                      { name: 'Plano CAD', ext: 'DWG', href: real?.sheets?.dwg, fileName: `${real?.slug ?? id}.dwg` },
+                      { name: t('pd.doc.sheet'), ext: 'PDF', href: real?.sheets?.pdf, fileName: `${real?.slug ?? id}.pdf` },
+                      { name: t('pd.doc.3d'), ext: 'SKP', href: real?.sheets?.skp, fileName: `${real?.slug ?? id}.skp` },
+                      { name: t('pd.doc.revit'), ext: 'RFA', href: real?.sheets?.rfa, fileName: `${real?.slug ?? id}.rfa` },
+                      { name: t('pd.doc.cad'), ext: 'DWG', href: real?.sheets?.dwg, fileName: `${real?.slug ?? id}.dwg` },
                     ] as Array<{ name: string; ext: string; href?: string; fileName?: string }>
                   ).map((d) => {
                     const isLive = !!d.href;
@@ -299,7 +301,7 @@ export default function PageProductDetail() {
                               className="maach-mono"
                               style={{ color: 'var(--muted)', marginLeft: 12, fontSize: 10 }}
                             >
-                              · próximamente
+                              {t('pd.doc.soon')}
                             </span>
                           )}
                         </div>
@@ -317,10 +319,10 @@ export default function PageProductDetail() {
       <section style={{ background: 'var(--soft)', borderTop: '1px solid var(--line)', padding: '96px 0' }}>
         <div className="maach-container">
           <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 12 }}>
-            § Línea modular
+            {t('pd.related.eyebrow')}
           </span>
           <h2 className="h-display" style={{ fontSize: 56, marginBottom: 48 }}>
-            Productos relacionados.
+            {t('pd.related.title')}
           </h2>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }}>

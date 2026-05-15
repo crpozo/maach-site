@@ -2,6 +2,7 @@ import { asset } from '../lib/asset';
 import { useState } from 'react';
 import { Layout } from '../components/Layout';
 import { IconArrow } from '../components/icons';
+import { useT } from '../i18n/i18n';
 
 type FormState = {
   nombre: string;
@@ -11,6 +12,7 @@ type FormState = {
 };
 
 export default function PageContacto() {
+  const t = useT();
   const [form, setForm] = useState<FormState>({
     nombre: '',
     correo: '',
@@ -106,15 +108,14 @@ export default function PageContacto() {
                   color: 'var(--lava-orange)',
                 }}
               >
-                MAACH · CONTACTO
+                {t('cont.tag')}
               </span>
               <h1 className="h-display" style={{ fontSize: 'clamp(56px, 7vw, 112px)', marginBottom: 32 }}>
-                Hablemos<br />
-                <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>de tu proyecto.</span>
+                {t('cont.hero.title.1')}<br />
+                <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>{t('cont.hero.title.2')}</span>
               </h1>
               <p style={{ fontSize: 19, color: 'var(--muted)', lineHeight: 1.5, marginBottom: 40 }}>
-                Desarrollamos soluciones de mobiliario técnico a gran escala. Integramos nuestros sistemas directamente
-                a tus planos arquitectónicos.
+                {t('cont.hero.body')}
               </p>
 
               {/* Stat strip */}
@@ -128,9 +129,9 @@ export default function PageContacto() {
                 }}
               >
                 {[
-                  { n: '< 24h', l: 'Respuesta' },
-                  { n: '+240', l: 'Proyectos' },
-                  { n: '18', l: 'Países' },
+                  { n: '< 24h', l: t('cont.stat.response') },
+                  { n: '+240', l: t('cont.stat.projects') },
+                  { n: '18', l: t('cont.stat.countries') },
                 ].map((s) => (
                   <div key={s.l}>
                     <div
@@ -200,19 +201,19 @@ export default function PageContacto() {
                   padding: '6px 10px',
                 }}
               >
-                SEDE · CDMX
+                {t('cont.right.tag')}
               </span>
               {/* Bottom content */}
               <div style={{ position: 'absolute', bottom: 28, left: 28, right: 28, color: 'var(--off-white)' }}>
                 <span className="maach-mono" style={{ color: 'var(--sand-grey)', display: 'block', marginBottom: 12 }}>
-                  Equipo de ingeniería de proyectos
+                  {t('cont.right.eyebrow')}
                 </span>
                 <h2
                   className="h-display"
                   style={{ fontSize: 'clamp(32px, 3.6vw, 52px)', color: 'var(--off-white)', margin: 0, lineHeight: 1 }}
                 >
-                  En tu obra,<br />
-                  <span style={{ color: 'var(--lava-orange)' }}>desde el plano.</span>
+                  {t('cont.right.title.1')}<br />
+                  <span style={{ color: 'var(--lava-orange)' }}>{t('cont.right.title.2')}</span>
                 </h2>
               </div>
               {/* Orange L corner on image */}
@@ -262,14 +263,14 @@ export default function PageContacto() {
           >
             <div>
               <span className="maach-mono" style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 12 }}>
-                § Formulario · Iniciar conversación
+                {t('cont.form.eyebrow')}
               </span>
               <h2 className="h-display" style={{ fontSize: 'clamp(40px, 5.5vw, 80px)', color: 'var(--off-white)' }}>
-                Escríbenos.
+                {t('cont.form.title')}
               </h2>
             </div>
             <span className="maach-mono" style={{ color: 'var(--sand-grey)' }}>
-              Respuesta &lt; 24 hrs
+              {t('cont.form.response')}
             </span>
           </div>
 
@@ -296,7 +297,7 @@ export default function PageContacto() {
               >
                 <div>
                   <label htmlFor="nombre" className="maach-label" style={{ color: 'var(--sand-grey)' }}>
-                    Nombre y apellido *
+                    {t('cont.form.name')}
                   </label>
                   <input
                     id="nombre"
@@ -306,12 +307,12 @@ export default function PageContacto() {
                     onChange={(e) => set('nombre', e.target.value)}
                     className="maach-input"
                     style={{ borderColor: 'rgba(228,226,227,.4)', color: 'var(--off-white)' }}
-                    placeholder="Roberto A. Salgado"
+                    placeholder={t('cont.form.name_ph')}
                   />
                 </div>
                 <div>
                   <label htmlFor="correo" className="maach-label" style={{ color: 'var(--sand-grey)' }}>
-                    Correo electrónico *
+                    {t('cont.form.email')}
                   </label>
                   <input
                     id="correo"
@@ -321,14 +322,14 @@ export default function PageContacto() {
                     onChange={(e) => set('correo', e.target.value)}
                     className="maach-input"
                     style={{ borderColor: 'rgba(228,226,227,.4)', color: 'var(--off-white)' }}
-                    placeholder="r.salgado@empresa.com"
+                    placeholder={t('cont.form.email_ph')}
                   />
                 </div>
               </div>
 
               <div style={{ marginBottom: 28 }}>
                 <label htmlFor="empresa" className="maach-label" style={{ color: 'var(--sand-grey)' }}>
-                  Empresa
+                  {t('cont.form.company')}
                 </label>
                 <input
                   id="empresa"
@@ -337,13 +338,13 @@ export default function PageContacto() {
                   onChange={(e) => set('empresa', e.target.value)}
                   className="maach-input"
                   style={{ borderColor: 'rgba(228,226,227,.4)', color: 'var(--off-white)' }}
-                  placeholder="Estudio Alba"
+                  placeholder={t('cont.form.company_ph')}
                 />
               </div>
 
               <div style={{ marginBottom: 32 }}>
                 <label htmlFor="mensaje" className="maach-label" style={{ color: 'var(--sand-grey)' }}>
-                  Mensaje *
+                  {t('cont.form.message')}
                 </label>
                 <textarea
                   id="mensaje"
@@ -357,7 +358,7 @@ export default function PageContacto() {
                     borderColor: 'rgba(228,226,227,.4)',
                     color: 'var(--off-white)',
                   }}
-                  placeholder="Cuéntanos sobre tu proyecto: volumen estimado, plazos, sede, m² aprox..."
+                  placeholder={t('cont.form.message_ph')}
                 />
               </div>
 
@@ -378,7 +379,7 @@ export default function PageContacto() {
                     style={{ width: 16, height: 16, accentColor: 'var(--lava-orange)' }}
                   />
                   <span className="maach-mono" style={{ color: 'var(--sand-grey)' }}>
-                    Acepto el aviso de privacidad
+                    {t('cont.form.privacy')}
                   </span>
                 </label>
               </div>
@@ -388,7 +389,7 @@ export default function PageContacto() {
                 className="btn-primary"
                 style={{ width: '100%', justifyContent: 'space-between', padding: '20px 28px' }}
               >
-                Enviar mensaje <IconArrow size={14} />
+                {t('cta.send_message')} <IconArrow size={14} />
               </button>
             </form>
 
@@ -405,7 +406,7 @@ export default function PageContacto() {
                   className="maach-mono"
                   style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 16 }}
                 >
-                  Información de contacto
+                  {t('cont.side.info')}
                 </span>
                 <a
                   href="mailto:ventas@maach.ec"
@@ -433,7 +434,7 @@ export default function PageContacto() {
                 }}
               >
                 <span className="maach-mono" style={{ color: 'var(--sand-grey)', display: 'block', marginBottom: 16 }}>
-                  Teléfonos
+                  {t('cont.side.phones')}
                 </span>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                   {['0997 200 455', '0979 514 286', '0999 441 139'].map((tel) => (
@@ -467,7 +468,7 @@ export default function PageContacto() {
                 }}
               >
                 <span className="maach-mono" style={{ color: 'var(--sand-grey)', display: 'block', marginBottom: 12 }}>
-                  Tiempo de respuesta
+                  {t('cont.side.response_time')}
                 </span>
                 <div
                   style={{
@@ -483,7 +484,7 @@ export default function PageContacto() {
                   &lt; 24 hrs
                 </div>
                 <span className="maach-mono" style={{ color: 'var(--sand-grey)' }}>
-                  Para solicitudes técnicas
+                  {t('cont.side.response_for')}
                 </span>
                 {/* Rotating seal — anchored bottom-right */}
                 <div

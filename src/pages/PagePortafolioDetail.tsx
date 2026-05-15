@@ -2,6 +2,7 @@ import { asset } from '../lib/asset';
 import { Link, useParams } from 'react-router-dom';
 import { Layout } from '../components/Layout';
 import { IconArrow, IconPin } from '../components/icons';
+import { useT } from '../i18n/i18n';
 
 type ProjectData = {
   title: string;
@@ -82,6 +83,7 @@ const DATA: Record<string, ProjectData> = {
 };
 
 export default function PagePortafolioDetail() {
+  const t = useT();
   const { id = '01' } = useParams();
   const p = DATA[id] || DATA['01'];
   const idNum = parseInt(id, 10) || 1;
@@ -161,14 +163,14 @@ export default function PagePortafolioDetail() {
           }}
         >
           <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 12 }}>
-            FICHA TÉCNICA
+            {t('pdet.spec_sheet')}
           </span>
           {[
-            ['Sector', p.sector],
-            ['Arquitectura', p.arq],
-            ['Superficie', p.area],
-            ['Año', p.year],
-            ['Status', 'Completado'],
+            [t('pdet.sector'), p.sector],
+            [t('pdet.arch'), p.arq],
+            [t('pdet.area'), p.area],
+            [t('pdet.year'), p.year],
+            [t('pdet.status'), t('pdet.status.value')],
           ].map(([k, v]) => (
             <div
               key={k}
@@ -204,10 +206,10 @@ export default function PagePortafolioDetail() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 80 }}>
             <div>
               <span className="maach-mono" style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 16 }}>
-                FASE 01 · DESAFÍO
+                {t('pdet.phase01.eyebrow')}
               </span>
               <h2 className="h-display" style={{ fontSize: 'clamp(40px, 5vw, 64px)' }}>
-                El Desafío.
+                {t('pdet.phase01.title')}
               </h2>
             </div>
             <div>
@@ -221,13 +223,10 @@ export default function PagePortafolioDetail() {
                   letterSpacing: '-.01em',
                 }}
               >
-                Un espacio para fomentar la colaboración espontánea y la concentración profunda, respetando la
-                arquitectura original del edificio y maximizando la luz natural.
+                {t('pdet.phase01.lead')}
               </p>
               <p style={{ fontSize: 17, color: 'var(--muted)', lineHeight: 1.6 }}>
-                El proyecto requería una solución integral de mobiliario adaptable a diferentes modalidades de trabajo.
-                Se implementaron sistemas de benching para áreas operativas combinados con zonas de soft seating para
-                reuniones informales.
+                {t('pdet.phase01.body')}
               </p>
             </div>
           </div>
@@ -235,22 +234,21 @@ export default function PagePortafolioDetail() {
           <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 80, alignItems: 'center' }}>
             <div>
               <span className="maach-mono" style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 16 }}>
-                FASE 02 · PROPUESTA
+                {t('pdet.phase02.eyebrow')}
               </span>
               <h2 className="h-display" style={{ fontSize: 'clamp(40px, 5vw, 64px)', marginBottom: 32 }}>
-                Propuesta de Valor.
+                {t('pdet.phase02.title')}
               </h2>
               <p style={{ fontFamily: 'var(--display)', fontWeight: 500, fontSize: 28, lineHeight: 1.2, marginBottom: 48 }}>
-                Integración de la colección MAACH-02 para lograr una estética cohesiva entre zonas operativas y de
-                dirección.
+                {t('pdet.phase02.lead')}
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 0 }}>
                 {[
-                  'Sillería ergonómica certificada para reducir fatiga postural en jornadas de alto rendimiento.',
-                  'Paneles termoacústicos en áreas de benching para control de ruido en plantas abiertas.',
-                  'Acabados en maderas naturales y textiles texturizados que aportan calidez al entorno corporativo.',
-                  'Integración tecnológica oculta en mesas de juntas y estaciones modulares.',
-                ].map((t, i) => (
+                  t('pdet.phase02.b1'),
+                  t('pdet.phase02.b2'),
+                  t('pdet.phase02.b3'),
+                  t('pdet.phase02.b4'),
+                ].map((item, i) => (
                   <li
                     key={i}
                     style={{ display: 'flex', gap: 32, padding: '20px 0', borderTop: '1px solid var(--line)' }}
@@ -258,7 +256,7 @@ export default function PagePortafolioDetail() {
                     <span className="maach-mono" style={{ flexShrink: 0, color: 'var(--lava-orange)' }}>
                       0{i + 1}
                     </span>
-                    <span style={{ fontSize: 17, color: 'var(--muted)', lineHeight: 1.55 }}>{t}</span>
+                    <span style={{ fontSize: 17, color: 'var(--muted)', lineHeight: 1.55 }}>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -274,7 +272,7 @@ export default function PagePortafolioDetail() {
               <img src={sideImg} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               <div style={{ position: 'absolute', bottom: 16, left: 16 }}>
                 <span className="maach-mono" style={{ background: 'var(--off-white)', padding: '5px 10px' }}>
-                  VISTA_INSTALACIÓN
+                  {t('pdet.gallery.title').toUpperCase().replace('.', '').replace(/\s+/g, '_')}
                 </span>
               </div>
             </div>
@@ -283,10 +281,10 @@ export default function PagePortafolioDetail() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 80 }}>
             <div>
               <span className="maach-mono" style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 16 }}>
-                FASE 03 · RESULTADO
+                {t('pdet.phase03.eyebrow')}
               </span>
               <h2 className="h-display" style={{ fontSize: 'clamp(40px, 5vw, 64px)', marginBottom: 40 }}>
-                El Resultado.
+                {t('pdet.phase03.title')}
               </h2>
 
               <div
@@ -311,7 +309,7 @@ export default function PagePortafolioDetail() {
                 />
                 <div style={{ position: 'relative' }}>
                   <span className="maach-mono" style={{ color: 'var(--sand-grey)', display: 'block', marginBottom: 16 }}>
-                    MÉTRICA CLAVE
+                    {t('pdet.phase03.metric')}
                   </span>
                   <div
                     style={{
@@ -327,8 +325,7 @@ export default function PagePortafolioDetail() {
                     +40%
                   </div>
                   <p style={{ color: 'var(--off-white)', fontSize: 17, lineHeight: 1.5 }}>
-                    Incremento en la utilización de espacios colaborativos según reporte del cliente, 6 meses
-                    post-instalación.
+                    {t('pdet.phase03.metric.body')}
                   </p>
                 </div>
               </div>
@@ -344,27 +341,28 @@ export default function PagePortafolioDetail() {
                   letterSpacing: '-.01em',
                 }}
               >
-                Un ecosistema de trabajo dinámico que responde a las necesidades actuales de la organización,
-                preparándola para su crecimiento a futuro.
+                {t('pdet.phase03.lead')}
               </p>
               <p style={{ fontSize: 17, color: 'var(--muted)', lineHeight: 1.6, marginBottom: 32 }}>
-                La solución entregada transformó la manera en que los equipos interactúan día a día. Las zonas de soft
-                seating se convirtieron en el núcleo de la creatividad, mientras las estaciones operativas brindan el
-                enfoque y privacidad necesarios.
+                {t('pdet.phase03.body')}
               </p>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32, marginTop: 48 }}>
                 <div style={{ borderTop: '2px solid var(--jet-black)', paddingTop: 16 }}>
                   <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 8 }}>
-                    Plazo de entrega
+                    {t('pdet.phase03.delivery')}
                   </span>
-                  <div style={{ fontFamily: 'var(--display)', fontWeight: 600, fontSize: 28 }}>16 semanas</div>
+                  <div style={{ fontFamily: 'var(--display)', fontWeight: 600, fontSize: 28 }}>
+                    {t('pdet.phase03.delivery.value')}
+                  </div>
                 </div>
                 <div style={{ borderTop: '2px solid var(--jet-black)', paddingTop: 16 }}>
                   <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 8 }}>
-                    Piezas instaladas
+                    {t('pdet.phase03.pieces')}
                   </span>
-                  <div style={{ fontFamily: 'var(--display)', fontWeight: 600, fontSize: 28 }}>284 ud.</div>
+                  <div style={{ fontFamily: 'var(--display)', fontWeight: 600, fontSize: 28 }}>
+                    {t('pdet.phase03.pieces.value')}
+                  </div>
                 </div>
               </div>
             </div>
@@ -375,10 +373,10 @@ export default function PagePortafolioDetail() {
       <section style={{ padding: '128px 0' }}>
         <div className="maach-container">
           <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 12 }}>
-            § Galería
+            {t('pdet.gallery.eyebrow')}
           </span>
           <h2 className="h-display" style={{ fontSize: 56, marginBottom: 48 }}>
-            Vista de instalación.
+            {t('pdet.gallery.title')}
           </h2>
 
           <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 16 }}>
@@ -411,10 +409,10 @@ export default function PagePortafolioDetail() {
           }}
         >
           <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 16 }}>
-            Siguiente proyecto
+            {t('pdet.next')}
           </span>
           <h3 className="h-display" style={{ fontSize: 'clamp(48px, 8vw, 128px)' }}>
-            Continuar <IconArrow size={48} />
+            {t('pdet.continue')} <IconArrow size={48} />
           </h3>
         </Link>
       </section>

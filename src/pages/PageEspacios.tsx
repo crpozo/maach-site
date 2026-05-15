@@ -7,10 +7,10 @@ import { useT } from '../i18n/i18n';
 export default function PageEspacios() {
   const t = useT();
   const spaces = [
-    { id: '01', title: 'Áreas Operativas', desc: 'Sistemas bench y estaciones de alta densidad. Maximizan el área por usuario sin sacrificar la ergonomía individual ni la productividad.', tex: 'tex-stack-force', img: asset('biblioteca-2.webp') },
-    { id: '02', title: 'Salas de Juntas', desc: 'Mesas ejecutivas y modulares con integración tecnológica oculta. Preparadas para reuniones presenciales e híbridas.', tex: 'tex-load-line', img: asset('biblioteca-3.webp') },
-    { id: '03', title: 'Zonas Lounge & Colaborativas', desc: 'Mobiliario flexible que fomenta la interacción espontánea y el trabajo ágil fuera del escritorio tradicional.', tex: 'tex-tactile-field', img: asset('biblioteca-4.webp') },
-    { id: '04', title: 'Oficinas Privadas & Directivas', desc: 'Soluciones de carácter institucional. Escritorios, sillería y almacenamiento ejecutivo para liderazgo y áreas confidenciales.', tex: 'tex-forged-grid', img: asset('biblioteca-1.webp') },
+    { id: '01', title: t('esp.typ.01.name'), desc: t('esp.typ.01.desc'), tex: 'tex-stack-force', img: asset('biblioteca-2.webp') },
+    { id: '02', title: t('esp.typ.02.name'), desc: t('esp.typ.02.desc'), tex: 'tex-load-line', img: asset('biblioteca-3.webp') },
+    { id: '03', title: t('esp.typ.03.name'), desc: t('esp.typ.03.desc'), tex: 'tex-tactile-field', img: asset('biblioteca-4.webp') },
+    { id: '04', title: t('esp.typ.04.name'), desc: t('esp.typ.04.desc'), tex: 'tex-forged-grid', img: asset('biblioteca-1.webp') },
   ];
 
   return (
@@ -72,10 +72,10 @@ export default function PageEspacios() {
             className="maach-mono"
             style={{ color: 'var(--lava-orange)' }}
           >
-            MAACH · PLANIFICACIÓN 2026
+            {t('esp.hero.eyebrow')}
           </span>
           <span className="maach-mono" style={{ color: 'var(--off-white)' }}>
-            § 07 / Espacios
+            {t('esp.hero.section')}
           </span>
         </div>
         {/* Orange L crosshairs */}
@@ -120,7 +120,7 @@ export default function PageEspacios() {
                 margin: 0,
               }}
             >
-              Es<span className="h-italic" style={{ color: 'var(--lava-orange)' }}>pacios.</span>
+              {t('esp.hero.title.1')}<span className="h-italic" style={{ color: 'var(--lava-orange)' }}>{t('esp.hero.title.2')}</span>
             </h1>
             <p
               style={{
@@ -131,8 +131,7 @@ export default function PageEspacios() {
                 margin: 0,
               }}
             >
-              Soluciones integrales que transforman metros cuadrados en entornos productivos, coherentes y listos para
-              escalar.
+              {t('esp.hero.body')}
             </p>
           </div>
 
@@ -149,10 +148,10 @@ export default function PageEspacios() {
             }}
           >
             {[
-              { n: '04', l: 'Tipologías' },
-              { n: '12', l: 'Sistemas' },
-              { n: '48', l: 'Configs.' },
-              { n: '09', l: 'Acabados' },
+              { n: '04', l: t('esp.stat.tipologias') },
+              { n: '12', l: t('esp.stat.sistemas') },
+              { n: '48', l: t('esp.stat.configs') },
+              { n: '09', l: t('esp.stat.acabados') },
             ].map((s) => (
               <div key={s.l}>
                 <div
@@ -192,14 +191,14 @@ export default function PageEspacios() {
           >
             <div>
               <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 12 }}>
-                § 01 / Tipologías
+                {t('esp.typ.eyebrow')}
               </span>
               <h2 className="h-display" style={{ fontSize: 'clamp(48px, 6.5vw, 96px)' }}>
-                Cuatro <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>tipologías.</span>
+                {t('esp.typ.title.1')} <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>{t('esp.typ.title.2')}</span>
               </h2>
             </div>
             <span className="maach-mono" style={{ color: 'var(--muted)' }}>
-              04 espacios · Sistema MAACH
+              {t('esp.typ.count')}
             </span>
           </div>
 
@@ -257,7 +256,7 @@ export default function PageEspacios() {
                     className="maach-mono"
                     style={{ background: 'var(--off-white)', color: 'var(--jet-black)', padding: '5px 10px' }}
                   >
-                    {s.id} / TIPOLOGÍA
+                    {s.id} / {t('esp.typ.tipologia_label')}
                   </span>
                   <span
                     className="maach-mono"
@@ -324,7 +323,7 @@ export default function PageEspacios() {
                       borderBottom: '1.5px solid var(--lava-orange)',
                     }}
                   >
-                    Ver productos <IconArrow size={14} />
+                    {t('cta.view_products')} <IconArrow size={14} />
                   </span>
                 </div>
               </Link>
@@ -362,40 +361,24 @@ export default function PageEspacios() {
           >
             <div>
               <span className="maach-mono" style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 12 }}>
-                § 02 / Proceso
+                {t('esp.proc.eyebrow')}
               </span>
               <h2 className="h-display" style={{ fontSize: 'clamp(48px, 6.5vw, 96px)' }}>
-                Cómo planificamos<br />
-                <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>un espacio.</span>
+                {t('esp.proc.title.1')}<br />
+                <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>{t('esp.proc.title.2')}</span>
               </h2>
             </div>
             <span className="maach-mono" style={{ color: 'var(--sand-grey)', maxWidth: 380 }}>
-              Del primer plano arquitectónico a la instalación final, en cuatro fases.
+              {t('esp.proc.subtitle')}
             </span>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 32 }}>
             {[
-              {
-                n: '01',
-                title: 'Diagnóstico',
-                body: 'Levantamos el espacio existente, analizamos flujos de trabajo y entrevistamos al equipo para entender el uso real.',
-              },
-              {
-                n: '02',
-                title: 'Diseño',
-                body: 'Propuestas de layout, render 3D y selección de tipologías MAACH. Iteramos con arquitectos e interioristas.',
-              },
-              {
-                n: '03',
-                title: 'Especificación',
-                body: 'Fichas técnicas, planos CAD/BIM y cuantificación final. Cero ambigüedad en lo que se va a instalar.',
-              },
-              {
-                n: '04',
-                title: 'Instalación',
-                body: 'Logística, montaje y puesta a punto. Equipo propio MAACH coordinado con la obra y el cliente.',
-              },
+              { n: '01', title: t('esp.proc.01.title'), body: t('esp.proc.01.body') },
+              { n: '02', title: t('esp.proc.02.title'), body: t('esp.proc.02.body') },
+              { n: '03', title: t('esp.proc.03.title'), body: t('esp.proc.03.body') },
+              { n: '04', title: t('esp.proc.04.title'), body: t('esp.proc.04.body') },
             ].map((p) => (
               <div key={p.n} style={{ borderTop: '2px solid var(--lava-orange)', paddingTop: 24 }}>
                 <span
@@ -438,21 +421,21 @@ export default function PageEspacios() {
         <div className="maach-container">
           <div style={{ marginBottom: 40 }}>
             <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 12 }}>
-              § 03 / Entregables
+              {t('esp.del.eyebrow')}
             </span>
             <h2 className="h-display" style={{ fontSize: 'clamp(36px, 5vw, 72px)' }}>
-              Qué entregamos.
+              {t('esp.del.title')}
             </h2>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: 0, border: '1px solid var(--line)' }}>
             {[
-              'Levantamiento de espacio',
-              'Plano arquitectónico',
-              'Render 3D fotorrealista',
-              'Selección de mobiliario',
-              'Planos CAD / BIM',
-              'Instalación llave en mano',
+              t('esp.del.01'),
+              t('esp.del.02'),
+              t('esp.del.03'),
+              t('esp.del.04'),
+              t('esp.del.05'),
+              t('esp.del.06'),
             ].map((d, i) => (
               <div
                 key={d}
@@ -595,7 +578,7 @@ export default function PageEspacios() {
           <div style={{ display: 'grid', gridTemplateColumns: '1.3fr 1fr', gap: 80, alignItems: 'center' }}>
             <div>
               <span className="maach-mono" style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 16 }}>
-                § Asesoría especializada
+                {t('esp.cta.eyebrow')}
               </span>
               <h2
                 className="h-display"
@@ -606,11 +589,10 @@ export default function PageEspacios() {
                   lineHeight: 0.95,
                 }}
               >
-                ¿Necesitas <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>planificar</span> un espacio?
+                {t('esp.cta.title.1')} <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>{t('esp.cta.title.2')}</span> {t('esp.cta.title.3')}
               </h2>
               <p style={{ color: 'var(--sand-grey)', fontSize: 18, maxWidth: 560, lineHeight: 1.5 }}>
-                Trabajamos junto a arquitectos e interioristas. Compartimos planos arquitectónicos, render 3D y
-                propuestas de mobiliario integradas.
+                {t('esp.cta.body')}
               </p>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
@@ -619,14 +601,14 @@ export default function PageEspacios() {
                 className="btn-primary"
                 style={{ width: '100%', justifyContent: 'space-between', padding: '20px 28px' }}
               >
-                Iniciar planificación <IconArrow size={14} />
+                {t('cta.start_planning')} <IconArrow size={14} />
               </Link>
               <Link
                 to="/portafolio"
                 className="btn-ghost"
                 style={{ width: '100%', justifyContent: 'space-between', padding: '20px 28px' }}
               >
-                Ver casos de estudio <IconArrow size={14} />
+                {t('cta.see_case_studies')} <IconArrow size={14} />
               </Link>
               <div
                 style={{
@@ -639,7 +621,7 @@ export default function PageEspacios() {
                 }}
               >
                 <span className="maach-mono" style={{ color: 'var(--sand-grey)' }}>
-                  Respuesta en
+                  {t('esp.cta.response_in')}
                 </span>
                 <span
                   style={{

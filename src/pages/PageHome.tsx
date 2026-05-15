@@ -128,7 +128,7 @@ export default function PageHome() {
             className="maach-mono"
             style={{ background: 'var(--lava-orange)', color: 'var(--off-white)', padding: '6px 10px' }}
           >
-            + DISPONIBLE
+            {t('home.hero.disponible')}
           </span>
         </div>
 
@@ -155,12 +155,12 @@ export default function PageHome() {
                 color: 'var(--off-white)',
               }}
             >
-              Industrial{' '}
+              {t('home.hero.h1.1')}{' '}
               <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>
-                Design,
+                {t('home.hero.h1.2')}
               </span>
               <br />
-              Real Performance.
+              {t('home.hero.h1.3')} {t('home.hero.h1.4')}
             </h1>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: 24, flexWrap: 'wrap' }}>
@@ -198,10 +198,10 @@ export default function PageHome() {
           >
             <div>
               <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 16 }}>
-                § 02 / Sistema
+                {t('home.cat.eyebrow')}
               </span>
               <h2 className="h-display" style={{ fontSize: 'clamp(56px, 8vw, 128px)' }}>
-                Categorías.
+                {t('home.cat.title')}
               </h2>
             </div>
             <Link
@@ -215,7 +215,7 @@ export default function PageHome() {
               }}
               className="maach-mono"
             >
-              Ver catálogo completo <IconArrow size={14} />
+              {t('cta.see_catalog')} <IconArrow size={14} />
             </Link>
           </div>
 
@@ -228,12 +228,12 @@ export default function PageHome() {
             }}
           >
             {[
-              { id: '01', name: 'Sillonería', desc: 'Ergonomía técnica, sillas gerenciales, operativas y sofás.', texture: 'tex-forged-grid', img: asset('biblioteca-1.webp') },
-              { id: '02', name: 'Escritorios + Estaciones', desc: 'Sistemas modulares, escritorios operativos y regulables.', texture: 'tex-stack-force', img: asset('biblioteca-2.webp') },
-              { id: '03', name: 'Mesas', desc: 'Mesas de reunión, colaborativas y auxiliares.', texture: 'tex-load-line', img: asset('perspectiva-2.webp') },
-              { id: '04', name: 'Almacenamiento', desc: 'Credenzas, archivos rodantes, lockers y bibliotecas.', texture: 'tex-tactile-field', img: asset('biblioteca-3.webp') },
-              { id: '05', name: 'Divisiones', desc: 'Sistemas modulares de piso a techo y divisorias de vidrio.', texture: 'tex-steel-align', img: asset('biblioteca-4.webp') },
-              { id: '06', name: 'Arquitectura', desc: 'Muros modulares, pods y mamparas divisorias para alta densidad.', texture: 'tex-factory-core', img: asset('biblioteca-5.webp') },
+              { id: '01', name: t('home.cat.01.name'), desc: t('home.cat.01.desc'), texture: 'tex-forged-grid', img: asset('biblioteca-1.webp') },
+              { id: '02', name: t('home.cat.02.name'), desc: t('home.cat.02.desc'), texture: 'tex-stack-force', img: asset('biblioteca-2.webp') },
+              { id: '03', name: t('home.cat.03.name'), desc: t('home.cat.03.desc'), texture: 'tex-load-line', img: asset('perspectiva-2.webp') },
+              { id: '04', name: t('home.cat.04.name'), desc: t('home.cat.04.desc'), texture: 'tex-tactile-field', img: asset('biblioteca-3.webp') },
+              { id: '05', name: t('home.cat.05.name'), desc: t('home.cat.05.desc'), texture: 'tex-steel-align', img: asset('biblioteca-4.webp') },
+              { id: '06', name: t('home.cat.06.name'), desc: t('home.cat.06.desc'), texture: 'tex-factory-core', img: asset('biblioteca-5.webp') },
             ].map((cat, i) => {
               return (
                 <Link
@@ -367,14 +367,14 @@ export default function PageHome() {
           <div style={{ display: 'grid', gridTemplateColumns: '.85fr 1.15fr', gap: 64, alignItems: 'center' }}>
             <div>
               <span className="maach-mono" style={{ color: 'var(--sand-grey)', marginBottom: 16, display: 'block' }}>
-                § 03 / Filosofía
+                {t('home.adn.eyebrow')}
               </span>
               <h2 className="h-display" style={{ fontSize: 'clamp(56px, 8vw, 120px)', marginBottom: 24 }}>
-                ADN<br />
-                <span className="h-italic" style={{ color: 'var(--sand-grey)' }}>Industrial.</span>
+                {t('home.adn.title.1')}<br />
+                <span className="h-italic" style={{ color: 'var(--sand-grey)' }}>{t('home.adn.title.2')}</span>
               </h2>
               <p style={{ fontSize: 17, color: 'var(--sand-grey)', lineHeight: 1.45, maxWidth: 380, marginBottom: 32 }}>
-                Cada decisión responde a ingeniería, durabilidad y desempeño en el tiempo.
+                {t('home.adn.intro')}
               </p>
 
               <div
@@ -406,10 +406,10 @@ export default function PageHome() {
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32 }}>
               {[
-                { n: '01', title: 'Integridad Estructural', body: 'Ingeniería sólida pensada para el uso intensivo. Mobiliario que no se deforma y mantiene sus propiedades a lo largo de los años.' },
-                { n: '02', title: 'Funcionalidad Consciente', body: 'Diseño centrado en resolver exigencias operativas reales. Si una pieza no cumple un propósito técnico, se elimina del esquema.' },
-                { n: '03', title: 'Escalabilidad Modular', body: 'Sistemas creados para crecer y reconfigurarse. Componentes que se integran mediante ingeniería de nodos.' },
-                { n: '04', title: 'Co-diseño con arquitectos', body: 'Trabajamos junto a estudios y clientes para resolver requerimientos técnicos específicos. El diseño se construye en conjunto.' },
+                { n: '01', title: t('home.adn.01.title'), body: t('home.adn.01.body') },
+                { n: '02', title: t('home.adn.02.title'), body: t('home.adn.02.body') },
+                { n: '03', title: t('home.adn.03.title'), body: t('home.adn.03.body') },
+                { n: '04', title: t('home.adn.04.title'), body: t('home.adn.04.body') },
               ].map((p) => (
                 <div key={p.n}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 14 }}>
@@ -465,10 +465,10 @@ export default function PageHome() {
           >
             <div>
               <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 16 }}>
-                § 04 / Portafolio
+                {t('home.cases.eyebrow')}
               </span>
               <h2 className="h-display" style={{ fontSize: 'clamp(48px, 6.5vw, 96px)' }}>
-                Casos de Estudio.
+                {t('home.cases.title')}
               </h2>
             </div>
             <Link
@@ -482,7 +482,7 @@ export default function PageHome() {
                 gap: 12,
               }}
             >
-              Ver portafolio <IconArrow size={14} />
+              {t('cta.see_portfolio')} <IconArrow size={14} />
             </Link>
           </div>
 
@@ -573,14 +573,15 @@ export default function PageHome() {
           >
             <div>
               <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 16 }}>
-                § 05 / Clientes
+                {t('home.clientes.eyebrow')}
               </span>
               <h2 className="h-display" style={{ fontSize: 'clamp(48px, 6.5vw, 96px)' }}>
-                Confianza <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>industrial.</span>
+                {t('home.clientes.title.1')}{' '}
+                <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>{t('home.clientes.title.2')}</span>
               </h2>
             </div>
             <span className="maach-mono" style={{ color: 'var(--muted)' }}>
-              +24 organizaciones · LATAM
+              {t('home.clientes.count')}
             </span>
           </div>
 
@@ -715,7 +716,7 @@ export default function PageHome() {
             className="maach-mono"
             style={{ color: 'var(--muted)', marginTop: 24, textAlign: 'center', fontSize: 11 }}
           >
-            Marcas y organizaciones con las que MAACH ha colaborado · 2018 — 2026
+            {t('home.clientes.footnote')}
           </p>
         </div>
       </section>
@@ -748,11 +749,11 @@ export default function PageHome() {
             />
 
             <span className="maach-mono" style={{ color: 'var(--lava-orange)', marginBottom: 24, display: 'block' }}>
-              Directiva de proyecto
+              {t('home.precision.eyebrow')}
             </span>
             <h2 className="h-display" style={{ fontSize: 'clamp(48px, 7vw, 112px)', marginBottom: 32 }}>
-              Precisión<br />
-              <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>Industrial.</span>
+              {t('home.precision.title.1')}<br />
+              <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>{t('home.precision.title.2')}</span>
             </h2>
             <ul
               style={{
@@ -768,10 +769,10 @@ export default function PageHome() {
               }}
             >
               {[
-                ['CAPACIDAD INSTALADA', 'ALTO VOLUMEN'],
-                ['TOLERANCIA', '± 2 MM'],
-                ['EJECUCIÓN', 'INMEDIATA'],
-                ['GARANTÍA', '10 AÑOS'],
+                [t('home.precision.row1.k'), t('home.precision.row1.v')],
+                [t('home.precision.row2.k'), t('home.precision.row2.v')],
+                [t('home.precision.row3.k'), t('home.precision.row3.v')],
+                [t('home.precision.row4.k'), t('home.precision.row4.v')],
               ].map(([k, v]) => (
                 <li key={k} style={{ display: 'flex', gap: 16 }}>
                   <span style={{ color: 'var(--muted)', width: 180 }}>{k}</span>
@@ -793,7 +794,7 @@ export default function PageHome() {
             <div className="tex-forged-grid" style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }} />
             <div style={{ position: 'relative', zIndex: 2, maxWidth: 480 }}>
               <span className="maach-mono" style={{ color: 'var(--muted)', marginBottom: 24, display: 'block' }}>
-                Contacto técnico
+                {t('home.spec.eyebrow')}
               </span>
               <h3
                 style={{
@@ -806,13 +807,13 @@ export default function PageHome() {
                   letterSpacing: '-.02em',
                 }}
               >
-                Iniciar Especificación
+                {t('home.spec.title')}
               </h3>
               <p style={{ fontSize: 16, color: 'var(--muted)', marginBottom: 40, lineHeight: 1.55 }}>
-                Nuestro equipo de ingeniería de proyectos adapta los sistemas MAACH a tus planos arquitectónicos y requerimientos espaciales.
+                {t('home.spec.body')}
               </p>
               <Link to="/contacto" className="btn-primary" style={{ width: '100%', justifyContent: 'space-between' }}>
-                Contactar ingeniería <IconArrow size={14} />
+                {t('cta.engineering')} <IconArrow size={14} />
               </Link>
             </div>
           </div>
