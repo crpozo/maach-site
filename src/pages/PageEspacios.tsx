@@ -29,28 +29,63 @@ export default function PageEspacios() {
           borderBottom: '1px solid var(--line)',
         }}
       >
-        {/* Background photo */}
-        <img
-          src={asset('proyectos/cpn/03.webp')}
-          alt=""
+        {/* Brand-book backdrop: technical blueprint grid on jet-black */}
+        <div
           aria-hidden
+          className="tex-forged-grid"
           style={{
             position: 'absolute',
             inset: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
             zIndex: 0,
+            color: 'var(--off-white)',
+            opacity: 0.06,
           }}
         />
-        {/* Dark gradient for legibility — vertical so text sits in the lower half */}
+        {/* Oversized brand numeral as a watermark */}
+        <div
+          aria-hidden
+          style={{
+            position: 'absolute',
+            top: '50%',
+            right: '-4vw',
+            transform: 'translateY(-50%)',
+            fontFamily: 'var(--display)',
+            fontWeight: 700,
+            fontSize: 'clamp(360px, 52vw, 920px)',
+            lineHeight: 0.78,
+            color: 'var(--lava-orange)',
+            opacity: 0.06,
+            letterSpacing: '-0.04em',
+            zIndex: 0,
+            userSelect: 'none',
+            pointerEvents: 'none',
+          }}
+        >
+          07
+        </div>
+        {/* Diagonal orange accent stripe — bottom-left */}
+        <div
+          aria-hidden
+          style={{
+            position: 'absolute',
+            left: 0,
+            bottom: 0,
+            width: '36vw',
+            height: 1.5,
+            background:
+              'linear-gradient(90deg, var(--lava-orange) 0%, var(--lava-orange) 40%, transparent 100%)',
+            opacity: 0.55,
+            zIndex: 1,
+          }}
+        />
+        {/* Subtle vignette so text stays anchored against the texture */}
         <div
           aria-hidden
           style={{
             position: 'absolute',
             inset: 0,
             background:
-              'linear-gradient(180deg, rgba(22,22,22,.25) 0%, rgba(22,22,22,.05) 25%, rgba(22,22,22,.45) 60%, rgba(22,22,22,.92) 100%)',
+              'radial-gradient(ellipse at 30% 70%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.35) 75%)',
             zIndex: 1,
           }}
         />
