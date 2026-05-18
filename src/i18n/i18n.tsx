@@ -51,10 +51,10 @@ const T: Translations = {
 
     // ====== HOME ======
     'home.hero.tag': 'Sistema 2026 / ID: MAACH-01',
-    'home.hero.h1.1': 'Industrial',
-    'home.hero.h1.2': 'Design,',
-    'home.hero.h1.3': 'Real',
-    'home.hero.h1.4': 'Performance.',
+    'home.hero.h1.1': 'Diseño',
+    'home.hero.h1.2': 'Industrial,',
+    'home.hero.h1.3': 'Rendimiento',
+    'home.hero.h1.4': 'Real.',
     'home.hero.estudio_caso': 'ESTUDIO_CASO / 01',
     'home.hero.disponible': '+ DISPONIBLE',
     // Categorías section
