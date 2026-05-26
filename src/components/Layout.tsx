@@ -658,9 +658,17 @@ function Footer() {
             <div className="maach-mono" style={{ color: 'var(--lava-orange)', marginBottom: 16 }}>
               MAACH / 2026
             </div>
-            <h2 className="h-display" style={{ fontSize: 'clamp(64px, 9vw, 144px)', color: 'var(--off-white)' }}>
-              {t('footer.manifesto.line1')}<br />
-              <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>
+            <h2
+              className="h-display"
+              style={{
+                fontSize: 'clamp(40px, 5.5vw, 88px)',
+                color: 'var(--off-white)',
+                lineHeight: 0.95,
+                letterSpacing: '-.01em',
+              }}
+            >
+              {t('footer.manifesto.line1')}{' '}
+              <span style={{ color: 'var(--lava-orange)' }}>
                 {t('footer.manifesto.line2')}
               </span>
               <br />
