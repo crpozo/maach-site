@@ -246,10 +246,6 @@ export default function PageContacto() {
           borderBottom: '1px solid var(--line)',
         }}
       >
-        <div
-          className="tex-load-line"
-          style={{ position: 'absolute', inset: 0, color: 'var(--off-white)', pointerEvents: 'none' }}
-        />
         <div className="maach-container" style={{ position: 'relative', zIndex: 1 }}>
           <div
             style={{
