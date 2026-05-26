@@ -281,7 +281,17 @@ export default function PageEspacios() {
                     position: 'absolute',
                     inset: 0,
                     background:
-                      'linear-gradient(180deg, rgba(22,22,22,.2) 0%, rgba(22,22,22,0) 30%, rgba(22,22,22,.6) 75%, rgba(22,22,22,.9) 100%)',
+                      'linear-gradient(180deg, rgba(22,22,22,.35) 0%, rgba(22,22,22,.15) 18%, rgba(22,22,22,.55) 45%, rgba(22,22,22,.88) 70%, rgba(22,22,22,.96) 100%)',
+                  }}
+                />
+                {/* Left-side scrim for headline contrast */}
+                <div
+                  aria-hidden
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background:
+                      'linear-gradient(90deg, rgba(22,22,22,.45) 0%, rgba(22,22,22,.2) 35%, transparent 65%)',
                   }}
                 />
 
@@ -332,6 +342,7 @@ export default function PageEspacios() {
                       color: 'var(--off-white)',
                       lineHeight: 1,
                       marginBottom: 12,
+                      textShadow: '0 2px 24px rgba(0,0,0,.45)',
                     }}
                   >
                     {s.title}.
@@ -339,10 +350,11 @@ export default function PageEspacios() {
                   <p
                     style={{
                       fontSize: 14,
-                      color: 'var(--sand-grey)',
-                      lineHeight: 1.5,
+                      color: 'rgba(255,255,255,.92)',
+                      lineHeight: 1.55,
                       maxWidth: 520,
                       marginBottom: 18,
+                      textShadow: '0 1px 14px rgba(0,0,0,.55)',
                     }}
                   >
                     {s.desc}
