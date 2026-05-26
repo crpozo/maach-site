@@ -510,13 +510,21 @@ function Footer() {
             <Logo inverted height={28} />
             <p style={{ color: 'var(--sand-grey)', marginTop: 32, maxWidth: 280 }}>
               {t('footer.address.line1')}
-              <br />
-              {t('footer.address.line2')}
+              {t('footer.address.line2') ? (
+                <>
+                  <br />
+                  {t('footer.address.line2')}
+                </>
+              ) : null}
             </p>
             <p style={{ color: 'var(--sand-grey)', marginTop: 16 }}>
-              proyectos@maach.com.mx
+              <a href="mailto:ventas@maach.ec" style={{ color: 'var(--sand-grey)' }}>
+                ventas@maach.ec
+              </a>
               <br />
-              +52 (55) 1234-5678
+              <a href="tel:+593997200455" style={{ color: 'var(--sand-grey)' }}>
+                +593 99 720 0455
+              </a>
             </p>
             <div style={{ display: 'flex', gap: 8, marginTop: 32 }}>
               {['IG', 'Li', 'Be', 'Pi'].map((s) => (

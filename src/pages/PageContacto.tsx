@@ -130,8 +130,8 @@ export default function PageContacto() {
               >
                 {[
                   { n: '< 24h', l: t('cont.stat.response') },
-                  { n: '+240', l: t('cont.stat.projects') },
-                  { n: '18', l: t('cont.stat.countries') },
+                  { n: 'QUITO', l: t('cont.stat.location') },
+                  { n: '03', l: t('cont.stat.direct_lines') },
                 ].map((s) => (
                   <div key={s.l}>
                     <div
