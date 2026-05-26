@@ -55,7 +55,110 @@ const almacenamiento = (slug: string, name: string, sku: string, description: st
   },
 });
 
+// Default short description per Sillonería subcategory. Used when the
+// individual product copy hasn't been provided yet.
+const SILLA_DESC: Record<string, string> = {
+  'Sillas presidente':
+    'Silla ejecutiva con respaldo alto, soporte lumbar y mecanismo sincronizado. Pensada para áreas directivas y oficinas privadas.',
+  'Sillas gerenciales':
+    'Sillería técnica para uso intensivo, con regulaciones independientes y ajustes ergonómicos completos.',
+  'Sillas operativas':
+    'Sillería operativa con ergonomía aplicada para jornadas largas y dinámicas de trabajo intensas.',
+  'Sillas de visita':
+    'Silla para visitas y reuniones ejecutivas. Confort firme, presencia formal.',
+  'Colectividades':
+    'Silla para colectividades, áreas de espera y zonas multipropósito. Apilable o de base fija según modelo.',
+};
+
+// Helper for Sillonería entries. Photos and PDF spec sheets get a path
+// even if the actual file isn't on disk yet — the product detail page
+// gracefully hides the download link when the asset is missing.
+// Mark `ficha: false` for the models the brand owner flagged as
+// "sin ficha técnica" — no download button is shown.
+const silla = (
+  slug: string,
+  name: string,
+  subcategory: keyof typeof SILLA_DESC,
+  sku: string,
+  opts: { ficha?: boolean; img?: number } = {},
+): Product => {
+  const img = ((opts.img ?? 1) % 5) || 5; // cycle 1..5
+  const ficha = opts.ficha !== false;
+  return {
+    slug,
+    name,
+    category: 'Sillonería',
+    subcategory,
+    sku,
+    description: SILLA_DESC[subcategory],
+    gallery: [asset(`biblioteca-${img}.webp`)],
+    sheets: ficha ? { pdf: asset(`productos/silloneria/${slug}/${slug}.pdf`) } : undefined,
+  };
+};
+
 export const PRODUCTS: Product[] = [
+  // ─── SILLAS PRESIDENTE ───────────────────────────────────────
+  silla('silla-zur', 'Silla Zur', 'Sillas presidente', 'MCH-SLP-01', { img: 1 }),
+  silla('winner-presidente-base-nylon', 'Winner Presidente Base Nylon', 'Sillas presidente', 'MCH-SLP-02', { img: 2 }),
+  silla('vick-presidente', 'Vick Presidente', 'Sillas presidente', 'MCH-SLP-03', { img: 3 }),
+  silla('pulse', 'Pulse', 'Sillas presidente', 'MCH-SLP-04', { img: 4, ficha: false }),
+  silla('levi-plus', 'Levi Plus', 'Sillas presidente', 'MCH-SLP-05', { img: 5 }),
+  silla('levi-plus-ii', 'Levi Plus II', 'Sillas presidente', 'MCH-SLP-06', { img: 1 }),
+
+  // ─── SILLAS GERENCIALES ──────────────────────────────────────
+  silla('silla-think-presidente', 'Silla Think Presidente', 'Sillas gerenciales', 'MCH-SLG-01', { img: 2 }),
+  silla('style-presidente', 'Style Presidente', 'Sillas gerenciales', 'MCH-SLG-02', { img: 3 }),
+  silla('spike-presidente-base-nylon', 'Spike Presidente Base Nylon', 'Sillas gerenciales', 'MCH-SLG-03', { img: 4 }),
+  silla('slim-presidente-base-nylon', 'Slim Presidente Base Nylon', 'Sillas gerenciales', 'MCH-SLG-04', { img: 5 }),
+  silla('monk-presidente', 'Monk Presidente', 'Sillas gerenciales', 'MCH-SLG-05', { img: 1 }),
+
+  // ─── SILLAS OPERATIVAS ───────────────────────────────────────
+  silla('think-gerente', 'Think Gerente', 'Sillas operativas', 'MCH-SLO-01', { img: 2 }),
+  silla('vick-gerente', 'Vick Gerente', 'Sillas operativas', 'MCH-SLO-02', { img: 3 }),
+  silla('monk-gerente', 'Monk Gerente', 'Sillas operativas', 'MCH-SLO-03', { img: 4 }),
+  silla('radius', 'Radius', 'Sillas operativas', 'MCH-SLO-04', { img: 5 }),
+  silla('mark-gerente', 'Mark Gerente', 'Sillas operativas', 'MCH-SLO-05', { img: 1 }),
+  silla('liam-gerente', 'Liam Gerente', 'Sillas operativas', 'MCH-SLO-06', { img: 2 }),
+  silla('slim-gerente', 'Slim Gerente', 'Sillas operativas', 'MCH-SLO-07', { img: 3 }),
+
+  // ─── SILLAS DE VISITA ────────────────────────────────────────
+  silla('pinko', 'Pinko', 'Sillas de visita', 'MCH-SLV-01', { img: 4 }),
+  silla('andy-interlocutora', 'Andy Interlocutora', 'Sillas de visita', 'MCH-SLV-02', { img: 5 }),
+  silla('blade', 'Blade', 'Sillas de visita', 'MCH-SLV-03', { img: 1 }),
+  silla('delphi-ii-interlocutora', 'Delphi II Interlocutora', 'Sillas de visita', 'MCH-SLV-04', { img: 2 }),
+  silla('mia-con-brazos', 'Mia con Brazos', 'Sillas de visita', 'MCH-SLV-05', { img: 3 }),
+  silla('monk-interlocutora', 'Monk Interlocutora', 'Sillas de visita', 'MCH-SLV-06', { img: 4 }),
+  silla('rigs-interlocutora', 'Rigs Interlocutora', 'Sillas de visita', 'MCH-SLV-07', { img: 5 }),
+  silla('slim-interlocutor', 'Slim Interlocutor', 'Sillas de visita', 'MCH-SLV-08', { img: 1, ficha: false }),
+  silla('zao', 'Zao', 'Sillas de visita', 'MCH-SLV-09', { img: 2 }),
+
+  // ─── COLECTIVIDADES ──────────────────────────────────────────
+  silla('win', 'Win', 'Colectividades', 'MCH-COL-01', { img: 3 }),
+  silla('volga', 'Volga (tapiz/sin tapiz)', 'Colectividades', 'MCH-COL-02', { img: 4 }),
+  silla('tex', 'Tex', 'Colectividades', 'MCH-COL-03', { img: 5 }),
+  silla('swan', 'Swan', 'Colectividades', 'MCH-COL-04', { img: 1 }),
+  silla('sol', 'Sol', 'Colectividades', 'MCH-COL-05', { img: 2, ficha: false }),
+  silla('stef', 'Stef', 'Colectividades', 'MCH-COL-06', { img: 3, ficha: false }),
+  silla('pop', 'Pop', 'Colectividades', 'MCH-COL-07', { img: 4 }),
+  silla('patrick', 'Patrick', 'Colectividades', 'MCH-COL-08', { img: 5 }),
+  silla('obi', 'Obi', 'Colectividades', 'MCH-COL-09', { img: 1, ficha: false }),
+  silla('net', 'Net', 'Colectividades', 'MCH-COL-10', { img: 2 }),
+  silla('misuri', 'Misuri', 'Colectividades', 'MCH-COL-11', { img: 3 }),
+  silla('milei', 'Milei', 'Colectividades', 'MCH-COL-12', { img: 4 }),
+  silla('lucca', 'Lucca', 'Colectividades', 'MCH-COL-13', { img: 5 }),
+  silla('loti', 'Loti', 'Colectividades', 'MCH-COL-14', { img: 1, ficha: false }),
+  silla('kiro', 'Kiro', 'Colectividades', 'MCH-COL-15', { img: 2 }),
+  silla('jack', 'Jack', 'Colectividades', 'MCH-COL-16', { img: 3 }),
+  silla('glen', 'Glen', 'Colectividades', 'MCH-COL-17', { img: 4 }),
+  silla('fresia', 'Fresia', 'Colectividades', 'MCH-COL-18', { img: 5, ficha: false }),
+  silla('emi', 'Emi', 'Colectividades', 'MCH-COL-19', { img: 1 }),
+  silla('coccolona', 'Coccolona', 'Colectividades', 'MCH-COL-20', { img: 2 }),
+  silla('brent', 'Brent', 'Colectividades', 'MCH-COL-21', { img: 3, ficha: false }),
+  silla('brand', 'Brand', 'Colectividades', 'MCH-COL-22', { img: 4 }),
+  silla('boom', 'Boom', 'Colectividades', 'MCH-COL-23', { img: 5 }),
+  silla('bertoia', 'Bertoia', 'Colectividades', 'MCH-COL-24', { img: 1, ficha: false }),
+
+  // ─── ALMACENAMIENTO ──────────────────────────────────────────
   almacenamiento(
     'biblioteca-alta',
     'Biblioteca Alta',
