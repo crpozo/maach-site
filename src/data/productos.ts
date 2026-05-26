@@ -99,19 +99,18 @@ const SILLA_DESC: Record<string, string> = {
     'Silla para colectividades, áreas de espera y zonas multipropósito. Apilable o de base fija según modelo.',
 };
 
-// Helper for Sillonería entries. Photos and PDF spec sheets get a path
-// even if the actual file isn't on disk yet — the product detail page
-// gracefully hides the download link when the asset is missing.
-// Mark `ficha: false` for the models the brand owner flagged as
-// "sin ficha técnica" — no download button is shown.
+// Helper for Sillonería entries. Photos live at
+//   productos/silloneria/<slug>/01..NN.webp
+// PDF spec sheet at <slug>.pdf (only when ficha !== false).
+// `photos` controls how many gallery items we reference — default 5.
 const silla = (
   slug: string,
   name: string,
   subcategory: keyof typeof SILLA_DESC,
   sku: string,
-  opts: { ficha?: boolean; img?: number } = {},
+  opts: { ficha?: boolean; photos?: number; img?: number } = {},
 ): Product => {
-  const img = ((opts.img ?? 1) % 5) || 5; // cycle 1..5
+  const photos = opts.photos ?? 5;
   const ficha = opts.ficha !== false;
   return {
     slug,
@@ -120,7 +119,9 @@ const silla = (
     subcategory,
     sku,
     description: SILLA_DESC[subcategory],
-    gallery: [asset(`biblioteca-${img}.webp`)],
+    gallery: Array.from({ length: photos }, (_, i) =>
+      asset(`productos/silloneria/${slug}/${String(i + 1).padStart(2, '0')}.webp`),
+    ),
     sheets: ficha ? { pdf: asset(`productos/silloneria/${slug}/${slug}.pdf`) } : undefined,
   };
 };
@@ -162,7 +163,7 @@ export const PRODUCTS: Product[] = [
   silla('zao', 'Zao', 'Sillas de visita', 'MCH-SLV-09', { img: 2 }),
 
   // ─── COLECTIVIDADES ──────────────────────────────────────────
-  silla('win', 'Win', 'Colectividades', 'MCH-COL-01', { img: 3 }),
+  silla('win', 'Win', 'Colectividades', 'MCH-COL-01', { img: 3, photos: 1 }),
   silla('volga', 'Volga (tapiz/sin tapiz)', 'Colectividades', 'MCH-COL-02', { img: 4 }),
   silla('tex', 'Tex', 'Colectividades', 'MCH-COL-03', { img: 5 }),
   silla('swan', 'Swan', 'Colectividades', 'MCH-COL-04', { img: 1 }),
@@ -175,7 +176,7 @@ export const PRODUCTS: Product[] = [
   silla('misuri', 'Misuri', 'Colectividades', 'MCH-COL-11', { img: 3 }),
   silla('milei', 'Milei', 'Colectividades', 'MCH-COL-12', { img: 4 }),
   silla('lucca', 'Lucca', 'Colectividades', 'MCH-COL-13', { img: 5 }),
-  silla('loti', 'Loti', 'Colectividades', 'MCH-COL-14', { img: 1, ficha: false }),
+  silla('loti', 'Loti', 'Colectividades', 'MCH-COL-14', { img: 1, ficha: false, photos: 4 }),
   silla('kiro', 'Kiro', 'Colectividades', 'MCH-COL-15', { img: 2 }),
   silla('jack', 'Jack', 'Colectividades', 'MCH-COL-16', { img: 3 }),
   silla('glen', 'Glen', 'Colectividades', 'MCH-COL-17', { img: 4 }),
