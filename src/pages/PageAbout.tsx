@@ -149,82 +149,181 @@ export default function PageAbout() {
         </div>
       </section>
 
-      {/* MISIÓN / VISIÓN — black band */}
+      {/* MISIÓN / VISIÓN — editorial spreads */}
       <section
         className="invert"
         style={{
           background: 'var(--jet-black)',
           color: 'var(--off-white)',
-          padding: '120px 0',
+          padding: '112px 0 96px',
           borderBottom: '1px solid var(--line)',
           position: 'relative',
+          overflow: 'hidden',
         }}
       >
         <div className="maach-container">
-          <span
-            className="maach-mono"
-            style={{ color: 'var(--sand-grey)', display: 'block', marginBottom: 48 }}
+          {/* Top eyebrow row */}
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'baseline',
+              paddingBottom: 24,
+              marginBottom: 72,
+              borderBottom: '1px solid rgba(228,226,227,.18)',
+            }}
           >
-            {t('about.mv.eyebrow')}
-          </span>
+            <span className="maach-mono" style={{ color: 'var(--sand-grey)' }}>
+              {t('about.mv.eyebrow')}
+            </span>
+            <span className="maach-mono" style={{ color: 'var(--sand-grey)' }}>
+              ESTRATEGIA · MAACH 2026
+            </span>
+          </div>
 
+          {/* MISIÓN spread */}
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: 64,
+              gridTemplateColumns: '200px 1fr',
+              gap: 80,
+              alignItems: 'flex-start',
+              paddingBottom: 72,
+              marginBottom: 72,
+              borderBottom: '1px solid rgba(228,226,227,.18)',
+            }}
+          >
+            <div>
+              <span
+                className="h-display"
+                style={{
+                  fontSize: 'clamp(96px, 11vw, 168px)',
+                  color: 'var(--lava-orange)',
+                  lineHeight: 0.82,
+                  display: 'block',
+                  letterSpacing: '-.05em',
+                }}
+              >
+                01
+              </span>
+              <span
+                style={{
+                  fontFamily: 'var(--display)',
+                  fontWeight: 700,
+                  fontSize: 22,
+                  letterSpacing: '.08em',
+                  textTransform: 'uppercase',
+                  color: 'var(--off-white)',
+                  display: 'block',
+                  marginTop: 20,
+                }}
+              >
+                {t('about.mv.mision.label')}
+              </span>
+              <div
+                style={{
+                  width: 40,
+                  height: 2,
+                  background: 'var(--lava-orange)',
+                  marginTop: 16,
+                }}
+              />
+            </div>
+
+            <p
+              style={{
+                fontFamily: 'var(--display)',
+                fontWeight: 400,
+                fontSize: 'clamp(20px, 2.1vw, 30px)',
+                lineHeight: 1.32,
+                color: 'var(--off-white)',
+                margin: 0,
+                maxWidth: 920,
+                letterSpacing: '-.005em',
+              }}
+            >
+              {t('about.mv.mision.body')}
+            </p>
+          </div>
+
+          {/* VISIÓN spread */}
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '200px 1fr',
+              gap: 80,
               alignItems: 'flex-start',
             }}
           >
-            {/* MISIÓN */}
-            <div style={{ borderTop: '2px solid var(--lava-orange)', paddingTop: 32 }}>
+            <div>
               <span
-                className="maach-mono"
-                style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 20, letterSpacing: '.08em' }}
-              >
-                01 / {t('about.mv.mision.label').toUpperCase()}
-              </span>
-              <h2
                 className="h-display"
                 style={{
-                  fontSize: 'clamp(40px, 5vw, 68px)',
+                  fontSize: 'clamp(96px, 11vw, 168px)',
                   color: 'var(--off-white)',
-                  marginBottom: 28,
-                  lineHeight: 0.95,
+                  lineHeight: 0.82,
+                  display: 'block',
+                  letterSpacing: '-.05em',
+                  opacity: 0.35,
                 }}
               >
-                {t('about.mv.mision.label')}.
-              </h2>
-              <p style={{ fontSize: 17, lineHeight: 1.65, color: 'var(--sand-grey)', margin: 0 }}>
-                {t('about.mv.mision.body')}
-              </p>
+                02
+              </span>
+              <span
+                style={{
+                  fontFamily: 'var(--display)',
+                  fontWeight: 700,
+                  fontSize: 22,
+                  letterSpacing: '.08em',
+                  textTransform: 'uppercase',
+                  color: 'var(--off-white)',
+                  display: 'block',
+                  marginTop: 20,
+                }}
+              >
+                {t('about.mv.vision.label')}
+              </span>
+              <div
+                style={{
+                  width: 40,
+                  height: 2,
+                  background: 'var(--off-white)',
+                  marginTop: 16,
+                  opacity: 0.6,
+                }}
+              />
             </div>
 
-            {/* VISIÓN */}
-            <div style={{ borderTop: '2px solid var(--off-white)', paddingTop: 32 }}>
-              <span
-                className="maach-mono"
-                style={{ color: 'var(--off-white)', display: 'block', marginBottom: 20, letterSpacing: '.08em' }}
-              >
-                02 / {t('about.mv.vision.label').toUpperCase()}
-              </span>
-              <h2
-                className="h-display"
-                style={{
-                  fontSize: 'clamp(40px, 5vw, 68px)',
-                  color: 'var(--off-white)',
-                  marginBottom: 28,
-                  lineHeight: 0.95,
-                }}
-              >
-                {t('about.mv.vision.label')}.
-              </h2>
-              <p style={{ fontSize: 17, lineHeight: 1.65, color: 'var(--sand-grey)', margin: 0 }}>
-                {t('about.mv.vision.body')}
-              </p>
-            </div>
+            <p
+              style={{
+                fontFamily: 'var(--display)',
+                fontWeight: 400,
+                fontSize: 'clamp(20px, 2.1vw, 30px)',
+                lineHeight: 1.32,
+                color: 'var(--off-white)',
+                margin: 0,
+                maxWidth: 920,
+                letterSpacing: '-.005em',
+              }}
+            >
+              {t('about.mv.vision.body')}
+            </p>
           </div>
         </div>
+
+        {/* Decorative orange corner mark */}
+        <div
+          aria-hidden
+          style={{
+            position: 'absolute',
+            bottom: 32,
+            right: 32,
+            width: 24,
+            height: 24,
+            borderRight: '2px solid var(--lava-orange)',
+            borderBottom: '2px solid var(--lava-orange)',
+          }}
+        />
       </section>
 
       {/* SOBRE NOSOTROS */}
@@ -363,44 +462,46 @@ export default function PageAbout() {
       </section>
 
       {/* NUESTRA HISTORIA */}
-      <section style={{ padding: '128px 0', borderBottom: '1px solid var(--line)' }}>
+      <section style={{ padding: '88px 0', borderBottom: '1px solid var(--line)' }}>
         <div className="maach-container">
-          <div style={{ marginBottom: 72 }}>
-            <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 12 }}>
-              {t('about.history.eyebrow')}
-            </span>
-            <h2 className="h-display" style={{ fontSize: 'clamp(56px, 8vw, 120px)', lineHeight: 0.95 }}>
-              {t('about.history.title')}
-            </h2>
-          </div>
-
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: 80,
-              alignItems: 'center',
-              marginBottom: 80,
+              gridTemplateColumns: '1.1fr 1fr',
+              gap: 56,
+              alignItems: 'stretch',
+              marginBottom: 32,
             }}
           >
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
-              <p style={{ fontSize: 19, color: 'var(--fg)', lineHeight: 1.55, margin: 0 }}>
-                {t('about.history.body.1')}
-              </p>
-              <p style={{ fontSize: 17, color: 'var(--muted)', lineHeight: 1.6, margin: 0 }}>
-                {t('about.history.body.2')}
-              </p>
-              <p style={{ fontSize: 17, color: 'var(--muted)', lineHeight: 1.6, margin: 0 }}>
-                {t('about.history.body.3')}
-              </p>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 12 }}>
+                {t('about.history.eyebrow')}
+              </span>
+              <h2
+                className="h-display"
+                style={{ fontSize: 'clamp(40px, 5.5vw, 72px)', lineHeight: 0.95, margin: 0, marginBottom: 28 }}
+              >
+                {t('about.history.title')}
+              </h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+                <p style={{ fontSize: 17, color: 'var(--fg)', lineHeight: 1.55, margin: 0 }}>
+                  {t('about.history.body.1')}
+                </p>
+                <p style={{ fontSize: 15, color: 'var(--muted)', lineHeight: 1.6, margin: 0 }}>
+                  {t('about.history.body.2')}
+                </p>
+                <p style={{ fontSize: 15, color: 'var(--muted)', lineHeight: 1.6, margin: 0 }}>
+                  {t('about.history.body.3')}
+                </p>
+              </div>
             </div>
 
             <div
               style={{
-                aspectRatio: '4/5',
                 position: 'relative',
                 overflow: 'hidden',
                 border: '1px solid var(--line)',
+                minHeight: 340,
               }}
             >
               <img
@@ -440,11 +541,11 @@ export default function PageAbout() {
               border: '1px solid var(--line)',
             }}
           >
-            <div style={{ padding: '40px 32px', borderRight: '1px solid var(--line)' }}>
+            <div style={{ padding: '28px 28px', borderRight: '1px solid var(--line)' }}>
               <span
                 className="h-display"
                 style={{
-                  fontSize: 'clamp(64px, 10vw, 144px)',
+                  fontSize: 'clamp(48px, 6vw, 88px)',
                   display: 'block',
                   lineHeight: 0.9,
                   color: 'var(--lava-orange)',
@@ -452,22 +553,22 @@ export default function PageAbout() {
               >
                 30+
               </span>
-              <span className="maach-mono" style={{ color: 'var(--muted)', marginTop: 12, display: 'block' }}>
+              <span className="maach-mono" style={{ color: 'var(--muted)', marginTop: 8, display: 'block' }}>
                 {t('about.history.stat.years').toUpperCase()}
               </span>
             </div>
-            <div style={{ padding: '40px 32px' }}>
+            <div style={{ padding: '28px 28px' }}>
               <span
                 className="h-display"
                 style={{
-                  fontSize: 'clamp(64px, 10vw, 144px)',
+                  fontSize: 'clamp(48px, 6vw, 88px)',
                   display: 'block',
                   lineHeight: 0.9,
                 }}
               >
                 03
               </span>
-              <span className="maach-mono" style={{ color: 'var(--muted)', marginTop: 12, display: 'block' }}>
+              <span className="maach-mono" style={{ color: 'var(--muted)', marginTop: 8, display: 'block' }}>
                 {t('about.history.stat.brand').toUpperCase()}
               </span>
             </div>
