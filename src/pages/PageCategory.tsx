@@ -183,9 +183,16 @@ export default function PageCategory() {
       {/* SECTIONS — one per subcategory */}
       {category.sections.map((s, i) => {
         const inverted = i % 2 === 1;
-        const sectionProducts = s.productSubcategory
-          ? PRODUCTS.filter((p) => p.subcategory === s.productSubcategory)
+        const subs = Array.isArray(s.productSubcategory)
+          ? s.productSubcategory
+          : s.productSubcategory
+          ? [s.productSubcategory]
           : [];
+        const sectionProducts = subs.length
+          ? PRODUCTS.filter((p) => subs.includes(p.subcategory))
+          : [];
+        // First sub is used for the "see all" link when multiple subs share a section
+        const primarySub = subs[0];
 
         return (
           <section
@@ -346,8 +353,8 @@ export default function PageCategory() {
                     </span>
                     <Link
                       to={
-                        s.productSubcategory
-                          ? `/productos?sub=${encodeURIComponent(s.productSubcategory)}`
+                        primarySub
+                          ? `/productos?sub=${encodeURIComponent(primarySub)}`
                           : '/productos'
                       }
                       className="maach-mono"

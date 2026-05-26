@@ -9,8 +9,12 @@ export type CategorySection = {
   caracteristicas: string[];
   /** Optional: tells the page that real photos haven't been delivered yet. */
   pendingPhotos?: boolean;
-  /** Optional: subcategory slug used by the filter on /productos. */
-  productSubcategory?: string;
+  /**
+   * Optional: subcategory name(s) used by the filter on /productos.
+   * Pass an array when a single editorial section groups multiple
+   * catalog subcategories (e.g. "Credenzas / Bibliotecas").
+   */
+  productSubcategory?: string | string[];
 };
 
 export type Category = {
@@ -217,6 +221,7 @@ export const CATEGORIES: Category[] = [
       {
         slug: 'credenzas-bibliotecas',
         name: 'Credenzas / Bibliotecas',
+        productSubcategory: ['Credenza', 'Biblioteca Alta', 'Biblioteca Baja'],
         description:
           'Pensada para quienes valoran la organización y una estética cuidada. Su diseño sobrio y contemporáneo se integra perfectamente en espacios de alto nivel. Ideal para almacenar documentos, archivos y elementos de trabajo, permite optimizar el espacio sin perder una imagen limpia y estructurada.',
         caracteristicas: [
@@ -230,6 +235,7 @@ export const CATEGORIES: Category[] = [
       {
         slug: 'modulos-archivacion',
         name: 'Módulos de Archivación / Arturito Rodante',
+        productSubcategory: ['Módulo 3 gavetas', 'Arturito'],
         description:
           'Diseñado para mantener todo en su lugar de forma práctica y segura. Su estructura funcional facilita el acceso rápido a archivos, mejorando la organización y la eficiencia en el trabajo diario.',
         caracteristicas: [
