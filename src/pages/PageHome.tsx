@@ -582,40 +582,32 @@ export default function PageHome() {
             }}
           >
             {[
-              'Gran Comercio',
-              'Contract Workplaces',
-              'Induvallas',
-              'Sarmiento',
-              'Grupo KFC',
-              'UDLA',
-              'Cooperativa Policía Nacional',
-              'ConstruEcuador',
-              'Liga Deportiva U.',
-              'PUCE',
-              'Zaimella',
-              'CAME Arquitectos',
-              'Corporación Maresa',
-              'Kruger',
-              'Arroyo & Arroyo',
-              'Carsnack',
-              'UIDE',
-              'PMJ Arquitectos',
-              'Banco ProCredit',
-              'Grupo Puentes',
-              'Wesco',
-              'Palladium',
-              'Tropi Burger',
-              'Moreno & Valdivieso',
-            ].map((name, i) => {
-              // Slug used to look up an optional logo image. Drop a file at
-              //   public/assets/clientes/<slug>.png  (or .webp / .svg)
-              // and the <img> below will pick it up automatically.
-              const slug = name
-                .toLowerCase()
-                .normalize('NFD')
-                .replace(/[̀-ͯ]/g, '')
-                .replace(/[^a-z0-9]+/g, '-')
-                .replace(/(^-|-$)/g, '');
+              { name: 'Gran Comercio', file: 'gran-comercio.png' },
+              { name: 'Contract Workplaces', file: 'contract-workplaces.png' },
+              { name: 'Induvallas', file: 'induvallas.png' },
+              { name: 'Sarmiento', file: 'sarmiento.jpeg' },
+              { name: 'Grupo KFC', file: 'grupo-kfc.jpeg' },
+              { name: 'UDLA', file: 'udla.png' },
+              { name: 'Cooperativa Policía Nacional' },
+              { name: 'ConstruEcuador', file: 'construecuador.jpg' },
+              { name: 'Liga Deportiva U.', file: 'liga-deportiva-u.jpeg' },
+              { name: 'PUCE' },
+              { name: 'Zaimella', file: 'zaimella.png' },
+              { name: 'CAME Arquitectos', file: 'came-arquitectos.png' },
+              { name: 'Corporación Maresa', file: 'corporacion-maresa.avif' },
+              { name: 'Kruger', file: 'kruger.png' },
+              { name: 'Arroyo & Arroyo', file: 'arroyo-arroyo.jpg' },
+              { name: 'Carsnack', file: 'carsnack.jpg' },
+              { name: 'UIDE', file: 'uide.webp' },
+              { name: 'PMJ Arquitectos', file: 'pmj-arquitectos.png' },
+              { name: 'Banco ProCredit', file: 'banco-procredit.png' },
+              { name: 'Grupo Puentes', file: 'grupo-puentes.png' },
+              { name: 'Wesco', file: 'wesco.webp' },
+              { name: 'Palladium', file: 'palladium.jpg' },
+              { name: 'Tropi Burger', file: 'tropi-burger.webp' },
+              { name: 'Moreno & Valdivieso', file: 'moreno-valdivieso.webp' },
+            ].map((c, i) => {
+              const { name, file } = c as { name: string; file?: string };
               const col = i % 6;
               const row = Math.floor(i / 6);
               const total = 24;
@@ -639,38 +631,38 @@ export default function PageHome() {
                   onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--soft)')}
                   onMouseLeave={(e) => (e.currentTarget.style.background = 'var(--off-white)')}
                 >
-                  {/* Logo image — falls back to the name label if file is missing */}
-                  <img
-                    src={asset(`clientes/${slug}.png`)}
-                    alt={name}
-                    onError={(e) => {
-                      const target = e.currentTarget;
-                      target.style.display = 'none';
-                      const fallback = target.nextElementSibling as HTMLElement | null;
-                      if (fallback) fallback.style.display = 'flex';
-                    }}
-                    style={{
-                      maxWidth: '70%',
-                      maxHeight: '60%',
-                      objectFit: 'contain',
-                      filter: 'grayscale(1)',
-                      opacity: 0.85,
-                      transition: 'filter .2s, opacity .2s',
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.filter = '';
-                      e.currentTarget.style.opacity = '1';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.filter = 'grayscale(1)';
-                      e.currentTarget.style.opacity = '0.85';
-                    }}
-                  />
-                  {/* Fallback text label */}
+                  {file ? (
+                    <img
+                      src={asset(`clientes/${file}`)}
+                      alt={name}
+                      onError={(e) => {
+                        const target = e.currentTarget;
+                        target.style.display = 'none';
+                        const fallback = target.nextElementSibling as HTMLElement | null;
+                        if (fallback) fallback.style.display = 'flex';
+                      }}
+                      style={{
+                        maxWidth: '78%',
+                        maxHeight: '68%',
+                        objectFit: 'contain',
+                        opacity: 0.92,
+                        transition: 'opacity .2s, transform .25s',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.opacity = '1';
+                        e.currentTarget.style.transform = 'scale(1.04)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.opacity = '0.92';
+                        e.currentTarget.style.transform = '';
+                      }}
+                    />
+                  ) : null}
+                  {/* Fallback text label — shown when no file provided or image fails */}
                   <span
                     className="maach-mono"
                     style={{
-                      display: 'none',
+                      display: file ? 'none' : 'flex',
                       textAlign: 'center',
                       fontSize: 11,
                       letterSpacing: '.08em',
