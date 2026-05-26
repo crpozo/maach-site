@@ -195,6 +195,62 @@ export const PRODUCTS: Product[] = [
     'MCH-EGR-01',
     'Escritorio gerencial de líneas rectas con tablero superior en melamina y estructura metálica. Pensado para áreas ejecutivas que requieren superficie amplia, organización limpia y conducción eléctrica integrada para una imagen ordenada.',
   ),
+  escritorio(
+    'escritorio-gerente-en-l',
+    'Escritorio Gerente en L',
+    'Escritorios gerente',
+    'MCH-EGR-02',
+    'Escritorio gerencial en formato L que combina superficie principal con módulo de retorno. Ideal para oficinas privadas que requieren área diferenciada para trabajo, atención y archivo activo.',
+  ),
+  escritorio(
+    'escritorio-gerente-en-c',
+    'Escritorio Gerente en C',
+    'Escritorios gerente',
+    'MCH-EGR-03',
+    'Escritorio gerencial en C con perímetro envolvente. Maximiza la superficie útil del puesto directivo y permite distribuir periféricos, archivo y zona de juntas en una misma estación.',
+  ),
+
+  // ─── ESCRITORIOS OPERATIVOS ──────────────────────────────────
+  escritorio(
+    'escritorio-operativo-recto',
+    'Escritorio Operativo Recto',
+    'Escritorios operativos',
+    'MCH-EOP-01',
+    'Escritorio operativo individual de líneas rectas. Estructura metálica, tablero en melamina y conducción eléctrica integrada — pensado para estaciones de alta densidad sin perder ergonomía.',
+  ),
+  escritorio(
+    'escritorio-operativo-en-l',
+    'Escritorio Operativo en L',
+    'Escritorios operativos',
+    'MCH-EOP-02',
+    'Escritorio operativo en formato L con módulo de retorno. Ofrece superficie ampliada para puestos que combinan trabajo en pantalla, atención y archivo en línea.',
+  ),
+
+  // ─── ESTACIONES DE TRABAJO ───────────────────────────────────
+  escritorio(
+    'estacion-de-trabajo-1',
+    'Estación de Trabajo 1',
+    'Estaciones de trabajo',
+    'MCH-ETR-01',
+    'Sistema de estación de trabajo configurable. Tableros en melamina sobre estructura metálica, conducción eléctrica integrada y separadores de vidrio opcionales para entornos colaborativos con privacidad acústica.',
+  ),
+  escritorio(
+    'estacion-de-trabajo-2',
+    'Estación de Trabajo 2',
+    'Estaciones de trabajo',
+    'MCH-ETR-02',
+    'Segunda configuración del sistema de estaciones, pensada para arreglos de mayor densidad. Mantiene los componentes modulares (estructura, tablero, separadores) y el sistema de canalización eléctrica del primer modelo.',
+  ),
+
+  // ─── ESCRITORIO REGULABLE ────────────────────────────────────
+  escritorio(
+    'escritorio-regulable',
+    'Escritorio Regulable',
+    'Escritorios regulables',
+    'MCH-ERG-01',
+    'Escritorio con mecanismo de altura regulable y memoria de ajuste. Permite alternar entre posición sentada y de pie a lo largo de la jornada para una postura más saludable.',
+    { dwg: false },
+  ),
 
   // ─── ALMACENAMIENTO ──────────────────────────────────────────
   almacenamiento(
