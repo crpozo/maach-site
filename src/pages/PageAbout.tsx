@@ -627,12 +627,12 @@ export default function PageAbout() {
                   onMouseEnter={(e) => {
                     e.currentTarget.style.background = 'var(--soft)';
                     const img = e.currentTarget.querySelector<HTMLImageElement>('img');
-                    if (img) img.style.filter = 'grayscale(0) opacity(1)';
+                    if (img) img.style.transform = 'scale(1.06)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.background = 'var(--off-white)';
                     const img = e.currentTarget.querySelector<HTMLImageElement>('img');
-                    if (img) img.style.filter = 'grayscale(1) opacity(.78)';
+                    if (img) img.style.transform = '';
                   }}
                 >
                   <img
@@ -641,12 +641,11 @@ export default function PageAbout() {
                     title={a.name}
                     style={{
                       maxWidth: '100%',
-                      maxHeight: 64,
+                      maxHeight: 72,
                       width: 'auto',
                       height: 'auto',
                       objectFit: 'contain',
-                      filter: 'grayscale(1) opacity(.78)',
-                      transition: 'filter .25s ease',
+                      transition: 'transform .25s ease',
                     }}
                   />
                 </div>
