@@ -387,23 +387,28 @@ export default function PageAbout() {
       </section>
 
       {/* SOBRE NOSOTROS */}
-      <section style={{ padding: '128px 0', borderBottom: '1px solid var(--line)' }}>
+      <section style={{ padding: '112px 0', borderBottom: '1px solid var(--line)' }}>
         <div className="maach-container">
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: '1fr 1.4fr',
-              gap: 96,
-              alignItems: 'flex-start',
+              gridTemplateColumns: '1fr 1.25fr',
+              gap: 72,
+              alignItems: 'stretch',
             }}
           >
-            <div>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
               <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 16 }}>
                 {t('about.sobre.eyebrow')}
               </span>
               <h2
                 className="h-display"
-                style={{ fontSize: 'clamp(48px, 6.5vw, 96px)', lineHeight: 0.95, marginBottom: 40 }}
+                style={{
+                  fontSize: 'clamp(40px, 5.5vw, 80px)',
+                  lineHeight: 0.95,
+                  margin: 0,
+                  marginBottom: 32,
+                }}
               >
                 {t('about.sobre.title')}
               </h2>
@@ -411,7 +416,8 @@ export default function PageAbout() {
               <div
                 style={{
                   position: 'relative',
-                  aspectRatio: '4/5',
+                  flex: 1,
+                  minHeight: 360,
                   border: '1px solid var(--line)',
                   overflow: 'hidden',
                   background: 'var(--soft)',
@@ -433,7 +439,7 @@ export default function PageAbout() {
                   style={{
                     position: 'absolute',
                     inset: 0,
-                    background: 'linear-gradient(to top, rgba(22,22,22,.4), transparent 55%)',
+                    background: 'linear-gradient(to top, rgba(22,22,22,.45), transparent 55%)',
                   }}
                 />
                 {/* Corner crosshair — top-right */}
@@ -480,19 +486,61 @@ export default function PageAbout() {
               </div>
             </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
-              <p style={{ fontSize: 19, color: 'var(--fg)', lineHeight: 1.55, margin: 0 }}>
-                {t('about.sobre.body.1')}
-              </p>
-              <p style={{ fontSize: 17, color: 'var(--muted)', lineHeight: 1.6, margin: 0 }}>
-                {t('about.sobre.body.2')}
-              </p>
-              <p style={{ fontSize: 17, color: 'var(--muted)', lineHeight: 1.6, margin: 0 }}>
-                {t('about.sobre.body.3')}
-              </p>
-              <p style={{ fontSize: 17, color: 'var(--fg)', lineHeight: 1.6, margin: 0, fontWeight: 500 }}>
-                {t('about.sobre.body.4')}
-              </p>
+            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
+                <p style={{ fontSize: 20, color: 'var(--fg)', lineHeight: 1.5, margin: 0 }}>
+                  {t('about.sobre.body.1')}
+                </p>
+                <p style={{ fontSize: 17, color: 'var(--muted)', lineHeight: 1.6, margin: 0 }}>
+                  {t('about.sobre.body.2')}
+                </p>
+                <p style={{ fontSize: 17, color: 'var(--muted)', lineHeight: 1.6, margin: 0 }}>
+                  {t('about.sobre.body.3')}
+                </p>
+                <p style={{ fontSize: 17, color: 'var(--fg)', lineHeight: 1.6, margin: 0, fontWeight: 500 }}>
+                  {t('about.sobre.body.4')}
+                </p>
+              </div>
+
+              {/* Signature strip — anchors the bottom of the column */}
+              <div
+                style={{
+                  marginTop: 40,
+                  paddingTop: 24,
+                  borderTop: '1px solid var(--line)',
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(3, 1fr)',
+                  gap: 20,
+                }}
+              >
+                <div>
+                  <span
+                    className="maach-mono"
+                    style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 6 }}
+                  >
+                    01 / DISEÑO
+                  </span>
+                  <span style={{ fontSize: 14, color: 'var(--muted)' }}>Ingeniería aplicada</span>
+                </div>
+                <div>
+                  <span
+                    className="maach-mono"
+                    style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 6 }}
+                  >
+                    02 / FABRICACIÓN
+                  </span>
+                  <span style={{ fontSize: 14, color: 'var(--muted)' }}>Producción local</span>
+                </div>
+                <div>
+                  <span
+                    className="maach-mono"
+                    style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 6 }}
+                  >
+                    03 / CO-DISEÑO
+                  </span>
+                  <span style={{ fontSize: 14, color: 'var(--muted)' }}>Arquitectos · clientes</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
