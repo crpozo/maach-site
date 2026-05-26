@@ -351,7 +351,7 @@ export default function PageRecursos() {
                         alignItems: 'center',
                         padding: '20px 32px',
                         borderBottom: '1px solid var(--line)',
-                        background: isSelected ? 'rgba(224,87,53,.04)' : 'transparent',
+                        background: isSelected ? 'rgba(243,74,35,.04)' : 'transparent',
                         gap: 24,
                         transition: 'background .15s',
                       }}
