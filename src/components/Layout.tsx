@@ -38,14 +38,23 @@ export function Logo({ inverted = false, height = 28 }: { inverted?: boolean; he
   return <img src={asset("logo-bicolor.png")} alt="MAACH" style={{ height, width: 'auto' }} />;
 }
 
-const NAV_LINKS: { key: string; path: string; mega?: boolean }[] = [
+const NAV_LINKS: { key: string; path: string; mega?: boolean; submenu?: boolean }[] = [
   // 'Nuevo' and 'Colecciones' are intentionally hidden from the nav. Routes still work.
   { key: 'nav.productos', path: '/productos', mega: true },
   { key: 'nav.espacios', path: '/espacios' },
-  { key: 'nav.portafolio', path: '/portafolio' },
+  { key: 'nav.portafolio', path: '/portafolio', submenu: true },
   { key: 'nav.investigacion', path: '/investigacion' },
   { key: 'nav.sobre', path: '/sobre-maach' },
   { key: 'nav.contacto', path: '/contacto' },
+];
+
+export const PROJECTS: { id: string; name: string; status?: 'paused' }[] = [
+  { id: '01', name: 'CPN' },
+  { id: '02', name: 'Palladium' },
+  { id: '03', name: 'Wesco' },
+  { id: '04', name: 'Maresa' },
+  { id: '05', name: 'LDU' },
+  { id: '06', name: 'CAME', status: 'paused' },
 ];
 
 function MegaMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
@@ -176,8 +185,135 @@ function MegaMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
   );
 }
 
+function PortafolioMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
+  return (
+    <div
+      onMouseLeave={onClose}
+      style={{
+        position: 'absolute',
+        top: '100%',
+        left: 0,
+        right: 0,
+        background: 'var(--off-white)',
+        borderTop: '1px solid var(--line)',
+        borderBottom: '1px solid var(--line)',
+        maxHeight: open ? 520 : 0,
+        opacity: open ? 1 : 0,
+        overflow: 'hidden',
+        transition: 'max-height .35s ease, opacity .22s ease',
+        pointerEvents: open ? 'auto' : 'none',
+      }}
+    >
+      <div
+        className="maach-container"
+        style={{ padding: '40px 48px', display: 'grid', gridTemplateColumns: '260px 1fr', gap: 64 }}
+      >
+        <div>
+          <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 16 }}>
+            § PROYECTOS · 2024–2026
+          </span>
+          <p style={{ fontSize: 14, color: 'var(--muted)', lineHeight: 1.55, marginBottom: 24 }}>
+            Selección de proyectos donde el diseño arquitectónico se encuentra con la fabricación industrial.
+          </p>
+          <Link
+            to="/portafolio"
+            onClick={onClose}
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 8,
+              borderBottom: '1px solid var(--fg)',
+              paddingBottom: 4,
+              fontFamily: 'var(--mono)',
+              fontSize: 11,
+              letterSpacing: '.14em',
+              textTransform: 'uppercase',
+              fontWeight: 600,
+            }}
+          >
+            Ver portafolio completo <IconArrow size={14} />
+          </Link>
+        </div>
+
+        <ul
+          style={{
+            listStyle: 'none',
+            margin: 0,
+            padding: 0,
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: '20px 48px',
+          }}
+        >
+          {PROJECTS.map((p) => {
+            const paused = p.status === 'paused';
+            return (
+              <li key={p.id}>
+                <Link
+                  to={`/portafolio/${p.id}`}
+                  onClick={onClose}
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 6,
+                    paddingBottom: 12,
+                    borderBottom: '1px solid var(--line)',
+                  }}
+                  onMouseEnter={(e) => {
+                    const h = e.currentTarget.querySelector<HTMLElement>('[data-port-name]');
+                    if (h) h.style.color = 'var(--lava-orange)';
+                  }}
+                  onMouseLeave={(e) => {
+                    const h = e.currentTarget.querySelector<HTMLElement>('[data-port-name]');
+                    if (h) h.style.color = paused ? 'var(--muted)' : 'var(--fg)';
+                  }}
+                >
+                  <span className="maach-mono" style={{ color: 'var(--muted)' }}>
+                    PRJ-{p.id}
+                  </span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                    <span
+                      data-port-name
+                      style={{
+                        fontFamily: 'var(--display)',
+                        fontWeight: 700,
+                        fontSize: 22,
+                        textTransform: 'uppercase',
+                        letterSpacing: '-.01em',
+                        color: paused ? 'var(--muted)' : 'var(--fg)',
+                        transition: 'color .15s',
+                      }}
+                    >
+                      {p.name}
+                    </span>
+                    {paused ? (
+                      <span
+                        className="maach-mono"
+                        style={{
+                          background: 'var(--sand-grey)',
+                          color: 'var(--fg)',
+                          padding: '2px 7px',
+                          fontSize: 10,
+                          letterSpacing: '.1em',
+                        }}
+                      >
+                        PAUSADO
+                      </span>
+                    ) : null}
+                  </div>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
 function Nav() {
   const [megaOpen, setMegaOpen] = useState(false);
+  const [portOpen, setPortOpen] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const { pathname } = useLocation();
   const { lang, setLang, t } = useI18n();
@@ -193,7 +329,10 @@ function Nav() {
         borderBottom: '1px solid var(--line)',
         zIndex: 90,
       }}
-      onMouseLeave={() => setMegaOpen(false)}
+      onMouseLeave={() => {
+        setMegaOpen(false);
+        setPortOpen(false);
+      }}
     >
       <div
         className="maach-container"
@@ -211,7 +350,10 @@ function Nav() {
                 return (
                   <div
                     key={link.path}
-                    onMouseEnter={() => setMegaOpen(true)}
+                    onMouseEnter={() => {
+                      setMegaOpen(true);
+                      setPortOpen(false);
+                    }}
                     style={{ height: '100%', display: 'flex', alignItems: 'center', cursor: 'pointer' }}
                   >
                     <span
@@ -232,12 +374,48 @@ function Nav() {
                   </div>
                 );
               }
+              if (link.submenu) {
+                return (
+                  <div
+                    key={link.path}
+                    onMouseEnter={() => {
+                      setPortOpen(true);
+                      setMegaOpen(false);
+                    }}
+                    style={{ height: '100%', display: 'flex', alignItems: 'center', position: 'relative' }}
+                  >
+                    <Link
+                      to={link.path}
+                      onClick={() => setPortOpen(false)}
+                      className="maach-mono"
+                      style={{
+                        fontSize: 12,
+                        fontWeight: 600,
+                        color: portOpen || active ? 'var(--lava-orange)' : 'var(--fg)',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: 6,
+                        transition: 'color .2s',
+                      }}
+                    >
+                      {t(link.key as Parameters<typeof t>[0])}
+                      <IconChevronDown size={11} rotate={portOpen ? 180 : 0} />
+                    </Link>
+                  </div>
+                );
+              }
               return (
                 <Link
                   key={link.path}
                   to={link.path}
-                  onClick={() => setMegaOpen(false)}
-                  onMouseEnter={() => setMegaOpen(false)}
+                  onClick={() => {
+                    setMegaOpen(false);
+                    setPortOpen(false);
+                  }}
+                  onMouseEnter={() => {
+                    setMegaOpen(false);
+                    setPortOpen(false);
+                  }}
                   className="maach-mono"
                   style={{
                     fontSize: 12,
@@ -307,6 +485,7 @@ function Nav() {
       </div>
 
       <MegaMenu open={megaOpen} onClose={() => setMegaOpen(false)} />
+      <PortafolioMenu open={portOpen} onClose={() => setPortOpen(false)} />
 
       {/* Mobile drawer */}
       <div

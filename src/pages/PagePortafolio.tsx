@@ -4,14 +4,42 @@ import { Layout } from '../components/Layout';
 import { IconArrow, IconPin } from '../components/icons';
 import { useT } from '../i18n/i18n';
 
+type ProjectCard = {
+  id: string;
+  title: string;
+  status?: 'paused';
+  location?: string;
+  scope?: string;
+  area?: string;
+  year?: string;
+  img?: string;
+};
+
 export default function PagePortafolio() {
   const t = useT();
-  const projects = [
-    { id: '01', title: 'Proyecto CPN', location: 'Quito, EC', scope: 'Edificio corporativo matriz · Recepción, salas y áreas operativas', area: '2,400 m²', year: '2025', img: asset('proyectos/cpn/01.webp') },
-    { id: '02', title: 'Palladium', location: 'Quito, EC', scope: 'Estaciones operativas, mesas de juntas y zonas privadas', area: '1,200 m²', year: '2024', img: asset('proyectos/palladium/02.webp') },
-    { id: '03', title: 'Centro de Innovación Tecnológica', location: 'Guadalajara, JAL', scope: 'Sistemas benching y áreas lounge', area: '1,200 m²', year: '2025', img: asset('biblioteca-3.webp') },
-    { id: '04', title: 'Oficinas Boutique StartUp', location: 'Querétaro, QRO', scope: 'Mobiliario a medida y colecciones exclusivas', area: '780 m²', year: '2026', img: asset('biblioteca-4.webp') },
-    { id: '05', title: 'Hub Logístico Industrial', location: 'Mérida, YUC', scope: 'Áreas operativas de alta densidad', area: '4,100 m²', year: '2024', img: asset('biblioteca-5.webp') },
+  const projects: ProjectCard[] = [
+    {
+      id: '01',
+      title: 'CPN',
+      location: 'Quito, EC',
+      scope: 'Edificio corporativo matriz · Recepción, salas y áreas operativas',
+      area: '2,400 m²',
+      year: '2025',
+      img: asset('proyectos/cpn/01.webp'),
+    },
+    {
+      id: '02',
+      title: 'Palladium',
+      location: 'Quito, EC',
+      scope: 'Estaciones operativas, mesas de juntas y zonas privadas',
+      area: '1,200 m²',
+      year: '2024',
+      img: asset('proyectos/palladium/02.webp'),
+    },
+    { id: '03', title: 'Wesco' },
+    { id: '04', title: 'Maresa' },
+    { id: '05', title: 'LDU' },
+    { id: '06', title: 'CAME', status: 'paused' },
   ];
 
   return (
@@ -159,22 +187,21 @@ export default function PagePortafolio() {
             </p>
           </div>
 
-          {/* Metrics strip */}
+          {/* Project index strip */}
           <div
             style={{
               marginTop: 48,
               paddingTop: 28,
               borderTop: '1px solid rgba(228,226,227,.35)',
               display: 'grid',
-              gridTemplateColumns: 'repeat(4, 1fr)',
+              gridTemplateColumns: 'repeat(3, 1fr)',
               gap: 24,
             }}
           >
             {[
-              { n: '+ 240', l: t('port.m.completed') },
-              { n: '18', l: t('port.m.countries') },
-              { n: '84,000', l: t('port.m.installed') },
-              { n: '97%', l: t('port.m.recurring') },
+              { n: String(projects.length).padStart(2, '0'), l: 'Proyectos en portafolio' },
+              { n: 'QUITO', l: 'Sede principal' },
+              { n: '2024–2026', l: 'Período activo' },
             ].map((m) => (
               <div key={m.l}>
                 <div
@@ -199,124 +226,191 @@ export default function PagePortafolio() {
         </div>
       </section>
 
-      {projects.map((p, i) => (
-        <Link
-          key={p.id}
-          to={`/portafolio/${p.id}`}
-          style={{
-            position: 'relative',
-            display: 'block',
-            width: '100%',
-            height: '85vh',
-            minHeight: 600,
-            overflow: 'hidden',
-            borderBottom: '1px solid var(--line)',
-          }}
-        >
-          <img
-            src={p.img}
-            alt={p.title}
+      {projects.map((p, i) => {
+        const hasPhoto = Boolean(p.img);
+        const paused = p.status === 'paused';
+        return (
+          <Link
+            key={p.id}
+            to={`/portafolio/${p.id}`}
             style={{
-              position: 'absolute',
-              inset: 0,
+              position: 'relative',
+              display: 'block',
               width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              transition: 'transform 1.2s ease',
+              height: hasPhoto ? '85vh' : '60vh',
+              minHeight: hasPhoto ? 600 : 440,
+              overflow: 'hidden',
+              borderBottom: '1px solid var(--line)',
+              background: hasPhoto ? 'var(--jet-black)' : 'var(--jet-black)',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
-            onMouseLeave={(e) => (e.currentTarget.style.transform = '')}
-          />
-          <div
-            style={{
-              position: 'absolute',
-              inset: 0,
-              background: 'linear-gradient(to top, rgba(22,22,22,.85), rgba(22,22,22,.1) 60%, transparent)',
-            }}
-          />
-
-          <div style={{ position: 'absolute', top: 32, left: 48, display: 'flex', alignItems: 'center', gap: 12 }}>
-            <span className="maach-mono" style={{ background: 'var(--off-white)', padding: '5px 10px' }}>
-              PRJ-{p.id}
-            </span>
-            <span
-              className="maach-mono"
-              style={{ background: 'var(--lava-orange)', color: 'var(--off-white)', padding: '5px 10px' }}
-            >
-              {p.year}
-            </span>
-          </div>
-          <div style={{ position: 'absolute', top: 32, right: 48 }}>
-            <span
-              className="maach-mono"
-              style={{ background: 'var(--jet-black)', color: 'var(--off-white)', padding: '5px 10px' }}
-            >
-              {p.area}
-            </span>
-          </div>
-
-          <div style={{ position: 'absolute', bottom: 48, left: 48, right: 48, color: 'var(--off-white)' }}>
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'flex-end',
-                justifyContent: 'space-between',
-                gap: 32,
-                flexWrap: 'wrap',
-              }}
-            >
-              <div>
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 12 }} className="maach-mono">
-                  <IconPin size={12} /> {p.location}
-                </div>
-                <h2 className="h-display" style={{ fontSize: 'clamp(48px, 7vw, 120px)', color: 'var(--off-white)' }}>
-                  {p.title}.
-                </h2>
-                <p
+          >
+            {hasPhoto ? (
+              <>
+                <img
+                  src={p.img}
+                  alt={p.title}
                   style={{
-                    fontFamily: 'var(--display)',
-                    fontWeight: 500,
-                    fontSize: 22,
-                    color: 'var(--sand-grey)',
-                    marginTop: 12,
+                    position: 'absolute',
+                    inset: 0,
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    transition: 'transform 1.2s ease',
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.transform = '')}
+                />
+                <div
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background:
+                      'linear-gradient(to top, rgba(22,22,22,.85), rgba(22,22,22,.1) 60%, transparent)',
+                  }}
+                />
+              </>
+            ) : (
+              <>
+                {/* Placeholder canvas — jet-black with subtle blueprint grid */}
+                <div
+                  aria-hidden
+                  className="tex-forged-grid"
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    color: 'var(--off-white)',
+                    opacity: 0.05,
+                  }}
+                />
+                {/* Orange diagonal accent */}
+                <div
+                  aria-hidden
+                  style={{
+                    position: 'absolute',
+                    left: 0,
+                    top: 0,
+                    bottom: 0,
+                    width: 4,
+                    background: paused ? 'var(--sand-grey)' : 'var(--lava-orange)',
+                    opacity: paused ? 0.5 : 1,
+                  }}
+                />
+              </>
+            )}
+
+            <div style={{ position: 'absolute', top: 32, left: 48, display: 'flex', alignItems: 'center', gap: 12 }}>
+              <span className="maach-mono" style={{ background: 'var(--off-white)', padding: '5px 10px' }}>
+                PRJ-{p.id}
+              </span>
+              {p.year ? (
+                <span
+                  className="maach-mono"
+                  style={{ background: 'var(--lava-orange)', color: 'var(--off-white)', padding: '5px 10px' }}
+                >
+                  {p.year}
+                </span>
+              ) : paused ? (
+                <span
+                  className="maach-mono"
+                  style={{ background: 'var(--sand-grey)', color: 'var(--fg)', padding: '5px 10px' }}
+                >
+                  PAUSADO
+                </span>
+              ) : (
+                <span
+                  className="maach-mono"
+                  style={{
+                    background: 'transparent',
+                    color: 'var(--off-white)',
+                    padding: '5px 10px',
+                    border: '1px solid rgba(228,226,227,.4)',
                   }}
                 >
-                  {p.scope}
-                </p>
+                  FOTO PRÓXIMAMENTE
+                </span>
+              )}
+            </div>
+            {p.area ? (
+              <div style={{ position: 'absolute', top: 32, right: 48 }}>
+                <span
+                  className="maach-mono"
+                  style={{ background: 'var(--jet-black)', color: 'var(--off-white)', padding: '5px 10px' }}
+                >
+                  {p.area}
+                </span>
               </div>
-              <span
-                className="maach-mono"
+            ) : null}
+
+            <div style={{ position: 'absolute', bottom: 48, left: 48, right: 48, color: 'var(--off-white)' }}>
+              <div
                 style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 12,
-                  color: 'var(--off-white)',
-                  borderBottom: '1.5px solid var(--off-white)',
-                  paddingBottom: 4,
+                  display: 'flex',
+                  alignItems: 'flex-end',
+                  justifyContent: 'space-between',
+                  gap: 32,
+                  flexWrap: 'wrap',
                 }}
               >
-                {t('port.discover')} <IconArrow size={14} />
+                <div>
+                  {p.location ? (
+                    <div
+                      style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 12 }}
+                      className="maach-mono"
+                    >
+                      <IconPin size={12} /> {p.location}
+                    </div>
+                  ) : null}
+                  <h2 className="h-display" style={{ fontSize: 'clamp(48px, 7vw, 120px)', color: 'var(--off-white)' }}>
+                    {p.title}.
+                  </h2>
+                  {p.scope ? (
+                    <p
+                      style={{
+                        fontFamily: 'var(--display)',
+                        fontWeight: 500,
+                        fontSize: 22,
+                        color: 'var(--sand-grey)',
+                        marginTop: 12,
+                      }}
+                    >
+                      {p.scope}
+                    </p>
+                  ) : null}
+                </div>
+                <span
+                  className="maach-mono"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: 12,
+                    color: 'var(--off-white)',
+                    borderBottom: '1.5px solid var(--off-white)',
+                    paddingBottom: 4,
+                  }}
+                >
+                  {t('port.discover')} <IconArrow size={14} />
+                </span>
+              </div>
+            </div>
+
+            <div style={{ position: 'absolute', left: 48, top: '50%', transform: 'translateY(-50%)' }}>
+              <span
+                style={{
+                  fontFamily: 'var(--display)',
+                  fontWeight: 700,
+                  fontSize: 200,
+                  color: 'var(--off-white)',
+                  opacity: 0.12,
+                  lineHeight: 1,
+                  letterSpacing: '-.04em',
+                }}
+              >
+                {String(i + 1).padStart(2, '0')}
               </span>
             </div>
-          </div>
-
-          <div style={{ position: 'absolute', left: 48, top: '50%', transform: 'translateY(-50%)' }}>
-            <span
-              style={{
-                fontFamily: 'var(--display)',
-                fontWeight: 700,
-                fontSize: 200,
-                color: 'var(--off-white)',
-                opacity: 0.12,
-                lineHeight: 1,
-                letterSpacing: '-.04em',
-              }}
-            >
-              {String(i + 1).padStart(2, '0')}
-            </span>
-          </div>
-        </Link>
-      ))}
+          </Link>
+        );
+      })}
     </Layout>
   );
 }

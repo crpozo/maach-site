@@ -6,15 +6,16 @@ import { useT } from '../i18n/i18n';
 
 type ProjectData = {
   title: string;
-  location: string;
-  year: string;
-  area: string;
-  sector: string;
-  arq: string;
+  location?: string;
+  year?: string;
+  area?: string;
+  sector?: string;
+  arq?: string;
+  status?: 'paused';
   /** Hero photo (top of detail page). */
-  hero: string;
+  hero?: string;
   /** Side photo (used in the Propuesta de Valor phase). */
-  side: string;
+  side?: string;
   /** Optional gallery (Vista de instalación). Falls back to defaults. */
   gallery?: [string, string, string];
 };
@@ -51,34 +52,17 @@ const DATA: Record<string, ProjectData> = {
     ],
   },
   '03': {
-    title: 'Centro de Innovación Tecnológica',
-    location: 'Guadalajara, JAL',
-    year: '2025',
-    area: '1,200 m²',
-    sector: 'Tech / R&D',
-    arq: 'Sosa Studio',
-    hero: asset('biblioteca-3.webp'),
-    side: asset('biblioteca-4.webp'),
+    title: 'Wesco',
   },
   '04': {
-    title: 'Oficinas Boutique StartUp',
-    location: 'Querétaro, QRO',
-    year: '2026',
-    area: '780 m²',
-    sector: 'Startup SaaS',
-    arq: 'MAACH In-house',
-    hero: asset('biblioteca-4.webp'),
-    side: asset('biblioteca-5.webp'),
+    title: 'Maresa',
   },
   '05': {
-    title: 'Hub Logístico Industrial',
-    location: 'Mérida, YUC',
-    year: '2024',
-    area: '4,100 m²',
-    sector: 'Logística',
-    arq: 'Camargo & Hijos',
-    hero: asset('biblioteca-5.webp'),
-    side: asset('biblioteca-1.webp'),
+    title: 'LDU',
+  },
+  '06': {
+    title: 'CAME',
+    status: 'paused',
   },
 };
 
@@ -87,6 +71,115 @@ export default function PagePortafolioDetail() {
   const { id = '01' } = useParams();
   const p = DATA[id] || DATA['01'];
   const idNum = parseInt(id, 10) || 1;
+
+  // Minimal "coming soon" layout for projects without imagery yet
+  if (!p.hero) {
+    const paused = p.status === 'paused';
+    return (
+      <Layout screenLabel={'09 Proyecto · ' + p.title}>
+        <section
+          className="invert"
+          style={{
+            position: 'relative',
+            minHeight: 'calc(100vh - 80px)',
+            display: 'flex',
+            alignItems: 'center',
+            background: 'var(--jet-black)',
+            color: 'var(--off-white)',
+            overflow: 'hidden',
+          }}
+        >
+          <div
+            aria-hidden
+            className="tex-forged-grid"
+            style={{ position: 'absolute', inset: 0, color: 'var(--off-white)', opacity: 0.06 }}
+          />
+          <div
+            aria-hidden
+            style={{
+              position: 'absolute',
+              top: 0,
+              bottom: 0,
+              left: 0,
+              width: 6,
+              background: paused ? 'var(--sand-grey)' : 'var(--lava-orange)',
+              opacity: paused ? 0.7 : 1,
+            }}
+          />
+          <div className="maach-container" style={{ position: 'relative', zIndex: 2, width: '100%' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 24 }}>
+              <span
+                className="maach-mono"
+                style={{ background: 'var(--off-white)', color: 'var(--fg)', padding: '5px 10px' }}
+              >
+                PRJ-{id}
+              </span>
+              {paused ? (
+                <span
+                  className="maach-mono"
+                  style={{ background: 'var(--sand-grey)', color: 'var(--fg)', padding: '5px 10px' }}
+                >
+                  PAUSADO
+                </span>
+              ) : (
+                <span
+                  className="maach-mono"
+                  style={{
+                    background: 'transparent',
+                    color: 'var(--off-white)',
+                    border: '1px solid rgba(228,226,227,.4)',
+                    padding: '5px 10px',
+                  }}
+                >
+                  EN PRODUCCIÓN
+                </span>
+              )}
+            </div>
+            <h1
+              className="h-display"
+              style={{
+                fontSize: 'clamp(72px, 12vw, 200px)',
+                color: 'var(--off-white)',
+                lineHeight: 0.9,
+                margin: 0,
+                marginBottom: 32,
+              }}
+            >
+              {p.title}.
+            </h1>
+            <p
+              style={{
+                fontSize: 20,
+                color: 'var(--sand-grey)',
+                maxWidth: 640,
+                lineHeight: 1.5,
+                marginBottom: 48,
+              }}
+            >
+              {paused
+                ? 'Este proyecto se encuentra actualmente pausado. Más información estará disponible próximamente.'
+                : 'Este proyecto está en producción. La documentación completa estará disponible próximamente.'}
+            </p>
+            <Link
+              to="/portafolio"
+              className="maach-mono"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 12,
+                color: 'var(--off-white)',
+                borderBottom: '1.5px solid var(--lava-orange)',
+                paddingBottom: 4,
+              }}
+            >
+              <IconArrow size={14} rotate={180} /> Volver al portafolio
+            </Link>
+          </div>
+        </section>
+      </Layout>
+    );
+  }
+
   const heroImg = p.hero;
   const sideImg = p.side;
   const galleryImgs = p.gallery ?? [
