@@ -442,9 +442,9 @@ const T: Translations = {
     'pd.photo': 'FOTOGRAFÍA_ESTUDIO',
 
     // ====== FOOTER ======
-    'footer.manifesto.line1': 'Engineered',
-    'footer.manifesto.line2': 'for work.',
-    'footer.manifesto.line3': 'Designed to last.',
+    'footer.manifesto.line1': 'Ingeniería',
+    'footer.manifesto.line2': 'para el trabajo.',
+    'footer.manifesto.line3': 'Diseñado para durar.',
     'footer.intro':
       'Mobiliario corporativo diseñado para el trabajo real. Diseño funcional, ingeniería aplicada y fabricación industrial.',
     'footer.address.line1': 'Quito · Ecuador',
@@ -452,7 +452,7 @@ const T: Translations = {
     'footer.col.productos': 'Productos',
     'footer.col.company': 'Compañía',
     'footer.col.resources': 'Recursos',
-    'footer.bottom.tagline': 'Industrial Design, Real Performance',
+    'footer.bottom.tagline': 'Diseño Industrial, Rendimiento Real',
     'footer.terms': 'Términos',
     'footer.privacy': 'Privacidad',
     'footer.cookies': 'Cookies',
