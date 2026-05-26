@@ -292,14 +292,13 @@ export default function PageAbout() {
 
             <p
               style={{
-                fontFamily: 'var(--display)',
+                fontFamily: 'var(--body)',
                 fontWeight: 400,
-                fontSize: 'clamp(20px, 2.1vw, 30px)',
-                lineHeight: 1.32,
-                color: 'var(--off-white)',
+                fontSize: 'clamp(18px, 1.6vw, 22px)',
+                lineHeight: 1.55,
+                color: 'var(--sand-grey)',
                 margin: 0,
-                maxWidth: 920,
-                letterSpacing: '-.005em',
+                maxWidth: 880,
               }}
             >
               {t('about.mv.mision.body')}
@@ -356,14 +355,13 @@ export default function PageAbout() {
 
             <p
               style={{
-                fontFamily: 'var(--display)',
+                fontFamily: 'var(--body)',
                 fontWeight: 400,
-                fontSize: 'clamp(20px, 2.1vw, 30px)',
-                lineHeight: 1.32,
-                color: 'var(--off-white)',
+                fontSize: 'clamp(18px, 1.6vw, 22px)',
+                lineHeight: 1.55,
+                color: 'var(--sand-grey)',
                 margin: 0,
-                maxWidth: 920,
-                letterSpacing: '-.005em',
+                maxWidth: 880,
               }}
             >
               {t('about.mv.vision.body')}
@@ -628,7 +626,14 @@ export default function PageAbout() {
           </span>
           <h2
             className="h-display"
-            style={{ fontSize: 'clamp(40px, 6vw, 88px)', color: 'var(--off-white)', lineHeight: 1.1 }}
+            style={{
+              fontSize: 'clamp(28px, 3.5vw, 54px)',
+              color: 'var(--off-white)',
+              lineHeight: 1.15,
+              letterSpacing: '-.01em',
+              maxWidth: 1080,
+              margin: '0 auto',
+            }}
           >
             {t('about.manifesto.body.1')}
             <span style={{ color: 'var(--lava-orange)' }}>{t('about.manifesto.body.2')}</span>
