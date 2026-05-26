@@ -582,15 +582,8 @@ export default function PageHome() {
             </span>
           </div>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(6, 1fr)',
-              gap: 0,
-              border: '1px solid var(--line)',
-            }}
-          >
-            {[
+          {(() => {
+            const clientes: { name: string; file?: string }[] = [
               { name: 'Gran Comercio', file: 'gran-comercio.png' },
               { name: 'Contract Workplaces', file: 'contract-workplaces.png' },
               { name: 'Induvallas', file: 'induvallas.png' },
@@ -613,92 +606,51 @@ export default function PageHome() {
               { name: 'Wesco', file: 'wesco.webp' },
               { name: 'Palladium', file: 'palladium.jpg' },
               { name: 'Tropi Burger', file: 'tropi-burger.webp' },
-            ].map((c, i, arr) => {
-              const { name, file } = c as { name: string; file?: string };
-              const cols = 6;
-              const col = i % cols;
-              const total = arr.length;
-              const lastRowStart = total - (total % cols || cols);
-              return (
-                <div
-                  key={name}
-                  title={name}
-                  style={{
-                    position: 'relative',
-                    aspectRatio: '3/2',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    padding: 20,
-                    borderRight: col === cols - 1 ? 0 : '1px solid var(--line)',
-                    borderBottom: i < lastRowStart ? '1px solid var(--line)' : 0,
-                    background: 'var(--off-white)',
-                    overflow: 'hidden',
-                    transition: 'background .25s ease',
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--soft)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.background = 'var(--off-white)')}
-                >
-                  {file ? (
-                    <img
-                      src={asset(`clientes/${file}`)}
-                      alt={name}
-                      onError={(e) => {
-                        const target = e.currentTarget;
-                        target.style.display = 'none';
-                        const fallback = target.nextElementSibling as HTMLElement | null;
-                        if (fallback) fallback.style.display = 'flex';
-                      }}
-                      style={{
-                        maxWidth: '78%',
-                        maxHeight: '68%',
-                        objectFit: 'contain',
-                        opacity: 0.92,
-                        transition: 'opacity .2s, transform .25s',
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.opacity = '1';
-                        e.currentTarget.style.transform = 'scale(1.04)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.opacity = '0.92';
-                        e.currentTarget.style.transform = '';
-                      }}
-                    />
-                  ) : null}
-                  {/* Fallback text label — shown when no file provided or image fails */}
-                  <span
-                    className="maach-mono"
-                    style={{
-                      display: file ? 'none' : 'flex',
-                      textAlign: 'center',
-                      fontSize: 11,
-                      letterSpacing: '.08em',
-                      color: 'var(--fg)',
-                      lineHeight: 1.3,
-                    }}
-                  >
-                    {name}
-                  </span>
+            ];
 
-                  {/* Small index in the corner */}
-                  <span
-                    className="maach-mono"
-                    style={{
-                      position: 'absolute',
-                      top: 8,
-                      left: 10,
-                      fontSize: 9,
-                      color: 'var(--muted)',
-                      letterSpacing: '.1em',
+            const renderCell = (c: { name: string; file?: string }, key: string) => (
+              <div key={key} className="logos-cell" title={c.name}>
+                {c.file ? (
+                  <img
+                    src={asset(`clientes/${c.file}`)}
+                    alt={c.name}
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      target.style.display = 'none';
+                      const fallback = target.nextElementSibling as HTMLElement | null;
+                      if (fallback) fallback.style.display = 'flex';
                     }}
-                  >
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
+                  />
+                ) : null}
+                <span
+                  className="maach-mono"
+                  style={{
+                    display: c.file ? 'none' : 'flex',
+                    textAlign: 'center',
+                    fontSize: 11,
+                    letterSpacing: '.08em',
+                    color: 'var(--fg)',
+                    lineHeight: 1.3,
+                  }}
+                >
+                  {c.name}
+                </span>
+              </div>
+            );
+
+            // Duplicate the list so the marquee can loop seamlessly
+            // (animation translates -50% → first copy ends where second copy begins)
+            return (
+              <div className="logos-marquee" aria-label="Clientes MAACH">
+                <div className="logos-track">
+                  {clientes.map((c, i) => renderCell(c, `a-${i}`))}
                 </div>
-              );
-            })}
-          </div>
+                <div className="logos-track" aria-hidden>
+                  {clientes.map((c, i) => renderCell(c, `b-${i}`))}
+                </div>
+              </div>
+            );
+          })()}
 
           <p
             className="maach-mono"

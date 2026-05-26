@@ -285,6 +285,73 @@ h6 {
   }
 }
 
+/* ─── Logos carousel — auto-scrolling marquee ─────────────────── */
+.logos-marquee {
+  display: flex;
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--off-white);
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 80px,
+    #000 calc(100% - 80px),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 80px,
+    #000 calc(100% - 80px),
+    transparent 100%
+  );
+}
+.logos-track {
+  display: flex;
+  flex-shrink: 0;
+  animation: marquee 60s linear infinite;
+}
+.logos-marquee:hover .logos-track {
+  animation-play-state: paused;
+}
+.logos-cell {
+  flex-shrink: 0;
+  width: 220px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-right: 1px solid var(--line);
+  background: var(--off-white);
+  transition: background 0.25s ease;
+}
+.logos-cell:hover {
+  background: var(--soft);
+}
+.logos-cell img {
+  max-width: 78%;
+  max-height: 64%;
+  object-fit: contain;
+  opacity: 0.92;
+  transition: opacity 0.2s, transform 0.25s;
+}
+.logos-cell:hover img {
+  opacity: 1;
+  transform: scale(1.04);
+}
+@media (max-width: 768px) {
+  .logos-cell {
+    width: 160px;
+    height: 110px;
+    padding: 14px;
+  }
+  .logos-track {
+    animation-duration: 45s;
+  }
+}
+
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
