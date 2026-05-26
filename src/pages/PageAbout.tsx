@@ -401,9 +401,83 @@ export default function PageAbout() {
               <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 16 }}>
                 {t('about.sobre.eyebrow')}
               </span>
-              <h2 className="h-display" style={{ fontSize: 'clamp(48px, 6.5vw, 96px)', lineHeight: 0.95 }}>
+              <h2
+                className="h-display"
+                style={{ fontSize: 'clamp(48px, 6.5vw, 96px)', lineHeight: 0.95, marginBottom: 40 }}
+              >
                 {t('about.sobre.title')}
               </h2>
+
+              <div
+                style={{
+                  position: 'relative',
+                  aspectRatio: '4/5',
+                  border: '1px solid var(--line)',
+                  overflow: 'hidden',
+                  background: 'var(--soft)',
+                }}
+              >
+                <img
+                  src={asset('biblioteca-4.webp')}
+                  alt=""
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                  }}
+                />
+                <div
+                  aria-hidden
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(to top, rgba(22,22,22,.4), transparent 55%)',
+                  }}
+                />
+                {/* Corner crosshair — top-right */}
+                <div
+                  aria-hidden
+                  style={{
+                    position: 'absolute',
+                    top: 14,
+                    right: 14,
+                    width: 18,
+                    height: 18,
+                    borderTop: '2px solid var(--lava-orange)',
+                    borderRight: '2px solid var(--lava-orange)',
+                  }}
+                />
+                {/* Caption pill */}
+                <span
+                  className="maach-mono"
+                  style={{
+                    position: 'absolute',
+                    bottom: 14,
+                    left: 14,
+                    background: 'var(--off-white)',
+                    color: 'var(--fg)',
+                    padding: '5px 10px',
+                  }}
+                >
+                  ESPACIOS DE TRABAJO
+                </span>
+                {/* Frame index */}
+                <span
+                  className="maach-mono"
+                  style={{
+                    position: 'absolute',
+                    bottom: 14,
+                    right: 14,
+                    background: 'var(--lava-orange)',
+                    color: 'var(--off-white)',
+                    padding: '5px 10px',
+                  }}
+                >
+                  FRAME 00.1
+                </span>
+              </div>
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
