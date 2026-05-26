@@ -110,7 +110,7 @@ export default function PageContacto() {
               >
                 {t('cont.tag')}
               </span>
-              <h1 className="h-display" style={{ fontSize: 'clamp(56px, 7vw, 112px)', marginBottom: 32 }}>
+              <h1 className="h-display" style={{ fontSize: 'clamp(56px, 7vw, 90px)', marginBottom: 32 }}>
                 {t('cont.hero.title.1')}<br />
                 <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>{t('cont.hero.title.2')}</span>
               </h1>

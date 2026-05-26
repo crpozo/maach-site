@@ -173,7 +173,7 @@ export default function PageAbout() {
             <h1
               className="h-display"
               style={{
-                fontSize: 'clamp(48px, 7vw, 120px)',
+                fontSize: 'clamp(48px, 7vw, 90px)',
                 marginBottom: 32,
                 color: 'var(--off-white)',
                 lineHeight: 0.92,
@@ -257,7 +257,7 @@ export default function PageAbout() {
               <span
                 className="h-display"
                 style={{
-                  fontSize: 'clamp(96px, 11vw, 168px)',
+                  fontSize: 'clamp(60px, 11vw, 90px)',
                   color: 'var(--lava-orange)',
                   lineHeight: 0.82,
                   display: 'block',
@@ -319,7 +319,7 @@ export default function PageAbout() {
               <span
                 className="h-display"
                 style={{
-                  fontSize: 'clamp(96px, 11vw, 168px)',
+                  fontSize: 'clamp(60px, 11vw, 90px)',
                   color: 'var(--off-white)',
                   lineHeight: 0.82,
                   display: 'block',
@@ -553,7 +553,7 @@ export default function PageAbout() {
             <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 12 }}>
               {t('about.values.eyebrow')}
             </span>
-            <h2 className="h-display" style={{ fontSize: 'clamp(56px, 8vw, 128px)' }}>
+            <h2 className="h-display" style={{ fontSize: 'clamp(56px, 8vw, 90px)' }}>
               {t('about.values.title')}
             </h2>
           </div>

@@ -95,7 +95,7 @@ export default function PageNuevo() {
                   Drop / Lanzamiento
                 </span>
               </div>
-              <h1 className="h-display" style={{ fontSize: 'clamp(56px, 7.5vw, 128px)', marginBottom: 32 }}>
+              <h1 className="h-display" style={{ fontSize: 'clamp(56px, 7.5vw, 90px)', marginBottom: 32 }}>
                 Novedades<br />
                 <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>2026.</span>
               </h1>

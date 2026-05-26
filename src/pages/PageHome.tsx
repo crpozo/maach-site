@@ -150,7 +150,7 @@ export default function PageHome() {
             <h1
               className="h-display"
               style={{
-                fontSize: 'clamp(48px, 7vw, 120px)',
+                fontSize: 'clamp(48px, 7vw, 90px)',
                 marginBottom: 32,
                 color: 'var(--off-white)',
               }}
@@ -200,7 +200,7 @@ export default function PageHome() {
               <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 16 }}>
                 {t('home.cat.eyebrow')}
               </span>
-              <h2 className="h-display" style={{ fontSize: 'clamp(56px, 8vw, 128px)' }}>
+              <h2 className="h-display" style={{ fontSize: 'clamp(56px, 8vw, 90px)' }}>
                 {t('home.cat.title')}
               </h2>
             </div>
@@ -357,7 +357,7 @@ export default function PageHome() {
               <span className="maach-mono" style={{ color: 'var(--sand-grey)', marginBottom: 16, display: 'block' }}>
                 {t('home.adn.eyebrow')}
               </span>
-              <h2 className="h-display" style={{ fontSize: 'clamp(56px, 8vw, 120px)', marginBottom: 24 }}>
+              <h2 className="h-display" style={{ fontSize: 'clamp(56px, 8vw, 90px)', marginBottom: 24 }}>
                 {t('home.adn.title.1')}<br />
                 <span className="h-italic" style={{ color: 'var(--sand-grey)' }}>{t('home.adn.title.2')}</span>
               </h2>
@@ -455,7 +455,7 @@ export default function PageHome() {
               <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 16 }}>
                 {t('home.cases.eyebrow')}
               </span>
-              <h2 className="h-display" style={{ fontSize: 'clamp(48px, 6.5vw, 96px)' }}>
+              <h2 className="h-display" style={{ fontSize: 'clamp(48px, 6.5vw, 90px)' }}>
                 {t('home.cases.title')}
               </h2>
             </div>
@@ -563,7 +563,7 @@ export default function PageHome() {
               <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 16 }}>
                 {t('home.clientes.eyebrow')}
               </span>
-              <h2 className="h-display" style={{ fontSize: 'clamp(48px, 6.5vw, 96px)' }}>
+              <h2 className="h-display" style={{ fontSize: 'clamp(48px, 6.5vw, 90px)' }}>
                 {t('home.clientes.title.1')}{' '}
                 <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>{t('home.clientes.title.2')}</span>
               </h2>
@@ -730,7 +730,7 @@ export default function PageHome() {
             <span className="maach-mono" style={{ color: 'var(--lava-orange)', marginBottom: 24, display: 'block' }}>
               {t('home.precision.eyebrow')}
             </span>
-            <h2 className="h-display" style={{ fontSize: 'clamp(48px, 7vw, 112px)', marginBottom: 32 }}>
+            <h2 className="h-display" style={{ fontSize: 'clamp(48px, 7vw, 90px)', marginBottom: 32 }}>
               {t('home.precision.title.1')}<br />
               <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>{t('home.precision.title.2')}</span>
             </h2>

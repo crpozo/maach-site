@@ -51,7 +51,7 @@ export default function PageEspacios() {
             transform: 'translateY(-50%)',
             fontFamily: 'var(--display)',
             fontWeight: 700,
-            fontSize: 'clamp(360px, 52vw, 920px)',
+            fontSize: 'clamp(60px, 52vw, 90px)',
             lineHeight: 0.78,
             color: 'var(--lava-orange)',
             opacity: 0.06,
@@ -149,7 +149,7 @@ export default function PageEspacios() {
             <h1
               className="h-display"
               style={{
-                fontSize: 'clamp(64px, 9vw, 168px)',
+                fontSize: 'clamp(64px, 9vw, 90px)',
                 color: 'var(--off-white)',
                 lineHeight: 0.92,
                 margin: 0,
@@ -228,7 +228,7 @@ export default function PageEspacios() {
               <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 12 }}>
                 {t('esp.typ.eyebrow')}
               </span>
-              <h2 className="h-display" style={{ fontSize: 'clamp(48px, 6.5vw, 96px)' }}>
+              <h2 className="h-display" style={{ fontSize: 'clamp(48px, 6.5vw, 90px)' }}>
                 {t('esp.typ.title.1')} <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>{t('esp.typ.title.2')}</span>
               </h2>
             </div>
@@ -440,7 +440,7 @@ export default function PageEspacios() {
               <span className="maach-mono" style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 12 }}>
                 {t('esp.proc.eyebrow')}
               </span>
-              <h2 className="h-display" style={{ fontSize: 'clamp(48px, 6.5vw, 96px)' }}>
+              <h2 className="h-display" style={{ fontSize: 'clamp(48px, 6.5vw, 90px)' }}>
                 {t('esp.proc.title.1')}<br />
                 <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>{t('esp.proc.title.2')}</span>
               </h2>
@@ -660,7 +660,7 @@ export default function PageEspacios() {
               <h2
                 className="h-display"
                 style={{
-                  fontSize: 'clamp(48px, 7vw, 120px)',
+                  fontSize: 'clamp(48px, 7vw, 90px)',
                   color: 'var(--off-white)',
                   marginBottom: 24,
                   lineHeight: 0.95,

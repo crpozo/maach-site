@@ -31,7 +31,7 @@ export default function PageColecciones() {
           <span className="maach-mono" style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 16 }}>
             § Sistema 2026
           </span>
-          <h1 className="h-display" style={{ fontSize: 'clamp(56px, 9vw, 168px)', marginBottom: 32 }}>
+          <h1 className="h-display" style={{ fontSize: 'clamp(56px, 9vw, 90px)', marginBottom: 32 }}>
             Colec<span className="h-italic" style={{ color: 'var(--lava-orange)' }}>ciones.</span>
           </h1>
           <p style={{ fontSize: 22, color: 'var(--muted)', maxWidth: 720, lineHeight: 1.45 }}>
@@ -101,7 +101,7 @@ export default function PageColecciones() {
               transform: 'translateY(-50%)',
               fontFamily: 'var(--display)',
               fontWeight: 700,
-              fontSize: 'clamp(180px, 22vw, 360px)',
+              fontSize: 'clamp(60px, 22vw, 90px)',
               color: 'var(--off-white)',
               opacity: 0.08,
               lineHeight: 1,
@@ -154,7 +154,7 @@ export default function PageColecciones() {
             <h2
               className="h-display"
               style={{
-                fontSize: 'clamp(72px, 12vw, 200px)',
+                fontSize: 'clamp(72px, 12vw, 90px)',
                 color: 'var(--off-white)',
                 lineHeight: 0.92,
                 margin: 0,

@@ -80,7 +80,7 @@ export default function PagePortafolio() {
             transform: 'translateY(-50%)',
             fontFamily: 'var(--display)',
             fontWeight: 700,
-            fontSize: 'clamp(360px, 52vw, 920px)',
+            fontSize: 'clamp(60px, 52vw, 90px)',
             lineHeight: 0.78,
             color: 'var(--lava-orange)',
             opacity: 0.06,
@@ -170,7 +170,7 @@ export default function PagePortafolio() {
           <div style={{ maxWidth: 1100, display: 'grid', gap: 32 }}>
             <h1
               className="h-display"
-              style={{ fontSize: 'clamp(64px, 9vw, 168px)', color: 'var(--off-white)', lineHeight: 0.92, margin: 0 }}
+              style={{ fontSize: 'clamp(64px, 9vw, 90px)', color: 'var(--off-white)', lineHeight: 0.92, margin: 0 }}
             >
               {t('port.hero.title.1')}<span className="h-italic" style={{ color: 'var(--lava-orange)' }}>{t('port.hero.title.2')}</span>
             </h1>
@@ -360,7 +360,7 @@ export default function PagePortafolio() {
                       <IconPin size={12} /> {p.location}
                     </div>
                   ) : null}
-                  <h2 className="h-display" style={{ fontSize: 'clamp(48px, 7vw, 120px)', color: 'var(--off-white)' }}>
+                  <h2 className="h-display" style={{ fontSize: 'clamp(48px, 7vw, 90px)', color: 'var(--off-white)' }}>
                     {p.title}.
                   </h2>
                   {p.scope ? (

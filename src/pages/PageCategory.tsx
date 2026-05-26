@@ -2,7 +2,7 @@ import { asset } from '../lib/asset';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { Layout } from '../components/Layout';
 import { IconArrow } from '../components/icons';
-import { CATEGORIES, getCategoryBySlug } from '../data/categorias';
+import { getCategoryBySlug } from '../data/categorias';
 import { PRODUCTS } from '../data/productos';
 
 // Map category slug → hero photo + index number
@@ -24,12 +24,6 @@ export default function PageCategory() {
   }
 
   const hero = HEROES[category.slug] || HEROES.silloneria;
-
-  // Build list of all category slugs for prev/next + sidebar
-  const sortedCategories = CATEGORIES;
-  const currentIndex = sortedCategories.findIndex((c) => c.slug === category.slug);
-  const prevCategory = sortedCategories[currentIndex - 1];
-  const nextCategory = sortedCategories[currentIndex + 1];
 
   return (
     <Layout screenLabel={'03 Catálogo · ' + category.name}>
@@ -135,10 +129,30 @@ export default function PageCategory() {
           style={{ position: 'relative', zIndex: 3, width: '100%', paddingTop: 96, paddingBottom: 56 }}
         >
           <div style={{ maxWidth: 1100 }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 14, marginBottom: 24 }}>
+              <span
+                aria-hidden
+                style={{
+                  display: 'inline-block',
+                  width: 28,
+                  height: 1,
+                  background: 'var(--lava-orange)',
+                }}
+              />
+              <span
+                className="maach-mono"
+                style={{
+                  color: 'var(--lava-orange)',
+                  letterSpacing: '.14em',
+                }}
+              >
+                CATEGORÍA · MAACH
+              </span>
+            </div>
             <h1
               className="h-display"
               style={{
-                fontSize: 'clamp(48px, 7vw, 112px)',
+                fontSize: 'clamp(48px, 7vw, 90px)',
                 color: 'var(--off-white)',
                 lineHeight: 0.92,
                 margin: 0,
@@ -146,7 +160,8 @@ export default function PageCategory() {
                 letterSpacing: '-.02em',
               }}
             >
-              {category.name}.
+              {category.name}
+              <span style={{ color: 'var(--lava-orange)' }}>.</span>
             </h1>
             {category.intro ? (
               <p
@@ -216,7 +231,8 @@ export default function PageCategory() {
                       color: inverted ? 'var(--off-white)' : 'inherit',
                     }}
                   >
-                    {s.name}.
+                    {s.name}
+                    <span style={{ color: 'var(--lava-orange)' }}>.</span>
                   </h2>
                   {s.pendingPhotos ? (
                     <span
@@ -430,64 +446,6 @@ export default function PageCategory() {
         );
       })}
 
-      {/* PREV / NEXT navigation */}
-      <section style={{ padding: '64px 0', borderBottom: '1px solid var(--line)' }}>
-        <div className="maach-container">
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              gap: 24,
-              flexWrap: 'wrap',
-            }}
-          >
-            {prevCategory ? (
-              <Link
-                to={`/categorias/${prevCategory.slug}`}
-                className="maach-mono"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 12,
-                  color: 'var(--fg)',
-                }}
-              >
-                <IconArrow size={14} rotate={180} /> {prevCategory.name}
-              </Link>
-            ) : (
-              <span />
-            )}
-            <Link
-              to="/productos"
-              className="maach-mono"
-              style={{
-                color: 'var(--lava-orange)',
-                borderBottom: '1.5px solid var(--lava-orange)',
-                paddingBottom: 4,
-              }}
-            >
-              Ver catálogo completo
-            </Link>
-            {nextCategory ? (
-              <Link
-                to={`/categorias/${nextCategory.slug}`}
-                className="maach-mono"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 12,
-                  color: 'var(--fg)',
-                }}
-              >
-                {nextCategory.name} <IconArrow size={14} />
-              </Link>
-            ) : (
-              <span />
-            )}
-          </div>
-        </div>
-      </section>
     </Layout>
   );
 }

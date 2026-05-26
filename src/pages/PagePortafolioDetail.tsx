@@ -241,7 +241,7 @@ function ProjectHero({ p, id }: { p: ProjectData; id: string }) {
           <h1
             className="h-display"
             style={{
-              fontSize: 'clamp(72px, 12vw, 200px)',
+              fontSize: 'clamp(72px, 12vw, 90px)',
               color: 'var(--off-white)',
               lineHeight: 0.9,
               margin: 0,
@@ -319,7 +319,7 @@ function ProjectHero({ p, id }: { p: ProjectData; id: string }) {
         <h1
           className="h-display"
           style={{
-            fontSize: 'clamp(72px, 12vw, 200px)',
+            fontSize: 'clamp(72px, 12vw, 90px)',
             color: 'var(--off-white)',
             lineHeight: 0.9,
             margin: 0,

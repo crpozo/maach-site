@@ -45,7 +45,7 @@ export default function PageInvestigacion() {
             transform: 'translateY(-50%)',
             fontFamily: 'var(--display)',
             fontWeight: 700,
-            fontSize: 'clamp(360px, 52vw, 920px)',
+            fontSize: 'clamp(60px, 52vw, 90px)',
             lineHeight: 0.78,
             color: 'var(--lava-orange)',
             opacity: 0.06,
@@ -139,7 +139,7 @@ export default function PageInvestigacion() {
               <h1
                 className="h-display"
                 style={{
-                  fontSize: 'clamp(56px, 9vw, 144px)',
+                  fontSize: 'clamp(56px, 9vw, 90px)',
                   margin: 0,
                   color: 'var(--off-white)',
                   lineHeight: 0.92,

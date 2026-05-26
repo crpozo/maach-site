@@ -150,7 +150,7 @@ export default function PageRecursos() {
           <h1
             className="h-display"
             style={{
-              fontSize: 'clamp(56px, 8vw, 128px)',
+              fontSize: 'clamp(56px, 8vw, 90px)',
               marginBottom: 16,
               color: 'var(--off-white)',
               lineHeight: 0.95,

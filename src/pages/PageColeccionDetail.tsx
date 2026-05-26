@@ -103,7 +103,7 @@ export default function PageColeccionDetail() {
           <span className="maach-mono" style={{ color: 'var(--off-white)', marginBottom: 24 }}>
             Sistema 2026 · CO-DISEÑO MAACH
           </span>
-          <h1 className="h-display" style={{ fontSize: 'clamp(96px, 15vw, 240px)', color: 'var(--off-white)' }}>
+          <h1 className="h-display" style={{ fontSize: 'clamp(60px, 15vw, 90px)', color: 'var(--off-white)' }}>
             {name}.
           </h1>
           <p
@@ -129,7 +129,7 @@ export default function PageColeccionDetail() {
               <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 16 }}>
                 § 01 / Concepto
               </span>
-              <h2 className="h-display" style={{ fontSize: 'clamp(48px, 6.5vw, 96px)', marginBottom: 32 }}>
+              <h2 className="h-display" style={{ fontSize: 'clamp(48px, 6.5vw, 90px)', marginBottom: 32 }}>
                 Diseño con<br />
                 <span className="h-italic">Propósito.</span>
               </h2>
@@ -307,7 +307,7 @@ export default function PageColeccionDetail() {
           </span>
           <h2
             className="h-display"
-            style={{ fontSize: 'clamp(56px, 8vw, 128px)', color: 'var(--off-white)', marginBottom: 24 }}
+            style={{ fontSize: 'clamp(56px, 8vw, 90px)', color: 'var(--off-white)', marginBottom: 24 }}
           >
             Integrar <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>{name}.</span>
           </h2>
