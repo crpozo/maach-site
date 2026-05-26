@@ -591,9 +591,8 @@ export default function PageHome() {
               { name: 'Cooperativa Policía Nacional' },
               { name: 'ConstruEcuador', file: 'construecuador.jpg' },
               { name: 'Liga Deportiva U.', file: 'liga-deportiva-u.jpeg' },
-              { name: 'PUCE' },
+              { name: 'PUCE', file: 'puce.png' },
               { name: 'Zaimella', file: 'zaimella.png' },
-              { name: 'CAME Arquitectos', file: 'came-arquitectos.png' },
               { name: 'Corporación Maresa', file: 'corporacion-maresa.avif' },
               { name: 'Kruger', file: 'kruger.png' },
               { name: 'Arroyo & Arroyo', file: 'arroyo-arroyo.jpg' },
@@ -605,12 +604,12 @@ export default function PageHome() {
               { name: 'Wesco', file: 'wesco.webp' },
               { name: 'Palladium', file: 'palladium.jpg' },
               { name: 'Tropi Burger', file: 'tropi-burger.webp' },
-              { name: 'Moreno & Valdivieso', file: 'moreno-valdivieso.webp' },
-            ].map((c, i) => {
+            ].map((c, i, arr) => {
               const { name, file } = c as { name: string; file?: string };
-              const col = i % 6;
-              const row = Math.floor(i / 6);
-              const total = 24;
+              const cols = 6;
+              const col = i % cols;
+              const total = arr.length;
+              const lastRowStart = total - (total % cols || cols);
               return (
                 <div
                   key={name}
@@ -622,8 +621,8 @@ export default function PageHome() {
                     alignItems: 'center',
                     justifyContent: 'center',
                     padding: 20,
-                    borderRight: col === 5 ? 0 : '1px solid var(--line)',
-                    borderBottom: row < Math.floor((total - 1) / 6) ? '1px solid var(--line)' : 0,
+                    borderRight: col === cols - 1 ? 0 : '1px solid var(--line)',
+                    borderBottom: i < lastRowStart ? '1px solid var(--line)' : 0,
                     background: 'var(--off-white)',
                     overflow: 'hidden',
                     transition: 'background .25s ease',

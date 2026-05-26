@@ -96,7 +96,7 @@ const T: Translations = {
     'home.clientes.eyebrow': '§ 05 / Clientes',
     'home.clientes.title.1': 'Confianza',
     'home.clientes.title.2': 'industrial.',
-    'home.clientes.count': '+24 organizaciones · LATAM',
+    'home.clientes.count': '+22 organizaciones · Ecuador',
     'home.clientes.footnote': 'Marcas y organizaciones con las que MAACH ha colaborado · 2018 — 2026',
     // Precisión Industrial
     'home.precision.eyebrow': 'Directiva de proyecto',
@@ -131,19 +131,28 @@ const T: Translations = {
     'esp.typ.title.1': 'Cuatro',
     'esp.typ.title.2': 'tipologías.',
     'esp.typ.count': '04 espacios · Sistema MAACH',
-    'esp.typ.01.name': 'Áreas Operativas',
+    'esp.typ.01.name': 'Área Coworking',
     'esp.typ.01.desc':
-      'Sistemas bench y estaciones de alta densidad. Maximizan el área por usuario sin sacrificar la ergonomía individual ni la productividad.',
-    'esp.typ.02.name': 'Salas de Juntas',
+      'Un espacio de coworking moderno combina funcionalidad, comodidad y diseño para crear ambientes de trabajo dinámicos y eficientes. Los escritorios ergonómicos y las estaciones de trabajo modulares permiten adaptarse a diferentes necesidades, mientras que las sillas ergonómicas brindan soporte y confort durante largas jornadas.',
+    'esp.typ.01.products':
+      'Estaciones de trabajo · Escritorio operativo · Silla operativa · Arturito rodante',
+    'esp.typ.02.name': 'Salas de Reuniones',
     'esp.typ.02.desc':
-      'Mesas ejecutivas y modulares con integración tecnológica oculta. Preparadas para reuniones presenciales e híbridas.',
-    'esp.typ.03.name': 'Zonas Lounge & Colaborativas',
+      'Las salas de reuniones modernas están diseñadas para fomentar la comunicación, la concentración y la colaboración en un entorno profesional y cómodo. Las mesas de reunión son el elemento central, disponibles en distintos formatos y tamaños para adaptarse a reuniones ejecutivas, sesiones creativas o videoconferencias. Las sillas ergonómicas complementan el espacio ofreciendo comodidad y soporte durante encuentros prolongados.',
+    'esp.typ.02.products':
+      'Mesa de reunión · Sillas operativas · Credenzas · Divisiones modulares',
+    'esp.typ.03.name': 'Áreas de Espera',
     'esp.typ.03.desc':
-      'Mobiliario flexible que fomenta la interacción espontánea y el trabajo ágil fuera del escritorio tradicional.',
-    'esp.typ.04.name': 'Oficinas Privadas & Directivas',
+      'Una sala de recepción con área de espera está diseñada para ofrecer una experiencia cómoda, organizada y profesional desde el primer momento. Los mostradores de recepción permiten una atención eficiente y ordenada, mientras que los sofás, butacas y sillas de espera brindan confort a visitantes y clientes. Las mesas auxiliares complementan el espacio aportando funcionalidad y equilibrio visual.',
+    'esp.typ.03.products':
+      'Recepción · Mesa colaborativa · Silla gerente · Sofá',
+    'esp.typ.04.name': 'Áreas de Archivo',
     'esp.typ.04.desc':
-      'Soluciones de carácter institucional. Escritorios, sillería y almacenamiento ejecutivo para liderazgo y áreas confidenciales.',
+      'Las áreas de archivación están diseñadas para mantener la organización, seguridad y fácil acceso a documentos y materiales de trabajo. Los archivadores metálicos, gaveteros y estanterías modulares permiten clasificar y almacenar información de manera eficiente, optimizando el uso del espacio y facilitando las tareas administrativas diarias.',
+    'esp.typ.04.products':
+      'Archivo rodante · Biblioteca alta · Lockers',
     'esp.typ.tipologia_label': 'TIPOLOGÍA',
+    'esp.typ.products_label': 'Productos utilizados',
     // Process
     'esp.proc.eyebrow': '§ 02 / Proceso',
     'esp.proc.title.1': 'Cómo planificamos',
@@ -541,7 +550,7 @@ const T: Translations = {
     'home.clientes.eyebrow': '§ 05 / Clients',
     'home.clientes.title.1': 'Industrial',
     'home.clientes.title.2': 'trust.',
-    'home.clientes.count': '+24 organizations · LATAM',
+    'home.clientes.count': '+22 organizations · Ecuador',
     'home.clientes.footnote': 'Brands and organizations MAACH has worked with · 2018 — 2026',
     // Precisión Industrial
     'home.precision.eyebrow': 'Project directive',
@@ -575,19 +584,28 @@ const T: Translations = {
     'esp.typ.title.1': 'Four',
     'esp.typ.title.2': 'typologies.',
     'esp.typ.count': '04 spaces · MAACH System',
-    'esp.typ.01.name': 'Operative Areas',
+    'esp.typ.01.name': 'Coworking Area',
     'esp.typ.01.desc':
-      'Bench systems and high-density workstations. Maximize area per user without sacrificing ergonomics or productivity.',
+      'A modern coworking space combines functionality, comfort and design to create dynamic, efficient work environments. Ergonomic desks and modular workstations adapt to different needs, while ergonomic chairs provide support and comfort during long workdays.',
+    'esp.typ.01.products':
+      'Workstations · Operative desk · Operative chair · Mobile pedestal',
     'esp.typ.02.name': 'Meeting Rooms',
     'esp.typ.02.desc':
-      'Executive and modular tables with hidden tech integration. Ready for in-person and hybrid meetings.',
-    'esp.typ.03.name': 'Lounge & Collaborative Zones',
+      'Modern meeting rooms are designed to foster communication, concentration and collaboration in a professional, comfortable environment. Meeting tables are the centerpiece, available in formats and sizes that adapt to executive meetings, creative sessions or video conferences. Ergonomic chairs complement the space, offering comfort and support during long encounters.',
+    'esp.typ.02.products':
+      'Meeting table · Operative chairs · Credenzas · Modular dividers',
+    'esp.typ.03.name': 'Waiting Areas',
     'esp.typ.03.desc':
-      'Flexible furniture that encourages spontaneous interaction and agile work away from the traditional desk.',
-    'esp.typ.04.name': 'Private & Executive Offices',
+      'A reception area with waiting space is designed to deliver a comfortable, organized and professional experience from the first moment. Reception counters enable efficient, orderly service, while sofas, armchairs and waiting chairs provide comfort to visitors and clients. Auxiliary tables complete the space, adding functionality and visual balance.',
+    'esp.typ.03.products':
+      'Reception · Collaborative table · Manager chair · Sofa',
+    'esp.typ.04.name': 'Archive Areas',
     'esp.typ.04.desc':
-      'Institutional-grade solutions. Desks, seating and executive storage for leadership and confidential areas.',
+      'Archive areas are designed to keep documents and work materials organized, secure and accessible. Metal filing cabinets, drawer units and modular shelves classify and store information efficiently, optimizing space use and facilitating daily administrative tasks.',
+    'esp.typ.04.products':
+      'Mobile filing · High bookshelf · Lockers',
     'esp.typ.tipologia_label': 'TYPOLOGY',
+    'esp.typ.products_label': 'Products used',
     'esp.proc.eyebrow': '§ 02 / Process',
     'esp.proc.title.1': 'How we plan',
     'esp.proc.title.2': 'a space.',

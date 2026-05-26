@@ -7,10 +7,10 @@ import { useT } from '../i18n/i18n';
 export default function PageEspacios() {
   const t = useT();
   const spaces = [
-    { id: '01', title: t('esp.typ.01.name'), desc: t('esp.typ.01.desc'), tex: 'tex-stack-force', img: asset('biblioteca-2.webp') },
-    { id: '02', title: t('esp.typ.02.name'), desc: t('esp.typ.02.desc'), tex: 'tex-load-line', img: asset('biblioteca-3.webp') },
-    { id: '03', title: t('esp.typ.03.name'), desc: t('esp.typ.03.desc'), tex: 'tex-tactile-field', img: asset('biblioteca-4.webp') },
-    { id: '04', title: t('esp.typ.04.name'), desc: t('esp.typ.04.desc'), tex: 'tex-forged-grid', img: asset('biblioteca-1.webp') },
+    { id: '01', title: t('esp.typ.01.name'), desc: t('esp.typ.01.desc'), products: t('esp.typ.01.products'), tex: 'tex-stack-force', img: asset('biblioteca-2.webp') },
+    { id: '02', title: t('esp.typ.02.name'), desc: t('esp.typ.02.desc'), products: t('esp.typ.02.products'), tex: 'tex-load-line', img: asset('biblioteca-3.webp') },
+    { id: '03', title: t('esp.typ.03.name'), desc: t('esp.typ.03.desc'), products: t('esp.typ.03.products'), tex: 'tex-tactile-field', img: asset('biblioteca-4.webp') },
+    { id: '04', title: t('esp.typ.04.name'), desc: t('esp.typ.04.desc'), products: t('esp.typ.04.products'), tex: 'tex-forged-grid', img: asset('biblioteca-1.webp') },
   ];
 
   return (
@@ -341,12 +341,42 @@ export default function PageEspacios() {
                       fontSize: 14,
                       color: 'var(--sand-grey)',
                       lineHeight: 1.5,
-                      maxWidth: 480,
-                      marginBottom: 16,
+                      maxWidth: 520,
+                      marginBottom: 18,
                     }}
                   >
                     {s.desc}
                   </p>
+                  <div
+                    style={{
+                      paddingTop: 14,
+                      marginBottom: 18,
+                      borderTop: '1px solid rgba(228,226,227,.22)',
+                      maxWidth: 520,
+                    }}
+                  >
+                    <span
+                      className="maach-mono"
+                      style={{
+                        color: 'var(--lava-orange)',
+                        display: 'block',
+                        marginBottom: 6,
+                        letterSpacing: '.1em',
+                      }}
+                    >
+                      {t('esp.typ.products_label').toUpperCase()}
+                    </span>
+                    <span
+                      style={{
+                        fontSize: 13,
+                        color: 'var(--off-white)',
+                        lineHeight: 1.5,
+                        letterSpacing: '.01em',
+                      }}
+                    >
+                      {s.products}
+                    </span>
+                  </div>
                   <span
                     className="maach-mono"
                     style={{
