@@ -46,7 +46,7 @@ export default function PageAbout() {
       >
         {/* Background photo */}
         <img
-          src={asset('perspectiva-2.webp')}
+          src={asset('biblioteca-1.webp')}
           alt=""
           aria-hidden
           style={{
