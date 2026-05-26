@@ -500,7 +500,15 @@ export default function PageEspacios() {
             <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 12 }}>
               {t('esp.del.eyebrow')}
             </span>
-            <h2 className="h-display" style={{ fontSize: 'clamp(36px, 5vw, 72px)' }}>
+            <h2
+              className="h-display"
+              style={{
+                fontSize: 'clamp(32px, 4vw, 56px)',
+                lineHeight: 0.95,
+                letterSpacing: '-.01em',
+                margin: 0,
+              }}
+            >
               {t('esp.del.title')}
             </h2>
           </div>
