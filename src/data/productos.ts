@@ -36,6 +36,35 @@ export type Product = {
   sheets?: ProductSheets;
 };
 
+// Helper for Escritorios products that follow the same disk layout as
+// Almacenamiento: NN.webp photos + optional .dwg next to the slug.
+const escritorio = (
+  slug: string,
+  name: string,
+  subcategory: 'Escritorios gerente' | 'Escritorios operativos' | 'Estaciones de trabajo' | 'Escritorios regulables',
+  sku: string,
+  description: string,
+  opts: { photos?: number; dwg?: boolean } = {},
+): Product => {
+  const photos = opts.photos ?? 6;
+  const sheets: ProductSheets = {};
+  if (opts.dwg !== false) {
+    sheets.dwg = asset(`productos/escritorios/${slug}/${slug}.dwg`);
+  }
+  return {
+    slug,
+    name,
+    category: 'Escritorios + Estaciones de trabajo',
+    subcategory,
+    sku,
+    description,
+    gallery: Array.from({ length: photos }, (_, i) =>
+      asset(`productos/escritorios/${slug}/${String(i + 1).padStart(2, '0')}.webp`),
+    ),
+    sheets: Object.keys(sheets).length > 0 ? sheets : undefined,
+  };
+};
+
 // Helper to keep entries compact for Almacenamiento products that follow a
 // consistent on-disk layout: 6 webp photos (01..06) + dwg + rfa + skp.
 const almacenamiento = (slug: string, name: string, sku: string, description: string): Product => ({
@@ -157,6 +186,15 @@ export const PRODUCTS: Product[] = [
   silla('brand', 'Brand', 'Colectividades', 'MCH-COL-22', { img: 4 }),
   silla('boom', 'Boom', 'Colectividades', 'MCH-COL-23', { img: 5 }),
   silla('bertoia', 'Bertoia', 'Colectividades', 'MCH-COL-24', { img: 1, ficha: false }),
+
+  // ─── ESCRITORIOS GERENTE ─────────────────────────────────────
+  escritorio(
+    'escritorio-gerente-recto',
+    'Escritorio Gerente Recto',
+    'Escritorios gerente',
+    'MCH-EGR-01',
+    'Escritorio gerencial de líneas rectas con tablero superior en melamina y estructura metálica. Pensado para áreas ejecutivas que requieren superficie amplia, organización limpia y conducción eléctrica integrada para una imagen ordenada.',
+  ),
 
   // ─── ALMACENAMIENTO ──────────────────────────────────────────
   almacenamiento(

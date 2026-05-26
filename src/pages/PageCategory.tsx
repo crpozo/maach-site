@@ -329,7 +329,11 @@ export default function PageCategory() {
                       MODELOS DISPONIBLES · {sectionProducts.length}
                     </span>
                     <Link
-                      to="/productos"
+                      to={
+                        s.productSubcategory
+                          ? `/productos?sub=${encodeURIComponent(s.productSubcategory)}`
+                          : '/productos'
+                      }
                       className="maach-mono"
                       style={{
                         color: inverted ? 'var(--off-white)' : 'var(--fg)',
@@ -354,7 +358,7 @@ export default function PageCategory() {
                     {sectionProducts.slice(0, 8).map((p) => (
                       <Link
                         key={p.slug}
-                        to={`/productos/silloneria/${p.slug}`}
+                        to={`/productos/${category.slug}/${p.slug}`}
                         style={{
                           display: 'block',
                           border:

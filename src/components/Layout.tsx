@@ -176,7 +176,7 @@ function MegaMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
                 {col.items.map((item) => (
                   <li key={item}>
                     <Link
-                      to={`/categorias/${col.slug}`}
+                      to={`/productos?sub=${encodeURIComponent(item)}`}
                       onClick={onClose}
                       style={{ fontSize: 14, color: 'var(--muted)', transition: 'color .15s' }}
                       onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--fg)')}

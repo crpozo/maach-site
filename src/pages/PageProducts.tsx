@@ -1,6 +1,6 @@
 import { asset } from '../lib/asset';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import { Layout } from '../components/Layout';
 import {
   IconChevronDown,
@@ -61,10 +61,52 @@ export default function PageProducts() {
   });
   const products: GridProduct[] = [...realProducts, ...placeholders];
 
-  const [openCats, setOpenCats] = useState<string[]>(['Sillonería']);
+  // Build a list of all known subcategory canonical strings so we can
+  // resolve case-insensitive query params from the mega menu.
+  const ALL_SUBS = catalogCategories.flatMap((c) => c.items);
+  const resolveSub = (raw: string | null): string | null => {
+    if (!raw) return null;
+    const target = raw.trim().toLowerCase();
+    return ALL_SUBS.find((s) => s.toLowerCase() === target) ?? null;
+  };
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  const initialSub = resolveSub(searchParams.get('sub'));
+  const initialCatName = initialSub
+    ? catalogCategories.find((c) => c.items.includes(initialSub))?.name
+    : undefined;
+
+  const [openCats, setOpenCats] = useState<string[]>(
+    initialCatName ? [initialCatName] : ['Sillonería'],
+  );
   const toggle = (n: string) =>
     setOpenCats((p) => (p.includes(n) ? p.filter((x) => x !== n) : [...p, n]));
-  const [selectedSub, setSelectedSub] = useState<string | null>(null);
+  const [selectedSub, setSelectedSub] = useState<string | null>(initialSub);
+
+  // Keep state ↔ URL in sync when the user clicks a chip
+  const selectSub = (sub: string | null) => {
+    setSelectedSub(sub);
+    if (sub) {
+      setSearchParams({ sub }, { replace: true });
+    } else {
+      setSearchParams({}, { replace: true });
+    }
+  };
+
+  // React to URL changes (e.g. arriving from the mega menu)
+  useEffect(() => {
+    const next = resolveSub(searchParams.get('sub'));
+    if (next !== selectedSub) {
+      setSelectedSub(next);
+      if (next) {
+        const parent = catalogCategories.find((c) => c.items.includes(next))?.name;
+        if (parent && !openCats.includes(parent)) {
+          setOpenCats((p) => [...p, parent]);
+        }
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
 
   const filtered = selectedSub ? products.filter((p) => p.subcategory === selectedSub) : products;
 
@@ -252,7 +294,7 @@ export default function PageProducts() {
                           {cat.items.map((it) => (
                             <button
                               key={it}
-                              onClick={() => setSelectedSub(selectedSub === it ? null : it)}
+                              onClick={() => selectSub(selectedSub === it ? null : it)}
                               style={{
                                 display: 'flex',
                                 alignItems: 'center',
