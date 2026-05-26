@@ -228,12 +228,12 @@ export default function PageHome() {
             }}
           >
             {[
-              { id: '01', name: t('home.cat.01.name'), desc: t('home.cat.01.desc'), texture: 'tex-forged-grid', img: asset('biblioteca-1.webp') },
-              { id: '02', name: t('home.cat.02.name'), desc: t('home.cat.02.desc'), texture: 'tex-stack-force', img: asset('biblioteca-2.webp') },
-              { id: '03', name: t('home.cat.03.name'), desc: t('home.cat.03.desc'), texture: 'tex-load-line', img: asset('perspectiva-2.webp') },
-              { id: '04', name: t('home.cat.04.name'), desc: t('home.cat.04.desc'), texture: 'tex-tactile-field', img: asset('biblioteca-3.webp') },
-              { id: '05', name: t('home.cat.05.name'), desc: t('home.cat.05.desc'), texture: 'tex-steel-align', img: asset('biblioteca-4.webp') },
-              { id: '06', name: t('home.cat.06.name'), desc: t('home.cat.06.desc'), texture: 'tex-factory-core', img: asset('biblioteca-5.webp') },
+              { id: '01', name: t('home.cat.01.name'), desc: t('home.cat.01.desc'), img: asset('biblioteca-1.webp') },
+              { id: '02', name: t('home.cat.02.name'), desc: t('home.cat.02.desc'), img: asset('biblioteca-2.webp') },
+              { id: '03', name: t('home.cat.03.name'), desc: t('home.cat.03.desc'), img: asset('perspectiva-2.webp') },
+              { id: '04', name: t('home.cat.04.name'), desc: t('home.cat.04.desc'), img: asset('biblioteca-3.webp') },
+              { id: '05', name: t('home.cat.05.name'), desc: t('home.cat.05.desc'), img: asset('biblioteca-4.webp') },
+              { id: '06', name: t('home.cat.06.name'), desc: t('home.cat.06.desc'), img: asset('biblioteca-5.webp') },
             ].map((cat, i) => {
               return (
                 <Link
@@ -286,18 +286,6 @@ export default function PageHome() {
                       zIndex: 1,
                     }}
                   />
-                  {/* Brand texture overlay */}
-                  <div
-                    className={cat.texture}
-                    style={{
-                      position: 'absolute',
-                      inset: 0,
-                      pointerEvents: 'none',
-                      color: 'var(--off-white)',
-                      zIndex: 1,
-                    }}
-                  />
-
                   <div
                     style={{
                       display: 'flex',
