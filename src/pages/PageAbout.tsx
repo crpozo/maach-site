@@ -31,44 +31,66 @@ export default function PageAbout() {
   const t = useT();
   return (
     <Layout screenLabel="12 Sobre MAACH">
-      {/* HERO */}
+      {/* HERO — editorial spread */}
       <section style={{ position: 'relative', overflow: 'hidden', borderBottom: '1px solid var(--line)' }}>
         <div
           style={{
             position: 'relative',
-            aspectRatio: '16/8',
-            minHeight: 540,
-            maxHeight: 760,
+            height: 'min(88vh, 880px)',
+            minHeight: 620,
             overflow: 'hidden',
-            background: 'var(--soft)',
+            background: 'var(--jet-black)',
           }}
         >
+          {/* Photo */}
           <img
-            src={asset('biblioteca-5.webp')}
+            src={asset('perspectiva-2.webp')}
             alt="MAACH"
-            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+            style={{
+              position: 'absolute',
+              inset: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              filter: 'brightness(.72) contrast(1.05)',
+            }}
           />
+          {/* Layered gradient for legibility */}
           <div
+            aria-hidden
             style={{
               position: 'absolute',
               inset: 0,
               background:
-                'linear-gradient(135deg, rgba(22,22,22,.65), rgba(22,22,22,.25) 45%, rgba(22,22,22,.08) 75%, transparent)',
+                'linear-gradient(180deg, rgba(22,22,22,.65) 0%, rgba(22,22,22,.2) 28%, rgba(22,22,22,.35) 70%, rgba(22,22,22,.9) 100%)',
+            }}
+          />
+          {/* Left-side vignette to anchor the headline */}
+          <div
+            aria-hidden
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background:
+                'linear-gradient(90deg, rgba(22,22,22,.55) 0%, rgba(22,22,22,.2) 35%, transparent 65%)',
             }}
           />
 
-          {/* Top header strip */}
+          {/* TOP STRIP */}
           <div
             style={{
               position: 'absolute',
-              top: 28,
-              left: 48,
-              right: 48,
-              zIndex: 4,
+              top: 0,
+              left: 0,
+              right: 0,
+              padding: '24px 48px',
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
-              color: 'var(--off-white)',
+              zIndex: 4,
+              borderBottom: '1px solid rgba(228,226,227,.16)',
+              flexWrap: 'wrap',
+              gap: 16,
             }}
           >
             <span
@@ -76,76 +98,114 @@ export default function PageAbout() {
                 fontFamily: 'var(--display)',
                 fontWeight: 700,
                 fontSize: 18,
-                color: 'var(--lava-orange)',
+                letterSpacing: '-.01em',
+                color: 'var(--off-white)',
                 textTransform: 'uppercase',
               }}
             >
-              MAACH
+              MAACH<span style={{ color: 'var(--lava-orange)' }}>®</span>
             </span>
-            <span className="maach-mono" style={{ color: 'var(--off-white)' }}>
-              {t('about.brandbook')}
+            <span className="maach-mono" style={{ color: 'rgba(255,255,255,.78)', letterSpacing: '.08em' }}>
+              § 01 / SOBRE MAACH
             </span>
-            <span className="maach-mono" style={{ color: 'var(--off-white)' }}>
-              {t('about.section')}
+            <span className="maach-mono" style={{ color: 'rgba(255,255,255,.78)', letterSpacing: '.08em' }}>
+              EST. 2023 — QUITO, ECUADOR
             </span>
           </div>
 
-          {/* Headline */}
-          <div style={{ position: 'absolute', top: 96, left: 48, right: 48 }}>
-            <h1
-              style={{
-                fontFamily: 'var(--display)',
-                fontWeight: 500,
-                fontSize: 'clamp(28px, 3.6vw, 52px)',
-                lineHeight: 1.1,
-                letterSpacing: '-.01em',
-                maxWidth: 880,
-                color: 'var(--off-white)',
-                margin: 0,
-              }}
-            >
-              {t('about.hero.h1')}
-            </h1>
-          </div>
-
-          {/* Orange L corner mark */}
+          {/* HEADLINE block */}
           <div
             style={{
               position: 'absolute',
-              bottom: 56,
-              right: 64,
-              width: 28,
-              height: 28,
-              borderLeft: '2px solid var(--lava-orange)',
-              borderBottom: '2px solid var(--lava-orange)',
-            }}
-          />
-        </div>
-
-        {/* Page footer strip */}
-        <div
-          style={{
-            background: 'var(--jet-black)',
-            color: 'var(--sand-grey)',
-            padding: '14px 48px',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}
-        >
-          <span className="maach-mono">2026</span>
-          <span className="maach-mono">MAACH Studio</span>
-          <span
-            className="maach-mono"
-            style={{
-              background: 'var(--lava-orange)',
-              color: 'var(--off-white)',
-              padding: '4px 8px',
-              letterSpacing: '.08em',
+              inset: 0,
+              display: 'flex',
+              alignItems: 'center',
+              padding: '0 48px',
+              zIndex: 3,
             }}
           >
-            PÁGINA 0001.
-          </span>
+            <div style={{ maxWidth: 1240 }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: 14, marginBottom: 28 }}>
+                <span
+                  style={{
+                    display: 'inline-block',
+                    width: 32,
+                    height: 1,
+                    background: 'var(--lava-orange)',
+                  }}
+                />
+                <span
+                  className="maach-mono"
+                  style={{ color: 'var(--lava-orange)', letterSpacing: '.14em' }}
+                >
+                  ESTUDIO MAACH · MANIFIESTO
+                </span>
+              </div>
+              <h1
+                className="h-display"
+                style={{
+                  fontSize: 'clamp(44px, 8vw, 128px)',
+                  color: 'var(--off-white)',
+                  lineHeight: 0.92,
+                  letterSpacing: '-.025em',
+                  margin: 0,
+                  maxWidth: 1140,
+                }}
+              >
+                {t('about.hero.h1')}
+              </h1>
+            </div>
+          </div>
+
+          {/* BOTTOM META STRIP */}
+          <div
+            style={{
+              position: 'absolute',
+              bottom: 0,
+              left: 0,
+              right: 0,
+              padding: '22px 48px',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              zIndex: 4,
+              borderTop: '1px solid rgba(228,226,227,.16)',
+              flexWrap: 'wrap',
+              gap: 16,
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: 24, flexWrap: 'wrap' }}>
+              <span className="maach-mono" style={{ color: 'var(--off-white)', letterSpacing: '.1em' }}>
+                CO-DISEÑO INDUSTRIAL
+              </span>
+              <span style={{ color: 'rgba(255,255,255,.32)' }}>/</span>
+              <span className="maach-mono" style={{ color: 'var(--off-white)', letterSpacing: '.1em' }}>
+                METAL + MADERA
+              </span>
+              <span style={{ color: 'rgba(255,255,255,.32)' }}>/</span>
+              <span className="maach-mono" style={{ color: 'var(--off-white)', letterSpacing: '.1em' }}>
+                30+ AÑOS DE EXPERIENCIA
+              </span>
+            </div>
+
+            {/* Scroll indicator */}
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 12 }}>
+              <span
+                className="maach-mono"
+                style={{ color: 'rgba(255,255,255,.7)', letterSpacing: '.18em' }}
+              >
+                SCROLL
+              </span>
+              <div
+                style={{
+                  width: 1,
+                  height: 30,
+                  background:
+                    'linear-gradient(to bottom, transparent, var(--lava-orange) 40%, var(--off-white) 100%)',
+                }}
+              />
+            </div>
+          </div>
         </div>
       </section>
 
