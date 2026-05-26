@@ -304,7 +304,7 @@ export default function PageHome() {
                       position: 'relative',
                       zIndex: 2,
                       display: 'flex',
-                      flexDirection: 'column-reverse',
+                      flexDirection: 'column',
                       gap: 12,
                     }}
                   >
@@ -318,6 +318,12 @@ export default function PageHome() {
                         margin: 0,
                         textTransform: 'uppercase',
                         color: 'var(--off-white)',
+                        /* Reserve room for up to 2 lines so every card aligns
+                           the title on the same baseline. 44px font × 0.95
+                           line-height × 2 ≈ 84px */
+                        minHeight: 84,
+                        display: 'flex',
+                        alignItems: 'flex-end',
                       }}
                     >
                       {cat.name}
@@ -330,6 +336,8 @@ export default function PageHome() {
                         maxWidth: 320,
                         color: 'var(--off-white)',
                         margin: 0,
+                        /* Same idea for the description: 14px × 1.55 × 2 ≈ 44px */
+                        minHeight: 44,
                       }}
                     >
                       {cat.desc}
