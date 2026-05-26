@@ -299,7 +299,15 @@ export default function PageHome() {
                     <IconArrowDownRight size={22} />
                   </div>
 
-                  <div style={{ position: 'relative', zIndex: 2 }}>
+                  <div
+                    style={{
+                      position: 'relative',
+                      zIndex: 2,
+                      display: 'flex',
+                      flexDirection: 'column-reverse',
+                      gap: 12,
+                    }}
+                  >
                     <h3
                       style={{
                         fontFamily: 'var(--display)',
@@ -307,7 +315,7 @@ export default function PageHome() {
                         fontSize: 44,
                         letterSpacing: '-.02em',
                         lineHeight: 0.95,
-                        marginBottom: 12,
+                        margin: 0,
                         textTransform: 'uppercase',
                         color: 'var(--off-white)',
                       }}
@@ -321,6 +329,7 @@ export default function PageHome() {
                         opacity: 0.85,
                         maxWidth: 320,
                         color: 'var(--off-white)',
+                        margin: 0,
                       }}
                     >
                       {cat.desc}
