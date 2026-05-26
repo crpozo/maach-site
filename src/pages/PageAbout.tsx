@@ -31,179 +31,179 @@ export default function PageAbout() {
   const t = useT();
   return (
     <Layout screenLabel="12 Sobre MAACH">
-      {/* HERO — editorial spread */}
-      <section style={{ position: 'relative', overflow: 'hidden', borderBottom: '1px solid var(--line)' }}>
-        <div
+      {/* HERO — matches home hero proportions + orange accents */}
+      <section
+        className="invert"
+        style={{
+          position: 'relative',
+          overflow: 'hidden',
+          minHeight: 'calc(100vh - 80px)',
+          display: 'flex',
+          alignItems: 'center',
+          background: 'var(--jet-black)',
+          color: 'var(--off-white)',
+        }}
+      >
+        {/* Background photo */}
+        <img
+          src={asset('perspectiva-2.webp')}
+          alt=""
+          aria-hidden
           style={{
-            position: 'relative',
-            height: 'min(88vh, 880px)',
-            minHeight: 620,
-            overflow: 'hidden',
-            background: 'var(--jet-black)',
+            position: 'absolute',
+            inset: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            zIndex: 0,
+          }}
+        />
+        {/* Dark gradient for legibility */}
+        <div
+          aria-hidden
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background:
+              'linear-gradient(95deg, rgba(22,22,22,.88) 0%, rgba(22,22,22,.65) 35%, rgba(22,22,22,.3) 65%, rgba(22,22,22,.1) 100%)',
+            zIndex: 1,
+          }}
+        />
+        {/* Bold orange edge bar */}
+        <div
+          aria-hidden
+          style={{
+            position: 'absolute',
+            top: 0,
+            bottom: 0,
+            left: 0,
+            width: 6,
+            background: 'var(--lava-orange)',
+            zIndex: 2,
+          }}
+        />
+        {/* Vertical rotated label */}
+        <span
+          aria-hidden
+          className="maach-mono"
+          style={{
+            position: 'absolute',
+            left: 16,
+            top: '50%',
+            transform: 'rotate(-90deg) translateX(50%)',
+            transformOrigin: 'left center',
+            color: 'var(--lava-orange)',
+            letterSpacing: '.32em',
+            fontWeight: 700,
+            zIndex: 2,
           }}
         >
-          {/* Photo */}
-          <img
-            src={asset('perspectiva-2.webp')}
-            alt="MAACH"
-            style={{
-              position: 'absolute',
-              inset: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              filter: 'brightness(.72) contrast(1.05)',
-            }}
-          />
-          {/* Layered gradient for legibility */}
-          <div
-            aria-hidden
-            style={{
-              position: 'absolute',
-              inset: 0,
-              background:
-                'linear-gradient(180deg, rgba(22,22,22,.65) 0%, rgba(22,22,22,.2) 28%, rgba(22,22,22,.35) 70%, rgba(22,22,22,.9) 100%)',
-            }}
-          />
-          {/* Left-side vignette to anchor the headline */}
-          <div
-            aria-hidden
-            style={{
-              position: 'absolute',
-              inset: 0,
-              background:
-                'linear-gradient(90deg, rgba(22,22,22,.55) 0%, rgba(22,22,22,.2) 35%, transparent 65%)',
-            }}
-          />
+          {t('about.hero.vertical')}
+        </span>
+        {/* Corner crosshair marks */}
+        <div
+          aria-hidden
+          style={{
+            position: 'absolute',
+            top: 24,
+            right: 24,
+            width: 22,
+            height: 22,
+            borderTop: '2px solid var(--lava-orange)',
+            borderRight: '2px solid var(--lava-orange)',
+            zIndex: 2,
+          }}
+        />
+        <div
+          aria-hidden
+          style={{
+            position: 'absolute',
+            bottom: 24,
+            right: 24,
+            width: 22,
+            height: 22,
+            borderBottom: '2px solid var(--lava-orange)',
+            borderRight: '2px solid var(--lava-orange)',
+            zIndex: 2,
+          }}
+        />
 
-          {/* TOP STRIP */}
-          <div
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              right: 0,
-              padding: '24px 48px',
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              zIndex: 4,
-              borderBottom: '1px solid rgba(228,226,227,.16)',
-              flexWrap: 'wrap',
-              gap: 16,
-            }}
+        {/* Photo-ID labels — bottom-right */}
+        <div
+          style={{
+            position: 'absolute',
+            bottom: 56,
+            right: 64,
+            zIndex: 3,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 6,
+            alignItems: 'flex-end',
+          }}
+        >
+          <span
+            className="maach-mono"
+            style={{ background: 'var(--jet-black)', color: 'var(--off-white)', padding: '6px 10px' }}
           >
-            <span
+            {t('about.hero.id.code')}
+          </span>
+          <span
+            className="maach-mono"
+            style={{ background: 'var(--lava-orange)', color: 'var(--off-white)', padding: '6px 10px' }}
+          >
+            {t('about.hero.id.badge')}
+          </span>
+        </div>
+
+        {/* Text overlay */}
+        <div className="maach-container" style={{ width: '100%', position: 'relative', zIndex: 3 }}>
+          <div style={{ maxWidth: 1100 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 24, flexWrap: 'wrap' }}>
+              <span
+                className="maach-tag"
+                style={{ borderColor: 'var(--lava-orange)', color: 'var(--lava-orange)' }}
+              >
+                {t('about.hero.tag')}
+              </span>
+              <span className="maach-mono" style={{ color: 'var(--sand-grey)' }}>
+                {t('about.hero.season')}
+              </span>
+            </div>
+
+            <h1
+              className="h-display"
               style={{
-                fontFamily: 'var(--display)',
-                fontWeight: 700,
-                fontSize: 18,
-                letterSpacing: '-.01em',
+                fontSize: 'clamp(48px, 7vw, 120px)',
+                marginBottom: 32,
                 color: 'var(--off-white)',
-                textTransform: 'uppercase',
+                lineHeight: 0.92,
+                letterSpacing: '-.02em',
               }}
             >
-              MAACH<span style={{ color: 'var(--lava-orange)' }}>®</span>
-            </span>
-            <span className="maach-mono" style={{ color: 'rgba(255,255,255,.78)', letterSpacing: '.08em' }}>
-              § 01 / SOBRE MAACH
-            </span>
-            <span className="maach-mono" style={{ color: 'rgba(255,255,255,.78)', letterSpacing: '.08em' }}>
-              EST. 2023 — QUITO, ECUADOR
-            </span>
-          </div>
+              {t('about.hero.h1.1')}{' '}
+              <span style={{ color: 'var(--lava-orange)' }}>{t('about.hero.h1.2')}</span>
+              <br />
+              {t('about.hero.h1.3')} {t('about.hero.h1.4')}
+            </h1>
 
-          {/* HEADLINE block */}
-          <div
-            style={{
-              position: 'absolute',
-              inset: 0,
-              display: 'flex',
-              alignItems: 'center',
-              padding: '0 48px',
-              zIndex: 3,
-            }}
-          >
-            <div style={{ maxWidth: 1240 }}>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: 14, marginBottom: 28 }}>
-                <span
-                  style={{
-                    display: 'inline-block',
-                    width: 32,
-                    height: 1,
-                    background: 'var(--lava-orange)',
-                  }}
-                />
-                <span
-                  className="maach-mono"
-                  style={{ color: 'var(--lava-orange)', letterSpacing: '.14em' }}
-                >
-                  ESTUDIO MAACH · MANIFIESTO
+            <div style={{ display: 'flex', alignItems: 'center', gap: 28, flexWrap: 'wrap' }}>
+              <span className="maach-mono" style={{ color: 'var(--off-white)', letterSpacing: '.1em' }}>
+                {t('about.hero.meta.1')}
+              </span>
+              <span style={{ color: 'rgba(255,255,255,.32)' }}>/</span>
+              <span className="maach-mono" style={{ color: 'var(--off-white)', letterSpacing: '.1em' }}>
+                {t('about.hero.meta.2')}
+              </span>
+              <span style={{ color: 'rgba(255,255,255,.32)' }}>/</span>
+              <span className="maach-mono" style={{ color: 'var(--off-white)', letterSpacing: '.1em' }}>
+                {t('about.hero.meta.3')}
+              </span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                <div style={{ width: 32, height: 1, background: 'var(--lava-orange)' }} />
+                <span className="maach-mono" style={{ color: 'var(--sand-grey)' }}>
+                  {t('cta.scroll')}
                 </span>
               </div>
-              <h1
-                className="h-display"
-                style={{
-                  fontSize: 'clamp(44px, 8vw, 128px)',
-                  color: 'var(--off-white)',
-                  lineHeight: 0.92,
-                  letterSpacing: '-.025em',
-                  margin: 0,
-                  maxWidth: 1140,
-                }}
-              >
-                {t('about.hero.h1')}
-              </h1>
-            </div>
-          </div>
-
-          {/* BOTTOM META STRIP */}
-          <div
-            style={{
-              position: 'absolute',
-              bottom: 0,
-              left: 0,
-              right: 0,
-              padding: '22px 48px',
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              zIndex: 4,
-              borderTop: '1px solid rgba(228,226,227,.16)',
-              flexWrap: 'wrap',
-              gap: 16,
-            }}
-          >
-            <div style={{ display: 'flex', alignItems: 'center', gap: 24, flexWrap: 'wrap' }}>
-              <span className="maach-mono" style={{ color: 'var(--off-white)', letterSpacing: '.1em' }}>
-                CO-DISEÑO INDUSTRIAL
-              </span>
-              <span style={{ color: 'rgba(255,255,255,.32)' }}>/</span>
-              <span className="maach-mono" style={{ color: 'var(--off-white)', letterSpacing: '.1em' }}>
-                METAL + MADERA
-              </span>
-              <span style={{ color: 'rgba(255,255,255,.32)' }}>/</span>
-              <span className="maach-mono" style={{ color: 'var(--off-white)', letterSpacing: '.1em' }}>
-                30+ AÑOS DE EXPERIENCIA
-              </span>
-            </div>
-
-            {/* Scroll indicator */}
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 12 }}>
-              <span
-                className="maach-mono"
-                style={{ color: 'rgba(255,255,255,.7)', letterSpacing: '.18em' }}
-              >
-                SCROLL
-              </span>
-              <div
-                style={{
-                  width: 1,
-                  height: 30,
-                  background:
-                    'linear-gradient(to bottom, transparent, var(--lava-orange) 40%, var(--off-white) 100%)',
-                }}
-              />
             </div>
           </div>
         </div>
