@@ -367,7 +367,6 @@ html {
   text-transform: uppercase;
 }
 .h-italic {
-  font-style: italic;
   font-weight: 400;
   color: var(--muted);
 }

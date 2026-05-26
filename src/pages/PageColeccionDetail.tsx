@@ -274,7 +274,7 @@ export default function PageColeccionDetail() {
                 La intersección entre la rigidez corporativa y el confort del hogar. Paletas cromáticas arena, perfiles
                 suavizados y texturas que invitan al tacto.
               </p>
-              <p style={{ fontSize: 14, color: 'var(--muted)', fontStyle: 'italic', lineHeight: 1.5 }}>
+              <p style={{ fontSize: 14, color: 'var(--muted)', lineHeight: 1.5 }}>
                 "Nuestra intención fue desdibujar la línea entre el trabajo y el bienestar, transformando la oficina en
                 un destino deseable."
               </p>
