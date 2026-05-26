@@ -316,19 +316,26 @@ const T: Translations = {
 
     // ====== SOBRE MAACH ======
     'about.brandbook': 'Brandbook',
-    'about.section': 'Estratégia de Marca',
+    'about.section': 'Estrategia de Marca',
     'about.hero.h1':
       'Diseñar y fabricar mobiliario que funcione en el trabajo real.',
-    'about.hero.body.1':
-      'MAACH existe para diseñar, fabricar y desarrollar mobiliario corporativo a partir de procesos industriales sólidos, criterios de ingeniería y una comprensión profunda del uso real en los espacios de trabajo. La marca transforma la fabricación en un sistema de diseño funcional, donde cada decisión responde a estructura, ergonomía, durabilidad y desempeño en el tiempo.',
-    'about.hero.body.2':
-      'A través del co-diseño con arquitectos, interioristas y clientes, MAACH crea soluciones adaptables que integran materiales, tecnología y producción local con estándares internacionales. Su propósito es equipar entornos de trabajo eficientes, coherentes y preparados para evolucionar, asegurando productos que se validan en el uso cotidiano, la productividad y la experiencia de las personas.',
-    'about.purpose.title.1': 'Propósito',
-    'about.purpose.title.2': 'De  Marca',
-    'about.purpose.body.1':
-      'El propósito de marca en MAACH funciona como un criterio rector que guía de forma consistente las decisiones de diseño, fabricación y comunicación. Establece una lógica clara basada en el desempeño y el uso real, asegurando coherencia entre el producto, la identidad visual y el mensaje de la marca. Al mismo tiempo, permite alinear a los equipos',
-    'about.purpose.body.2':
-      'internos y aliados estratégicos bajo una misma forma de trabajar, facilitando la toma de decisiones y la evolución del portafolio. Más que una declaración conceptual, el propósito ayuda a MAACH a diferenciarse en el mercado, sostener su identidad en el tiempo y construir una marca sólida, funcional y preparada para escalar.',
+    'about.mv.eyebrow': 'Misión / Visión',
+    'about.mv.mision.label': 'Misión',
+    'about.mv.mision.body':
+      'Somos fabricantes y partners de diseño para espacios de trabajo; co-creamos y producimos mobiliario que inspira y perdura, fabricado localmente por manos expertas y procesos tecnológicos avanzados, para ayudar a empresas a ser más productivas y que sus colaboradores se sientan mejor.',
+    'about.mv.vision.label': 'Visión',
+    'about.mv.vision.body':
+      'Ser la referencia latinoamericana en mobiliario co-creado y fabricado localmente con estándares internacionales, mejorando la productividad y el bienestar mediante la innovación continua, tecnología y creatividad; impulsando la industria y el talento ecuatoriano hacia el mundo.',
+    'about.sobre.eyebrow': '§ 00 / Sobre Nosotros',
+    'about.sobre.title': 'Sobre nosotros.',
+    'about.sobre.body.1':
+      'MAACH diseña y fabrica mobiliario corporativo a partir de procesos industriales sólidos, criterios de ingeniería y una comprensión profunda del uso real en los espacios de trabajo.',
+    'about.sobre.body.2':
+      'Cada decisión responde a estructura, ergonomía, durabilidad y desempeño en el tiempo.',
+    'about.sobre.body.3':
+      'A través del co-diseño con arquitectos, interioristas y clientes, desarrollamos soluciones adaptables que integran materiales, tecnología y producción local con estándares internacionales.',
+    'about.sobre.body.4':
+      'Diseñamos espacios que funcionan en el día a día, mejoran la productividad y elevan la experiencia de quienes los usan.',
     'about.values.eyebrow': '§ 01 / Valores',
     'about.values.title': 'Cómo trabajamos.',
     'about.value.01.title': 'Diseño funcional',
@@ -357,31 +364,31 @@ const T: Translations = {
     'about.manifesto.body.4': ' herramientas estructurales ',
     'about.manifesto.body.5': 'que habilitan el trabajo."',
     'about.manifesto.source': 'Estudio MAACH · 2026',
-    'about.timeline.eyebrow': '§ 02 / Trayectoria',
-    'about.timeline.title': 'Historia.',
-    'about.tl.2018.title': 'Fundación',
-    'about.tl.2018.body':
-      'Nace MAACH como respuesta a la necesidad de mobiliario industrial corporativo fabricado en México con estándares internacionales.',
-    'about.tl.2020.title': 'Primera planta productiva',
-    'about.tl.2020.body':
-      'Apertura de planta de 2,400 m² en CDMX. Integración de procesos de aluminio extruido y maderas técnicas.',
-    'about.tl.2022.title': 'Co-diseño con arquitectos',
-    'about.tl.2022.body':
-      'Lanzamiento del programa de colaboración con estudios. Más de 40 proyectos co-desarrollados en 18 meses.',
-    'about.tl.2024.title': 'Sistema BIM completo',
-    'about.tl.2024.body':
-      'Toda la línea disponible en formatos BIM/CAD para integración directa a planos arquitectónicos.',
-    'about.tl.2026.title': 'Sistema MAACH 2026',
-    'about.tl.2026.body':
-      'Renovación completa del lenguaje de marca y portafolio. Tres colecciones nuevas: Coalesse, Viccarbe, West Elm.',
-    'about.team.eyebrow': '§ 03 / Equipo',
-    'about.team.title': 'Liderazgo.',
+    'about.history.eyebrow': '§ 02 / Trayectoria',
+    'about.history.title': 'Nuestra Historia.',
+    'about.history.body.1':
+      'MAACH nació hace tres años como la unidad comercial de Sumar, una empresa familiar con más de 30 años de trayectoria en la fabricación de mobiliario corporativo.',
+    'about.history.body.2':
+      'Desde su origen, la propuesta se ha diferenciado por la combinación de metal y madera, logrando un equilibrio entre durabilidad, diseño y ergonomía.',
+    'about.history.body.3':
+      'Con el tiempo, MAACH evoluciona para consolidarse como una marca que no solo fabrica, sino que entiende cómo se trabaja hoy y cómo deben responder los espacios.',
+    'about.history.stat.years': 'años de trayectoria',
+    'about.history.stat.brand': 'años como marca',
+    'about.team.eyebrow': '§ 03 / Estructura Organizacional',
+    'about.team.title': 'Equipo.',
     'about.team.join': 'Únete al equipo',
-    'about.team.portrait': 'RETRATO_OFICIAL',
-    'about.team.01.role': 'Gerente Comercial',
-    'about.team.02.role': 'Directora de Diseño',
-    'about.team.03.role': 'Ingeniería de Producto',
-    'about.team.04.role': 'Dirección de Operaciones',
+    'about.team.portrait': 'EQUIPO_MAACH',
+    'about.team.role.01': 'Gerente General',
+    'about.team.role.02': 'Gerente Comercial',
+    'about.team.role.03': 'Ejecutivo de Cuentas',
+    'about.team.role.04': 'Diseño Arquitectónico',
+    'about.team.role.05': 'Gerente Producción',
+    'about.team.role.06': 'Jefe de Producción Mobiliario',
+    'about.team.role.07': 'Jefe de Instalación',
+    'about.allies.eyebrow': '§ 04 / Red de Aliados',
+    'about.allies.title': 'Nuestros Aliados.',
+    'about.allies.body':
+      'Trabajamos con socios estratégicos en materias primas, componentes y especialidades técnicas para garantizar calidad y consistencia en cada producto.',
 
     // ====== PRODUCTOS ======
     'prod.crumb.home': 'Inicio',
@@ -740,16 +747,23 @@ const T: Translations = {
     'about.section': 'Brand Strategy',
     'about.hero.h1':
       'Design and build furniture that works for real work.',
-    'about.hero.body.1':
-      'MAACH exists to design, manufacture and develop corporate furniture based on solid industrial processes, engineering criteria and a deep understanding of real use in workspaces. The brand turns manufacturing into a functional design system, where every decision answers to structure, ergonomics, durability and long-term performance.',
-    'about.hero.body.2':
-      'Through co-design with architects, interior designers and clients, MAACH creates adaptable solutions that integrate materials, technology and local production with international standards. Its purpose is to equip efficient, coherent work environments ready to evolve — products validated by daily use, productivity and the human experience.',
-    'about.purpose.title.1': 'Brand',
-    'about.purpose.title.2': 'Purpose',
-    'about.purpose.body.1':
-      'MAACH’s brand purpose works as a guiding criterion that consistently informs design, manufacturing and communication decisions. It sets a clear logic based on performance and real use, ensuring coherence between the product, the visual identity and the brand message. At the same time, it allows internal teams',
-    'about.purpose.body.2':
-      'and strategic partners to align under a shared way of working, easing decision-making and the evolution of the portfolio. More than a conceptual declaration, the purpose helps MAACH stand out in the market, sustain its identity over time and build a solid brand ready to scale.',
+    'about.mv.eyebrow': 'Mission / Vision',
+    'about.mv.mision.label': 'Mission',
+    'about.mv.mision.body':
+      'We are manufacturers and design partners for workspaces; we co-create and produce furniture that inspires and endures, made locally by skilled hands and advanced technological processes, to help companies be more productive and their teams feel better.',
+    'about.mv.vision.label': 'Vision',
+    'about.mv.vision.body':
+      'To be the Latin American reference for furniture co-created and manufactured locally with international standards — improving productivity and wellbeing through continuous innovation, technology and creativity, driving Ecuadorian industry and talent into the world.',
+    'about.sobre.eyebrow': '§ 00 / About Us',
+    'about.sobre.title': 'About us.',
+    'about.sobre.body.1':
+      'MAACH designs and manufactures corporate furniture based on solid industrial processes, engineering criteria and a deep understanding of real use in workspaces.',
+    'about.sobre.body.2':
+      'Every decision answers to structure, ergonomics, durability and long-term performance.',
+    'about.sobre.body.3':
+      'Through co-design with architects, interior designers and clients, we develop adaptable solutions that integrate materials, technology and local production with international standards.',
+    'about.sobre.body.4':
+      'We design spaces that work day to day, improve productivity and elevate the experience of the people who use them.',
     'about.values.eyebrow': '§ 01 / Values',
     'about.values.title': 'How we work.',
     'about.value.01.title': 'Functional design',
@@ -778,31 +792,31 @@ const T: Translations = {
     'about.manifesto.body.4': ' structural tools ',
     'about.manifesto.body.5': 'that enable work."',
     'about.manifesto.source': 'MAACH Studio · 2026',
-    'about.timeline.eyebrow': '§ 02 / Trajectory',
-    'about.timeline.title': 'History.',
-    'about.tl.2018.title': 'Founding',
-    'about.tl.2018.body':
-      'MAACH is born to answer the need for industrial corporate furniture made in Mexico with international standards.',
-    'about.tl.2020.title': 'First production plant',
-    'about.tl.2020.body':
-      'A 2,400 m² plant opens in CDMX. Extruded aluminum and technical wood processes integrated.',
-    'about.tl.2022.title': 'Co-design with architects',
-    'about.tl.2022.body':
-      'Launch of the studio-collaboration program. More than 40 projects co-developed in 18 months.',
-    'about.tl.2024.title': 'Full BIM system',
-    'about.tl.2024.body':
-      'The entire line is made available in BIM/CAD formats for direct integration into architectural plans.',
-    'about.tl.2026.title': 'MAACH System 2026',
-    'about.tl.2026.body':
-      'Full overhaul of the brand language and portfolio. Three new collections: Coalesse, Viccarbe, West Elm.',
-    'about.team.eyebrow': '§ 03 / Team',
-    'about.team.title': 'Leadership.',
+    'about.history.eyebrow': '§ 02 / Trajectory',
+    'about.history.title': 'Our History.',
+    'about.history.body.1':
+      'MAACH was born three years ago as the commercial unit of Sumar, a family business with more than 30 years of experience manufacturing corporate furniture.',
+    'about.history.body.2':
+      'From the start, the proposition has been distinguished by the combination of metal and wood — balancing durability, design and ergonomics.',
+    'about.history.body.3':
+      'Over time, MAACH has evolved to consolidate as a brand that not only manufactures, but understands how people work today and how spaces should respond.',
+    'about.history.stat.years': 'years of experience',
+    'about.history.stat.brand': 'years as a brand',
+    'about.team.eyebrow': '§ 03 / Organizational Structure',
+    'about.team.title': 'Team.',
     'about.team.join': 'Join the team',
-    'about.team.portrait': 'OFFICIAL_PORTRAIT',
-    'about.team.01.role': 'Commercial Manager',
-    'about.team.02.role': 'Design Director',
-    'about.team.03.role': 'Product Engineering',
-    'about.team.04.role': 'Operations Director',
+    'about.team.portrait': 'MAACH_TEAM',
+    'about.team.role.01': 'General Manager',
+    'about.team.role.02': 'Commercial Manager',
+    'about.team.role.03': 'Account Executive',
+    'about.team.role.04': 'Architectural Design',
+    'about.team.role.05': 'Production Manager',
+    'about.team.role.06': 'Furniture Production Lead',
+    'about.team.role.07': 'Installation Lead',
+    'about.allies.eyebrow': '§ 04 / Partner Network',
+    'about.allies.title': 'Our Allies.',
+    'about.allies.body':
+      'We work with strategic partners in raw materials, components and technical specialties to guarantee quality and consistency in every product.',
 
     // ====== PRODUCTOS ======
     'prod.crumb.home': 'Home',

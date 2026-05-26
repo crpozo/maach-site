@@ -4,25 +4,47 @@ import { Layout } from '../components/Layout';
 import { IconArrow } from '../components/icons';
 import { useT } from '../i18n/i18n';
 
+const TEAM: { name: string; roleKey: string; init: string }[] = [
+  { name: 'Marlon Aguirre', roleKey: 'about.team.role.01', init: 'MA' },
+  { name: 'Johnny Aguirre', roleKey: 'about.team.role.02', init: 'JA' },
+  { name: 'Karla Lagos', roleKey: 'about.team.role.03', init: 'KL' },
+  { name: 'Pablo León', roleKey: 'about.team.role.04', init: 'PL' },
+  { name: 'Manuel Mena', roleKey: 'about.team.role.05', init: 'MM' },
+  { name: 'Danilo Varela', roleKey: 'about.team.role.06', init: 'DV' },
+  { name: 'Diego Buce', roleKey: 'about.team.role.07', init: 'DB' },
+];
+
+const ALLIES: { name: string; file: string }[] = [
+  { name: '3M', file: '3m.png' },
+  { name: 'Edimca', file: 'edimca.png' },
+  { name: 'Eni', file: 'eni.svg' },
+  { name: 'Import Aceros', file: 'import-aceros.webp' },
+  { name: 'Ipac', file: 'ipac.png' },
+  { name: 'Pelikano', file: 'pelikano.webp' },
+  { name: 'Proacero', file: 'proacero.png' },
+  { name: 'Prove Fábrica', file: 'prove-fabrica.webp' },
+  { name: 'Vitrum', file: 'vitrum.jpg' },
+  { name: 'Wesco', file: 'wesco.webp' },
+];
+
 export default function PageAbout() {
   const t = useT();
   return (
     <Layout screenLabel="12 Sobre MAACH">
-      {/* BRANDBOOK-STYLE HERO */}
+      {/* HERO */}
       <section style={{ position: 'relative', overflow: 'hidden', borderBottom: '1px solid var(--line)' }}>
-        {/* Editorial photo with overlays */}
         <div
           style={{
             position: 'relative',
             aspectRatio: '16/8',
-            minHeight: 600,
-            maxHeight: 820,
+            minHeight: 540,
+            maxHeight: 760,
             overflow: 'hidden',
             background: 'var(--soft)',
           }}
         >
           <img
-            src={asset("biblioteca-5.webp")}
+            src={asset('biblioteca-5.webp')}
             alt="MAACH"
             style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
           />
@@ -31,7 +53,7 @@ export default function PageAbout() {
               position: 'absolute',
               inset: 0,
               background:
-                'linear-gradient(135deg, rgba(22,22,22,.6), rgba(22,22,22,.2) 45%, rgba(22,22,22,.05) 75%, transparent)',
+                'linear-gradient(135deg, rgba(22,22,22,.65), rgba(22,22,22,.25) 45%, rgba(22,22,22,.08) 75%, transparent)',
             }}
           />
 
@@ -54,7 +76,6 @@ export default function PageAbout() {
                 fontFamily: 'var(--display)',
                 fontWeight: 700,
                 fontSize: 18,
-                letterSpacing: 0,
                 color: 'var(--lava-orange)',
                 textTransform: 'uppercase',
               }}
@@ -69,7 +90,7 @@ export default function PageAbout() {
             </span>
           </div>
 
-          {/* Headline top-left */}
+          {/* Headline */}
           <div style={{ position: 'absolute', top: 96, left: 48, right: 48 }}>
             <h1
               style={{
@@ -78,7 +99,6 @@ export default function PageAbout() {
                 fontSize: 'clamp(28px, 3.6vw, 52px)',
                 lineHeight: 1.1,
                 letterSpacing: '-.01em',
-                textTransform: 'none',
                 maxWidth: 880,
                 color: 'var(--off-white)',
                 margin: 0,
@@ -88,107 +108,18 @@ export default function PageAbout() {
             </h1>
           </div>
 
-          {/* Body copy bottom-left, 2 columns mono */}
+          {/* Orange L corner mark */}
           <div
             style={{
               position: 'absolute',
               bottom: 56,
-              left: 48,
-              right: 48,
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: 32,
-              maxWidth: 920,
-              color: 'var(--off-white)',
-            }}
-          >
-            <p style={{ fontFamily: 'var(--mono)', fontSize: 14, lineHeight: 1.65, letterSpacing: '.01em', margin: 0 }}>
-              {t('about.hero.body.1')}
-            </p>
-            <p style={{ fontFamily: 'var(--mono)', fontSize: 14, lineHeight: 1.65, letterSpacing: '.01em', margin: 0 }}>
-              {t('about.hero.body.2')}
-            </p>
-          </div>
-
-          {/* Orange L corner mark bottom-right */}
-          <div
-            style={{
-              position: 'absolute',
-              bottom: 80,
-              right: 80,
+              right: 64,
               width: 28,
               height: 28,
               borderLeft: '2px solid var(--lava-orange)',
               borderBottom: '2px solid var(--lava-orange)',
             }}
           />
-        </div>
-
-        {/* PROPÓSITO DE MARCA black band */}
-        <div
-          className="invert"
-          style={{
-            background: 'var(--jet-black)',
-            color: 'var(--off-white)',
-            padding: '44px 48px 56px',
-            display: 'grid',
-            gridTemplateColumns: '1.4fr auto 1.6fr',
-            gap: 48,
-            alignItems: 'center',
-            position: 'relative',
-          }}
-        >
-          <h2
-            style={{
-              color: 'var(--lava-orange)',
-              fontFamily: 'var(--display)',
-              fontWeight: 700,
-              fontSize: 'clamp(40px, 5.5vw, 80px)',
-              lineHeight: 0.95,
-              letterSpacing: '-.01em',
-              textTransform: 'uppercase',
-              margin: 0,
-            }}
-          >
-            {t('about.purpose.title.1')}<br />
-            {t('about.purpose.title.2')}
-          </h2>
-
-          <IconArrow size={48} rotate={-45} style={{ color: 'var(--off-white)' }} />
-
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: 32,
-              fontSize: 15,
-              lineHeight: 1.6,
-              color: 'var(--off-white)',
-            }}
-          >
-            <p style={{ margin: 0 }}>
-              {t('about.purpose.body.1')}
-            </p>
-            <p style={{ margin: 0 }}>
-              {t('about.purpose.body.2')}
-            </p>
-          </div>
-
-          {/* AA monogram bottom-right */}
-          <span
-            style={{
-              position: 'absolute',
-              bottom: 14,
-              right: 48,
-              color: 'var(--lava-orange)',
-              fontFamily: 'var(--display)',
-              fontWeight: 700,
-              fontSize: 14,
-              letterSpacing: '-.04em',
-            }}
-          >
-            AA
-          </span>
         </div>
 
         {/* Page footer strip */}
@@ -200,11 +131,10 @@ export default function PageAbout() {
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
-            borderTop: '1px solid rgba(228,226,227,.18)',
           }}
         >
           <span className="maach-mono">2026</span>
-          <span className="maach-mono">Mess Studio</span>
+          <span className="maach-mono">MAACH Studio</span>
           <span
             className="maach-mono"
             style={{
@@ -214,11 +144,128 @@ export default function PageAbout() {
               letterSpacing: '.08em',
             }}
           >
-            PÁGINA 0000.
+            PÁGINA 0001.
           </span>
         </div>
       </section>
 
+      {/* MISIÓN / VISIÓN — black band */}
+      <section
+        className="invert"
+        style={{
+          background: 'var(--jet-black)',
+          color: 'var(--off-white)',
+          padding: '120px 0',
+          borderBottom: '1px solid var(--line)',
+          position: 'relative',
+        }}
+      >
+        <div className="maach-container">
+          <span
+            className="maach-mono"
+            style={{ color: 'var(--sand-grey)', display: 'block', marginBottom: 48 }}
+          >
+            {t('about.mv.eyebrow')}
+          </span>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: 64,
+              alignItems: 'flex-start',
+            }}
+          >
+            {/* MISIÓN */}
+            <div style={{ borderTop: '2px solid var(--lava-orange)', paddingTop: 32 }}>
+              <span
+                className="maach-mono"
+                style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 20, letterSpacing: '.08em' }}
+              >
+                01 / {t('about.mv.mision.label').toUpperCase()}
+              </span>
+              <h2
+                className="h-display"
+                style={{
+                  fontSize: 'clamp(40px, 5vw, 68px)',
+                  color: 'var(--off-white)',
+                  marginBottom: 28,
+                  lineHeight: 0.95,
+                }}
+              >
+                {t('about.mv.mision.label')}.
+              </h2>
+              <p style={{ fontSize: 17, lineHeight: 1.65, color: 'var(--sand-grey)', margin: 0 }}>
+                {t('about.mv.mision.body')}
+              </p>
+            </div>
+
+            {/* VISIÓN */}
+            <div style={{ borderTop: '2px solid var(--off-white)', paddingTop: 32 }}>
+              <span
+                className="maach-mono"
+                style={{ color: 'var(--off-white)', display: 'block', marginBottom: 20, letterSpacing: '.08em' }}
+              >
+                02 / {t('about.mv.vision.label').toUpperCase()}
+              </span>
+              <h2
+                className="h-display"
+                style={{
+                  fontSize: 'clamp(40px, 5vw, 68px)',
+                  color: 'var(--off-white)',
+                  marginBottom: 28,
+                  lineHeight: 0.95,
+                }}
+              >
+                {t('about.mv.vision.label')}.
+              </h2>
+              <p style={{ fontSize: 17, lineHeight: 1.65, color: 'var(--sand-grey)', margin: 0 }}>
+                {t('about.mv.vision.body')}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SOBRE NOSOTROS */}
+      <section style={{ padding: '128px 0', borderBottom: '1px solid var(--line)' }}>
+        <div className="maach-container">
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1.4fr',
+              gap: 96,
+              alignItems: 'flex-start',
+            }}
+          >
+            <div>
+              <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 16 }}>
+                {t('about.sobre.eyebrow')}
+              </span>
+              <h2 className="h-display" style={{ fontSize: 'clamp(48px, 6.5vw, 96px)', lineHeight: 0.95 }}>
+                {t('about.sobre.title')}
+              </h2>
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+              <p style={{ fontSize: 19, color: 'var(--fg)', lineHeight: 1.55, margin: 0 }}>
+                {t('about.sobre.body.1')}
+              </p>
+              <p style={{ fontSize: 17, color: 'var(--muted)', lineHeight: 1.6, margin: 0 }}>
+                {t('about.sobre.body.2')}
+              </p>
+              <p style={{ fontSize: 17, color: 'var(--muted)', lineHeight: 1.6, margin: 0 }}>
+                {t('about.sobre.body.3')}
+              </p>
+              <p style={{ fontSize: 17, color: 'var(--fg)', lineHeight: 1.6, margin: 0, fontWeight: 500 }}>
+                {t('about.sobre.body.4')}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* VALORES (kept) */}
       <section style={{ padding: '128px 0', borderBottom: '1px solid var(--line)' }}>
         <div className="maach-container">
           <div style={{ marginBottom: 64 }}>
@@ -283,6 +330,7 @@ export default function PageAbout() {
         </div>
       </section>
 
+      {/* MANIFIESTO */}
       <section
         className="invert"
         style={{
@@ -293,10 +341,6 @@ export default function PageAbout() {
           overflow: 'hidden',
         }}
       >
-        <div
-          className="tex-stack-force"
-          style={{ position: 'absolute', inset: 0, color: 'var(--off-white)', pointerEvents: 'none' }}
-        />
         <div className="maach-container" style={{ position: 'relative', textAlign: 'center', maxWidth: 1200 }}>
           <span className="maach-mono" style={{ color: 'var(--sand-grey)', display: 'block', marginBottom: 32 }}>
             {t('about.manifesto.eyebrow')}
@@ -318,77 +362,121 @@ export default function PageAbout() {
         </div>
       </section>
 
+      {/* NUESTRA HISTORIA */}
       <section style={{ padding: '128px 0', borderBottom: '1px solid var(--line)' }}>
         <div className="maach-container">
-          <div style={{ marginBottom: 64 }}>
+          <div style={{ marginBottom: 72 }}>
             <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 12 }}>
-              {t('about.timeline.eyebrow')}
+              {t('about.history.eyebrow')}
             </span>
-            <h2 className="h-display" style={{ fontSize: 64 }}>
-              {t('about.timeline.title')}
+            <h2 className="h-display" style={{ fontSize: 'clamp(56px, 8vw, 120px)', lineHeight: 0.95 }}>
+              {t('about.history.title')}
             </h2>
           </div>
 
-          <div style={{ position: 'relative', paddingLeft: 32 }}>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: 80,
+              alignItems: 'center',
+              marginBottom: 80,
+            }}
+          >
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+              <p style={{ fontSize: 19, color: 'var(--fg)', lineHeight: 1.55, margin: 0 }}>
+                {t('about.history.body.1')}
+              </p>
+              <p style={{ fontSize: 17, color: 'var(--muted)', lineHeight: 1.6, margin: 0 }}>
+                {t('about.history.body.2')}
+              </p>
+              <p style={{ fontSize: 17, color: 'var(--muted)', lineHeight: 1.6, margin: 0 }}>
+                {t('about.history.body.3')}
+              </p>
+            </div>
+
             <div
               style={{
-                position: 'absolute',
-                left: 0,
-                top: 0,
-                bottom: 0,
-                width: 2,
-                background: 'var(--line)',
+                aspectRatio: '4/5',
+                position: 'relative',
+                overflow: 'hidden',
+                border: '1px solid var(--line)',
               }}
-            />
-
-            {[
-              { y: '2018', title: t('about.tl.2018.title'), body: t('about.tl.2018.body') },
-              { y: '2020', title: t('about.tl.2020.title'), body: t('about.tl.2020.body') },
-              { y: '2022', title: t('about.tl.2022.title'), body: t('about.tl.2022.body') },
-              { y: '2024', title: t('about.tl.2024.title'), body: t('about.tl.2024.body') },
-              { y: '2026', title: t('about.tl.2026.title'), body: t('about.tl.2026.body') },
-            ].map((m, i) => (
+            >
+              <img
+                src={asset('biblioteca-3.webp')}
+                alt=""
+                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+              />
               <div
-                key={m.y}
-                style={{ position: 'relative', paddingLeft: 48, paddingBottom: i < 4 ? 56 : 0 }}
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  background: 'linear-gradient(to top, rgba(22,22,22,.45), transparent 50%)',
+                }}
+              />
+              <span
+                className="maach-mono"
+                style={{
+                  position: 'absolute',
+                  bottom: 16,
+                  left: 16,
+                  background: 'var(--off-white)',
+                  color: 'var(--fg)',
+                  padding: '5px 10px',
+                }}
               >
-                <div
-                  style={{
-                    position: 'absolute',
-                    left: -8,
-                    top: 0,
-                    width: 16,
-                    height: 16,
-                    background: 'var(--lava-orange)',
-                    border: '2px solid var(--off-white)',
-                  }}
-                />
-                <span
-                  className="maach-mono"
-                  style={{ color: 'var(--lava-orange)', fontSize: 14, display: 'block', marginBottom: 8 }}
-                >
-                  {m.y}
-                </span>
-                <h3
-                  style={{
-                    fontFamily: 'var(--display)',
-                    fontWeight: 600,
-                    fontSize: 32,
-                    textTransform: 'uppercase',
-                    letterSpacing: '-.01em',
-                    marginBottom: 12,
-                  }}
-                >
-                  {m.title}
-                </h3>
-                <p style={{ fontSize: 17, color: 'var(--muted)', lineHeight: 1.55, maxWidth: 720 }}>{m.body}</p>
-              </div>
-            ))}
+                METAL + MADERA
+              </span>
+            </div>
+          </div>
+
+          {/* Stat strip */}
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: 0,
+              border: '1px solid var(--line)',
+            }}
+          >
+            <div style={{ padding: '40px 32px', borderRight: '1px solid var(--line)' }}>
+              <span
+                className="h-display"
+                style={{
+                  fontSize: 'clamp(64px, 10vw, 144px)',
+                  display: 'block',
+                  lineHeight: 0.9,
+                  color: 'var(--lava-orange)',
+                }}
+              >
+                30+
+              </span>
+              <span className="maach-mono" style={{ color: 'var(--muted)', marginTop: 12, display: 'block' }}>
+                {t('about.history.stat.years').toUpperCase()}
+              </span>
+            </div>
+            <div style={{ padding: '40px 32px' }}>
+              <span
+                className="h-display"
+                style={{
+                  fontSize: 'clamp(64px, 10vw, 144px)',
+                  display: 'block',
+                  lineHeight: 0.9,
+                }}
+              >
+                03
+              </span>
+              <span className="maach-mono" style={{ color: 'var(--muted)', marginTop: 12, display: 'block' }}>
+                {t('about.history.stat.brand').toUpperCase()}
+              </span>
+            </div>
           </div>
         </div>
       </section>
 
-      <section style={{ padding: '128px 0' }}>
+      {/* EQUIPO */}
+      <section style={{ padding: '128px 0', borderBottom: '1px solid var(--line)' }}>
         <div className="maach-container">
           <div
             style={{
@@ -423,13 +511,11 @@ export default function PageAbout() {
             </Link>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16 }}>
-            {[
-              { name: 'Roberto A. Salgado', role: t('about.team.01.role'), init: 'RS' },
-              { name: 'María Castellanos', role: t('about.team.02.role'), init: 'MC' },
-              { name: 'Daniel Pratt', role: t('about.team.03.role'), init: 'DP' },
-              { name: 'Sofía Alba', role: t('about.team.04.role'), init: 'SA' },
-            ].map((m) => (
+          <div
+            className="team-grid"
+            style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16 }}
+          >
+            {TEAM.map((m) => (
               <div key={m.name} style={{ border: '1px solid var(--line)', background: 'var(--off-white)' }}>
                 <div
                   style={{
@@ -443,14 +529,14 @@ export default function PageAbout() {
                     overflow: 'hidden',
                   }}
                 >
-                  <div className="tex-forged-grid" style={{ position: 'absolute', inset: 0 }} />
                   <span
                     style={{
                       fontFamily: 'var(--display)',
                       fontWeight: 700,
-                      fontSize: 64,
+                      fontSize: 72,
                       letterSpacing: '-.02em',
                       position: 'relative',
+                      color: 'var(--fg)',
                     }}
                   >
                     {m.init}
@@ -476,11 +562,96 @@ export default function PageAbout() {
                     {m.name}
                   </h4>
                   <span className="maach-mono" style={{ color: 'var(--muted)' }}>
-                    {m.role}
+                    {t(m.roleKey)}
                   </span>
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ALIADOS */}
+      <section style={{ padding: '128px 0' }}>
+        <div className="maach-container">
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'flex-end',
+              marginBottom: 64,
+              gap: 48,
+              flexWrap: 'wrap',
+            }}
+          >
+            <div style={{ maxWidth: 480 }}>
+              <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 12 }}>
+                {t('about.allies.eyebrow')}
+              </span>
+              <h2 className="h-display" style={{ fontSize: 'clamp(48px, 6vw, 88px)', lineHeight: 0.95 }}>
+                {t('about.allies.title')}
+              </h2>
+            </div>
+            <p style={{ fontSize: 16, color: 'var(--muted)', lineHeight: 1.55, maxWidth: 480, margin: 0 }}>
+              {t('about.allies.body')}
+            </p>
+          </div>
+
+          <div
+            className="allies-grid keep-grid"
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(5, 1fr)',
+              border: '1px solid var(--line)',
+              background: 'var(--off-white)',
+              ['--keep-cols' as any]: 'repeat(2, 1fr)',
+            }}
+          >
+            {ALLIES.map((a, i) => {
+              const col = i % 5;
+              const isLastRow = i >= ALLIES.length - (ALLIES.length % 5 || 5);
+              return (
+                <div
+                  key={a.name}
+                  style={{
+                    aspectRatio: '4/3',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: '28px 24px',
+                    borderRight: col === 4 ? 0 : '1px solid var(--line)',
+                    borderBottom: isLastRow ? 0 : '1px solid var(--line)',
+                    background: 'var(--off-white)',
+                    transition: 'background .2s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = 'var(--soft)';
+                    const img = e.currentTarget.querySelector<HTMLImageElement>('img');
+                    if (img) img.style.filter = 'grayscale(0) opacity(1)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'var(--off-white)';
+                    const img = e.currentTarget.querySelector<HTMLImageElement>('img');
+                    if (img) img.style.filter = 'grayscale(1) opacity(.78)';
+                  }}
+                >
+                  <img
+                    src={asset('aliados/' + a.file)}
+                    alt={a.name}
+                    title={a.name}
+                    style={{
+                      maxWidth: '100%',
+                      maxHeight: 64,
+                      width: 'auto',
+                      height: 'auto',
+                      objectFit: 'contain',
+                      filter: 'grayscale(1) opacity(.78)',
+                      transition: 'filter .25s ease',
+                    }}
+                  />
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
