@@ -4,6 +4,7 @@ import PageHome from './pages/PageHome';
 import PageNuevo from './pages/PageNuevo';
 import PageProducts from './pages/PageProducts';
 import PageProductDetail from './pages/PageProductDetail';
+import PageCategory from './pages/PageCategory';
 import PageColecciones from './pages/PageColecciones';
 import PageColeccionDetail from './pages/PageColeccionDetail';
 import PageEspacios from './pages/PageEspacios';
@@ -31,6 +32,7 @@ export default function App() {
         <Route path="/" element={<PageHome />} />
         <Route path="/nuevo" element={<PageNuevo />} />
         <Route path="/productos" element={<PageProducts />} />
+        <Route path="/categorias/:slug" element={<PageCategory />} />
         <Route path="/productos/:category/:id" element={<PageProductDetail />} />
         <Route path="/colecciones" element={<PageColecciones />} />
         <Route path="/colecciones/:id" element={<PageColeccionDetail />} />

@@ -61,19 +61,22 @@ function MegaMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
   const columns = [
     {
       title: 'Sillonería',
+      slug: 'silloneria',
       items: ['Sillas Presidente', 'Sillas Gerenciales', 'Sillas Operativas', 'Sillas de Visita', 'Colectividades', 'Sofás'],
     },
     {
       title: 'Escritorios + Estaciones',
+      slug: 'escritorios',
       items: ['Escritorios Gerente', 'Escritorios Operativos', 'Estaciones de Trabajo', 'Escritorios Regulables'],
     },
-    { title: 'Mesas', items: ['Mesas de Reunión', 'Mesas Colaborativas', 'Mesas Auxiliares'] },
+    { title: 'Mesas', slug: 'mesas', items: ['Mesas de Reunión', 'Mesas Colaborativas', 'Mesas Auxiliares'] },
     {
       title: 'Almacenamiento',
+      slug: 'almacenamiento',
       items: ['Biblioteca Alta', 'Biblioteca Baja', 'Credenza', 'Módulo 3 Gavetas', 'Arturito', 'Locker', 'Archivo Rodante'],
     },
-    { title: 'Divisiones de Ambientes', items: ['Divisiones Modulares', 'Divisiones de Vidrio'] },
-    { title: 'Recepciones', items: ['Counters de Recepción', 'Mostradores', 'Sistemas de Espera'] },
+    { title: 'Divisiones de Ambientes', slug: 'divisiones', items: ['Divisiones Modulares', 'Divisiones de Vidrio'] },
+    { title: 'Recepciones', slug: 'recepciones', items: ['Counters de Recepción', 'Mostradores', 'Sistemas de Espera'] },
   ];
 
   return (
@@ -150,7 +153,9 @@ function MegaMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 40, columnGap: 56 }}>
           {columns.map((col) => (
             <div key={col.title}>
-              <h4
+              <Link
+                to={`/categorias/${col.slug}`}
+                onClick={onClose}
                 style={{
                   fontFamily: 'var(--display)',
                   fontWeight: 600,
@@ -158,15 +163,20 @@ function MegaMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
                   marginBottom: 20,
                   textTransform: 'uppercase',
                   letterSpacing: '-.01em',
+                  color: 'var(--fg)',
+                  display: 'block',
+                  transition: 'color .15s',
                 }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--lava-orange)')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--fg)')}
               >
                 {col.title}
-              </h4>
+              </Link>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 12 }}>
                 {col.items.map((item) => (
                   <li key={item}>
                     <Link
-                      to="/productos"
+                      to={`/categorias/${col.slug}`}
                       onClick={onClose}
                       style={{ fontSize: 14, color: 'var(--muted)', transition: 'color .15s' }}
                       onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--fg)')}

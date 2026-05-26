@@ -25,12 +25,12 @@ type GridProduct = {
 export default function PageProducts() {
   const t = useT();
   const catalogCategories = [
-    { name: 'Sillonería', items: ['Sillas presidente', 'Sillas gerenciales', 'Sillas operativas', 'Sillas de visita', 'Colectividades', 'Sofás'] },
-    { name: 'Escritorios + Estaciones de trabajo', items: ['Escritorios gerente', 'Escritorios operativos', 'Estaciones de trabajo', 'Escritorios regulables'] },
-    { name: 'Mesas', items: ['Mesas de reunión', 'Mesas colaborativas', 'Mesas auxiliares'] },
-    { name: 'Almacenamiento', items: ['Biblioteca Alta', 'Biblioteca Baja', 'Credenza', 'Módulo 3 gavetas', 'Arturito', 'Locker', 'Archivo Rodante'] },
-    { name: 'Divisiones de ambientes', items: ['Divisiones modulares', 'Divisiones de vidrio'] },
-    { name: 'Recepciones', items: ['Counters de recepción', 'Mostradores', 'Sistemas de espera'] },
+    { name: 'Sillonería', slug: 'silloneria', items: ['Sillas presidente', 'Sillas gerenciales', 'Sillas operativas', 'Sillas de visita', 'Colectividades', 'Sofás'] },
+    { name: 'Escritorios + Estaciones de trabajo', slug: 'escritorios', items: ['Escritorios gerente', 'Escritorios operativos', 'Estaciones de trabajo', 'Escritorios regulables'] },
+    { name: 'Mesas', slug: 'mesas', items: ['Mesas de reunión', 'Mesas colaborativas', 'Mesas auxiliares'] },
+    { name: 'Almacenamiento', slug: 'almacenamiento', items: ['Biblioteca Alta', 'Biblioteca Baja', 'Credenza', 'Módulo 3 gavetas', 'Arturito', 'Locker', 'Archivo Rodante'] },
+    { name: 'Divisiones de ambientes', slug: 'divisiones', items: ['Divisiones modulares', 'Divisiones de vidrio'] },
+    { name: 'Recepciones', slug: 'recepciones', items: ['Counters de recepción', 'Mostradores', 'Sistemas de espera'] },
   ];
 
   // Real products from the catalog data
@@ -157,7 +157,13 @@ export default function PageProducts() {
           </div>
           <h1
             className="h-display"
-            style={{ fontSize: 'clamp(56px, 8.5vw, 144px)', marginBottom: 32, color: 'var(--off-white)' }}
+            style={{
+              fontSize: 'clamp(40px, 5.5vw, 88px)',
+              marginBottom: 32,
+              color: 'var(--off-white)',
+              lineHeight: 0.95,
+              letterSpacing: '-.01em',
+            }}
           >
             {t('prod.hero.title.1')}<br />
             <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>{t('prod.hero.title.2')}</span>
@@ -193,23 +199,45 @@ export default function PageProducts() {
                   const isOpen = openCats.includes(cat.name);
                   return (
                     <div key={cat.name} style={{ paddingBottom: 20, borderBottom: '1px solid var(--line)' }}>
-                      <button
-                        onClick={() => toggle(cat.name)}
+                      <div
                         style={{
                           display: 'flex',
                           justifyContent: 'space-between',
                           alignItems: 'center',
-                          width: '100%',
-                          fontFamily: 'var(--display)',
-                          fontWeight: 600,
-                          fontSize: 18,
-                          textTransform: 'uppercase',
-                          letterSpacing: '-.01em',
+                          gap: 8,
                         }}
                       >
-                        {cat.name}
-                        {isOpen ? <IconMinus size={12} /> : <IconPlus size={12} />}
-                      </button>
+                        <Link
+                          to={`/categorias/${cat.slug}`}
+                          style={{
+                            flex: 1,
+                            fontFamily: 'var(--display)',
+                            fontWeight: 600,
+                            fontSize: 18,
+                            textTransform: 'uppercase',
+                            letterSpacing: '-.01em',
+                            color: 'var(--fg)',
+                            transition: 'color .15s',
+                          }}
+                          onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--lava-orange)')}
+                          onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--fg)')}
+                        >
+                          {cat.name}
+                        </Link>
+                        <button
+                          aria-label={isOpen ? 'Cerrar' : 'Abrir'}
+                          onClick={() => toggle(cat.name)}
+                          style={{
+                            padding: 4,
+                            cursor: 'pointer',
+                            background: 'transparent',
+                            border: 'none',
+                            color: 'var(--muted)',
+                          }}
+                        >
+                          {isOpen ? <IconMinus size={12} /> : <IconPlus size={12} />}
+                        </button>
+                      </div>
                       {isOpen && (
                         <div
                           style={{
