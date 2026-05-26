@@ -1,6 +1,68 @@
 /* ────────────────────────────────────────────────────────────
-   MAACH — DESIGN TOKENS (from Brand Book 2026)
+   MAACH — BRAND TYPOGRAPHY (Brand Book 2026)
+   Principal:  Monoblock     · display, headlines
+   Secundaria: ClashGrotesk  · body
+   Auxiliar:   Segoe UI      · labels, mono-style metadata
    ──────────────────────────────────────────────────────────── */
+@font-face {
+  font-family: 'Monoblock';
+  src: url('/maach-site/assets/fonts/monoblock-light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Monoblock';
+  src: url('/maach-site/assets/fonts/monoblock-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Monoblock';
+  src: url('/maach-site/assets/fonts/monoblock-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Monoblock';
+  src: url('/maach-site/assets/fonts/monoblock-semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Monoblock';
+  src: url('/maach-site/assets/fonts/monoblock-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Monoblock';
+  src: url('/maach-site/assets/fonts/monoblock-extrabold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Clash Grotesk';
+  src: url('/maach-site/assets/fonts/clashgrotesk-variable.woff2') format('woff2-variations'),
+       url('/maach-site/assets/fonts/clashgrotesk-variable.woff2') format('woff2');
+  font-weight: 200 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Segoe UI';
+  src: url('/maach-site/assets/fonts/segoe-ui-variable.woff2') format('woff2-variations'),
+       url('/maach-site/assets/fonts/segoe-ui-variable.woff2') format('woff2');
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --jet-black: #161616;
   --off-white: #ffffff;
@@ -21,9 +83,9 @@
   --soft: var(--pure-white);
   --accent: var(--lava-orange);
 
-  --display: 'Big Shoulders Display', 'Arial Black', sans-serif;
-  --body: 'Clash Grotesk', 'Segoe UI', system-ui, sans-serif;
-  --mono: 'JetBrains Mono', 'Courier New', monospace;
+  --display: 'Monoblock', 'Arial Black', 'Helvetica Neue', sans-serif;
+  --body: 'Clash Grotesk', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --mono: 'Segoe UI', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 }
 
 .invert {
