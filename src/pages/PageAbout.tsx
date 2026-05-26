@@ -880,60 +880,21 @@ export default function PageAbout() {
             </p>
           </div>
 
-          <div
-            className="allies-grid keep-grid"
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(5, 1fr)',
-              border: '1px solid var(--line)',
-              background: 'var(--off-white)',
-              ['--keep-cols' as any]: 'repeat(2, 1fr)',
-            }}
-          >
-            {ALLIES.map((a, i) => {
-              const col = i % 5;
-              const isLastRow = i >= ALLIES.length - (ALLIES.length % 5 || 5);
-              return (
-                <div
-                  key={a.name}
-                  style={{
-                    aspectRatio: '4/3',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    padding: '28px 24px',
-                    borderRight: col === 4 ? 0 : '1px solid var(--line)',
-                    borderBottom: isLastRow ? 0 : '1px solid var(--line)',
-                    background: 'var(--off-white)',
-                    transition: 'background .2s ease',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = 'var(--soft)';
-                    const img = e.currentTarget.querySelector<HTMLImageElement>('img');
-                    if (img) img.style.transform = 'scale(1.06)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = 'var(--off-white)';
-                    const img = e.currentTarget.querySelector<HTMLImageElement>('img');
-                    if (img) img.style.transform = '';
-                  }}
-                >
-                  <img
-                    src={asset('aliados/' + a.file)}
-                    alt={a.name}
-                    title={a.name}
-                    style={{
-                      maxWidth: '100%',
-                      maxHeight: 72,
-                      width: 'auto',
-                      height: 'auto',
-                      objectFit: 'contain',
-                      transition: 'transform .25s ease',
-                    }}
-                  />
+          <div className="logos-marquee" aria-label="Aliados estratégicos MAACH">
+            <div className="logos-track">
+              {ALLIES.map((a, i) => (
+                <div key={`a-${i}`} className="logos-cell" title={a.name}>
+                  <img src={asset('aliados/' + a.file)} alt={a.name} />
                 </div>
-              );
-            })}
+              ))}
+            </div>
+            <div className="logos-track" aria-hidden>
+              {ALLIES.map((a, i) => (
+                <div key={`b-${i}`} className="logos-cell" title={a.name}>
+                  <img src={asset('aliados/' + a.file)} alt={a.name} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
