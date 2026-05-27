@@ -26,7 +26,7 @@ export default function PageProducts() {
   const t = useT();
   const catalogCategories = [
     { name: 'Sillonería', slug: 'silloneria', items: ['Sillas presidente', 'Sillas gerenciales', 'Sillas operativas', 'Sillas de visita', 'Colectividades', 'Sofás'] },
-    { name: 'Escritorios + Estaciones de trabajo', slug: 'escritorios', items: ['Escritorios gerente', 'Escritorios operativos', 'Estaciones de trabajo', 'Escritorios regulables'] },
+    { name: 'Escritorios', slug: 'escritorios', items: ['Escritorios gerente', 'Escritorios operativos', 'Estaciones de trabajo', 'Escritorios regulables'] },
     { name: 'Mesas', slug: 'mesas', items: ['Mesas de reunión', 'Mesas colaborativas', 'Mesas auxiliares'] },
     { name: 'Almacenamiento', slug: 'almacenamiento', items: ['Biblioteca Alta', 'Biblioteca Baja', 'Credenza', 'Módulo 3 gavetas', 'Arturito', 'Locker', 'Archivo Rodante'] },
     { name: 'Divisiones de ambientes', slug: 'divisiones', items: ['Divisiones modulares', 'Divisiones de vidrio'] },

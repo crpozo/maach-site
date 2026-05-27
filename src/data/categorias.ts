@@ -116,7 +116,7 @@ export const CATEGORIES: Category[] = [
   },
   {
     slug: 'escritorios',
-    name: 'Escritorios + Estaciones de trabajo',
+    name: 'Escritorios',
     intro:
       'Escritorios gerenciales, operativos, estaciones colaborativas y soluciones regulables. Sistemas con conducción eléctrica integrada y tableros en melamina de alta resistencia.',
     sections: [

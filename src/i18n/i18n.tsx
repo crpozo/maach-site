@@ -62,7 +62,7 @@ const T: Translations = {
     'home.cat.title': 'Categorías.',
     'home.cat.01.name': 'Sillonería',
     'home.cat.01.desc': 'Ergonomía técnica, sillas gerenciales, operativas y sofás.',
-    'home.cat.02.name': 'Escritorios + Estaciones',
+    'home.cat.02.name': 'Escritorios',
     'home.cat.02.desc': 'Sistemas modulares, escritorios operativos y regulables.',
     'home.cat.03.name': 'Mesas',
     'home.cat.03.desc': 'Mesas de reunión, colaborativas y auxiliares.',
@@ -424,7 +424,7 @@ const T: Translations = {
     'prod.count_label_n': 'productos',
     // Catalog category names
     'prod.cat.silloneria': 'Sillonería',
-    'prod.cat.escritorios': 'Escritorios + Estaciones de trabajo',
+    'prod.cat.escritorios': 'Escritorios',
     'prod.cat.mesas': 'Mesas',
     'prod.cat.almacenamiento': 'Almacenamiento',
     'prod.cat.divisiones': 'Divisiones de ambientes',

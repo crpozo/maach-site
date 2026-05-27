@@ -80,7 +80,7 @@ function MegaMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
       ],
     },
     {
-      title: 'Escritorios + Estaciones',
+      title: 'Escritorios',
       slug: 'escritorios',
       items: [
         { label: 'Escritorios Gerente', anchor: 'escritorios-gerente' },
@@ -653,7 +653,7 @@ function Footer() {
       title: t('footer.col.productos'),
       items: [
         { label: 'Sillonería', path: '/categorias/silloneria' },
-        { label: 'Escritorios + Estaciones', path: '/categorias/escritorios' },
+        { label: 'Escritorios', path: '/categorias/escritorios' },
         { label: 'Mesas', path: '/categorias/mesas' },
         { label: 'Almacenamiento', path: '/categorias/almacenamiento' },
         { label: 'Divisiones de Ambientes', path: '/categorias/divisiones' },
