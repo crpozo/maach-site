@@ -255,7 +255,7 @@ export default function PageEspacios() {
               <Link
                 key={s.id}
                 to="/productos"
-                className="invert"
+                className="invert typology-card"
                 style={{
                   position: 'relative',
                   display: 'block',
@@ -288,25 +288,8 @@ export default function PageEspacios() {
                     transition: 'transform 1.2s ease',
                   }}
                 />
-                <div
-                  aria-hidden
-                  style={{
-                    position: 'absolute',
-                    inset: 0,
-                    background:
-                      'linear-gradient(180deg, rgba(22,22,22,.35) 0%, rgba(22,22,22,.15) 18%, rgba(22,22,22,.55) 45%, rgba(22,22,22,.88) 70%, rgba(22,22,22,.96) 100%)',
-                  }}
-                />
-                {/* Left-side scrim for headline contrast */}
-                <div
-                  aria-hidden
-                  style={{
-                    position: 'absolute',
-                    inset: 0,
-                    background:
-                      'linear-gradient(90deg, rgba(22,22,22,.45) 0%, rgba(22,22,22,.2) 35%, transparent 65%)',
-                  }}
-                />
+                {/* Overlay (darkens on hover via CSS) */}
+                <div aria-hidden className="typology-overlay" style={{ position: 'absolute', inset: 0 }} />
 
                 {/* Orange L corner */}
                 <div
@@ -322,7 +305,7 @@ export default function PageEspacios() {
                   }}
                 />
 
-                {/* Bottom content */}
+                {/* Bottom content — title always visible, rest revealed on hover */}
                 <div
                   style={{
                     position: 'absolute',
@@ -338,67 +321,70 @@ export default function PageEspacios() {
                       fontSize: 'clamp(28px, 3.4vw, 44px)',
                       color: 'var(--off-white)',
                       lineHeight: 1,
-                      marginBottom: 12,
-                      textShadow: '0 2px 24px rgba(0,0,0,.45)',
+                      margin: 0,
+                      textShadow: '0 2px 24px rgba(0,0,0,.55)',
                     }}
                   >
                     {s.title}.
                   </h3>
-                  <p
-                    style={{
-                      fontSize: 14,
-                      color: 'rgba(255,255,255,.92)',
-                      lineHeight: 1.55,
-                      maxWidth: 520,
-                      marginBottom: 18,
-                      textShadow: '0 1px 14px rgba(0,0,0,.55)',
-                    }}
-                  >
-                    {s.desc}
-                  </p>
-                  <div
-                    style={{
-                      paddingTop: 14,
-                      marginBottom: 18,
-                      borderTop: '1px solid rgba(228,226,227,.22)',
-                      maxWidth: 520,
-                    }}
-                  >
+                  <div className="typology-reveal" style={{ marginTop: 16 }}>
+                    <p
+                      style={{
+                        fontSize: 14,
+                        color: 'rgba(255,255,255,.92)',
+                        lineHeight: 1.55,
+                        maxWidth: 520,
+                        margin: 0,
+                        marginBottom: 18,
+                        textShadow: '0 1px 14px rgba(0,0,0,.55)',
+                      }}
+                    >
+                      {s.desc}
+                    </p>
+                    <div
+                      style={{
+                        paddingTop: 14,
+                        marginBottom: 18,
+                        borderTop: '1px solid rgba(228,226,227,.22)',
+                        maxWidth: 520,
+                      }}
+                    >
+                      <span
+                        className="maach-mono"
+                        style={{
+                          color: 'var(--lava-orange)',
+                          display: 'block',
+                          marginBottom: 6,
+                          letterSpacing: '.1em',
+                        }}
+                      >
+                        {t('esp.typ.products_label').toUpperCase()}
+                      </span>
+                      <span
+                        style={{
+                          fontSize: 13,
+                          color: 'var(--off-white)',
+                          lineHeight: 1.5,
+                          letterSpacing: '.01em',
+                        }}
+                      >
+                        {s.products}
+                      </span>
+                    </div>
                     <span
                       className="maach-mono"
                       style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: 10,
                         color: 'var(--lava-orange)',
-                        display: 'block',
-                        marginBottom: 6,
-                        letterSpacing: '.1em',
+                        paddingBottom: 4,
+                        borderBottom: '1.5px solid var(--lava-orange)',
                       }}
                     >
-                      {t('esp.typ.products_label').toUpperCase()}
-                    </span>
-                    <span
-                      style={{
-                        fontSize: 13,
-                        color: 'var(--off-white)',
-                        lineHeight: 1.5,
-                        letterSpacing: '.01em',
-                      }}
-                    >
-                      {s.products}
+                      {t('cta.view_products')} <IconArrow size={14} />
                     </span>
                   </div>
-                  <span
-                    className="maach-mono"
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: 10,
-                      color: 'var(--lava-orange)',
-                      paddingBottom: 4,
-                      borderBottom: '1.5px solid var(--lava-orange)',
-                    }}
-                  >
-                    {t('cta.view_products')} <IconArrow size={14} />
-                  </span>
                 </div>
               </Link>
             ))}
