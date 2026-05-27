@@ -465,11 +465,11 @@ export default function PageHome() {
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8 }}>
-            {[
-              { id: '01', img: asset('proyectos/cpn/01.webp'), title: 'Proyecto CPN', location: 'Quito, EC', area: '2,400 m²', year: '2025' },
+            {([
+              { id: '01', img: asset('proyectos/cpn/01.webp'), title: 'CPN', location: 'Quito, EC', area: '2,400 m²', year: '2025' },
               { id: '02', img: asset('proyectos/palladium/02.webp'), title: 'Palladium', location: 'Quito, EC', area: '1,200 m²', year: '2024' },
-              { id: '03', img: asset('biblioteca-4.webp'), title: 'Hub de Innovación', location: 'Guadalajara', area: '1,200 m²', year: '2025' },
-            ].map((p) => (
+              { id: '03', title: 'Wesco' },
+            ] as Array<{ id: string; img?: string; title: string; location?: string; area?: string; year?: string }>).map((p) => (
               <Link
                 key={p.id}
                 to={`/portafolio/${p.id}`}
@@ -478,15 +478,30 @@ export default function PageHome() {
                   aspectRatio: '4/5',
                   overflow: 'hidden',
                   display: 'block',
+                  background: 'var(--jet-black)',
                 }}
               >
-                <img
-                  src={p.img}
-                  alt={p.title}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform .8s ease' }}
-                  onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.04)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.transform = '')}
-                />
+                {p.img ? (
+                  <img
+                    src={p.img}
+                    alt={p.title}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform .8s ease' }}
+                    onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.04)')}
+                    onMouseLeave={(e) => (e.currentTarget.style.transform = '')}
+                  />
+                ) : (
+                  <div
+                    aria-hidden
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      bottom: 0,
+                      left: 0,
+                      width: 6,
+                      background: 'var(--lava-orange)',
+                    }}
+                  />
+                )}
                 <div
                   style={{
                     position: 'absolute',
@@ -502,9 +517,11 @@ export default function PageHome() {
                   }}
                 >
                   <div>
-                    <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 4 }}>
-                      {p.location}
-                    </span>
+                    {p.location ? (
+                      <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 4 }}>
+                        {p.location}
+                      </span>
+                    ) : null}
                     <h4
                       style={{
                         fontFamily: 'var(--display)',
@@ -518,18 +535,22 @@ export default function PageHome() {
                       {p.title}
                     </h4>
                   </div>
-                  <span className="maach-mono" style={{ color: 'var(--lava-orange)', whiteSpace: 'nowrap' }}>
-                    {p.year}
-                  </span>
+                  {p.year ? (
+                    <span className="maach-mono" style={{ color: 'var(--lava-orange)', whiteSpace: 'nowrap' }}>
+                      {p.year}
+                    </span>
+                  ) : null}
                 </div>
-                <div style={{ position: 'absolute', top: 16, right: 16 }}>
-                  <span
-                    className="maach-mono"
-                    style={{ background: 'var(--jet-black)', color: 'var(--off-white)', padding: '4px 8px' }}
-                  >
-                    {p.area}
-                  </span>
-                </div>
+                {p.area ? (
+                  <div style={{ position: 'absolute', top: 16, right: 16 }}>
+                    <span
+                      className="maach-mono"
+                      style={{ background: 'var(--jet-black)', color: 'var(--off-white)', padding: '4px 8px' }}
+                    >
+                      {p.area}
+                    </span>
+                  </div>
+                ) : null}
               </Link>
             ))}
           </div>
