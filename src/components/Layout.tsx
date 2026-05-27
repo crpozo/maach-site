@@ -749,7 +749,19 @@ function Footer() {
           }}
         >
           <div>
-            <Logo inverted height={28} />
+            <div
+              style={{
+                background: 'var(--off-white)',
+                display: 'inline-block',
+                padding: '24px 28px',
+              }}
+            >
+              <img
+                src={asset('maach-wordmark.jpg')}
+                alt="MAACH"
+                style={{ width: 200, height: 'auto', display: 'block' }}
+              />
+            </div>
             <p style={{ color: 'var(--sand-grey)', marginTop: 32, maxWidth: 280 }}>
               {t('footer.address.line1')}
               {t('footer.address.line2') ? (
