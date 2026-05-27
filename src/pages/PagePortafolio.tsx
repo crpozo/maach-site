@@ -36,10 +36,6 @@ export default function PagePortafolio() {
       year: '2024',
       img: asset('proyectos/palladium/02.webp'),
     },
-    { id: '03', title: 'Wesco' },
-    { id: '04', title: 'Maresa' },
-    { id: '05', title: 'LDU' },
-    { id: '06', title: 'CAME', status: 'paused' },
   ];
 
   return (

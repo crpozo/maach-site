@@ -51,10 +51,6 @@ const NAV_LINKS: { key: string; path: string; mega?: boolean; submenu?: boolean 
 export const PROJECTS: { id: string; name: string; status?: 'paused' }[] = [
   { id: '01', name: 'CPN' },
   { id: '02', name: 'Palladium' },
-  { id: '03', name: 'Wesco' },
-  { id: '04', name: 'Maresa' },
-  { id: '05', name: 'LDU' },
-  { id: '06', name: 'CAME', status: 'paused' },
 ];
 
 function MegaMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
@@ -757,7 +753,7 @@ function Footer() {
               }}
             >
               <img
-                src={asset('maach-wordmark.jpg')}
+                src={asset('logo-footer.jpg')}
                 alt="MAACH"
                 style={{ width: 200, height: 'auto', display: 'block' }}
               />
