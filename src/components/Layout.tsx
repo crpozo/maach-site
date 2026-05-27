@@ -745,19 +745,11 @@ function Footer() {
           }}
         >
           <div>
-            <div
-              style={{
-                background: 'var(--off-white)',
-                display: 'inline-block',
-                padding: '24px 28px',
-              }}
-            >
-              <img
-                src={asset('logo-white.png')}
-                alt="MAACH"
-                style={{ width: 200, height: 'auto', display: 'block' }}
-              />
-            </div>
+            <img
+              src={asset('maach-logo-transparent.png')}
+              alt="MAACH"
+              style={{ width: 200, height: 'auto', display: 'block' }}
+            />
             <p style={{ color: 'var(--sand-grey)', marginTop: 32, maxWidth: 280 }}>
               {t('footer.address.line1')}
               {t('footer.address.line2') ? (
