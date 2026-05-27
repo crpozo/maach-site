@@ -37,7 +37,6 @@ export default function PageProductDetail() {
         asset('biblioteca-5.webp'),
       ];
   const description = real?.description;
-  const sku = real?.sku;
   const [idx, setIdx] = useState(0);
 
   return (
@@ -146,7 +145,7 @@ export default function PageProductDetail() {
 
             <div>
               <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 16 }}>
-                {sku ? `${category} · ${sku}` : category}
+                {category}
               </span>
               <h1 className="h-display" style={{ fontSize: 64, marginBottom: 24 }}>
                 {productName}

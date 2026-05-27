@@ -409,20 +409,6 @@ export default function PageCategory() {
                             onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
                             onMouseLeave={(e) => (e.currentTarget.style.transform = '')}
                           />
-                          <span
-                            className="maach-mono"
-                            style={{
-                              position: 'absolute',
-                              top: 10,
-                              left: 10,
-                              background: 'var(--off-white)',
-                              color: 'var(--fg)',
-                              padding: '3px 7px',
-                              fontSize: 10,
-                            }}
-                          >
-                            {p.sku}
-                          </span>
                         </div>
                         <div style={{ padding: '16px 18px' }}>
                           <h3

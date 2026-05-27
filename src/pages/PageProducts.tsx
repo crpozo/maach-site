@@ -380,12 +380,6 @@ export default function PageProducts() {
                           onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.04)')}
                           onMouseLeave={(e) => (e.currentTarget.style.transform = '')}
                         />
-                        <span
-                          className="maach-mono"
-                          style={{ position: 'absolute', top: 12, right: 12, background: 'var(--off-white)', padding: '3px 7px' }}
-                        >
-                          {p.sku}
-                        </span>
                       </div>
                       <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 4 }}>
                         {p.subcategory}
