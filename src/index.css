@@ -157,6 +157,12 @@ h6 {
   color: var(--off-white);
 }
 
+/* Hash-anchored scroll lands below the fixed nav (80px) */
+section[id],
+[id^='section-'] {
+  scroll-margin-top: 100px;
+}
+
 .maach-mono {
   font-family: var(--mono);
   letter-spacing: 0.08em;

@@ -17,10 +17,31 @@ import PageAbout from './pages/PageAbout';
 import PageContacto from './pages/PageContacto';
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    if (hash) {
+      // Defer until the new route renders, then scroll to the anchored element
+      const id = decodeURIComponent(hash.replace(/^#/, ''));
+      const tryScroll = () => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          return true;
+        }
+        return false;
+      };
+      if (!tryScroll()) {
+        // Section might still be mounting — try again on the next frame
+        requestAnimationFrame(() => {
+          if (!tryScroll()) {
+            setTimeout(tryScroll, 120);
+          }
+        });
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
   return null;
 }
 

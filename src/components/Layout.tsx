@@ -58,25 +58,76 @@ export const PROJECTS: { id: string; name: string; status?: 'paused' }[] = [
 ];
 
 function MegaMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
-  const columns = [
+  // Each item carries the URL anchor of its section on the category page.
+  // Anchors match the `slug` field of the corresponding section in
+  // src/data/categorias.ts (Almacenamiento groups several products under
+  // a single editorial section, hence the repeats).
+  const columns: {
+    title: string;
+    slug: string;
+    items: { label: string; anchor: string }[];
+  }[] = [
     {
       title: 'Sillonería',
       slug: 'silloneria',
-      items: ['Sillas Presidente', 'Sillas Gerenciales', 'Sillas Operativas', 'Sillas de Visita', 'Colectividades', 'Sofás'],
+      items: [
+        { label: 'Sillas Presidente', anchor: 'sillas-presidente' },
+        { label: 'Sillas Gerenciales', anchor: 'sillas-gerenciales' },
+        { label: 'Sillas Operativas', anchor: 'sillas-operativas' },
+        { label: 'Sillas de Visita', anchor: 'sillas-de-visita' },
+        { label: 'Colectividades', anchor: 'colectividades' },
+        { label: 'Sofás', anchor: 'sofas' },
+      ],
     },
     {
       title: 'Escritorios + Estaciones',
       slug: 'escritorios',
-      items: ['Escritorios Gerente', 'Escritorios Operativos', 'Estaciones de Trabajo', 'Escritorios Regulables'],
+      items: [
+        { label: 'Escritorios Gerente', anchor: 'escritorios-gerente' },
+        { label: 'Escritorios Operativos', anchor: 'escritorios-operativos' },
+        { label: 'Estaciones de Trabajo', anchor: 'estaciones-de-trabajo' },
+        { label: 'Escritorios Regulables', anchor: 'escritorios-regulables' },
+      ],
     },
-    { title: 'Mesas', slug: 'mesas', items: ['Mesas de Reunión', 'Mesas Colaborativas', 'Mesas Auxiliares'] },
+    {
+      title: 'Mesas',
+      slug: 'mesas',
+      items: [
+        { label: 'Mesas de Reunión', anchor: 'mesas-de-reunion' },
+        { label: 'Mesas Colaborativas', anchor: 'mesas-colaborativas' },
+        { label: 'Mesas Auxiliares', anchor: 'mesas-auxiliares' },
+      ],
+    },
     {
       title: 'Almacenamiento',
       slug: 'almacenamiento',
-      items: ['Biblioteca Alta', 'Biblioteca Baja', 'Credenza', 'Módulo 3 Gavetas', 'Arturito', 'Locker', 'Archivo Rodante'],
+      items: [
+        { label: 'Biblioteca Alta', anchor: 'credenzas-bibliotecas' },
+        { label: 'Biblioteca Baja', anchor: 'credenzas-bibliotecas' },
+        { label: 'Credenza', anchor: 'credenzas-bibliotecas' },
+        { label: 'Módulo 3 Gavetas', anchor: 'modulos-archivacion' },
+        { label: 'Arturito', anchor: 'modulos-archivacion' },
+        { label: 'Locker', anchor: 'lockers' },
+        { label: 'Archivo Rodante', anchor: 'archivo-rodante' },
+      ],
     },
-    { title: 'Divisiones de Ambientes', slug: 'divisiones', items: ['Divisiones Modulares', 'Divisiones de Vidrio'] },
-    { title: 'Recepciones', slug: 'recepciones', items: ['Counters de Recepción', 'Mostradores', 'Sistemas de Espera'] },
+    {
+      title: 'Divisiones de Ambientes',
+      slug: 'divisiones',
+      items: [
+        { label: 'Divisiones Modulares', anchor: 'divisiones-modulares' },
+        { label: 'Divisiones de Vidrio', anchor: 'divisiones-de-vidrio' },
+      ],
+    },
+    {
+      title: 'Recepciones',
+      slug: 'recepciones',
+      items: [
+        { label: 'Counters de Recepción', anchor: 'recepciones' },
+        { label: 'Mostradores', anchor: 'recepciones' },
+        { label: 'Sistemas de Espera', anchor: 'recepciones' },
+      ],
+    },
   ];
 
   return (
@@ -171,15 +222,15 @@ function MegaMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
               </Link>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 12 }}>
                 {col.items.map((item) => (
-                  <li key={item}>
+                  <li key={item.label}>
                     <Link
-                      to={`/productos?sub=${encodeURIComponent(item)}`}
+                      to={`/categorias/${col.slug}#${item.anchor}`}
                       onClick={onClose}
                       style={{ fontSize: 14, color: 'var(--muted)', transition: 'color .15s' }}
                       onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--fg)')}
                       onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--muted)')}
                     >
-                      {item}
+                      {item.label}
                     </Link>
                   </li>
                 ))}
@@ -601,12 +652,12 @@ function Footer() {
     {
       title: t('footer.col.productos'),
       items: [
-        { label: 'Sillonería', path: '/productos' },
-        { label: 'Escritorios + Estaciones', path: '/productos' },
-        { label: 'Mesas', path: '/productos' },
-        { label: 'Almacenamiento', path: '/productos' },
-        { label: 'Divisiones de Ambientes', path: '/productos' },
-        { label: 'Recepciones', path: '/productos' },
+        { label: 'Sillonería', path: '/categorias/silloneria' },
+        { label: 'Escritorios + Estaciones', path: '/categorias/escritorios' },
+        { label: 'Mesas', path: '/categorias/mesas' },
+        { label: 'Almacenamiento', path: '/categorias/almacenamiento' },
+        { label: 'Divisiones de Ambientes', path: '/categorias/divisiones' },
+        { label: 'Recepciones', path: '/categorias/recepciones' },
       ],
     },
     {
