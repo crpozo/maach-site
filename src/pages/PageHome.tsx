@@ -468,7 +468,7 @@ export default function PageHome() {
             {([
               { id: '01', img: asset('proyectos/cpn/01.webp'), title: 'CPN', location: 'Quito, EC', area: '2,400 m²', year: '2025' },
               { id: '02', img: asset('proyectos/palladium/02.webp'), title: 'Palladium', location: 'Quito, EC', area: '1,200 m²', year: '2024' },
-              { id: '03', title: 'Wesco' },
+              { id: '03', img: asset('biblioteca-2.webp'), title: 'Wesco' },
             ] as Array<{ id: string; img?: string; title: string; location?: string; area?: string; year?: string }>).map((p) => (
               <Link
                 key={p.id}
@@ -554,6 +554,66 @@ export default function PageHome() {
               </Link>
             ))}
           </div>
+
+          {/* CTA → Investigación / Blog */}
+          <Link
+            to="/investigacion"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: 32,
+              marginTop: 56,
+              padding: '36px 40px',
+              background: 'var(--jet-black)',
+              color: 'var(--off-white)',
+              border: '1px solid var(--jet-black)',
+              transition: 'background .25s ease, color .25s ease',
+              flexWrap: 'wrap',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = 'var(--lava-orange)';
+              e.currentTarget.style.borderColor = 'var(--lava-orange)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'var(--jet-black)';
+              e.currentTarget.style.borderColor = 'var(--jet-black)';
+            }}
+          >
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+              <span
+                className="maach-mono"
+                style={{ color: 'var(--lava-orange)', letterSpacing: '.12em' }}
+              >
+                INVESTIGACIÓN · MAACH
+              </span>
+              <span
+                className="h-display"
+                style={{
+                  fontSize: 'clamp(24px, 3vw, 36px)',
+                  lineHeight: 1.1,
+                  letterSpacing: '-.01em',
+                  color: 'var(--off-white)',
+                }}
+              >
+                ¿Dudas para diseñar tu espacio? Aquí las resolvemos.
+              </span>
+            </div>
+            <span
+              className="maach-mono"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 12,
+                color: 'var(--off-white)',
+                borderBottom: '1.5px solid var(--off-white)',
+                paddingBottom: 4,
+                flexShrink: 0,
+              }}
+            >
+              Ver artículos <IconArrow size={14} />
+            </span>
+          </Link>
         </div>
       </section>
 
