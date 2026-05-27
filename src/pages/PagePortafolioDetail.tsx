@@ -521,7 +521,8 @@ export default function PagePortafolioDetail() {
                 gridTemplateColumns: '2fr 1fr',
                 gridTemplateRows: '1fr 1fr',
                 gap: 12,
-                aspectRatio: '16/9',
+                height: 'min(56vh, 560px)',
+                width: '100%',
               }}
             >
               <div
