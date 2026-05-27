@@ -201,17 +201,17 @@ export default function PageHome() {
             }}
           >
             {[
-              { id: '01', name: t('home.cat.01.name'), desc: t('home.cat.01.desc'), img: asset('biblioteca-1.webp') },
-              { id: '02', name: t('home.cat.02.name'), desc: t('home.cat.02.desc'), img: asset('biblioteca-2.webp') },
-              { id: '03', name: t('home.cat.03.name'), desc: t('home.cat.03.desc'), img: asset('perspectiva-2.webp') },
-              { id: '04', name: t('home.cat.04.name'), desc: t('home.cat.04.desc'), img: asset('biblioteca-3.webp') },
-              { id: '05', name: t('home.cat.05.name'), desc: t('home.cat.05.desc'), img: asset('biblioteca-4.webp') },
-              { id: '06', name: t('home.cat.06.name'), desc: t('home.cat.06.desc'), img: asset('biblioteca-5.webp') },
+              { id: '01', slug: 'silloneria',    name: t('home.cat.01.name'), desc: t('home.cat.01.desc'), img: asset('biblioteca-1.webp') },
+              { id: '02', slug: 'escritorios',   name: t('home.cat.02.name'), desc: t('home.cat.02.desc'), img: asset('biblioteca-2.webp') },
+              { id: '03', slug: 'mesas',         name: t('home.cat.03.name'), desc: t('home.cat.03.desc'), img: asset('perspectiva-2.webp') },
+              { id: '04', slug: 'almacenamiento', name: t('home.cat.04.name'), desc: t('home.cat.04.desc'), img: asset('biblioteca-3.webp') },
+              { id: '05', slug: 'divisiones',    name: t('home.cat.05.name'), desc: t('home.cat.05.desc'), img: asset('biblioteca-4.webp') },
+              { id: '06', slug: 'recepciones',   name: t('home.cat.06.name'), desc: t('home.cat.06.desc'), img: asset('biblioteca-5.webp') },
             ].map((cat, i) => {
               return (
                 <Link
                   key={cat.id}
-                  to="/productos"
+                  to={`/categorias/${cat.slug}`}
                   style={{
                     borderRight: (i + 1) % 3 === 0 ? 0 : '1px solid var(--line)',
                     borderBottom: i < 3 ? '1px solid var(--line)' : 0,
@@ -255,7 +255,7 @@ export default function PageHome() {
                       position: 'absolute',
                       inset: 0,
                       background:
-                        'linear-gradient(180deg, rgba(22,22,22,.35) 0%, rgba(22,22,22,.55) 55%, rgba(22,22,22,.85) 100%)',
+                        'linear-gradient(180deg, rgba(22,22,22,.5) 0%, rgba(22,22,22,.25) 25%, rgba(22,22,22,.75) 65%, rgba(22,22,22,.95) 100%)',
                       zIndex: 1,
                     }}
                   />
@@ -290,6 +290,7 @@ export default function PageHome() {
                         margin: 0,
                         textTransform: 'uppercase',
                         color: 'var(--off-white)',
+                        textShadow: '0 2px 24px rgba(0,0,0,.55)',
                         /* Reserve room for up to 2 lines so every card aligns
                            the title on the same baseline. 44px font × 0.95
                            line-height × 2 ≈ 84px */
@@ -304,10 +305,10 @@ export default function PageHome() {
                       style={{
                         fontSize: 14,
                         lineHeight: 1.55,
-                        opacity: 0.85,
                         maxWidth: 320,
-                        color: 'var(--off-white)',
+                        color: 'rgba(255,255,255,.95)',
                         margin: 0,
+                        textShadow: '0 1px 12px rgba(0,0,0,.6)',
                         /* Same idea for the description: 14px × 1.55 × 2 ≈ 44px */
                         minHeight: 44,
                       }}

@@ -585,7 +585,7 @@ export default function PageEspacios() {
                 className="maach-mono"
                 style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 16 }}
               >
-                § FAQ · Asesoría
+                FAQ · Asesoría
               </span>
               <h3
                 className="h-display"

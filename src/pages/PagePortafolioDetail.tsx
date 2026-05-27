@@ -320,13 +320,12 @@ function ProjectHero({ p }: { p: ProjectData; id?: string }) {
 }
 
 function ContentSection({
-  num,
   eyebrow,
   title,
   children,
   invert = false,
 }: {
-  num: string;
+  num?: string;
   eyebrow: string;
   title: string;
   children: React.ReactNode;
@@ -361,7 +360,7 @@ function ContentSection({
                 letterSpacing: '.1em',
               }}
             >
-              § {num} / {eyebrow}
+              {eyebrow}
             </span>
             <h2
               className="h-display"
@@ -514,7 +513,7 @@ export default function PagePortafolioDetail() {
               className="maach-mono"
               style={{ color: 'var(--muted)', display: 'block', marginBottom: 24, letterSpacing: '.1em' }}
             >
-              § 04 / GALERÍA
+              GALERÍA
             </span>
             <div
               style={{

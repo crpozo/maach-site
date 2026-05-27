@@ -223,7 +223,7 @@ export default function PageCategory() {
                       letterSpacing: '.1em',
                     }}
                   >
-                    § {String(i + 1).padStart(2, '0')} / {category.name.toUpperCase()}
+                    {category.name.toUpperCase()}
                   </span>
                   <h2
                     className="h-display"

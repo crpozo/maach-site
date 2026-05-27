@@ -217,7 +217,7 @@ function PortafolioMenu({ open, onClose }: { open: boolean; onClose: () => void 
       >
         <div>
           <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 16 }}>
-            § PROYECTOS · 2024–2026
+            PROYECTOS · 2024–2026
           </span>
           <p style={{ fontSize: 14, color: 'var(--muted)', lineHeight: 1.55, marginBottom: 24 }}>
             Selección de proyectos donde el diseño arquitectónico se encuentra con la fabricación industrial.

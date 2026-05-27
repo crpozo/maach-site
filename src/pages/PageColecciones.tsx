@@ -29,7 +29,7 @@ export default function PageColecciones() {
         />
         <div className="maach-container">
           <span className="maach-mono" style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 16 }}>
-            § Sistema 2026
+            Sistema 2026
           </span>
           <h1 className="h-display" style={{ fontSize: 'clamp(56px, 9vw, 90px)', marginBottom: 32 }}>
             Colec<span className="h-italic" style={{ color: 'var(--lava-orange)' }}>ciones.</span>
@@ -143,7 +143,7 @@ export default function PageColecciones() {
           {/* Bottom content block — left-aligned */}
           <div style={{ position: 'absolute', bottom: 48, left: 48, right: 48 }}>
             <span className="maach-mono" style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 16 }}>
-              § Sistema MAACH · {c.year}
+              Sistema MAACH · {c.year}
             </span>
             <h2
               className="h-display"

@@ -241,7 +241,7 @@ export default function PageBlogPost() {
         />
         <div className="maach-container" style={{ position: 'relative', maxWidth: 1000 }}>
           <span className="maach-mono" style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 16 }}>
-            § Siguiente paso
+            Siguiente paso
           </span>
           <h2
             className="h-display"
@@ -275,7 +275,7 @@ export default function PageBlogPost() {
           >
             <div>
               <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 12 }}>
-                § ¿Quieres profundizar?
+                ¿Quieres profundizar?
               </span>
               <h2 className="h-display" style={{ fontSize: 'clamp(32px, 4.5vw, 56px)' }}>
                 Lee también.

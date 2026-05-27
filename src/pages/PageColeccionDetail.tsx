@@ -124,7 +124,7 @@ export default function PageColeccionDetail() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
             <div>
               <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 16 }}>
-                § 01 / Concepto
+                Concepto
               </span>
               <h2 className="h-display" style={{ fontSize: 'clamp(48px, 6.5vw, 90px)', marginBottom: 32 }}>
                 Diseño con<br />
@@ -165,7 +165,7 @@ export default function PageColeccionDetail() {
         >
           <div>
             <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 12 }}>
-              § 02 / Catálogo
+              Catálogo
             </span>
             <h2 className="h-display" style={{ fontSize: 64 }}>
               Piezas de la colección.
