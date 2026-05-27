@@ -29,16 +29,29 @@ export default function PageEspacios() {
           borderBottom: '1px solid var(--line)',
         }}
       >
-        {/* Brand-book backdrop: technical blueprint grid on jet-black */}
-        <div
+        {/* Brand-book hero photo */}
+        <img
+          src={asset('bg-espacios.webp')}
+          alt=""
           aria-hidden
-          className="tex-forged-grid"
           style={{
             position: 'absolute',
             inset: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
             zIndex: 0,
-            color: 'var(--off-white)',
-            opacity: 0.06,
+          }}
+        />
+        {/* Dark gradient for headline legibility */}
+        <div
+          aria-hidden
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background:
+              'linear-gradient(95deg, rgba(22,22,22,.78) 0%, rgba(22,22,22,.5) 40%, rgba(22,22,22,.15) 75%, transparent 100%)',
+            zIndex: 0,
           }}
         />
         {/* Oversized brand numeral as a watermark */}
