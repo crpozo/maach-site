@@ -133,22 +133,22 @@ const T: Translations = {
     'esp.typ.count': '04 espacios · Sistema MAACH',
     'esp.typ.01.name': 'Área Coworking',
     'esp.typ.01.desc':
-      'Un espacio de coworking moderno combina funcionalidad, comodidad y diseño para crear ambientes de trabajo dinámicos y eficientes. Los escritorios ergonómicos y las estaciones de trabajo modulares permiten adaptarse a diferentes necesidades, mientras que las sillas ergonómicas brindan soporte y confort durante largas jornadas.',
+      'Ambientes de trabajo dinámicos y eficientes. Estaciones modulares y sillería ergonómica para jornadas largas.',
     'esp.typ.01.products':
       'Estaciones de trabajo · Escritorio operativo · Silla operativa · Arturito rodante',
     'esp.typ.02.name': 'Salas de Reuniones',
     'esp.typ.02.desc':
-      'Las salas de reuniones modernas están diseñadas para fomentar la comunicación, la concentración y la colaboración en un entorno profesional y cómodo. Las mesas de reunión son el elemento central, disponibles en distintos formatos y tamaños para adaptarse a reuniones ejecutivas, sesiones creativas o videoconferencias. Las sillas ergonómicas complementan el espacio ofreciendo comodidad y soporte durante encuentros prolongados.',
+      'Comunicación y colaboración en un entorno profesional. Mesas modulares para reuniones ejecutivas, sesiones creativas o videoconferencias.',
     'esp.typ.02.products':
       'Mesa de reunión · Sillas operativas · Credenzas · Divisiones modulares',
     'esp.typ.03.name': 'Áreas de Espera',
     'esp.typ.03.desc':
-      'Una sala de recepción con área de espera está diseñada para ofrecer una experiencia cómoda, organizada y profesional desde el primer momento. Los mostradores de recepción permiten una atención eficiente y ordenada, mientras que los sofás, butacas y sillas de espera brindan confort a visitantes y clientes. Las mesas auxiliares complementan el espacio aportando funcionalidad y equilibrio visual.',
+      'Experiencia cómoda y profesional desde el primer momento. Mostradores, sofás y butacas que reciben a visitantes y clientes.',
     'esp.typ.03.products':
       'Recepción · Mesa colaborativa · Silla gerente · Sofá',
     'esp.typ.04.name': 'Áreas de Archivo',
     'esp.typ.04.desc':
-      'Las áreas de archivación están diseñadas para mantener la organización, seguridad y fácil acceso a documentos y materiales de trabajo. Los archivadores metálicos, gaveteros y estanterías modulares permiten clasificar y almacenar información de manera eficiente, optimizando el uso del espacio y facilitando las tareas administrativas diarias.',
+      'Organización, seguridad y acceso rápido. Archivadores, gaveteros y estanterías modulares que optimizan el espacio.',
     'esp.typ.04.products':
       'Archivo rodante · Biblioteca alta · Lockers',
     'esp.typ.tipologia_label': 'TIPOLOGÍA',

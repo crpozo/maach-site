@@ -509,10 +509,18 @@ export default function PageAbout() {
       <section style={{ padding: '128px 0', borderBottom: '1px solid var(--line)' }}>
         <div className="maach-container">
           <div style={{ marginBottom: 64 }}>
-            <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 12 }}>
+            <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 20 }}>
               {t('about.values.eyebrow')}
             </span>
-            <h2 className="h-display" style={{ fontSize: 'clamp(56px, 8vw, 90px)' }}>
+            <h2
+              className="h-display"
+              style={{
+                fontSize: 'clamp(56px, 8vw, 90px)',
+                lineHeight: 1.05,
+                letterSpacing: '-.01em',
+                margin: 0,
+              }}
+            >
               {t('about.values.title')}
             </h2>
           </div>
@@ -539,10 +547,10 @@ export default function PageAbout() {
                   padding: '40px 32px',
                   borderRight: (i + 1) % 3 === 0 ? 0 : '1px solid var(--line)',
                   borderBottom: i < 3 ? '1px solid var(--line)' : 0,
-                  minHeight: 280,
+                  minHeight: 320,
                   display: 'flex',
                   flexDirection: 'column',
-                  justifyContent: 'space-between',
+                  gap: 32,
                 }}
               >
                 <span className="maach-mono" style={{ color: 'var(--lava-orange)' }}>
@@ -553,16 +561,22 @@ export default function PageAbout() {
                     style={{
                       fontFamily: 'var(--display)',
                       fontWeight: 700,
-                      fontSize: 32,
+                      fontSize: 28,
                       textTransform: 'uppercase',
                       letterSpacing: '-.01em',
-                      lineHeight: 1,
+                      lineHeight: 1.05,
+                      margin: 0,
                       marginBottom: 16,
+                      /* Two lines reserved so every card's body starts at
+                         the same Y. 28px × 1.05 × 2 ≈ 58px */
+                      minHeight: 58,
+                      display: 'flex',
+                      alignItems: 'flex-start',
                     }}
                   >
                     {v.title}
                   </h3>
-                  <p style={{ fontSize: 15, color: 'var(--muted)', lineHeight: 1.55 }}>{v.body}</p>
+                  <p style={{ fontSize: 15, color: 'var(--muted)', lineHeight: 1.55, margin: 0 }}>{v.body}</p>
                 </div>
               </div>
             ))}
