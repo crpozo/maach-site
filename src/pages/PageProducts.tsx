@@ -241,45 +241,37 @@ export default function PageProducts() {
                   const isOpen = openCats.includes(cat.name);
                   return (
                     <div key={cat.name} style={{ paddingBottom: 20, borderBottom: '1px solid var(--line)' }}>
-                      <div
+                      <button
+                        type="button"
+                        aria-expanded={isOpen}
+                        onClick={() => toggle(cat.name)}
                         style={{
                           display: 'flex',
                           justifyContent: 'space-between',
                           alignItems: 'center',
                           gap: 8,
+                          width: '100%',
+                          padding: 0,
+                          background: 'transparent',
+                          border: 'none',
+                          cursor: 'pointer',
+                          fontFamily: 'var(--display)',
+                          fontWeight: 600,
+                          fontSize: 18,
+                          textTransform: 'uppercase',
+                          letterSpacing: '-.01em',
+                          color: 'var(--fg)',
+                          textAlign: 'left',
+                          transition: 'color .15s',
                         }}
+                        onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--lava-orange)')}
+                        onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--fg)')}
                       >
-                        <Link
-                          to={`/categorias/${cat.slug}`}
-                          style={{
-                            flex: 1,
-                            fontFamily: 'var(--display)',
-                            fontWeight: 600,
-                            fontSize: 18,
-                            textTransform: 'uppercase',
-                            letterSpacing: '-.01em',
-                            color: 'var(--fg)',
-                            transition: 'color .15s',
-                          }}
-                          onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--lava-orange)')}
-                          onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--fg)')}
-                        >
-                          {cat.name}
-                        </Link>
-                        <button
-                          aria-label={isOpen ? 'Cerrar' : 'Abrir'}
-                          onClick={() => toggle(cat.name)}
-                          style={{
-                            padding: 4,
-                            cursor: 'pointer',
-                            background: 'transparent',
-                            border: 'none',
-                            color: 'var(--muted)',
-                          }}
-                        >
+                        <span>{cat.name}</span>
+                        <span style={{ color: 'var(--muted)' }}>
                           {isOpen ? <IconMinus size={12} /> : <IconPlus size={12} />}
-                        </button>
-                      </div>
+                        </span>
+                      </button>
                       {isOpen && (
                         <div
                           style={{
