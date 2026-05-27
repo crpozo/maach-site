@@ -146,7 +146,7 @@ export default function PageProductDetail() {
 
             <div>
               <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 16 }}>
-                {category} · {sku ?? `MCH-2026-${id.substring(0, 3).toUpperCase()}`}
+                {sku ? `${category} · ${sku}` : category}
               </span>
               <h1 className="h-display" style={{ fontSize: 64, marginBottom: 24 }}>
                 {productName}

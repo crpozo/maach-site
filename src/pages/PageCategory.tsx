@@ -104,9 +104,6 @@ export default function PageCategory() {
             <span style={{ color: 'var(--lava-orange)' }}>›</span>{' '}
             <span style={{ color: 'var(--lava-orange)' }}>{category.name.toUpperCase()}</span>
           </span>
-          <span className="maach-mono" style={{ letterSpacing: '.1em', color: 'var(--sand-grey)' }}>
-            CAT_{hero.n}
-          </span>
         </div>
 
         {/* Crosshair */}

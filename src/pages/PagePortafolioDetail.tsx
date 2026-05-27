@@ -146,7 +146,7 @@ const DATA: Record<string, ProjectData> = {
   },
 };
 
-function ProjectHero({ p, id }: { p: ProjectData; id: string }) {
+function ProjectHero({ p }: { p: ProjectData; id?: string }) {
   const paused = p.status === 'paused';
 
   if (p.hero) {
@@ -230,14 +230,6 @@ function ProjectHero({ p, id }: { p: ProjectData; id: string }) {
             color: 'var(--off-white)',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 24 }}>
-            <span
-              className="maach-mono"
-              style={{ background: 'var(--off-white)', color: 'var(--fg)', padding: '5px 10px' }}
-            >
-              PRJ-{id}
-            </span>
-          </div>
           <h1
             className="h-display"
             style={{
@@ -289,12 +281,6 @@ function ProjectHero({ p, id }: { p: ProjectData; id: string }) {
       />
       <div className="maach-container" style={{ position: 'relative', zIndex: 2, width: '100%' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 24 }}>
-          <span
-            className="maach-mono"
-            style={{ background: 'var(--off-white)', color: 'var(--fg)', padding: '5px 10px' }}
-          >
-            PRJ-{id}
-          </span>
           {paused ? (
             <span
               className="maach-mono"

@@ -299,9 +299,6 @@ export default function PagePortafolio() {
             )}
 
             <div style={{ position: 'absolute', top: 32, left: 48, display: 'flex', alignItems: 'center', gap: 12 }}>
-              <span className="maach-mono" style={{ background: 'var(--off-white)', padding: '5px 10px' }}>
-                PRJ-{p.id}
-              </span>
               {p.year ? (
                 <span
                   className="maach-mono"

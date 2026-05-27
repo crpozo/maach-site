@@ -117,9 +117,6 @@ function MegaMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
               alt="Catálogo MAACH"
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
-            <div style={{ position: 'absolute', top: 12, left: 12 }} className="maach-tag">
-              CAT_2026
-            </div>
           </div>
           <Link
             to="/productos"
@@ -278,9 +275,6 @@ function PortafolioMenu({ open, onClose }: { open: boolean; onClose: () => void 
                     if (h) h.style.color = paused ? 'var(--muted)' : 'var(--fg)';
                   }}
                 >
-                  <span className="maach-mono" style={{ color: 'var(--muted)' }}>
-                    PRJ-{p.id}
-                  </span>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                     <span
                       data-port-name

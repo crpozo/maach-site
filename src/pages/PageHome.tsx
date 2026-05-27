@@ -105,33 +105,6 @@ export default function PageHome() {
           }}
         />
 
-        {/* Photo-ID labels — bottom-right */}
-        <div
-          style={{
-            position: 'absolute',
-            bottom: 56,
-            right: 64,
-            zIndex: 3,
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 6,
-            alignItems: 'flex-end',
-          }}
-        >
-          <span
-            className="maach-mono"
-            style={{ background: 'var(--jet-black)', color: 'var(--off-white)', padding: '6px 10px' }}
-          >
-            MCH-2026-A1
-          </span>
-          <span
-            className="maach-mono"
-            style={{ background: 'var(--lava-orange)', color: 'var(--off-white)', padding: '6px 10px' }}
-          >
-            {t('home.hero.disponible')}
-          </span>
-        </div>
-
         {/* Text overlay */}
         <div className="maach-container" style={{ width: '100%', position: 'relative', zIndex: 3 }}>
           <div style={{ maxWidth: 1100 }}>
@@ -289,13 +262,12 @@ export default function PageHome() {
                   <div
                     style={{
                       display: 'flex',
-                      justifyContent: 'space-between',
+                      justifyContent: 'flex-end',
                       alignItems: 'flex-start',
                       position: 'relative',
                       zIndex: 2,
                     }}
                   >
-                    <span className="maach-mono">CAT_{cat.id}</span>
                     <IconArrowDownRight size={22} />
                   </div>
 
@@ -530,7 +502,7 @@ export default function PageHome() {
                 >
                   <div>
                     <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 4 }}>
-                      PRJ-{p.id} · {p.location}
+                      {p.location}
                     </span>
                     <h4
                       style={{

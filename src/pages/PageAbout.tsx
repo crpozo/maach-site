@@ -128,32 +128,6 @@ export default function PageAbout() {
           }}
         />
 
-        {/* Photo-ID labels — bottom-right */}
-        <div
-          style={{
-            position: 'absolute',
-            bottom: 56,
-            right: 64,
-            zIndex: 3,
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 6,
-            alignItems: 'flex-end',
-          }}
-        >
-          <span
-            className="maach-mono"
-            style={{ background: 'var(--jet-black)', color: 'var(--off-white)', padding: '6px 10px' }}
-          >
-            {t('about.hero.id.code')}
-          </span>
-          <span
-            className="maach-mono"
-            style={{ background: 'var(--lava-orange)', color: 'var(--off-white)', padding: '6px 10px' }}
-          >
-            {t('about.hero.id.badge')}
-          </span>
-        </div>
 
         {/* Text overlay */}
         <div className="maach-container" style={{ width: '100%', position: 'relative', zIndex: 3 }}>
@@ -468,19 +442,6 @@ export default function PageAbout() {
                   ESPACIOS DE TRABAJO
                 </span>
                 {/* Frame index */}
-                <span
-                  className="maach-mono"
-                  style={{
-                    position: 'absolute',
-                    bottom: 14,
-                    right: 14,
-                    background: 'var(--lava-orange)',
-                    color: 'var(--off-white)',
-                    padding: '5px 10px',
-                  }}
-                >
-                  FRAME 00.1
-                </span>
               </div>
             </div>
 

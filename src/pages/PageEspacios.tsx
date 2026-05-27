@@ -295,22 +295,6 @@ export default function PageEspacios() {
                   }}
                 />
 
-                {/* Top chips */}
-                <div style={{ position: 'absolute', top: 20, left: 20, display: 'flex', gap: 8 }}>
-                  <span
-                    className="maach-mono"
-                    style={{ background: 'var(--off-white)', color: 'var(--jet-black)', padding: '5px 10px' }}
-                  >
-                    {s.id} / {t('esp.typ.tipologia_label')}
-                  </span>
-                  <span
-                    className="maach-mono"
-                    style={{ background: 'var(--lava-orange)', color: 'var(--off-white)', padding: '5px 10px' }}
-                  >
-                    ESC 1:50
-                  </span>
-                </div>
-
                 {/* Orange L corner */}
                 <div
                   aria-hidden

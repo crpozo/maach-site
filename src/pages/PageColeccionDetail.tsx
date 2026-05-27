@@ -45,9 +45,6 @@ export default function PageColeccionDetail() {
           >
             <IconChevronRight size={10} style={{ transform: 'rotate(180deg)' }} /> Colecciones
           </Link>
-          <span className="maach-mono" style={{ color: 'var(--muted)' }}>
-            COL_{id.split('-')[1]}
-          </span>
           <button
             className="maach-mono"
             style={{

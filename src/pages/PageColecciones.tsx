@@ -115,12 +115,6 @@ export default function PageColecciones() {
           <div style={{ position: 'absolute', top: 32, left: 48, display: 'flex', gap: 8 }}>
             <span
               className="maach-mono"
-              style={{ background: 'var(--off-white)', color: 'var(--jet-black)', padding: '6px 10px' }}
-            >
-              COL_{c.id.split('-')[1]}
-            </span>
-            <span
-              className="maach-mono"
               style={{ background: 'var(--lava-orange)', color: 'var(--off-white)', padding: '6px 10px' }}
             >
               {c.year}
