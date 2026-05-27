@@ -62,6 +62,66 @@
   font-style: normal;
   font-display: swap;
 }
+/* Monoblock — extra weights to complete the 100–800 range */
+@font-face {
+  font-family: 'Monoblock';
+  src: url('/maach-site/assets/fonts/monoblock-thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Monoblock';
+  src: url('/maach-site/assets/fonts/monoblock-extralight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+/* Brand-book secondary families — declared so utility classes /
+   var(--font-*) tokens below can target them where the design calls
+   for the specific face. */
+@font-face {
+  font-family: 'Archivo';
+  src: url('/maach-site/assets/fonts/archivo-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Blauer Nue';
+  src: url('/maach-site/assets/fonts/blauernue-light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Blauer Nue';
+  src: url('/maach-site/assets/fonts/blauernue-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Glancyr';
+  src: url('/maach-site/assets/fonts/glancyr-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Myriad Pro';
+  src: url('/maach-site/assets/fonts/myriadpro-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Neuething Sans';
+  src: url('/maach-site/assets/fonts/neuethingsans-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --jet-black: #161616;
@@ -86,7 +146,21 @@
   --display: 'Monoblock', 'Arial Black', 'Helvetica Neue', sans-serif;
   --body: 'Clash Grotesk', 'Segoe UI', system-ui, -apple-system, sans-serif;
   --mono: 'Segoe UI', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  /* Secondary brand families — assign via className or inline style
+     wherever the design specifically calls for them. */
+  --font-archivo: 'Archivo', 'Segoe UI', system-ui, sans-serif;
+  --font-blauernue: 'Blauer Nue', 'Segoe UI', system-ui, sans-serif;
+  --font-glancyr: 'Glancyr', 'Segoe UI', system-ui, sans-serif;
+  --font-myriad: 'Myriad Pro', 'Segoe UI', system-ui, sans-serif;
+  --font-neuething: 'Neuething Sans', 'Segoe UI', system-ui, sans-serif;
 }
+
+/* Utility classes for the secondary families */
+.f-archivo    { font-family: var(--font-archivo); }
+.f-blauernue  { font-family: var(--font-blauernue); }
+.f-glancyr    { font-family: var(--font-glancyr); }
+.f-myriad     { font-family: var(--font-myriad); }
+.f-neuething  { font-family: var(--font-neuething); }
 
 .invert {
   --bg: var(--jet-black);
