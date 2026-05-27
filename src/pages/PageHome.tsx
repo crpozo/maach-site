@@ -474,7 +474,7 @@ export default function PageHome() {
                 to={`/portafolio/${p.id}`}
                 style={{
                   position: 'relative',
-                  aspectRatio: '4/5',
+                  aspectRatio: '16/10',
                   overflow: 'hidden',
                   display: 'block',
                   background: 'var(--jet-black)',
