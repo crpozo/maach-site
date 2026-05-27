@@ -753,7 +753,7 @@ function Footer() {
               }}
             >
               <img
-                src={asset('logo-footer.png')}
+                src={asset('logo-white.png')}
                 alt="MAACH"
                 style={{ width: 200, height: 'auto', display: 'block' }}
               />
