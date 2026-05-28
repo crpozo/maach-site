@@ -32,7 +32,7 @@ const T: Translations = {
     'cta.spec': 'Inicia tu proyecto',
     'cta.scroll': 'Scroll para descubrir',
     'cta.contact': 'Iniciar proyecto',
-    'cta.engineering': 'Contactar ingeniería',
+    'cta.engineering': 'Contáctanos',
     'cta.see_all': 'Ver todos',
     'cta.discover': 'Descubrir',
     'cta.read': 'Leer artículo',
@@ -111,7 +111,7 @@ const T: Translations = {
     'home.precision.row4.k': 'GARANTÍA',
     'home.precision.row4.v': '10 AÑOS',
     'home.spec.eyebrow': 'Contacto técnico',
-    'home.spec.title': 'Iniciar Especificación',
+    'home.spec.title': 'Iniciar Proyecto',
     'home.spec.body':
       'Nuestro equipo de ingeniería de proyectos adapta los sistemas MAACH a tus planos arquitectónicos y requerimientos espaciales.',
 
@@ -486,7 +486,7 @@ const T: Translations = {
     'cta.spec': 'Start your project',
     'cta.scroll': 'Scroll to discover',
     'cta.contact': 'Start project',
-    'cta.engineering': 'Contact engineering',
+    'cta.engineering': 'Contact us',
     'cta.see_all': 'See all',
     'cta.discover': 'Discover',
     'cta.read': 'Read article',
@@ -565,7 +565,7 @@ const T: Translations = {
     'home.precision.row4.k': 'WARRANTY',
     'home.precision.row4.v': '10 YEARS',
     'home.spec.eyebrow': 'Technical contact',
-    'home.spec.title': 'Start Specification',
+    'home.spec.title': 'Start Project',
     'home.spec.body':
       'Our project engineering team adapts MAACH systems to your architectural plans and spatial requirements.',
 
