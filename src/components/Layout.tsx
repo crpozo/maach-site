@@ -714,7 +714,7 @@ function Footer() {
               style={{
                 fontSize: 'clamp(40px, 5.5vw, 88px)',
                 color: 'var(--off-white)',
-                lineHeight: 0.95,
+                lineHeight: 1.08,
                 letterSpacing: '-.01em',
               }}
             >
