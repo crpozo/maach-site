@@ -70,7 +70,7 @@ const T: Translations = {
     'home.cat.04.desc': 'Credenzas, archivos rodantes, lockers y bibliotecas.',
     'home.cat.05.name': 'Divisiones',
     'home.cat.05.desc': 'Sistemas modulares de piso a techo y divisorias de vidrio.',
-    'home.cat.06.name': 'Arquitectura',
+    'home.cat.06.name': 'Recepciones',
     'home.cat.06.desc': 'Muros modulares, pods y mamparas divisorias para alta densidad.',
     // ADN industrial
     'home.adn.eyebrow': 'Filosofía',
@@ -524,7 +524,7 @@ const T: Translations = {
     'home.cat.04.desc': 'Credenzas, mobile filing, lockers and bookshelves.',
     'home.cat.05.name': 'Partitions',
     'home.cat.05.desc': 'Floor-to-ceiling modular systems and glass partitions.',
-    'home.cat.06.name': 'Architecture',
+    'home.cat.06.name': 'Reception',
     'home.cat.06.desc': 'Modular walls, pods and dividers for high density.',
     // ADN industrial
     'home.adn.eyebrow': 'Philosophy',
