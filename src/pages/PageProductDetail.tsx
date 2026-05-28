@@ -80,7 +80,11 @@ export default function PageProductDetail() {
                   overflow: 'hidden',
                 }}
               >
-                <img src={images[idx]} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img
+                  src={images[idx]}
+                  alt=""
+                  style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 32, boxSizing: 'border-box' }}
+                />
                 <button
                   onClick={() => setIdx((i) => (i - 1 + images.length) % images.length)}
                   style={{
@@ -145,7 +149,11 @@ export default function PageProductDetail() {
                       padding: 0,
                     }}
                   >
-                    <img src={img} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img
+                      src={img}
+                      alt=""
+                      style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 8, boxSizing: 'border-box' }}
+                    />
                   </button>
                 ))}
               </div>
