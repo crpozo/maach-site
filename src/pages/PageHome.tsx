@@ -284,13 +284,15 @@ export default function PageHome() {
                       style={{
                         fontFamily: 'var(--display)',
                         fontWeight: 700,
-                        fontSize: 44,
+                        fontSize: 'clamp(28px, 3vw, 44px)',
                         letterSpacing: '-.02em',
                         lineHeight: 0.95,
                         margin: 0,
                         textTransform: 'uppercase',
                         color: 'var(--off-white)',
                         textShadow: '0 2px 24px rgba(0,0,0,.55)',
+                        overflowWrap: 'break-word',
+                        hyphens: 'auto',
                         /* Reserve room for up to 2 lines so every card aligns
                            the title on the same baseline. 44px font × 0.95
                            line-height × 2 ≈ 84px */
