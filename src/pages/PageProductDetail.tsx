@@ -9,7 +9,7 @@ import {
   IconRuler,
   IconTool,
 } from '../components/icons';
-import { getProductBySlug } from '../data/productos';
+import { getProductBySlug, getProductsByCategory } from '../data/productos';
 import { useT } from '../i18n/i18n';
 
 export default function PageProductDetail() {
@@ -38,6 +38,14 @@ export default function PageProductDetail() {
       ];
   const description = real?.description;
   const [idx, setIdx] = useState(0);
+
+  // Real related products from the same category (excluding the current one).
+  const related = real
+    ? getProductsByCategory(real.category)
+        .filter((p) => p.slug !== real.slug)
+        .slice(0, 4)
+    : [];
+  const categorySlug = params.category || '';
 
   return (
     <Layout screenLabel={'04 Producto · ' + productName}>
@@ -315,56 +323,63 @@ export default function PageProductDetail() {
         </div>
       </section>
 
-      <section style={{ background: 'var(--soft)', borderTop: '1px solid var(--line)', padding: '96px 0' }}>
-        <div className="maach-container">
-          <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 12 }}>
-            {t('pd.related.eyebrow')}
-          </span>
-          <h2 className="h-display" style={{ fontSize: 56, marginBottom: 48 }}>
-            {t('pd.related.title')}
-          </h2>
+      {related.length > 0 ? (
+        <section style={{ background: 'var(--soft)', borderTop: '1px solid var(--line)', padding: '96px 0' }}>
+          <div className="maach-container">
+            <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 12 }}>
+              {t('pd.related.eyebrow')}
+            </span>
+            <h2 className="h-display" style={{ fontSize: 56, marginBottom: 48 }}>
+              {t('pd.related.title')}
+            </h2>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }}>
-            {[1, 2, 3, 4].map((n) => (
-              <Link key={n} to={`/productos/almacenamiento/variante-0${n}`}>
-                <div
-                  style={{
-                    position: 'relative',
-                    aspectRatio: '4/5',
-                    border: '1px solid var(--line)',
-                    overflow: 'hidden',
-                    marginBottom: 12,
-                    background: 'var(--surface)',
-                  }}
-                >
-                  <img src={asset(`biblioteca-${n}.webp`)} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                  <span
-                    className="maach-mono"
-                    style={{ position: 'absolute', bottom: 12, right: 12, background: 'var(--off-white)', padding: '3px 7px' }}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }}>
+              {related.map((p) => (
+                <Link key={p.slug} to={`/productos/${categorySlug}/${p.slug}`}>
+                  <div
+                    style={{
+                      position: 'relative',
+                      aspectRatio: '4/5',
+                      border: '1px solid var(--line)',
+                      overflow: 'hidden',
+                      marginBottom: 12,
+                      background: 'var(--off-white)',
+                    }}
                   >
-                    MCH-30{n}
-                    {n}
+                    <img
+                      src={p.gallery[0]}
+                      alt={p.name}
+                      style={{
+                        position: 'absolute',
+                        inset: 0,
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'contain',
+                        padding: 20,
+                        boxSizing: 'border-box',
+                      }}
+                    />
+                  </div>
+                  <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 4 }}>
+                    {p.subcategory}
                   </span>
-                </div>
-                <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 4 }}>
-                  Línea modular
-                </span>
-                <h4
-                  style={{
-                    fontFamily: 'var(--display)',
-                    fontWeight: 600,
-                    fontSize: 22,
-                    textTransform: 'uppercase',
-                    letterSpacing: '-.01em',
-                  }}
-                >
-                  Variante 0{n}
-                </h4>
-              </Link>
-            ))}
+                  <h4
+                    style={{
+                      fontFamily: 'var(--display)',
+                      fontWeight: 600,
+                      fontSize: 22,
+                      textTransform: 'uppercase',
+                      letterSpacing: '-.01em',
+                    }}
+                  >
+                    {p.name}
+                  </h4>
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : null}
     </Layout>
   );
 }
