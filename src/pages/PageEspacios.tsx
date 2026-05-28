@@ -7,10 +7,10 @@ import { useT } from '../i18n/i18n';
 export default function PageEspacios() {
   const t = useT();
   const spaces = [
-    { id: '01', title: t('esp.typ.01.name'), desc: t('esp.typ.01.desc'), products: t('esp.typ.01.products'), tex: 'tex-stack-force', img: asset('biblioteca-2.webp') },
-    { id: '02', title: t('esp.typ.02.name'), desc: t('esp.typ.02.desc'), products: t('esp.typ.02.products'), tex: 'tex-load-line', img: asset('biblioteca-3.webp') },
-    { id: '03', title: t('esp.typ.03.name'), desc: t('esp.typ.03.desc'), products: t('esp.typ.03.products'), tex: 'tex-tactile-field', img: asset('biblioteca-4.webp') },
-    { id: '04', title: t('esp.typ.04.name'), desc: t('esp.typ.04.desc'), products: t('esp.typ.04.products'), tex: 'tex-forged-grid', img: asset('biblioteca-1.webp') },
+    { id: '01', title: t('esp.typ.01.name'), desc: t('esp.typ.01.desc'), products: t('esp.typ.01.products'), cat: 'escritorios', img: asset('biblioteca-2.webp') },
+    { id: '02', title: t('esp.typ.02.name'), desc: t('esp.typ.02.desc'), products: t('esp.typ.02.products'), cat: 'mesas', img: asset('biblioteca-3.webp') },
+    { id: '03', title: t('esp.typ.03.name'), desc: t('esp.typ.03.desc'), products: t('esp.typ.03.products'), cat: 'recepciones', img: asset('biblioteca-4.webp') },
+    { id: '04', title: t('esp.typ.04.name'), desc: t('esp.typ.04.desc'), products: t('esp.typ.04.products'), cat: 'almacenamiento', img: asset('biblioteca-1.webp') },
   ];
 
   return (
@@ -250,144 +250,137 @@ export default function PageEspacios() {
             </span>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
-            {spaces.map((s) => (
-              <Link
-                key={s.id}
-                to="/productos"
-                className="invert typology-card"
-                style={{
-                  position: 'relative',
-                  display: 'block',
-                  aspectRatio: '4/3',
-                  overflow: 'hidden',
-                  background: 'var(--jet-black)',
-                  color: 'var(--off-white)',
-                  border: '1px solid var(--line)',
-                }}
-                onMouseEnter={(e) => {
-                  const img = e.currentTarget.querySelector<HTMLImageElement>('img[data-typology-bg]');
-                  if (img) img.style.transform = 'scale(1.04)';
-                }}
-                onMouseLeave={(e) => {
-                  const img = e.currentTarget.querySelector<HTMLImageElement>('img[data-typology-bg]');
-                  if (img) img.style.transform = '';
-                }}
-              >
-                <img
-                  src={s.img}
-                  alt=""
-                  data-typology-bg
-                  aria-hidden
-                  style={{
-                    position: 'absolute',
-                    inset: 0,
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    transition: 'transform 1.2s ease',
-                  }}
-                />
-                {/* Overlay (darkens on hover via CSS) */}
-                <div aria-hidden className="typology-overlay" style={{ position: 'absolute', inset: 0 }} />
-
-                {/* Orange L corner */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
+            {spaces.map((s, i) => {
+              const imageRight = i % 2 === 1;
+              const products = s.products.split('·').map((p) => p.trim()).filter(Boolean);
+              return (
                 <div
-                  aria-hidden
+                  key={s.id}
+                  className="esp-typ-row"
                   style={{
-                    position: 'absolute',
-                    top: 14,
-                    right: 14,
-                    width: 18,
-                    height: 18,
-                    borderTop: '2px solid var(--lava-orange)',
-                    borderRight: '2px solid var(--lava-orange)',
-                  }}
-                />
-
-                {/* Bottom content — title always visible, rest revealed on hover */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    bottom: 28,
-                    left: 28,
-                    right: 28,
-                    color: 'var(--off-white)',
+                    display: 'grid',
+                    gridTemplateColumns: '1.05fr 1fr',
+                    gap: 'clamp(40px, 6vw, 96px)',
+                    alignItems: 'center',
+                    padding: '64px 0',
+                    borderTop: i === 0 ? '1px solid var(--line)' : 'none',
+                    borderBottom: '1px solid var(--line)',
                   }}
                 >
-                  <h3
-                    className="h-display"
+                  {/* IMAGE */}
+                  <div
                     style={{
-                      fontSize: 'clamp(28px, 3.4vw, 44px)',
-                      color: 'var(--off-white)',
-                      lineHeight: 1,
-                      margin: 0,
-                      textShadow: '0 2px 24px rgba(0,0,0,.55)',
+                      position: 'relative',
+                      aspectRatio: '4/3',
+                      overflow: 'hidden',
+                      background: 'var(--jet-black)',
+                      order: imageRight ? 2 : 1,
                     }}
                   >
-                    {s.title}.
-                  </h3>
-                  <div className="typology-reveal" style={{ marginTop: 16 }}>
-                    <p
+                    <img
+                      src={s.img}
+                      alt={s.title}
+                      style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
+                    {/* Oversized number watermark */}
+                    <span
+                      aria-hidden
                       style={{
-                        fontSize: 14,
-                        color: 'rgba(255,255,255,.92)',
-                        lineHeight: 1.55,
-                        maxWidth: 520,
-                        margin: 0,
-                        marginBottom: 18,
-                        textShadow: '0 1px 14px rgba(0,0,0,.55)',
+                        position: 'absolute',
+                        bottom: 12,
+                        left: 18,
+                        fontFamily: 'var(--display)',
+                        fontWeight: 700,
+                        fontSize: 'clamp(64px, 9vw, 130px)',
+                        lineHeight: 0.8,
+                        color: 'var(--off-white)',
+                        opacity: 0.85,
+                        letterSpacing: '-.04em',
+                        textShadow: '0 2px 30px rgba(0,0,0,.6)',
+                        pointerEvents: 'none',
                       }}
                     >
+                      {s.id}
+                    </span>
+                    {/* Orange L corner */}
+                    <div
+                      aria-hidden
+                      style={{
+                        position: 'absolute',
+                        top: 14,
+                        right: 14,
+                        width: 20,
+                        height: 20,
+                        borderTop: '2px solid var(--lava-orange)',
+                        borderRight: '2px solid var(--lava-orange)',
+                      }}
+                    />
+                  </div>
+
+                  {/* CONTENT */}
+                  <div style={{ order: imageRight ? 1 : 2 }}>
+                    <span
+                      className="maach-mono"
+                      style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 16, letterSpacing: '.1em' }}
+                    >
+                      {t('esp.typ.tipologia_label')} {s.id}
+                    </span>
+                    <h3
+                      className="h-display"
+                      style={{ fontSize: 'clamp(34px, 4vw, 56px)', lineHeight: 1, margin: 0, marginBottom: 20 }}
+                    >
+                      {s.title}.
+                    </h3>
+                    <p style={{ fontSize: 17, color: 'var(--muted)', lineHeight: 1.65, margin: 0, maxWidth: 560 }}>
                       {s.desc}
                     </p>
-                    <div
-                      style={{
-                        paddingTop: 14,
-                        marginBottom: 18,
-                        borderTop: '1px solid rgba(228,226,227,.22)',
-                        maxWidth: 520,
-                      }}
-                    >
+
+                    <div style={{ marginTop: 28, paddingTop: 24, borderTop: '1px solid var(--line)' }}>
                       <span
                         className="maach-mono"
-                        style={{
-                          color: 'var(--lava-orange)',
-                          display: 'block',
-                          marginBottom: 6,
-                          letterSpacing: '.1em',
-                        }}
+                        style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 14, letterSpacing: '.1em' }}
                       >
                         {t('esp.typ.products_label').toUpperCase()}
                       </span>
-                      <span
-                        style={{
-                          fontSize: 13,
-                          color: 'var(--off-white)',
-                          lineHeight: 1.5,
-                          letterSpacing: '.01em',
-                        }}
-                      >
-                        {s.products}
-                      </span>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+                        {products.map((p) => (
+                          <span
+                            key={p}
+                            style={{
+                              fontSize: 13,
+                              padding: '7px 14px',
+                              border: '1px solid var(--line)',
+                              borderRadius: 999,
+                              color: 'var(--fg)',
+                              background: 'var(--soft)',
+                            }}
+                          >
+                            {p}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                    <span
+
+                    <Link
+                      to={`/categorias/${s.cat}`}
                       className="maach-mono"
                       style={{
                         display: 'inline-flex',
                         alignItems: 'center',
                         gap: 10,
-                        color: 'var(--lava-orange)',
+                        marginTop: 28,
+                        color: 'var(--fg)',
                         paddingBottom: 4,
                         borderBottom: '1.5px solid var(--lava-orange)',
                       }}
                     >
                       {t('cta.view_products')} <IconArrow size={14} />
-                    </span>
+                    </Link>
                   </div>
                 </div>
-              </Link>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

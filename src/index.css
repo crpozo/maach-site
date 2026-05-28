@@ -425,6 +425,22 @@ section[id],
   }
 }
 
+/* Espacios — editorial typology rows stack on small screens */
+@media (max-width: 900px) {
+  .esp-typ-row {
+    grid-template-columns: 1fr !important;
+  }
+  .esp-typ-row > * {
+    order: unset !important;
+  }
+  .esp-typ-row > *:first-child {
+    order: 1 !important;
+  }
+  .esp-typ-row > *:last-child {
+    order: 2 !important;
+  }
+}
+
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }

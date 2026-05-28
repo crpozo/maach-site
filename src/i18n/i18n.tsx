@@ -133,22 +133,22 @@ const T: Translations = {
     'esp.typ.count': '04 espacios · Sistema MAACH',
     'esp.typ.01.name': 'Área Coworking',
     'esp.typ.01.desc':
-      'Ambientes de trabajo dinámicos y eficientes. Estaciones modulares y sillería ergonómica para jornadas largas.',
+      'Un espacio de coworking moderno combina funcionalidad, comodidad y diseño para crear ambientes de trabajo dinámicos y eficientes. Los escritorios ergonómicos y las estaciones de trabajo modulares permiten adaptarse a diferentes necesidades, mientras que las sillas ergonómicas brindan soporte y confort durante largas jornadas.',
     'esp.typ.01.products':
       'Estaciones de trabajo · Escritorio operativo · Silla operativa · Arturito rodante',
     'esp.typ.02.name': 'Salas de Reuniones',
     'esp.typ.02.desc':
-      'Comunicación y colaboración en un entorno profesional. Mesas modulares para reuniones ejecutivas, sesiones creativas o videoconferencias.',
+      'Las salas de reuniones modernas están diseñadas para fomentar la comunicación, la concentración y la colaboración en un entorno profesional y cómodo. Las mesas de reunión son el elemento central, disponibles en distintos formatos y tamaños para adaptarse a reuniones ejecutivas, sesiones creativas o videoconferencias. Las sillas ergonómicas complementan el espacio ofreciendo comodidad y soporte durante encuentros prolongados, mejorando la experiencia de los participantes.',
     'esp.typ.02.products':
       'Mesa de reunión · Sillas operativas · Credenzas · Divisiones modulares',
     'esp.typ.03.name': 'Áreas de Espera',
     'esp.typ.03.desc':
-      'Experiencia cómoda y profesional desde el primer momento. Mostradores, sofás y butacas que reciben a visitantes y clientes.',
+      'Una sala de recepción con área de espera está diseñada para ofrecer una experiencia cómoda, organizada y profesional desde el primer momento. Los mostradores de recepción permiten una atención eficiente y ordenada, mientras que los sofás, butacas y sillas de espera brindan confort a visitantes y clientes. Las mesas auxiliares complementan el espacio, aportando funcionalidad y equilibrio visual al ambiente. Además, incorpora muebles decorativos y de almacenamiento como credenzas, estanterías o paneles divisorios que ayudan a mantener el orden y reforzar la identidad corporativa.',
     'esp.typ.03.products':
       'Recepción · Mesa colaborativa · Silla gerente · Sofá',
     'esp.typ.04.name': 'Áreas de Archivo',
     'esp.typ.04.desc':
-      'Organización, seguridad y acceso rápido. Archivadores, gaveteros y estanterías modulares que optimizan el espacio.',
+      'Las áreas de archivación están diseñadas para mantener la organización, seguridad y fácil acceso a documentos y materiales de trabajo. Los archivadores metálicos, gaveteros y estanterías modulares permiten clasificar y almacenar información de manera eficiente, optimizando el uso del espacio y facilitando las tareas administrativas diarias. Además, los muebles de almacenamiento vertical ayudan a aprovechar mejor las áreas reducidas sin perder funcionalidad.',
     'esp.typ.04.products':
       'Archivo rodante · Biblioteca alta · Lockers',
     'esp.typ.tipologia_label': 'TIPOLOGÍA',
@@ -596,12 +596,12 @@ const T: Translations = {
       'Meeting table · Operative chairs · Credenzas · Modular dividers',
     'esp.typ.03.name': 'Waiting Areas',
     'esp.typ.03.desc':
-      'A reception area with waiting space is designed to deliver a comfortable, organized and professional experience from the first moment. Reception counters enable efficient, orderly service, while sofas, armchairs and waiting chairs provide comfort to visitors and clients. Auxiliary tables complete the space, adding functionality and visual balance.',
+      'A reception area with waiting space is designed to deliver a comfortable, organized and professional experience from the first moment. Reception counters enable efficient, orderly service, while sofas, armchairs and waiting chairs provide comfort to visitors and clients. Auxiliary tables complete the space, adding functionality and visual balance. It also incorporates decorative and storage furniture such as credenzas, shelving or dividing panels that help keep order and reinforce corporate identity.',
     'esp.typ.03.products':
       'Reception · Collaborative table · Manager chair · Sofa',
     'esp.typ.04.name': 'Archive Areas',
     'esp.typ.04.desc':
-      'Archive areas are designed to keep documents and work materials organized, secure and accessible. Metal filing cabinets, drawer units and modular shelves classify and store information efficiently, optimizing space use and facilitating daily administrative tasks.',
+      'Archive areas are designed to keep documents and work materials organized, secure and accessible. Metal filing cabinets, drawer units and modular shelves classify and store information efficiently, optimizing space use and facilitating daily administrative tasks. Vertical storage furniture also makes better use of compact areas without losing functionality.',
     'esp.typ.04.products':
       'Mobile filing · High bookshelf · Lockers',
     'esp.typ.tipologia_label': 'TYPOLOGY',
