@@ -1,5 +1,5 @@
 import { useState, type CSSProperties } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { Layout } from '../components/Layout';
 import { asset } from '../lib/asset';
 import { useT } from '../i18n/i18n';
@@ -46,6 +46,22 @@ export default function PageRecursos() {
     { id: 8, type: 'Modelo BIM', name: 'Biblioteca Baja — Revit', product: 'Almacenamiento', ext: 'rfa', size: '5.3 MB' },
     { id: 9, type: 'Ficha técnica', name: 'Especificación materiales 2026', product: 'Múltiple', ext: 'pdf', size: '1.4 MB' },
   ];
+
+  // Footer deep-links pre-filter the library by document type via ?tipo=
+  const [searchParams] = useSearchParams();
+  const tipo = searchParams.get('tipo');
+  const typeFilters: Record<string, (d: (typeof documents)[number]) => boolean> = {
+    'modelos-3d': (d) => ['Modelo 3D', 'Modelo BIM', 'Plano CAD'].includes(d.type),
+    fichas: (d) => d.type === 'Ficha técnica',
+    materiales: (d) => /material/i.test(d.name),
+  };
+  const activeFilter = tipo ? typeFilters[tipo] : undefined;
+  const visibleDocuments = activeFilter ? documents.filter(activeFilter) : documents;
+  const filterLabel: Record<string, string> = {
+    'modelos-3d': 'Modelos 3D / CAD',
+    fichas: 'Fichas técnicas',
+    materiales: 'Materiales y acabados',
+  };
 
   return (
     <Layout screenLabel="11 Recursos">
@@ -254,11 +270,11 @@ export default function PageRecursos() {
                     {t('rec.filter.type')} <IconChevronDown size={11} />
                   </button>
                   {[
-                    { l: 'Spec Guides', n: '34', checked: false },
-                    { l: 'Brochures', n: '481', checked: true },
-                    { l: 'Modelos 3D / BIM', n: '208', checked: false },
-                    { l: 'Planos CAD', n: '194', checked: false },
-                    { l: 'Fichas técnicas', n: '62', checked: true },
+                    { l: 'Spec Guides', n: '34', checked: !tipo },
+                    { l: 'Brochures', n: '481', checked: !tipo },
+                    { l: 'Modelos 3D / BIM', n: '208', checked: tipo === 'modelos-3d' },
+                    { l: 'Planos CAD', n: '194', checked: tipo === 'modelos-3d' },
+                    { l: 'Fichas técnicas', n: '62', checked: !tipo || tipo === 'fichas' || tipo === 'materiales' },
                   ].map((f) => (
                     <label
                       key={f.l}
@@ -302,6 +318,30 @@ export default function PageRecursos() {
             </aside>
 
             <div style={{ background: 'var(--off-white)', border: '1px solid var(--line)' }}>
+              {activeFilter ? (
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    gap: 16,
+                    padding: '14px 32px',
+                    borderBottom: '1px solid var(--line)',
+                    background: 'rgba(243,74,35,.06)',
+                  }}
+                >
+                  <span className="maach-mono" style={{ color: 'var(--lava-orange)' }}>
+                    Filtro: {filterLabel[tipo!]}
+                  </span>
+                  <Link
+                    to="/recursos-diseno/biblioteca"
+                    className="maach-mono"
+                    style={{ color: 'var(--muted)' }}
+                  >
+                    Limpiar filtro
+                  </Link>
+                </div>
+              ) : null}
               <div
                 style={{
                   display: 'flex',
@@ -341,7 +381,7 @@ export default function PageRecursos() {
               </div>
 
               <div>
-                {documents.map((d) => {
+                {visibleDocuments.map((d) => {
                   const isSelected = selected.has(d.id);
                   return (
                     <div
@@ -418,7 +458,7 @@ export default function PageRecursos() {
                 }}
               >
                 <span className="maach-mono" style={{ color: 'var(--muted)' }}>
-                  {selected.size} / {documents.length} {t('rec.footer.selected')}
+                  {selected.size} / {visibleDocuments.length} {t('rec.footer.selected')}
                 </span>
                 <button className="btn-primary" style={{ padding: '12px 20px' }}>
                   <IconDownload size={14} /> {t('rec.footer.download_selection')}

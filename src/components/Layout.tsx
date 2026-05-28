@@ -669,9 +669,9 @@ function Footer() {
       title: t('footer.col.resources'),
       items: [
         { label: 'Biblioteca de documentos', path: '/recursos-diseno/biblioteca' },
-        { label: 'Modelos 3D / CAD', path: '/recursos-diseno/biblioteca' },
-        { label: 'Fichas técnicas', path: '/recursos-diseno/biblioteca' },
-        { label: 'Materiales y acabados', path: '/recursos-diseno/biblioteca' },
+        { label: 'Modelos 3D / CAD', path: '/recursos-diseno/biblioteca?tipo=modelos-3d' },
+        { label: 'Fichas técnicas', path: '/recursos-diseno/biblioteca?tipo=fichas' },
+        { label: 'Materiales y acabados', path: '/recursos-diseno/biblioteca?tipo=materiales' },
       ],
     },
   ];
