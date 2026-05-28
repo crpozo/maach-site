@@ -183,7 +183,7 @@ const T: Translations = {
     'faq.eyebrow': 'FAQ · Asesoría',
     'faq.title': '¿Dudas para diseñar tu espacio?',
     'faq.subtitle': 'Aquí las resolvemos.',
-    'faq.cta': 'Hablar con un asesor',
+    'faq.cta': 'Ver Artículos',
     // CTA
     'esp.cta.eyebrow': 'Asesoría especializada',
     'esp.cta.title.1': '¿Necesitas',
@@ -633,7 +633,7 @@ const T: Translations = {
     'faq.eyebrow': 'FAQ · Consulting',
     'faq.title': 'Questions about designing your space?',
     'faq.subtitle': "We've got answers.",
-    'faq.cta': 'Talk to an advisor',
+    'faq.cta': 'View Articles',
     'esp.cta.eyebrow': 'Specialist consulting',
     'esp.cta.title.1': 'Need help',
     'esp.cta.title.2': 'planning',

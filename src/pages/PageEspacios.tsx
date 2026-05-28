@@ -590,7 +590,7 @@ export default function PageEspacios() {
               </h3>
             </div>
             <Link
-              to="/contacto"
+              to="/investigacion"
               className="btn-primary"
               style={{ justifyContent: 'space-between', whiteSpace: 'nowrap' }}
             >
