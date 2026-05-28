@@ -600,11 +600,10 @@ export default function PageEspacios() {
         </div>
       </section>
 
-      {/* CTA — black band, brand-book style */}
+      {/* CTA — orange band, differentiates from the dark footer below */}
       <section
-        className="invert"
         style={{
-          background: 'var(--jet-black)',
+          background: 'var(--lava-orange)',
           color: 'var(--off-white)',
           padding: '120px 0',
           position: 'relative',
@@ -619,8 +618,9 @@ export default function PageEspacios() {
             right: 24,
             width: 22,
             height: 22,
-            borderTop: '2px solid var(--lava-orange)',
-            borderRight: '2px solid var(--lava-orange)',
+            borderTop: '2px solid var(--off-white)',
+            borderRight: '2px solid var(--off-white)',
+            opacity: 0.8,
           }}
         />
         <div
@@ -631,14 +631,15 @@ export default function PageEspacios() {
             left: 24,
             width: 22,
             height: 22,
-            borderBottom: '2px solid var(--lava-orange)',
-            borderLeft: '2px solid var(--lava-orange)',
+            borderBottom: '2px solid var(--off-white)',
+            borderLeft: '2px solid var(--off-white)',
+            opacity: 0.8,
           }}
         />
         <div className="maach-container" style={{ position: 'relative' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1.3fr 1fr', gap: 80, alignItems: 'center' }}>
             <div>
-              <span className="maach-mono" style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 16 }}>
+              <span className="maach-mono" style={{ color: 'var(--jet-black)', display: 'block', marginBottom: 16 }}>
                 {t('esp.cta.eyebrow')}
               </span>
               <h2
@@ -650,9 +651,9 @@ export default function PageEspacios() {
                   lineHeight: 0.95,
                 }}
               >
-                {t('esp.cta.title.1')} <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>{t('esp.cta.title.2')}</span> {t('esp.cta.title.3')}
+                {t('esp.cta.title.1')} <span className="h-italic" style={{ color: 'var(--jet-black)' }}>{t('esp.cta.title.2')}</span> {t('esp.cta.title.3')}
               </h2>
-              <p style={{ color: 'var(--sand-grey)', fontSize: 18, maxWidth: 560, lineHeight: 1.5 }}>
+              <p style={{ color: 'rgba(255,255,255,.92)', fontSize: 18, maxWidth: 560, lineHeight: 1.5 }}>
                 {t('esp.cta.body')}
               </p>
             </div>
@@ -660,14 +661,28 @@ export default function PageEspacios() {
               <Link
                 to="/contacto"
                 className="btn-primary"
-                style={{ width: '100%', justifyContent: 'space-between', padding: '20px 28px' }}
+                style={{
+                  width: '100%',
+                  justifyContent: 'space-between',
+                  padding: '20px 28px',
+                  background: 'var(--jet-black)',
+                  color: 'var(--off-white)',
+                  border: '1.5px solid var(--jet-black)',
+                }}
               >
                 {t('cta.start_planning')} <IconArrow size={14} />
               </Link>
               <Link
                 to="/portafolio"
                 className="btn-ghost"
-                style={{ width: '100%', justifyContent: 'space-between', padding: '20px 28px' }}
+                style={{
+                  width: '100%',
+                  justifyContent: 'space-between',
+                  padding: '20px 28px',
+                  background: 'transparent',
+                  color: 'var(--off-white)',
+                  border: '1.5px solid var(--off-white)',
+                }}
               >
                 {t('cta.see_case_studies')} <IconArrow size={14} />
               </Link>
@@ -675,13 +690,13 @@ export default function PageEspacios() {
                 style={{
                   marginTop: 20,
                   paddingTop: 20,
-                  borderTop: '1px solid rgba(228,226,227,.18)',
+                  borderTop: '1px solid rgba(22,22,22,.25)',
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center',
                 }}
               >
-                <span className="maach-mono" style={{ color: 'var(--sand-grey)' }}>
+                <span className="maach-mono" style={{ color: 'rgba(22,22,22,.8)' }}>
                   {t('esp.cta.response_in')}
                 </span>
                 <span
@@ -689,7 +704,7 @@ export default function PageEspacios() {
                     fontFamily: 'var(--display)',
                     fontWeight: 700,
                     fontSize: 32,
-                    color: 'var(--lava-orange)',
+                    color: 'var(--jet-black)',
                     letterSpacing: '-.02em',
                   }}
                 >
