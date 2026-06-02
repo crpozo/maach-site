@@ -412,17 +412,65 @@ export default function PageCategory() {
                             onMouseLeave={(e) => (e.currentTarget.style.transform = '')}
                           />
                         </div>
-                        <div style={{ padding: '16px 18px' }}>
+                        <div
+                          style={{
+                            position: 'relative',
+                            background: 'var(--jet-black)',
+                            color: 'var(--off-white)',
+                            padding: '16px 18px 18px',
+                            overflow: 'hidden',
+                          }}
+                        >
+                          {/* AA monogram */}
+                          <span
+                            aria-hidden
+                            style={{
+                              fontFamily: 'var(--display)',
+                              fontWeight: 700,
+                              fontSize: 13,
+                              letterSpacing: '-.04em',
+                              color: 'var(--lava-orange)',
+                              display: 'block',
+                              marginBottom: 10,
+                            }}
+                          >
+                            AA
+                          </span>
+                          {/* Orange L corner */}
+                          <div
+                            aria-hidden
+                            style={{
+                              position: 'absolute',
+                              top: 12,
+                              right: 12,
+                              width: 14,
+                              height: 14,
+                              borderTop: '2px solid var(--lava-orange)',
+                              borderRight: '2px solid var(--lava-orange)',
+                            }}
+                          />
+                          <span
+                            className="maach-mono"
+                            style={{
+                              color: 'var(--lava-orange)',
+                              display: 'block',
+                              marginBottom: 6,
+                              fontSize: 10,
+                              letterSpacing: '.08em',
+                            }}
+                          >
+                            {p.subcategory}
+                          </span>
                           <h3
                             style={{
                               fontFamily: 'var(--display)',
-                              fontWeight: 600,
-                              fontSize: 17,
+                              fontWeight: 700,
+                              fontSize: 20,
                               textTransform: 'uppercase',
                               letterSpacing: '-.01em',
                               margin: 0,
-                              color: inverted ? 'var(--off-white)' : 'var(--fg)',
-                              lineHeight: 1.1,
+                              color: 'var(--off-white)',
+                              lineHeight: 1,
                             }}
                           >
                             {p.name}

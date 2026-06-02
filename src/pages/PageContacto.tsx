@@ -258,10 +258,13 @@ export default function PageContacto() {
             }}
           >
             <div>
-              <span className="maach-mono" style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 12 }}>
+              <span className="maach-mono" style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 28 }}>
                 {t('cont.form.eyebrow')}
               </span>
-              <h2 className="h-display" style={{ fontSize: 'clamp(40px, 5.5vw, 80px)', color: 'var(--off-white)' }}>
+              <h2
+                className="h-display"
+                style={{ fontSize: 'clamp(40px, 5.5vw, 80px)', color: 'var(--off-white)', lineHeight: 1, margin: 0 }}
+              >
                 {t('cont.form.title')}
               </h2>
             </div>
