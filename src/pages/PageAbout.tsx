@@ -69,6 +69,21 @@ export default function PageAbout() {
             zIndex: 1,
           }}
         />
+        {/* Texture overlay on the hero image */}
+        <div
+          aria-hidden
+          style={{
+            position: 'absolute',
+            inset: 0,
+            zIndex: 1,
+            opacity: 0.16,
+            pointerEvents: 'none',
+            backgroundImage: `url(${asset('texture-7.png')})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        />
         {/* Bold orange edge bar */}
         <div
           aria-hidden
@@ -598,7 +613,14 @@ export default function PageAbout() {
         <div
           className="tex-slats"
           aria-hidden
-          style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}
+          style={{
+            position: 'absolute',
+            inset: 0,
+            pointerEvents: 'none',
+            backgroundImage: `url(${asset('texture-3.png')})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
         />
         <div className="maach-container" style={{ position: 'relative', textAlign: 'center', maxWidth: 1200 }}>
           <span className="maach-mono" style={{ color: 'var(--sand-grey)', display: 'block', marginBottom: 32 }}>

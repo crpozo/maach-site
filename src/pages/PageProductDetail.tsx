@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 import { Layout } from '../components/Layout';
 import {
   IconChevronRight,
+  IconClose,
   IconDownload,
   IconFile,
   IconRuler,
@@ -38,6 +39,7 @@ export default function PageProductDetail() {
       ];
   const description = real?.description;
   const [idx, setIdx] = useState(0);
+  const [zoom, setZoom] = useState(false);
 
   // Real related products from the same category (excluding the current one).
   const related = real
@@ -83,8 +85,31 @@ export default function PageProductDetail() {
                 <img
                   src={images[idx]}
                   alt=""
-                  style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 32, boxSizing: 'border-box' }}
+                  onClick={() => setZoom(true)}
+                  style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 32, boxSizing: 'border-box', cursor: 'zoom-in' }}
                 />
+                {/* Expand button */}
+                <button
+                  onClick={() => setZoom(true)}
+                  aria-label="Ampliar imagen"
+                  style={{
+                    position: 'absolute',
+                    top: 16,
+                    right: 16,
+                    background: 'var(--off-white)',
+                    border: '1px solid var(--fg)',
+                    width: 38,
+                    height: 38,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    cursor: 'zoom-in',
+                  }}
+                >
+                  <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6">
+                    <path d="M6 2H2v4M10 2h4v4M6 14H2v-4M10 14h4v-4" />
+                  </svg>
+                </button>
                 <button
                   onClick={() => setIdx((i) => (i - 1 + images.length) % images.length)}
                   style={{
@@ -442,6 +467,98 @@ export default function PageProductDetail() {
             </div>
           </div>
         </section>
+      ) : null}
+
+      {/* LIGHTBOX — expand product photos */}
+      {zoom ? (
+        <div
+          onClick={() => setZoom(false)}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 1000,
+            background: 'rgba(12,12,12,.94)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: 48,
+          }}
+        >
+          <button
+            onClick={() => setZoom(false)}
+            aria-label="Cerrar"
+            style={{
+              position: 'absolute',
+              top: 24,
+              right: 24,
+              background: 'transparent',
+              border: '1px solid rgba(255,255,255,.5)',
+              color: 'var(--off-white)',
+              width: 44,
+              height: 44,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+            }}
+          >
+            <IconClose size={18} />
+          </button>
+          <button
+            onClick={(e) => { e.stopPropagation(); setIdx((i) => (i - 1 + images.length) % images.length); }}
+            aria-label="Anterior"
+            style={{
+              position: 'absolute',
+              left: 24,
+              top: '50%',
+              transform: 'translateY(-50%)',
+              background: 'transparent',
+              border: '1px solid rgba(255,255,255,.5)',
+              color: 'var(--off-white)',
+              width: 48,
+              height: 48,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+            }}
+          >
+            <IconChevronRight size={18} style={{ transform: 'rotate(180deg)' }} />
+          </button>
+          <img
+            src={images[idx]}
+            alt=""
+            onClick={(e) => e.stopPropagation()}
+            style={{ maxWidth: '92vw', maxHeight: '88vh', objectFit: 'contain', cursor: 'default' }}
+          />
+          <button
+            onClick={(e) => { e.stopPropagation(); setIdx((i) => (i + 1) % images.length); }}
+            aria-label="Siguiente"
+            style={{
+              position: 'absolute',
+              right: 24,
+              top: '50%',
+              transform: 'translateY(-50%)',
+              background: 'transparent',
+              border: '1px solid rgba(255,255,255,.5)',
+              color: 'var(--off-white)',
+              width: 48,
+              height: 48,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+            }}
+          >
+            <IconChevronRight size={18} />
+          </button>
+          <span
+            className="maach-mono"
+            style={{ position: 'absolute', bottom: 28, left: '50%', transform: 'translateX(-50%)', color: 'var(--off-white)' }}
+          >
+            {String(idx + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}
+          </span>
+        </div>
       ) : null}
     </Layout>
   );

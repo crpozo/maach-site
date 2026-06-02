@@ -273,8 +273,12 @@ export default function PageHome() {
                       zIndex: 1,
                     }}
                   />
-                  {/* Capsule/dot texture — animates in on hover */}
-                  <div className="cat-texture" aria-hidden />
+                  {/* Distinct texture per card — revealed on hover */}
+                  <div
+                    className="cat-texture"
+                    aria-hidden
+                    style={{ backgroundImage: `url(${asset(`texture-${(i % 7) + 1}.png`)})` }}
+                  />
                   <div
                     style={{
                       display: 'flex',

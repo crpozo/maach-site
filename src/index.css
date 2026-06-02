@@ -292,29 +292,24 @@ section[id],
   background-size: cover;
 }
 
-/* Home category cards — capsule/dot texture that animates in on hover */
+/* Home category cards — distinct texture per card, revealed on hover.
+   The background image is set inline per card via asset() in the component. */
 .cat-card .cat-texture {
   position: absolute;
   inset: 0;
   z-index: 1;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.45s ease;
-  background-size: 240px 240px;
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='240'%20height='240'%3E%3Cg%20fill='white'%3E%3Crect%20x='20'%20y='8'%20width='14'%20height='62'%20rx='7'/%3E%3Crect%20x='58'%20y='44'%20width='14'%20height='92'%20rx='7'/%3E%3Crect%20x='98'%20y='0'%20width='14'%20height='46'%20rx='7'/%3E%3Crect%20x='140'%20y='66'%20width='14'%20height='74'%20rx='7'/%3E%3Crect%20x='180'%20y='18'%20width='14'%20height='110'%20rx='7'/%3E%3Crect%20x='212'%20y='98'%20width='14'%20height='60'%20rx='7'/%3E%3Crect%20x='40'%20y='150'%20width='14'%20height='72'%20rx='7'/%3E%3Crect%20x='118'%20y='158'%20width='14'%20height='62'%20rx='7'/%3E%3Crect%20x='168'%20y='160'%20width='14'%20height='72'%20rx='7'/%3E%3Ccircle%20cx='27'%20cy='104'%20r='7'/%3E%3Ccircle%20cx='65'%20cy='154'%20r='7'/%3E%3Ccircle%20cx='105'%20cy='62'%20r='7'/%3E%3Ccircle%20cx='147'%20cy='160'%20r='7'/%3E%3Ccircle%20cx='187'%20cy='150'%20r='7'/%3E%3Ccircle%20cx='219'%20cy='182'%20r='7'/%3E%3Ccircle%20cx='47'%20cy='40'%20r='7'/%3E%3Ccircle%20cx='92'%20cy='120'%20r='7'/%3E%3Ccircle%20cx='200'%20cy='70'%20r='7'/%3E%3Ccircle%20cx='30'%20cy='205'%20r='7'/%3E%3C/g%3E%3C/svg%3E");
+  transition: opacity 0.45s ease, transform 0.6s ease;
+  transform: scale(1.04);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .cat-card:hover .cat-texture,
 .cat-card:focus-visible .cat-texture {
-  opacity: 0.55;
-  animation: catTexDrift 9s linear infinite;
-}
-@keyframes catTexDrift {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 0 -240px;
-  }
+  opacity: 0.5;
+  transform: scale(1);
 }
 
 /* Vertical louver / slat texture for dark manifesto / quote bands.

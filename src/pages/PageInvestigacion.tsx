@@ -361,7 +361,14 @@ export default function PageInvestigacion() {
         <div
           className="tex-slats"
           aria-hidden
-          style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}
+          style={{
+            position: 'absolute',
+            inset: 0,
+            pointerEvents: 'none',
+            backgroundImage: `url(${asset('texture-5.png')})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
         />
         <div className="maach-container" style={{ position: 'relative', maxWidth: 1100 }}>
           <span className="maach-mono" style={{ color: 'var(--sand-grey)', display: 'block', marginBottom: 24 }}>
