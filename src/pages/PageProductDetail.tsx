@@ -262,41 +262,34 @@ export default function PageProductDetail() {
                   <IconDownload size={14} /> {t('pd.bim_cad')}
                 </button>
               </div>
-            </div>
-          </div>
 
-          {/* CARACTERÍSTICAS TÉCNICAS — full-width, multi-column */}
-          <div style={{ marginTop: 80, paddingTop: 40, borderTop: '1px solid var(--line)' }}>
-            <h3 style={{ marginBottom: 32 }} className="maach-mono">
-              <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
-                <IconTool size={14} /> {t('pd.tech_features')}
-              </span>
-            </h3>
-            <div
-              className="pd-spec-grid"
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(3, 1fr)',
-                gap: '28px 56px',
-              }}
-            >
-              {[
-                'Estructura inyectada en aluminio extruido de alta resistencia.',
-                'Superficies con recubrimiento melamínico termo-fundido textura roble.',
-                'Sistema de herrajes ocultos de precisión alemana.',
-                'Módulos reconfigurables sin necesidad de herramientas especiales.',
-                'Validado para >250,000 ciclos de apertura.',
-              ].map((feat, i) => (
-                <div key={i} style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
-                  <span
-                    className="maach-mono"
-                    style={{ color: 'var(--lava-orange)', flexShrink: 0, fontWeight: 700, paddingTop: 2 }}
-                  >
-                    {String(i + 1).padStart(2, '0')}
+              {/* CARACTERÍSTICAS TÉCNICAS — under the actions, right column */}
+              <div style={{ marginTop: 12, paddingTop: 28, borderTop: '1px solid var(--line)' }}>
+                <h3 style={{ marginBottom: 24 }} className="maach-mono">
+                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+                    <IconTool size={14} /> {t('pd.tech_features')}
                   </span>
-                  <span style={{ fontSize: 15, lineHeight: 1.55, color: 'var(--fg)' }}>{feat}</span>
+                </h3>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
+                  {[
+                    'Estructura inyectada en aluminio extruido de alta resistencia.',
+                    'Superficies con recubrimiento melamínico termo-fundido textura roble.',
+                    'Sistema de herrajes ocultos de precisión alemana.',
+                    'Módulos reconfigurables sin necesidad de herramientas especiales.',
+                    'Validado para >250,000 ciclos de apertura.',
+                  ].map((feat, i) => (
+                    <div key={i} style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
+                      <span
+                        className="maach-mono"
+                        style={{ color: 'var(--lava-orange)', flexShrink: 0, fontWeight: 700, paddingTop: 2 }}
+                      >
+                        {String(i + 1).padStart(2, '0')}
+                      </span>
+                      <span style={{ fontSize: 15, lineHeight: 1.55, color: 'var(--fg)' }}>{feat}</span>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
           </div>
 
