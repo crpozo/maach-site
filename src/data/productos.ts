@@ -84,6 +84,32 @@ const almacenamiento = (slug: string, name: string, sku: string, description: st
   },
 });
 
+// Helper for Mesas products. Photos live at
+//   productos/mesas/<slug>/01..06.webp  (01 = clean render, 02-06 = ambientadas)
+// CAD/BIM sheets at <slug>.dwg / .rfa / .skp
+const mesa = (
+  slug: string,
+  name: string,
+  subcategory: 'Mesas de reunión' | 'Mesas colaborativas' | 'Mesas auxiliares',
+  sku: string,
+  description: string,
+): Product => ({
+  slug,
+  name,
+  category: 'Mesas',
+  subcategory,
+  sku,
+  description,
+  gallery: Array.from({ length: 6 }, (_, i) =>
+    asset(`productos/mesas/${slug}/${String(i + 1).padStart(2, '0')}.webp`),
+  ),
+  sheets: {
+    dwg: asset(`productos/mesas/${slug}/${slug}.dwg`),
+    rfa: asset(`productos/mesas/${slug}/${slug}.rfa`),
+    skp: asset(`productos/mesas/${slug}/${slug}.skp`),
+  },
+});
+
 // Default short description per Sillonería subcategory. Used when the
 // individual product copy hasn't been provided yet.
 const SILLA_DESC: Record<string, string> = {
@@ -295,6 +321,61 @@ export const PRODUCTS: Product[] = [
     'Archivo Rodante',
     'MCH-ALM-07',
     'Sistema de archivo móvil sobre rieles para máxima densidad de almacenamiento. Activación manual o eléctrica, freno de seguridad y configuración modular. Ideal para áreas administrativas, legales y de cumplimiento.',
+  ),
+
+  // ─── MESAS DE REUNIÓN ────────────────────────────────────────
+  mesa(
+    'mesa-rectangular',
+    'Mesa Rectangular',
+    'Mesas de reunión',
+    'MCH-MES-01',
+    'Mesa de reunión rectangular que proyecta autoridad y organización. Estructura metálica o en melamina con tablero superior en melamina, vidrio o fórmica, sistema de conducción eléctrica y caja porta tomas integrada para reuniones estratégicas.',
+  ),
+  mesa(
+    'mesa-ovalada',
+    'Mesa Ovalada',
+    'Mesas de reunión',
+    'MCH-MES-02',
+    'Mesa de reunión ovalada de líneas fluidas que favorece la comunicación visual entre los participantes. Tablero en melamina, vidrio o fórmica con conducción eléctrica oculta y caja porta tomas.',
+  ),
+  mesa(
+    'mesa-especial',
+    'Mesa Especial',
+    'Mesas de reunión',
+    'MCH-MES-03',
+    'Mesa de reunión de formato especial diseñada a medida del espacio corporativo. Estructura y acabados de alta calidad con integración eléctrica para sesiones ejecutivas y toma de decisiones.',
+  ),
+
+  // ─── MESAS COLABORATIVAS ─────────────────────────────────────
+  mesa(
+    'mesa-colaborativa-circular',
+    'Mesa Colaborativa Circular',
+    'Mesas colaborativas',
+    'MCH-MES-04',
+    'Mesa colaborativa circular que combina estética ejecutiva con funcionalidad compartida. Estructura metálica y tablero en melamina; su forma fomenta la interacción y el trabajo en equipo.',
+  ),
+  mesa(
+    'mesa-colaborativa-cuadrada',
+    'Mesa Colaborativa Cuadrada',
+    'Mesas colaborativas',
+    'MCH-MES-05',
+    'Mesa colaborativa cuadrada de diseño contemporáneo. Estructura metálica con tablero en melamina, ideal para sesiones de trabajo en grupo y dinámicas creativas.',
+  ),
+  mesa(
+    'mesa-porta-laptop',
+    'Mesa Porta Laptop',
+    'Mesas colaborativas',
+    'MCH-MES-06',
+    'Mesa porta laptop versátil para trabajo flexible y espacios colaborativos. Estructura metálica con tablero en melamina, fácil de reconfigurar según la actividad.',
+  ),
+
+  // ─── MESAS AUXILIARES ────────────────────────────────────────
+  mesa(
+    'mesa-auxiliar',
+    'Mesa Auxiliar',
+    'Mesas auxiliares',
+    'MCH-MES-07',
+    'Mesa auxiliar compacta y versátil. Ofrece una superficie útil para organizar documentos, equipos o elementos decorativos. Estructura metálica con tablero en melamina.',
   ),
 ];
 
