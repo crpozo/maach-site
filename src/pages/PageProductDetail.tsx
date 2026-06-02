@@ -159,27 +159,102 @@ export default function PageProductDetail() {
               </div>
             </div>
 
-            <div>
-              <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 16 }}>
-                {category}
-              </span>
-              <h1 className="h-display" style={{ fontSize: 64, marginBottom: 24 }}>
-                {productName}
-              </h1>
-              <p style={{ fontSize: 18, color: 'var(--muted)', lineHeight: 1.55, marginBottom: 32 }}>
-                {description ??
-                  'Una solución de almacenamiento industrial enfocada en la optimización del espacio y la estética corporativa. Estructura modular, herrajes ocultos y acabados validados para uso intensivo.'}
-              </p>
-
+            {/* INFO — dark brand-book card + actions */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
               <div
+                className="invert"
                 style={{
+                  position: 'relative',
+                  background: 'var(--jet-black)',
+                  color: 'var(--off-white)',
+                  padding: 'clamp(28px, 3vw, 44px)',
                   display: 'flex',
-                  gap: 12,
-                  marginBottom: 40,
-                  paddingBottom: 40,
-                  borderBottom: '1px solid var(--line)',
+                  flexDirection: 'column',
+                  gap: 28,
+                  overflow: 'hidden',
                 }}
               >
+                {/* Orange L corners */}
+                <div
+                  aria-hidden
+                  style={{
+                    position: 'absolute',
+                    top: 18,
+                    right: 18,
+                    width: 22,
+                    height: 22,
+                    borderTop: '2px solid var(--lava-orange)',
+                    borderRight: '2px solid var(--lava-orange)',
+                  }}
+                />
+                <div
+                  aria-hidden
+                  style={{
+                    position: 'absolute',
+                    bottom: 18,
+                    left: 18,
+                    width: 22,
+                    height: 22,
+                    borderBottom: '2px solid var(--lava-orange)',
+                    borderLeft: '2px solid var(--lava-orange)',
+                  }}
+                />
+
+                {/* AA monogram */}
+                <span
+                  style={{
+                    fontFamily: 'var(--display)',
+                    fontWeight: 700,
+                    fontSize: 30,
+                    letterSpacing: '-.04em',
+                    color: 'var(--lava-orange)',
+                    lineHeight: 1,
+                  }}
+                >
+                  AA
+                </span>
+
+                <p style={{ fontSize: 16, color: 'var(--off-white)', lineHeight: 1.6, margin: 0, maxWidth: 520 }}>
+                  {description ??
+                    'Una solución industrial enfocada en la optimización del espacio y la estética corporativa. Estructura modular, herrajes ocultos y acabados validados para uso intensivo.'}
+                </p>
+
+                <div style={{ height: 1, background: 'rgba(228,226,227,.22)', width: '100%' }} />
+
+                <div style={{ display: 'flex', alignItems: 'flex-end', gap: 24, flexWrap: 'wrap' }}>
+                  <div style={{ flexShrink: 0 }}>
+                    <div
+                      style={{
+                        width: 64,
+                        height: 64,
+                        background: 'var(--off-white)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        overflow: 'hidden',
+                        marginBottom: 10,
+                      }}
+                    >
+                      <img
+                        src={images[0]}
+                        alt=""
+                        style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 6, boxSizing: 'border-box' }}
+                      />
+                    </div>
+                    <span className="maach-mono" style={{ color: 'var(--lava-orange)', letterSpacing: '.08em' }}>
+                      {category}
+                    </span>
+                  </div>
+                  <h1
+                    className="h-display"
+                    style={{ fontSize: 'clamp(40px, 4.5vw, 64px)', lineHeight: 0.92, margin: 0, flex: 1, minWidth: 0 }}
+                  >
+                    {productName}
+                  </h1>
+                </div>
+              </div>
+
+              <div style={{ display: 'flex', gap: 12 }}>
                 <button className="btn-primary" style={{ flex: 1, justifyContent: 'center' }}>
                   {t('pd.contact_advisor')}
                 </button>
@@ -187,145 +262,133 @@ export default function PageProductDetail() {
                   <IconDownload size={14} /> {t('pd.bim_cad')}
                 </button>
               </div>
+            </div>
+          </div>
 
-              <div style={{ marginBottom: 32 }}>
-                <h3 style={{ marginBottom: 16 }} className="maach-mono">
-                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
-                    <IconTool size={14} /> {t('pd.tech_features')}
+          {/* CARACTERÍSTICAS TÉCNICAS — full-width, multi-column */}
+          <div style={{ marginTop: 80, paddingTop: 40, borderTop: '1px solid var(--line)' }}>
+            <h3 style={{ marginBottom: 32 }} className="maach-mono">
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+                <IconTool size={14} /> {t('pd.tech_features')}
+              </span>
+            </h3>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+                gap: 'clamp(24px, 3vw, 48px) 64px',
+              }}
+            >
+              {[
+                'Estructura inyectada en aluminio extruido de alta resistencia.',
+                'Superficies con recubrimiento melamínico termo-fundido textura roble.',
+                'Sistema de herrajes ocultos de precisión alemana.',
+                'Módulos reconfigurables sin necesidad de herramientas especiales.',
+                'Validado para >250,000 ciclos de apertura.',
+              ].map((feat, i) => (
+                <div key={i} style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
+                  <span
+                    className="maach-mono"
+                    style={{ color: 'var(--lava-orange)', flexShrink: 0, fontWeight: 700, paddingTop: 2 }}
+                  >
+                    {String(i + 1).padStart(2, '0')}
                   </span>
-                </h3>
-                <ul
-                  style={{
-                    listStyle: 'none',
-                    padding: '20px 24px',
-                    margin: 0,
-                    background: 'var(--soft)',
-                    border: '1px solid var(--line)',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: 12,
-                    fontFamily: 'var(--mono)',
-                    fontSize: 12,
-                  }}
-                >
-                  {[
-                    'Estructura inyectada en aluminio extruido de alta resistencia.',
-                    'Superficies con recubrimiento melamínico termo-fundido textura roble.',
-                    'Sistema de herrajes ocultos de precisión alemana.',
-                    'Módulos reconfigurables sin necesidad de herramientas especiales.',
-                    'Validado para >250,000 ciclos de apertura.',
-                  ].map((t, i) => (
-                    <li key={i} style={{ display: 'flex', gap: 12, lineHeight: 1.5 }}>
-                      <span style={{ color: 'var(--lava-orange)', flexShrink: 0 }}>
-                        {String(i + 1).padStart(2, '0')}
-                      </span>
-                      <span>{t}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                  <span style={{ fontSize: 15, lineHeight: 1.55, color: 'var(--fg)' }}>{feat}</span>
+                </div>
+              ))}
+            </div>
+          </div>
 
-              <div style={{ marginBottom: 32 }}>
-                <h3 style={{ marginBottom: 16 }} className="maach-mono">
-                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
-                    <IconRuler size={14} /> {t('pd.dimensions')}
+          {/* DIMENSIONES GENERALES — full-width */}
+          <div style={{ marginTop: 64, paddingTop: 40, borderTop: '1px solid var(--line)' }}>
+            <h3 style={{ marginBottom: 32 }} className="maach-mono">
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+                <IconRuler size={14} /> {t('pd.dimensions')}
+              </span>
+            </h3>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
+                gap: 32,
+              }}
+            >
+              {[
+                [t('pd.dim.height'), '750 mm'],
+                [t('pd.dim.width'), '1200 — 1800 mm'],
+                [t('pd.dim.depth'), '450 — 500 mm'],
+                [t('pd.dim.tolerance'), '± 2 mm'],
+                [t('pd.dim.weight'), '32 kg'],
+                [t('pd.dim.load'), '120 kg'],
+              ].map(([k, v]) => (
+                <div key={k}>
+                  <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 6 }}>
+                    {k}
                   </span>
-                </h3>
-                <div
-                  style={{
-                    background: 'var(--soft)',
-                    border: '1px solid var(--line)',
-                    padding: '24px',
-                    display: 'grid',
-                    gridTemplateColumns: '1fr 1fr',
-                    gap: 24,
-                  }}
-                >
-                  {[
-                    [t('pd.dim.height'), '750 mm'],
-                    [t('pd.dim.width'), '1200 — 1800 mm'],
-                    [t('pd.dim.depth'), '450 — 500 mm'],
-                    [t('pd.dim.tolerance'), '± 2 mm'],
-                    [t('pd.dim.weight'), '32 kg'],
-                    [t('pd.dim.load'), '120 kg'],
-                  ].map(([k, v]) => (
-                    <div key={k}>
-                      <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 4 }}>
-                        {k}
+                  <span style={{ fontFamily: 'var(--mono)', fontSize: 20, fontWeight: 600 }}>{v}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* DOCUMENTOS — full-width */}
+          <div style={{ marginTop: 64, paddingTop: 40, borderTop: '1px solid var(--line)' }}>
+            <h3 style={{ marginBottom: 24 }} className="maach-mono">
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+                <IconFile size={14} /> {t('pd.docs')}
+              </span>
+            </h3>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                gap: 12,
+              }}
+            >
+              {(
+                [
+                  { name: t('pd.doc.sheet'), ext: 'PDF', href: real?.sheets?.pdf, fileName: `${real?.slug ?? id}.pdf` },
+                  { name: t('pd.doc.3d'), ext: 'SKP', href: real?.sheets?.skp, fileName: `${real?.slug ?? id}.skp` },
+                  { name: t('pd.doc.revit'), ext: 'RFA', href: real?.sheets?.rfa, fileName: `${real?.slug ?? id}.rfa` },
+                  { name: t('pd.doc.cad'), ext: 'DWG', href: real?.sheets?.dwg, fileName: `${real?.slug ?? id}.dwg` },
+                ] as Array<{ name: string; ext: string; href?: string; fileName?: string }>
+              ).map((d) => {
+                const isLive = !!d.href;
+                return (
+                  <a
+                    key={d.name}
+                    href={d.href ?? '#'}
+                    download={isLive ? d.fileName : undefined}
+                    onClick={isLive ? undefined : (e) => e.preventDefault()}
+                    style={{
+                      background: 'var(--surface)',
+                      border: '1px solid var(--line)',
+                      padding: '14px 18px',
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      transition: 'border-color .2s',
+                      opacity: isLive ? 1 : 0.55,
+                      cursor: isLive ? 'pointer' : 'default',
+                    }}
+                    onMouseEnter={(e) => (isLive ? (e.currentTarget.style.borderColor = 'var(--fg)') : null)}
+                    onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'var(--line)')}
+                  >
+                    <div>
+                      <span style={{ fontFamily: 'var(--body)', fontSize: 14, fontWeight: 500 }}>{d.name}</span>
+                      <span className="maach-mono" style={{ color: 'var(--lava-orange)', marginLeft: 10 }}>
+                        .{d.ext.toLowerCase()}
                       </span>
-                      <span style={{ fontFamily: 'var(--mono)', fontSize: 18, fontWeight: 600 }}>{v}</span>
+                      {!isLive && (
+                        <span className="maach-mono" style={{ color: 'var(--muted)', marginLeft: 12, fontSize: 10 }}>
+                          {t('pd.doc.soon')}
+                        </span>
+                      )}
                     </div>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <h3 style={{ marginBottom: 16 }} className="maach-mono">
-                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
-                    <IconFile size={14} /> {t('pd.docs')}
-                  </span>
-                </h3>
-                <div
-                  style={{
-                    background: 'var(--soft)',
-                    border: '1px solid var(--line)',
-                    padding: 16,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: 8,
-                  }}
-                >
-                  {(
-                    [
-                      { name: t('pd.doc.sheet'), ext: 'PDF', href: real?.sheets?.pdf, fileName: `${real?.slug ?? id}.pdf` },
-                      { name: t('pd.doc.3d'), ext: 'SKP', href: real?.sheets?.skp, fileName: `${real?.slug ?? id}.skp` },
-                      { name: t('pd.doc.revit'), ext: 'RFA', href: real?.sheets?.rfa, fileName: `${real?.slug ?? id}.rfa` },
-                      { name: t('pd.doc.cad'), ext: 'DWG', href: real?.sheets?.dwg, fileName: `${real?.slug ?? id}.dwg` },
-                    ] as Array<{ name: string; ext: string; href?: string; fileName?: string }>
-                  ).map((d) => {
-                    const isLive = !!d.href;
-                    return (
-                      <a
-                        key={d.name}
-                        href={d.href ?? '#'}
-                        download={isLive ? d.fileName : undefined}
-                        onClick={isLive ? undefined : (e) => e.preventDefault()}
-                        style={{
-                          background: 'var(--surface)',
-                          border: '1px solid var(--line)',
-                          padding: '14px 18px',
-                          display: 'flex',
-                          justifyContent: 'space-between',
-                          alignItems: 'center',
-                          transition: 'border-color .2s',
-                          opacity: isLive ? 1 : 0.55,
-                          cursor: isLive ? 'pointer' : 'default',
-                        }}
-                        onMouseEnter={(e) =>
-                          isLive ? (e.currentTarget.style.borderColor = 'var(--fg)') : null
-                        }
-                        onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'var(--line)')}
-                      >
-                        <div>
-                          <span style={{ fontFamily: 'var(--body)', fontSize: 14, fontWeight: 500 }}>{d.name}</span>
-                          <span className="maach-mono" style={{ color: 'var(--lava-orange)', marginLeft: 10 }}>
-                            .{d.ext.toLowerCase()}
-                          </span>
-                          {!isLive && (
-                            <span
-                              className="maach-mono"
-                              style={{ color: 'var(--muted)', marginLeft: 12, fontSize: 10 }}
-                            >
-                              {t('pd.doc.soon')}
-                            </span>
-                          )}
-                        </div>
-                        <IconDownload size={14} />
-                      </a>
-                    );
-                  })}
-                </div>
-              </div>
+                    <IconDownload size={14} />
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>
