@@ -359,8 +359,9 @@ export default function PageInvestigacion() {
         }}
       >
         <div
-          className="tex-load-line"
-          style={{ position: 'absolute', inset: 0, color: 'var(--off-white)', pointerEvents: 'none' }}
+          className="tex-slats"
+          aria-hidden
+          style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}
         />
         <div className="maach-container" style={{ position: 'relative', maxWidth: 1100 }}>
           <span className="maach-mono" style={{ color: 'var(--sand-grey)', display: 'block', marginBottom: 24 }}>

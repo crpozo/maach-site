@@ -286,6 +286,27 @@ section[id],
   opacity: 0;
 }
 
+/* Vertical louver / slat texture for dark manifesto bands */
+.tex-slats {
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.05) 0px,
+      rgba(255, 255, 255, 0.05) 4px,
+      transparent 4px,
+      transparent 18px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 54px,
+      rgba(0, 0, 0, 0.45) 54px,
+      rgba(0, 0, 0, 0.45) 62px
+    );
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent);
+}
+
 /* Espacios typology cards — reveal extra info on hover */
 .typology-card .typology-reveal {
   opacity: 0;
