@@ -325,66 +325,64 @@ export default function PageProductDetail() {
             </div>
           </div>
 
-          {/* DOCUMENTOS — full-width */}
-          <div style={{ marginTop: 64, paddingTop: 40, borderTop: '1px solid var(--line)' }}>
-            <h3 style={{ marginBottom: 24 }} className="maach-mono">
-              <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
-                <IconFile size={14} /> {t('pd.docs')}
-              </span>
-            </h3>
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                gap: 12,
-              }}
-            >
-              {(
-                [
-                  { name: t('pd.doc.sheet'), ext: 'PDF', href: real?.sheets?.pdf, fileName: `${real?.slug ?? id}.pdf` },
-                  { name: t('pd.doc.3d'), ext: 'SKP', href: real?.sheets?.skp, fileName: `${real?.slug ?? id}.skp` },
-                  { name: t('pd.doc.revit'), ext: 'RFA', href: real?.sheets?.rfa, fileName: `${real?.slug ?? id}.rfa` },
-                  { name: t('pd.doc.cad'), ext: 'DWG', href: real?.sheets?.dwg, fileName: `${real?.slug ?? id}.dwg` },
-                ] as Array<{ name: string; ext: string; href?: string; fileName?: string }>
-              ).map((d) => {
-                const isLive = !!d.href;
-                return (
-                  <a
-                    key={d.name}
-                    href={d.href ?? '#'}
-                    download={isLive ? d.fileName : undefined}
-                    onClick={isLive ? undefined : (e) => e.preventDefault()}
-                    style={{
-                      background: 'var(--surface)',
-                      border: '1px solid var(--line)',
-                      padding: '14px 18px',
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'center',
-                      transition: 'border-color .2s',
-                      opacity: isLive ? 1 : 0.55,
-                      cursor: isLive ? 'pointer' : 'default',
-                    }}
-                    onMouseEnter={(e) => (isLive ? (e.currentTarget.style.borderColor = 'var(--fg)') : null)}
-                    onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'var(--line)')}
-                  >
-                    <div>
-                      <span style={{ fontFamily: 'var(--body)', fontSize: 14, fontWeight: 500 }}>{d.name}</span>
-                      <span className="maach-mono" style={{ color: 'var(--lava-orange)', marginLeft: 10 }}>
-                        .{d.ext.toLowerCase()}
-                      </span>
-                      {!isLive && (
-                        <span className="maach-mono" style={{ color: 'var(--muted)', marginLeft: 12, fontSize: 10 }}>
-                          {t('pd.doc.soon')}
+          {/* DOCUMENTOS — full-width. Only render docs that actually exist. */}
+          {(() => {
+            const docs = (
+              [
+                { name: t('pd.doc.sheet'), ext: 'PDF', href: real?.sheets?.pdf, fileName: `${real?.slug ?? id}.pdf` },
+                { name: t('pd.doc.3d'), ext: 'SKP', href: real?.sheets?.skp, fileName: `${real?.slug ?? id}.skp` },
+                { name: t('pd.doc.revit'), ext: 'RFA', href: real?.sheets?.rfa, fileName: `${real?.slug ?? id}.rfa` },
+                { name: t('pd.doc.cad'), ext: 'DWG', href: real?.sheets?.dwg, fileName: `${real?.slug ?? id}.dwg` },
+              ] as Array<{ name: string; ext: string; href?: string; fileName?: string }>
+            ).filter((d) => !!d.href);
+
+            if (docs.length === 0) return null;
+
+            return (
+              <div style={{ marginTop: 64, paddingTop: 40, borderTop: '1px solid var(--line)' }}>
+                <h3 style={{ marginBottom: 24 }} className="maach-mono">
+                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+                    <IconFile size={14} /> {t('pd.docs')}
+                  </span>
+                </h3>
+                <div
+                  style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                    gap: 12,
+                  }}
+                >
+                  {docs.map((d) => (
+                    <a
+                      key={d.name}
+                      href={d.href}
+                      download={d.fileName}
+                      style={{
+                        background: 'var(--surface)',
+                        border: '1px solid var(--line)',
+                        padding: '14px 18px',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        transition: 'border-color .2s',
+                        cursor: 'pointer',
+                      }}
+                      onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'var(--fg)')}
+                      onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'var(--line)')}
+                    >
+                      <div>
+                        <span style={{ fontFamily: 'var(--body)', fontSize: 14, fontWeight: 500 }}>{d.name}</span>
+                        <span className="maach-mono" style={{ color: 'var(--lava-orange)', marginLeft: 10 }}>
+                          .{d.ext.toLowerCase()}
                         </span>
-                      )}
-                    </div>
-                    <IconDownload size={14} />
-                  </a>
-                );
-              })}
-            </div>
-          </div>
+                      </div>
+                      <IconDownload size={14} />
+                    </a>
+                  ))}
+                </div>
+              </div>
+            );
+          })()}
         </div>
       </section>
 
