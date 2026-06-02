@@ -50,7 +50,14 @@ export default function PageHome() {
         <div
           className="tex-circuit"
           aria-hidden
-          style={{ position: 'absolute', inset: 0, zIndex: 1, opacity: 0.16, pointerEvents: 'none' }}
+          style={{
+            position: 'absolute',
+            inset: 0,
+            zIndex: 1,
+            opacity: 0.22,
+            pointerEvents: 'none',
+            backgroundImage: `url(${asset('hero-patron.png')})`,
+          }}
         />
         {/* Bold orange edge bar */}
         <div

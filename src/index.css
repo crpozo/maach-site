@@ -285,12 +285,11 @@ section[id],
   opacity: 0;
 }
 
-/* Concentric perspective circuit frames (home hero) — converging toward center */
+/* Pattern overlay (home hero) — image set inline via asset() in the component */
 .tex-circuit {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201000%20560'%20preserveAspectRatio='xMidYMid%20slice'%3E%3Cg%20fill='none'%20stroke='white'%20stroke-linejoin='round'%3E%3Crect%20x='4'%20y='4'%20width='992'%20height='552'%20rx='10'%20stroke-width='15'/%3E%3Crect%20x='62'%20y='28'%20width='876'%20height='504'%20rx='10'%20stroke-width='13'/%3E%3Crect%20x='122'%20y='52'%20width='756'%20height='456'%20rx='9'%20stroke-width='11'/%3E%3Crect%20x='182'%20y='76'%20width='636'%20height='408'%20rx='8'%20stroke-width='9'/%3E%3Crect%20x='242'%20y='100'%20width='516'%20height='360'%20rx='7'%20stroke-width='7'/%3E%3Crect%20x='302'%20y='124'%20width='396'%20height='312'%20rx='6'%20stroke-width='6'/%3E%3Crect%20x='362'%20y='148'%20width='276'%20height='264'%20rx='5'%20stroke-width='4.5'/%3E%3Crect%20x='414'%20y='170'%20width='172'%20height='220'%20rx='4'%20stroke-width='3.5'%20stroke-dasharray='10%2010'/%3E%3Crect%20x='456'%20y='190'%20width='88'%20height='180'%20rx='3'%20stroke-width='2.6'%20stroke-dasharray='6%208'/%3E%3Crect%20x='486'%20y='206'%20width='28'%20height='148'%20rx='2'%20stroke-width='2'%20stroke-dasharray='4%206'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 /* Home category cards — capsule/dot texture that animates in on hover */
