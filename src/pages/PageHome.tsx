@@ -50,7 +50,7 @@ export default function PageHome() {
         <div
           className="tex-circuit"
           aria-hidden
-          style={{ position: 'absolute', inset: 0, zIndex: 1, opacity: 0.12, pointerEvents: 'none' }}
+          style={{ position: 'absolute', inset: 0, zIndex: 1, opacity: 0.16, pointerEvents: 'none' }}
         />
         {/* Bold orange edge bar */}
         <div
