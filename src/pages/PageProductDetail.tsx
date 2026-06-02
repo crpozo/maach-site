@@ -273,10 +273,11 @@ export default function PageProductDetail() {
               </span>
             </h3>
             <div
+              className="pd-spec-grid"
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-                gap: 'clamp(24px, 3vw, 48px) 64px',
+                gridTemplateColumns: 'repeat(3, 1fr)',
+                gap: '28px 56px',
               }}
             >
               {[

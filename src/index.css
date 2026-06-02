@@ -425,6 +425,18 @@ section[id],
   }
 }
 
+/* Product detail — características grid collapses on small screens */
+@media (max-width: 1024px) {
+  .pd-spec-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media (max-width: 640px) {
+  .pd-spec-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 /* Espacios — editorial typology rows stack on small screens */
 @media (max-width: 900px) {
   .esp-typ-row {
