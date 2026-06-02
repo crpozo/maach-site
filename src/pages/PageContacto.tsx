@@ -286,7 +286,7 @@ export default function PageContacto() {
                 alert('Mock: formulario enviado');
               }}
               style={{
-                background: 'rgba(228,226,227,.04)',
+                background: '#1c1c1c',
                 border: '1px solid rgba(228,226,227,.15)',
                 padding: '40px 40px 32px',
               }}
@@ -403,7 +403,7 @@ export default function PageContacto() {
                 style={{
                   border: '1px solid rgba(228,226,227,.18)',
                   padding: 32,
-                  background: 'rgba(228,226,227,.03)',
+                  background: '#1c1c1c',
                 }}
               >
                 <span
@@ -434,7 +434,7 @@ export default function PageContacto() {
                 style={{
                   border: '1px solid rgba(228,226,227,.18)',
                   padding: 32,
-                  background: 'rgba(228,226,227,.03)',
+                  background: '#1c1c1c',
                 }}
               >
                 <span className="maach-mono" style={{ color: 'var(--sand-grey)', display: 'block', marginBottom: 16 }}>
@@ -466,7 +466,7 @@ export default function PageContacto() {
                 style={{
                   border: '1px solid rgba(228,226,227,.18)',
                   padding: 32,
-                  background: 'rgba(228,226,227,.03)',
+                  background: '#1c1c1c',
                   position: 'relative',
                   overflow: 'hidden',
                 }}
