@@ -69,16 +69,16 @@ export default function PageAbout() {
             zIndex: 1,
           }}
         />
-        {/* Texture overlay on the hero image */}
+        {/* Texture overlay on the hero image — same pattern as home hero */}
         <div
           aria-hidden
           style={{
             position: 'absolute',
             inset: 0,
             zIndex: 1,
-            opacity: 0.16,
+            opacity: 0.22,
             pointerEvents: 'none',
-            backgroundImage: `url(${asset('texture-7.png')})`,
+            backgroundImage: `url(${asset('hero-patron.png')})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
