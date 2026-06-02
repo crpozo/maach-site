@@ -277,7 +277,6 @@ section[id],
    been disabled site-wide. Restore the background-image rules per class
    if a specific section needs the texture again. */
 .tex-forged-grid,
-.tex-load-line,
 .tex-tactile-field,
 .tex-stack-force,
 .tex-steel-align,
@@ -286,8 +285,11 @@ section[id],
   opacity: 0;
 }
 
-/* Vertical louver / slat texture for dark manifesto bands */
-.tex-slats {
+/* Vertical louver / slat texture for dark manifesto / quote bands.
+   .tex-load-line is the shared overlay already placed in every dark band,
+   so aliasing it here applies the texture across the whole site. */
+.tex-slats,
+.tex-load-line {
   background-image:
     repeating-linear-gradient(
       90deg,
