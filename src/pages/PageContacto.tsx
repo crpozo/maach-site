@@ -246,6 +246,11 @@ export default function PageContacto() {
           borderBottom: '1px solid var(--line)',
         }}
       >
+        <div
+          className="tex-slats"
+          aria-hidden
+          style={{ position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none' }}
+        />
         <div className="maach-container" style={{ position: 'relative', zIndex: 1 }}>
           <div
             style={{
