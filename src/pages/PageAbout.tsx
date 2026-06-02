@@ -613,14 +613,7 @@ export default function PageAbout() {
         <div
           className="tex-slats"
           aria-hidden
-          style={{
-            position: 'absolute',
-            inset: 0,
-            pointerEvents: 'none',
-            backgroundImage: `url(${asset('texture-3.png')})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
+          style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}
         />
         <div className="maach-container" style={{ position: 'relative', textAlign: 'center', maxWidth: 1200 }}>
           <span className="maach-mono" style={{ color: 'var(--sand-grey)', display: 'block', marginBottom: 32 }}>

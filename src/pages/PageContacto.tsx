@@ -249,15 +249,7 @@ export default function PageContacto() {
         <div
           className="tex-slats"
           aria-hidden
-          style={{
-            position: 'absolute',
-            inset: 0,
-            zIndex: 0,
-            pointerEvents: 'none',
-            backgroundImage: `url(${asset('texture-2.png')})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
+          style={{ position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none' }}
         />
         <div className="maach-container" style={{ position: 'relative', zIndex: 1 }}>
           <div
