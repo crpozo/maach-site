@@ -1,7 +1,7 @@
 import { asset } from '../lib/asset';
 import { Link } from 'react-router-dom';
 import { Layout } from '../components/Layout';
-import { IconArrow } from '../components/icons';
+import { IconArrow, IconArrowDownRight } from '../components/icons';
 import { useT } from '../i18n/i18n';
 
 const TEAM: { name: string; roleKey: string; init: string }[] = [
@@ -779,7 +779,11 @@ export default function PageAbout() {
             style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16 }}
           >
             {TEAM.map((m) => (
-              <div key={m.name} style={{ border: '1px solid var(--line)', background: 'var(--off-white)' }}>
+              <div
+                key={m.name}
+                className="team-card"
+                style={{ border: '1px solid var(--line)', background: 'var(--off-white)' }}
+              >
                 <div
                   style={{
                     aspectRatio: '1/1',
@@ -811,22 +815,96 @@ export default function PageAbout() {
                     {t('about.team.portrait')}
                   </span>
                 </div>
-                <div style={{ padding: 24 }}>
-                  <h4
+
+                {/* Footer — default info + orange "caja de texto" on hover */}
+                <div style={{ position: 'relative', minHeight: 92 }}>
+                  <div className="team-default" style={{ padding: 24 }}>
+                    <h4
+                      style={{
+                        fontFamily: 'var(--display)',
+                        fontWeight: 600,
+                        fontSize: 20,
+                        textTransform: 'uppercase',
+                        letterSpacing: '-.01em',
+                        marginBottom: 4,
+                      }}
+                    >
+                      {m.name}
+                    </h4>
+                    <span className="maach-mono" style={{ color: 'var(--muted)' }}>
+                      {t(m.roleKey)}
+                    </span>
+                  </div>
+
+                  <div
+                    className="team-textbox"
                     style={{
-                      fontFamily: 'var(--display)',
-                      fontWeight: 600,
-                      fontSize: 20,
-                      textTransform: 'uppercase',
-                      letterSpacing: '-.01em',
-                      marginBottom: 4,
+                      position: 'absolute',
+                      inset: 0,
+                      background: 'var(--lava-orange)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      gap: 16,
+                      padding: '20px 22px',
                     }}
                   >
-                    {m.name}
-                  </h4>
-                  <span className="maach-mono" style={{ color: 'var(--muted)' }}>
-                    {t(m.roleKey)}
-                  </span>
+                    <span aria-hidden style={{ position: 'absolute', top: 10, left: 12, color: 'var(--jet-black)' }}>
+                      <IconArrowDownRight size={16} />
+                    </span>
+                    <span
+                      aria-hidden
+                      style={{
+                        position: 'absolute',
+                        top: 8,
+                        right: 12,
+                        fontFamily: 'var(--display)',
+                        fontWeight: 700,
+                        fontSize: 12,
+                        letterSpacing: '-.04em',
+                        color: 'var(--jet-black)',
+                      }}
+                    >
+                      AA
+                    </span>
+                    <div style={{ minWidth: 0 }}>
+                      <h4
+                        style={{
+                          fontFamily: 'var(--display)',
+                          fontWeight: 700,
+                          fontSize: 17,
+                          textTransform: 'uppercase',
+                          letterSpacing: '-.01em',
+                          lineHeight: 1.05,
+                          margin: 0,
+                          color: 'var(--jet-black)',
+                        }}
+                      >
+                        {m.name}
+                      </h4>
+                      <span
+                        className="maach-mono"
+                        style={{ color: 'var(--jet-black)', opacity: 0.8, fontSize: 10 }}
+                      >
+                        {t(m.roleKey)}
+                      </span>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 16, flexShrink: 0 }}>
+                      <div style={{ width: 1, height: 44, background: 'rgba(22,22,22,.35)' }} />
+                      <span
+                        style={{
+                          fontFamily: 'var(--display)',
+                          fontWeight: 700,
+                          fontSize: 44,
+                          letterSpacing: '-.03em',
+                          lineHeight: 1,
+                          color: 'var(--off-white)',
+                        }}
+                      >
+                        {m.init}
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}

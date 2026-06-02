@@ -425,6 +425,18 @@ section[id],
   }
 }
 
+/* About team cards — orange "caja de texto" revealed on hover */
+.team-card .team-textbox {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.team-card:hover .team-textbox,
+.team-card:focus-within .team-textbox {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /* Product detail — características grid collapses on small screens */
 @media (max-width: 1024px) {
   .pd-spec-grid {
