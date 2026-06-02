@@ -368,10 +368,19 @@ export default function PageInvestigacion() {
           </span>
           <h2
             className="h-display"
-            style={{ fontSize: 'clamp(40px, 5vw, 72px)', color: 'var(--off-white)', lineHeight: 1.1 }}
+            style={{
+              fontSize: 'clamp(28px, 3.5vw, 54px)',
+              color: 'var(--off-white)',
+              lineHeight: 1.15,
+              letterSpacing: '-.01em',
+              maxWidth: 1080,
+              margin: '0 auto',
+            }}
           >
             {t('inv.manifesto.body.1')}
-            <span style={{ color: 'var(--lava-orange)' }}>{t('inv.manifesto.body.2')}</span>{t('inv.manifesto.body.3')}
+            <span style={{ color: 'var(--lava-orange)' }}>{t('inv.manifesto.body.2')}</span>
+            {t('inv.manifesto.body.3')}
+            <span style={{ color: 'var(--sand-grey)' }}>{t('inv.manifesto.body.4')}</span>
           </h2>
           <span className="maach-mono" style={{ color: 'var(--sand-grey)', marginTop: 32, display: 'block' }}>
             {t('inv.manifesto.source')}
