@@ -212,6 +212,7 @@ export default function PageHome() {
                 <Link
                   key={cat.id}
                   to={`/categorias/${cat.slug}`}
+                  className="cat-card"
                   style={{
                     borderRight: (i + 1) % 3 === 0 ? 0 : '1px solid var(--line)',
                     borderBottom: i < 3 ? '1px solid var(--line)' : 0,
@@ -259,6 +260,8 @@ export default function PageHome() {
                       zIndex: 1,
                     }}
                   />
+                  {/* Capsule/dot texture — animates in on hover */}
+                  <div className="cat-texture" aria-hidden />
                   <div
                     style={{
                       display: 'flex',
