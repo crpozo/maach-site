@@ -73,7 +73,7 @@ export default function PageCategory() {
             zIndex: 1,
             opacity: 0.16,
             pointerEvents: 'none',
-            backgroundImage: `url(${asset(`texture-${parseInt(hero.n, 10)}.png`)})`,
+            backgroundImage: `url(${asset('texture-5.png')})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
