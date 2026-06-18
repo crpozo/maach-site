@@ -134,10 +134,18 @@ const silla = (
   name: string,
   subcategory: keyof typeof SILLA_DESC,
   sku: string,
-  opts: { ficha?: boolean; photos?: number; img?: number } = {},
+  opts: { ficha?: boolean; photos?: number; cover?: number } = {},
 ): Product => {
   const photos = opts.photos ?? 5;
   const ficha = opts.ficha !== false;
+  // `cover` (1-based) is the front-diagonal view used as the catalog thumbnail
+  // and detail hero. It is moved to the front of the gallery; the rest follow
+  // in natural order.
+  const cover = Math.min(Math.max(opts.cover ?? 1, 1), photos);
+  const order = [
+    cover,
+    ...Array.from({ length: photos }, (_, i) => i + 1).filter((n) => n !== cover),
+  ];
   return {
     slug,
     name,
@@ -145,8 +153,8 @@ const silla = (
     subcategory,
     sku,
     description: SILLA_DESC[subcategory],
-    gallery: Array.from({ length: photos }, (_, i) =>
-      asset(`productos/silloneria/${slug}/${String(i + 1).padStart(2, '0')}.webp`),
+    gallery: order.map((n) =>
+      asset(`productos/silloneria/${slug}/${String(n).padStart(2, '0')}.webp`),
     ),
     sheets: ficha ? { pdf: asset(`productos/silloneria/${slug}/${slug}.pdf`) } : undefined,
   };
@@ -154,65 +162,65 @@ const silla = (
 
 export const PRODUCTS: Product[] = [
   // ─── SILLAS PRESIDENTE ───────────────────────────────────────
-  silla('silla-zur', 'Silla Zur', 'Sillas presidente', 'MCH-SLP-01', { img: 1 }),
-  silla('winner-presidente-base-nylon', 'Silla Winner', 'Sillas presidente', 'MCH-SLP-02', { img: 2 }),
-  silla('vick-presidente', 'Silla Vick', 'Sillas presidente', 'MCH-SLP-03', { img: 3 }),
-  silla('pulse', 'Silla Pulse', 'Sillas presidente', 'MCH-SLP-04', { img: 4, ficha: false }),
-  silla('levi-plus', 'Silla Levi Plus', 'Sillas presidente', 'MCH-SLP-05', { img: 5 }),
-  silla('levi-plus-ii', 'Silla Levi Plus II', 'Sillas presidente', 'MCH-SLP-06', { img: 1 }),
+  silla('silla-zur', 'Silla Zur', 'Sillas presidente', 'MCH-SLP-01', { cover: 2 }),
+  silla('winner-presidente-base-nylon', 'Silla Winner', 'Sillas presidente', 'MCH-SLP-02', { cover: 3 }),
+  silla('vick-presidente', 'Silla Vick', 'Sillas presidente', 'MCH-SLP-03', { cover: 4 }),
+  silla('pulse', 'Silla Pulse', 'Sillas presidente', 'MCH-SLP-04', { cover: 2, ficha: false }),
+  silla('levi-plus', 'Silla Levi Plus', 'Sillas presidente', 'MCH-SLP-05', { cover: 2 }),
+  silla('levi-plus-ii', 'Silla Levi Plus II', 'Sillas presidente', 'MCH-SLP-06', { cover: 2 }),
 
   // ─── SILLAS GERENCIALES ──────────────────────────────────────
-  silla('silla-think-presidente', 'Silla Think', 'Sillas gerenciales', 'MCH-SLG-01', { img: 2 }),
-  silla('style-presidente', 'Silla Style', 'Sillas gerenciales', 'MCH-SLG-02', { img: 3 }),
-  silla('spike-presidente-base-nylon', 'Silla Spike', 'Sillas gerenciales', 'MCH-SLG-03', { img: 4 }),
-  silla('slim-presidente-base-nylon', 'Silla Slim', 'Sillas gerenciales', 'MCH-SLG-04', { img: 5 }),
-  silla('monk-presidente', 'Silla Monk', 'Sillas gerenciales', 'MCH-SLG-05', { img: 1 }),
+  silla('silla-think-presidente', 'Silla Think', 'Sillas gerenciales', 'MCH-SLG-01', { cover: 2 }),
+  silla('style-presidente', 'Silla Style', 'Sillas gerenciales', 'MCH-SLG-02', { cover: 2 }),
+  silla('spike-presidente-base-nylon', 'Silla Spike', 'Sillas gerenciales', 'MCH-SLG-03', { cover: 2 }),
+  silla('slim-presidente-base-nylon', 'Silla Slim', 'Sillas gerenciales', 'MCH-SLG-04', { cover: 2 }),
+  silla('monk-presidente', 'Silla Monk', 'Sillas gerenciales', 'MCH-SLG-05', { cover: 2 }),
 
   // ─── SILLAS OPERATIVAS ───────────────────────────────────────
-  silla('think-gerente', 'Silla Think', 'Sillas operativas', 'MCH-SLO-01', { img: 2 }),
-  silla('vick-gerente', 'Silla Vick', 'Sillas operativas', 'MCH-SLO-02', { img: 3 }),
-  silla('monk-gerente', 'Silla Monk', 'Sillas operativas', 'MCH-SLO-03', { img: 4 }),
-  silla('radius', 'Silla Radius', 'Sillas operativas', 'MCH-SLO-04', { img: 5 }),
-  silla('mark-gerente', 'Silla Mark', 'Sillas operativas', 'MCH-SLO-05', { img: 1 }),
-  silla('liam-gerente', 'Silla Liam', 'Sillas operativas', 'MCH-SLO-06', { img: 2 }),
-  silla('slim-gerente', 'Silla Slim', 'Sillas operativas', 'MCH-SLO-07', { img: 3 }),
+  silla('think-gerente', 'Silla Think', 'Sillas operativas', 'MCH-SLO-01', { cover: 4 }),
+  silla('vick-gerente', 'Silla Vick', 'Sillas operativas', 'MCH-SLO-02', { cover: 4 }),
+  silla('monk-gerente', 'Silla Monk', 'Sillas operativas', 'MCH-SLO-03', { cover: 4 }),
+  silla('radius', 'Silla Radius', 'Sillas operativas', 'MCH-SLO-04', { cover: 2 }),
+  silla('mark-gerente', 'Silla Mark', 'Sillas operativas', 'MCH-SLO-05', { cover: 3 }),
+  silla('liam-gerente', 'Silla Liam', 'Sillas operativas', 'MCH-SLO-06', { cover: 2 }),
+  silla('slim-gerente', 'Silla Slim', 'Sillas operativas', 'MCH-SLO-07', { cover: 2 }),
 
   // ─── SILLAS DE VISITA ────────────────────────────────────────
-  silla('pinko', 'Silla Pinko', 'Sillas de visita', 'MCH-SLV-01', { img: 4 }),
-  silla('andy-interlocutora', 'Silla Andy', 'Sillas de visita', 'MCH-SLV-02', { img: 5 }),
-  silla('blade', 'Silla Blade', 'Sillas de visita', 'MCH-SLV-03', { img: 1 }),
-  silla('delphi-ii-interlocutora', 'Silla Delphi II', 'Sillas de visita', 'MCH-SLV-04', { img: 2 }),
-  silla('mia-con-brazos', 'Silla Mia', 'Sillas de visita', 'MCH-SLV-05', { img: 3 }),
-  silla('monk-interlocutora', 'Silla Monk', 'Sillas de visita', 'MCH-SLV-06', { img: 4 }),
-  silla('rigs-interlocutora', 'Silla Rigs', 'Sillas de visita', 'MCH-SLV-07', { img: 5 }),
-  silla('slim-interlocutor', 'Silla Slim', 'Sillas de visita', 'MCH-SLV-08', { img: 1, ficha: false }),
-  silla('zao', 'Silla Zao', 'Sillas de visita', 'MCH-SLV-09', { img: 2 }),
+  silla('pinko', 'Silla Pinko', 'Sillas de visita', 'MCH-SLV-01', { cover: 2 }),
+  silla('andy-interlocutora', 'Silla Andy', 'Sillas de visita', 'MCH-SLV-02', { cover: 2 }),
+  silla('blade', 'Silla Blade', 'Sillas de visita', 'MCH-SLV-03', { cover: 2 }),
+  silla('delphi-ii-interlocutora', 'Silla Delphi II', 'Sillas de visita', 'MCH-SLV-04', { cover: 2 }),
+  silla('mia-con-brazos', 'Silla Mia', 'Sillas de visita', 'MCH-SLV-05', { cover: 2 }),
+  silla('monk-interlocutora', 'Silla Monk', 'Sillas de visita', 'MCH-SLV-06', { cover: 2 }),
+  silla('rigs-interlocutora', 'Silla Rigs', 'Sillas de visita', 'MCH-SLV-07', { cover: 2 }),
+  silla('slim-interlocutor', 'Silla Slim', 'Sillas de visita', 'MCH-SLV-08', { cover: 2, ficha: false }),
+  silla('zao', 'Silla Zao', 'Sillas de visita', 'MCH-SLV-09', { cover: 2 }),
 
   // ─── COLECTIVIDADES ──────────────────────────────────────────
-  silla('win', 'Silla Win', 'Colectividades', 'MCH-COL-01', { img: 3, photos: 1 }),
-  silla('volga', 'Silla Volga', 'Colectividades', 'MCH-COL-02', { img: 4 }),
-  silla('tex', 'Silla Tex', 'Colectividades', 'MCH-COL-03', { img: 5 }),
-  silla('swan', 'Silla Swan', 'Colectividades', 'MCH-COL-04', { img: 1 }),
-  silla('sol', 'Silla Sol', 'Colectividades', 'MCH-COL-05', { img: 2, ficha: false }),
-  silla('stef', 'Silla Stef', 'Colectividades', 'MCH-COL-06', { img: 3, ficha: false }),
-  silla('pop', 'Silla Pop', 'Colectividades', 'MCH-COL-07', { img: 4 }),
-  silla('patrick', 'Silla Patrick', 'Colectividades', 'MCH-COL-08', { img: 5 }),
-  silla('obi', 'Silla Obi', 'Colectividades', 'MCH-COL-09', { img: 1, ficha: false }),
-  silla('net', 'Silla Net', 'Colectividades', 'MCH-COL-10', { img: 2 }),
-  silla('misuri', 'Silla Misuri', 'Colectividades', 'MCH-COL-11', { img: 3 }),
-  silla('milei', 'Silla Milei', 'Colectividades', 'MCH-COL-12', { img: 4 }),
-  silla('lucca', 'Silla Lucca', 'Colectividades', 'MCH-COL-13', { img: 5 }),
-  silla('loti', 'Silla Loti', 'Colectividades', 'MCH-COL-14', { img: 1, ficha: false, photos: 4 }),
-  silla('kiro', 'Silla Kiro', 'Colectividades', 'MCH-COL-15', { img: 2 }),
-  silla('jack', 'Silla Jack', 'Colectividades', 'MCH-COL-16', { img: 3 }),
-  silla('glen', 'Silla Glen', 'Colectividades', 'MCH-COL-17', { img: 4 }),
-  silla('fresia', 'Silla Fresia', 'Colectividades', 'MCH-COL-18', { img: 5, ficha: false }),
-  silla('emi', 'Silla Emi', 'Colectividades', 'MCH-COL-19', { img: 1 }),
-  silla('coccolona', 'Silla Coccolona', 'Colectividades', 'MCH-COL-20', { img: 2 }),
-  silla('brent', 'Silla Brent', 'Colectividades', 'MCH-COL-21', { img: 3, ficha: false }),
-  silla('brand', 'Silla Brand', 'Colectividades', 'MCH-COL-22', { img: 4 }),
-  silla('boom', 'Silla Boom', 'Colectividades', 'MCH-COL-23', { img: 5 }),
-  silla('bertoia', 'Silla Bertoia', 'Colectividades', 'MCH-COL-24', { img: 1, ficha: false }),
+  silla('win', 'Silla Win', 'Colectividades', 'MCH-COL-01', { photos: 1 }),
+  silla('volga', 'Silla Volga', 'Colectividades', 'MCH-COL-02', { cover: 2 }),
+  silla('tex', 'Silla Tex', 'Colectividades', 'MCH-COL-03', { cover: 4 }),
+  silla('swan', 'Silla Swan', 'Colectividades', 'MCH-COL-04', {  }),
+  silla('sol', 'Silla Sol', 'Colectividades', 'MCH-COL-05', { cover: 4, ficha: false }),
+  silla('stef', 'Silla Stef', 'Colectividades', 'MCH-COL-06', { cover: 2, ficha: false }),
+  silla('pop', 'Silla Pop', 'Colectividades', 'MCH-COL-07', { cover: 2 }),
+  silla('patrick', 'Silla Patrick', 'Colectividades', 'MCH-COL-08', { cover: 2 }),
+  silla('obi', 'Silla Obi', 'Colectividades', 'MCH-COL-09', { cover: 2, ficha: false }),
+  silla('net', 'Silla Net', 'Colectividades', 'MCH-COL-10', { cover: 2 }),
+  silla('misuri', 'Silla Misuri', 'Colectividades', 'MCH-COL-11', { cover: 2 }),
+  silla('milei', 'Silla Milei', 'Colectividades', 'MCH-COL-12', { cover: 2 }),
+  silla('lucca', 'Silla Lucca', 'Colectividades', 'MCH-COL-13', { cover: 3 }),
+  silla('loti', 'Silla Loti', 'Colectividades', 'MCH-COL-14', { cover: 2, ficha: false, photos: 4 }),
+  silla('kiro', 'Silla Kiro', 'Colectividades', 'MCH-COL-15', { cover: 2 }),
+  silla('jack', 'Silla Jack', 'Colectividades', 'MCH-COL-16', { cover: 2 }),
+  silla('glen', 'Silla Glen', 'Colectividades', 'MCH-COL-17', { cover: 2 }),
+  silla('fresia', 'Silla Fresia', 'Colectividades', 'MCH-COL-18', { cover: 3, ficha: false }),
+  silla('emi', 'Silla Emi', 'Colectividades', 'MCH-COL-19', { cover: 2 }),
+  silla('coccolona', 'Silla Coccolona', 'Colectividades', 'MCH-COL-20', { cover: 2 }),
+  silla('brent', 'Silla Brent', 'Colectividades', 'MCH-COL-21', { cover: 2, ficha: false }),
+  silla('brand', 'Silla Brand', 'Colectividades', 'MCH-COL-22', { cover: 3 }),
+  silla('boom', 'Silla Boom', 'Colectividades', 'MCH-COL-23', { cover: 2 }),
+  silla('bertoia', 'Silla Bertoia', 'Colectividades', 'MCH-COL-24', { cover: 3, ficha: false }),
 
   // ─── ESCRITORIOS GERENTE ─────────────────────────────────────
   escritorio(
