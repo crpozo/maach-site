@@ -712,7 +712,7 @@ function Footer() {
             <h2
               className="h-display"
               style={{
-                fontSize: 'clamp(40px, 5.5vw, 88px)',
+                fontSize: 'clamp(30px, 4vw, 60px)',
                 color: 'var(--off-white)',
                 lineHeight: 1.08,
                 letterSpacing: '-.01em',
