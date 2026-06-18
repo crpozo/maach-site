@@ -128,9 +128,6 @@ export default function PageHome() {
               >
                 {t('home.hero.tag')}
               </span>
-              <span className="maach-mono" style={{ color: 'var(--sand-grey)' }}>
-                {t('home.hero.season')}
-              </span>
             </div>
 
             <h1
