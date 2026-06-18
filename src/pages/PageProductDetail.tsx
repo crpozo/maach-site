@@ -1,5 +1,5 @@
 import { asset } from '../lib/asset';
-import { useState } from 'react';
+import { useState, type FormEvent } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Layout } from '../components/Layout';
 import {
@@ -40,6 +40,35 @@ export default function PageProductDetail() {
   const description = real?.description;
   const [idx, setIdx] = useState(0);
   const [zoom, setZoom] = useState(false);
+
+  // Lead-gate: clicking a document opens a form that must be completed
+  // before the download starts.
+  const [gateDoc, setGateDoc] = useState<{ href: string; fileName?: string } | null>(null);
+  const emptyForm = { nombre: '', correo: '', empresa: '', ocupacion: '' };
+  const [form, setForm] = useState(emptyForm);
+
+  // Downloadable spec files for this product — only those that actually exist.
+  const docs = (
+    [
+      { name: t('pd.doc.sheet'), ext: 'PDF', href: real?.sheets?.pdf, fileName: `${real?.slug ?? id}.pdf` },
+      { name: t('pd.doc.3d'), ext: 'SKP', href: real?.sheets?.skp, fileName: `${real?.slug ?? id}.skp` },
+      { name: t('pd.doc.revit'), ext: 'RFA', href: real?.sheets?.rfa, fileName: `${real?.slug ?? id}.rfa` },
+      { name: t('pd.doc.cad'), ext: 'DWG', href: real?.sheets?.dwg, fileName: `${real?.slug ?? id}.dwg` },
+    ] as Array<{ name: string; ext: string; href?: string; fileName?: string }>
+  ).filter((d) => !!d.href);
+
+  function handleGateSubmit(e: FormEvent) {
+    e.preventDefault();
+    if (!gateDoc) return;
+    const a = document.createElement('a');
+    a.href = gateDoc.href;
+    if (gateDoc.fileName) a.download = gateDoc.fileName;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setGateDoc(null);
+    setForm(emptyForm);
+  }
 
   // Real related products from the same category (excluding the current one).
   const related = real
@@ -315,6 +344,50 @@ export default function PageProductDetail() {
                   ))}
                 </div>
               </div>
+
+              {/* DOCUMENTOS — right column. Only docs that actually exist;
+                  each opens a lead-gate form before downloading. */}
+              {docs.length > 0 ? (
+                <div style={{ marginTop: 12, paddingTop: 28, borderTop: '1px solid var(--line)' }}>
+                  <h3 style={{ marginBottom: 20 }} className="maach-mono">
+                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+                      <IconFile size={14} /> {t('pd.docs')}
+                    </span>
+                  </h3>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                    {docs.map((d) => (
+                      <button
+                        key={d.name}
+                        type="button"
+                        onClick={() => setGateDoc({ href: d.href!, fileName: d.fileName })}
+                        style={{
+                          background: 'var(--surface)',
+                          border: '1px solid var(--line)',
+                          padding: '14px 18px',
+                          display: 'flex',
+                          justifyContent: 'space-between',
+                          alignItems: 'center',
+                          gap: 16,
+                          width: '100%',
+                          textAlign: 'left',
+                          transition: 'border-color .2s',
+                          cursor: 'pointer',
+                        }}
+                        onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'var(--fg)')}
+                        onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'var(--line)')}
+                      >
+                        <div>
+                          <span style={{ fontFamily: 'var(--body)', fontSize: 14, fontWeight: 500 }}>{d.name}</span>
+                          <span className="maach-mono" style={{ color: 'var(--lava-orange)', marginLeft: 10 }}>
+                            .{d.ext.toLowerCase()}
+                          </span>
+                        </div>
+                        <IconDownload size={14} />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
             </div>
           </div>
 
@@ -350,64 +423,6 @@ export default function PageProductDetail() {
             </div>
           </div>
 
-          {/* DOCUMENTOS — full-width. Only render docs that actually exist. */}
-          {(() => {
-            const docs = (
-              [
-                { name: t('pd.doc.sheet'), ext: 'PDF', href: real?.sheets?.pdf, fileName: `${real?.slug ?? id}.pdf` },
-                { name: t('pd.doc.3d'), ext: 'SKP', href: real?.sheets?.skp, fileName: `${real?.slug ?? id}.skp` },
-                { name: t('pd.doc.revit'), ext: 'RFA', href: real?.sheets?.rfa, fileName: `${real?.slug ?? id}.rfa` },
-                { name: t('pd.doc.cad'), ext: 'DWG', href: real?.sheets?.dwg, fileName: `${real?.slug ?? id}.dwg` },
-              ] as Array<{ name: string; ext: string; href?: string; fileName?: string }>
-            ).filter((d) => !!d.href);
-
-            if (docs.length === 0) return null;
-
-            return (
-              <div style={{ marginTop: 64, paddingTop: 40, borderTop: '1px solid var(--line)' }}>
-                <h3 style={{ marginBottom: 24 }} className="maach-mono">
-                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
-                    <IconFile size={14} /> {t('pd.docs')}
-                  </span>
-                </h3>
-                <div
-                  style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                    gap: 12,
-                  }}
-                >
-                  {docs.map((d) => (
-                    <a
-                      key={d.name}
-                      href={d.href}
-                      download={d.fileName}
-                      style={{
-                        background: 'var(--surface)',
-                        border: '1px solid var(--line)',
-                        padding: '14px 18px',
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        alignItems: 'center',
-                        transition: 'border-color .2s',
-                        cursor: 'pointer',
-                      }}
-                      onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'var(--fg)')}
-                      onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'var(--line)')}
-                    >
-                      <div>
-                        <span style={{ fontFamily: 'var(--body)', fontSize: 14, fontWeight: 500 }}>{d.name}</span>
-                        <span className="maach-mono" style={{ color: 'var(--lava-orange)', marginLeft: 10 }}>
-                          .{d.ext.toLowerCase()}
-                        </span>
-                      </div>
-                      <IconDownload size={14} />
-                    </a>
-                  ))}
-                </div>
-              </div>
-            );
-          })()}
         </div>
       </section>
 
@@ -558,6 +573,109 @@ export default function PageProductDetail() {
           >
             {String(idx + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}
           </span>
+        </div>
+      ) : null}
+
+      {/* DOWNLOAD LEAD-GATE — required form before any document download */}
+      {gateDoc ? (
+        <div
+          onClick={() => setGateDoc(null)}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 1100,
+            background: 'rgba(12,12,12,.78)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: 24,
+          }}
+        >
+          <form
+            onClick={(e) => e.stopPropagation()}
+            onSubmit={handleGateSubmit}
+            style={{
+              position: 'relative',
+              width: '100%',
+              maxWidth: 440,
+              background: 'var(--off-white)',
+              border: '1px solid var(--fg)',
+              padding: 'clamp(28px, 4vw, 40px)',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 18,
+            }}
+          >
+            <button
+              type="button"
+              onClick={() => setGateDoc(null)}
+              aria-label={t('pd.gate.cancel')}
+              style={{
+                position: 'absolute',
+                top: 16,
+                right: 16,
+                background: 'transparent',
+                border: 'none',
+                cursor: 'pointer',
+                color: 'var(--fg)',
+                display: 'flex',
+              }}
+            >
+              <IconClose size={18} />
+            </button>
+
+            <div>
+              <h3
+                className="h-display"
+                style={{ fontSize: 26, margin: 0, marginBottom: 8, textTransform: 'uppercase' }}
+              >
+                {t('pd.gate.title')}
+              </h3>
+              <p style={{ fontSize: 14, color: 'var(--muted)', margin: 0, lineHeight: 1.5 }}>
+                {t('pd.gate.subtitle')}
+              </p>
+            </div>
+
+            {(
+              [
+                { key: 'nombre', label: t('pd.gate.name'), type: 'text' },
+                { key: 'correo', label: t('pd.gate.email'), type: 'email' },
+                { key: 'empresa', label: t('pd.gate.company'), type: 'text' },
+                { key: 'ocupacion', label: t('pd.gate.role'), type: 'text' },
+              ] as Array<{ key: keyof typeof form; label: string; type: string }>
+            ).map((f) => (
+              <label key={f.key} style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                <span className="maach-mono" style={{ color: 'var(--muted)', fontSize: 11, letterSpacing: '.08em' }}>
+                  {f.label} *
+                </span>
+                <input
+                  type={f.type}
+                  required
+                  value={form[f.key]}
+                  onChange={(e) => setForm((prev) => ({ ...prev, [f.key]: e.target.value }))}
+                  style={{
+                    border: '1px solid var(--line)',
+                    background: 'var(--surface)',
+                    padding: '12px 14px',
+                    fontFamily: 'var(--body)',
+                    fontSize: 15,
+                    color: 'var(--fg)',
+                    outline: 'none',
+                  }}
+                  onFocus={(e) => (e.currentTarget.style.borderColor = 'var(--fg)')}
+                  onBlur={(e) => (e.currentTarget.style.borderColor = 'var(--line)')}
+                />
+              </label>
+            ))}
+
+            <span className="maach-mono" style={{ color: 'var(--muted)', fontSize: 11 }}>
+              {t('pd.gate.required')}
+            </span>
+
+            <button type="submit" className="btn-primary" style={{ justifyContent: 'center' }}>
+              <IconDownload size={14} /> {t('pd.gate.submit')}
+            </button>
+          </form>
         </div>
       ) : null}
     </Layout>

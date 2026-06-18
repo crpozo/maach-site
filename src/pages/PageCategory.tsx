@@ -179,7 +179,7 @@ export default function PageCategory() {
               <p
                 style={{
                   fontSize: 18,
-                  color: 'var(--sand-grey)',
+                  color: 'var(--off-white)',
                   lineHeight: 1.55,
                   maxWidth: 720,
                   margin: 0,
@@ -405,7 +405,7 @@ export default function PageCategory() {
                         <div
                           style={{
                             aspectRatio: '1/1',
-                            background: 'var(--soft)',
+                            background: 'var(--off-white)',
                             position: 'relative',
                             overflow: 'hidden',
                           }}
