@@ -90,9 +90,15 @@ export default function PageProductDetail() {
             Productos
           </Link>
           <IconChevronRight size={10} style={{ color: 'var(--muted)' }} />
-          <span className="maach-mono" style={{ color: 'var(--muted)' }}>
-            {category}
-          </span>
+          {categorySlug ? (
+            <Link to={`/categorias/${categorySlug}`} className="maach-mono" style={{ color: 'var(--muted)' }}>
+              {category}
+            </Link>
+          ) : (
+            <span className="maach-mono" style={{ color: 'var(--muted)' }}>
+              {category}
+            </span>
+          )}
           <IconChevronRight size={10} style={{ color: 'var(--muted)' }} />
           <span className="maach-mono">{productName}</span>
         </div>
