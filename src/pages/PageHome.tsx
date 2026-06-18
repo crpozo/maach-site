@@ -136,6 +136,7 @@ export default function PageHome() {
                 fontSize: 'clamp(48px, 7vw, 90px)',
                 marginBottom: 32,
                 color: 'var(--off-white)',
+                fontWeight: 400,
               }}
             >
               {t('home.hero.h1.1')}{' '}

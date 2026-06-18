@@ -308,7 +308,7 @@ section[id],
 }
 .cat-card:hover .cat-texture,
 .cat-card:focus-visible .cat-texture {
-  opacity: 0.5;
+  opacity: 0.22;
   transform: scale(1);
 }
 
