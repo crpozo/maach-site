@@ -438,7 +438,7 @@ export default function PageCategory() {
                         >
                           {/* AA monogram */}
                           <img
-                            src={asset('logo AA.png')}
+                            src={asset('isotipo-maach-color.png')}
                             alt="MAACH"
                             aria-hidden
                             style={{ height: 16, width: 'auto', display: 'block', marginBottom: 10 }}

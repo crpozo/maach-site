@@ -262,7 +262,7 @@ export default function PageProductDetail() {
 
                 {/* AA monogram */}
                 <img
-                  src={asset('logo AA.png')}
+                  src={asset('isotipo-maach-color.png')}
                   alt="MAACH"
                   style={{ height: 34, width: 'auto', display: 'block' }}
                 />
