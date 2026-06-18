@@ -261,18 +261,11 @@ export default function PageProductDetail() {
                 />
 
                 {/* AA monogram */}
-                <span
-                  style={{
-                    fontFamily: 'var(--display)',
-                    fontWeight: 700,
-                    fontSize: 30,
-                    letterSpacing: '-.04em',
-                    color: 'var(--lava-orange)',
-                    lineHeight: 1,
-                  }}
-                >
-                  AA
-                </span>
+                <img
+                  src={asset('logo AA.png')}
+                  alt="MAACH"
+                  style={{ height: 34, width: 'auto', display: 'block' }}
+                />
 
                 <p style={{ fontSize: 16, color: 'var(--off-white)', lineHeight: 1.6, margin: 0, maxWidth: 520 }}>
                   {description ??

@@ -191,9 +191,9 @@ export default function PageProducts() {
         />
         <div className="maach-container" style={{ position: 'relative', zIndex: 3 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 24 }}>
-            <span className="maach-mono" style={{ color: 'var(--sand-grey)' }}>
+            <Link to="/" className="maach-mono" style={{ color: 'var(--sand-grey)' }}>
               {t('prod.crumb.home')}
-            </span>
+            </Link>
             <IconChevronRight size={11} style={{ color: 'var(--sand-grey)' }} />
             <span className="maach-mono" style={{ color: 'var(--lava-orange)' }}>{t('prod.crumb.catalog')}</span>
           </div>

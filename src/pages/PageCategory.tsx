@@ -11,7 +11,7 @@ const HEROES: Record<string, { img: string; n: string }> = {
   escritorios: { img: asset('biblioteca-2.webp'), n: '02' },
   mesas: { img: asset('biblioteca-3.webp'), n: '03' },
   almacenamiento: { img: asset('biblioteca-4.webp'), n: '04' },
-  divisiones: { img: asset('biblioteca-5.webp'), n: '05' },
+  divisiones: { img: asset('Maach-offices.png'), n: '05' },
   recepciones: { img: asset('perspectiva-2.webp'), n: '06' },
 };
 
@@ -437,20 +437,12 @@ export default function PageCategory() {
                           }}
                         >
                           {/* AA monogram */}
-                          <span
+                          <img
+                            src={asset('logo AA.png')}
+                            alt="MAACH"
                             aria-hidden
-                            style={{
-                              fontFamily: 'var(--display)',
-                              fontWeight: 700,
-                              fontSize: 13,
-                              letterSpacing: '-.04em',
-                              color: 'var(--lava-orange)',
-                              display: 'block',
-                              marginBottom: 10,
-                            }}
-                          >
-                            AA
-                          </span>
+                            style={{ height: 16, width: 'auto', display: 'block', marginBottom: 10 }}
+                          />
                           {/* Orange L corner */}
                           <div
                             aria-hidden
