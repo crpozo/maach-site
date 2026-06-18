@@ -89,6 +89,19 @@ const T: Translations = {
     'home.adn.04.title': 'Co-diseño con arquitectos',
     'home.adn.04.body':
       'Trabajamos junto a estudios y clientes para resolver requerimientos técnicos específicos. El diseño se construye en conjunto.',
+    // Nuestra planta
+    'home.planta.eyebrow': 'Infraestructura · Tecnología',
+    'home.planta.title': 'Nuestra planta.',
+    'home.planta.intro':
+      'Fabricamos con maquinaria de control numérico y procesos industriales que garantizan precisión, repetibilidad y acabados de estándar internacional.',
+    'home.planta.01.title': 'Corte CNC',
+    'home.planta.01.body': 'Corte y mecanizado de precisión sobre metal y madera.',
+    'home.planta.02.title': 'Soldadura estructural',
+    'home.planta.02.body': 'Uniones controladas para estructuras de alto desempeño.',
+    'home.planta.03.title': 'Pintura electrostática',
+    'home.planta.03.body': 'Recubrimiento en polvo horneado para máxima durabilidad.',
+    'home.planta.04.title': 'Ensamble y control',
+    'home.planta.04.body': 'Armado, verificación dimensional y control de calidad final.',
     // Casos de Estudio
     'home.cases.eyebrow': 'Portafolio',
     'home.cases.title': 'Casos de Estudio.',
@@ -544,6 +557,19 @@ const T: Translations = {
     'home.adn.04.title': 'Co-design with architects',
     'home.adn.04.body':
       'We work alongside studios and clients to solve specific technical requirements. Design is built together.',
+    // Our plant
+    'home.planta.eyebrow': 'Infrastructure · Technology',
+    'home.planta.title': 'Our plant.',
+    'home.planta.intro':
+      'We manufacture with CNC machinery and industrial processes that guarantee precision, repeatability and internationally rated finishes.',
+    'home.planta.01.title': 'CNC cutting',
+    'home.planta.01.body': 'Precision cutting and machining of metal and wood.',
+    'home.planta.02.title': 'Structural welding',
+    'home.planta.02.body': 'Controlled joints for high-performance structures.',
+    'home.planta.03.title': 'Powder coating',
+    'home.planta.03.body': 'Baked powder coating for maximum durability.',
+    'home.planta.04.title': 'Assembly & control',
+    'home.planta.04.body': 'Assembly, dimensional verification and final quality control.',
     // Casos de Estudio
     'home.cases.eyebrow': 'Portfolio',
     'home.cases.title': 'Case Studies.',
