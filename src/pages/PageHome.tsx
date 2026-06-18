@@ -184,7 +184,7 @@ export default function PageHome() {
               <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 16 }}>
                 {t('home.cat.eyebrow')}
               </span>
-              <h2 className="h-display" style={{ fontSize: 'clamp(56px, 8vw, 90px)' }}>
+              <h2 className="h-display" style={{ fontSize: 'clamp(56px, 8vw, 90px)', fontWeight: 100 }}>
                 {t('home.cat.title')}
               </h2>
             </div>
@@ -301,7 +301,7 @@ export default function PageHome() {
                     <h3
                       style={{
                         fontFamily: 'var(--display)',
-                        fontWeight: 700,
+                        fontWeight: 100,
                         fontSize: 'clamp(28px, 3vw, 44px)',
                         letterSpacing: '-.02em',
                         lineHeight: 0.95,
