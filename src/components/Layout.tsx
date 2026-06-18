@@ -748,7 +748,7 @@ function Footer() {
             <img
               src={asset('maach-logo-transparent.png')}
               alt="MAACH"
-              style={{ width: 200, height: 'auto', display: 'block' }}
+              style={{ width: 140, height: 'auto', display: 'block' }}
             />
             <p style={{ color: 'var(--sand-grey)', marginTop: 32, maxWidth: 280 }}>
               {t('footer.address.line1')}
