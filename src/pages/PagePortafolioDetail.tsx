@@ -76,6 +76,12 @@ const DATA: Record<string, ProjectData> = {
   },
   '03': {
     title: 'Wesco',
+    hero: asset('proyectos/wesco/01.webp'),
+    gallery: [
+      asset('proyectos/wesco/02.webp'),
+      asset('proyectos/wesco/03.webp'),
+      asset('proyectos/wesco/04.webp'),
+    ],
     content: {
       desafio: [
         'Materializar fielmente la propuesta arquitectónica de un edificio administrativo, asegurando que cada decisión de mobiliario responda tanto a criterios estéticos como funcionales.',

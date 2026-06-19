@@ -36,6 +36,14 @@ export default function PagePortafolio() {
       year: '2024',
       img: asset('proyectos/palladium/02.webp'),
     },
+    {
+      id: '03',
+      title: 'Wesco',
+      location: 'Quito, EC',
+      scope: 'Edificio administrativo · Mobiliario estándar y a medida',
+      year: '2026',
+      img: asset('proyectos/wesco/01.webp'),
+    },
   ];
 
   return (
