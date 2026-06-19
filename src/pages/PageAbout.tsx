@@ -404,7 +404,7 @@ export default function PageAbout() {
                 style={{
                   position: 'relative',
                   flex: 1,
-                  minHeight: 360,
+                  minHeight: 160,
                   border: '1px solid var(--line)',
                   overflow: 'hidden',
                   background: 'var(--soft)',
@@ -454,7 +454,7 @@ export default function PageAbout() {
                     padding: '5px 10px',
                   }}
                 >
-                  ESPACIOS DE TRABAJO
+                  {t('about.sobre.caption')}
                 </span>
                 {/* Frame index */}
               </div>
@@ -492,27 +492,27 @@ export default function PageAbout() {
                     className="maach-mono"
                     style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 6 }}
                   >
-                    01 / DISEÑO
+                    {t('about.sobre.step.01.label')}
                   </span>
-                  <span style={{ fontSize: 14, color: 'var(--muted)' }}>Ingeniería aplicada</span>
+                  <span style={{ fontSize: 14, color: 'var(--muted)' }}>{t('about.sobre.step.01.value')}</span>
                 </div>
                 <div>
                   <span
                     className="maach-mono"
                     style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 6 }}
                   >
-                    02 / FABRICACIÓN
+                    {t('about.sobre.step.02.label')}
                   </span>
-                  <span style={{ fontSize: 14, color: 'var(--muted)' }}>Producción local</span>
+                  <span style={{ fontSize: 14, color: 'var(--muted)' }}>{t('about.sobre.step.02.value')}</span>
                 </div>
                 <div>
                   <span
                     className="maach-mono"
                     style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 6 }}
                   >
-                    03 / CO-DISEÑO
+                    {t('about.sobre.step.03.label')}
                   </span>
-                  <span style={{ fontSize: 14, color: 'var(--muted)' }}>Arquitectos · clientes</span>
+                  <span style={{ fontSize: 14, color: 'var(--muted)' }}>{t('about.sobre.step.03.value')}</span>
                 </div>
               </div>
             </div>
@@ -758,6 +758,83 @@ export default function PageAbout() {
         </div>
       </section>
 
+      {/* NUESTRA PLANTA */}
+      <section
+        className="invert"
+        style={{
+          padding: '128px 0',
+          background: 'var(--jet-black)',
+          color: 'var(--off-white)',
+          borderBottom: '1px solid var(--line)',
+        }}
+      >
+        <div className="maach-container">
+          <div style={{ maxWidth: 560, marginBottom: 64 }}>
+            <span className="maach-mono" style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 16 }}>
+              {t('home.planta.eyebrow')}
+            </span>
+            <h2 className="h-display" style={{ fontSize: 'clamp(48px, 6.5vw, 90px)', marginBottom: 24 }}>
+              {t('home.planta.title')}
+            </h2>
+            <p style={{ fontSize: 17, color: 'var(--sand-grey)', lineHeight: 1.5 }}>
+              {t('home.planta.intro')}
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 8 }}>
+            {[
+              { n: '01', img: asset('bg-investigacion.webp'), title: t('home.planta.01.title'), body: t('home.planta.01.body') },
+              { n: '02', img: asset('perspectiva-2.webp'), title: t('home.planta.02.title'), body: t('home.planta.02.body') },
+              { n: '03', img: asset('biblioteca-4.webp'), title: t('home.planta.03.title'), body: t('home.planta.03.body') },
+              { n: '04', img: asset('biblioteca-5.webp'), title: t('home.planta.04.title'), body: t('home.planta.04.body') },
+            ].map((p) => (
+              <div
+                key={p.n}
+                style={{ position: 'relative', aspectRatio: '16/10', overflow: 'hidden', background: '#0f0f0f' }}
+              >
+                <img
+                  src={p.img}
+                  alt={p.title}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform .8s ease' }}
+                  onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.04)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.transform = '')}
+                />
+                <div
+                  aria-hidden
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(180deg, rgba(22,22,22,0) 35%, rgba(22,22,22,.85) 100%)',
+                  }}
+                />
+                <div style={{ position: 'absolute', left: 24, right: 24, bottom: 24 }}>
+                  <span className="maach-mono" style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 8 }}>
+                    {p.n}
+                  </span>
+                  <h3
+                    style={{
+                      fontFamily: 'var(--display)',
+                      fontWeight: 700,
+                      fontSize: 'clamp(22px, 2.4vw, 30px)',
+                      textTransform: 'uppercase',
+                      letterSpacing: '-.01em',
+                      lineHeight: 1,
+                      marginBottom: 8,
+                      color: 'var(--off-white)',
+                    }}
+                  >
+                    {p.title}
+                  </h3>
+                  <p style={{ fontSize: 14, color: 'var(--sand-grey)', lineHeight: 1.45, maxWidth: 360 }}>
+                    {p.body}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* EQUIPO */}
       <section style={{ padding: '128px 0', borderBottom: '1px solid var(--line)' }}>
         <div className="maach-container">
@@ -872,21 +949,19 @@ export default function PageAbout() {
                     <span aria-hidden style={{ position: 'absolute', top: 10, left: 12, color: 'var(--jet-black)' }}>
                       <IconArrowDownRight size={16} />
                     </span>
-                    <span
+                    <img
                       aria-hidden
+                      src={asset('isotipo-maach-color.png')}
+                      alt=""
                       style={{
                         position: 'absolute',
-                        top: 8,
+                        top: 12,
                         right: 12,
-                        fontFamily: 'var(--display)',
-                        fontWeight: 700,
-                        fontSize: 12,
-                        letterSpacing: '-.04em',
-                        color: 'var(--jet-black)',
+                        height: 13,
+                        width: 'auto',
+                        filter: 'brightness(0)',
                       }}
-                    >
-                      AA
-                    </span>
+                    />
                     <div style={{ minWidth: 0 }}>
                       <h4
                         style={{
