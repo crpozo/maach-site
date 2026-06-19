@@ -261,11 +261,19 @@ export default function PageProductDetail() {
                 />
 
                 {/* AA monogram */}
-                <img
-                  src={asset('isotipo-maach-color.png')}
-                  alt="MAACH"
-                  style={{ height: 22, width: 'auto', alignSelf: 'flex-start', display: 'block' }}
-                />
+                <span
+                  style={{
+                    fontFamily: 'var(--display)',
+                    fontWeight: 700,
+                    fontSize: 30,
+                    letterSpacing: '-.04em',
+                    color: 'var(--lava-orange)',
+                    lineHeight: 1,
+                    alignSelf: 'flex-start',
+                  }}
+                >
+                  AA
+                </span>
 
                 <p style={{ fontSize: 16, color: 'var(--off-white)', lineHeight: 1.6, margin: 0, maxWidth: 520 }}>
                   {description ??
