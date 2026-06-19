@@ -64,7 +64,7 @@ export default function PagePortafolio() {
       >
         {/* Brand-book hero photo */}
         <img
-          src={asset('bg-portafolio.webp')}
+          src={asset('proyectos/wesco/02.webp')}
           alt=""
           aria-hidden
           style={{
