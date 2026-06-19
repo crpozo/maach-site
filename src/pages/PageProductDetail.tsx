@@ -28,6 +28,16 @@ export default function PageProductDetail() {
     ? real.name
     : id.replace(/-/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase());
 
+  // Scale the title down for long names / long words so it never spills out
+  // of the dark card (which clips overflow). Short names keep the big size.
+  const longestWord = productName.split(/\s+/).reduce((m, w) => Math.max(m, w.length), 0);
+  const titleFontSize =
+    longestWord <= 6
+      ? 'clamp(34px, 4.5vw, 64px)'
+      : longestWord <= 8
+        ? 'clamp(30px, 3.6vw, 50px)'
+        : 'clamp(26px, 3vw, 40px)';
+
   const images = real
     ? real.gallery
     : [
@@ -308,7 +318,14 @@ export default function PageProductDetail() {
                   </div>
                   <h1
                     className="h-display"
-                    style={{ fontSize: 'clamp(40px, 4.5vw, 64px)', lineHeight: 0.92, margin: 0, flex: 1, minWidth: 0 }}
+                    style={{
+                      fontSize: titleFontSize,
+                      lineHeight: 0.92,
+                      margin: 0,
+                      flex: 1,
+                      minWidth: 0,
+                      overflowWrap: 'break-word',
+                    }}
                   >
                     {productName}
                   </h1>
