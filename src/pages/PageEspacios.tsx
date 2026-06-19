@@ -6,11 +6,13 @@ import { useT } from '../i18n/i18n';
 
 export default function PageEspacios() {
   const t = useT();
+  // `subs` maps each product chip (same order as the `products` string) to a
+  // catalog subcategory so the chip links straight to that filtered section.
   const spaces = [
-    { id: '01', title: t('esp.typ.01.name'), desc: t('esp.typ.01.desc'), products: t('esp.typ.01.products'), cat: 'escritorios', img: asset('biblioteca-2.webp') },
-    { id: '02', title: t('esp.typ.02.name'), desc: t('esp.typ.02.desc'), products: t('esp.typ.02.products'), cat: 'mesas', img: asset('biblioteca-3.webp') },
-    { id: '03', title: t('esp.typ.03.name'), desc: t('esp.typ.03.desc'), products: t('esp.typ.03.products'), cat: 'recepciones', img: asset('biblioteca-4.webp') },
-    { id: '04', title: t('esp.typ.04.name'), desc: t('esp.typ.04.desc'), products: t('esp.typ.04.products'), cat: 'almacenamiento', img: asset('biblioteca-1.webp') },
+    { id: '01', title: t('esp.typ.01.name'), desc: t('esp.typ.01.desc'), products: t('esp.typ.01.products'), subs: ['Estaciones de trabajo', 'Escritorios operativos', 'Sillas operativas', 'Arturito'], cat: 'escritorios', img: asset('biblioteca-2.webp') },
+    { id: '02', title: t('esp.typ.02.name'), desc: t('esp.typ.02.desc'), products: t('esp.typ.02.products'), subs: ['Mesas de reunión', 'Sillas operativas', 'Credenza', 'Divisiones modulares'], cat: 'mesas', img: asset('biblioteca-3.webp') },
+    { id: '03', title: t('esp.typ.03.name'), desc: t('esp.typ.03.desc'), products: t('esp.typ.03.products'), subs: ['Counters de recepción', 'Mesas colaborativas', 'Sillas gerenciales', 'Sofás'], cat: 'recepciones', img: asset('biblioteca-4.webp') },
+    { id: '04', title: t('esp.typ.04.name'), desc: t('esp.typ.04.desc'), products: t('esp.typ.04.products'), subs: ['Archivo Rodante', 'Biblioteca Alta', 'Locker'], cat: 'almacenamiento', img: asset('biblioteca-1.webp') },
   ];
 
   return (
@@ -293,12 +295,11 @@ export default function PageEspacios() {
                         left: 18,
                         fontFamily: 'var(--display)',
                         fontWeight: 700,
-                        fontSize: 'clamp(64px, 9vw, 130px)',
+                        fontSize: 'clamp(36px, 4.5vw, 64px)',
                         lineHeight: 0.8,
                         color: 'var(--off-white)',
-                        opacity: 0.85,
+                        opacity: 0.9,
                         letterSpacing: '-.04em',
-                        textShadow: '0 2px 30px rgba(0,0,0,.6)',
                         pointerEvents: 'none',
                       }}
                     >
@@ -345,9 +346,10 @@ export default function PageEspacios() {
                         {t('esp.typ.products_label').toUpperCase()}
                       </span>
                       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-                        {products.map((p) => (
-                          <span
+                        {products.map((p, pi) => (
+                          <Link
                             key={p}
+                            to={`/productos?sub=${encodeURIComponent(s.subs[pi] ?? '')}`}
                             style={{
                               fontSize: 13,
                               padding: '7px 14px',
@@ -355,29 +357,22 @@ export default function PageEspacios() {
                               borderRadius: 999,
                               color: 'var(--fg)',
                               background: 'var(--soft)',
+                              transition: 'border-color .2s, color .2s',
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.borderColor = 'var(--lava-orange)';
+                              e.currentTarget.style.color = 'var(--lava-orange)';
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.borderColor = 'var(--line)';
+                              e.currentTarget.style.color = 'var(--fg)';
                             }}
                           >
                             {p}
-                          </span>
+                          </Link>
                         ))}
                       </div>
                     </div>
-
-                    <Link
-                      to={`/categorias/${s.cat}`}
-                      className="maach-mono"
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: 10,
-                        marginTop: 28,
-                        color: 'var(--fg)',
-                        paddingBottom: 4,
-                        borderBottom: '1.5px solid var(--lava-orange)',
-                      }}
-                    >
-                      {t('cta.view_products')} <IconArrow size={14} />
-                    </Link>
                   </div>
                 </div>
               );
