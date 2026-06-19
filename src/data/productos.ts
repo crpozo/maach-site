@@ -110,6 +110,35 @@ const mesa = (
   },
 });
 
+// Helper for Divisiones de ambientes products. Photos live at
+//   productos/divisiones/<slug>/01..06.webp  (01 = perspectiva render, 02-06 = ambientadas)
+// CAD/BIM sheets at <slug>.dwg / .rfa / .skp, only for entries that ship them.
+const division = (
+  slug: string,
+  name: string,
+  subcategory: 'Divisiones modulares' | 'Divisiones de vidrio',
+  sku: string,
+  description: string,
+  opts: { sheets?: boolean } = {},
+): Product => ({
+  slug,
+  name,
+  category: 'Divisiones de ambientes',
+  subcategory,
+  sku,
+  description,
+  gallery: Array.from({ length: 6 }, (_, i) =>
+    asset(`productos/divisiones/${slug}/${String(i + 1).padStart(2, '0')}.webp`),
+  ),
+  sheets: opts.sheets
+    ? {
+        dwg: asset(`productos/divisiones/${slug}/${slug}.dwg`),
+        rfa: asset(`productos/divisiones/${slug}/${slug}.rfa`),
+        skp: asset(`productos/divisiones/${slug}/${slug}.skp`),
+      }
+    : undefined,
+});
+
 // Default short description per Sillonería subcategory. Used when the
 // individual product copy hasn't been provided yet.
 const SILLA_DESC: Record<string, string> = {
@@ -384,6 +413,23 @@ export const PRODUCTS: Product[] = [
     'Mesas auxiliares',
     'MCH-MES-07',
     'Mesa auxiliar compacta y versátil. Ofrece una superficie útil para organizar documentos, equipos o elementos decorativos. Estructura metálica con tablero en melamina.',
+  ),
+
+  // ─── DIVISIONES DE AMBIENTES ─────────────────────────────────
+  division(
+    'division-modular',
+    'División Modular',
+    'Divisiones modulares',
+    'MCH-DIV-01',
+    'División modular de piso a techo o media altura que reconfigura la oficina sin obra civil. Estructura metálica con plafones en melamina o vidrio, puertas tamboradas o de vidrio y canaleta de conducción eléctrica por piso para redefinir áreas manteniendo una estética ordenada.',
+    { sheets: true },
+  ),
+  division(
+    'division-aluminio-y-vidrio',
+    'División de Aluminio y Vidrio',
+    'Divisiones de vidrio',
+    'MCH-DIV-02',
+    'División de aluminio y vidrio de piso a techo que delimita áreas sin perder amplitud visual ni entrada de luz natural. Perfiles de aluminio con puerta de aluminio y vidrio, ideal para oficinas que buscan ambientes abiertos, luminosos y organizados.',
   ),
 ];
 
