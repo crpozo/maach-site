@@ -143,9 +143,11 @@
   --soft: var(--pure-white);
   --accent: var(--lava-orange);
 
-  --display: 'Monoblock', 'Arial Black', 'Helvetica Neue', sans-serif;
+  /* Whole site uses Clash Grotesk; Monoblock is reserved for "details"
+     (mono labels, numbers, nav and button text) via var(--mono). */
+  --display: 'Clash Grotesk', 'Helvetica Neue', Arial, sans-serif;
   --body: 'Clash Grotesk', 'Segoe UI', system-ui, -apple-system, sans-serif;
-  --mono: 'Segoe UI', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --mono: 'Monoblock', 'Segoe UI', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   /* Secondary brand families — assign via className or inline style
      wherever the design specifically calls for them. */
   --font-archivo: 'Archivo', 'Segoe UI', system-ui, sans-serif;

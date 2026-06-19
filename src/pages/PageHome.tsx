@@ -414,8 +414,8 @@ export default function PageHome() {
                     <span
                       className="maach-mono"
                       style={{
-                        fontSize: 18,
-                        fontFamily: 'var(--display)',
+                        fontSize: 14,
+                        fontFamily: 'var(--mono)',
                         letterSpacing: 0,
                         color: 'var(--lava-orange)',
                         fontWeight: 700,
