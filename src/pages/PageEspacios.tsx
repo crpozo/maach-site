@@ -166,9 +166,10 @@ export default function PageEspacios() {
                 color: 'var(--off-white)',
                 lineHeight: 0.92,
                 margin: 0,
+                fontWeight: 100,
               }}
             >
-              {t('esp.hero.title.1')}<span className="h-italic" style={{ color: 'var(--lava-orange)' }}>{t('esp.hero.title.2')}</span>
+              {t('esp.hero.title.1')}<span style={{ color: 'var(--lava-orange)' }}>{t('esp.hero.title.2')}</span>
             </h1>
             <p
               style={{
