@@ -696,7 +696,7 @@ export default function PageHome() {
                 className="maach-mono"
                 style={{ color: 'var(--lava-orange)', letterSpacing: '.12em' }}
               >
-                INVESTIGACIÓN · MAACH
+                {t('home2.research_eyebrow')}
               </span>
               <span
                 className="h-display"
@@ -707,7 +707,7 @@ export default function PageHome() {
                   color: 'var(--off-white)',
                 }}
               >
-                ¿Dudas para diseñar tu espacio? Aquí las resolvemos.
+                {t('home2.research_title')}
               </span>
             </div>
             <span
@@ -722,7 +722,7 @@ export default function PageHome() {
                 flexShrink: 0,
               }}
             >
-              Ver artículos <IconArrow size={14} />
+              {t('home2.research_link')} <IconArrow size={14} />
             </span>
           </Link>
         </div>

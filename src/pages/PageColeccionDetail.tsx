@@ -2,6 +2,7 @@ import { asset } from '../lib/asset';
 import { Link, useParams } from 'react-router-dom';
 import { Layout } from '../components/Layout';
 import { IconArrow, IconChevronRight, IconDownload } from '../components/icons';
+import { useT } from '../i18n/i18n';
 
 const NAMES: Record<string, string> = {
   'maach-01': 'Coalesse',
@@ -10,20 +11,21 @@ const NAMES: Record<string, string> = {
 };
 
 export default function PageColeccionDetail() {
+  const t = useT();
   const { id = 'maach-01' } = useParams();
   const name = NAMES[id] || 'Coalesse';
 
   const products = [
-    { id: 1, name: 'Silla Operativa X1', cat: 'Sillería', img: asset('biblioteca-1.webp') },
-    { id: 2, name: 'Sistema Bench Modular', cat: 'Estaciones', img: asset('biblioteca-2.webp') },
-    { id: 3, name: 'Lounge Chair Y', cat: 'Sillería lounge', img: asset('biblioteca-3.webp') },
-    { id: 4, name: 'Mesa de Juntas', cat: 'Mesas', img: asset('biblioteca-4.webp') },
-    { id: 5, name: 'Separador Acústico', cat: 'Arquitectura', img: asset('biblioteca-5.webp') },
-    { id: 6, name: 'Archivero Móvil', cat: 'Almacenamiento', img: asset('biblioteca-1.webp') },
+    { id: 1, name: 'Silla Operativa X1', nameKey: 'colecd.prod_1_name', cat: 'Sillería', catKey: 'colecd.prod_1_cat', img: asset('biblioteca-1.webp') },
+    { id: 2, name: 'Sistema Bench Modular', nameKey: 'colecd.prod_2_name', cat: 'Estaciones', catKey: 'colecd.prod_2_cat', img: asset('biblioteca-2.webp') },
+    { id: 3, name: 'Lounge Chair Y', nameKey: 'colecd.prod_3_name', cat: 'Sillería lounge', catKey: 'colecd.prod_3_cat', img: asset('biblioteca-3.webp') },
+    { id: 4, name: 'Mesa de Juntas', nameKey: 'colecd.prod_4_name', cat: 'Mesas', catKey: 'colecd.prod_4_cat', img: asset('biblioteca-4.webp') },
+    { id: 5, name: 'Separador Acústico', nameKey: 'colecd.prod_5_name', cat: 'Arquitectura', catKey: 'colecd.prod_5_cat', img: asset('biblioteca-5.webp') },
+    { id: 6, name: 'Archivero Móvil', nameKey: 'colecd.prod_6_name', cat: 'Almacenamiento', catKey: 'colecd.prod_6_cat', img: asset('biblioteca-1.webp') },
   ];
 
   return (
-    <Layout screenLabel={'06 Colección · ' + name}>
+    <Layout screenLabel={t('colecd.screen_label') + ' · ' + name}>
       <div
         style={{
           position: 'sticky',
@@ -43,7 +45,7 @@ export default function PageColeccionDetail() {
             className="maach-mono"
             style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}
           >
-            <IconChevronRight size={10} style={{ transform: 'rotate(180deg)' }} /> Colecciones
+            <IconChevronRight size={10} style={{ transform: 'rotate(180deg)' }} /> {t('colecd.breadcrumb_colecciones')}
           </Link>
           <button
             className="maach-mono"
@@ -55,7 +57,7 @@ export default function PageColeccionDetail() {
               padding: '10px 16px',
             }}
           >
-            <IconDownload size={12} /> Ficha colección
+            <IconDownload size={12} /> {t('colecd.btn_ficha')}
           </button>
         </div>
       </div>
@@ -98,7 +100,7 @@ export default function PageColeccionDetail() {
           }}
         >
           <span className="maach-mono" style={{ color: 'var(--off-white)', marginBottom: 24 }}>
-            Sistema 2026 · CO-DISEÑO MAACH
+            {t('colecd.hero_eyebrow')}
           </span>
           <h1 className="h-display" style={{ fontSize: 'clamp(60px, 15vw, 90px)', color: 'var(--off-white)' }}>
             {name}.
@@ -114,7 +116,7 @@ export default function PageColeccionDetail() {
               lineHeight: 1.2,
             }}
           >
-            Una exploración profunda sobre la modularidad y el confort en entornos de alto rendimiento.
+            {t('colecd.hero_subtitle')}
           </p>
         </div>
       </section>
@@ -124,19 +126,17 @@ export default function PageColeccionDetail() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
             <div>
               <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 16 }}>
-                Concepto
+                {t('colecd.concepto_eyebrow')}
               </span>
               <h2 className="h-display" style={{ fontSize: 'clamp(48px, 6.5vw, 90px)', marginBottom: 32 }}>
-                Diseño con<br />
-                <span className="h-italic">Propósito.</span>
+                {t('colecd.concepto_title_1')}<br />
+                <span className="h-italic">{t('colecd.concepto_title_2')}</span>
               </h2>
               <p style={{ fontSize: 18, color: 'var(--muted)', lineHeight: 1.55, marginBottom: 20 }}>
-                {name} trasciende la concepción tradicional del mobiliario de oficina. Desarrollada junto a estudios de
-                arquitectura, esta colección prioriza la salud postural y la adaptabilidad.
+                {name} {t('colecd.concepto_p1')}
               </p>
               <p style={{ fontSize: 18, color: 'var(--muted)', lineHeight: 1.55 }}>
-                Cada componente fue diseñado como parte de un ecosistema mayor, permitiendo configuraciones desde
-                estaciones individuales de alta concentración hasta grandes áreas colaborativas fluidas.
+                {t('colecd.concepto_p2')}
               </p>
             </div>
             <div
@@ -150,7 +150,7 @@ export default function PageColeccionDetail() {
               <img src={asset("biblioteca-3.webp")} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               <div style={{ position: 'absolute', bottom: 16, left: 16 }}>
                 <span className="maach-mono" style={{ background: 'var(--off-white)', padding: '5px 10px' }}>
-                  DETALLE_ESTRUCTURAL
+                  {t('colecd.detalle_estructural')}
                 </span>
               </div>
             </div>
@@ -165,10 +165,10 @@ export default function PageColeccionDetail() {
         >
           <div>
             <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 12 }}>
-              Catálogo
+              {t('colecd.catalogo_eyebrow')}
             </span>
             <h2 className="h-display" style={{ fontSize: 64 }}>
-              Piezas de la colección.
+              {t('colecd.catalogo_title')}
             </h2>
           </div>
           <Link
@@ -182,7 +182,7 @@ export default function PageColeccionDetail() {
               paddingBottom: 4,
             }}
           >
-            Ver todos <IconArrow size={14} />
+            {t('colecd.ver_todos')} <IconArrow size={14} />
           </Link>
         </div>
 
@@ -204,7 +204,7 @@ export default function PageColeccionDetail() {
                     background: 'var(--surface)',
                   }}
                 >
-                  <img src={p.img} alt={p.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <img src={p.img} alt={t(p.nameKey)} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   <span
                     className="maach-mono"
                     style={{ position: 'absolute', bottom: 12, left: 12, background: 'var(--off-white)', padding: '3px 7px' }}
@@ -213,7 +213,7 @@ export default function PageColeccionDetail() {
                   </span>
                 </div>
                 <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 6 }}>
-                  {p.cat}
+                  {t(p.catKey)}
                 </span>
                 <h3
                   style={{
@@ -225,7 +225,7 @@ export default function PageColeccionDetail() {
                     lineHeight: 1.05,
                   }}
                 >
-                  {p.name}
+                  {t(p.nameKey)}
                 </h3>
               </Link>
             ))}
@@ -262,21 +262,19 @@ export default function PageColeccionDetail() {
           >
             <div style={{ maxWidth: 560 }}>
               <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 16 }}>
-                Lanzamiento · Otoño 2026
+                {t('colecd.lanzamiento_eyebrow')}
               </span>
               <h3 className="h-display" style={{ fontSize: 64, marginBottom: 24 }}>
-                Inspiración<br />Mediterránea.
+                {t('colecd.lanzamiento_title_1')}<br />{t('colecd.lanzamiento_title_2')}
               </h3>
               <p style={{ fontSize: 17, color: 'var(--fg)', lineHeight: 1.55, marginBottom: 16 }}>
-                La intersección entre la rigidez corporativa y el confort del hogar. Paletas cromáticas arena, perfiles
-                suavizados y texturas que invitan al tacto.
+                {t('colecd.lanzamiento_p1')}
               </p>
               <p style={{ fontSize: 14, color: 'var(--muted)', lineHeight: 1.5 }}>
-                "Nuestra intención fue desdibujar la línea entre el trabajo y el bienestar, transformando la oficina en
-                un destino deseable."
+                {t('colecd.lanzamiento_quote')}
               </p>
               <span className="maach-mono" style={{ display: 'block', marginTop: 16 }}>
-                — Estudio MAACH
+                {t('colecd.lanzamiento_author')}
               </span>
             </div>
           </div>
@@ -300,13 +298,13 @@ export default function PageColeccionDetail() {
         />
         <div className="maach-container" style={{ position: 'relative' }}>
           <span className="maach-mono" style={{ color: 'var(--sand-grey)', display: 'block', marginBottom: 24 }}>
-            Especificación de mobiliario
+            {t('colecd.cta_eyebrow')}
           </span>
           <h2
             className="h-display"
             style={{ fontSize: 'clamp(56px, 8vw, 90px)', color: 'var(--off-white)', marginBottom: 24 }}
           >
-            Integrar <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>{name}.</span>
+            {t('colecd.cta_integrar')} <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>{name}.</span>
           </h2>
           <p
             style={{
@@ -317,15 +315,14 @@ export default function PageColeccionDetail() {
               lineHeight: 1.55,
             }}
           >
-            Nuestro equipo de ingeniería de proyectos adapta esta colección a tus planos arquitectónicos y
-            requerimientos espaciales.
+            {t('colecd.cta_desc')}
           </p>
           <div style={{ display: 'inline-flex', gap: 16, flexWrap: 'wrap', justifyContent: 'center' }}>
             <Link to="/contacto" className="btn-primary">
-              Contactar ingeniería <IconArrow size={14} />
+              {t('colecd.cta_contactar')} <IconArrow size={14} />
             </Link>
             <button className="btn-ghost">
-              <IconDownload size={14} /> Descargar 3D/CAD
+              <IconDownload size={14} /> {t('colecd.cta_descargar')}
             </button>
           </div>
         </div>

@@ -287,7 +287,7 @@ export default function PageInvestigacion() {
                       padding: '5px 10px',
                     }}
                   >
-                    BLOG · {b.number}
+                    {t('inv2.card_label')} · {b.number}
                   </span>
                   <span
                     className="maach-mono"

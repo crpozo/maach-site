@@ -4,6 +4,16 @@ import { Layout } from '../components/Layout';
 import { IconArrow } from '../components/icons';
 import { getCategoryBySlug } from '../data/categorias';
 import { PRODUCTS } from '../data/productos';
+import { useT } from '../i18n/i18n';
+
+const slugify = (s: string): string =>
+  s
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
 
 // Map category slug → hero photo + index number
 const HEROES: Record<string, { img: string; n: string }> = {
@@ -16,6 +26,7 @@ const HEROES: Record<string, { img: string; n: string }> = {
 };
 
 export default function PageCategory() {
+  const t = useT();
   const { slug = '' } = useParams();
   const category = getCategoryBySlug(slug);
 
@@ -26,7 +37,7 @@ export default function PageCategory() {
   const hero = HEROES[category.slug] || HEROES.silloneria;
 
   return (
-    <Layout screenLabel={'03 Catálogo · ' + category.name}>
+    <Layout screenLabel={'03 ' + t('prod.crumb.catalog') + ' · ' + t(`cat.${category.slug}.name`)}>
       {/* HERO */}
       <section
         className="invert"
@@ -110,14 +121,14 @@ export default function PageCategory() {
         >
           <span className="maach-mono" style={{ letterSpacing: '.1em' }}>
             <Link to="/" style={{ color: 'var(--off-white)' }}>
-              INICIO
+              {t('prod.crumb.home').toUpperCase()}
             </Link>{' '}
             <span style={{ color: 'var(--lava-orange)' }}>›</span>{' '}
             <Link to="/productos" style={{ color: 'var(--off-white)' }}>
-              CATÁLOGO
+              {t('prod.crumb.catalog').toUpperCase()}
             </Link>{' '}
             <span style={{ color: 'var(--lava-orange)' }}>›</span>{' '}
-            <span style={{ color: 'var(--lava-orange)' }}>{category.name.toUpperCase()}</span>
+            <span style={{ color: 'var(--lava-orange)' }}>{t(`cat.${category.slug}.name`).toUpperCase()}</span>
           </span>
         </div>
 
@@ -158,7 +169,7 @@ export default function PageCategory() {
                   letterSpacing: '.14em',
                 }}
               >
-                CATEGORÍA · MAACH
+                {t('catpage.hero_eyebrow')}
               </span>
             </div>
             <h1
@@ -172,7 +183,7 @@ export default function PageCategory() {
                 letterSpacing: '-.02em',
               }}
             >
-              {category.name}
+              {t(`cat.${category.slug}.name`)}
               <span style={{ color: 'var(--lava-orange)' }}>.</span>
             </h1>
             {category.intro ? (
@@ -185,7 +196,7 @@ export default function PageCategory() {
                   margin: 0,
                 }}
               >
-                {category.intro}
+                {t(`cat.${category.slug}.intro`)}
               </p>
             ) : null}
           </div>
@@ -238,7 +249,7 @@ export default function PageCategory() {
                       letterSpacing: '.1em',
                     }}
                   >
-                    {category.name.toUpperCase()}
+                    {t(`cat.${category.slug}.name`).toUpperCase()}
                   </span>
                   <h2
                     className="h-display"
@@ -250,7 +261,7 @@ export default function PageCategory() {
                       color: inverted ? 'var(--off-white)' : 'inherit',
                     }}
                   >
-                    {s.name}
+                    {t(`cat.${category.slug}.sec.${i}.name`)}
                     <span style={{ color: 'var(--lava-orange)' }}>.</span>
                   </h2>
                   {s.pendingPhotos ? (
@@ -265,7 +276,7 @@ export default function PageCategory() {
                         marginTop: 8,
                       }}
                     >
-                      FOTOS PRÓXIMAMENTE
+                      {t('catpage.pending_photos')}
                     </span>
                   ) : null}
                 </div>
@@ -280,7 +291,7 @@ export default function PageCategory() {
                       marginBottom: s.caracteristicas.length > 0 ? 40 : 0,
                     }}
                   >
-                    {s.description}
+                    {t(`cat.${category.slug}.sec.${i}.desc`)}
                   </p>
 
                   {s.caracteristicas.length > 0 ? (
@@ -294,7 +305,7 @@ export default function PageCategory() {
                           letterSpacing: '.1em',
                         }}
                       >
-                        CARACTERÍSTICAS
+                        {t('catpage.features')}
                       </span>
                       <ul
                         style={{
@@ -332,7 +343,7 @@ export default function PageCategory() {
                             >
                               {String(idx + 1).padStart(2, '0')}
                             </span>
-                            <span>{c}</span>
+                            <span>{t(`cat.${category.slug}.sec.${i}.feat.${idx}`)}</span>
                           </li>
                         ))}
                       </ul>
@@ -361,7 +372,7 @@ export default function PageCategory() {
                         letterSpacing: '.1em',
                       }}
                     >
-                      MODELOS DISPONIBLES · {sectionProducts.length}
+                      {t('catpage.available_models')} · {sectionProducts.length}
                     </span>
                     <Link
                       to={
@@ -380,7 +391,7 @@ export default function PageCategory() {
                         gap: 8,
                       }}
                     >
-                      Ver todos en el catálogo <IconArrow size={14} />
+                      {t('catpage.see_all')} <IconArrow size={14} />
                     </Link>
                   </div>
                   <div
@@ -412,7 +423,7 @@ export default function PageCategory() {
                         >
                           <img
                             src={p.gallery[0]}
-                            alt={p.name}
+                            alt={t(`prod.name.${p.slug}`)}
                             style={{
                               position: 'absolute',
                               inset: 0,
@@ -466,7 +477,7 @@ export default function PageCategory() {
                               letterSpacing: '.08em',
                             }}
                           >
-                            {p.subcategory}
+                            {t(`prod.sub.${slugify(p.subcategory)}`)}
                           </span>
                           <h3
                             style={{
@@ -480,7 +491,7 @@ export default function PageCategory() {
                               lineHeight: 1,
                             }}
                           >
-                            {p.name}
+                            {t(`prod.name.${p.slug}`)}
                           </h3>
                         </div>
                       </Link>

@@ -57,11 +57,6 @@ export default function PageRecursos() {
   };
   const activeFilter = tipo ? typeFilters[tipo] : undefined;
   const visibleDocuments = activeFilter ? documents.filter(activeFilter) : documents;
-  const filterLabel: Record<string, string> = {
-    'modelos-3d': 'Modelos 3D / CAD',
-    fichas: 'Fichas técnicas',
-    materiales: 'Materiales y acabados',
-  };
 
   return (
     <Layout screenLabel="11 Recursos">
@@ -270,11 +265,11 @@ export default function PageRecursos() {
                     {t('rec.filter.type')} <IconChevronDown size={11} />
                   </button>
                   {[
-                    { l: 'Spec Guides', n: '34', checked: !tipo },
-                    { l: 'Brochures', n: '481', checked: !tipo },
-                    { l: 'Modelos 3D / BIM', n: '208', checked: tipo === 'modelos-3d' },
-                    { l: 'Planos CAD', n: '194', checked: tipo === 'modelos-3d' },
-                    { l: 'Fichas técnicas', n: '62', checked: !tipo || tipo === 'fichas' || tipo === 'materiales' },
+                    { l: 'Spec Guides', k: 'spec-guides', n: '34', checked: !tipo },
+                    { l: 'Brochures', k: 'brochures', n: '481', checked: !tipo },
+                    { l: 'Modelos 3D / BIM', k: 'modelos-3d-bim', n: '208', checked: tipo === 'modelos-3d' },
+                    { l: 'Planos CAD', k: 'planos-cad', n: '194', checked: tipo === 'modelos-3d' },
+                    { l: 'Fichas técnicas', k: 'fichas-tecnicas', n: '62', checked: !tipo || tipo === 'fichas' || tipo === 'materiales' },
                   ].map((f) => (
                     <label
                       key={f.l}
@@ -293,7 +288,7 @@ export default function PageRecursos() {
                           fontWeight: f.checked ? 500 : 400,
                         }}
                       >
-                        {f.l} ({f.n})
+                        {t('recursos.facet.' + f.k)} ({f.n})
                       </span>
                       <div
                         style={{
@@ -331,14 +326,14 @@ export default function PageRecursos() {
                   }}
                 >
                   <span className="maach-mono" style={{ color: 'var(--lava-orange)' }}>
-                    Filtro: {filterLabel[tipo!]}
+                    {t('recursos.active_filter_label')} {t('recursos.filterlabel.' + tipo)}
                   </span>
                   <Link
                     to="/recursos-diseno/biblioteca"
                     className="maach-mono"
                     style={{ color: 'var(--muted)' }}
                   >
-                    Limpiar filtro
+                    {t('recursos.clear_filter')}
                   </Link>
                 </div>
               ) : null}
@@ -400,17 +395,17 @@ export default function PageRecursos() {
                         style={{ width: 140, flexShrink: 0, fontSize: 13, color: 'var(--muted)' }}
                         className="maach-mono"
                       >
-                        {d.type}
+                        {t('recursos.doctype.' + d.id)}
                       </div>
                       <div style={{ flex: 1 }}>
                         <h4 style={{ fontFamily: 'var(--body)', fontWeight: 500, fontSize: 15, marginBottom: 4 }}>
-                          {d.name}
+                          {t('recursos.docname.' + d.id)}
                         </h4>
                         <span className="maach-mono" style={{ color: 'var(--lava-orange)' }}>
                           .{d.ext}
                         </span>
                       </div>
-                      <div style={{ width: 200, flexShrink: 0, fontSize: 13, color: 'var(--muted)' }}>{d.product}</div>
+                      <div style={{ width: 200, flexShrink: 0, fontSize: 13, color: 'var(--muted)' }}>{t('recursos.docproduct.' + d.id)}</div>
                       <div
                         style={{
                           width: 70,
@@ -424,10 +419,10 @@ export default function PageRecursos() {
                       </div>
 
                       <div style={{ display: 'flex', gap: 8 }}>
-                        <button style={btnIcon} title="Descargar">
+                        <button style={btnIcon} title={t('recursos.action_download')}>
                           <IconDownload size={14} />
                         </button>
-                        <button style={btnIcon} title="Guardar">
+                        <button style={btnIcon} title={t('recursos.action_save')}>
                           <IconBookmark size={14} />
                         </button>
                         <button
@@ -438,7 +433,7 @@ export default function PageRecursos() {
                             color: isSelected ? 'var(--off-white)' : 'var(--fg)',
                             borderColor: isSelected ? 'var(--lava-orange)' : 'var(--line)',
                           }}
-                          title="Seleccionar"
+                          title={t('recursos.action_select')}
                         >
                           <IconCheck size={11} />
                         </button>

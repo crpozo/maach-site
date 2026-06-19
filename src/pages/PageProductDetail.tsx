@@ -13,6 +13,16 @@ import {
 import { getProductBySlug, getProductsByCategory } from '../data/productos';
 import { useT } from '../i18n/i18n';
 
+function slugify(s: string): string {
+  return s
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
 export default function PageProductDetail() {
   const t = useT();
   const params = useParams();
@@ -25,7 +35,7 @@ export default function PageProductDetail() {
     ? real.category
     : decodeURIComponent(params.category || 'categoria').replace(/-/g, ' ');
   const productName = real
-    ? real.name
+    ? t('prod.name.' + real.slug)
     : id.replace(/-/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase());
 
   // Scale the title down for long names / long words so it never spills out
@@ -47,7 +57,7 @@ export default function PageProductDetail() {
         asset('biblioteca-4.webp'),
         asset('biblioteca-5.webp'),
       ];
-  const description = real?.description;
+  const description = real ? t('prod.desc.' + real.slug) : undefined;
   const [idx, setIdx] = useState(0);
   const [zoom, setZoom] = useState(false);
 
@@ -93,11 +103,11 @@ export default function PageProductDetail() {
       <div style={{ background: 'var(--soft)', borderBottom: '1px solid var(--line)' }}>
         <div className="maach-container" style={{ padding: '14px 48px', display: 'flex', alignItems: 'center', gap: 10 }}>
           <Link to="/" className="maach-mono" style={{ color: 'var(--muted)' }}>
-            Inicio
+            {t('pdet.breadcrumb_home')}
           </Link>
           <IconChevronRight size={10} style={{ color: 'var(--muted)' }} />
           <Link to="/productos" className="maach-mono" style={{ color: 'var(--muted)' }}>
-            Productos
+            {t('pdet.breadcrumb_products')}
           </Link>
           <IconChevronRight size={10} style={{ color: 'var(--muted)' }} />
           {categorySlug ? (
@@ -136,7 +146,7 @@ export default function PageProductDetail() {
                 {/* Expand button */}
                 <button
                   onClick={() => setZoom(true)}
-                  aria-label="Ampliar imagen"
+                  aria-label={t('pdet.expand_image')}
                   style={{
                     position: 'absolute',
                     top: 16,
@@ -488,7 +498,7 @@ export default function PageProductDetail() {
                     />
                   </div>
                   <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 4 }}>
-                    {p.subcategory}
+                    {t('prod.sub.' + slugify(p.subcategory))}
                   </span>
                   <h4
                     style={{
@@ -499,7 +509,7 @@ export default function PageProductDetail() {
                       letterSpacing: '-.01em',
                     }}
                   >
-                    {p.name}
+                    {t('prod.name.' + p.slug)}
                   </h4>
                 </Link>
               ))}
@@ -525,7 +535,7 @@ export default function PageProductDetail() {
         >
           <button
             onClick={() => setZoom(false)}
-            aria-label="Cerrar"
+            aria-label={t('pdet.close')}
             style={{
               position: 'absolute',
               top: 24,
@@ -545,7 +555,7 @@ export default function PageProductDetail() {
           </button>
           <button
             onClick={(e) => { e.stopPropagation(); setIdx((i) => (i - 1 + images.length) % images.length); }}
-            aria-label="Anterior"
+            aria-label={t('pdet.previous')}
             style={{
               position: 'absolute',
               left: 24,
@@ -572,7 +582,7 @@ export default function PageProductDetail() {
           />
           <button
             onClick={(e) => { e.stopPropagation(); setIdx((i) => (i + 1) % images.length); }}
-            aria-label="Siguiente"
+            aria-label={t('pdet.next')}
             style={{
               position: 'absolute',
               right: 24,

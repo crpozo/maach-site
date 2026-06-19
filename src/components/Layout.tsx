@@ -2,7 +2,7 @@ import { asset } from '../lib/asset';
 import { Fragment, useState, type ReactNode } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { IconArrow, IconChevronDown, IconClose, IconMenu, IconSearch } from './icons';
-import { useI18n } from '../i18n/i18n';
+import { useI18n, useT } from '../i18n/i18n';
 
 export function Logo({ inverted = false, height = 28 }: { inverted?: boolean; height?: number }) {
   if (inverted) {
@@ -54,74 +54,78 @@ export const PROJECTS: { id: string; name: string; status?: 'paused' }[] = [
 ];
 
 function MegaMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
+  const t = useT();
   // Each item carries the URL anchor of its section on the category page.
   // Anchors match the `slug` field of the corresponding section in
   // src/data/categorias.ts (Almacenamiento groups several products under
   // a single editorial section, hence the repeats).
+  // `tkey` is the i18n key used to render the visible label: subcategory
+  // labels that map to data use prod.sub.*; product-style labels with no
+  // clean subcategory mapping use nav.*.
   const columns: {
     title: string;
     slug: string;
-    items: { label: string; anchor: string }[];
+    items: { label: string; anchor: string; tkey: string }[];
   }[] = [
     {
       title: 'Sillonería',
       slug: 'silloneria',
       items: [
-        { label: 'Sillas Presidente', anchor: 'sillas-presidente' },
-        { label: 'Sillas Gerenciales', anchor: 'sillas-gerenciales' },
-        { label: 'Sillas Operativas', anchor: 'sillas-operativas' },
-        { label: 'Sillas de Visita', anchor: 'sillas-de-visita' },
-        { label: 'Colectividades', anchor: 'colectividades' },
-        { label: 'Sofás', anchor: 'sofas' },
+        { label: 'Sillas Presidente', anchor: 'sillas-presidente', tkey: 'prod.sub.sillas-presidente' },
+        { label: 'Sillas Gerenciales', anchor: 'sillas-gerenciales', tkey: 'prod.sub.sillas-gerenciales' },
+        { label: 'Sillas Operativas', anchor: 'sillas-operativas', tkey: 'prod.sub.sillas-operativas' },
+        { label: 'Sillas de Visita', anchor: 'sillas-de-visita', tkey: 'prod.sub.sillas-de-visita' },
+        { label: 'Colectividades', anchor: 'colectividades', tkey: 'prod.sub.colectividades' },
+        { label: 'Sofás', anchor: 'sofas', tkey: 'prod.sub.sofas' },
       ],
     },
     {
       title: 'Escritorios',
       slug: 'escritorios',
       items: [
-        { label: 'Escritorios Gerente', anchor: 'escritorios-gerente' },
-        { label: 'Escritorios Operativos', anchor: 'escritorios-operativos' },
-        { label: 'Estaciones de Trabajo', anchor: 'estaciones-de-trabajo' },
-        { label: 'Escritorios Regulables', anchor: 'escritorios-regulables' },
+        { label: 'Escritorios Gerente', anchor: 'escritorios-gerente', tkey: 'prod.sub.escritorios-gerente' },
+        { label: 'Escritorios Operativos', anchor: 'escritorios-operativos', tkey: 'prod.sub.escritorios-operativos' },
+        { label: 'Estaciones de Trabajo', anchor: 'estaciones-de-trabajo', tkey: 'prod.sub.estaciones-de-trabajo' },
+        { label: 'Escritorios Regulables', anchor: 'escritorios-regulables', tkey: 'prod.sub.escritorios-regulables' },
       ],
     },
     {
       title: 'Mesas',
       slug: 'mesas',
       items: [
-        { label: 'Mesas de Reunión', anchor: 'mesas-de-reunion' },
-        { label: 'Mesas Colaborativas', anchor: 'mesas-colaborativas' },
-        { label: 'Mesas Auxiliares', anchor: 'mesas-auxiliares' },
+        { label: 'Mesas de Reunión', anchor: 'mesas-de-reunion', tkey: 'prod.sub.mesas-de-reunion' },
+        { label: 'Mesas Colaborativas', anchor: 'mesas-colaborativas', tkey: 'prod.sub.mesas-colaborativas' },
+        { label: 'Mesas Auxiliares', anchor: 'mesas-auxiliares', tkey: 'prod.sub.mesas-auxiliares' },
       ],
     },
     {
       title: 'Almacenamiento',
       slug: 'almacenamiento',
       items: [
-        { label: 'Biblioteca Alta', anchor: 'credenzas-bibliotecas' },
-        { label: 'Biblioteca Baja', anchor: 'credenzas-bibliotecas' },
-        { label: 'Credenza', anchor: 'credenzas-bibliotecas' },
-        { label: 'Módulo 3 Gavetas', anchor: 'modulos-archivacion' },
-        { label: 'Arturito', anchor: 'modulos-archivacion' },
-        { label: 'Locker', anchor: 'lockers' },
-        { label: 'Archivo Rodante', anchor: 'archivo-rodante' },
+        { label: 'Biblioteca Alta', anchor: 'credenzas-bibliotecas', tkey: 'nav.mega.biblioteca-alta' },
+        { label: 'Biblioteca Baja', anchor: 'credenzas-bibliotecas', tkey: 'nav.mega.biblioteca-baja' },
+        { label: 'Credenza', anchor: 'credenzas-bibliotecas', tkey: 'nav.mega.credenza' },
+        { label: 'Módulo 3 Gavetas', anchor: 'modulos-archivacion', tkey: 'nav.mega.modulo-3-gavetas' },
+        { label: 'Arturito', anchor: 'modulos-archivacion', tkey: 'nav.mega.arturito' },
+        { label: 'Locker', anchor: 'lockers', tkey: 'nav.mega.locker' },
+        { label: 'Archivo Rodante', anchor: 'archivo-rodante', tkey: 'nav.mega.archivo-rodante' },
       ],
     },
     {
       title: 'Divisiones de Ambientes',
       slug: 'divisiones',
       items: [
-        { label: 'Divisiones Modulares', anchor: 'divisiones-modulares' },
-        { label: 'Divisiones de Vidrio', anchor: 'divisiones-de-vidrio' },
+        { label: 'Divisiones Modulares', anchor: 'divisiones-modulares', tkey: 'prod.sub.divisiones-modulares' },
+        { label: 'Divisiones de Vidrio', anchor: 'divisiones-de-vidrio', tkey: 'prod.sub.divisiones-de-vidrio' },
       ],
     },
     {
       title: 'Recepciones',
       slug: 'recepciones',
       items: [
-        { label: 'Counters de Recepción', anchor: 'recepciones' },
-        { label: 'Mostradores', anchor: 'recepciones' },
-        { label: 'Sistemas de Espera', anchor: 'recepciones' },
+        { label: 'Counters de Recepción', anchor: 'recepciones', tkey: 'nav.mega.counters-de-recepcion' },
+        { label: 'Mostradores', anchor: 'recepciones', tkey: 'nav.mega.mostradores' },
+        { label: 'Sistemas de Espera', anchor: 'recepciones', tkey: 'nav.mega.sistemas-de-espera' },
       ],
     },
   ];
@@ -181,15 +185,15 @@ function MegaMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
               fontWeight: 600,
             }}
           >
-            Ver todos los productos <IconArrow size={14} />
+            {t('nav.mega.ver_todos')} <IconArrow size={14} />
           </Link>
           <div style={{ marginTop: 32 }}>
             <div className="maach-mono" style={{ color: 'var(--muted)', marginBottom: 12 }}>
-              Relacionado
+              {t('nav.mega.relacionado')}
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8, fontSize: 14, fontWeight: 500 }}>
-              <Link to="/portafolio" onClick={onClose}>Portafolio</Link>
-              <Link to="/recursos-diseno/biblioteca" onClick={onClose}>Documentos técnicos</Link>
+              <Link to="/portafolio" onClick={onClose}>{t('nav.portafolio')}</Link>
+              <Link to="/recursos-diseno/biblioteca" onClick={onClose}>{t('nav.mega.documentos_tecnicos')}</Link>
             </div>
           </div>
         </div>
@@ -214,7 +218,7 @@ function MegaMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
                 onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--lava-orange)')}
                 onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--fg)')}
               >
-                {col.title}
+                {t(('cat.' + col.slug + '.name') as Parameters<typeof t>[0])}
               </Link>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 12 }}>
                 {col.items.map((item) => (
@@ -226,7 +230,7 @@ function MegaMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
                       onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--fg)')}
                       onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--muted)')}
                     >
-                      {item.label}
+                      {t(item.tkey as Parameters<typeof t>[0])}
                     </Link>
                   </li>
                 ))}
@@ -240,6 +244,7 @@ function MegaMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
 }
 
 function PortafolioMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
+  const t = useT();
   return (
     <div
       onMouseLeave={onClose}
@@ -264,10 +269,10 @@ function PortafolioMenu({ open, onClose }: { open: boolean; onClose: () => void 
       >
         <div>
           <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 16 }}>
-            PROYECTOS · 2024–2026
+            {t('nav.port.eyebrow')}
           </span>
           <p style={{ fontSize: 14, color: 'var(--muted)', lineHeight: 1.55, marginBottom: 24 }}>
-            Selección de proyectos donde el diseño arquitectónico se encuentra con la fabricación industrial.
+            {t('nav.port.intro')}
           </p>
           <Link
             to="/portafolio"
@@ -285,7 +290,7 @@ function PortafolioMenu({ open, onClose }: { open: boolean; onClose: () => void 
               fontWeight: 600,
             }}
           >
-            Ver portafolio completo <IconArrow size={14} />
+            {t('nav.port.ver_completo')} <IconArrow size={14} />
           </Link>
         </div>
 
@@ -348,7 +353,7 @@ function PortafolioMenu({ open, onClose }: { open: boolean; onClose: () => void 
                           letterSpacing: '.1em',
                         }}
                       >
-                        PAUSADO
+                        {t('nav.port.pausado')}
                       </span>
                     ) : null}
                   </div>
@@ -599,7 +604,7 @@ function Nav() {
               color: 'var(--muted)',
             }}
           >
-            <span>MAACH · Sistema 2026</span>
+            <span>{t('nav.drawer.sistema')}</span>
             <span style={{ display: 'inline-flex', gap: 8 }}>
               <button
                 type="button"
@@ -648,12 +653,12 @@ function Footer() {
     {
       title: t('footer.col.productos'),
       items: [
-        { label: 'Sillonería', path: '/categorias/silloneria' },
-        { label: 'Escritorios', path: '/categorias/escritorios' },
-        { label: 'Mesas', path: '/categorias/mesas' },
-        { label: 'Almacenamiento', path: '/categorias/almacenamiento' },
-        { label: 'Divisiones de Ambientes', path: '/categorias/divisiones' },
-        { label: 'Recepciones', path: '/categorias/recepciones' },
+        { label: t('cat.silloneria.name'), path: '/categorias/silloneria' },
+        { label: t('cat.escritorios.name'), path: '/categorias/escritorios' },
+        { label: t('cat.mesas.name'), path: '/categorias/mesas' },
+        { label: t('cat.almacenamiento.name'), path: '/categorias/almacenamiento' },
+        { label: t('cat.divisiones.name'), path: '/categorias/divisiones' },
+        { label: t('cat.recepciones.name'), path: '/categorias/recepciones' },
       ],
     },
     {
@@ -668,10 +673,10 @@ function Footer() {
     {
       title: t('footer.col.resources'),
       items: [
-        { label: 'Biblioteca de documentos', path: '/recursos-diseno/biblioteca' },
-        { label: 'Modelos 3D / CAD', path: '/recursos-diseno/biblioteca?tipo=modelos-3d' },
-        { label: 'Fichas técnicas', path: '/recursos-diseno/biblioteca?tipo=fichas' },
-        { label: 'Materiales y acabados', path: '/recursos-diseno/biblioteca?tipo=materiales' },
+        { label: t('nav.footer.biblioteca'), path: '/recursos-diseno/biblioteca' },
+        { label: t('nav.footer.modelos_cad'), path: '/recursos-diseno/biblioteca?tipo=modelos-3d' },
+        { label: t('nav.footer.fichas'), path: '/recursos-diseno/biblioteca?tipo=fichas' },
+        { label: t('nav.footer.materiales'), path: '/recursos-diseno/biblioteca?tipo=materiales' },
       ],
     },
   ];
@@ -857,11 +862,20 @@ function Footer() {
 }
 
 export function Marquee({
-  items = ['Estructura sólida', 'Ergonomía aplicada', 'Fabricación industrial', 'Diseño funcional', 'Ingeniería de proyectos'],
+  items,
 }: {
   items?: string[];
 }) {
-  const full = [...items, ...items, ...items, ...items];
+  const t = useT();
+  const resolved =
+    items ?? [
+      t('nav.marquee.0'),
+      t('nav.marquee.1'),
+      t('nav.marquee.2'),
+      t('nav.marquee.3'),
+      t('nav.marquee.4'),
+    ];
+  const full = [...resolved, ...resolved, ...resolved, ...resolved];
   return (
     <div
       className="marquee"

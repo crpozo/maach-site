@@ -2,12 +2,14 @@ import { asset } from '../lib/asset';
 import { Link } from 'react-router-dom';
 import { Layout } from '../components/Layout';
 import { IconArrow } from '../components/icons';
+import { useT } from '../i18n/i18n';
 
 export default function PageColecciones() {
+  const t = useT();
   const collections = [
-    { id: 'maach-01', name: 'Coalesse', caption: 'Modularidad y confort para entornos de alto rendimiento', tex: 'tex-forged-grid', img: asset('biblioteca-1.webp'), year: '2025' },
-    { id: 'maach-02', name: 'Viccarbe', caption: 'Sistemas residenciales adaptados al trabajo contemporáneo', tex: 'tex-load-line', img: asset('biblioteca-3.webp'), year: '2024' },
-    { id: 'maach-03', name: 'West Elm', caption: 'Calidez doméstica con estándares industriales', tex: 'tex-tactile-field', img: asset('biblioteca-5.webp'), year: '2026' },
+    { id: 'maach-01', name: 'Coalesse', caption: t('colec.coll_modularidad_confort'), tex: 'tex-forged-grid', img: asset('biblioteca-1.webp'), year: '2025' },
+    { id: 'maach-02', name: 'Viccarbe', caption: t('colec.coll_sistemas_residenciales'), tex: 'tex-load-line', img: asset('biblioteca-3.webp'), year: '2024' },
+    { id: 'maach-03', name: 'West Elm', caption: t('colec.coll_calidez_domestica'), tex: 'tex-tactile-field', img: asset('biblioteca-5.webp'), year: '2026' },
   ];
 
   return (
@@ -29,13 +31,13 @@ export default function PageColecciones() {
         />
         <div className="maach-container">
           <span className="maach-mono" style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 16 }}>
-            Sistema 2026
+            {t('colec.eyebrow_sistema_2026')}
           </span>
           <h1 className="h-display" style={{ fontSize: 'clamp(56px, 9vw, 90px)', marginBottom: 32 }}>
-            Colec<span className="h-italic" style={{ color: 'var(--lava-orange)' }}>ciones.</span>
+            {t('colec.hero_title_colec')}<span className="h-italic" style={{ color: 'var(--lava-orange)' }}>{t('colec.hero_title_ciones')}</span>
           </h1>
           <p style={{ fontSize: 22, color: 'var(--muted)', maxWidth: 720, lineHeight: 1.45 }}>
-            Sistemas de mobiliario agrupados por visión arquitectónica. Cada colección resuelve necesidades operativas específicas bajo un lenguaje visual unificado.
+            {t('colec.hero_intro')}
           </p>
         </div>
       </section>
@@ -143,7 +145,7 @@ export default function PageColecciones() {
           {/* Bottom content block — left-aligned */}
           <div style={{ position: 'absolute', bottom: 48, left: 48, right: 48 }}>
             <span className="maach-mono" style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 16 }}>
-              Sistema MAACH · {c.year}
+              {t('colec.card_sistema_maach')} {c.year}
             </span>
             <h2
               className="h-display"
@@ -192,7 +194,7 @@ export default function PageColecciones() {
                   borderBottom: '1.5px solid var(--lava-orange)',
                 }}
               >
-                Explorar colección <IconArrow size={14} />
+                {t('colec.cta_explorar')} <IconArrow size={14} />
               </span>
             </div>
           </div>

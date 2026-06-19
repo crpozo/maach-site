@@ -22,6 +22,15 @@ type GridProduct = {
   img: string;
 };
 
+const slugify = (s: string): string =>
+  s
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+
 export default function PageProducts() {
   const t = useT();
   const catalogCategories = [
@@ -52,7 +61,7 @@ export default function PageProducts() {
     const sub = allSubs[i % Math.max(1, allSubs.length)] || 'General';
     return {
       id: `placeholder-${i}`,
-      name: `${sub} · Modelo ${String.fromCharCode(65 + (i % 5))}${i + 1}`,
+      name: `${t('prod.sub.' + slugify(sub))} · ${t('prodpage.placeholder_model')} ${String.fromCharCode(65 + (i % 5))}${i + 1}`,
       category: catalogCategories.find((c) => c.items.includes(sub))?.name || 'General',
       subcategory: sub,
       sku: `MCH-${2000 + i}`,
@@ -111,7 +120,7 @@ export default function PageProducts() {
   const filtered = selectedSub ? products.filter((p) => p.subcategory === selectedSub) : products;
 
   return (
-    <Layout screenLabel="03 Productos">
+    <Layout screenLabel={t('prodpage.screen_label')}>
       <section
         className="invert"
         style={{
@@ -267,7 +276,7 @@ export default function PageProducts() {
                         onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--lava-orange)')}
                         onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--fg)')}
                       >
-                        <span>{cat.name}</span>
+                        <span>{t('cat.' + cat.slug + '.name')}</span>
                         <span style={{ color: 'var(--muted)' }}>
                           {isOpen ? <IconMinus size={12} /> : <IconPlus size={12} />}
                         </span>
@@ -309,7 +318,7 @@ export default function PageProducts() {
                                   flexShrink: 0,
                                 }}
                               />
-                              {it}
+                              {t('prod.sub.' + slugify(it))}
                             </button>
                           ))}
                         </div>
@@ -332,7 +341,7 @@ export default function PageProducts() {
                 }}
               >
                 <span className="maach-mono" style={{ color: 'var(--muted)' }}>
-                  {filtered.length} {t('prod.count_label_n')} · {selectedSub || t('prod.count_label_all')}
+                  {filtered.length} {t('prod.count_label_n')} · {selectedSub ? t('prod.sub.' + slugify(selectedSub)) : t('prod.count_label_all')}
                 </span>
                 <div
                   className="maach-mono"
@@ -367,14 +376,14 @@ export default function PageProducts() {
                       >
                         <img
                           src={p.img}
-                          alt={p.name}
+                          alt={p.slug ? t('prod.name.' + p.slug) : p.name}
                           style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform .6s' }}
                           onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.04)')}
                           onMouseLeave={(e) => (e.currentTarget.style.transform = '')}
                         />
                       </div>
                       <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 4 }}>
-                        {p.subcategory}
+                        {t('prod.sub.' + slugify(p.subcategory))}
                       </span>
                       <h3
                         style={{
@@ -386,7 +395,7 @@ export default function PageProducts() {
                           lineHeight: 1.05,
                         }}
                       >
-                        {p.name}
+                        {p.slug ? t('prod.name.' + p.slug) : p.name}
                       </h3>
                     </Link>
                   );

@@ -2,8 +2,10 @@ import { asset } from '../lib/asset';
 import { Link } from 'react-router-dom';
 import { Layout } from '../components/Layout';
 import { IconArrow } from '../components/icons';
+import { useT } from '../i18n/i18n';
 
 export default function PageNuevo() {
+  const t = useT();
   const products = [
     { id: 'vertice', name: 'Sistema Vértice', cat: 'Estaciones de trabajo', img: asset('biblioteca-2.webp'), sku: 'MCH-2026-V1' },
     { id: 'tendon', name: 'Sillonería Tendón', cat: 'Sillería operativa', img: asset('biblioteca-3.webp'), sku: 'MCH-2026-T2' },
@@ -53,7 +55,7 @@ export default function PageNuevo() {
             zIndex: 1,
           }}
         >
-          DROP · OTOÑO 2026
+          {t('nuevo.hero_side_label')}
         </span>
         {/* Corner crosshairs */}
         <div
@@ -89,19 +91,18 @@ export default function PageNuevo() {
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 28 }}>
                 <span className="maach-tag" style={{ borderColor: 'var(--lava-orange)', color: 'var(--lava-orange)' }}>
-                  Otoño · 2026
+                  {t('nuevo.hero_tag')}
                 </span>
                 <span className="maach-mono" style={{ color: 'var(--muted)' }}>
-                  Drop / Lanzamiento
+                  {t('nuevo.hero_kicker')}
                 </span>
               </div>
               <h1 className="h-display" style={{ fontSize: 'clamp(56px, 7.5vw, 90px)', marginBottom: 32 }}>
-                Novedades<br />
+                {t('nuevo.hero_title')}<br />
                 <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>2026.</span>
               </h1>
               <p style={{ fontSize: 19, color: 'var(--muted)', lineHeight: 1.5, marginBottom: 48 }}>
-                Tres incorporaciones al sistema MAACH diseñadas para responder a los retos del entorno de trabajo
-                contemporáneo. Co-diseñadas con estudios de arquitectura y validadas en uso real.
+                {t('nuevo.hero_intro')}
               </p>
 
               {/* Stat row */}
@@ -115,9 +116,9 @@ export default function PageNuevo() {
                 }}
               >
                 {[
-                  { n: '03', l: 'Piezas nuevas' },
-                  { n: '04', l: 'Tipologías' },
-                  { n: 'Q4', l: 'Disponibilidad' },
+                  { n: '03', l: 'Piezas nuevas', k: 'nuevo.stat_piezas' },
+                  { n: '04', l: 'Tipologías', k: 'nuevo.stat_tipologias' },
+                  { n: 'Q4', l: 'Disponibilidad', k: 'nuevo.stat_disponibilidad' },
                 ].map((s) => (
                   <div key={s.l}>
                     <div
@@ -134,7 +135,7 @@ export default function PageNuevo() {
                       {s.n}
                     </div>
                     <span className="maach-mono" style={{ color: 'var(--muted)' }}>
-                      {s.l}
+                      {t(s.k)}
                     </span>
                   </div>
                 ))}
@@ -156,7 +157,7 @@ export default function PageNuevo() {
             >
               <img
                 src={asset("biblioteca-2.webp")}
-                alt="Vértice"
+                alt={t('prod.name.vertice')}
                 style={{
                   position: 'absolute',
                   inset: 0,
@@ -184,7 +185,7 @@ export default function PageNuevo() {
                   className="maach-mono"
                   style={{ background: 'var(--lava-orange)', color: 'var(--off-white)', padding: '6px 10px' }}
                 >
-                  DESTACADO 01
+                  {t('nuevo.showcase_badge')}
                 </span>
                 <span
                   className="maach-mono"
@@ -196,13 +197,13 @@ export default function PageNuevo() {
               {/* Bottom text overlay */}
               <div style={{ position: 'absolute', bottom: 24, left: 24, right: 24, color: 'var(--off-white)' }}>
                 <span className="maach-mono" style={{ color: 'var(--sand-grey)', display: 'block', marginBottom: 8 }}>
-                  SISTEMA BENCH
+                  {t('nuevo.showcase_kicker')}
                 </span>
                 <h2
                   className="h-display"
                   style={{ fontSize: 'clamp(40px, 5.2vw, 80px)', color: 'var(--off-white)', marginBottom: 14 }}
                 >
-                  Vértice.
+                  {t('nuevo.showcase_name')}
                 </h2>
                 <div
                   style={{
@@ -214,13 +215,13 @@ export default function PageNuevo() {
                   }}
                 >
                   <span className="maach-mono" style={{ color: 'var(--off-white)' }}>
-                    Estación benching · 2–12 puestos
+                    {t('nuevo.showcase_spec')}
                   </span>
                   <span
                     className="maach-mono"
                     style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: 'var(--lava-orange)' }}
                   >
-                    Ver detalles <IconArrow size={14} />
+                    {t('nuevo.showcase_cta')} <IconArrow size={14} />
                   </span>
                 </div>
               </div>
@@ -246,16 +247,23 @@ export default function PageNuevo() {
         <div className="maach-container">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 48 }}>
             <h3 className="h-display" style={{ fontSize: 56 }}>
-              Recién llegados.
+              {t('nuevo.grid_title')}
             </h3>
             <span className="maach-mono" style={{ color: 'var(--muted)' }}>
-              03 piezas · Disponibles ya
+              {t('nuevo.grid_count')}
             </span>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 32 }}>
             {products.map((p) => {
               const catSlug = p.cat.toLowerCase().replace(/ /g, '-');
+              const subKey = p.cat
+                .normalize('NFD')
+                .replace(/[̀-ͯ]/g, '')
+                .toLowerCase()
+                .trim()
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/^-+|-+$/g, '');
               return (
                 <Link key={p.id} to={`/productos/${catSlug}/${p.id}`} style={{ display: 'block' }}>
                   <div
@@ -268,7 +276,7 @@ export default function PageNuevo() {
                       background: 'var(--surface)',
                     }}
                   >
-                    <img src={p.img} alt={p.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img src={p.img} alt={t('prod.name.' + p.id)} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     <span
                       className="maach-mono"
                       style={{
@@ -280,7 +288,7 @@ export default function PageNuevo() {
                         padding: '4px 8px',
                       }}
                     >
-                      NUEVO
+                      {t('nuevo.card_badge')}
                     </span>
                     <span
                       className="maach-mono"
@@ -290,7 +298,7 @@ export default function PageNuevo() {
                     </span>
                   </div>
                   <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 6 }}>
-                    {p.cat}
+                    {t('prod.sub.' + subKey)}
                   </span>
                   <h4
                     style={{
@@ -302,7 +310,7 @@ export default function PageNuevo() {
                       lineHeight: 1,
                     }}
                   >
-                    {p.name}
+                    {t('prod.name.' + p.id)}
                   </h4>
                 </Link>
               );
