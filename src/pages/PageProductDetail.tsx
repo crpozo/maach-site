@@ -350,11 +350,11 @@ export default function PageProductDetail() {
                 </h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
                   {[
-                    'Estructura inyectada en aluminio extruido de alta resistencia.',
-                    'Superficies con recubrimiento melamínico termo-fundido textura roble.',
-                    'Sistema de herrajes ocultos de precisión alemana.',
-                    'Módulos reconfigurables sin necesidad de herramientas especiales.',
-                    'Validado para >250,000 ciclos de apertura.',
+                    t('pd.feat.1'),
+                    t('pd.feat.2'),
+                    t('pd.feat.3'),
+                    t('pd.feat.4'),
+                    t('pd.feat.5'),
                   ].map((feat, i) => (
                     <div key={i} style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
                       <span
