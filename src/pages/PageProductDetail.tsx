@@ -264,7 +264,7 @@ export default function PageProductDetail() {
                 <img
                   src={asset('isotipo-maach-color.png')}
                   alt="MAACH"
-                  style={{ height: 34, width: 'auto', display: 'block' }}
+                  style={{ height: 22, width: 'auto', alignSelf: 'flex-start', display: 'block' }}
                 />
 
                 <p style={{ fontSize: 16, color: 'var(--off-white)', lineHeight: 1.6, margin: 0, maxWidth: 520 }}>
