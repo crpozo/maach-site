@@ -51,6 +51,7 @@ const NAV_LINKS: { key: string; path: string; mega?: boolean; submenu?: boolean 
 export const PROJECTS: { id: string; name: string; status?: 'paused' }[] = [
   { id: '01', name: 'CPN' },
   { id: '02', name: 'Palladium' },
+  { id: '03', name: 'Wesco' },
 ];
 
 function MegaMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
