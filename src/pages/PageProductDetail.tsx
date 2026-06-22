@@ -339,7 +339,13 @@ export default function PageProductDetail() {
                   {t('pd.contact_advisor')}
                 </button>
                 {docs.length > 0 ? (
-                  <button className="btn-ghost" style={{ flex: 1, justifyContent: 'center' }}>
+                  <button
+                    className="btn-ghost"
+                    style={{ flex: 1, justifyContent: 'center' }}
+                    onClick={() =>
+                      document.getElementById('pd-docs')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                    }
+                  >
                     <IconDownload size={14} /> {t('pd.bim_cad')}
                   </button>
                 ) : null}
@@ -376,7 +382,7 @@ export default function PageProductDetail() {
               {/* DOCUMENTOS — right column. Only docs that actually exist;
                   each opens a lead-gate form before downloading. */}
               {docs.length > 0 ? (
-                <div style={{ marginTop: 12, paddingTop: 28, borderTop: '1px solid var(--line)' }}>
+                <div id="pd-docs" style={{ marginTop: 12, paddingTop: 28, borderTop: '1px solid var(--line)', scrollMarginTop: 100 }}>
                   <h3 style={{ marginBottom: 20 }} className="maach-mono">
                     <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
                       <IconFile size={14} /> {t('pd.docs')}
