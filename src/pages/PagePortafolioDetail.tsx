@@ -50,7 +50,7 @@ const DATA: Record<string, ProjectData> = {
   },
   '02': {
     title: 'Palladium',
-    hero: asset('proyectos/palladium/02.webp'),
+    hero: asset('proyectos/palladium/00.webp'),
     gallery: [
       asset('proyectos/palladium/05.webp'),
       asset('proyectos/palladium/03.webp'),

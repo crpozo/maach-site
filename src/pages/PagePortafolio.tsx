@@ -34,7 +34,7 @@ export default function PagePortafolio() {
       scope: 'Estaciones operativas, mesas de juntas y zonas privadas',
       area: '1,200 m²',
       year: '2024',
-      img: asset('proyectos/palladium/02.webp'),
+      img: asset('proyectos/palladium/00.webp'),
     },
     {
       id: '03',
