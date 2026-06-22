@@ -637,7 +637,7 @@ export default function PageAbout() {
             {t('about.manifesto.body.5')}
           </h2>
           <div style={{ width: 64, height: 1, background: 'var(--sand-grey)', margin: '48px auto 24px' }} />
-          <span className="maach-mono" style={{ color: 'var(--sand-grey)' }}>
+          <span className="maach-mono" style={{ color: 'var(--sand-grey)', display: 'block', textAlign: 'center' }}>
             {t('about.manifesto.source')}
           </span>
         </div>
@@ -943,25 +943,12 @@ export default function PageAbout() {
                       alignItems: 'center',
                       justifyContent: 'space-between',
                       gap: 16,
-                      padding: '20px 22px',
+                      padding: '16px 22px',
                     }}
                   >
                     <span aria-hidden style={{ position: 'absolute', top: 10, left: 12, color: 'var(--jet-black)' }}>
                       <IconArrowDownRight size={16} />
                     </span>
-                    <img
-                      aria-hidden
-                      src={asset('isotipo-maach-color.png')}
-                      alt=""
-                      style={{
-                        position: 'absolute',
-                        top: 12,
-                        right: 12,
-                        height: 13,
-                        width: 'auto',
-                        filter: 'brightness(0)',
-                      }}
-                    />
                     <div style={{ minWidth: 0 }}>
                       <h4
                         style={{
@@ -985,19 +972,27 @@ export default function PageAbout() {
                       </span>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 16, flexShrink: 0 }}>
-                      <div style={{ width: 1, height: 44, background: 'rgba(22,22,22,.35)' }} />
-                      <span
-                        style={{
-                          fontFamily: 'var(--display)',
-                          fontWeight: 700,
-                          fontSize: 44,
-                          letterSpacing: '-.03em',
-                          lineHeight: 1,
-                          color: 'var(--off-white)',
-                        }}
-                      >
-                        {m.init}
-                      </span>
+                      <div style={{ width: 1, height: 50, background: 'rgba(22,22,22,.35)' }} />
+                      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 7 }}>
+                        <img
+                          aria-hidden
+                          src={asset('isotipo-maach-color.png')}
+                          alt=""
+                          style={{ height: 12, width: 'auto', filter: 'brightness(0)' }}
+                        />
+                        <span
+                          style={{
+                            fontFamily: 'var(--display)',
+                            fontWeight: 700,
+                            fontSize: 38,
+                            letterSpacing: '-.03em',
+                            lineHeight: 1,
+                            color: 'var(--off-white)',
+                          }}
+                        >
+                          {m.init}
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
