@@ -14,6 +14,8 @@ type ProjectData = {
   status?: 'paused';
   hero?: string;
   gallery?: [string, string, string];
+  /** Full photo set — when present, renders the complete gallery grid. */
+  photos?: string[];
   content?: ProjectContent;
 };
 
@@ -82,6 +84,9 @@ const DATA: Record<string, ProjectData> = {
       asset('proyectos/wesco/03.webp'),
       asset('proyectos/wesco/04.webp'),
     ],
+    photos: Array.from({ length: 39 }, (_, i) =>
+      asset(`proyectos/wesco/${String(i + 1).padStart(2, '0')}.webp`),
+    ),
     content: {
       desafio: [
         'Materializar fielmente la propuesta arquitectónica de un edificio administrativo, asegurando que cada decisión de mobiliario responda tanto a criterios estéticos como funcionales.',
@@ -511,8 +516,40 @@ export default function PagePortafolioDetail() {
         </div>
       </ContentSection>
 
-      {/* GALLERY — only if real photos exist */}
-      {p.gallery ? (
+      {/* GALLERY — full grid when a complete photo set exists, else the 3-up layout */}
+      {p.photos ? (
+        <section style={{ padding: '120px 0', borderBottom: '1px solid var(--line)' }}>
+          <div className="maach-container">
+            <span
+              className="maach-mono"
+              style={{ color: 'var(--muted)', display: 'block', marginBottom: 24, letterSpacing: '.1em' }}
+            >
+              GALERÍA
+            </span>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}>
+              {p.photos.map((src, i) => (
+                <div
+                  key={i}
+                  style={{
+                    position: 'relative',
+                    aspectRatio: '3 / 4',
+                    overflow: 'hidden',
+                    border: '1px solid var(--line)',
+                    background: 'var(--soft)',
+                  }}
+                >
+                  <img
+                    src={src}
+                    alt=""
+                    loading="lazy"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0 }}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : p.gallery ? (
         <section style={{ padding: '120px 0', borderBottom: '1px solid var(--line)' }}>
           <div className="maach-container">
             <span
