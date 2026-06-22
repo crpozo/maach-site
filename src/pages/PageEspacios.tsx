@@ -409,7 +409,7 @@ export default function PageEspacios() {
             }}
           >
             <div>
-              <span className="maach-mono" style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 12 }}>
+              <span className="maach-mono" style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 24 }}>
                 {t('esp.proc.eyebrow')}
               </span>
               <h2 className="h-display" style={{ fontSize: 'clamp(48px, 6.5vw, 90px)' }}>
