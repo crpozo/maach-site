@@ -91,10 +91,12 @@ export default function PageProducts() {
   const toggle = (n: string) =>
     setOpenCats((p) => (p.includes(n) ? p.filter((x) => x !== n) : [...p, n]));
   const [selectedSub, setSelectedSub] = useState<string | null>(initialSub);
+  const [page, setPage] = useState(1);
 
   // Keep state ↔ URL in sync when the user clicks a chip
   const selectSub = (sub: string | null) => {
     setSelectedSub(sub);
+    setPage(1);
     if (sub) {
       setSearchParams({ sub }, { replace: true });
     } else {
@@ -107,6 +109,7 @@ export default function PageProducts() {
     const next = resolveSub(searchParams.get('sub'));
     if (next !== selectedSub) {
       setSelectedSub(next);
+      setPage(1);
       if (next) {
         const parent = catalogCategories.find((c) => c.items.includes(next))?.name;
         if (parent && !openCats.includes(parent)) {
@@ -118,6 +121,17 @@ export default function PageProducts() {
   }, [searchParams]);
 
   const filtered = selectedSub ? products.filter((p) => p.subcategory === selectedSub) : products;
+
+  // Pagination
+  const PER_PAGE = 12;
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
+  const currentPage = Math.min(page, totalPages);
+  const pageItems = filtered.slice((currentPage - 1) * PER_PAGE, currentPage * PER_PAGE);
+  const goToPage = (p: number) => {
+    if (p < 1 || p > totalPages) return;
+    setPage(p);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <Layout screenLabel={t('prodpage.screen_label')}>
@@ -359,7 +373,7 @@ export default function PageProducts() {
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
-                {filtered.map((p) => {
+                {pageItems.map((p) => {
                   const catSlug = encodeURIComponent(p.category.toLowerCase().replace(/ /g, '-'));
                   const productId = p.slug ?? p.id;
                   return (
@@ -402,35 +416,47 @@ export default function PageProducts() {
                 })}
               </div>
 
-              <div style={{ marginTop: 80, display: 'flex', justifyContent: 'center', gap: 6 }}>
-                {[
-                  { l: '‹', active: false },
-                  { l: '01', active: true },
-                  { l: '02', active: false },
-                  { l: '03', active: false },
-                  { l: '04', active: false },
-                  { l: '›', active: false },
-                ].map((b, i) => (
-                  <div
-                    key={i}
-                    style={{
-                      width: 48,
-                      height: 48,
-                      border: '1px solid var(--line)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      background: b.active ? 'var(--jet-black)' : 'transparent',
-                      color: b.active ? 'var(--off-white)' : 'var(--fg)',
-                      fontFamily: 'var(--mono)',
-                      fontSize: 12,
-                      cursor: 'pointer',
-                    }}
-                  >
-                    {b.l}
-                  </div>
-                ))}
-              </div>
+              {totalPages > 1 ? (
+                <div style={{ marginTop: 80, display: 'flex', justifyContent: 'center', gap: 6 }}>
+                  {[
+                    { l: '‹', page: currentPage - 1, disabled: currentPage === 1 },
+                    ...Array.from({ length: totalPages }, (_, i) => ({
+                      l: String(i + 1).padStart(2, '0'),
+                      page: i + 1,
+                      disabled: false,
+                    })),
+                    { l: '›', page: currentPage + 1, disabled: currentPage === totalPages },
+                  ].map((b, i) => {
+                    const active = b.page === currentPage && b.l !== '‹' && b.l !== '›';
+                    return (
+                      <button
+                        key={i}
+                        type="button"
+                        onClick={() => goToPage(b.page)}
+                        disabled={b.disabled}
+                        aria-current={active ? 'page' : undefined}
+                        style={{
+                          width: 48,
+                          height: 48,
+                          border: '1px solid var(--line)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          background: active ? 'var(--jet-black)' : 'transparent',
+                          color: active ? 'var(--off-white)' : 'var(--fg)',
+                          fontFamily: 'var(--mono)',
+                          fontSize: 12,
+                          cursor: b.disabled ? 'not-allowed' : 'pointer',
+                          opacity: b.disabled ? 0.35 : 1,
+                          transition: 'background .15s, color .15s',
+                        }}
+                      >
+                        {b.l}
+                      </button>
+                    );
+                  })}
+                </div>
+              ) : null}
             </div>
           </div>
         </div>

@@ -602,7 +602,10 @@ section[id],
 }
 
 .page {
-  animation: fadeUp 0.4s ease both;
+  /* `backwards` (not `both`) so the element does NOT retain a transform
+     after the animation — a retained transform creates a containing block
+     and breaks position:fixed overlays (image lightbox, modals) inside. */
+  animation: fadeUp 0.4s ease backwards;
 }
 @keyframes fadeUp {
   from {
