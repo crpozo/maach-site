@@ -77,6 +77,9 @@ export default function PageProductDetail() {
     ] as Array<{ name: string; ext: string; href?: string; fileName?: string }>
   ).filter((d) => !!d.href);
 
+  // The BIM/CAD button only handles CAD/BIM files (DWG/RFA/SKP) — never PDFs.
+  const cadDocs = docs.filter((d) => d.ext === 'DWG' || d.ext === 'RFA' || d.ext === 'SKP');
+
   function handleGateSubmit(e: FormEvent) {
     e.preventDefault();
     if (!gateDoc) return;
@@ -338,11 +341,11 @@ export default function PageProductDetail() {
                 <button className="btn-primary" style={{ flex: 1, justifyContent: 'center' }}>
                   {t('pd.contact_advisor')}
                 </button>
-                {docs.length > 0 ? (
+                {cadDocs.length > 0 ? (
                   <button
                     className="btn-ghost"
                     style={{ flex: 1, justifyContent: 'center' }}
-                    onClick={() => setGateDoc({ href: docs[0].href!, fileName: docs[0].fileName })}
+                    onClick={() => setGateDoc({ href: cadDocs[0].href!, fileName: cadDocs[0].fileName })}
                   >
                     <IconDownload size={14} /> {t('pd.bim_cad')}
                   </button>
