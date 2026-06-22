@@ -338,9 +338,11 @@ export default function PageProductDetail() {
                 <button className="btn-primary" style={{ flex: 1, justifyContent: 'center' }}>
                   {t('pd.contact_advisor')}
                 </button>
-                <button className="btn-ghost" style={{ flex: 1, justifyContent: 'center' }}>
-                  <IconDownload size={14} /> {t('pd.bim_cad')}
-                </button>
+                {docs.length > 0 ? (
+                  <button className="btn-ghost" style={{ flex: 1, justifyContent: 'center' }}>
+                    <IconDownload size={14} /> {t('pd.bim_cad')}
+                  </button>
+                ) : null}
               </div>
 
               {/* CARACTERÍSTICAS TÉCNICAS — under the actions, right column */}
