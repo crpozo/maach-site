@@ -9,10 +9,10 @@ export default function PageEspacios() {
   // `subs` maps each product chip (same order as the `products` string) to a
   // catalog subcategory so the chip links straight to that filtered section.
   const spaces = [
-    { id: '01', title: t('esp.typ.01.name'), desc: t('esp.typ.01.desc'), products: t('esp.typ.01.products'), subs: ['Estaciones de trabajo', 'Escritorios operativos', 'Sillas operativas', 'Arturito'], cat: 'escritorios', img: asset('biblioteca-2.webp') },
-    { id: '02', title: t('esp.typ.02.name'), desc: t('esp.typ.02.desc'), products: t('esp.typ.02.products'), subs: ['Mesas de reunión', 'Sillas operativas', 'Credenza', 'Divisiones modulares'], cat: 'mesas', img: asset('biblioteca-3.webp') },
-    { id: '03', title: t('esp.typ.03.name'), desc: t('esp.typ.03.desc'), products: t('esp.typ.03.products'), subs: ['Counters de recepción', 'Mesas colaborativas', 'Sillas gerenciales', 'Sofás'], cat: 'recepciones', img: asset('biblioteca-4.webp') },
-    { id: '04', title: t('esp.typ.04.name'), desc: t('esp.typ.04.desc'), products: t('esp.typ.04.products'), subs: ['Archivo Rodante', 'Biblioteca Alta', 'Locker'], cat: 'almacenamiento', img: asset('biblioteca-1.webp') },
+    { id: '01', title: t('esp.typ.01.name'), desc: t('esp.typ.01.desc'), products: t('esp.typ.01.products'), subs: ['Estaciones de trabajo', 'Escritorios operativos', 'Sillas operativas', 'Arturito'], cat: 'escritorios', img: asset('espacios/tipologia-coworking.webp') },
+    { id: '02', title: t('esp.typ.02.name'), desc: t('esp.typ.02.desc'), products: t('esp.typ.02.products'), subs: ['Mesas de reunión', 'Sillas operativas', 'Credenza', 'Divisiones modulares'], cat: 'mesas', img: asset('espacios/tipologia-salas.webp') },
+    { id: '03', title: t('esp.typ.03.name'), desc: t('esp.typ.03.desc'), products: t('esp.typ.03.products'), subs: ['Counters de recepción', 'Mesas colaborativas', 'Sillas gerenciales', 'Sofás'], cat: 'recepciones', img: asset('espacios/tipologia-espera.webp') },
+    { id: '04', title: t('esp.typ.04.name'), desc: t('esp.typ.04.desc'), products: t('esp.typ.04.products'), subs: ['Archivo Rodante', 'Biblioteca Alta', 'Locker'], cat: 'almacenamiento', img: asset('espacios/tipologia-archivo.webp') },
   ];
 
   return (
