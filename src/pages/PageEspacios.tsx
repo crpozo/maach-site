@@ -171,7 +171,7 @@ export default function PageEspacios() {
                 fontWeight: 100,
               }}
             >
-              {t('esp.hero.title.1')}<span style={{ color: 'var(--lava-orange)' }}>{t('esp.hero.title.2')}</span>
+              {t('esp.hero.title.1')}{t('esp.hero.title.2')}
             </h1>
             <p
               style={{
