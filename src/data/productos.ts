@@ -231,7 +231,7 @@ export const PRODUCTS: Product[] = [
   silla('tex', 'Silla Tex', 'Colectividades', 'MCH-COL-03', { cover: 4 }),
   silla('swan', 'Silla Swan', 'Colectividades', 'MCH-COL-04', { cover: 4 }),
   silla('sol', 'Silla Sol', 'Colectividades', 'MCH-COL-05', { cover: 4, ficha: false }),
-  silla('stef', 'Silla Stef', 'Colectividades', 'MCH-COL-06', { cover: 2, ficha: false }),
+  silla('stef', 'Silla Stef', 'Colectividades', 'MCH-COL-06', { cover: 4, ficha: false }),
   silla('pop', 'Silla Pop', 'Colectividades', 'MCH-COL-07', { cover: 4 }),
   silla('patrick', 'Silla Patrick', 'Colectividades', 'MCH-COL-08', { cover: 4 }),
   silla('obi', 'Silla Obi', 'Colectividades', 'MCH-COL-09', { cover: 5, ficha: false }),
