@@ -189,7 +189,7 @@ export default function PagePortafolio() {
               className="h-display"
               style={{ fontSize: 'clamp(64px, 9vw, 90px)', color: 'var(--off-white)', lineHeight: 0.92, margin: 0 }}
             >
-              {t('port.hero.title.1')}<span className="h-italic" style={{ color: 'var(--lava-orange)' }}>{t('port.hero.title.2')}</span>
+              {t('port.hero.title.1')}<span className="h-italic" style={{ color: 'var(--off-white)' }}>{t('port.hero.title.2')}</span>
             </h1>
             <p
               style={{
