@@ -391,7 +391,7 @@ export default function PageProducts() {
                         <img
                           src={p.img}
                           alt={p.slug ? t('prod.name.' + p.slug) : p.name}
-                          style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform .6s' }}
+                          style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 24, boxSizing: 'border-box', transition: 'transform .6s' }}
                           onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.04)')}
                           onMouseLeave={(e) => (e.currentTarget.style.transform = '')}
                         />
