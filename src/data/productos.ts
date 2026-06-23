@@ -159,6 +159,26 @@ const recepcion = (slug: string, name: string, sku: string, description: string)
   },
 });
 
+// Helper for Sofás (Sillonería · soft seating). Photos live at
+//   productos/silloneria/<slug>/01..06.webp  (01 = perspectiva render, 02-06 = ambientadas)
+// CAD/BIM sheets at <slug>.dwg / .rfa / .skp
+const sofa = (slug: string, name: string, sku: string, description: string): Product => ({
+  slug,
+  name,
+  category: 'Sillonería',
+  subcategory: 'Sofás',
+  sku,
+  description,
+  gallery: Array.from({ length: 6 }, (_, i) =>
+    asset(`productos/silloneria/${slug}/${String(i + 1).padStart(2, '0')}.webp`),
+  ),
+  sheets: {
+    dwg: asset(`productos/silloneria/${slug}/${slug}.dwg`),
+    rfa: asset(`productos/silloneria/${slug}/${slug}.rfa`),
+    skp: asset(`productos/silloneria/${slug}/${slug}.skp`),
+  },
+});
+
 // Default short description per Sillonería subcategory. Used when the
 // individual product copy hasn't been provided yet.
 const SILLA_DESC: Record<string, string> = {
@@ -470,6 +490,44 @@ export const PRODUCTS: Product[] = [
     'Recepción Recta Metal',
     'MCH-REC-03',
     'Counter de recepción recto con frente en metal, de línea moderna y robusta. Estructura en melamina / fórmica con acabados en cuarzo, porcelanato o vidrio y sistema de conducción eléctrica integrado.',
+  ),
+
+  // ─── SOFÁS (Sillonería) ─────────────────────────────────
+  sofa(
+    'booth-con-jardinera',
+    'Booth con Jardinera',
+    'MCH-SOF-01',
+    'Booth de asiento envolvente con jardinera integrada que crea espacios semiprivados dentro de oficinas abiertas. Ideal para reuniones informales, focus rooms y zonas de descanso, combinando confort acústico y aislamiento visual.',
+  ),
+  sofa(
+    'sofa-en-l',
+    'Sofá en L',
+    'MCH-SOF-02',
+    'Sofá modular en L con jardinera, pensado para áreas de espera y lounge. Tapizado de alta resistencia sobre estructura reforzada, define zonas de estar cómodas y representativas.',
+  ),
+  sofa(
+    'sofa-en-l-2',
+    'Sofá en L II',
+    'MCH-SOF-03',
+    'Variante del sofá en L con jardinera, en una configuración alternativa de proporciones y módulos para adaptarse a distintos espacios de recepción y descanso.',
+  ),
+  sofa(
+    'sofa-personal',
+    'Sofá Personal',
+    'MCH-SOF-04',
+    'Sofá individual de líneas limpias para salas de espera, oficinas privadas y áreas colaborativas. Confort ergonómico y tapizado durable para uso intensivo.',
+  ),
+  sofa(
+    'sofa-tripersonal',
+    'Sofá Tripersonal',
+    'MCH-SOF-05',
+    'Sofá de tres plazas para lobbies y salas de espera de alto tránsito. Asientos de espuma de alta densidad y estructura reforzada que mantienen el confort a lo largo del tiempo.',
+  ),
+  sofa(
+    'puff',
+    'Puff',
+    'MCH-SOF-06',
+    'Puff tapizado versátil que aporta asientos flexibles a zonas colaborativas y de descanso. Ligero, reconfigurable y disponible en distintos acabados de tela.',
   ),
 ];
 
