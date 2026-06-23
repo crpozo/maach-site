@@ -162,17 +162,19 @@ export default function PageAbout() {
             <h1
               className="h-display"
               style={{
-                fontSize: 'clamp(48px, 7vw, 90px)',
+                fontSize: 'clamp(38px, 5.4vw, 76px)',
                 marginBottom: 32,
                 color: 'var(--off-white)',
-                lineHeight: 0.92,
+                lineHeight: 0.96,
                 letterSpacing: '-.02em',
               }}
             >
-              {t('about.hero.h1.1')}{' '}
-              <span style={{ color: 'var(--lava-orange)' }}>{t('about.hero.h1.2')}</span>
+              {t('about.hero.h1.1')}
               <br />
-              {t('about.hero.h1.3')} {t('about.hero.h1.4')}
+              <span style={{ color: 'var(--lava-orange)' }}>{t('about.hero.h1.2')}</span>{' '}
+              {t('about.hero.h1.3')}
+              <br />
+              {t('about.hero.h1.4')}
             </h1>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: 28, flexWrap: 'wrap' }}>
