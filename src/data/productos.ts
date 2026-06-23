@@ -139,6 +139,26 @@ const division = (
     : undefined,
 });
 
+// Helper for Recepciones products. Photos live at
+//   productos/recepciones/<slug>/01..06.webp  (01 = perspectiva render, 02-06 = ambientadas)
+// CAD/BIM sheets at <slug>.dwg / .rfa / .skp
+const recepcion = (slug: string, name: string, sku: string, description: string): Product => ({
+  slug,
+  name,
+  category: 'Recepciones',
+  subcategory: 'Counters de recepción',
+  sku,
+  description,
+  gallery: Array.from({ length: 6 }, (_, i) =>
+    asset(`productos/recepciones/${slug}/${String(i + 1).padStart(2, '0')}.webp`),
+  ),
+  sheets: {
+    dwg: asset(`productos/recepciones/${slug}/${slug}.dwg`),
+    rfa: asset(`productos/recepciones/${slug}/${slug}.rfa`),
+    skp: asset(`productos/recepciones/${slug}/${slug}.skp`),
+  },
+});
+
 // Default short description per Sillonería subcategory. Used when the
 // individual product copy hasn't been provided yet.
 const SILLA_DESC: Record<string, string> = {
@@ -430,6 +450,26 @@ export const PRODUCTS: Product[] = [
     'Divisiones de vidrio',
     'MCH-DIV-02',
     'División de aluminio y vidrio de piso a techo que delimita áreas sin perder amplitud visual ni entrada de luz natural. Perfiles de aluminio con puerta de aluminio y vidrio, ideal para oficinas que buscan ambientes abiertos, luminosos y organizados.',
+  ),
+
+  // ─── RECEPCIONES ─────────────────────────────────
+  recepcion(
+    'recepcion-en-l',
+    'Recepción en L',
+    'MCH-REC-01',
+    'Counter de recepción en L que organiza el área de bienvenida y aprovecha el espacio en esquina. Estructura en melamina / fórmica con acabados en cuarzo, porcelanato o vidrio y sistema de conducción eléctrica integrado.',
+  ),
+  recepcion(
+    'recepcion-recta-madera',
+    'Recepción Recta Madera',
+    'MCH-REC-02',
+    'Counter de recepción recto con frente en madera, cálido y sobrio para el punto de bienvenida. Estructura en melamina / fórmica con acabados combinables y sistema de conducción eléctrica integrado.',
+  ),
+  recepcion(
+    'recepcion-recta-metal',
+    'Recepción Recta Metal',
+    'MCH-REC-03',
+    'Counter de recepción recto con frente en metal, de línea moderna y robusta. Estructura en melamina / fórmica con acabados en cuarzo, porcelanato o vidrio y sistema de conducción eléctrica integrado.',
   ),
 ];
 

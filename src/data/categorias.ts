@@ -308,6 +308,7 @@ export const CATEGORIES: Category[] = [
       {
         slug: 'recepciones',
         name: 'Recepciones',
+        productSubcategory: 'Counters de recepción',
         description:
           'La recepción es el punto de bienvenida de tu empresa y refleja su identidad. Estas recepciones están diseñadas para ofrecer una presencia sólida, combinando líneas modernas con soluciones prácticas para la atención diaria.',
         caracteristicas: [
