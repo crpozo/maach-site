@@ -1,7 +1,8 @@
+import { useState, useEffect } from 'react';
 import { asset } from '../lib/asset';
 import { Link, useParams } from 'react-router-dom';
 import { Layout } from '../components/Layout';
-import { IconArrow } from '../components/icons';
+import { IconArrow, IconClose, IconChevronRight, IconPlus } from '../components/icons';
 
 type ProjectContent = {
   desafio: string[];
@@ -397,6 +398,24 @@ export default function PagePortafolioDetail() {
   const p = DATA[id] || DATA['01'];
   const paused = p.status === 'paused';
 
+  // Lightbox for the elaborate photo gallery
+  const photos = p.photos;
+  const [lightbox, setLightbox] = useState<number | null>(null);
+  useEffect(() => {
+    if (lightbox === null || !photos) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setLightbox(null);
+      else if (e.key === 'ArrowRight') setLightbox((i) => (i === null ? i : (i + 1) % photos.length));
+      else if (e.key === 'ArrowLeft') setLightbox((i) => (i === null ? i : (i - 1 + photos.length) % photos.length));
+    };
+    window.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [lightbox, photos]);
+
   // If no content (CAME), show paused/coming-soon screen
   if (!p.content) {
     return (
@@ -526,26 +545,25 @@ export default function PagePortafolioDetail() {
             >
               GALERÍA
             </span>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}>
-              {p.photos.map((src, i) => (
-                <div
-                  key={i}
-                  style={{
-                    position: 'relative',
-                    aspectRatio: '3 / 4',
-                    overflow: 'hidden',
-                    border: '1px solid var(--line)',
-                    background: 'var(--soft)',
-                  }}
-                >
-                  <img
-                    src={src}
-                    alt=""
-                    loading="lazy"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0 }}
-                  />
-                </div>
-              ))}
+            <div className="maach-mosaic">
+              {p.photos.map((src, i) => {
+                const variant = i % 7 === 0 ? ' feat' : i % 7 === 4 ? ' tall' : '';
+                return (
+                  <button
+                    key={i}
+                    type="button"
+                    className={'maach-tile' + variant}
+                    onClick={() => setLightbox(i)}
+                    aria-label={`Ampliar foto ${i + 1} de ${p.photos!.length}`}
+                  >
+                    <img src={src} alt="" loading="lazy" />
+                    <span className="maach-tile-idx maach-mono">{String(i + 1).padStart(2, '0')}</span>
+                    <span className="maach-tile-zoom" aria-hidden>
+                      <IconPlus size={16} />
+                    </span>
+                  </button>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -631,6 +649,108 @@ export default function PagePortafolioDetail() {
           </Link>
         </div>
       </section>
+
+      {/* LIGHTBOX — fullscreen photo viewer with prev/next */}
+      {photos && lightbox !== null ? (
+        <div
+          onClick={() => setLightbox(null)}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 1000,
+            background: 'rgba(12,12,12,.95)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: 'clamp(16px, 5vw, 64px)',
+          }}
+        >
+          {/* Counter */}
+          <span
+            className="maach-mono"
+            style={{ position: 'absolute', top: 28, left: 28, color: 'var(--off-white)', letterSpacing: '.1em' }}
+          >
+            {String(lightbox + 1).padStart(2, '0')} / {String(photos.length).padStart(2, '0')}
+          </span>
+          {/* Close */}
+          <button
+            onClick={() => setLightbox(null)}
+            aria-label="Cerrar"
+            style={{
+              position: 'absolute',
+              top: 24,
+              right: 24,
+              background: 'transparent',
+              border: '1px solid rgba(255,255,255,.5)',
+              color: 'var(--off-white)',
+              width: 44,
+              height: 44,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+            }}
+          >
+            <IconClose size={18} />
+          </button>
+          {/* Prev */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setLightbox((i) => (i === null ? i : (i - 1 + photos.length) % photos.length));
+            }}
+            aria-label="Anterior"
+            style={{
+              position: 'absolute',
+              left: 'clamp(8px, 2vw, 24px)',
+              top: '50%',
+              transform: 'translateY(-50%)',
+              background: 'transparent',
+              border: '1px solid rgba(255,255,255,.5)',
+              color: 'var(--off-white)',
+              width: 48,
+              height: 48,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+            }}
+          >
+            <IconChevronRight size={18} style={{ transform: 'rotate(180deg)' }} />
+          </button>
+          <img
+            src={photos[lightbox]}
+            alt=""
+            onClick={(e) => e.stopPropagation()}
+            style={{ maxWidth: '90vw', maxHeight: '86vh', objectFit: 'contain', cursor: 'default' }}
+          />
+          {/* Next */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setLightbox((i) => (i === null ? i : (i + 1) % photos.length));
+            }}
+            aria-label="Siguiente"
+            style={{
+              position: 'absolute',
+              right: 'clamp(8px, 2vw, 24px)',
+              top: '50%',
+              transform: 'translateY(-50%)',
+              background: 'transparent',
+              border: '1px solid rgba(255,255,255,.5)',
+              color: 'var(--off-white)',
+              width: 48,
+              height: 48,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+            }}
+          >
+            <IconChevronRight size={18} />
+          </button>
+        </div>
+      ) : null}
     </Layout>
   );
 }
