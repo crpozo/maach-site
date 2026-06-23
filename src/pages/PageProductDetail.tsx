@@ -504,7 +504,6 @@ export default function PageProductDetail() {
                   <h4
                     style={{
                       fontFamily: 'var(--display)',
-                      fontWeight: 600,
                       fontSize: 22,
                       textTransform: 'uppercase',
                       letterSpacing: '-.01em',

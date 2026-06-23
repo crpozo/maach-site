@@ -402,7 +402,6 @@ export default function PageProducts() {
                       <h3
                         style={{
                           fontFamily: 'var(--display)',
-                          fontWeight: 600,
                           fontSize: 22,
                           textTransform: 'uppercase',
                           letterSpacing: '-.01em',

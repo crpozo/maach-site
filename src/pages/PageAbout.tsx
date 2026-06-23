@@ -575,7 +575,6 @@ export default function PageAbout() {
                   <h3
                     style={{
                       fontFamily: 'var(--display)',
-                      fontWeight: 700,
                       fontSize: 28,
                       textTransform: 'uppercase',
                       letterSpacing: '-.01em',
@@ -814,7 +813,6 @@ export default function PageAbout() {
                   <h3
                     style={{
                       fontFamily: 'var(--display)',
-                      fontWeight: 700,
                       fontSize: 'clamp(22px, 2.4vw, 30px)',
                       textTransform: 'uppercase',
                       letterSpacing: '-.01em',
@@ -919,7 +917,6 @@ export default function PageAbout() {
                     <h4
                       style={{
                         fontFamily: 'var(--display)',
-                        fontWeight: 600,
                         fontSize: 20,
                         textTransform: 'uppercase',
                         letterSpacing: '-.01em',
@@ -953,7 +950,6 @@ export default function PageAbout() {
                       <h4
                         style={{
                           fontFamily: 'var(--display)',
-                          fontWeight: 700,
                           fontSize: 17,
                           textTransform: 'uppercase',
                           letterSpacing: '-.01em',

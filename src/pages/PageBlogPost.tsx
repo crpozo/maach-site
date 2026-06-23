@@ -12,7 +12,6 @@ function renderSection(s: Section, i: number) {
           key={i}
           style={{
             fontFamily: 'var(--display)',
-            fontWeight: 700,
             fontSize: 'clamp(28px, 3.5vw, 44px)',
             letterSpacing: '-.015em',
             lineHeight: 1.05,
@@ -29,7 +28,6 @@ function renderSection(s: Section, i: number) {
           key={i}
           style={{
             fontFamily: 'var(--display)',
-            fontWeight: 600,
             fontSize: 22,
             letterSpacing: '-.01em',
             lineHeight: 1.15,
@@ -278,7 +276,7 @@ export default function PageBlogPost() {
                 ¿Quieres profundizar?
               </span>
               <h2 className="h-display" style={{ fontSize: 'clamp(32px, 4.5vw, 56px)' }}>
-                Lee también.
+                Lee también
               </h2>
             </div>
             <Link
@@ -330,7 +328,6 @@ export default function PageBlogPost() {
                   <h3
                     style={{
                       fontFamily: 'var(--display)',
-                      fontWeight: 600,
                       fontSize: 20,
                       lineHeight: 1.1,
                       letterSpacing: '-.01em',

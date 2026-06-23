@@ -184,7 +184,6 @@ export default function PageCategory() {
               }}
             >
               {t(`cat.${category.slug}.name`)}
-              <span style={{ color: 'var(--lava-orange)' }}>.</span>
             </h1>
             {category.intro ? (
               <p
@@ -262,7 +261,6 @@ export default function PageCategory() {
                     }}
                   >
                     {t(`cat.${category.slug}.sec.${i}.name`)}
-                    <span style={{ color: 'var(--lava-orange)' }}>.</span>
                   </h2>
                   {s.pendingPhotos ? (
                     <span
@@ -482,7 +480,6 @@ export default function PageCategory() {
                           <h3
                             style={{
                               fontFamily: 'var(--display)',
-                              fontWeight: 700,
                               fontSize: 20,
                               textTransform: 'uppercase',
                               letterSpacing: '-.01em',

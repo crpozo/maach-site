@@ -156,7 +156,7 @@ export default function PageColecciones() {
                 margin: 0,
               }}
             >
-              {c.name}.
+              {c.name}
             </h2>
             <div
               style={{

@@ -136,7 +136,6 @@ export default function PageHome() {
                 fontSize: 'clamp(48px, 7vw, 90px)',
                 marginBottom: 32,
                 color: 'var(--off-white)',
-                fontWeight: 400,
               }}
             >
               {t('home.hero.h1.1')}{' '}
@@ -184,7 +183,7 @@ export default function PageHome() {
               <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 16 }}>
                 {t('home.cat.eyebrow')}
               </span>
-              <h2 className="h-display" style={{ fontSize: 'clamp(56px, 8vw, 90px)', fontWeight: 100 }}>
+              <h2 className="h-display" style={{ fontSize: 'clamp(56px, 8vw, 90px)' }}>
                 {t('home.cat.title')}
               </h2>
             </div>
@@ -301,7 +300,6 @@ export default function PageHome() {
                     <h3
                       style={{
                         fontFamily: 'var(--display)',
-                        fontWeight: 100,
                         fontSize: 'clamp(28px, 3vw, 44px)',
                         letterSpacing: '-.02em',
                         lineHeight: 0.95,
@@ -428,7 +426,6 @@ export default function PageHome() {
                   <h3
                     style={{
                       fontFamily: 'var(--display)',
-                      fontWeight: 600,
                       fontSize: 26,
                       lineHeight: 0.95,
                       marginBottom: 10,
@@ -519,7 +516,6 @@ export default function PageHome() {
                   <h3
                     style={{
                       fontFamily: 'var(--display)',
-                      fontWeight: 700,
                       fontSize: 'clamp(22px, 2.4vw, 30px)',
                       textTransform: 'uppercase',
                       letterSpacing: '-.01em',
@@ -636,7 +632,6 @@ export default function PageHome() {
                     <h4
                       style={{
                         fontFamily: 'var(--display)',
-                        fontWeight: 700,
                         fontSize: 22,
                         letterSpacing: '-.01em',
                         textTransform: 'uppercase',
@@ -912,7 +907,6 @@ export default function PageHome() {
               <h3
                 style={{
                   fontFamily: 'var(--display)',
-                  fontWeight: 700,
                   fontSize: 48,
                   marginBottom: 24,
                   lineHeight: 0.95,

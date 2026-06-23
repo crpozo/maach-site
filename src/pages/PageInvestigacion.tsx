@@ -311,7 +311,6 @@ export default function PageInvestigacion() {
                   <h3
                     style={{
                       fontFamily: 'var(--display)',
-                      fontWeight: 600,
                       fontSize: 28,
                       lineHeight: 1.05,
                       letterSpacing: '-.01em',

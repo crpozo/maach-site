@@ -413,10 +413,10 @@ const T: Translations = {
     'nuevo.stat_disponibilidad': 'Disponibilidad',
     'nuevo.showcase_badge': 'DESTACADO 01',
     'nuevo.showcase_kicker': 'SISTEMA BENCH',
-    'nuevo.showcase_name': 'Vértice.',
+    'nuevo.showcase_name': 'Vértice',
     'nuevo.showcase_spec': 'Estación benching · 2–12 puestos',
     'nuevo.showcase_cta': 'Ver detalles',
-    'nuevo.grid_title': 'Recién llegados.',
+    'nuevo.grid_title': 'Recién llegados',
     'nuevo.grid_count': '03 piezas · Disponibles ya',
     'nuevo.card_badge': 'NUEVO',
     'colec.coll_modularidad_confort': 'Modularidad y confort para entornos de alto rendimiento',
@@ -424,7 +424,7 @@ const T: Translations = {
     'colec.coll_calidez_domestica': 'Calidez doméstica con estándares industriales',
     'colec.eyebrow_sistema_2026': 'Sistema 2026',
     'colec.hero_title_colec': 'Colec',
-    'colec.hero_title_ciones': 'ciones.',
+    'colec.hero_title_ciones': 'ciones',
     'colec.hero_intro': 'Sistemas de mobiliario agrupados por visión arquitectónica. Cada colección resuelve necesidades operativas específicas bajo un lenguaje visual unificado.',
     'colec.card_sistema_maach': 'Sistema MAACH ·',
     'colec.cta_explorar': 'Explorar colección',
@@ -435,12 +435,12 @@ const T: Translations = {
     'colecd.hero_subtitle': 'Una exploración profunda sobre la modularidad y el confort en entornos de alto rendimiento.',
     'colecd.concepto_eyebrow': 'Concepto',
     'colecd.concepto_title_1': 'Diseño con',
-    'colecd.concepto_title_2': 'Propósito.',
+    'colecd.concepto_title_2': 'Propósito',
     'colecd.concepto_p1': 'trasciende la concepción tradicional del mobiliario de oficina. Desarrollada junto a estudios de arquitectura, esta colección prioriza la salud postural y la adaptabilidad.',
     'colecd.concepto_p2': 'Cada componente fue diseñado como parte de un ecosistema mayor, permitiendo configuraciones desde estaciones individuales de alta concentración hasta grandes áreas colaborativas fluidas.',
     'colecd.detalle_estructural': 'DETALLE_ESTRUCTURAL',
     'colecd.catalogo_eyebrow': 'Catálogo',
-    'colecd.catalogo_title': 'Piezas de la colección.',
+    'colecd.catalogo_title': 'Piezas de la colección',
     'colecd.ver_todos': 'Ver todos',
     'colecd.prod_1_name': 'Silla Operativa X1',
     'colecd.prod_1_cat': 'Sillería',
@@ -456,7 +456,7 @@ const T: Translations = {
     'colecd.prod_6_cat': 'Almacenamiento',
     'colecd.lanzamiento_eyebrow': 'Lanzamiento · Otoño 2026',
     'colecd.lanzamiento_title_1': 'Inspiración',
-    'colecd.lanzamiento_title_2': 'Mediterránea.',
+    'colecd.lanzamiento_title_2': 'Mediterránea',
     'colecd.lanzamiento_p1': 'La intersección entre la rigidez corporativa y el confort del hogar. Paletas cromáticas arena, perfiles suavizados y texturas que invitan al tacto.',
     'colecd.lanzamiento_quote': '"Nuestra intención fue desdibujar la línea entre el trabajo y el bienestar, transformando la oficina en un destino deseable."',
     'colecd.lanzamiento_author': '— Estudio MAACH',
@@ -466,7 +466,7 @@ const T: Translations = {
     'colecd.cta_contactar': 'Contactar ingeniería',
     'colecd.cta_descargar': 'Descargar 3D/CAD',
     'home2.research_eyebrow': 'INVESTIGACIÓN · MAACH',
-    'home2.research_title': '¿Dudas para diseñar tu espacio? Aquí las resolvemos.',
+    'home2.research_title': '¿Dudas para diseñar tu espacio? Aquí las resolvemos',
     'home2.research_link': 'Ver artículos',
     'inv2.card_label': 'BLOG',
     // ====== NAV ======
@@ -506,12 +506,12 @@ const T: Translations = {
     'home.hero.h1.1': 'Diseño',
     'home.hero.h1.2': 'Industrial,',
     'home.hero.h1.3': 'Rendimiento',
-    'home.hero.h1.4': 'Real.',
+    'home.hero.h1.4': 'Real',
     'home.hero.estudio_caso': 'ESTUDIO_CASO / 01',
     'home.hero.disponible': '+ DISPONIBLE',
     // Categorías section
     'home.cat.eyebrow': 'Sistema',
-    'home.cat.title': 'Categorías.',
+    'home.cat.title': 'Categorías',
     'home.cat.01.name': 'Sillonería',
     'home.cat.01.desc': 'Ergonomía técnica, sillas gerenciales, operativas y sofás.',
     'home.cat.02.name': 'Escritorios',
@@ -527,7 +527,7 @@ const T: Translations = {
     // ADN industrial
     'home.adn.eyebrow': 'Filosofía',
     'home.adn.title.1': 'ADN',
-    'home.adn.title.2': 'Industrial.',
+    'home.adn.title.2': 'Industrial',
     'home.adn.intro': 'Cada decisión responde a ingeniería, durabilidad y desempeño en el tiempo.',
     'home.adn.01.title': 'Integridad Estructural',
     'home.adn.01.body':
@@ -543,7 +543,7 @@ const T: Translations = {
       'Trabajamos junto a estudios y clientes para resolver requerimientos técnicos específicos. El diseño se construye en conjunto.',
     // Nuestra planta
     'home.planta.eyebrow': 'Infraestructura · Tecnología',
-    'home.planta.title': 'Nuestra planta.',
+    'home.planta.title': 'Nuestra planta',
     'home.planta.intro':
       'Fabricamos con maquinaria de control numérico y procesos industriales que garantizan precisión, repetibilidad y acabados de estándar internacional.',
     'home.planta.01.title': 'Corte CNC',
@@ -556,17 +556,17 @@ const T: Translations = {
     'home.planta.04.body': 'Armado, verificación dimensional y control de calidad final.',
     // Casos de Estudio
     'home.cases.eyebrow': 'Portafolio',
-    'home.cases.title': 'Casos de Estudio.',
+    'home.cases.title': 'Casos de Estudio',
     // Clientes
     'home.clientes.eyebrow': 'Clientes',
     'home.clientes.title.1': 'Confianza',
-    'home.clientes.title.2': 'industrial.',
+    'home.clientes.title.2': 'industrial',
     'home.clientes.count': '+22 organizaciones · Ecuador',
     'home.clientes.footnote': 'Marcas y organizaciones con las que MAACH ha colaborado · 2018 — 2026',
     // Precisión Industrial
     'home.precision.eyebrow': 'Directiva de proyecto',
     'home.precision.title.1': 'Precisión',
-    'home.precision.title.2': 'Industrial.',
+    'home.precision.title.2': 'Industrial',
     'home.precision.row1.k': 'CAPACIDAD INSTALADA',
     'home.precision.row1.v': 'ALTO VOLUMEN',
     'home.precision.row2.k': 'TOLERANCIA',
@@ -584,7 +584,7 @@ const T: Translations = {
     'esp.hero.eyebrow': 'MAACH · PLANIFICACIÓN 2026',
     'esp.hero.section': 'Espacios',
     'esp.hero.title.1': 'Es',
-    'esp.hero.title.2': 'pacios.',
+    'esp.hero.title.2': 'pacios',
     'esp.hero.body':
       'Soluciones integrales que transforman metros cuadrados en entornos productivos, coherentes y listos para escalar.',
     'esp.stat.tipologias': 'Tipologías',
@@ -594,7 +594,7 @@ const T: Translations = {
     // Typologies
     'esp.typ.eyebrow': 'Tipologías',
     'esp.typ.title.1': 'Cuatro',
-    'esp.typ.title.2': 'tipologías.',
+    'esp.typ.title.2': 'tipologías',
     'esp.typ.count': '04 espacios · Sistema MAACH',
     'esp.typ.01.name': 'Área Coworking',
     'esp.typ.01.desc':
@@ -621,7 +621,7 @@ const T: Translations = {
     // Process
     'esp.proc.eyebrow': 'Proceso',
     'esp.proc.title.1': 'Cómo planificamos',
-    'esp.proc.title.2': 'un espacio.',
+    'esp.proc.title.2': 'un espacio',
     'esp.proc.subtitle': 'Del primer plano arquitectónico a la instalación final, en cuatro fases.',
     'esp.proc.01.title': 'Diagnóstico',
     'esp.proc.01.body':
@@ -637,7 +637,7 @@ const T: Translations = {
       'Logística, montaje y puesta a punto. Equipo propio MAACH coordinado con la obra y el cliente.',
     // Deliverables
     'esp.del.eyebrow': 'Entregables',
-    'esp.del.title': 'Qué entregamos.',
+    'esp.del.title': 'Qué entregamos',
     'esp.del.01': 'Levantamiento de espacio',
     'esp.del.02': 'Plano arquitectónico',
     'esp.del.03': 'Render 3D fotorrealista',
@@ -662,7 +662,7 @@ const T: Translations = {
     'port.hero.eyebrow': 'MAACH · PORTAFOLIO 2026',
     'port.hero.section': 'Proyectos · 2024 — 2026',
     'port.hero.title.1': 'Porta',
-    'port.hero.title.2': 'folio.',
+    'port.hero.title.2': 'folio',
     'port.hero.body': 'Selección de proyectos donde el diseño arquitectónico y la funcionalidad industrial convergen.',
     'port.m.completed': 'Proyectos completados',
     'port.m.countries': 'Países atendidos',
@@ -671,13 +671,13 @@ const T: Translations = {
     'port.discover': 'Descubrir proyecto',
     // Detail
     'pdet.phase01.eyebrow': 'FASE 01 · DESAFÍO',
-    'pdet.phase01.title': 'El Desafío.',
+    'pdet.phase01.title': 'El Desafío',
     'pdet.phase01.lead':
       'Un espacio para fomentar la colaboración espontánea y la concentración profunda, respetando la arquitectura original del edificio y maximizando la luz natural.',
     'pdet.phase01.body':
       'El proyecto requería una solución integral de mobiliario adaptable a diferentes modalidades de trabajo. Se implementaron sistemas de benching para áreas operativas combinados con zonas de soft seating para reuniones informales.',
     'pdet.phase02.eyebrow': 'FASE 02 · PROPUESTA',
-    'pdet.phase02.title': 'Propuesta de Valor.',
+    'pdet.phase02.title': 'Propuesta de Valor',
     'pdet.phase02.lead':
       'Integración de la colección MAACH-02 para lograr una estética cohesiva entre zonas operativas y de dirección.',
     'pdet.phase02.b1': 'Sillería ergonómica certificada para reducir fatiga postural en jornadas de alto rendimiento.',
@@ -686,7 +686,7 @@ const T: Translations = {
       'Acabados en maderas naturales y textiles texturizados que aportan calidez al entorno corporativo.',
     'pdet.phase02.b4': 'Integración tecnológica oculta en mesas de juntas y estaciones modulares.',
     'pdet.phase03.eyebrow': 'FASE 03 · RESULTADO',
-    'pdet.phase03.title': 'El Resultado.',
+    'pdet.phase03.title': 'El Resultado',
     'pdet.phase03.metric': 'MÉTRICA CLAVE',
     'pdet.phase03.metric.body':
       'Incremento en la utilización de espacios colaborativos según reporte del cliente, 6 meses post-instalación.',
@@ -699,7 +699,7 @@ const T: Translations = {
     'pdet.phase03.pieces': 'Piezas instaladas',
     'pdet.phase03.pieces.value': '284 ud.',
     'pdet.gallery.eyebrow': 'Galería',
-    'pdet.gallery.title': 'Vista de instalación.',
+    'pdet.gallery.title': 'Vista de instalación',
     'pdet.next': 'Siguiente proyecto',
     'pdet.continue': 'Continuar',
     'pdet.sector': 'Sector',
@@ -714,14 +714,14 @@ const T: Translations = {
     'inv.hero.eyebrow': 'MAACH · WORK INSIGHTS 2026',
     'inv.hero.section': 'Investigación',
     'inv.hero.title.1': 'Investigación',
-    'inv.hero.title.2': 'y contexto.',
+    'inv.hero.title.2': 'y contexto',
     'inv.hero.body':
       'El diseño de nuestro mobiliario no surge de la intuición, sino de la observación sistemática y el análisis de cómo cambian las dinámicas laborales a nivel global.',
     'inv.quote.body': '68% de las oficinas hoy requieren configuraciones adaptables a equipos híbridos.',
     'inv.quote.source': '— Reporte MAACH Work Insights 2025',
     'inv.list.eyebrow': 'Editorial · MAACH Research',
     'inv.list.title.1': 'Lecturas',
-    'inv.list.title.2': 'recomendadas.',
+    'inv.list.title.2': 'recomendadas',
     'inv.list.count': '03 artículos · MAACH 2026',
     'inv.manifesto.eyebrow': 'Manifiesto · MAACH 2026',
     'inv.manifesto.body.1': '"Investigamos el trabajo real para diseñar',
@@ -732,7 +732,7 @@ const T: Translations = {
     'blog.read': 'Leer artículo',
     'blog.next_step': 'Siguiente paso',
     'blog.read_too': '¿Quieres profundizar?',
-    'blog.read_too.title': 'Lee también.',
+    'blog.read_too.title': 'Lee también',
 
     // ====== RECURSOS ======
     'rec.hero.eyebrow': 'MAACH · RECURSOS 2026',
@@ -741,7 +741,7 @@ const T: Translations = {
     'rec.hero.crumb.section': 'Recursos de diseño',
     'rec.hero.crumb.current': 'Biblioteca',
     'rec.hero.title.1': 'Biblioteca',
-    'rec.hero.title.2': 'de Documentos.',
+    'rec.hero.title.2': 'de Documentos',
     'rec.hero.body': 'Descarga folletos, especificaciones técnicas, fichas de producto, planos CAD y modelos 3D / BIM.',
     'rec.filter.type': 'Tipo de documento',
     'rec.filter.docs_guides': 'Documentos & guías',
@@ -762,7 +762,7 @@ const T: Translations = {
     // ====== CONTACTO ======
     'cont.tag': 'MAACH · CONTACTO',
     'cont.hero.title.1': 'Hablemos',
-    'cont.hero.title.2': 'de tu proyecto.',
+    'cont.hero.title.2': 'de tu proyecto',
     'cont.hero.body':
       'Desarrollamos soluciones de mobiliario técnico a gran escala. Integramos nuestros sistemas directamente a tus planos arquitectónicos.',
     'cont.stat.response': 'Respuesta',
@@ -770,10 +770,10 @@ const T: Translations = {
     'cont.stat.direct_lines': 'Líneas directas',
     'cont.right.eyebrow': 'Equipo de ingeniería de proyectos',
     'cont.right.title.1': 'En tu obra,',
-    'cont.right.title.2': 'desde el plano.',
+    'cont.right.title.2': 'desde el plano',
     'cont.right.tag': 'QUITO · ECUADOR',
     'cont.form.eyebrow': 'Formulario · Iniciar conversación',
-    'cont.form.title': 'Escríbenos.',
+    'cont.form.title': 'Escríbenos',
     'cont.form.response': 'Respuesta < 24 hrs',
     'cont.form.name': 'Nombre y apellido *',
     'cont.form.name_ph': 'Roberto A. Salgado',
@@ -797,7 +797,7 @@ const T: Translations = {
     'about.hero.h1.1': 'Diseñar y fabricar',
     'about.hero.h1.2': 'mobiliario',
     'about.hero.h1.3': 'que funcione en',
-    'about.hero.h1.4': 'el trabajo real.',
+    'about.hero.h1.4': 'el trabajo real',
     'about.hero.tag': 'SOBRE MAACH',
     'about.hero.season': 'ESTUDIO · MANIFIESTO 2026',
     'about.hero.id.code': 'MCH-ABOUT-01',
@@ -814,7 +814,7 @@ const T: Translations = {
     'about.mv.vision.body':
       'Ser la referencia latinoamericana en mobiliario co-creado y fabricado localmente con estándares internacionales, mejorando la productividad y el bienestar mediante la innovación continua, tecnología y creatividad; impulsando la industria y el talento ecuatoriano hacia el mundo.',
     'about.sobre.eyebrow': 'Sobre Nosotros',
-    'about.sobre.title': 'Sobre nosotros.',
+    'about.sobre.title': 'Sobre nosotros',
     'about.sobre.body.1':
       'MAACH diseña y fabrica mobiliario corporativo a partir de procesos industriales sólidos, criterios de ingeniería y una comprensión profunda del uso real en los espacios de trabajo.',
     'about.sobre.body.2':
@@ -831,7 +831,7 @@ const T: Translations = {
     'about.sobre.step.03.label': '03 / Co-diseño',
     'about.sobre.step.03.value': 'Arquitectos · clientes',
     'about.values.eyebrow': 'Valores',
-    'about.values.title': 'Cómo trabajamos.',
+    'about.values.title': 'Cómo trabajamos',
     'about.value.01.title': 'Diseño funcional',
     'about.value.01.body':
       'Cada decisión de diseño responde a una necesidad real de uso. La forma existe para cumplir una función y mejorar el desempeño del trabajo cotidiano.',
@@ -859,7 +859,7 @@ const T: Translations = {
     'about.manifesto.body.5': 'que habilitan el trabajo."',
     'about.manifesto.source': 'Estudio MAACH · 2026',
     'about.history.eyebrow': 'Trayectoria',
-    'about.history.title': 'Nuestra Historia.',
+    'about.history.title': 'Nuestra Historia',
     'about.history.body.1':
       'MAACH nació hace tres años como la unidad comercial de Sumar, una empresa familiar con más de 30 años de trayectoria en la fabricación de mobiliario corporativo.',
     'about.history.body.2':
@@ -869,7 +869,7 @@ const T: Translations = {
     'about.history.stat.years': 'años de trayectoria',
     'about.history.stat.brand': 'años como marca',
     'about.team.eyebrow': 'Estructura Organizacional',
-    'about.team.title': 'Equipo.',
+    'about.team.title': 'Equipo',
     'about.team.join': 'Únete al equipo',
     'about.team.portrait': 'EQUIPO_MAACH',
     'about.team.role.01': 'Gerente General',
@@ -880,7 +880,7 @@ const T: Translations = {
     'about.team.role.06': 'Jefe de Producción Mobiliario',
     'about.team.role.07': 'Jefe de Instalación',
     'about.allies.eyebrow': 'Red de Aliados',
-    'about.allies.title': 'Nuestros Aliados.',
+    'about.allies.title': 'Nuestros Aliados',
     'about.allies.body':
       'Trabajamos con socios estratégicos en materias primas, componentes y especialidades técnicas para garantizar calidad y consistencia en cada producto.',
 
@@ -888,7 +888,7 @@ const T: Translations = {
     'prod.crumb.home': 'Inicio',
     'prod.crumb.catalog': 'Catálogo',
     'prod.hero.title.1': 'Catálogo',
-    'prod.hero.title.2': 'de Productos.',
+    'prod.hero.title.2': 'de Productos',
     'prod.hero.body':
       'Soluciones modulares diseñadas bajo estrictos criterios de ergonomía, ingeniería aplicada y desempeño en uso intensivo.',
     'prod.filter.title': 'Catálogo · Filtros',
@@ -934,13 +934,13 @@ const T: Translations = {
     'pd.gate.submit': 'Descargar',
     'pd.gate.cancel': 'Cancelar',
     'pd.related.eyebrow': 'Línea modular',
-    'pd.related.title': 'Productos relacionados.',
+    'pd.related.title': 'Productos relacionados',
     'pd.photo': 'FOTOGRAFÍA_ESTUDIO',
 
     // ====== FOOTER ======
     'footer.manifesto.line1': 'Ingeniería',
-    'footer.manifesto.line2': 'para el trabajo.',
-    'footer.manifesto.line3': 'Diseñado para durar.',
+    'footer.manifesto.line2': 'para el trabajo',
+    'footer.manifesto.line3': 'Diseñado para durar',
     'footer.intro':
       'Mobiliario corporativo diseñado para el trabajo real. Diseño funcional, ingeniería aplicada y fabricación industrial.',
     'footer.address.line1': 'Quito · Ecuador',
@@ -1354,10 +1354,10 @@ const T: Translations = {
     'nuevo.stat_disponibilidad': 'Availability',
     'nuevo.showcase_badge': 'FEATURED 01',
     'nuevo.showcase_kicker': 'BENCH SYSTEM',
-    'nuevo.showcase_name': 'Vértice.',
+    'nuevo.showcase_name': 'Vértice',
     'nuevo.showcase_spec': 'Benching station · 2–12 workstations',
     'nuevo.showcase_cta': 'View details',
-    'nuevo.grid_title': 'Just arrived.',
+    'nuevo.grid_title': 'Just arrived',
     'nuevo.grid_count': '03 pieces · Available now',
     'nuevo.card_badge': 'NEW',
     'colec.coll_modularidad_confort': 'Modularity and comfort for high-performance environments',
@@ -1365,7 +1365,7 @@ const T: Translations = {
     'colec.coll_calidez_domestica': 'Domestic warmth with industrial standards',
     'colec.eyebrow_sistema_2026': '2026 System',
     'colec.hero_title_colec': 'Collec',
-    'colec.hero_title_ciones': 'tions.',
+    'colec.hero_title_ciones': 'tions',
     'colec.hero_intro': 'Furniture systems grouped by architectural vision. Each collection solves specific operational needs under a unified visual language.',
     'colec.card_sistema_maach': 'MAACH System ·',
     'colec.cta_explorar': 'Explore collection',
@@ -1376,12 +1376,12 @@ const T: Translations = {
     'colecd.hero_subtitle': 'A deep exploration of modularity and comfort in high-performance environments.',
     'colecd.concepto_eyebrow': 'Concept',
     'colecd.concepto_title_1': 'Design with',
-    'colecd.concepto_title_2': 'Purpose.',
+    'colecd.concepto_title_2': 'Purpose',
     'colecd.concepto_p1': 'transcends the traditional conception of office furniture. Developed alongside architecture studios, this collection prioritizes postural health and adaptability.',
     'colecd.concepto_p2': 'Each component was designed as part of a larger ecosystem, enabling configurations from individual high-focus workstations to large, fluid collaborative areas.',
     'colecd.detalle_estructural': 'STRUCTURAL_DETAIL',
     'colecd.catalogo_eyebrow': 'Catalog',
-    'colecd.catalogo_title': 'Pieces of the collection.',
+    'colecd.catalogo_title': 'Pieces of the collection',
     'colecd.ver_todos': 'View all',
     'colecd.prod_1_name': 'X1 Task Chair',
     'colecd.prod_1_cat': 'Seating',
@@ -1397,7 +1397,7 @@ const T: Translations = {
     'colecd.prod_6_cat': 'Storage',
     'colecd.lanzamiento_eyebrow': 'Launch · Fall 2026',
     'colecd.lanzamiento_title_1': 'Mediterranean',
-    'colecd.lanzamiento_title_2': 'Inspiration.',
+    'colecd.lanzamiento_title_2': 'Inspiration',
     'colecd.lanzamiento_p1': 'The intersection between corporate rigidity and the comfort of home. Sand color palettes, softened profiles, and textures that invite touch.',
     'colecd.lanzamiento_quote': '"Our intention was to blur the line between work and well-being, transforming the office into a desirable destination."',
     'colecd.lanzamiento_author': '— MAACH Studio',
@@ -1407,7 +1407,7 @@ const T: Translations = {
     'colecd.cta_contactar': 'Contact engineering',
     'colecd.cta_descargar': 'Download 3D/CAD',
     'home2.research_eyebrow': 'RESEARCH · MAACH',
-    'home2.research_title': 'Questions about designing your space? We solve them here.',
+    'home2.research_title': 'Questions about designing your space? We solve them here',
     'home2.research_link': 'View articles',
     'inv2.card_label': 'BLOG',
     // ====== NAV ======
@@ -1447,12 +1447,12 @@ const T: Translations = {
     'home.hero.h1.1': 'Industrial',
     'home.hero.h1.2': 'Design,',
     'home.hero.h1.3': 'Real',
-    'home.hero.h1.4': 'Performance.',
+    'home.hero.h1.4': 'Performance',
     'home.hero.estudio_caso': 'CASE_STUDY / 01',
     'home.hero.disponible': '+ AVAILABLE',
     // Categorías section
     'home.cat.eyebrow': 'System',
-    'home.cat.title': 'Categories.',
+    'home.cat.title': 'Categories',
     'home.cat.01.name': 'Seating',
     'home.cat.01.desc': 'Technical ergonomics, executive, operative chairs and sofas.',
     'home.cat.02.name': 'Desks + Workstations',
@@ -1468,7 +1468,7 @@ const T: Translations = {
     // ADN industrial
     'home.adn.eyebrow': 'Philosophy',
     'home.adn.title.1': 'Industrial',
-    'home.adn.title.2': 'DNA.',
+    'home.adn.title.2': 'DNA',
     'home.adn.intro': 'Every decision answers to engineering, durability and long-term performance.',
     'home.adn.01.title': 'Structural Integrity',
     'home.adn.01.body':
@@ -1484,7 +1484,7 @@ const T: Translations = {
       'We work alongside studios and clients to solve specific technical requirements. Design is built together.',
     // Our plant
     'home.planta.eyebrow': 'Infrastructure · Technology',
-    'home.planta.title': 'Our plant.',
+    'home.planta.title': 'Our plant',
     'home.planta.intro':
       'We manufacture with CNC machinery and industrial processes that guarantee precision, repeatability and internationally rated finishes.',
     'home.planta.01.title': 'CNC cutting',
@@ -1497,17 +1497,17 @@ const T: Translations = {
     'home.planta.04.body': 'Assembly, dimensional verification and final quality control.',
     // Casos de Estudio
     'home.cases.eyebrow': 'Portfolio',
-    'home.cases.title': 'Case Studies.',
+    'home.cases.title': 'Case Studies',
     // Clientes
     'home.clientes.eyebrow': 'Clients',
     'home.clientes.title.1': 'Industrial',
-    'home.clientes.title.2': 'trust.',
+    'home.clientes.title.2': 'trust',
     'home.clientes.count': '+22 organizations · Ecuador',
     'home.clientes.footnote': 'Brands and organizations MAACH has worked with · 2018 — 2026',
     // Precisión Industrial
     'home.precision.eyebrow': 'Project directive',
     'home.precision.title.1': 'Industrial',
-    'home.precision.title.2': 'Precision.',
+    'home.precision.title.2': 'Precision',
     'home.precision.row1.k': 'INSTALLED CAPACITY',
     'home.precision.row1.v': 'HIGH VOLUME',
     'home.precision.row2.k': 'TOLERANCE',
@@ -1525,7 +1525,7 @@ const T: Translations = {
     'esp.hero.eyebrow': 'MAACH · PLANNING 2026',
     'esp.hero.section': 'Spaces',
     'esp.hero.title.1': 'Sp',
-    'esp.hero.title.2': 'aces.',
+    'esp.hero.title.2': 'aces',
     'esp.hero.body':
       'Integral solutions that turn square meters into productive, coherent environments ready to scale.',
     'esp.stat.tipologias': 'Typologies',
@@ -1534,7 +1534,7 @@ const T: Translations = {
     'esp.stat.acabados': 'Finishes',
     'esp.typ.eyebrow': 'Typologies',
     'esp.typ.title.1': 'Four',
-    'esp.typ.title.2': 'typologies.',
+    'esp.typ.title.2': 'typologies',
     'esp.typ.count': '04 spaces · MAACH System',
     'esp.typ.01.name': 'Coworking Area',
     'esp.typ.01.desc':
@@ -1560,7 +1560,7 @@ const T: Translations = {
     'esp.typ.products_label': 'Products used',
     'esp.proc.eyebrow': 'Process',
     'esp.proc.title.1': 'How we plan',
-    'esp.proc.title.2': 'a space.',
+    'esp.proc.title.2': 'a space',
     'esp.proc.subtitle': 'From the first architectural plan to final installation, in four phases.',
     'esp.proc.01.title': 'Diagnosis',
     'esp.proc.01.body':
@@ -1575,7 +1575,7 @@ const T: Translations = {
     'esp.proc.04.body':
       'Logistics, assembly and tuning. In-house MAACH team coordinated with the site and the client.',
     'esp.del.eyebrow': 'Deliverables',
-    'esp.del.title': 'What we deliver.',
+    'esp.del.title': 'What we deliver',
     'esp.del.01': 'Space survey',
     'esp.del.02': 'Architectural plan',
     'esp.del.03': 'Photoreal 3D render',
@@ -1598,7 +1598,7 @@ const T: Translations = {
     'port.hero.eyebrow': 'MAACH · PORTFOLIO 2026',
     'port.hero.section': 'Projects · 2024 — 2026',
     'port.hero.title.1': 'Port',
-    'port.hero.title.2': 'folio.',
+    'port.hero.title.2': 'folio',
     'port.hero.body': 'A selection of projects where architectural design and industrial functionality converge.',
     'port.m.completed': 'Completed projects',
     'port.m.countries': 'Countries served',
@@ -1607,13 +1607,13 @@ const T: Translations = {
     'port.discover': 'Discover project',
     // Detail
     'pdet.phase01.eyebrow': 'PHASE 01 · CHALLENGE',
-    'pdet.phase01.title': 'The Challenge.',
+    'pdet.phase01.title': 'The Challenge',
     'pdet.phase01.lead':
       'A space to encourage spontaneous collaboration and deep focus, respecting the original architecture of the building and maximizing natural light.',
     'pdet.phase01.body':
       'The project required an integral furniture solution adaptable to different work modes. Benching systems for operative areas combined with soft seating zones for informal meetings.',
     'pdet.phase02.eyebrow': 'PHASE 02 · PROPOSAL',
-    'pdet.phase02.title': 'Value Proposal.',
+    'pdet.phase02.title': 'Value Proposal',
     'pdet.phase02.lead':
       'Integration of the MAACH-02 collection to achieve a cohesive aesthetic across operative and executive zones.',
     'pdet.phase02.b1': 'Certified ergonomic seating to reduce postural fatigue on high-performance days.',
@@ -1622,7 +1622,7 @@ const T: Translations = {
       'Natural wood finishes and textured textiles that bring warmth to the corporate environment.',
     'pdet.phase02.b4': 'Hidden tech integration in meeting tables and modular workstations.',
     'pdet.phase03.eyebrow': 'PHASE 03 · RESULT',
-    'pdet.phase03.title': 'The Result.',
+    'pdet.phase03.title': 'The Result',
     'pdet.phase03.metric': 'KEY METRIC',
     'pdet.phase03.metric.body':
       'Increase in collaborative-space utilization per client report, 6 months post-install.',
@@ -1635,7 +1635,7 @@ const T: Translations = {
     'pdet.phase03.pieces': 'Pieces installed',
     'pdet.phase03.pieces.value': '284 units',
     'pdet.gallery.eyebrow': 'Gallery',
-    'pdet.gallery.title': 'Installation views.',
+    'pdet.gallery.title': 'Installation views',
     'pdet.next': 'Next project',
     'pdet.continue': 'Continue',
     'pdet.sector': 'Sector',
@@ -1650,14 +1650,14 @@ const T: Translations = {
     'inv.hero.eyebrow': 'MAACH · WORK INSIGHTS 2026',
     'inv.hero.section': 'Research',
     'inv.hero.title.1': 'Research',
-    'inv.hero.title.2': 'and context.',
+    'inv.hero.title.2': 'and context',
     'inv.hero.body':
       'The design of our furniture does not come from intuition but from systematic observation and analysis of how work dynamics change globally.',
     'inv.quote.body': '68% of offices today require configurations adaptable to hybrid teams.',
     'inv.quote.source': '— MAACH Work Insights Report 2025',
     'inv.list.eyebrow': 'Editorial · MAACH Research',
     'inv.list.title.1': 'Recommended',
-    'inv.list.title.2': 'reading.',
+    'inv.list.title.2': 'reading',
     'inv.list.count': '03 articles · MAACH 2026',
     'inv.manifesto.eyebrow': 'Manifesto · MAACH 2026',
     'inv.manifesto.body.1': '"We research real work to design',
@@ -1668,7 +1668,7 @@ const T: Translations = {
     'blog.read': 'Read article',
     'blog.next_step': 'Next step',
     'blog.read_too': 'Want to go deeper?',
-    'blog.read_too.title': 'Read also.',
+    'blog.read_too.title': 'Read also',
 
     // ====== RECURSOS ======
     'rec.hero.eyebrow': 'MAACH · RESOURCES 2026',
@@ -1677,7 +1677,7 @@ const T: Translations = {
     'rec.hero.crumb.section': 'Design resources',
     'rec.hero.crumb.current': 'Library',
     'rec.hero.title.1': 'Document',
-    'rec.hero.title.2': 'Library.',
+    'rec.hero.title.2': 'Library',
     'rec.hero.body': 'Download brochures, tech specs, product sheets, CAD drawings and 3D / BIM models.',
     'rec.filter.type': 'Document type',
     'rec.filter.docs_guides': 'Documents & guides',
@@ -1698,7 +1698,7 @@ const T: Translations = {
     // ====== CONTACTO ======
     'cont.tag': 'MAACH · CONTACT',
     'cont.hero.title.1': "Let's talk",
-    'cont.hero.title.2': 'about your project.',
+    'cont.hero.title.2': 'about your project',
     'cont.hero.body':
       'We develop large-scale technical furniture solutions. We integrate our systems directly into your architectural plans.',
     'cont.stat.response': 'Response',
@@ -1706,10 +1706,10 @@ const T: Translations = {
     'cont.stat.direct_lines': 'Direct lines',
     'cont.right.eyebrow': 'Project engineering team',
     'cont.right.title.1': 'On your site,',
-    'cont.right.title.2': 'from the plan.',
+    'cont.right.title.2': 'from the plan',
     'cont.right.tag': 'QUITO · ECUADOR',
     'cont.form.eyebrow': 'Form · Start the conversation',
-    'cont.form.title': 'Write to us.',
+    'cont.form.title': 'Write to us',
     'cont.form.response': 'Response < 24 hrs',
     'cont.form.name': 'Full name *',
     'cont.form.name_ph': 'Roberto A. Salgado',
@@ -1733,7 +1733,7 @@ const T: Translations = {
     'about.hero.h1.1': 'Design and build',
     'about.hero.h1.2': 'furniture',
     'about.hero.h1.3': 'that works for',
-    'about.hero.h1.4': 'real work.',
+    'about.hero.h1.4': 'real work',
     'about.hero.tag': 'ABOUT MAACH',
     'about.hero.season': 'STUDIO · MANIFESTO 2026',
     'about.hero.id.code': 'MCH-ABOUT-01',
@@ -1750,7 +1750,7 @@ const T: Translations = {
     'about.mv.vision.body':
       'To be the Latin American reference for furniture co-created and manufactured locally with international standards — improving productivity and wellbeing through continuous innovation, technology and creativity, driving Ecuadorian industry and talent into the world.',
     'about.sobre.eyebrow': 'About Us',
-    'about.sobre.title': 'About us.',
+    'about.sobre.title': 'About us',
     'about.sobre.body.1':
       'MAACH designs and manufactures corporate furniture based on solid industrial processes, engineering criteria and a deep understanding of real use in workspaces.',
     'about.sobre.body.2':
@@ -1767,7 +1767,7 @@ const T: Translations = {
     'about.sobre.step.03.label': '03 / Co-design',
     'about.sobre.step.03.value': 'Architects · clients',
     'about.values.eyebrow': 'Values',
-    'about.values.title': 'How we work.',
+    'about.values.title': 'How we work',
     'about.value.01.title': 'Functional design',
     'about.value.01.body':
       'Every design decision answers a real use need. Form exists to fulfill a function and improve daily performance at work.',
@@ -1795,7 +1795,7 @@ const T: Translations = {
     'about.manifesto.body.5': 'that enable work."',
     'about.manifesto.source': 'MAACH Studio · 2026',
     'about.history.eyebrow': 'Trajectory',
-    'about.history.title': 'Our History.',
+    'about.history.title': 'Our History',
     'about.history.body.1':
       'MAACH was born three years ago as the commercial unit of Sumar, a family business with more than 30 years of experience manufacturing corporate furniture.',
     'about.history.body.2':
@@ -1805,7 +1805,7 @@ const T: Translations = {
     'about.history.stat.years': 'years of experience',
     'about.history.stat.brand': 'years as a brand',
     'about.team.eyebrow': 'Organizational Structure',
-    'about.team.title': 'Team.',
+    'about.team.title': 'Team',
     'about.team.join': 'Join the team',
     'about.team.portrait': 'MAACH_TEAM',
     'about.team.role.01': 'General Manager',
@@ -1816,7 +1816,7 @@ const T: Translations = {
     'about.team.role.06': 'Furniture Production Lead',
     'about.team.role.07': 'Installation Lead',
     'about.allies.eyebrow': 'Partner Network',
-    'about.allies.title': 'Our Allies.',
+    'about.allies.title': 'Our Allies',
     'about.allies.body':
       'We work with strategic partners in raw materials, components and technical specialties to guarantee quality and consistency in every product.',
 
@@ -1824,7 +1824,7 @@ const T: Translations = {
     'prod.crumb.home': 'Home',
     'prod.crumb.catalog': 'Catalog',
     'prod.hero.title.1': 'Product',
-    'prod.hero.title.2': 'Catalog.',
+    'prod.hero.title.2': 'Catalog',
     'prod.hero.body':
       'Modular solutions designed under strict criteria of ergonomics, applied engineering and intensive-use performance.',
     'prod.filter.title': 'Catalog · Filters',
@@ -1868,13 +1868,13 @@ const T: Translations = {
     'pd.gate.submit': 'Download',
     'pd.gate.cancel': 'Cancel',
     'pd.related.eyebrow': 'Modular line',
-    'pd.related.title': 'Related products.',
+    'pd.related.title': 'Related products',
     'pd.photo': 'STUDIO_PHOTO',
 
     // ====== FOOTER ======
     'footer.manifesto.line1': 'Engineered',
-    'footer.manifesto.line2': 'for work.',
-    'footer.manifesto.line3': 'Designed to last.',
+    'footer.manifesto.line2': 'for work',
+    'footer.manifesto.line3': 'Designed to last',
     'footer.intro':
       'Corporate furniture designed for real work. Functional design, applied engineering and industrial manufacturing.',
     'footer.address.line1': 'Quito · Ecuador',

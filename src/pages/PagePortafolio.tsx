@@ -375,7 +375,7 @@ export default function PagePortafolio() {
                     </div>
                   ) : null}
                   <h2 className="h-display" style={{ fontSize: 'clamp(48px, 7vw, 90px)', color: 'var(--off-white)' }}>
-                    {p.title}.
+                    {p.title}
                   </h2>
                   {p.scope ? (
                     <p

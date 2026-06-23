@@ -103,7 +103,7 @@ export default function PageColeccionDetail() {
             {t('colecd.hero_eyebrow')}
           </span>
           <h1 className="h-display" style={{ fontSize: 'clamp(60px, 15vw, 90px)', color: 'var(--off-white)' }}>
-            {name}.
+            {name}
           </h1>
           <p
             style={{
@@ -218,7 +218,6 @@ export default function PageColeccionDetail() {
                 <h3
                   style={{
                     fontFamily: 'var(--display)',
-                    fontWeight: 600,
                     fontSize: 24,
                     textTransform: 'uppercase',
                     letterSpacing: '-.01em',
@@ -304,7 +303,7 @@ export default function PageColeccionDetail() {
             className="h-display"
             style={{ fontSize: 'clamp(56px, 8vw, 90px)', color: 'var(--off-white)', marginBottom: 24 }}
           >
-            {t('colecd.cta_integrar')} <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>{name}.</span>
+            {t('colecd.cta_integrar')} <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>{name}</span>
           </h2>
           <p
             style={{

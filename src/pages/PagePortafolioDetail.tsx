@@ -251,7 +251,7 @@ function ProjectHero({ p }: { p: ProjectData; id?: string }) {
               letterSpacing: '-.02em',
             }}
           >
-            {p.title}.
+            {p.title}
           </h1>
         </div>
       </section>
@@ -323,7 +323,7 @@ function ProjectHero({ p }: { p: ProjectData; id?: string }) {
             letterSpacing: '-.02em',
           }}
         >
-          {p.title}.
+          {p.title}
         </h1>
       </div>
     </section>
@@ -435,7 +435,7 @@ export default function PagePortafolioDetail() {
       <ProjectHero p={p} id={id} />
 
       {/* EL DESAFÍO */}
-      <ContentSection num="01" eyebrow="El Desafío" title="El Desafío.">
+      <ContentSection num="01" eyebrow="El Desafío" title="El Desafío">
         <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
           <p style={{ fontSize: 20, lineHeight: 1.55, margin: 0 }}>{desafio[0]}</p>
           {desafio[1] ? (
@@ -447,7 +447,7 @@ export default function PagePortafolioDetail() {
       </ContentSection>
 
       {/* PROPUESTA DE VALOR */}
-      <ContentSection num="02" eyebrow="Propuesta de Valor" title="Propuesta de Valor." invert>
+      <ContentSection num="02" eyebrow="Propuesta de Valor" title="Propuesta de Valor" invert>
         <p
           style={{
             fontFamily: 'var(--display)',
@@ -505,7 +505,7 @@ export default function PagePortafolioDetail() {
       </ContentSection>
 
       {/* EL RESULTADO */}
-      <ContentSection num="03" eyebrow="El Resultado" title="El Resultado.">
+      <ContentSection num="03" eyebrow="El Resultado" title="El Resultado">
         <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
           <p style={{ fontSize: 20, lineHeight: 1.55, margin: 0 }}>{resultado[0]}</p>
           {resultado[1] ? (

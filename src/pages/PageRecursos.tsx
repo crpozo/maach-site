@@ -398,7 +398,7 @@ export default function PageRecursos() {
                         {t('recursos.doctype.' + d.id)}
                       </div>
                       <div style={{ flex: 1 }}>
-                        <h4 style={{ fontFamily: 'var(--body)', fontWeight: 500, fontSize: 15, marginBottom: 4 }}>
+                        <h4 style={{ fontFamily: 'var(--body)', fontSize: 15, marginBottom: 4 }}>
                           {t('recursos.docname.' + d.id)}
                         </h4>
                         <span className="maach-mono" style={{ color: 'var(--lava-orange)' }}>

@@ -99,7 +99,7 @@ export default function PageNuevo() {
               </div>
               <h1 className="h-display" style={{ fontSize: 'clamp(56px, 7.5vw, 90px)', marginBottom: 32 }}>
                 {t('nuevo.hero_title')}<br />
-                <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>2026.</span>
+                <span className="h-italic" style={{ color: 'var(--lava-orange)' }}>2026</span>
               </h1>
               <p style={{ fontSize: 19, color: 'var(--muted)', lineHeight: 1.5, marginBottom: 48 }}>
                 {t('nuevo.hero_intro')}
@@ -303,7 +303,6 @@ export default function PageNuevo() {
                   <h4
                     style={{
                       fontFamily: 'var(--display)',
-                      fontWeight: 600,
                       fontSize: 28,
                       letterSpacing: '-.01em',
                       textTransform: 'uppercase',

@@ -168,7 +168,6 @@ export default function PageEspacios() {
                 color: 'var(--off-white)',
                 lineHeight: 0.92,
                 margin: 0,
-                fontWeight: 100,
               }}
             >
               {t('esp.hero.title.1')}{t('esp.hero.title.2')}
@@ -332,7 +331,7 @@ export default function PageEspacios() {
                       className="h-display"
                       style={{ fontSize: 'clamp(34px, 4vw, 56px)', lineHeight: 1, margin: 0, marginBottom: 20 }}
                     >
-                      {s.title}.
+                      {s.title}
                     </h3>
                     <p style={{ fontSize: 17, color: 'var(--muted)', lineHeight: 1.65, margin: 0, maxWidth: 560 }}>
                       {s.desc}
@@ -447,7 +446,6 @@ export default function PageEspacios() {
                 <h3
                   style={{
                     fontFamily: 'var(--display)',
-                    fontWeight: 600,
                     fontSize: 26,
                     lineHeight: 1.05,
                     letterSpacing: '-.01em',

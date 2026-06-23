@@ -146,6 +146,9 @@
   /* Whole site uses Clash Grotesk; Monoblock is reserved for "details"
      (mono labels, numbers, nav and button text) via var(--mono). */
   --display: 'Clash Grotesk', 'Helvetica Neue', Arial, sans-serif;
+  /* Single weight for every header/title — no weight mixing inside a title.
+     Change this one value to re-tune all headings at once. */
+  --w-head: 500;
   --body: 'Clash Grotesk', 'Segoe UI', system-ui, -apple-system, sans-serif;
   --mono: 'Monoblock', 'Segoe UI', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   /* Secondary brand families — assign via className or inline style
@@ -221,7 +224,7 @@ h4,
 h5,
 h6 {
   font-family: var(--display);
-  font-weight: 600;
+  font-weight: var(--w-head);
   letter-spacing: -0.02em;
   line-height: 0.95;
   margin: 0;
@@ -658,13 +661,17 @@ html {
 
 .h-display {
   font-family: var(--display);
-  font-weight: 700;
+  font-weight: var(--w-head);
   letter-spacing: -0.025em;
   line-height: 0.88;
   text-transform: uppercase;
 }
+/* Two-tone title accent: SAME font + weight as the title, colour only.
+   (No weight/font mixing inside a heading.) */
 .h-italic {
-  font-weight: 400;
+  font-family: inherit;
+  font-weight: inherit;
+  font-style: inherit;
   color: var(--muted);
 }
 
