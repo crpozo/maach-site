@@ -761,6 +761,7 @@ const T: Translations = {
 
     // ====== CONTACTO ======
     'cont.tag': 'MAACH · CONTACTO',
+    'cont.prefill_product': 'Hola, me interesa el producto:',
     'cont.hero.title.1': 'Hablemos',
     'cont.hero.title.2': 'de tu proyecto',
     'cont.hero.body':
@@ -1697,6 +1698,7 @@ const T: Translations = {
 
     // ====== CONTACTO ======
     'cont.tag': 'MAACH · CONTACT',
+    'cont.prefill_product': "Hi, I'm interested in the product:",
     'cont.hero.title.1': "Let's talk",
     'cont.hero.title.2': 'about your project',
     'cont.hero.body':

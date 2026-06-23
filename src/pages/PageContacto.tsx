@@ -1,5 +1,6 @@
 import { asset } from '../lib/asset';
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Layout } from '../components/Layout';
 import { IconArrow } from '../components/icons';
 import { useT } from '../i18n/i18n';
@@ -13,11 +14,13 @@ type FormState = {
 
 export default function PageContacto() {
   const t = useT();
+  const location = useLocation();
+  const producto = (location.state as { producto?: string } | null)?.producto;
   const [form, setForm] = useState<FormState>({
     nombre: '',
     correo: '',
     empresa: '',
-    mensaje: '',
+    mensaje: producto ? `${t('cont.prefill_product')} ${producto}` : '',
   });
   const set = <K extends keyof FormState>(k: K, v: FormState[K]) =>
     setForm((f) => ({ ...f, [k]: v }));

@@ -338,9 +338,14 @@ export default function PageProductDetail() {
               </div>
 
               <div style={{ display: 'flex', gap: 12 }}>
-                <button className="btn-primary" style={{ flex: 1, justifyContent: 'center' }}>
+                <Link
+                  to="/contacto"
+                  state={{ producto: productName }}
+                  className="btn-primary"
+                  style={{ flex: 1, justifyContent: 'center' }}
+                >
                   {t('pd.contact_advisor')}
-                </button>
+                </Link>
                 {cadDocs.length > 0 ? (
                   <button
                     className="btn-ghost"
