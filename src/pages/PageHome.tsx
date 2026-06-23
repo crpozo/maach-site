@@ -508,8 +508,16 @@ export default function PageHome() {
                 />
                 <div style={{ position: 'absolute', left: 24, right: 24, bottom: 24 }}>
                   <span
-                    className="maach-mono"
-                    style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 8 }}
+                    style={{
+                      fontFamily: 'var(--display)',
+                      fontWeight: 700,
+                      fontSize: 'clamp(40px, 4.5vw, 60px)',
+                      lineHeight: 1,
+                      letterSpacing: '-.02em',
+                      color: 'var(--lava-orange)',
+                      display: 'block',
+                      marginBottom: 6,
+                    }}
                   >
                     {p.n}
                   </span>
