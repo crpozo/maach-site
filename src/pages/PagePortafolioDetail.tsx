@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { asset } from '../lib/asset';
 import { Link, useParams } from 'react-router-dom';
 import { Layout } from '../components/Layout';
-import { IconArrow, IconClose, IconChevronRight, IconPlus } from '../components/icons';
+import { IconArrow, IconClose, IconChevronRight } from '../components/icons';
 
 type ProjectContent = {
   desafio: string[];
@@ -416,6 +416,38 @@ export default function PagePortafolioDetail() {
     };
   }, [lightbox, photos]);
 
+  // Horizontal carousel: track which slide is centered
+  const carRef = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState(0);
+  const centerSlide = (i: number) => {
+    const sc = carRef.current;
+    const el = sc?.children[i] as HTMLElement | undefined;
+    if (!sc || !el) return;
+    sc.scrollTo({ left: el.offsetLeft + el.offsetWidth / 2 - sc.clientWidth / 2, behavior: 'smooth' });
+  };
+  const stepSlide = (dir: number) => {
+    const n = photos?.length ?? 0;
+    if (!n) return;
+    centerSlide(Math.max(0, Math.min(n - 1, active + dir)));
+  };
+  const onCarScroll = () => {
+    const sc = carRef.current;
+    if (!sc) return;
+    const mid = sc.scrollLeft + sc.clientWidth / 2;
+    let best = 0;
+    let bestDist = Infinity;
+    Array.from(sc.children).forEach((ch, i) => {
+      const el = ch as HTMLElement;
+      const c = el.offsetLeft + el.offsetWidth / 2;
+      const d = Math.abs(c - mid);
+      if (d < bestDist) {
+        bestDist = d;
+        best = i;
+      }
+    });
+    setActive(best);
+  };
+
   // If no content (CAME), show paused/coming-soon screen
   if (!p.content) {
     return (
@@ -539,32 +571,56 @@ export default function PagePortafolioDetail() {
       {p.photos ? (
         <section style={{ padding: '120px 0', borderBottom: '1px solid var(--line)' }}>
           <div className="maach-container">
-            <span
-              className="maach-mono"
-              style={{ color: 'var(--muted)', display: 'block', marginBottom: 24, letterSpacing: '.1em' }}
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'baseline',
+                marginBottom: 28,
+                gap: 16,
+              }}
             >
-              GALERÍA
-            </span>
-            <div className="maach-mosaic">
-              {p.photos.map((src, i) => {
-                const variant = i % 7 === 0 ? ' feat' : i % 7 === 4 ? ' tall' : '';
-                return (
-                  <button
-                    key={i}
-                    type="button"
-                    className={'maach-tile' + variant}
-                    onClick={() => setLightbox(i)}
-                    aria-label={`Ampliar foto ${i + 1} de ${p.photos!.length}`}
-                  >
-                    <img src={src} alt="" loading="lazy" />
-                    <span className="maach-tile-idx maach-mono">{String(i + 1).padStart(2, '0')}</span>
-                    <span className="maach-tile-zoom" aria-hidden>
-                      <IconPlus size={16} />
-                    </span>
-                  </button>
-                );
-              })}
+              <span className="maach-mono" style={{ color: 'var(--muted)', letterSpacing: '.1em' }}>
+                GALERÍA
+              </span>
+              <span className="maach-mono" style={{ color: 'var(--muted)' }}>
+                {String(active + 1).padStart(2, '0')} / {String(p.photos.length).padStart(2, '0')}
+              </span>
             </div>
+          </div>
+          <div style={{ position: 'relative' }}>
+            <div className="maach-carousel" ref={carRef} onScroll={onCarScroll}>
+              {p.photos.map((src, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  className={'car-slide' + (i === active ? ' is-active' : '')}
+                  onClick={() => (i === active ? setLightbox(i) : centerSlide(i))}
+                  aria-label={
+                    i === active ? `Ampliar foto ${i + 1}` : `Ver foto ${i + 1} de ${p.photos!.length}`
+                  }
+                >
+                  <img src={src} alt="" loading="lazy" />
+                  <span className="maach-tile-idx maach-mono">{String(i + 1).padStart(2, '0')}</span>
+                </button>
+              ))}
+            </div>
+            <button
+              type="button"
+              className="car-nav car-prev"
+              onClick={() => stepSlide(-1)}
+              aria-label="Anterior"
+            >
+              <IconChevronRight size={18} style={{ transform: 'rotate(180deg)' }} />
+            </button>
+            <button
+              type="button"
+              className="car-nav car-next"
+              onClick={() => stepSlide(1)}
+              aria-label="Siguiente"
+            >
+              <IconChevronRight size={18} />
+            </button>
           </div>
         </section>
       ) : p.gallery ? (
