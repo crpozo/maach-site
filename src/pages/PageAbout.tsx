@@ -945,10 +945,13 @@ export default function PageAbout() {
                       padding: '16px 22px',
                     }}
                   >
-                    <span aria-hidden style={{ position: 'absolute', top: 10, left: 12, color: 'var(--jet-black)' }}>
-                      <IconArrowDownRight size={16} />
-                    </span>
                     <div style={{ minWidth: 0 }}>
+                      <span
+                        aria-hidden
+                        style={{ display: 'block', color: 'var(--jet-black)', marginBottom: 6, lineHeight: 0 }}
+                      >
+                        <IconArrowDownRight size={14} />
+                      </span>
                       <h4
                         style={{
                           fontFamily: 'var(--display)',
