@@ -445,12 +445,12 @@ section[id],
 }
 .logos-cell {
   flex-shrink: 0;
-  width: 220px;
+  width: 240px;
   height: 140px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 18px 16px;
   border-right: 1px solid var(--line);
   background: var(--off-white);
   transition: background 0.25s ease;
@@ -459,8 +459,8 @@ section[id],
   background: var(--soft);
 }
 .logos-cell img {
-  max-width: 78%;
-  max-height: 64%;
+  max-width: 96%;
+  max-height: 68%;
   object-fit: contain;
   opacity: 0.92;
   transition: opacity 0.2s, transform 0.25s;
