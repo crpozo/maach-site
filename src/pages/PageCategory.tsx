@@ -19,7 +19,7 @@ const slugify = (s: string): string =>
 const HEROES: Record<string, { img: string; n: string }> = {
   silloneria: { img: asset('productos/mesas/mesa-especial/05.webp'), n: '01' },
   escritorios: { img: asset('productos/escritorios/escritorio-gerente-en-l/02.webp'), n: '02' },
-  mesas: { img: asset('productos/mesas/mesa-ovalada/02.webp'), n: '03' },
+  mesas: { img: asset('productos/mesas/mesa-ovalada/03.webp'), n: '03' },
   almacenamiento: { img: asset('biblioteca-4.webp'), n: '04' },
   divisiones: { img: asset('Maach-offices.png'), n: '05' },
   recepciones: { img: asset('productos/recepciones/recepcion-recta-metal/04.webp'), n: '06' },
