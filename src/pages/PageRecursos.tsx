@@ -312,7 +312,7 @@ export default function PageRecursos() {
               </div>
             </aside>
 
-            <div style={{ background: 'var(--off-white)', border: '1px solid var(--line)' }}>
+            <div style={{ background: 'var(--off-white)', border: '1px solid var(--line)', minWidth: 0 }}>
               {activeFilter ? (
                 <div
                   style={{
@@ -337,6 +337,8 @@ export default function PageRecursos() {
                   </Link>
                 </div>
               ) : null}
+              <div style={{ overflowX: 'auto' }}>
+              <div style={{ minWidth: 680 }}>
               <div
                 style={{
                   display: 'flex',
@@ -441,6 +443,8 @@ export default function PageRecursos() {
                     </div>
                   );
                 })}
+              </div>
+              </div>
               </div>
 
               <div
