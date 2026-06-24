@@ -242,7 +242,7 @@ export default function PageProducts() {
       <section style={{ padding: '48px 0 128px' }}>
         <div className="maach-container">
           <div style={{ display: 'grid', gridTemplateColumns: '280px 1fr', gap: 56 }}>
-            <aside>
+            <aside style={{ minWidth: 0 }}>
               <div
                 style={{
                   display: 'flex',
@@ -343,7 +343,7 @@ export default function PageProducts() {
               </div>
             </aside>
 
-            <div>
+            <div style={{ minWidth: 0 }}>
               <div
                 style={{
                   display: 'flex',
@@ -352,6 +352,8 @@ export default function PageProducts() {
                   marginBottom: 24,
                   paddingBottom: 16,
                   borderBottom: '1px solid var(--line)',
+                  flexWrap: 'wrap',
+                  gap: 12,
                 }}
               >
                 <span className="maach-mono" style={{ color: 'var(--muted)' }}>
