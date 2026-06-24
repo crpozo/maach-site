@@ -17,7 +17,7 @@ const slugify = (s: string): string =>
 
 // Map category slug → hero photo + index number
 const HEROES: Record<string, { img: string; n: string }> = {
-  silloneria: { img: asset('productos/silloneria/sofa-en-l/02.webp'), n: '01' },
+  silloneria: { img: asset('productos/mesas/mesa-especial/05.webp'), n: '01' },
   escritorios: { img: asset('productos/escritorios/escritorio-gerente-en-l/02.webp'), n: '02' },
   mesas: { img: asset('productos/mesas/mesa-ovalada/02.webp'), n: '03' },
   almacenamiento: { img: asset('biblioteca-4.webp'), n: '04' },
