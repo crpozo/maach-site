@@ -22,7 +22,7 @@ const HEROES: Record<string, { img: string; n: string }> = {
   mesas: { img: asset('productos/mesas/mesa-ovalada/02.webp'), n: '03' },
   almacenamiento: { img: asset('biblioteca-4.webp'), n: '04' },
   divisiones: { img: asset('Maach-offices.png'), n: '05' },
-  recepciones: { img: asset('productos/recepciones/recepcion-recta-madera/02.webp'), n: '06' },
+  recepciones: { img: asset('productos/recepciones/recepcion-recta-metal/04.webp'), n: '06' },
 };
 
 export default function PageCategory() {
