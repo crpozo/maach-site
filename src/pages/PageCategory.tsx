@@ -404,7 +404,8 @@ export default function PageCategory() {
                         key={p.slug}
                         to={`/productos/${category.slug}/${p.slug}`}
                         style={{
-                          display: 'block',
+                          display: 'flex',
+                          flexDirection: 'column',
                           border:
                             '1px solid ' + (inverted ? 'rgba(228,226,227,.18)' : 'var(--line)'),
                           background: inverted ? 'rgba(228,226,227,.04)' : 'var(--off-white)',
@@ -414,6 +415,7 @@ export default function PageCategory() {
                         <div
                           style={{
                             aspectRatio: '1/1',
+                            flexShrink: 0,
                             background: 'var(--off-white)',
                             position: 'relative',
                             overflow: 'hidden',
@@ -439,10 +441,10 @@ export default function PageCategory() {
                         <div
                           style={{
                             position: 'relative',
+                            flexGrow: 1,
                             background: 'var(--jet-black)',
                             color: 'var(--off-white)',
-                            padding: '16px 18px 18px',
-                            overflow: 'hidden',
+                            padding: '16px 18px 20px',
                           }}
                         >
                           {/* AA monogram */}
@@ -485,7 +487,8 @@ export default function PageCategory() {
                               letterSpacing: '-.01em',
                               margin: 0,
                               color: 'var(--off-white)',
-                              lineHeight: 1,
+                              lineHeight: 1.1,
+                              paddingBottom: 2,
                             }}
                           >
                             {t(`prod.name.${p.slug}`)}
