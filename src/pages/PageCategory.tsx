@@ -17,12 +17,12 @@ const slugify = (s: string): string =>
 
 // Map category slug → hero photo + index number
 const HEROES: Record<string, { img: string; n: string }> = {
-  silloneria: { img: asset('biblioteca-1.webp'), n: '01' },
-  escritorios: { img: asset('biblioteca-2.webp'), n: '02' },
-  mesas: { img: asset('biblioteca-3.webp'), n: '03' },
+  silloneria: { img: asset('productos/silloneria/sofa-en-l/02.webp'), n: '01' },
+  escritorios: { img: asset('productos/escritorios/escritorio-gerente-en-l/02.webp'), n: '02' },
+  mesas: { img: asset('productos/mesas/mesa-ovalada/02.webp'), n: '03' },
   almacenamiento: { img: asset('biblioteca-4.webp'), n: '04' },
   divisiones: { img: asset('Maach-offices.png'), n: '05' },
-  recepciones: { img: asset('perspectiva-2.webp'), n: '06' },
+  recepciones: { img: asset('productos/recepciones/recepcion-recta-madera/02.webp'), n: '06' },
 };
 
 export default function PageCategory() {
