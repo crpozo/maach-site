@@ -814,6 +814,7 @@ function Footer() {
                   <li key={it.label}>
                     <Link
                       to={it.path}
+                      onClick={() => window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior })}
                       style={{ color: 'var(--off-white)', transition: 'color .15s' }}
                       onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--lava-orange)')}
                       onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--off-white)')}
