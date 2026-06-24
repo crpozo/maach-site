@@ -809,7 +809,7 @@ export default function PageAbout() {
                   }}
                 />
                 <div style={{ position: 'absolute', left: 24, right: 24, bottom: 24 }}>
-                  <span className="maach-mono" style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 8 }}>
+                  <span className="maach-mono" style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 8, fontSize: 16 }}>
                     {p.n}
                   </span>
                   <h3
