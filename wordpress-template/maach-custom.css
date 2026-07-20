@@ -1,0 +1,86 @@
+/* ────────────────────────────────────────────────────────────
+   MAACH — CSS auxiliar para WordPress + Elementor
+   Pegar en: Apariencia → Personalizar → CSS adicional
+   (o en Elementor → Site Settings → Custom CSS con Pro)
+   Carga las tipografías de marca desde el sitio en vivo.
+   ──────────────────────────────────────────────────────────── */
+
+/* Tipografía principal — Clash Grotesk (títulos y cuerpo) */
+@font-face {
+  font-family: 'Clash Grotesk';
+  src: url('https://crpozo.github.io/maach-site/assets/fonts/clashgrotesk-variable.woff2') format('woff2-variations'),
+       url('https://crpozo.github.io/maach-site/assets/fonts/clashgrotesk-variable.woff2') format('woff2');
+  font-weight: 200 700;
+  font-style: normal;
+  font-display: swap;
+}
+/* Tipografía de detalle — Monoblock (etiquetas, nav, botones) */
+@font-face {
+  font-family: 'Monoblock';
+  src: url('https://crpozo.github.io/maach-site/assets/fonts/monoblock-light.woff2') format('woff2');
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Monoblock';
+  src: url('https://crpozo.github.io/maach-site/assets/fonts/monoblock-regular.woff2') format('woff2');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Monoblock';
+  src: url('https://crpozo.github.io/maach-site/assets/fonts/monoblock-medium.woff2') format('woff2');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Monoblock';
+  src: url('https://crpozo.github.io/maach-site/assets/fonts/monoblock-semibold.woff2') format('woff2');
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Monoblock';
+  src: url('https://crpozo.github.io/maach-site/assets/fonts/monoblock-bold.woff2') format('woff2');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+
+/* Variables de marca (por si se usan en CSS custom de widgets) */
+:root {
+  --maach-jet-black: #161616;
+  --maach-white: #ffffff;
+  --maach-mid-grey: #6f6f6f;
+  --maach-sand-grey: #a9aaac;
+  --maach-line-grey: #e5e3e4;
+  --maach-lava-orange: #f34a23;
+}
+
+body {
+  font-family: 'Clash Grotesk', 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+html { scroll-behavior: smooth; }
+
+::selection { background: #f34a23; color: #ffffff; }
+
+/* Textura de listones verticales para bandas oscuras (clase: maach-slats).
+   Añadirla en Elementor: Avanzado → Clases CSS → maach-slats */
+.maach-slats {
+  background-image:
+    repeating-linear-gradient(90deg,
+      rgba(255, 255, 255, 0.05) 0px, rgba(255, 255, 255, 0.05) 4px,
+      transparent 4px, transparent 18px),
+    repeating-linear-gradient(0deg,
+      transparent 0px, transparent 54px,
+      rgba(0, 0, 0, 0.45) 54px, rgba(0, 0, 0, 0.45) 62px);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent);
+}
+
+/* Marco naranja en "L" (clase: maach-crosshair) — esquina superior derecha */
+.maach-crosshair { position: relative; }
+.maach-crosshair::after {
+  content: '';
+  position: absolute;
+  top: -8px; right: -8px;
+  width: 22px; height: 22px;
+  border-top: 2px solid #f34a23;
+  border-right: 2px solid #f34a23;
+}

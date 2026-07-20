@@ -1,0 +1,744 @@
+{
+ "content": [
+  {
+   "id": "a000001",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {"unit": "px", "size": 1600},
+    "min_height": {"unit": "vh", "size": 86},
+    "flex_direction": "column",
+    "flex_justify_content": "center",
+    "background_background": "classic",
+    "background_color": "#ffffff",
+    "border_border": "solid",
+    "border_width": {"unit": "px", "top": "0", "right": "0", "bottom": "0", "left": "6", "isLinked": false},
+    "border_color": "#f34a23",
+    "padding": {"unit": "px", "top": "96", "right": "48", "bottom": "96", "left": "48", "isLinked": false},
+    "padding_tablet": {"unit": "px", "top": "64", "right": "32", "bottom": "64", "left": "32", "isLinked": false},
+    "padding_mobile": {"unit": "px", "top": "48", "right": "24", "bottom": "48", "left": "24", "isLinked": false}
+   },
+   "elements": [
+    {
+     "id": "a000002",
+     "elType": "container",
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "flex_wrap": "wrap",
+      "flex_align_items": "center",
+      "flex_gap": {"unit": "px", "size": 56, "column": "56", "row": "56", "isLinked": true}
+     },
+     "elements": [
+      {
+       "id": "a000003",
+       "elType": "container",
+       "settings": {
+        "content_width": "full",
+        "width": {"unit": "%", "size": 48},
+        "width_tablet": {"unit": "%", "size": 100},
+        "width_mobile": {"unit": "%", "size": 100},
+        "flex_direction": "column",
+        "flex_gap": {"unit": "px", "size": 28, "column": "28", "row": "28", "isLinked": true}
+       },
+       "elements": [
+        {
+         "id": "a000004",
+         "elType": "widget",
+         "settings": {
+          "title": "MAACH · CONTACTO",
+          "header_size": "h6",
+          "title_color": "#f34a23",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "600",
+          "typography_font_size": {"unit": "px", "size": 10},
+          "typography_letter_spacing": {"unit": "px", "size": 1.2},
+          "typography_text_transform": "uppercase",
+          "_element_width": "auto",
+          "_border_border": "solid",
+          "_border_width": {"unit": "px", "top": "1", "right": "1", "bottom": "1", "left": "1", "isLinked": true},
+          "_border_color": "#f34a23",
+          "_padding": {"unit": "px", "top": "6", "right": "10", "bottom": "6", "left": "10", "isLinked": false}
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "a000005",
+         "elType": "widget",
+         "settings": {
+          "title": "Hablemos<br><span style=\"color:#f34a23\">de tu proyecto</span>",
+          "header_size": "h1",
+          "title_color": "#161616",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {"unit": "px", "size": 90},
+          "typography_font_size_tablet": {"unit": "px", "size": 60},
+          "typography_font_size_mobile": {"unit": "px", "size": 44},
+          "typography_line_height": {"unit": "em", "size": 0.92},
+          "typography_letter_spacing": {"unit": "px", "size": -2},
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "a000006",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Desarrollamos soluciones de mobiliario técnico a gran escala. Integramos nuestros sistemas directamente a tus planos arquitectónicos.</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "400",
+          "typography_font_size": {"unit": "px", "size": 19},
+          "typography_font_size_mobile": {"unit": "px", "size": 17},
+          "typography_line_height": {"unit": "em", "size": 1.5},
+          "_element_width": "initial",
+          "_element_custom_width": {"unit": "px", "size": 560}
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a000007",
+         "elType": "widget",
+         "settings": {
+          "color": "#e5e3e4",
+          "weight": {"unit": "px", "size": 1},
+          "gap": {"unit": "px", "size": 0}
+         },
+         "elements": [],
+         "widgetType": "divider"
+        },
+        {
+         "id": "a000008",
+         "elType": "container",
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "row",
+          "flex_wrap": "wrap",
+          "flex_gap": {"unit": "px", "size": 24, "column": "24", "row": "24", "isLinked": true}
+         },
+         "elements": [
+          {
+           "id": "a000009",
+           "elType": "container",
+           "settings": {
+            "content_width": "full",
+            "width": {"unit": "%", "size": 30},
+            "width_mobile": {"unit": "%", "size": 100},
+            "flex_direction": "column",
+            "flex_gap": {"unit": "px", "size": 6, "column": "6", "row": "6", "isLinked": true}
+           },
+           "elements": [
+            {
+             "id": "a00000a",
+             "elType": "widget",
+             "settings": {
+              "title": "&lt; 24h",
+              "header_size": "h3",
+              "title_color": "#f34a23",
+              "typography_typography": "custom",
+              "typography_font_family": "Clash Grotesk",
+              "typography_font_weight": "500",
+              "typography_font_size": {"unit": "px", "size": 36},
+              "typography_font_size_mobile": {"unit": "px", "size": 30},
+              "typography_line_height": {"unit": "em", "size": 1},
+              "typography_letter_spacing": {"unit": "px", "size": -0.7},
+              "typography_text_transform": "uppercase"
+             },
+             "elements": [],
+             "widgetType": "heading"
+            },
+            {
+             "id": "a00000b",
+             "elType": "widget",
+             "settings": {
+              "title": "Respuesta",
+              "header_size": "h6",
+              "title_color": "#6f6f6f",
+              "typography_typography": "custom",
+              "typography_font_family": "Monoblock",
+              "typography_font_weight": "500",
+              "typography_font_size": {"unit": "px", "size": 11},
+              "typography_letter_spacing": {"unit": "px", "size": 0.9},
+              "typography_text_transform": "uppercase"
+             },
+             "elements": [],
+             "widgetType": "heading"
+            }
+           ],
+           "isInner": true
+          },
+          {
+           "id": "a00000c",
+           "elType": "container",
+           "settings": {
+            "content_width": "full",
+            "width": {"unit": "%", "size": 30},
+            "width_mobile": {"unit": "%", "size": 100},
+            "flex_direction": "column",
+            "flex_gap": {"unit": "px", "size": 6, "column": "6", "row": "6", "isLinked": true}
+           },
+           "elements": [
+            {
+             "id": "a00000d",
+             "elType": "widget",
+             "settings": {
+              "title": "QUITO",
+              "header_size": "h3",
+              "title_color": "#f34a23",
+              "typography_typography": "custom",
+              "typography_font_family": "Clash Grotesk",
+              "typography_font_weight": "500",
+              "typography_font_size": {"unit": "px", "size": 36},
+              "typography_font_size_mobile": {"unit": "px", "size": 30},
+              "typography_line_height": {"unit": "em", "size": 1},
+              "typography_letter_spacing": {"unit": "px", "size": -0.7},
+              "typography_text_transform": "uppercase"
+             },
+             "elements": [],
+             "widgetType": "heading"
+            },
+            {
+             "id": "a00000e",
+             "elType": "widget",
+             "settings": {
+              "title": "Ubicación",
+              "header_size": "h6",
+              "title_color": "#6f6f6f",
+              "typography_typography": "custom",
+              "typography_font_family": "Monoblock",
+              "typography_font_weight": "500",
+              "typography_font_size": {"unit": "px", "size": 11},
+              "typography_letter_spacing": {"unit": "px", "size": 0.9},
+              "typography_text_transform": "uppercase"
+             },
+             "elements": [],
+             "widgetType": "heading"
+            }
+           ],
+           "isInner": true
+          },
+          {
+           "id": "a00000f",
+           "elType": "container",
+           "settings": {
+            "content_width": "full",
+            "width": {"unit": "%", "size": 30},
+            "width_mobile": {"unit": "%", "size": 100},
+            "flex_direction": "column",
+            "flex_gap": {"unit": "px", "size": 6, "column": "6", "row": "6", "isLinked": true}
+           },
+           "elements": [
+            {
+             "id": "a000010",
+             "elType": "widget",
+             "settings": {
+              "title": "03",
+              "header_size": "h3",
+              "title_color": "#f34a23",
+              "typography_typography": "custom",
+              "typography_font_family": "Clash Grotesk",
+              "typography_font_weight": "500",
+              "typography_font_size": {"unit": "px", "size": 36},
+              "typography_font_size_mobile": {"unit": "px", "size": 30},
+              "typography_line_height": {"unit": "em", "size": 1},
+              "typography_letter_spacing": {"unit": "px", "size": -0.7},
+              "typography_text_transform": "uppercase"
+             },
+             "elements": [],
+             "widgetType": "heading"
+            },
+            {
+             "id": "a000011",
+             "elType": "widget",
+             "settings": {
+              "title": "Líneas directas",
+              "header_size": "h6",
+              "title_color": "#6f6f6f",
+              "typography_typography": "custom",
+              "typography_font_family": "Monoblock",
+              "typography_font_weight": "500",
+              "typography_font_size": {"unit": "px", "size": 11},
+              "typography_letter_spacing": {"unit": "px", "size": 0.9},
+              "typography_text_transform": "uppercase"
+             },
+             "elements": [],
+             "widgetType": "heading"
+            }
+           ],
+           "isInner": true
+          }
+         ],
+         "isInner": true
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a000012",
+       "elType": "container",
+       "settings": {
+        "content_width": "full",
+        "width": {"unit": "%", "size": 48},
+        "width_tablet": {"unit": "%", "size": 100},
+        "width_mobile": {"unit": "%", "size": 100},
+        "min_height": {"unit": "px", "size": 640},
+        "min_height_mobile": {"unit": "px", "size": 480},
+        "flex_direction": "column",
+        "flex_justify_content": "space-between",
+        "flex_align_items": "flex-start",
+        "background_background": "classic",
+        "background_color": "#161616",
+        "background_image": {"url": "https://crpozo.github.io/maach-site/assets/proyectos/wesco/03.webp", "id": "", "size": "", "alt": "Equipo MAACH en obra", "source": "url"},
+        "background_size": "cover",
+        "background_position": "center center",
+        "background_overlay_background": "gradient",
+        "background_overlay_color": "rgba(22,22,22,0.15)",
+        "background_overlay_color_stop": {"unit": "%", "size": 25},
+        "background_overlay_color_b": "rgba(22,22,22,0.9)",
+        "background_overlay_color_b_stop": {"unit": "%", "size": 100},
+        "background_overlay_gradient_type": "linear",
+        "background_overlay_gradient_angle": {"unit": "deg", "size": 180},
+        "background_overlay_opacity": {"unit": "px", "size": 1},
+        "border_border": "solid",
+        "border_width": {"unit": "px", "top": "1", "right": "1", "bottom": "1", "left": "1", "isLinked": true},
+        "border_color": "#e5e3e4",
+        "padding": {"unit": "px", "top": "20", "right": "20", "bottom": "28", "left": "20", "isLinked": false}
+       },
+       "elements": [
+        {
+         "id": "a000013",
+         "elType": "widget",
+         "settings": {
+          "title": "QUITO · ECUADOR",
+          "header_size": "h6",
+          "title_color": "#161616",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {"unit": "px", "size": 11},
+          "typography_letter_spacing": {"unit": "px", "size": 0.9},
+          "typography_text_transform": "uppercase",
+          "_element_width": "auto",
+          "_background_background": "classic",
+          "_background_color": "#ffffff",
+          "_padding": {"unit": "px", "top": "6", "right": "10", "bottom": "6", "left": "10", "isLinked": false}
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "a000014",
+         "elType": "container",
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "flex_gap": {"unit": "px", "size": 12, "column": "12", "row": "12", "isLinked": true},
+          "padding": {"unit": "px", "top": "0", "right": "8", "bottom": "0", "left": "8", "isLinked": false}
+         },
+         "elements": [
+          {
+           "id": "a000015",
+           "elType": "widget",
+           "settings": {
+            "title": "Equipo de ingeniería de proyectos",
+            "header_size": "h6",
+            "title_color": "#a9aaac",
+            "typography_typography": "custom",
+            "typography_font_family": "Monoblock",
+            "typography_font_weight": "500",
+            "typography_font_size": {"unit": "px", "size": 11},
+            "typography_letter_spacing": {"unit": "px", "size": 0.9},
+            "typography_text_transform": "uppercase"
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "a000016",
+           "elType": "widget",
+           "settings": {
+            "title": "En tu obra,<br><span style=\"color:#f34a23\">desde el plano</span>",
+            "header_size": "h2",
+            "title_color": "#ffffff",
+            "typography_typography": "custom",
+            "typography_font_family": "Clash Grotesk",
+            "typography_font_weight": "500",
+            "typography_font_size": {"unit": "px", "size": 52},
+            "typography_font_size_tablet": {"unit": "px", "size": 40},
+            "typography_font_size_mobile": {"unit": "px", "size": 32},
+            "typography_line_height": {"unit": "em", "size": 1},
+            "typography_letter_spacing": {"unit": "px", "size": -1},
+            "typography_text_transform": "uppercase"
+           },
+           "elements": [],
+           "widgetType": "heading"
+          }
+         ],
+         "isInner": true
+        }
+       ],
+       "isInner": true
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "a000017",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {"unit": "px", "size": 1600},
+    "flex_direction": "column",
+    "flex_gap": {"unit": "px", "size": 56, "column": "56", "row": "56", "isLinked": true},
+    "background_background": "classic",
+    "background_color": "#161616",
+    "padding": {"unit": "px", "top": "112", "right": "48", "bottom": "112", "left": "48", "isLinked": false},
+    "padding_tablet": {"unit": "px", "top": "64", "right": "32", "bottom": "64", "left": "32", "isLinked": false},
+    "padding_mobile": {"unit": "px", "top": "48", "right": "24", "bottom": "48", "left": "24", "isLinked": false}
+   },
+   "elements": [
+    {
+     "id": "a000018",
+     "elType": "container",
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "flex_justify_content": "space-between",
+      "flex_align_items": "flex-end",
+      "flex_wrap": "wrap",
+      "flex_gap": {"unit": "px", "size": 16, "column": "16", "row": "16", "isLinked": true}
+     },
+     "elements": [
+      {
+       "id": "a000019",
+       "elType": "container",
+       "settings": {
+        "content_width": "full",
+        "width": {"unit": "%", "size": 70},
+        "width_mobile": {"unit": "%", "size": 100},
+        "flex_direction": "column",
+        "flex_gap": {"unit": "px", "size": 28, "column": "28", "row": "28", "isLinked": true}
+       },
+       "elements": [
+        {
+         "id": "a00001a",
+         "elType": "widget",
+         "settings": {
+          "title": "Formulario · Iniciar conversación",
+          "header_size": "h6",
+          "title_color": "#f34a23",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "600",
+          "typography_font_size": {"unit": "px", "size": 11},
+          "typography_letter_spacing": {"unit": "px", "size": 1.4},
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "a00001b",
+         "elType": "widget",
+         "settings": {
+          "title": "Escríbenos",
+          "header_size": "h2",
+          "title_color": "#ffffff",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {"unit": "px", "size": 80},
+          "typography_font_size_tablet": {"unit": "px", "size": 56},
+          "typography_font_size_mobile": {"unit": "px", "size": 40},
+          "typography_line_height": {"unit": "em", "size": 1},
+          "typography_letter_spacing": {"unit": "px", "size": -2},
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a00001c",
+       "elType": "widget",
+       "settings": {
+        "title": "Respuesta &lt; 24 hrs",
+        "header_size": "h6",
+        "title_color": "#a9aaac",
+        "typography_typography": "custom",
+        "typography_font_family": "Monoblock",
+        "typography_font_weight": "500",
+        "typography_font_size": {"unit": "px", "size": 11},
+        "typography_letter_spacing": {"unit": "px", "size": 0.9},
+        "typography_text_transform": "uppercase",
+        "_element_width": "auto"
+       },
+       "elements": [],
+       "widgetType": "heading"
+      }
+     ],
+     "isInner": true
+    },
+    {
+     "id": "a00001d",
+     "elType": "container",
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "flex_wrap": "wrap",
+      "flex_align_items": "flex-start",
+      "flex_gap": {"unit": "px", "size": 48, "column": "48", "row": "48", "isLinked": true}
+     },
+     "elements": [
+      {
+       "id": "a00001e",
+       "elType": "container",
+       "settings": {
+        "content_width": "full",
+        "width": {"unit": "%", "size": 56},
+        "width_tablet": {"unit": "%", "size": 100},
+        "width_mobile": {"unit": "%", "size": 100},
+        "flex_direction": "column",
+        "background_background": "classic",
+        "background_color": "#1c1c1c",
+        "border_border": "solid",
+        "border_width": {"unit": "px", "top": "1", "right": "1", "bottom": "1", "left": "1", "isLinked": true},
+        "border_color": "rgba(228,226,227,0.15)",
+        "padding": {"unit": "px", "top": "40", "right": "40", "bottom": "32", "left": "40", "isLinked": false},
+        "padding_mobile": {"unit": "px", "top": "24", "right": "20", "bottom": "20", "left": "20", "isLinked": false}
+       },
+       "elements": [
+        {
+         "id": "a00001f",
+         "elType": "widget",
+         "settings": {
+          "shortcode": "[contact-form-7 id=\"TODO\" title=\"Contacto MAACH\"]"
+         },
+         "elements": [],
+         "widgetType": "shortcode"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a000020",
+       "elType": "container",
+       "settings": {
+        "content_width": "full",
+        "width": {"unit": "%", "size": 40},
+        "width_tablet": {"unit": "%", "size": 100},
+        "width_mobile": {"unit": "%", "size": 100},
+        "flex_direction": "column",
+        "flex_gap": {"unit": "px", "size": 32, "column": "32", "row": "32", "isLinked": true}
+       },
+       "elements": [
+        {
+         "id": "a000021",
+         "elType": "container",
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "flex_gap": {"unit": "px", "size": 16, "column": "16", "row": "16", "isLinked": true},
+          "background_background": "classic",
+          "background_color": "#1c1c1c",
+          "border_border": "solid",
+          "border_width": {"unit": "px", "top": "1", "right": "1", "bottom": "1", "left": "1", "isLinked": true},
+          "border_color": "rgba(228,226,227,0.18)",
+          "padding": {"unit": "px", "top": "32", "right": "32", "bottom": "32", "left": "32", "isLinked": true}
+         },
+         "elements": [
+          {
+           "id": "a000022",
+           "elType": "widget",
+           "settings": {
+            "title": "Información de contacto",
+            "header_size": "h6",
+            "title_color": "#f34a23",
+            "typography_typography": "custom",
+            "typography_font_family": "Monoblock",
+            "typography_font_weight": "600",
+            "typography_font_size": {"unit": "px", "size": 11},
+            "typography_letter_spacing": {"unit": "px", "size": 0.9},
+            "typography_text_transform": "uppercase"
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "a000023",
+           "elType": "widget",
+           "settings": {
+            "title": "<span style=\"border-bottom:1.5px solid #f34a23;padding-bottom:4px\">ventas@maach.ec</span>",
+            "link": {"url": "mailto:ventas@maach.ec", "is_external": "", "nofollow": ""},
+            "header_size": "h3",
+            "title_color": "#ffffff",
+            "typography_typography": "custom",
+            "typography_font_family": "Clash Grotesk",
+            "typography_font_weight": "500",
+            "typography_font_size": {"unit": "px", "size": 26},
+            "typography_font_size_mobile": {"unit": "px", "size": 22},
+            "typography_line_height": {"unit": "em", "size": 1.3},
+            "typography_letter_spacing": {"unit": "px", "size": -0.3},
+            "typography_text_transform": "lowercase"
+           },
+           "elements": [],
+           "widgetType": "heading"
+          }
+         ],
+         "isInner": true
+        },
+        {
+         "id": "a000024",
+         "elType": "container",
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "flex_gap": {"unit": "px", "size": 16, "column": "16", "row": "16", "isLinked": true},
+          "background_background": "classic",
+          "background_color": "#1c1c1c",
+          "border_border": "solid",
+          "border_width": {"unit": "px", "top": "1", "right": "1", "bottom": "1", "left": "1", "isLinked": true},
+          "border_color": "rgba(228,226,227,0.18)",
+          "padding": {"unit": "px", "top": "32", "right": "32", "bottom": "32", "left": "32", "isLinked": true}
+         },
+         "elements": [
+          {
+           "id": "a000025",
+           "elType": "widget",
+           "settings": {
+            "title": "Teléfonos",
+            "header_size": "h6",
+            "title_color": "#a9aaac",
+            "typography_typography": "custom",
+            "typography_font_family": "Monoblock",
+            "typography_font_weight": "500",
+            "typography_font_size": {"unit": "px", "size": 11},
+            "typography_letter_spacing": {"unit": "px", "size": 0.9},
+            "typography_text_transform": "uppercase"
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "a000026",
+           "elType": "widget",
+           "settings": {
+            "icon_list": [
+             {"_id": "b000001", "text": "0997 200 455", "link": {"url": "tel:+593997200455", "is_external": "", "nofollow": ""}, "selected_icon": {"value": "fas fa-plus", "library": "fa-solid"}},
+             {"_id": "b000002", "text": "0979 514 286", "link": {"url": "tel:+593979514286", "is_external": "", "nofollow": ""}, "selected_icon": {"value": "fas fa-plus", "library": "fa-solid"}},
+             {"_id": "b000003", "text": "0999 441 139", "link": {"url": "tel:+593999441139", "is_external": "", "nofollow": ""}, "selected_icon": {"value": "fas fa-plus", "library": "fa-solid"}}
+            ],
+            "space_between": {"unit": "px", "size": 10},
+            "icon_color": "#f34a23",
+            "icon_size": {"unit": "px", "size": 12},
+            "text_color": "#ffffff",
+            "text_indent": {"unit": "px", "size": 12},
+            "icon_typography_typography": "custom",
+            "icon_typography_font_family": "Monoblock",
+            "icon_typography_font_weight": "500",
+            "icon_typography_font_size": {"unit": "px", "size": 17},
+            "icon_typography_letter_spacing": {"unit": "px", "size": 0.7}
+           },
+           "elements": [],
+           "widgetType": "icon-list"
+          }
+         ],
+         "isInner": true
+        },
+        {
+         "id": "a000027",
+         "elType": "container",
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "flex_gap": {"unit": "px", "size": 12, "column": "12", "row": "12", "isLinked": true},
+          "background_background": "classic",
+          "background_color": "#1c1c1c",
+          "border_border": "solid",
+          "border_width": {"unit": "px", "top": "1", "right": "1", "bottom": "1", "left": "1", "isLinked": true},
+          "border_color": "rgba(228,226,227,0.18)",
+          "padding": {"unit": "px", "top": "32", "right": "32", "bottom": "32", "left": "32", "isLinked": true}
+         },
+         "elements": [
+          {
+           "id": "a000028",
+           "elType": "widget",
+           "settings": {
+            "title": "Tiempo de respuesta",
+            "header_size": "h6",
+            "title_color": "#a9aaac",
+            "typography_typography": "custom",
+            "typography_font_family": "Monoblock",
+            "typography_font_weight": "500",
+            "typography_font_size": {"unit": "px", "size": 11},
+            "typography_letter_spacing": {"unit": "px", "size": 0.9},
+            "typography_text_transform": "uppercase"
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "a000029",
+           "elType": "widget",
+           "settings": {
+            "title": "&lt; 24 hrs",
+            "header_size": "h3",
+            "title_color": "#f34a23",
+            "typography_typography": "custom",
+            "typography_font_family": "Clash Grotesk",
+            "typography_font_weight": "500",
+            "typography_font_size": {"unit": "px", "size": 56},
+            "typography_font_size_mobile": {"unit": "px", "size": 40},
+            "typography_line_height": {"unit": "em", "size": 1},
+            "typography_letter_spacing": {"unit": "px", "size": -1.1},
+            "typography_text_transform": "uppercase"
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "a00002a",
+           "elType": "widget",
+           "settings": {
+            "title": "Para solicitudes técnicas",
+            "header_size": "h6",
+            "title_color": "#a9aaac",
+            "typography_typography": "custom",
+            "typography_font_family": "Monoblock",
+            "typography_font_weight": "500",
+            "typography_font_size": {"unit": "px", "size": 11},
+            "typography_letter_spacing": {"unit": "px", "size": 0.9},
+            "typography_text_transform": "uppercase"
+           },
+           "elements": [],
+           "widgetType": "heading"
+          }
+         ],
+         "isInner": true
+        }
+       ],
+       "isInner": true
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  }
+ ],
+ "page_settings": {"hide_title": "yes", "template": "elementor_header_footer"},
+ "version": "0.4",
+ "title": "MAACH — Contacto",
+ "type": "page"
+}

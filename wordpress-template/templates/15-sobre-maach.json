@@ -1,0 +1,5860 @@
+{
+ "content": [
+  {
+   "id": "ab00008",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1600
+    },
+    "flex_direction": "column",
+    "padding": {
+     "unit": "px",
+     "top": "96",
+     "right": "48",
+     "bottom": "96",
+     "left": "48",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "unit": "px",
+     "top": "64",
+     "right": "32",
+     "bottom": "64",
+     "left": "32",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "48",
+     "right": "24",
+     "bottom": "48",
+     "left": "24",
+     "isLinked": false
+    },
+    "min_height": {
+     "unit": "vh",
+     "size": 86
+    },
+    "flex_justify_content": "center",
+    "flex_gap": {
+     "unit": "px",
+     "size": 28,
+     "column": "28",
+     "row": "28",
+     "isLinked": true
+    },
+    "background_background": "classic",
+    "background_color": "#161616",
+    "background_image": {
+     "url": "https://crpozo.github.io/maach-site/assets/biblioteca-1.webp",
+     "id": "",
+     "size": "",
+     "alt": "MAACH — Sobre nosotros",
+     "source": "url"
+    },
+    "background_size": "cover",
+    "background_position": "center center",
+    "background_overlay_background": "classic",
+    "background_overlay_color": "#161616",
+    "background_overlay_opacity": {
+     "unit": "px",
+     "size": 0.6
+    },
+    "border_border": "solid",
+    "border_width": {
+     "unit": "px",
+     "top": "0",
+     "right": "0",
+     "bottom": "0",
+     "left": "6",
+     "isLinked": false
+    },
+    "border_color": "#f34a23"
+   },
+   "elements": [
+    {
+     "id": "ab00006",
+     "elType": "container",
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "flex_align_items": "center",
+      "flex_wrap": "wrap",
+      "flex_gap": {
+       "unit": "px",
+       "size": 16,
+       "column": "16",
+       "row": "16",
+       "isLinked": true
+      }
+     },
+     "elements": [
+      {
+       "id": "ab00001",
+       "elType": "widget",
+       "settings": {
+        "title": "SOBRE MAACH",
+        "header_size": "h6",
+        "title_color": "#f34a23",
+        "typography_typography": "custom",
+        "typography_font_family": "Monoblock",
+        "typography_font_weight": "600",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 10
+        },
+        "typography_letter_spacing": {
+         "unit": "px",
+         "size": 1.2
+        },
+        "typography_text_transform": "uppercase",
+        "_element_width": "auto",
+        "_border_border": "solid",
+        "_border_width": {
+         "unit": "px",
+         "top": "1",
+         "right": "1",
+         "bottom": "1",
+         "left": "1",
+         "isLinked": true
+        },
+        "_border_color": "#f34a23",
+        "_padding": {
+         "unit": "px",
+         "top": "6",
+         "right": "10",
+         "bottom": "6",
+         "left": "10",
+         "isLinked": false
+        }
+       },
+       "elements": [],
+       "widgetType": "heading"
+      },
+      {
+       "id": "ab00002",
+       "elType": "widget",
+       "settings": {
+        "title": "ESTUDIO · MANIFIESTO 2026",
+        "header_size": "h6",
+        "title_color": "#a9aaac",
+        "typography_typography": "custom",
+        "typography_font_family": "Monoblock",
+        "typography_font_weight": "500",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 11
+        },
+        "typography_letter_spacing": {
+         "unit": "px",
+         "size": 1.4
+        },
+        "typography_text_transform": "uppercase",
+        "_element_width": "auto"
+       },
+       "elements": [],
+       "widgetType": "heading"
+      }
+     ],
+     "isInner": true
+    },
+    {
+     "id": "ab00003",
+     "elType": "widget",
+     "settings": {
+      "title": "Diseñar y fabricar<br><span style=\"color:#f34a23\">mobiliario</span> que funcione<br>en el trabajo real",
+      "header_size": "h1",
+      "title_color": "#ffffff",
+      "typography_typography": "custom",
+      "typography_font_family": "Clash Grotesk",
+      "typography_font_weight": "500",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 76
+      },
+      "typography_line_height": {
+       "unit": "em",
+       "size": 0.96
+      },
+      "typography_letter_spacing": {
+       "unit": "px",
+       "size": -1.5
+      },
+      "typography_text_transform": "uppercase",
+      "typography_font_size_tablet": {
+       "unit": "px",
+       "size": 52
+      },
+      "typography_font_size_mobile": {
+       "unit": "px",
+       "size": 38
+      }
+     },
+     "elements": [],
+     "widgetType": "heading"
+    },
+    {
+     "id": "ab00007",
+     "elType": "container",
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "flex_align_items": "center",
+      "flex_wrap": "wrap",
+      "flex_gap": {
+       "unit": "px",
+       "size": 28,
+       "column": "28",
+       "row": "28",
+       "isLinked": true
+      }
+     },
+     "elements": [
+      {
+       "id": "ab00004",
+       "elType": "widget",
+       "settings": {
+        "title": "CO-DISEÑO INDUSTRIAL <span style=\"color:rgba(255,255,255,.32)\">/</span> METAL + MADERA <span style=\"color:rgba(255,255,255,.32)\">/</span> 30+ AÑOS",
+        "header_size": "h6",
+        "title_color": "#ffffff",
+        "typography_typography": "custom",
+        "typography_font_family": "Monoblock",
+        "typography_font_weight": "500",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 11
+        },
+        "typography_letter_spacing": {
+         "unit": "px",
+         "size": 1.1
+        },
+        "typography_text_transform": "uppercase",
+        "_element_width": "auto"
+       },
+       "elements": [],
+       "widgetType": "heading"
+      },
+      {
+       "id": "ab00005",
+       "elType": "widget",
+       "settings": {
+        "title": "<span style=\"color:#f34a23\">——</span>&nbsp; Scroll para descubrir",
+        "header_size": "h6",
+        "title_color": "#a9aaac",
+        "typography_typography": "custom",
+        "typography_font_family": "Monoblock",
+        "typography_font_weight": "500",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 11
+        },
+        "typography_letter_spacing": {
+         "unit": "px",
+         "size": 1.4
+        },
+        "typography_text_transform": "uppercase",
+        "_element_width": "auto"
+       },
+       "elements": [],
+       "widgetType": "heading"
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "ab00031",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1600
+    },
+    "flex_direction": "column",
+    "padding": {
+     "unit": "px",
+     "top": "112",
+     "right": "48",
+     "bottom": "96",
+     "left": "48",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "unit": "px",
+     "top": "64",
+     "right": "32",
+     "bottom": "64",
+     "left": "32",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "48",
+     "right": "24",
+     "bottom": "48",
+     "left": "24",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#161616",
+    "flex_gap": {
+     "unit": "px",
+     "size": 0,
+     "column": "0",
+     "row": "0",
+     "isLinked": true
+    }
+   },
+   "elements": [
+    {
+     "id": "ab00011",
+     "elType": "container",
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "flex_justify_content": "space-between",
+      "flex_wrap": "wrap",
+      "flex_gap": {
+       "unit": "px",
+       "size": 16,
+       "column": "16",
+       "row": "16",
+       "isLinked": true
+      },
+      "padding": {
+       "unit": "px",
+       "top": "0",
+       "right": "0",
+       "bottom": "24",
+       "left": "0",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "ab00009",
+       "elType": "widget",
+       "settings": {
+        "title": "MISIÓN / VISIÓN",
+        "header_size": "h6",
+        "title_color": "#a9aaac",
+        "typography_typography": "custom",
+        "typography_font_family": "Monoblock",
+        "typography_font_weight": "500",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 11
+        },
+        "typography_letter_spacing": {
+         "unit": "px",
+         "size": 1.4
+        },
+        "typography_text_transform": "uppercase",
+        "_element_width": "auto"
+       },
+       "elements": [],
+       "widgetType": "heading"
+      },
+      {
+       "id": "ab00010",
+       "elType": "widget",
+       "settings": {
+        "title": "ESTRATEGIA · MAACH 2026",
+        "header_size": "h6",
+        "title_color": "#a9aaac",
+        "typography_typography": "custom",
+        "typography_font_family": "Monoblock",
+        "typography_font_weight": "500",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 11
+        },
+        "typography_letter_spacing": {
+         "unit": "px",
+         "size": 1.4
+        },
+        "typography_text_transform": "uppercase",
+        "_element_width": "auto"
+       },
+       "elements": [],
+       "widgetType": "heading"
+      }
+     ],
+     "isInner": true
+    },
+    {
+     "id": "ab00012",
+     "elType": "widget",
+     "settings": {
+      "color": "rgba(228,226,227,0.18)",
+      "weight": {
+       "unit": "px",
+       "size": 1
+      },
+      "gap": {
+       "unit": "px",
+       "size": 0
+      }
+     },
+     "elements": [],
+     "widgetType": "divider"
+    },
+    {
+     "id": "ab00013",
+     "elType": "widget",
+     "settings": {
+      "space": {
+       "unit": "px",
+       "size": 64
+      },
+      "space_mobile": {
+       "unit": "px",
+       "size": 40
+      }
+     },
+     "elements": [],
+     "widgetType": "spacer"
+    },
+    {
+     "id": "ab00020",
+     "elType": "container",
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "flex_wrap": "wrap",
+      "flex_align_items": "flex-start",
+      "flex_gap": {
+       "unit": "px",
+       "size": 48,
+       "column": "48",
+       "row": "32",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "ab00017",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 20
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 28
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "unit": "px",
+         "size": 18,
+         "column": "18",
+         "row": "18",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "ab00014",
+         "elType": "widget",
+         "settings": {
+          "title": "01",
+          "header_size": "h2",
+          "title_color": "#f34a23",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 90
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 0.82
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -4
+          },
+          "typography_text_transform": "uppercase",
+          "typography_font_size_tablet": {
+           "unit": "px",
+           "size": 72
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 60
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "ab00015",
+         "elType": "widget",
+         "settings": {
+          "title": "Misión",
+          "header_size": "h6",
+          "title_color": "#ffffff",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.8
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "ab00016",
+         "elType": "widget",
+         "settings": {
+          "color": "#f34a23",
+          "weight": {
+           "unit": "px",
+           "size": 2
+          },
+          "gap": {
+           "unit": "px",
+           "size": 0
+          },
+          "width": {
+           "unit": "px",
+           "size": 40
+          },
+          "align": "left"
+         },
+         "elements": [],
+         "widgetType": "divider"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "ab00019",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 72
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 62
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_direction": "column"
+       },
+       "elements": [
+        {
+         "id": "ab00018",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Somos fabricantes y partners de diseño para espacios de trabajo; co-creamos y producimos mobiliario que inspira y perdura, fabricado localmente por manos expertas y procesos tecnológicos avanzados, para ayudar a empresas a ser más productivas y que sus colaboradores se sientan mejor.</p>",
+          "text_color": "#a9aaac",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "400",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 21
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.55
+          },
+          "_element_width": "initial",
+          "_element_custom_width": {
+           "unit": "px",
+           "size": 880
+          }
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        }
+       ],
+       "isInner": true
+      }
+     ],
+     "isInner": true
+    },
+    {
+     "id": "ab00021",
+     "elType": "widget",
+     "settings": {
+      "space": {
+       "unit": "px",
+       "size": 64
+      },
+      "space_mobile": {
+       "unit": "px",
+       "size": 40
+      }
+     },
+     "elements": [],
+     "widgetType": "spacer"
+    },
+    {
+     "id": "ab00022",
+     "elType": "widget",
+     "settings": {
+      "color": "rgba(228,226,227,0.18)",
+      "weight": {
+       "unit": "px",
+       "size": 1
+      },
+      "gap": {
+       "unit": "px",
+       "size": 0
+      }
+     },
+     "elements": [],
+     "widgetType": "divider"
+    },
+    {
+     "id": "ab00023",
+     "elType": "widget",
+     "settings": {
+      "space": {
+       "unit": "px",
+       "size": 64
+      },
+      "space_mobile": {
+       "unit": "px",
+       "size": 40
+      }
+     },
+     "elements": [],
+     "widgetType": "spacer"
+    },
+    {
+     "id": "ab00030",
+     "elType": "container",
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "flex_wrap": "wrap",
+      "flex_align_items": "flex-start",
+      "flex_gap": {
+       "unit": "px",
+       "size": 48,
+       "column": "48",
+       "row": "32",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "ab00027",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 20
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 28
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "unit": "px",
+         "size": 18,
+         "column": "18",
+         "row": "18",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "ab00024",
+         "elType": "widget",
+         "settings": {
+          "title": "02",
+          "header_size": "h2",
+          "title_color": "rgba(255,255,255,0.35)",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 90
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 0.82
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -4
+          },
+          "typography_text_transform": "uppercase",
+          "typography_font_size_tablet": {
+           "unit": "px",
+           "size": 72
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 60
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "ab00025",
+         "elType": "widget",
+         "settings": {
+          "title": "Visión",
+          "header_size": "h6",
+          "title_color": "#ffffff",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.8
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "ab00026",
+         "elType": "widget",
+         "settings": {
+          "color": "rgba(255,255,255,0.6)",
+          "weight": {
+           "unit": "px",
+           "size": 2
+          },
+          "gap": {
+           "unit": "px",
+           "size": 0
+          },
+          "width": {
+           "unit": "px",
+           "size": 40
+          },
+          "align": "left"
+         },
+         "elements": [],
+         "widgetType": "divider"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "ab00029",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 72
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 62
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_direction": "column"
+       },
+       "elements": [
+        {
+         "id": "ab00028",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Ser la referencia latinoamericana en mobiliario co-creado y fabricado localmente con estándares internacionales, mejorando la productividad y el bienestar mediante la innovación continua, tecnología y creatividad; impulsando la industria y el talento ecuatoriano hacia el mundo.</p>",
+          "text_color": "#a9aaac",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "400",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 21
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.55
+          },
+          "_element_width": "initial",
+          "_element_custom_width": {
+           "unit": "px",
+           "size": 880
+          }
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        }
+       ],
+       "isInner": true
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "ab00053",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1600
+    },
+    "flex_direction": "column",
+    "padding": {
+     "unit": "px",
+     "top": "112",
+     "right": "48",
+     "bottom": "112",
+     "left": "48",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "unit": "px",
+     "top": "64",
+     "right": "32",
+     "bottom": "64",
+     "left": "32",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "48",
+     "right": "24",
+     "bottom": "48",
+     "left": "24",
+     "isLinked": false
+    },
+    "border_border": "solid",
+    "border_width": {
+     "unit": "px",
+     "top": "0",
+     "right": "0",
+     "bottom": "1",
+     "left": "0",
+     "isLinked": false
+    },
+    "border_color": "#e5e3e4"
+   },
+   "elements": [
+    {
+     "id": "ab00052",
+     "elType": "container",
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "flex_wrap": "wrap",
+      "flex_align_items": "stretch",
+      "flex_gap": {
+       "unit": "px",
+       "size": 64,
+       "column": "64",
+       "row": "48",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "ab00036",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 42
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 100
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "unit": "px",
+         "size": 20,
+         "column": "20",
+         "row": "20",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "ab00032",
+         "elType": "widget",
+         "settings": {
+          "title": "SOBRE NOSOTROS",
+          "header_size": "h6",
+          "title_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.4
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "ab00033",
+         "elType": "widget",
+         "settings": {
+          "title": "Sobre nosotros",
+          "header_size": "h2",
+          "title_color": "#161616",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 72
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 0.95
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -1.5
+          },
+          "typography_text_transform": "uppercase",
+          "typography_font_size_tablet": {
+           "unit": "px",
+           "size": 52
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 40
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "ab00034",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/biblioteca-4.webp",
+           "id": "",
+           "size": "",
+           "alt": "Espacios de trabajo MAACH",
+           "source": "url"
+          },
+          "image_size": "full",
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          },
+          "height": {
+           "unit": "px",
+           "size": 380
+          },
+          "object-fit": "cover",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4"
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "ab00035",
+         "elType": "widget",
+         "settings": {
+          "title": "ESPACIOS DE TRABAJO",
+          "header_size": "h6",
+          "title_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 10
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.4
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "ab00051",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 50
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 100
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_direction": "column",
+        "flex_justify_content": "space-between",
+        "flex_gap": {
+         "unit": "px",
+         "size": 22,
+         "column": "22",
+         "row": "22",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "ab00047",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>MAACH diseña y fabrica mobiliario corporativo a partir de procesos industriales sólidos, criterios de ingeniería y una comprensión profunda del uso real en los espacios de trabajo.</p>",
+          "text_color": "#161616",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "400",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 20
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.5
+          }
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "ab00048",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Cada decisión responde a estructura, ergonomía, durabilidad y desempeño en el tiempo.</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "400",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 17
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.6
+          }
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "ab00049",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>A través del co-diseño con arquitectos, interioristas y clientes, desarrollamos soluciones adaptables que integran materiales, tecnología y producción local con estándares internacionales.</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "400",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 17
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.6
+          }
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "ab00050",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Diseñamos espacios que funcionan en el día a día, mejoran la productividad y elevan la experiencia de quienes los usan.</p>",
+          "text_color": "#161616",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 17
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.6
+          }
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "ab00046",
+         "elType": "container",
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "row",
+          "flex_wrap": "wrap",
+          "flex_gap": {
+           "unit": "px",
+           "size": 20,
+           "column": "20",
+           "row": "20",
+           "isLinked": true
+          },
+          "border_border": "solid",
+          "border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": false
+          },
+          "border_color": "#e5e3e4",
+          "padding": {
+           "unit": "px",
+           "top": "24",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": false
+          }
+         },
+         "elements": [
+          {
+           "id": "ab00039",
+           "elType": "container",
+           "settings": {
+            "width": {
+             "unit": "%",
+             "size": 30
+            },
+            "width_mobile": {
+             "unit": "%",
+             "size": 100
+            },
+            "flex_direction": "column",
+            "flex_gap": {
+             "unit": "px",
+             "size": 6,
+             "column": "6",
+             "row": "6",
+             "isLinked": true
+            }
+           },
+           "elements": [
+            {
+             "id": "ab00037",
+             "elType": "widget",
+             "settings": {
+              "title": "01 / DISEÑO",
+              "header_size": "h6",
+              "title_color": "#f34a23",
+              "typography_typography": "custom",
+              "typography_font_family": "Monoblock",
+              "typography_font_weight": "500",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 11
+              },
+              "typography_letter_spacing": {
+               "unit": "px",
+               "size": 1.4
+              },
+              "typography_text_transform": "uppercase"
+             },
+             "elements": [],
+             "widgetType": "heading"
+            },
+            {
+             "id": "ab00038",
+             "elType": "widget",
+             "settings": {
+              "editor": "<p>Ingeniería aplicada</p>",
+              "text_color": "#6f6f6f",
+              "typography_typography": "custom",
+              "typography_font_family": "Clash Grotesk",
+              "typography_font_weight": "400",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 14
+              },
+              "typography_line_height": {
+               "unit": "em",
+               "size": 1.4
+              }
+             },
+             "elements": [],
+             "widgetType": "text-editor"
+            }
+           ],
+           "isInner": true
+          },
+          {
+           "id": "ab00042",
+           "elType": "container",
+           "settings": {
+            "width": {
+             "unit": "%",
+             "size": 30
+            },
+            "width_mobile": {
+             "unit": "%",
+             "size": 100
+            },
+            "flex_direction": "column",
+            "flex_gap": {
+             "unit": "px",
+             "size": 6,
+             "column": "6",
+             "row": "6",
+             "isLinked": true
+            }
+           },
+           "elements": [
+            {
+             "id": "ab00040",
+             "elType": "widget",
+             "settings": {
+              "title": "02 / FABRICACIÓN",
+              "header_size": "h6",
+              "title_color": "#f34a23",
+              "typography_typography": "custom",
+              "typography_font_family": "Monoblock",
+              "typography_font_weight": "500",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 11
+              },
+              "typography_letter_spacing": {
+               "unit": "px",
+               "size": 1.4
+              },
+              "typography_text_transform": "uppercase"
+             },
+             "elements": [],
+             "widgetType": "heading"
+            },
+            {
+             "id": "ab00041",
+             "elType": "widget",
+             "settings": {
+              "editor": "<p>Producción local</p>",
+              "text_color": "#6f6f6f",
+              "typography_typography": "custom",
+              "typography_font_family": "Clash Grotesk",
+              "typography_font_weight": "400",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 14
+              },
+              "typography_line_height": {
+               "unit": "em",
+               "size": 1.4
+              }
+             },
+             "elements": [],
+             "widgetType": "text-editor"
+            }
+           ],
+           "isInner": true
+          },
+          {
+           "id": "ab00045",
+           "elType": "container",
+           "settings": {
+            "width": {
+             "unit": "%",
+             "size": 30
+            },
+            "width_mobile": {
+             "unit": "%",
+             "size": 100
+            },
+            "flex_direction": "column",
+            "flex_gap": {
+             "unit": "px",
+             "size": 6,
+             "column": "6",
+             "row": "6",
+             "isLinked": true
+            }
+           },
+           "elements": [
+            {
+             "id": "ab00043",
+             "elType": "widget",
+             "settings": {
+              "title": "03 / CO-DISEÑO",
+              "header_size": "h6",
+              "title_color": "#f34a23",
+              "typography_typography": "custom",
+              "typography_font_family": "Monoblock",
+              "typography_font_weight": "500",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 11
+              },
+              "typography_letter_spacing": {
+               "unit": "px",
+               "size": 1.4
+              },
+              "typography_text_transform": "uppercase"
+             },
+             "elements": [],
+             "widgetType": "heading"
+            },
+            {
+             "id": "ab00044",
+             "elType": "widget",
+             "settings": {
+              "editor": "<p>Arquitectos · clientes</p>",
+              "text_color": "#6f6f6f",
+              "typography_typography": "custom",
+              "typography_font_family": "Clash Grotesk",
+              "typography_font_weight": "400",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 14
+              },
+              "typography_line_height": {
+               "unit": "em",
+               "size": 1.4
+              }
+             },
+             "elements": [],
+             "widgetType": "text-editor"
+            }
+           ],
+           "isInner": true
+          }
+         ],
+         "isInner": true
+        }
+       ],
+       "isInner": true
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "ab00088",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1600
+    },
+    "flex_direction": "column",
+    "padding": {
+     "unit": "px",
+     "top": "128",
+     "right": "48",
+     "bottom": "128",
+     "left": "48",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "unit": "px",
+     "top": "64",
+     "right": "32",
+     "bottom": "64",
+     "left": "32",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "48",
+     "right": "24",
+     "bottom": "48",
+     "left": "24",
+     "isLinked": false
+    },
+    "flex_gap": {
+     "unit": "px",
+     "size": 64,
+     "column": "64",
+     "row": "64",
+     "isLinked": true
+    }
+   },
+   "elements": [
+    {
+     "id": "ab00086",
+     "elType": "container",
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "column",
+      "flex_gap": {
+       "unit": "px",
+       "size": 20,
+       "column": "20",
+       "row": "20",
+       "isLinked": true
+      }
+     },
+     "elements": [
+      {
+       "id": "ab00084",
+       "elType": "widget",
+       "settings": {
+        "title": "VALORES",
+        "header_size": "h6",
+        "title_color": "#6f6f6f",
+        "typography_typography": "custom",
+        "typography_font_family": "Monoblock",
+        "typography_font_weight": "500",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 11
+        },
+        "typography_letter_spacing": {
+         "unit": "px",
+         "size": 1.4
+        },
+        "typography_text_transform": "uppercase"
+       },
+       "elements": [],
+       "widgetType": "heading"
+      },
+      {
+       "id": "ab00085",
+       "elType": "widget",
+       "settings": {
+        "title": "Cómo trabajamos",
+        "header_size": "h2",
+        "title_color": "#161616",
+        "typography_typography": "custom",
+        "typography_font_family": "Clash Grotesk",
+        "typography_font_weight": "500",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 90
+        },
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.05
+        },
+        "typography_letter_spacing": {
+         "unit": "px",
+         "size": -1
+        },
+        "typography_text_transform": "uppercase",
+        "typography_font_size_tablet": {
+         "unit": "px",
+         "size": 64
+        },
+        "typography_font_size_mobile": {
+         "unit": "px",
+         "size": 44
+        }
+       },
+       "elements": [],
+       "widgetType": "heading"
+      }
+     ],
+     "isInner": true
+    },
+    {
+     "id": "ab00087",
+     "elType": "container",
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "flex_wrap": "wrap",
+      "flex_gap": {
+       "unit": "px",
+       "size": 0,
+       "column": "0",
+       "row": "0",
+       "isLinked": true
+      },
+      "border_border": "solid",
+      "border_width": {
+       "unit": "px",
+       "top": "1",
+       "right": "0",
+       "bottom": "0",
+       "left": "1",
+       "isLinked": false
+      },
+      "border_color": "#e5e3e4"
+     },
+     "elements": [
+      {
+       "id": "ab00058",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 33.33
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 50
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "unit": "px",
+         "size": 32,
+         "column": "32",
+         "row": "32",
+         "isLinked": true
+        },
+        "min_height": {
+         "unit": "px",
+         "size": 320
+        },
+        "border_border": "solid",
+        "border_width": {
+         "unit": "px",
+         "top": "0",
+         "right": "1",
+         "bottom": "1",
+         "left": "0",
+         "isLinked": false
+        },
+        "border_color": "#e5e3e4",
+        "padding": {
+         "unit": "px",
+         "top": "40",
+         "right": "32",
+         "bottom": "40",
+         "left": "32",
+         "isLinked": false
+        }
+       },
+       "elements": [
+        {
+         "id": "ab00054",
+         "elType": "widget",
+         "settings": {
+          "title": "01 / VALOR",
+          "header_size": "h6",
+          "title_color": "#f34a23",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.4
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "ab00057",
+         "elType": "container",
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "flex_gap": {
+           "unit": "px",
+           "size": 16,
+           "column": "16",
+           "row": "16",
+           "isLinked": true
+          }
+         },
+         "elements": [
+          {
+           "id": "ab00055",
+           "elType": "widget",
+           "settings": {
+            "title": "Diseño funcional",
+            "header_size": "h3",
+            "title_color": "#161616",
+            "typography_typography": "custom",
+            "typography_font_family": "Clash Grotesk",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 28
+            },
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.05
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": -0.3
+            },
+            "typography_text_transform": "uppercase",
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 24
+            }
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "ab00056",
+           "elType": "widget",
+           "settings": {
+            "editor": "<p>Cada decisión de diseño responde a una necesidad real de uso. La forma existe para cumplir una función y mejorar el desempeño del trabajo cotidiano.</p>",
+            "text_color": "#6f6f6f",
+            "typography_typography": "custom",
+            "typography_font_family": "Clash Grotesk",
+            "typography_font_weight": "400",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 15
+            },
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.55
+            }
+           },
+           "elements": [],
+           "widgetType": "text-editor"
+          }
+         ],
+         "isInner": true
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "ab00063",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 33.33
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 50
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "unit": "px",
+         "size": 32,
+         "column": "32",
+         "row": "32",
+         "isLinked": true
+        },
+        "min_height": {
+         "unit": "px",
+         "size": 320
+        },
+        "border_border": "solid",
+        "border_width": {
+         "unit": "px",
+         "top": "0",
+         "right": "1",
+         "bottom": "1",
+         "left": "0",
+         "isLinked": false
+        },
+        "border_color": "#e5e3e4",
+        "padding": {
+         "unit": "px",
+         "top": "40",
+         "right": "32",
+         "bottom": "40",
+         "left": "32",
+         "isLinked": false
+        }
+       },
+       "elements": [
+        {
+         "id": "ab00059",
+         "elType": "widget",
+         "settings": {
+          "title": "02 / VALOR",
+          "header_size": "h6",
+          "title_color": "#f34a23",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.4
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "ab00062",
+         "elType": "container",
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "flex_gap": {
+           "unit": "px",
+           "size": 16,
+           "column": "16",
+           "row": "16",
+           "isLinked": true
+          }
+         },
+         "elements": [
+          {
+           "id": "ab00060",
+           "elType": "widget",
+           "settings": {
+            "title": "Ingeniería aplicada",
+            "header_size": "h3",
+            "title_color": "#161616",
+            "typography_typography": "custom",
+            "typography_font_family": "Clash Grotesk",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 28
+            },
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.05
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": -0.3
+            },
+            "typography_text_transform": "uppercase",
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 24
+            }
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "ab00061",
+           "elType": "widget",
+           "settings": {
+            "editor": "<p>La marca se construye desde procesos industriales sólidos, precisión técnica y control productivo. La ingeniería garantiza durabilidad y consistencia.</p>",
+            "text_color": "#6f6f6f",
+            "typography_typography": "custom",
+            "typography_font_family": "Clash Grotesk",
+            "typography_font_weight": "400",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 15
+            },
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.55
+            }
+           },
+           "elements": [],
+           "widgetType": "text-editor"
+          }
+         ],
+         "isInner": true
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "ab00068",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 33.33
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 50
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "unit": "px",
+         "size": 32,
+         "column": "32",
+         "row": "32",
+         "isLinked": true
+        },
+        "min_height": {
+         "unit": "px",
+         "size": 320
+        },
+        "border_border": "solid",
+        "border_width": {
+         "unit": "px",
+         "top": "0",
+         "right": "1",
+         "bottom": "1",
+         "left": "0",
+         "isLinked": false
+        },
+        "border_color": "#e5e3e4",
+        "padding": {
+         "unit": "px",
+         "top": "40",
+         "right": "32",
+         "bottom": "40",
+         "left": "32",
+         "isLinked": false
+        }
+       },
+       "elements": [
+        {
+         "id": "ab00064",
+         "elType": "widget",
+         "settings": {
+          "title": "03 / VALOR",
+          "header_size": "h6",
+          "title_color": "#f34a23",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.4
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "ab00067",
+         "elType": "container",
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "flex_gap": {
+           "unit": "px",
+           "size": 16,
+           "column": "16",
+           "row": "16",
+           "isLinked": true
+          }
+         },
+         "elements": [
+          {
+           "id": "ab00065",
+           "elType": "widget",
+           "settings": {
+            "title": "Co-diseño colaborativo",
+            "header_size": "h3",
+            "title_color": "#161616",
+            "typography_typography": "custom",
+            "typography_font_family": "Clash Grotesk",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 28
+            },
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.05
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": -0.3
+            },
+            "typography_text_transform": "uppercase",
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 24
+            }
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "ab00066",
+           "elType": "widget",
+           "settings": {
+            "editor": "<p>MAACH trabaja junto a arquitectos, interioristas y clientes para desarrollar soluciones adaptables. El diseño es un proceso compartido.</p>",
+            "text_color": "#6f6f6f",
+            "typography_typography": "custom",
+            "typography_font_family": "Clash Grotesk",
+            "typography_font_weight": "400",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 15
+            },
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.55
+            }
+           },
+           "elements": [],
+           "widgetType": "text-editor"
+          }
+         ],
+         "isInner": true
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "ab00073",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 33.33
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 50
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "unit": "px",
+         "size": 32,
+         "column": "32",
+         "row": "32",
+         "isLinked": true
+        },
+        "min_height": {
+         "unit": "px",
+         "size": 320
+        },
+        "border_border": "solid",
+        "border_width": {
+         "unit": "px",
+         "top": "0",
+         "right": "1",
+         "bottom": "1",
+         "left": "0",
+         "isLinked": false
+        },
+        "border_color": "#e5e3e4",
+        "padding": {
+         "unit": "px",
+         "top": "40",
+         "right": "32",
+         "bottom": "40",
+         "left": "32",
+         "isLinked": false
+        }
+       },
+       "elements": [
+        {
+         "id": "ab00069",
+         "elType": "widget",
+         "settings": {
+          "title": "04 / VALOR",
+          "header_size": "h6",
+          "title_color": "#f34a23",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.4
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "ab00072",
+         "elType": "container",
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "flex_gap": {
+           "unit": "px",
+           "size": 16,
+           "column": "16",
+           "row": "16",
+           "isLinked": true
+          }
+         },
+         "elements": [
+          {
+           "id": "ab00070",
+           "elType": "widget",
+           "settings": {
+            "title": "Calidad que perdura",
+            "header_size": "h3",
+            "title_color": "#161616",
+            "typography_typography": "custom",
+            "typography_font_family": "Clash Grotesk",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 28
+            },
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.05
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": -0.3
+            },
+            "typography_text_transform": "uppercase",
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 24
+            }
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "ab00071",
+           "elType": "widget",
+           "settings": {
+            "editor": "<p>Productos pensados para resistir el uso intensivo y mantenerse vigentes en el tiempo. La durabilidad es criterio central en materiales y construcción.</p>",
+            "text_color": "#6f6f6f",
+            "typography_typography": "custom",
+            "typography_font_family": "Clash Grotesk",
+            "typography_font_weight": "400",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 15
+            },
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.55
+            }
+           },
+           "elements": [],
+           "widgetType": "text-editor"
+          }
+         ],
+         "isInner": true
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "ab00078",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 33.33
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 50
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "unit": "px",
+         "size": 32,
+         "column": "32",
+         "row": "32",
+         "isLinked": true
+        },
+        "min_height": {
+         "unit": "px",
+         "size": 320
+        },
+        "border_border": "solid",
+        "border_width": {
+         "unit": "px",
+         "top": "0",
+         "right": "1",
+         "bottom": "1",
+         "left": "0",
+         "isLinked": false
+        },
+        "border_color": "#e5e3e4",
+        "padding": {
+         "unit": "px",
+         "top": "40",
+         "right": "32",
+         "bottom": "40",
+         "left": "32",
+         "isLinked": false
+        }
+       },
+       "elements": [
+        {
+         "id": "ab00074",
+         "elType": "widget",
+         "settings": {
+          "title": "05 / VALOR",
+          "header_size": "h6",
+          "title_color": "#f34a23",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.4
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "ab00077",
+         "elType": "container",
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "flex_gap": {
+           "unit": "px",
+           "size": 16,
+           "column": "16",
+           "row": "16",
+           "isLinked": true
+          }
+         },
+         "elements": [
+          {
+           "id": "ab00075",
+           "elType": "widget",
+           "settings": {
+            "title": "Ergonomía y bienestar",
+            "header_size": "h3",
+            "title_color": "#161616",
+            "typography_typography": "custom",
+            "typography_font_family": "Clash Grotesk",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 28
+            },
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.05
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": -0.3
+            },
+            "typography_text_transform": "uppercase",
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 24
+            }
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "ab00076",
+           "elType": "widget",
+           "settings": {
+            "editor": "<p>El mobiliario se diseña considerando la relación entre cuerpo, espacio y trabajo. Confort y experiencia de uso son parte del desempeño.</p>",
+            "text_color": "#6f6f6f",
+            "typography_typography": "custom",
+            "typography_font_family": "Clash Grotesk",
+            "typography_font_weight": "400",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 15
+            },
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.55
+            }
+           },
+           "elements": [],
+           "widgetType": "text-editor"
+          }
+         ],
+         "isInner": true
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "ab00083",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 33.33
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 50
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "unit": "px",
+         "size": 32,
+         "column": "32",
+         "row": "32",
+         "isLinked": true
+        },
+        "min_height": {
+         "unit": "px",
+         "size": 320
+        },
+        "border_border": "solid",
+        "border_width": {
+         "unit": "px",
+         "top": "0",
+         "right": "1",
+         "bottom": "1",
+         "left": "0",
+         "isLinked": false
+        },
+        "border_color": "#e5e3e4",
+        "padding": {
+         "unit": "px",
+         "top": "40",
+         "right": "32",
+         "bottom": "40",
+         "left": "32",
+         "isLinked": false
+        }
+       },
+       "elements": [
+        {
+         "id": "ab00079",
+         "elType": "widget",
+         "settings": {
+          "title": "06 / VALOR",
+          "header_size": "h6",
+          "title_color": "#f34a23",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.4
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "ab00082",
+         "elType": "container",
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "flex_gap": {
+           "unit": "px",
+           "size": 16,
+           "column": "16",
+           "row": "16",
+           "isLinked": true
+          }
+         },
+         "elements": [
+          {
+           "id": "ab00080",
+           "elType": "widget",
+           "settings": {
+            "title": "Fabricación con visión",
+            "header_size": "h3",
+            "title_color": "#161616",
+            "typography_typography": "custom",
+            "typography_font_family": "Clash Grotesk",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 28
+            },
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.05
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": -0.3
+            },
+            "typography_text_transform": "uppercase",
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 24
+            }
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "ab00081",
+           "elType": "widget",
+           "settings": {
+            "editor": "<p>Integramos producción local con estándares internacionales, combinando eficiencia, tecnología y responsabilidad para las exigencias actuales.</p>",
+            "text_color": "#6f6f6f",
+            "typography_typography": "custom",
+            "typography_font_family": "Clash Grotesk",
+            "typography_font_weight": "400",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 15
+            },
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.55
+            }
+           },
+           "elements": [],
+           "widgetType": "text-editor"
+          }
+         ],
+         "isInner": true
+        }
+       ],
+       "isInner": true
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "ab00094",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1600
+    },
+    "flex_direction": "column",
+    "padding": {
+     "unit": "px",
+     "top": "144",
+     "right": "48",
+     "bottom": "144",
+     "left": "48",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "unit": "px",
+     "top": "64",
+     "right": "32",
+     "bottom": "64",
+     "left": "32",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "48",
+     "right": "24",
+     "bottom": "48",
+     "left": "24",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#161616",
+    "flex_align_items": "center",
+    "flex_gap": {
+     "unit": "px",
+     "size": 32,
+     "column": "32",
+     "row": "32",
+     "isLinked": true
+    }
+   },
+   "elements": [
+    {
+     "id": "ab00089",
+     "elType": "widget",
+     "settings": {
+      "title": "MAACH · MANIFIESTO",
+      "header_size": "h6",
+      "title_color": "#a9aaac",
+      "typography_typography": "custom",
+      "typography_font_family": "Monoblock",
+      "typography_font_weight": "500",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 11
+      },
+      "typography_letter_spacing": {
+       "unit": "px",
+       "size": 1.4
+      },
+      "typography_text_transform": "uppercase",
+      "align": "center"
+     },
+     "elements": [],
+     "widgetType": "heading"
+    },
+    {
+     "id": "ab00090",
+     "elType": "widget",
+     "settings": {
+      "title": "&ldquo;No diseñamos objetos para<span style=\"color:#f34a23\"> decorar espacios </span>— diseñamos<span style=\"color:#a9aaac;font-style:italic\"> herramientas estructurales </span>que habilitan el trabajo.&rdquo;",
+      "header_size": "h2",
+      "title_color": "#ffffff",
+      "align": "center",
+      "typography_typography": "custom",
+      "typography_font_family": "Clash Grotesk",
+      "typography_font_weight": "500",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 54
+      },
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1.15
+      },
+      "typography_letter_spacing": {
+       "unit": "px",
+       "size": -0.5
+      },
+      "typography_text_transform": "uppercase",
+      "typography_font_size_tablet": {
+       "unit": "px",
+       "size": 38
+      },
+      "typography_font_size_mobile": {
+       "unit": "px",
+       "size": 28
+      },
+      "_element_width": "initial",
+      "_element_custom_width": {
+       "unit": "px",
+       "size": 1080
+      }
+     },
+     "elements": [],
+     "widgetType": "heading"
+    },
+    {
+     "id": "ab00091",
+     "elType": "widget",
+     "settings": {
+      "space": {
+       "unit": "px",
+       "size": 16
+      }
+     },
+     "elements": [],
+     "widgetType": "spacer"
+    },
+    {
+     "id": "ab00092",
+     "elType": "widget",
+     "settings": {
+      "color": "#a9aaac",
+      "weight": {
+       "unit": "px",
+       "size": 1
+      },
+      "gap": {
+       "unit": "px",
+       "size": 0
+      },
+      "width": {
+       "unit": "px",
+       "size": 64
+      },
+      "align": "center"
+     },
+     "elements": [],
+     "widgetType": "divider"
+    },
+    {
+     "id": "ab00093",
+     "elType": "widget",
+     "settings": {
+      "title": "ESTUDIO MAACH · 2026",
+      "header_size": "h6",
+      "title_color": "#a9aaac",
+      "typography_typography": "custom",
+      "typography_font_family": "Monoblock",
+      "typography_font_weight": "500",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 11
+      },
+      "typography_letter_spacing": {
+       "unit": "px",
+       "size": 1.4
+      },
+      "typography_text_transform": "uppercase",
+      "align": "center"
+     },
+     "elements": [],
+     "widgetType": "heading"
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "ab00110",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1600
+    },
+    "flex_direction": "column",
+    "padding": {
+     "unit": "px",
+     "top": "88",
+     "right": "48",
+     "bottom": "88",
+     "left": "48",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "unit": "px",
+     "top": "64",
+     "right": "32",
+     "bottom": "64",
+     "left": "32",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "48",
+     "right": "24",
+     "bottom": "48",
+     "left": "24",
+     "isLinked": false
+    },
+    "flex_gap": {
+     "unit": "px",
+     "size": 40,
+     "column": "40",
+     "row": "40",
+     "isLinked": true
+    },
+    "border_border": "solid",
+    "border_width": {
+     "unit": "px",
+     "top": "0",
+     "right": "0",
+     "bottom": "1",
+     "left": "0",
+     "isLinked": false
+    },
+    "border_color": "#e5e3e4"
+   },
+   "elements": [
+    {
+     "id": "ab00108",
+     "elType": "container",
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "flex_wrap": "wrap",
+      "flex_align_items": "stretch",
+      "flex_gap": {
+       "unit": "px",
+       "size": 56,
+       "column": "56",
+       "row": "40",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "ab00100",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 50
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 100
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "unit": "px",
+         "size": 16,
+         "column": "16",
+         "row": "16",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "ab00095",
+         "elType": "widget",
+         "settings": {
+          "title": "TRAYECTORIA",
+          "header_size": "h6",
+          "title_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.4
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "ab00096",
+         "elType": "widget",
+         "settings": {
+          "title": "Nuestra Historia",
+          "header_size": "h2",
+          "title_color": "#161616",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 72
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 0.95
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -1.5
+          },
+          "typography_text_transform": "uppercase",
+          "typography_font_size_tablet": {
+           "unit": "px",
+           "size": 52
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 40
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "ab00097",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>MAACH nació hace tres años como la unidad comercial de Sumar, una empresa familiar con más de 30 años de trayectoria en la fabricación de mobiliario corporativo.</p>",
+          "text_color": "#161616",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "400",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 17
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.55
+          }
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "ab00098",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Desde su origen, la propuesta se ha diferenciado por la combinación de metal y madera, logrando un equilibrio entre durabilidad, diseño y ergonomía.</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "400",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 15
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.6
+          }
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "ab00099",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Con el tiempo, MAACH evoluciona para consolidarse como una marca que no solo fabrica, sino que entiende cómo se trabaja hoy y cómo deben responder los espacios.</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "400",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 15
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.6
+          }
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "ab00103",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 42
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 100
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "unit": "px",
+         "size": 12,
+         "column": "12",
+         "row": "12",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "ab00101",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/biblioteca-3.webp",
+           "id": "",
+           "size": "",
+           "alt": "Metal + madera — MAACH",
+           "source": "url"
+          },
+          "image_size": "full",
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          },
+          "height": {
+           "unit": "px",
+           "size": 420
+          },
+          "object-fit": "cover",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4"
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "ab00102",
+         "elType": "widget",
+         "settings": {
+          "title": "METAL + MADERA",
+          "header_size": "h6",
+          "title_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 10
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.4
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      }
+     ],
+     "isInner": true
+    },
+    {
+     "id": "ab00109",
+     "elType": "container",
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "flex_wrap": "wrap",
+      "flex_gap": {
+       "unit": "px",
+       "size": 0,
+       "column": "0",
+       "row": "0",
+       "isLinked": true
+      },
+      "border_border": "solid",
+      "border_width": {
+       "unit": "px",
+       "top": "1",
+       "right": "1",
+       "bottom": "1",
+       "left": "1",
+       "isLinked": true
+      },
+      "border_color": "#e5e3e4"
+     },
+     "elements": [
+      {
+       "id": "ab00105",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 50
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_direction": "column",
+        "border_border": "solid",
+        "border_width": {
+         "unit": "px",
+         "top": "0",
+         "right": "1",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": false
+        },
+        "border_color": "#e5e3e4",
+        "padding": {
+         "unit": "px",
+         "top": "28",
+         "right": "28",
+         "bottom": "28",
+         "left": "28",
+         "isLinked": false
+        }
+       },
+       "elements": [
+        {
+         "id": "ab00104",
+         "elType": "widget",
+         "settings": {
+          "starting_number": 0,
+          "ending_number": 30,
+          "suffix": "+",
+          "duration": 2000,
+          "title": "Años de trayectoria",
+          "number_color": "#f34a23",
+          "title_color": "#6f6f6f",
+          "typography_number_typography": "custom",
+          "typography_number_font_family": "Clash Grotesk",
+          "typography_number_font_weight": "500",
+          "typography_number_font_size": {
+           "unit": "px",
+           "size": 88
+          },
+          "typography_number_font_size_tablet": {
+           "unit": "px",
+           "size": 64
+          },
+          "typography_number_font_size_mobile": {
+           "unit": "px",
+           "size": 48
+          },
+          "typography_number_line_height": {
+           "unit": "em",
+           "size": 0.9
+          },
+          "typography_title_typography": "custom",
+          "typography_title_font_family": "Monoblock",
+          "typography_title_font_weight": "500",
+          "typography_title_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_title_letter_spacing": {
+           "unit": "px",
+           "size": 1.4
+          },
+          "typography_title_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "counter"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "ab00107",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 50
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_direction": "column",
+        "padding": {
+         "unit": "px",
+         "top": "28",
+         "right": "28",
+         "bottom": "28",
+         "left": "28",
+         "isLinked": false
+        }
+       },
+       "elements": [
+        {
+         "id": "ab00106",
+         "elType": "widget",
+         "settings": {
+          "starting_number": 0,
+          "ending_number": 3,
+          "prefix": "0",
+          "duration": 2000,
+          "title": "Años como marca",
+          "number_color": "#161616",
+          "title_color": "#6f6f6f",
+          "typography_number_typography": "custom",
+          "typography_number_font_family": "Clash Grotesk",
+          "typography_number_font_weight": "500",
+          "typography_number_font_size": {
+           "unit": "px",
+           "size": 88
+          },
+          "typography_number_font_size_tablet": {
+           "unit": "px",
+           "size": 64
+          },
+          "typography_number_font_size_mobile": {
+           "unit": "px",
+           "size": 48
+          },
+          "typography_number_line_height": {
+           "unit": "em",
+           "size": 0.9
+          },
+          "typography_title_typography": "custom",
+          "typography_title_font_family": "Monoblock",
+          "typography_title_font_weight": "500",
+          "typography_title_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_title_letter_spacing": {
+           "unit": "px",
+           "size": 1.4
+          },
+          "typography_title_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "counter"
+        }
+       ],
+       "isInner": true
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "ab00132",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1600
+    },
+    "flex_direction": "column",
+    "padding": {
+     "unit": "px",
+     "top": "128",
+     "right": "48",
+     "bottom": "128",
+     "left": "48",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "unit": "px",
+     "top": "64",
+     "right": "32",
+     "bottom": "64",
+     "left": "32",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "48",
+     "right": "24",
+     "bottom": "48",
+     "left": "24",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#161616",
+    "flex_gap": {
+     "unit": "px",
+     "size": 64,
+     "column": "64",
+     "row": "64",
+     "isLinked": true
+    }
+   },
+   "elements": [
+    {
+     "id": "ab00130",
+     "elType": "container",
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "column",
+      "flex_gap": {
+       "unit": "px",
+       "size": 20,
+       "column": "20",
+       "row": "20",
+       "isLinked": true
+      }
+     },
+     "elements": [
+      {
+       "id": "ab00127",
+       "elType": "widget",
+       "settings": {
+        "title": "INFRAESTRUCTURA · TECNOLOGÍA",
+        "header_size": "h6",
+        "title_color": "#f34a23",
+        "typography_typography": "custom",
+        "typography_font_family": "Monoblock",
+        "typography_font_weight": "500",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 11
+        },
+        "typography_letter_spacing": {
+         "unit": "px",
+         "size": 1.4
+        },
+        "typography_text_transform": "uppercase"
+       },
+       "elements": [],
+       "widgetType": "heading"
+      },
+      {
+       "id": "ab00128",
+       "elType": "widget",
+       "settings": {
+        "title": "Nuestra planta",
+        "header_size": "h2",
+        "title_color": "#ffffff",
+        "typography_typography": "custom",
+        "typography_font_family": "Clash Grotesk",
+        "typography_font_weight": "500",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 90
+        },
+        "typography_line_height": {
+         "unit": "em",
+         "size": 0.95
+        },
+        "typography_letter_spacing": {
+         "unit": "px",
+         "size": -1.5
+        },
+        "typography_text_transform": "uppercase",
+        "typography_font_size_tablet": {
+         "unit": "px",
+         "size": 64
+        },
+        "typography_font_size_mobile": {
+         "unit": "px",
+         "size": 44
+        }
+       },
+       "elements": [],
+       "widgetType": "heading"
+      },
+      {
+       "id": "ab00129",
+       "elType": "widget",
+       "settings": {
+        "editor": "<p>Fabricamos con maquinaria de control numérico y procesos industriales que garantizan precisión, repetibilidad y acabados de estándar internacional.</p>",
+        "text_color": "#a9aaac",
+        "typography_typography": "custom",
+        "typography_font_family": "Clash Grotesk",
+        "typography_font_weight": "400",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 17
+        },
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.5
+        },
+        "_element_width": "initial",
+        "_element_custom_width": {
+         "unit": "px",
+         "size": 560
+        }
+       },
+       "elements": [],
+       "widgetType": "text-editor"
+      }
+     ],
+     "isInner": true
+    },
+    {
+     "id": "ab00131",
+     "elType": "container",
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "flex_wrap": "wrap",
+      "flex_gap": {
+       "unit": "px",
+       "size": 8,
+       "column": "8",
+       "row": "8",
+       "isLinked": true
+      }
+     },
+     "elements": [
+      {
+       "id": "ab00114",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 49.4
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "min_height": {
+         "unit": "px",
+         "size": 380
+        },
+        "min_height_mobile": {
+         "unit": "px",
+         "size": 300
+        },
+        "flex_direction": "column",
+        "flex_justify_content": "flex-end",
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        },
+        "background_background": "classic",
+        "background_color": "#0f0f0f",
+        "background_image": {
+         "url": "https://crpozo.github.io/maach-site/assets/bg-investigacion.webp",
+         "id": "",
+         "size": "",
+         "alt": "Corte CNC",
+         "source": "url"
+        },
+        "background_size": "cover",
+        "background_position": "center center",
+        "background_overlay_background": "classic",
+        "background_overlay_color": "#161616",
+        "background_overlay_opacity": {
+         "unit": "px",
+         "size": 0.45
+        },
+        "padding": {
+         "unit": "px",
+         "top": "24",
+         "right": "24",
+         "bottom": "24",
+         "left": "24",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "ab00111",
+         "elType": "widget",
+         "settings": {
+          "title": "01",
+          "header_size": "h6",
+          "title_color": "#f34a23",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "600",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 16
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.6
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "ab00112",
+         "elType": "widget",
+         "settings": {
+          "title": "Corte CNC",
+          "header_size": "h3",
+          "title_color": "#ffffff",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 30
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.0
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.3
+          },
+          "typography_text_transform": "uppercase",
+          "typography_font_size_tablet": {
+           "unit": "px",
+           "size": 26
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 22
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "ab00113",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Corte y mecanizado de precisión sobre metal y madera.</p>",
+          "text_color": "#a9aaac",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "400",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.45
+          },
+          "_element_width": "initial",
+          "_element_custom_width": {
+           "unit": "px",
+           "size": 360
+          }
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "ab00118",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 49.4
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "min_height": {
+         "unit": "px",
+         "size": 380
+        },
+        "min_height_mobile": {
+         "unit": "px",
+         "size": 300
+        },
+        "flex_direction": "column",
+        "flex_justify_content": "flex-end",
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        },
+        "background_background": "classic",
+        "background_color": "#0f0f0f",
+        "background_image": {
+         "url": "https://crpozo.github.io/maach-site/assets/perspectiva-2.webp",
+         "id": "",
+         "size": "",
+         "alt": "Soldadura estructural",
+         "source": "url"
+        },
+        "background_size": "cover",
+        "background_position": "center center",
+        "background_overlay_background": "classic",
+        "background_overlay_color": "#161616",
+        "background_overlay_opacity": {
+         "unit": "px",
+         "size": 0.45
+        },
+        "padding": {
+         "unit": "px",
+         "top": "24",
+         "right": "24",
+         "bottom": "24",
+         "left": "24",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "ab00115",
+         "elType": "widget",
+         "settings": {
+          "title": "02",
+          "header_size": "h6",
+          "title_color": "#f34a23",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "600",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 16
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.6
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "ab00116",
+         "elType": "widget",
+         "settings": {
+          "title": "Soldadura estructural",
+          "header_size": "h3",
+          "title_color": "#ffffff",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 30
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.0
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.3
+          },
+          "typography_text_transform": "uppercase",
+          "typography_font_size_tablet": {
+           "unit": "px",
+           "size": 26
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 22
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "ab00117",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Uniones controladas para estructuras de alto desempeño.</p>",
+          "text_color": "#a9aaac",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "400",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.45
+          },
+          "_element_width": "initial",
+          "_element_custom_width": {
+           "unit": "px",
+           "size": 360
+          }
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "ab00122",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 49.4
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "min_height": {
+         "unit": "px",
+         "size": 380
+        },
+        "min_height_mobile": {
+         "unit": "px",
+         "size": 300
+        },
+        "flex_direction": "column",
+        "flex_justify_content": "flex-end",
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        },
+        "background_background": "classic",
+        "background_color": "#0f0f0f",
+        "background_image": {
+         "url": "https://crpozo.github.io/maach-site/assets/biblioteca-4.webp",
+         "id": "",
+         "size": "",
+         "alt": "Pintura electrostática",
+         "source": "url"
+        },
+        "background_size": "cover",
+        "background_position": "center center",
+        "background_overlay_background": "classic",
+        "background_overlay_color": "#161616",
+        "background_overlay_opacity": {
+         "unit": "px",
+         "size": 0.45
+        },
+        "padding": {
+         "unit": "px",
+         "top": "24",
+         "right": "24",
+         "bottom": "24",
+         "left": "24",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "ab00119",
+         "elType": "widget",
+         "settings": {
+          "title": "03",
+          "header_size": "h6",
+          "title_color": "#f34a23",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "600",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 16
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.6
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "ab00120",
+         "elType": "widget",
+         "settings": {
+          "title": "Pintura electrostática",
+          "header_size": "h3",
+          "title_color": "#ffffff",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 30
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.0
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.3
+          },
+          "typography_text_transform": "uppercase",
+          "typography_font_size_tablet": {
+           "unit": "px",
+           "size": 26
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 22
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "ab00121",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Recubrimiento en polvo horneado para máxima durabilidad.</p>",
+          "text_color": "#a9aaac",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "400",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.45
+          },
+          "_element_width": "initial",
+          "_element_custom_width": {
+           "unit": "px",
+           "size": 360
+          }
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "ab00126",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 49.4
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "min_height": {
+         "unit": "px",
+         "size": 380
+        },
+        "min_height_mobile": {
+         "unit": "px",
+         "size": 300
+        },
+        "flex_direction": "column",
+        "flex_justify_content": "flex-end",
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        },
+        "background_background": "classic",
+        "background_color": "#0f0f0f",
+        "background_image": {
+         "url": "https://crpozo.github.io/maach-site/assets/biblioteca-5.webp",
+         "id": "",
+         "size": "",
+         "alt": "Ensamble y control",
+         "source": "url"
+        },
+        "background_size": "cover",
+        "background_position": "center center",
+        "background_overlay_background": "classic",
+        "background_overlay_color": "#161616",
+        "background_overlay_opacity": {
+         "unit": "px",
+         "size": 0.45
+        },
+        "padding": {
+         "unit": "px",
+         "top": "24",
+         "right": "24",
+         "bottom": "24",
+         "left": "24",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "ab00123",
+         "elType": "widget",
+         "settings": {
+          "title": "04",
+          "header_size": "h6",
+          "title_color": "#f34a23",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "600",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 16
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.6
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "ab00124",
+         "elType": "widget",
+         "settings": {
+          "title": "Ensamble y control",
+          "header_size": "h3",
+          "title_color": "#ffffff",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 30
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.0
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.3
+          },
+          "typography_text_transform": "uppercase",
+          "typography_font_size_tablet": {
+           "unit": "px",
+           "size": 26
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 22
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "ab00125",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Armado, verificación dimensional y control de calidad final.</p>",
+          "text_color": "#a9aaac",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "400",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.45
+          },
+          "_element_width": "initial",
+          "_element_custom_width": {
+           "unit": "px",
+           "size": 360
+          }
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        }
+       ],
+       "isInner": true
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "ab00188",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1600
+    },
+    "flex_direction": "column",
+    "padding": {
+     "unit": "px",
+     "top": "128",
+     "right": "48",
+     "bottom": "128",
+     "left": "48",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "unit": "px",
+     "top": "64",
+     "right": "32",
+     "bottom": "64",
+     "left": "32",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "48",
+     "right": "24",
+     "bottom": "48",
+     "left": "24",
+     "isLinked": false
+    },
+    "flex_gap": {
+     "unit": "px",
+     "size": 48,
+     "column": "48",
+     "row": "48",
+     "isLinked": true
+    },
+    "border_border": "solid",
+    "border_width": {
+     "unit": "px",
+     "top": "0",
+     "right": "0",
+     "bottom": "1",
+     "left": "0",
+     "isLinked": false
+    },
+    "border_color": "#e5e3e4"
+   },
+   "elements": [
+    {
+     "id": "ab00186",
+     "elType": "container",
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "flex_justify_content": "space-between",
+      "flex_align_items": "flex-end",
+      "flex_wrap": "wrap",
+      "flex_gap": {
+       "unit": "px",
+       "size": 16,
+       "column": "16",
+       "row": "16",
+       "isLinked": true
+      }
+     },
+     "elements": [
+      {
+       "id": "ab00185",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 60
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "unit": "px",
+         "size": 12,
+         "column": "12",
+         "row": "12",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "ab00183",
+         "elType": "widget",
+         "settings": {
+          "title": "ESTRUCTURA ORGANIZACIONAL",
+          "header_size": "h6",
+          "title_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.4
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "ab00184",
+         "elType": "widget",
+         "settings": {
+          "title": "Equipo",
+          "header_size": "h2",
+          "title_color": "#161616",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 64
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 0.95
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -1.3
+          },
+          "typography_text_transform": "uppercase",
+          "typography_font_size_tablet": {
+           "unit": "px",
+           "size": 48
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 38
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "ab00182",
+       "elType": "widget",
+       "settings": {
+        "text": "ÚNETE AL EQUIPO",
+        "link": {
+         "url": "/contacto/",
+         "is_external": "",
+         "nofollow": ""
+        },
+        "typography_typography": "custom",
+        "typography_font_family": "Monoblock",
+        "typography_font_weight": "600",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 11
+        },
+        "typography_letter_spacing": {
+         "unit": "px",
+         "size": 1.4
+        },
+        "typography_text_transform": "uppercase",
+        "background_color": "#02010100",
+        "button_text_color": "#161616",
+        "border_border": "solid",
+        "border_width": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "2",
+         "left": "0",
+         "isLinked": false
+        },
+        "border_color": "#161616",
+        "border_radius": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": true
+        },
+        "text_padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "8",
+         "left": "0",
+         "isLinked": false
+        },
+        "hover_color": "#f34a23",
+        "button_background_hover_color": "#02010100",
+        "button_hover_border_color": "#f34a23",
+        "selected_icon": {
+         "value": "fas fa-arrow-right",
+         "library": "fa-solid"
+        },
+        "icon_align": "right",
+        "icon_indent": {
+         "unit": "px",
+         "size": 12
+        },
+        "_element_width": "auto"
+       },
+       "elements": [],
+       "widgetType": "button"
+      }
+     ],
+     "isInner": true
+    },
+    {
+     "id": "ab00187",
+     "elType": "container",
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "flex_wrap": "wrap",
+      "flex_gap": {
+       "unit": "px",
+       "size": 16,
+       "column": "16",
+       "row": "16",
+       "isLinked": true
+      }
+     },
+     "elements": [
+      {
+       "id": "ab00139",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 23.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 48.5
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "unit": "px",
+         "size": 0,
+         "column": "0",
+         "row": "0",
+         "isLinked": true
+        },
+        "background_background": "classic",
+        "background_color": "#ffffff",
+        "border_border": "solid",
+        "border_width": {
+         "unit": "px",
+         "top": "1",
+         "right": "1",
+         "bottom": "1",
+         "left": "1",
+         "isLinked": true
+        },
+        "border_color": "#e5e3e4"
+       },
+       "elements": [
+        {
+         "id": "ab00135",
+         "elType": "container",
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "flex_align_items": "center",
+          "flex_justify_content": "center",
+          "flex_gap": {
+           "unit": "px",
+           "size": 10,
+           "column": "10",
+           "row": "10",
+           "isLinked": true
+          },
+          "min_height": {
+           "unit": "px",
+           "size": 240
+          },
+          "border_border": "solid",
+          "border_width": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "1",
+           "left": "0",
+           "isLinked": false
+          },
+          "border_color": "#e5e3e4",
+          "padding": {
+           "unit": "px",
+           "top": "24",
+           "right": "16",
+           "bottom": "24",
+           "left": "16",
+           "isLinked": false
+          }
+         },
+         "elements": [
+          {
+           "id": "ab00133",
+           "elType": "widget",
+           "settings": {
+            "title": "MA",
+            "header_size": "h3",
+            "title_color": "#161616",
+            "align": "center",
+            "typography_typography": "custom",
+            "typography_font_family": "Clash Grotesk",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 72
+            },
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.0
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": -1.5
+            },
+            "typography_text_transform": "uppercase",
+            "typography_font_size_tablet": {
+             "unit": "px",
+             "size": 60
+            },
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 56
+            }
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "ab00134",
+           "elType": "widget",
+           "settings": {
+            "title": "EQUIPO_MAACH",
+            "header_size": "h6",
+            "title_color": "#6f6f6f",
+            "typography_typography": "custom",
+            "typography_font_family": "Monoblock",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 9
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": 1.4
+            },
+            "typography_text_transform": "uppercase",
+            "align": "center"
+           },
+           "elements": [],
+           "widgetType": "heading"
+          }
+         ],
+         "isInner": true
+        },
+        {
+         "id": "ab00138",
+         "elType": "container",
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "flex_gap": {
+           "unit": "px",
+           "size": 4,
+           "column": "4",
+           "row": "4",
+           "isLinked": true
+          },
+          "padding": {
+           "unit": "px",
+           "top": "24",
+           "right": "24",
+           "bottom": "24",
+           "left": "24",
+           "isLinked": false
+          }
+         },
+         "elements": [
+          {
+           "id": "ab00136",
+           "elType": "widget",
+           "settings": {
+            "title": "Marlon Aguirre",
+            "header_size": "h4",
+            "title_color": "#161616",
+            "typography_typography": "custom",
+            "typography_font_family": "Clash Grotesk",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 20
+            },
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.1
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": -0.2
+            },
+            "typography_text_transform": "uppercase",
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 18
+            }
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "ab00137",
+           "elType": "widget",
+           "settings": {
+            "title": "Gerente General",
+            "header_size": "h6",
+            "title_color": "#6f6f6f",
+            "typography_typography": "custom",
+            "typography_font_family": "Monoblock",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 10
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": 1.4
+            },
+            "typography_text_transform": "uppercase"
+           },
+           "elements": [],
+           "widgetType": "heading"
+          }
+         ],
+         "isInner": true
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "ab00146",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 23.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 48.5
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "unit": "px",
+         "size": 0,
+         "column": "0",
+         "row": "0",
+         "isLinked": true
+        },
+        "background_background": "classic",
+        "background_color": "#ffffff",
+        "border_border": "solid",
+        "border_width": {
+         "unit": "px",
+         "top": "1",
+         "right": "1",
+         "bottom": "1",
+         "left": "1",
+         "isLinked": true
+        },
+        "border_color": "#e5e3e4"
+       },
+       "elements": [
+        {
+         "id": "ab00142",
+         "elType": "container",
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "flex_align_items": "center",
+          "flex_justify_content": "center",
+          "flex_gap": {
+           "unit": "px",
+           "size": 10,
+           "column": "10",
+           "row": "10",
+           "isLinked": true
+          },
+          "min_height": {
+           "unit": "px",
+           "size": 240
+          },
+          "border_border": "solid",
+          "border_width": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "1",
+           "left": "0",
+           "isLinked": false
+          },
+          "border_color": "#e5e3e4",
+          "padding": {
+           "unit": "px",
+           "top": "24",
+           "right": "16",
+           "bottom": "24",
+           "left": "16",
+           "isLinked": false
+          }
+         },
+         "elements": [
+          {
+           "id": "ab00140",
+           "elType": "widget",
+           "settings": {
+            "title": "JA",
+            "header_size": "h3",
+            "title_color": "#161616",
+            "align": "center",
+            "typography_typography": "custom",
+            "typography_font_family": "Clash Grotesk",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 72
+            },
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.0
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": -1.5
+            },
+            "typography_text_transform": "uppercase",
+            "typography_font_size_tablet": {
+             "unit": "px",
+             "size": 60
+            },
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 56
+            }
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "ab00141",
+           "elType": "widget",
+           "settings": {
+            "title": "EQUIPO_MAACH",
+            "header_size": "h6",
+            "title_color": "#6f6f6f",
+            "typography_typography": "custom",
+            "typography_font_family": "Monoblock",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 9
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": 1.4
+            },
+            "typography_text_transform": "uppercase",
+            "align": "center"
+           },
+           "elements": [],
+           "widgetType": "heading"
+          }
+         ],
+         "isInner": true
+        },
+        {
+         "id": "ab00145",
+         "elType": "container",
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "flex_gap": {
+           "unit": "px",
+           "size": 4,
+           "column": "4",
+           "row": "4",
+           "isLinked": true
+          },
+          "padding": {
+           "unit": "px",
+           "top": "24",
+           "right": "24",
+           "bottom": "24",
+           "left": "24",
+           "isLinked": false
+          }
+         },
+         "elements": [
+          {
+           "id": "ab00143",
+           "elType": "widget",
+           "settings": {
+            "title": "Johnny Aguirre",
+            "header_size": "h4",
+            "title_color": "#161616",
+            "typography_typography": "custom",
+            "typography_font_family": "Clash Grotesk",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 20
+            },
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.1
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": -0.2
+            },
+            "typography_text_transform": "uppercase",
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 18
+            }
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "ab00144",
+           "elType": "widget",
+           "settings": {
+            "title": "Gerente Comercial",
+            "header_size": "h6",
+            "title_color": "#6f6f6f",
+            "typography_typography": "custom",
+            "typography_font_family": "Monoblock",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 10
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": 1.4
+            },
+            "typography_text_transform": "uppercase"
+           },
+           "elements": [],
+           "widgetType": "heading"
+          }
+         ],
+         "isInner": true
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "ab00153",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 23.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 48.5
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "unit": "px",
+         "size": 0,
+         "column": "0",
+         "row": "0",
+         "isLinked": true
+        },
+        "background_background": "classic",
+        "background_color": "#ffffff",
+        "border_border": "solid",
+        "border_width": {
+         "unit": "px",
+         "top": "1",
+         "right": "1",
+         "bottom": "1",
+         "left": "1",
+         "isLinked": true
+        },
+        "border_color": "#e5e3e4"
+       },
+       "elements": [
+        {
+         "id": "ab00149",
+         "elType": "container",
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "flex_align_items": "center",
+          "flex_justify_content": "center",
+          "flex_gap": {
+           "unit": "px",
+           "size": 10,
+           "column": "10",
+           "row": "10",
+           "isLinked": true
+          },
+          "min_height": {
+           "unit": "px",
+           "size": 240
+          },
+          "border_border": "solid",
+          "border_width": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "1",
+           "left": "0",
+           "isLinked": false
+          },
+          "border_color": "#e5e3e4",
+          "padding": {
+           "unit": "px",
+           "top": "24",
+           "right": "16",
+           "bottom": "24",
+           "left": "16",
+           "isLinked": false
+          }
+         },
+         "elements": [
+          {
+           "id": "ab00147",
+           "elType": "widget",
+           "settings": {
+            "title": "KL",
+            "header_size": "h3",
+            "title_color": "#161616",
+            "align": "center",
+            "typography_typography": "custom",
+            "typography_font_family": "Clash Grotesk",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 72
+            },
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.0
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": -1.5
+            },
+            "typography_text_transform": "uppercase",
+            "typography_font_size_tablet": {
+             "unit": "px",
+             "size": 60
+            },
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 56
+            }
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "ab00148",
+           "elType": "widget",
+           "settings": {
+            "title": "EQUIPO_MAACH",
+            "header_size": "h6",
+            "title_color": "#6f6f6f",
+            "typography_typography": "custom",
+            "typography_font_family": "Monoblock",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 9
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": 1.4
+            },
+            "typography_text_transform": "uppercase",
+            "align": "center"
+           },
+           "elements": [],
+           "widgetType": "heading"
+          }
+         ],
+         "isInner": true
+        },
+        {
+         "id": "ab00152",
+         "elType": "container",
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "flex_gap": {
+           "unit": "px",
+           "size": 4,
+           "column": "4",
+           "row": "4",
+           "isLinked": true
+          },
+          "padding": {
+           "unit": "px",
+           "top": "24",
+           "right": "24",
+           "bottom": "24",
+           "left": "24",
+           "isLinked": false
+          }
+         },
+         "elements": [
+          {
+           "id": "ab00150",
+           "elType": "widget",
+           "settings": {
+            "title": "Karla Lagos",
+            "header_size": "h4",
+            "title_color": "#161616",
+            "typography_typography": "custom",
+            "typography_font_family": "Clash Grotesk",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 20
+            },
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.1
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": -0.2
+            },
+            "typography_text_transform": "uppercase",
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 18
+            }
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "ab00151",
+           "elType": "widget",
+           "settings": {
+            "title": "Ejecutivo de Cuentas",
+            "header_size": "h6",
+            "title_color": "#6f6f6f",
+            "typography_typography": "custom",
+            "typography_font_family": "Monoblock",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 10
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": 1.4
+            },
+            "typography_text_transform": "uppercase"
+           },
+           "elements": [],
+           "widgetType": "heading"
+          }
+         ],
+         "isInner": true
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "ab00160",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 23.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 48.5
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "unit": "px",
+         "size": 0,
+         "column": "0",
+         "row": "0",
+         "isLinked": true
+        },
+        "background_background": "classic",
+        "background_color": "#ffffff",
+        "border_border": "solid",
+        "border_width": {
+         "unit": "px",
+         "top": "1",
+         "right": "1",
+         "bottom": "1",
+         "left": "1",
+         "isLinked": true
+        },
+        "border_color": "#e5e3e4"
+       },
+       "elements": [
+        {
+         "id": "ab00156",
+         "elType": "container",
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "flex_align_items": "center",
+          "flex_justify_content": "center",
+          "flex_gap": {
+           "unit": "px",
+           "size": 10,
+           "column": "10",
+           "row": "10",
+           "isLinked": true
+          },
+          "min_height": {
+           "unit": "px",
+           "size": 240
+          },
+          "border_border": "solid",
+          "border_width": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "1",
+           "left": "0",
+           "isLinked": false
+          },
+          "border_color": "#e5e3e4",
+          "padding": {
+           "unit": "px",
+           "top": "24",
+           "right": "16",
+           "bottom": "24",
+           "left": "16",
+           "isLinked": false
+          }
+         },
+         "elements": [
+          {
+           "id": "ab00154",
+           "elType": "widget",
+           "settings": {
+            "title": "PL",
+            "header_size": "h3",
+            "title_color": "#161616",
+            "align": "center",
+            "typography_typography": "custom",
+            "typography_font_family": "Clash Grotesk",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 72
+            },
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.0
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": -1.5
+            },
+            "typography_text_transform": "uppercase",
+            "typography_font_size_tablet": {
+             "unit": "px",
+             "size": 60
+            },
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 56
+            }
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "ab00155",
+           "elType": "widget",
+           "settings": {
+            "title": "EQUIPO_MAACH",
+            "header_size": "h6",
+            "title_color": "#6f6f6f",
+            "typography_typography": "custom",
+            "typography_font_family": "Monoblock",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 9
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": 1.4
+            },
+            "typography_text_transform": "uppercase",
+            "align": "center"
+           },
+           "elements": [],
+           "widgetType": "heading"
+          }
+         ],
+         "isInner": true
+        },
+        {
+         "id": "ab00159",
+         "elType": "container",
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "flex_gap": {
+           "unit": "px",
+           "size": 4,
+           "column": "4",
+           "row": "4",
+           "isLinked": true
+          },
+          "padding": {
+           "unit": "px",
+           "top": "24",
+           "right": "24",
+           "bottom": "24",
+           "left": "24",
+           "isLinked": false
+          }
+         },
+         "elements": [
+          {
+           "id": "ab00157",
+           "elType": "widget",
+           "settings": {
+            "title": "Pablo León",
+            "header_size": "h4",
+            "title_color": "#161616",
+            "typography_typography": "custom",
+            "typography_font_family": "Clash Grotesk",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 20
+            },
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.1
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": -0.2
+            },
+            "typography_text_transform": "uppercase",
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 18
+            }
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "ab00158",
+           "elType": "widget",
+           "settings": {
+            "title": "Diseño Arquitectónico",
+            "header_size": "h6",
+            "title_color": "#6f6f6f",
+            "typography_typography": "custom",
+            "typography_font_family": "Monoblock",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 10
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": 1.4
+            },
+            "typography_text_transform": "uppercase"
+           },
+           "elements": [],
+           "widgetType": "heading"
+          }
+         ],
+         "isInner": true
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "ab00167",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 23.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 48.5
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "unit": "px",
+         "size": 0,
+         "column": "0",
+         "row": "0",
+         "isLinked": true
+        },
+        "background_background": "classic",
+        "background_color": "#ffffff",
+        "border_border": "solid",
+        "border_width": {
+         "unit": "px",
+         "top": "1",
+         "right": "1",
+         "bottom": "1",
+         "left": "1",
+         "isLinked": true
+        },
+        "border_color": "#e5e3e4"
+       },
+       "elements": [
+        {
+         "id": "ab00163",
+         "elType": "container",
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "flex_align_items": "center",
+          "flex_justify_content": "center",
+          "flex_gap": {
+           "unit": "px",
+           "size": 10,
+           "column": "10",
+           "row": "10",
+           "isLinked": true
+          },
+          "min_height": {
+           "unit": "px",
+           "size": 240
+          },
+          "border_border": "solid",
+          "border_width": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "1",
+           "left": "0",
+           "isLinked": false
+          },
+          "border_color": "#e5e3e4",
+          "padding": {
+           "unit": "px",
+           "top": "24",
+           "right": "16",
+           "bottom": "24",
+           "left": "16",
+           "isLinked": false
+          }
+         },
+         "elements": [
+          {
+           "id": "ab00161",
+           "elType": "widget",
+           "settings": {
+            "title": "MM",
+            "header_size": "h3",
+            "title_color": "#161616",
+            "align": "center",
+            "typography_typography": "custom",
+            "typography_font_family": "Clash Grotesk",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 72
+            },
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.0
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": -1.5
+            },
+            "typography_text_transform": "uppercase",
+            "typography_font_size_tablet": {
+             "unit": "px",
+             "size": 60
+            },
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 56
+            }
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "ab00162",
+           "elType": "widget",
+           "settings": {
+            "title": "EQUIPO_MAACH",
+            "header_size": "h6",
+            "title_color": "#6f6f6f",
+            "typography_typography": "custom",
+            "typography_font_family": "Monoblock",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 9
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": 1.4
+            },
+            "typography_text_transform": "uppercase",
+            "align": "center"
+           },
+           "elements": [],
+           "widgetType": "heading"
+          }
+         ],
+         "isInner": true
+        },
+        {
+         "id": "ab00166",
+         "elType": "container",
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "flex_gap": {
+           "unit": "px",
+           "size": 4,
+           "column": "4",
+           "row": "4",
+           "isLinked": true
+          },
+          "padding": {
+           "unit": "px",
+           "top": "24",
+           "right": "24",
+           "bottom": "24",
+           "left": "24",
+           "isLinked": false
+          }
+         },
+         "elements": [
+          {
+           "id": "ab00164",
+           "elType": "widget",
+           "settings": {
+            "title": "Manuel Mena",
+            "header_size": "h4",
+            "title_color": "#161616",
+            "typography_typography": "custom",
+            "typography_font_family": "Clash Grotesk",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 20
+            },
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.1
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": -0.2
+            },
+            "typography_text_transform": "uppercase",
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 18
+            }
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "ab00165",
+           "elType": "widget",
+           "settings": {
+            "title": "Gerente Producción",
+            "header_size": "h6",
+            "title_color": "#6f6f6f",
+            "typography_typography": "custom",
+            "typography_font_family": "Monoblock",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 10
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": 1.4
+            },
+            "typography_text_transform": "uppercase"
+           },
+           "elements": [],
+           "widgetType": "heading"
+          }
+         ],
+         "isInner": true
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "ab00174",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 23.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 48.5
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "unit": "px",
+         "size": 0,
+         "column": "0",
+         "row": "0",
+         "isLinked": true
+        },
+        "background_background": "classic",
+        "background_color": "#ffffff",
+        "border_border": "solid",
+        "border_width": {
+         "unit": "px",
+         "top": "1",
+         "right": "1",
+         "bottom": "1",
+         "left": "1",
+         "isLinked": true
+        },
+        "border_color": "#e5e3e4"
+       },
+       "elements": [
+        {
+         "id": "ab00170",
+         "elType": "container",
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "flex_align_items": "center",
+          "flex_justify_content": "center",
+          "flex_gap": {
+           "unit": "px",
+           "size": 10,
+           "column": "10",
+           "row": "10",
+           "isLinked": true
+          },
+          "min_height": {
+           "unit": "px",
+           "size": 240
+          },
+          "border_border": "solid",
+          "border_width": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "1",
+           "left": "0",
+           "isLinked": false
+          },
+          "border_color": "#e5e3e4",
+          "padding": {
+           "unit": "px",
+           "top": "24",
+           "right": "16",
+           "bottom": "24",
+           "left": "16",
+           "isLinked": false
+          }
+         },
+         "elements": [
+          {
+           "id": "ab00168",
+           "elType": "widget",
+           "settings": {
+            "title": "DV",
+            "header_size": "h3",
+            "title_color": "#161616",
+            "align": "center",
+            "typography_typography": "custom",
+            "typography_font_family": "Clash Grotesk",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 72
+            },
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.0
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": -1.5
+            },
+            "typography_text_transform": "uppercase",
+            "typography_font_size_tablet": {
+             "unit": "px",
+             "size": 60
+            },
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 56
+            }
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "ab00169",
+           "elType": "widget",
+           "settings": {
+            "title": "EQUIPO_MAACH",
+            "header_size": "h6",
+            "title_color": "#6f6f6f",
+            "typography_typography": "custom",
+            "typography_font_family": "Monoblock",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 9
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": 1.4
+            },
+            "typography_text_transform": "uppercase",
+            "align": "center"
+           },
+           "elements": [],
+           "widgetType": "heading"
+          }
+         ],
+         "isInner": true
+        },
+        {
+         "id": "ab00173",
+         "elType": "container",
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "flex_gap": {
+           "unit": "px",
+           "size": 4,
+           "column": "4",
+           "row": "4",
+           "isLinked": true
+          },
+          "padding": {
+           "unit": "px",
+           "top": "24",
+           "right": "24",
+           "bottom": "24",
+           "left": "24",
+           "isLinked": false
+          }
+         },
+         "elements": [
+          {
+           "id": "ab00171",
+           "elType": "widget",
+           "settings": {
+            "title": "Danilo Varela",
+            "header_size": "h4",
+            "title_color": "#161616",
+            "typography_typography": "custom",
+            "typography_font_family": "Clash Grotesk",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 20
+            },
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.1
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": -0.2
+            },
+            "typography_text_transform": "uppercase",
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 18
+            }
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "ab00172",
+           "elType": "widget",
+           "settings": {
+            "title": "Jefe de Producción Mobiliario",
+            "header_size": "h6",
+            "title_color": "#6f6f6f",
+            "typography_typography": "custom",
+            "typography_font_family": "Monoblock",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 10
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": 1.4
+            },
+            "typography_text_transform": "uppercase"
+           },
+           "elements": [],
+           "widgetType": "heading"
+          }
+         ],
+         "isInner": true
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "ab00181",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 23.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 48.5
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "unit": "px",
+         "size": 0,
+         "column": "0",
+         "row": "0",
+         "isLinked": true
+        },
+        "background_background": "classic",
+        "background_color": "#ffffff",
+        "border_border": "solid",
+        "border_width": {
+         "unit": "px",
+         "top": "1",
+         "right": "1",
+         "bottom": "1",
+         "left": "1",
+         "isLinked": true
+        },
+        "border_color": "#e5e3e4"
+       },
+       "elements": [
+        {
+         "id": "ab00177",
+         "elType": "container",
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "flex_align_items": "center",
+          "flex_justify_content": "center",
+          "flex_gap": {
+           "unit": "px",
+           "size": 10,
+           "column": "10",
+           "row": "10",
+           "isLinked": true
+          },
+          "min_height": {
+           "unit": "px",
+           "size": 240
+          },
+          "border_border": "solid",
+          "border_width": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "1",
+           "left": "0",
+           "isLinked": false
+          },
+          "border_color": "#e5e3e4",
+          "padding": {
+           "unit": "px",
+           "top": "24",
+           "right": "16",
+           "bottom": "24",
+           "left": "16",
+           "isLinked": false
+          }
+         },
+         "elements": [
+          {
+           "id": "ab00175",
+           "elType": "widget",
+           "settings": {
+            "title": "DB",
+            "header_size": "h3",
+            "title_color": "#161616",
+            "align": "center",
+            "typography_typography": "custom",
+            "typography_font_family": "Clash Grotesk",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 72
+            },
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.0
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": -1.5
+            },
+            "typography_text_transform": "uppercase",
+            "typography_font_size_tablet": {
+             "unit": "px",
+             "size": 60
+            },
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 56
+            }
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "ab00176",
+           "elType": "widget",
+           "settings": {
+            "title": "EQUIPO_MAACH",
+            "header_size": "h6",
+            "title_color": "#6f6f6f",
+            "typography_typography": "custom",
+            "typography_font_family": "Monoblock",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 9
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": 1.4
+            },
+            "typography_text_transform": "uppercase",
+            "align": "center"
+           },
+           "elements": [],
+           "widgetType": "heading"
+          }
+         ],
+         "isInner": true
+        },
+        {
+         "id": "ab00180",
+         "elType": "container",
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "column",
+          "flex_gap": {
+           "unit": "px",
+           "size": 4,
+           "column": "4",
+           "row": "4",
+           "isLinked": true
+          },
+          "padding": {
+           "unit": "px",
+           "top": "24",
+           "right": "24",
+           "bottom": "24",
+           "left": "24",
+           "isLinked": false
+          }
+         },
+         "elements": [
+          {
+           "id": "ab00178",
+           "elType": "widget",
+           "settings": {
+            "title": "Diego Buce",
+            "header_size": "h4",
+            "title_color": "#161616",
+            "typography_typography": "custom",
+            "typography_font_family": "Clash Grotesk",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 20
+            },
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.1
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": -0.2
+            },
+            "typography_text_transform": "uppercase",
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 18
+            }
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "ab00179",
+           "elType": "widget",
+           "settings": {
+            "title": "Jefe de Instalación",
+            "header_size": "h6",
+            "title_color": "#6f6f6f",
+            "typography_typography": "custom",
+            "typography_font_family": "Monoblock",
+            "typography_font_weight": "500",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 10
+            },
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": 1.4
+            },
+            "typography_text_transform": "uppercase"
+           },
+           "elements": [],
+           "widgetType": "heading"
+          }
+         ],
+         "isInner": true
+        }
+       ],
+       "isInner": true
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "ab00196",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1600
+    },
+    "flex_direction": "column",
+    "padding": {
+     "unit": "px",
+     "top": "128",
+     "right": "48",
+     "bottom": "128",
+     "left": "48",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "unit": "px",
+     "top": "64",
+     "right": "32",
+     "bottom": "64",
+     "left": "32",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "48",
+     "right": "24",
+     "bottom": "48",
+     "left": "24",
+     "isLinked": false
+    },
+    "flex_gap": {
+     "unit": "px",
+     "size": 64,
+     "column": "64",
+     "row": "64",
+     "isLinked": true
+    }
+   },
+   "elements": [
+    {
+     "id": "ab00194",
+     "elType": "container",
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "flex_justify_content": "space-between",
+      "flex_align_items": "flex-end",
+      "flex_wrap": "wrap",
+      "flex_gap": {
+       "unit": "px",
+       "size": 48,
+       "column": "48",
+       "row": "24",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "ab00191",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 48
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "unit": "px",
+         "size": 12,
+         "column": "12",
+         "row": "12",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "ab00189",
+         "elType": "widget",
+         "settings": {
+          "title": "RED DE ALIADOS",
+          "header_size": "h6",
+          "title_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.4
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "ab00190",
+         "elType": "widget",
+         "settings": {
+          "title": "Nuestros Aliados",
+          "header_size": "h2",
+          "title_color": "#161616",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 88
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 0.95
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -1.8
+          },
+          "typography_text_transform": "uppercase",
+          "typography_font_size_tablet": {
+           "unit": "px",
+           "size": 60
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 40
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "ab00193",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 40
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_direction": "column"
+       },
+       "elements": [
+        {
+         "id": "ab00192",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Trabajamos con socios estratégicos en materias primas, componentes y especialidades técnicas para garantizar calidad y consistencia en cada producto.</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "400",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 16
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.55
+          },
+          "_element_width": "initial",
+          "_element_custom_width": {
+           "unit": "px",
+           "size": 480
+          }
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        }
+       ],
+       "isInner": true
+      }
+     ],
+     "isInner": true
+    },
+    {
+     "id": "ab00195",
+     "elType": "widget",
+     "settings": {
+      "html": "<style>.maach-logos{display:flex;overflow:hidden;border-top:1px solid #e5e3e4;border-bottom:1px solid #e5e3e4;background:#ffffff;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%)}.maach-logos-track{display:flex;flex-shrink:0;animation:maachlogos 60s linear infinite}.maach-logos:hover .maach-logos-track{animation-play-state:paused}.maach-logos-cell{flex-shrink:0;width:240px;height:140px;display:flex;align-items:center;justify-content:center;padding:18px 16px;border-right:1px solid #e5e3e4;background:#ffffff;box-sizing:border-box}.maach-logos-cell img{max-width:96%;max-height:68%;object-fit:contain;opacity:.92}@keyframes maachlogos{from{transform:translateX(0)}to{transform:translateX(-100%)}}@media(max-width:768px){.maach-logos-cell{width:160px;height:110px;padding:14px}.maach-logos-track{animation-duration:45s}}</style><div class=\"maach-logos\" aria-label=\"Aliados estratégicos MAACH\"><div class=\"maach-logos-track\"><div class=\"maach-logos-cell\"><img src=\"https://crpozo.github.io/maach-site/assets/aliados/3m.png\" alt=\"3M\" loading=\"lazy\"></div><div class=\"maach-logos-cell\"><img src=\"https://crpozo.github.io/maach-site/assets/aliados/edimca.png\" alt=\"Edimca\" loading=\"lazy\"></div><div class=\"maach-logos-cell\"><img src=\"https://crpozo.github.io/maach-site/assets/aliados/eni.svg\" alt=\"Eni\" loading=\"lazy\"></div><div class=\"maach-logos-cell\"><img src=\"https://crpozo.github.io/maach-site/assets/aliados/import-aceros.webp\" alt=\"Import Aceros\" loading=\"lazy\"></div><div class=\"maach-logos-cell\"><img src=\"https://crpozo.github.io/maach-site/assets/aliados/ipac.png\" alt=\"Ipac\" loading=\"lazy\"></div><div class=\"maach-logos-cell\"><img src=\"https://crpozo.github.io/maach-site/assets/aliados/pelikano.webp\" alt=\"Pelikano\" loading=\"lazy\"></div><div class=\"maach-logos-cell\"><img src=\"https://crpozo.github.io/maach-site/assets/aliados/proacero.png\" alt=\"Proacero\" loading=\"lazy\"></div><div class=\"maach-logos-cell\"><img src=\"https://crpozo.github.io/maach-site/assets/aliados/prove-fabrica.webp\" alt=\"Prove Fábrica\" loading=\"lazy\"></div><div class=\"maach-logos-cell\"><img src=\"https://crpozo.github.io/maach-site/assets/aliados/vitrum.jpg\" alt=\"Vitrum\" loading=\"lazy\"></div><div class=\"maach-logos-cell\"><img src=\"https://crpozo.github.io/maach-site/assets/aliados/wesco.webp\" alt=\"Wesco\" loading=\"lazy\"></div></div><div class=\"maach-logos-track\" aria-hidden=\"true\"><div class=\"maach-logos-cell\"><img src=\"https://crpozo.github.io/maach-site/assets/aliados/3m.png\" alt=\"3M\" loading=\"lazy\"></div><div class=\"maach-logos-cell\"><img src=\"https://crpozo.github.io/maach-site/assets/aliados/edimca.png\" alt=\"Edimca\" loading=\"lazy\"></div><div class=\"maach-logos-cell\"><img src=\"https://crpozo.github.io/maach-site/assets/aliados/eni.svg\" alt=\"Eni\" loading=\"lazy\"></div><div class=\"maach-logos-cell\"><img src=\"https://crpozo.github.io/maach-site/assets/aliados/import-aceros.webp\" alt=\"Import Aceros\" loading=\"lazy\"></div><div class=\"maach-logos-cell\"><img src=\"https://crpozo.github.io/maach-site/assets/aliados/ipac.png\" alt=\"Ipac\" loading=\"lazy\"></div><div class=\"maach-logos-cell\"><img src=\"https://crpozo.github.io/maach-site/assets/aliados/pelikano.webp\" alt=\"Pelikano\" loading=\"lazy\"></div><div class=\"maach-logos-cell\"><img src=\"https://crpozo.github.io/maach-site/assets/aliados/proacero.png\" alt=\"Proacero\" loading=\"lazy\"></div><div class=\"maach-logos-cell\"><img src=\"https://crpozo.github.io/maach-site/assets/aliados/prove-fabrica.webp\" alt=\"Prove Fábrica\" loading=\"lazy\"></div><div class=\"maach-logos-cell\"><img src=\"https://crpozo.github.io/maach-site/assets/aliados/vitrum.jpg\" alt=\"Vitrum\" loading=\"lazy\"></div><div class=\"maach-logos-cell\"><img src=\"https://crpozo.github.io/maach-site/assets/aliados/wesco.webp\" alt=\"Wesco\" loading=\"lazy\"></div></div></div>"
+     },
+     "elements": [],
+     "widgetType": "html"
+    }
+   ],
+   "isInner": false
+  }
+ ],
+ "page_settings": {
+  "hide_title": "yes",
+  "template": "elementor_header_footer"
+ },
+ "version": "0.4",
+ "title": "MAACH — Sobre MAACH",
+ "type": "page"
+}

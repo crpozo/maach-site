@@ -1,0 +1,6789 @@
+{
+ "content": [
+  {
+   "id": "a000004",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1600
+    },
+    "flex_direction": "column",
+    "padding": {
+     "unit": "px",
+     "top": "128",
+     "right": "48",
+     "bottom": "96",
+     "left": "48",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "unit": "px",
+     "top": "64",
+     "right": "32",
+     "bottom": "64",
+     "left": "32",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "48",
+     "right": "24",
+     "bottom": "48",
+     "left": "24",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#161616",
+    "background_image": {
+     "url": "https://crpozo.github.io/maach-site/assets/biblioteca-2.webp",
+     "id": "",
+     "size": "",
+     "source": "url"
+    },
+    "background_size": "cover",
+    "background_position": "center center",
+    "background_overlay_background": "classic",
+    "background_overlay_color": "#161616",
+    "background_overlay_opacity": {
+     "unit": "px",
+     "size": 0.65
+    },
+    "min_height": {
+     "unit": "px",
+     "size": 480
+    },
+    "flex_gap": {
+     "unit": "px",
+     "size": 24,
+     "column": "24",
+     "row": "24",
+     "isLinked": true
+    },
+    "border_border": "solid",
+    "border_width": {
+     "unit": "px",
+     "top": "0",
+     "right": "0",
+     "bottom": "0",
+     "left": "6",
+     "isLinked": false
+    },
+    "border_color": "#f34a23"
+   },
+   "elements": [
+    {
+     "id": "a000001",
+     "elType": "widget",
+     "settings": {
+      "editor": "<p><a href=\"/\" style=\"color:#a9aaac\">Inicio</a>&nbsp;&nbsp;<span style=\"color:#a9aaac\">&rsaquo;</span>&nbsp;&nbsp;<span style=\"color:#f34a23\">Catálogo</span></p>",
+      "text_color": "#a9aaac",
+      "typography_typography": "custom",
+      "typography_font_family": "Monoblock",
+      "typography_font_weight": "500",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 11
+      },
+      "typography_letter_spacing": {
+       "unit": "px",
+       "size": 1.2
+      },
+      "typography_text_transform": "uppercase"
+     },
+     "elements": [],
+     "widgetType": "text-editor"
+    },
+    {
+     "id": "a000002",
+     "elType": "widget",
+     "settings": {
+      "title": "Catálogo<br><span style=\"color:#f34a23\">de Productos</span>",
+      "header_size": "h1",
+      "title_color": "#ffffff",
+      "typography_typography": "custom",
+      "typography_font_family": "Clash Grotesk",
+      "typography_font_weight": "500",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 88
+      },
+      "typography_line_height": {
+       "unit": "em",
+       "size": 0.95
+      },
+      "typography_text_transform": "uppercase",
+      "typography_letter_spacing": {
+       "unit": "px",
+       "size": -1
+      },
+      "typography_font_size_tablet": {
+       "unit": "px",
+       "size": 56
+      },
+      "typography_font_size_mobile": {
+       "unit": "px",
+       "size": 40
+      }
+     },
+     "elements": [],
+     "widgetType": "heading"
+    },
+    {
+     "id": "a000003",
+     "elType": "widget",
+     "settings": {
+      "editor": "<p>Soluciones modulares diseñadas bajo estrictos criterios de ergonomía, ingeniería aplicada y desempeño en uso intensivo.</p>",
+      "text_color": "#a9aaac",
+      "width": {
+       "unit": "px",
+       "size": 640
+      },
+      "width_mobile": {
+       "unit": "%",
+       "size": 100
+      },
+      "typography_typography": "custom",
+      "typography_font_family": "Clash Grotesk",
+      "typography_font_weight": "400",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 18
+      },
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1.5
+      }
+     },
+     "elements": [],
+     "widgetType": "text-editor"
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "a000010",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1600
+    },
+    "flex_direction": "column",
+    "padding": {
+     "unit": "px",
+     "top": "40",
+     "right": "48",
+     "bottom": "40",
+     "left": "48",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "unit": "px",
+     "top": "64",
+     "right": "32",
+     "bottom": "64",
+     "left": "32",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "48",
+     "right": "24",
+     "bottom": "48",
+     "left": "24",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#ffffff",
+    "flex_gap": {
+     "unit": "px",
+     "size": 20,
+     "column": "20",
+     "row": "20",
+     "isLinked": true
+    }
+   },
+   "elements": [
+    {
+     "id": "a000007",
+     "elType": "container",
+     "settings": {
+      "flex_direction": "row",
+      "flex_wrap": "wrap",
+      "justify_content": "space-between",
+      "align_items": "center",
+      "flex_gap": {
+       "unit": "px",
+       "size": 12,
+       "column": "12",
+       "row": "12",
+       "isLinked": true
+      }
+     },
+     "elements": [
+      {
+       "id": "a000005",
+       "elType": "widget",
+       "settings": {
+        "title": "Catálogo · Filtros",
+        "header_size": "h6",
+        "title_color": "#161616",
+        "typography_typography": "custom",
+        "typography_font_family": "Monoblock",
+        "typography_font_weight": "600",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 11
+        },
+        "typography_letter_spacing": {
+         "unit": "px",
+         "size": 1.4
+        },
+        "typography_text_transform": "uppercase"
+       },
+       "elements": [],
+       "widgetType": "heading"
+      },
+      {
+       "id": "a000006",
+       "elType": "widget",
+       "settings": {
+        "title": "84 productos · Todas las categorías",
+        "header_size": "h6",
+        "title_color": "#6f6f6f",
+        "typography_typography": "custom",
+        "typography_font_family": "Monoblock",
+        "typography_font_weight": "500",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 11
+        },
+        "typography_letter_spacing": {
+         "unit": "px",
+         "size": 1.2
+        },
+        "typography_text_transform": "uppercase"
+       },
+       "elements": [],
+       "widgetType": "heading"
+      }
+     ],
+     "isInner": true
+    },
+    {
+     "id": "a00000f",
+     "elType": "widget",
+     "settings": {
+      "color": "#e5e3e4",
+      "weight": {
+       "unit": "px",
+       "size": 1
+      },
+      "gap": {
+       "unit": "px",
+       "size": 0
+      }
+     },
+     "elements": [],
+     "widgetType": "divider"
+    },
+    {
+     "id": "a00000e",
+     "elType": "widget",
+     "settings": {
+      "view": "inline",
+      "icon_list": [
+       {
+        "_id": "a000008",
+        "text": "Sillonería",
+        "link": {
+         "url": "/productos/#silloneria",
+         "is_external": "",
+         "nofollow": ""
+        },
+        "selected_icon": {
+         "value": "",
+         "library": ""
+        }
+       },
+       {
+        "_id": "a000009",
+        "text": "Escritorios",
+        "link": {
+         "url": "/productos/#escritorios",
+         "is_external": "",
+         "nofollow": ""
+        },
+        "selected_icon": {
+         "value": "",
+         "library": ""
+        }
+       },
+       {
+        "_id": "a00000a",
+        "text": "Mesas",
+        "link": {
+         "url": "/productos/#mesas",
+         "is_external": "",
+         "nofollow": ""
+        },
+        "selected_icon": {
+         "value": "",
+         "library": ""
+        }
+       },
+       {
+        "_id": "a00000b",
+        "text": "Almacenamiento",
+        "link": {
+         "url": "/productos/#almacenamiento",
+         "is_external": "",
+         "nofollow": ""
+        },
+        "selected_icon": {
+         "value": "",
+         "library": ""
+        }
+       },
+       {
+        "_id": "a00000c",
+        "text": "Divisiones de Ambientes",
+        "link": {
+         "url": "/productos/#divisiones",
+         "is_external": "",
+         "nofollow": ""
+        },
+        "selected_icon": {
+         "value": "",
+         "library": ""
+        }
+       },
+       {
+        "_id": "a00000d",
+        "text": "Recepciones",
+        "link": {
+         "url": "/productos/#recepciones",
+         "is_external": "",
+         "nofollow": ""
+        },
+        "selected_icon": {
+         "value": "",
+         "library": ""
+        }
+       }
+      ],
+      "space_between": {
+       "unit": "px",
+       "size": 28
+      },
+      "text_color": "#161616",
+      "icon_color": "#f34a23",
+      "icon_typography_typography": "custom",
+      "icon_typography_font_family": "Monoblock",
+      "icon_typography_font_weight": "600",
+      "icon_typography_font_size": {
+       "unit": "px",
+       "size": 11
+      },
+      "icon_typography_letter_spacing": {
+       "unit": "px",
+       "size": 1.4
+      },
+      "icon_typography_text_transform": "uppercase"
+     },
+     "elements": [],
+     "widgetType": "icon-list"
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "a000047",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1600
+    },
+    "flex_direction": "column",
+    "padding": {
+     "unit": "px",
+     "top": "80",
+     "right": "48",
+     "bottom": "80",
+     "left": "48",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "unit": "px",
+     "top": "64",
+     "right": "32",
+     "bottom": "64",
+     "left": "32",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "48",
+     "right": "24",
+     "bottom": "48",
+     "left": "24",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#ffffff",
+    "flex_gap": {
+     "unit": "px",
+     "size": 16,
+     "column": "16",
+     "row": "16",
+     "isLinked": true
+    }
+   },
+   "elements": [
+    {
+     "id": "a000011",
+     "elType": "widget",
+     "settings": {
+      "anchor": "silloneria"
+     },
+     "elements": [],
+     "widgetType": "menu-anchor"
+    },
+    {
+     "id": "a000012",
+     "elType": "widget",
+     "settings": {
+      "title": "57 productos",
+      "header_size": "h6",
+      "title_color": "#f34a23",
+      "typography_typography": "custom",
+      "typography_font_family": "Monoblock",
+      "typography_font_weight": "600",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 11
+      },
+      "typography_letter_spacing": {
+       "unit": "px",
+       "size": 1.4
+      },
+      "typography_text_transform": "uppercase"
+     },
+     "elements": [],
+     "widgetType": "heading"
+    },
+    {
+     "id": "a000013",
+     "elType": "widget",
+     "settings": {
+      "title": "Sillonería",
+      "header_size": "h2",
+      "title_color": "#161616",
+      "typography_typography": "custom",
+      "typography_font_family": "Clash Grotesk",
+      "typography_font_weight": "500",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 44
+      },
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1.0
+      },
+      "typography_text_transform": "uppercase",
+      "typography_letter_spacing": {
+       "unit": "px",
+       "size": -0.5
+      },
+      "typography_font_size_tablet": {
+       "unit": "px",
+       "size": 36
+      },
+      "typography_font_size_mobile": {
+       "unit": "px",
+       "size": 30
+      }
+     },
+     "elements": [],
+     "widgetType": "heading"
+    },
+    {
+     "id": "a000014",
+     "elType": "widget",
+     "settings": {
+      "editor": "<p>Sillería ejecutiva, operativa, de visita y colectividades. Soluciones diseñadas para soportar el trabajo intensivo con ergonomía aplicada.</p>",
+      "text_color": "#6f6f6f",
+      "width": {
+       "unit": "px",
+       "size": 720
+      },
+      "width_mobile": {
+       "unit": "%",
+       "size": 100
+      },
+      "typography_typography": "custom",
+      "typography_font_family": "Clash Grotesk",
+      "typography_font_weight": "400",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 16
+      },
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1.6
+      }
+     },
+     "elements": [],
+     "widgetType": "text-editor"
+    },
+    {
+     "id": "a000046",
+     "elType": "widget",
+     "settings": {
+      "color": "#e5e3e4",
+      "weight": {
+       "unit": "px",
+       "size": 1
+      },
+      "gap": {
+       "unit": "px",
+       "size": 0
+      }
+     },
+     "elements": [],
+     "widgetType": "divider"
+    },
+    {
+     "id": "a000045",
+     "elType": "container",
+     "settings": {
+      "flex_direction": "row",
+      "flex_wrap": "wrap",
+      "flex_gap": {
+       "unit": "px",
+       "size": 24,
+       "column": "24",
+       "row": "32",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "a000018",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a000015",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/silloneria/silla-zur/02.webp",
+           "id": "",
+           "size": "",
+           "alt": "Silla Zur",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a000016",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Sillas presidente</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a000017",
+         "elType": "widget",
+         "settings": {
+          "title": "Silla Zur",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a00001c",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a000019",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/silloneria/winner-presidente-base-nylon/03.webp",
+           "id": "",
+           "size": "",
+           "alt": "Silla Winner",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a00001a",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Sillas presidente</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a00001b",
+         "elType": "widget",
+         "settings": {
+          "title": "Silla Winner",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a000020",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a00001d",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/silloneria/silla-think-presidente/04.webp",
+           "id": "",
+           "size": "",
+           "alt": "Silla Think",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a00001e",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Sillas gerenciales</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a00001f",
+         "elType": "widget",
+         "settings": {
+          "title": "Silla Think",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a000024",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a000021",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/silloneria/style-presidente/02.webp",
+           "id": "",
+           "size": "",
+           "alt": "Silla Style",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a000022",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Sillas gerenciales</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a000023",
+         "elType": "widget",
+         "settings": {
+          "title": "Silla Style",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a000028",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a000025",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/silloneria/think-gerente/04.webp",
+           "id": "",
+           "size": "",
+           "alt": "Silla Think",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a000026",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Sillas operativas</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a000027",
+         "elType": "widget",
+         "settings": {
+          "title": "Silla Think",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a00002c",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a000029",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/silloneria/vick-gerente/04.webp",
+           "id": "",
+           "size": "",
+           "alt": "Silla Vick",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a00002a",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Sillas operativas</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a00002b",
+         "elType": "widget",
+         "settings": {
+          "title": "Silla Vick",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a000030",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a00002d",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/silloneria/pinko/04.webp",
+           "id": "",
+           "size": "",
+           "alt": "Silla Pinko",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a00002e",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Sillas de visita</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a00002f",
+         "elType": "widget",
+         "settings": {
+          "title": "Silla Pinko",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a000034",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a000031",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/silloneria/andy-interlocutora/04.webp",
+           "id": "",
+           "size": "",
+           "alt": "Silla Andy",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a000032",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Sillas de visita</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a000033",
+         "elType": "widget",
+         "settings": {
+          "title": "Silla Andy",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a000038",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a000035",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/silloneria/win/01.webp",
+           "id": "",
+           "size": "",
+           "alt": "Silla Win",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a000036",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Colectividades</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a000037",
+         "elType": "widget",
+         "settings": {
+          "title": "Silla Win",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a00003c",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a000039",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/silloneria/volga/04.webp",
+           "id": "",
+           "size": "",
+           "alt": "Silla Volga",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a00003a",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Colectividades</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a00003b",
+         "elType": "widget",
+         "settings": {
+          "title": "Silla Volga",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a000040",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a00003d",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/silloneria/booth-con-jardinera/01.webp",
+           "id": "",
+           "size": "",
+           "alt": "Booth con Jardinera",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a00003e",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Sofás</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a00003f",
+         "elType": "widget",
+         "settings": {
+          "title": "Booth con Jardinera",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a000044",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a000041",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/silloneria/sofa-en-l/01.webp",
+           "id": "",
+           "size": "",
+           "alt": "Sofá en L",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a000042",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Sofás</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a000043",
+         "elType": "widget",
+         "settings": {
+          "title": "Sofá en L",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "a00006e",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1600
+    },
+    "flex_direction": "column",
+    "padding": {
+     "unit": "px",
+     "top": "80",
+     "right": "48",
+     "bottom": "80",
+     "left": "48",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "unit": "px",
+     "top": "64",
+     "right": "32",
+     "bottom": "64",
+     "left": "32",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "48",
+     "right": "24",
+     "bottom": "48",
+     "left": "24",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#ffffff",
+    "flex_gap": {
+     "unit": "px",
+     "size": 16,
+     "column": "16",
+     "row": "16",
+     "isLinked": true
+    }
+   },
+   "elements": [
+    {
+     "id": "a000048",
+     "elType": "widget",
+     "settings": {
+      "anchor": "escritorios"
+     },
+     "elements": [],
+     "widgetType": "menu-anchor"
+    },
+    {
+     "id": "a000049",
+     "elType": "widget",
+     "settings": {
+      "title": "8 productos",
+      "header_size": "h6",
+      "title_color": "#f34a23",
+      "typography_typography": "custom",
+      "typography_font_family": "Monoblock",
+      "typography_font_weight": "600",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 11
+      },
+      "typography_letter_spacing": {
+       "unit": "px",
+       "size": 1.4
+      },
+      "typography_text_transform": "uppercase"
+     },
+     "elements": [],
+     "widgetType": "heading"
+    },
+    {
+     "id": "a00004a",
+     "elType": "widget",
+     "settings": {
+      "title": "Escritorios",
+      "header_size": "h2",
+      "title_color": "#161616",
+      "typography_typography": "custom",
+      "typography_font_family": "Clash Grotesk",
+      "typography_font_weight": "500",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 44
+      },
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1.0
+      },
+      "typography_text_transform": "uppercase",
+      "typography_letter_spacing": {
+       "unit": "px",
+       "size": -0.5
+      },
+      "typography_font_size_tablet": {
+       "unit": "px",
+       "size": 36
+      },
+      "typography_font_size_mobile": {
+       "unit": "px",
+       "size": 30
+      }
+     },
+     "elements": [],
+     "widgetType": "heading"
+    },
+    {
+     "id": "a00004b",
+     "elType": "widget",
+     "settings": {
+      "editor": "<p>Escritorios gerenciales, operativos, estaciones colaborativas y soluciones regulables. Sistemas con conducción eléctrica integrada y tableros en melamina de alta resistencia.</p>",
+      "text_color": "#6f6f6f",
+      "width": {
+       "unit": "px",
+       "size": 720
+      },
+      "width_mobile": {
+       "unit": "%",
+       "size": 100
+      },
+      "typography_typography": "custom",
+      "typography_font_family": "Clash Grotesk",
+      "typography_font_weight": "400",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 16
+      },
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1.6
+      }
+     },
+     "elements": [],
+     "widgetType": "text-editor"
+    },
+    {
+     "id": "a00006d",
+     "elType": "widget",
+     "settings": {
+      "color": "#e5e3e4",
+      "weight": {
+       "unit": "px",
+       "size": 1
+      },
+      "gap": {
+       "unit": "px",
+       "size": 0
+      }
+     },
+     "elements": [],
+     "widgetType": "divider"
+    },
+    {
+     "id": "a00006c",
+     "elType": "container",
+     "settings": {
+      "flex_direction": "row",
+      "flex_wrap": "wrap",
+      "flex_gap": {
+       "unit": "px",
+       "size": 24,
+       "column": "24",
+       "row": "32",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "a00004f",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a00004c",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/escritorios/escritorio-gerente-recto/01.webp",
+           "id": "",
+           "size": "",
+           "alt": "Escritorio Gerente Recto",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a00004d",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Escritorios gerente</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a00004e",
+         "elType": "widget",
+         "settings": {
+          "title": "Escritorio Gerente Recto",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a000053",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a000050",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/escritorios/escritorio-gerente-en-l/01.webp",
+           "id": "",
+           "size": "",
+           "alt": "Escritorio Gerente en L",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a000051",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Escritorios gerente</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a000052",
+         "elType": "widget",
+         "settings": {
+          "title": "Escritorio Gerente en L",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a000057",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a000054",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/escritorios/escritorio-gerente-en-c/01.webp",
+           "id": "",
+           "size": "",
+           "alt": "Escritorio Gerente en C",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a000055",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Escritorios gerente</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a000056",
+         "elType": "widget",
+         "settings": {
+          "title": "Escritorio Gerente en C",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a00005b",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a000058",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/escritorios/escritorio-operativo-recto/01.webp",
+           "id": "",
+           "size": "",
+           "alt": "Escritorio Operativo Recto",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a000059",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Escritorios operativos</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a00005a",
+         "elType": "widget",
+         "settings": {
+          "title": "Escritorio Operativo Recto",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a00005f",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a00005c",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/escritorios/escritorio-operativo-en-l/01.webp",
+           "id": "",
+           "size": "",
+           "alt": "Escritorio Operativo en L",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a00005d",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Escritorios operativos</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a00005e",
+         "elType": "widget",
+         "settings": {
+          "title": "Escritorio Operativo en L",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a000063",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a000060",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/escritorios/estacion-de-trabajo-1/01.webp",
+           "id": "",
+           "size": "",
+           "alt": "Estación de Trabajo 1",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a000061",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Estaciones de trabajo</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a000062",
+         "elType": "widget",
+         "settings": {
+          "title": "Estación de Trabajo 1",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a000067",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a000064",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/escritorios/estacion-de-trabajo-2/01.webp",
+           "id": "",
+           "size": "",
+           "alt": "Estación de Trabajo 2",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a000065",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Estaciones de trabajo</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a000066",
+         "elType": "widget",
+         "settings": {
+          "title": "Estación de Trabajo 2",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a00006b",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a000068",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/escritorios/escritorio-regulable/01.webp",
+           "id": "",
+           "size": "",
+           "alt": "Escritorio Regulable",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a000069",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Escritorios regulables</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a00006a",
+         "elType": "widget",
+         "settings": {
+          "title": "Escritorio Regulable",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "a000091",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1600
+    },
+    "flex_direction": "column",
+    "padding": {
+     "unit": "px",
+     "top": "80",
+     "right": "48",
+     "bottom": "80",
+     "left": "48",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "unit": "px",
+     "top": "64",
+     "right": "32",
+     "bottom": "64",
+     "left": "32",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "48",
+     "right": "24",
+     "bottom": "48",
+     "left": "24",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#ffffff",
+    "flex_gap": {
+     "unit": "px",
+     "size": 16,
+     "column": "16",
+     "row": "16",
+     "isLinked": true
+    }
+   },
+   "elements": [
+    {
+     "id": "a00006f",
+     "elType": "widget",
+     "settings": {
+      "anchor": "mesas"
+     },
+     "elements": [],
+     "widgetType": "menu-anchor"
+    },
+    {
+     "id": "a000070",
+     "elType": "widget",
+     "settings": {
+      "title": "7 productos",
+      "header_size": "h6",
+      "title_color": "#f34a23",
+      "typography_typography": "custom",
+      "typography_font_family": "Monoblock",
+      "typography_font_weight": "600",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 11
+      },
+      "typography_letter_spacing": {
+       "unit": "px",
+       "size": 1.4
+      },
+      "typography_text_transform": "uppercase"
+     },
+     "elements": [],
+     "widgetType": "heading"
+    },
+    {
+     "id": "a000071",
+     "elType": "widget",
+     "settings": {
+      "title": "Mesas",
+      "header_size": "h2",
+      "title_color": "#161616",
+      "typography_typography": "custom",
+      "typography_font_family": "Clash Grotesk",
+      "typography_font_weight": "500",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 44
+      },
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1.0
+      },
+      "typography_text_transform": "uppercase",
+      "typography_letter_spacing": {
+       "unit": "px",
+       "size": -0.5
+      },
+      "typography_font_size_tablet": {
+       "unit": "px",
+       "size": 36
+      },
+      "typography_font_size_mobile": {
+       "unit": "px",
+       "size": 30
+      }
+     },
+     "elements": [],
+     "widgetType": "heading"
+    },
+    {
+     "id": "a000072",
+     "elType": "widget",
+     "settings": {
+      "editor": "<p>Mesas de reunión, colaborativas y auxiliares. Soluciones modulares con tableros en melamina, vidrio o fórmica e integración eléctrica oculta.</p>",
+      "text_color": "#6f6f6f",
+      "width": {
+       "unit": "px",
+       "size": 720
+      },
+      "width_mobile": {
+       "unit": "%",
+       "size": 100
+      },
+      "typography_typography": "custom",
+      "typography_font_family": "Clash Grotesk",
+      "typography_font_weight": "400",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 16
+      },
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1.6
+      }
+     },
+     "elements": [],
+     "widgetType": "text-editor"
+    },
+    {
+     "id": "a000090",
+     "elType": "widget",
+     "settings": {
+      "color": "#e5e3e4",
+      "weight": {
+       "unit": "px",
+       "size": 1
+      },
+      "gap": {
+       "unit": "px",
+       "size": 0
+      }
+     },
+     "elements": [],
+     "widgetType": "divider"
+    },
+    {
+     "id": "a00008f",
+     "elType": "container",
+     "settings": {
+      "flex_direction": "row",
+      "flex_wrap": "wrap",
+      "flex_gap": {
+       "unit": "px",
+       "size": 24,
+       "column": "24",
+       "row": "32",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "a000076",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a000073",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/mesas/mesa-rectangular/01.webp",
+           "id": "",
+           "size": "",
+           "alt": "Mesa Rectangular",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a000074",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Mesas de reunión</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a000075",
+         "elType": "widget",
+         "settings": {
+          "title": "Mesa Rectangular",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a00007a",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a000077",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/mesas/mesa-ovalada/01.webp",
+           "id": "",
+           "size": "",
+           "alt": "Mesa Ovalada",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a000078",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Mesas de reunión</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a000079",
+         "elType": "widget",
+         "settings": {
+          "title": "Mesa Ovalada",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a00007e",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a00007b",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/mesas/mesa-especial/01.webp",
+           "id": "",
+           "size": "",
+           "alt": "Mesa Especial",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a00007c",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Mesas de reunión</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a00007d",
+         "elType": "widget",
+         "settings": {
+          "title": "Mesa Especial",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a000082",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a00007f",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/mesas/mesa-colaborativa-circular/01.webp",
+           "id": "",
+           "size": "",
+           "alt": "Mesa Colaborativa Circular",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a000080",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Mesas colaborativas</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a000081",
+         "elType": "widget",
+         "settings": {
+          "title": "Mesa Colaborativa Circular",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a000086",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a000083",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/mesas/mesa-colaborativa-cuadrada/01.webp",
+           "id": "",
+           "size": "",
+           "alt": "Mesa Colaborativa Cuadrada",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a000084",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Mesas colaborativas</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a000085",
+         "elType": "widget",
+         "settings": {
+          "title": "Mesa Colaborativa Cuadrada",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a00008a",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a000087",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/mesas/mesa-porta-laptop/01.webp",
+           "id": "",
+           "size": "",
+           "alt": "Mesa Porta Laptop",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a000088",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Mesas colaborativas</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a000089",
+         "elType": "widget",
+         "settings": {
+          "title": "Mesa Porta Laptop",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a00008e",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a00008b",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/mesas/mesa-auxiliar/01.webp",
+           "id": "",
+           "size": "",
+           "alt": "Mesa Auxiliar",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a00008c",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Mesas auxiliares</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a00008d",
+         "elType": "widget",
+         "settings": {
+          "title": "Mesa Auxiliar",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "a0000b4",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1600
+    },
+    "flex_direction": "column",
+    "padding": {
+     "unit": "px",
+     "top": "80",
+     "right": "48",
+     "bottom": "80",
+     "left": "48",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "unit": "px",
+     "top": "64",
+     "right": "32",
+     "bottom": "64",
+     "left": "32",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "48",
+     "right": "24",
+     "bottom": "48",
+     "left": "24",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#ffffff",
+    "flex_gap": {
+     "unit": "px",
+     "size": 16,
+     "column": "16",
+     "row": "16",
+     "isLinked": true
+    }
+   },
+   "elements": [
+    {
+     "id": "a000092",
+     "elType": "widget",
+     "settings": {
+      "anchor": "almacenamiento"
+     },
+     "elements": [],
+     "widgetType": "menu-anchor"
+    },
+    {
+     "id": "a000093",
+     "elType": "widget",
+     "settings": {
+      "title": "7 productos",
+      "header_size": "h6",
+      "title_color": "#f34a23",
+      "typography_typography": "custom",
+      "typography_font_family": "Monoblock",
+      "typography_font_weight": "600",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 11
+      },
+      "typography_letter_spacing": {
+       "unit": "px",
+       "size": 1.4
+      },
+      "typography_text_transform": "uppercase"
+     },
+     "elements": [],
+     "widgetType": "heading"
+    },
+    {
+     "id": "a000094",
+     "elType": "widget",
+     "settings": {
+      "title": "Almacenamiento",
+      "header_size": "h2",
+      "title_color": "#161616",
+      "typography_typography": "custom",
+      "typography_font_family": "Clash Grotesk",
+      "typography_font_weight": "500",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 44
+      },
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1.0
+      },
+      "typography_text_transform": "uppercase",
+      "typography_letter_spacing": {
+       "unit": "px",
+       "size": -0.5
+      },
+      "typography_font_size_tablet": {
+       "unit": "px",
+       "size": 36
+      },
+      "typography_font_size_mobile": {
+       "unit": "px",
+       "size": 30
+      }
+     },
+     "elements": [],
+     "widgetType": "heading"
+    },
+    {
+     "id": "a000095",
+     "elType": "widget",
+     "settings": {
+      "editor": "<p>Credenzas, bibliotecas, lockers, módulos rodantes y archivo móvil. Soluciones de organización con sistemas de seguridad, herrajes técnicos y acabados coordinados.</p>",
+      "text_color": "#6f6f6f",
+      "width": {
+       "unit": "px",
+       "size": 720
+      },
+      "width_mobile": {
+       "unit": "%",
+       "size": 100
+      },
+      "typography_typography": "custom",
+      "typography_font_family": "Clash Grotesk",
+      "typography_font_weight": "400",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 16
+      },
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1.6
+      }
+     },
+     "elements": [],
+     "widgetType": "text-editor"
+    },
+    {
+     "id": "a0000b3",
+     "elType": "widget",
+     "settings": {
+      "color": "#e5e3e4",
+      "weight": {
+       "unit": "px",
+       "size": 1
+      },
+      "gap": {
+       "unit": "px",
+       "size": 0
+      }
+     },
+     "elements": [],
+     "widgetType": "divider"
+    },
+    {
+     "id": "a0000b2",
+     "elType": "container",
+     "settings": {
+      "flex_direction": "row",
+      "flex_wrap": "wrap",
+      "flex_gap": {
+       "unit": "px",
+       "size": 24,
+       "column": "24",
+       "row": "32",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "a000099",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a000096",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/almacenamiento/biblioteca-alta/01.webp",
+           "id": "",
+           "size": "",
+           "alt": "Biblioteca Alta",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a000097",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Biblioteca Alta</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a000098",
+         "elType": "widget",
+         "settings": {
+          "title": "Biblioteca Alta",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a00009d",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a00009a",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/almacenamiento/biblioteca-baja/01.webp",
+           "id": "",
+           "size": "",
+           "alt": "Biblioteca Baja",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a00009b",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Biblioteca Baja</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a00009c",
+         "elType": "widget",
+         "settings": {
+          "title": "Biblioteca Baja",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a0000a1",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a00009e",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/almacenamiento/credenza/01.webp",
+           "id": "",
+           "size": "",
+           "alt": "Credenza",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a00009f",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Credenza</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a0000a0",
+         "elType": "widget",
+         "settings": {
+          "title": "Credenza",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a0000a5",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a0000a2",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/almacenamiento/modulo-3-gavetas/01.webp",
+           "id": "",
+           "size": "",
+           "alt": "Módulo 3 gavetas",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a0000a3",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Módulo 3 gavetas</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a0000a4",
+         "elType": "widget",
+         "settings": {
+          "title": "Módulo 3 gavetas",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a0000a9",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a0000a6",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/almacenamiento/arturito/01.webp",
+           "id": "",
+           "size": "",
+           "alt": "Arturito",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a0000a7",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Arturito</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a0000a8",
+         "elType": "widget",
+         "settings": {
+          "title": "Arturito",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a0000ad",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a0000aa",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/almacenamiento/locker/01.webp",
+           "id": "",
+           "size": "",
+           "alt": "Locker",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a0000ab",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Locker</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a0000ac",
+         "elType": "widget",
+         "settings": {
+          "title": "Locker",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a0000b1",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a0000ae",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/almacenamiento/archivo-rodante/01.webp",
+           "id": "",
+           "size": "",
+           "alt": "Archivo Rodante",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a0000af",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Archivo Rodante</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a0000b0",
+         "elType": "widget",
+         "settings": {
+          "title": "Archivo Rodante",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "a0000c3",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1600
+    },
+    "flex_direction": "column",
+    "padding": {
+     "unit": "px",
+     "top": "80",
+     "right": "48",
+     "bottom": "80",
+     "left": "48",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "unit": "px",
+     "top": "64",
+     "right": "32",
+     "bottom": "64",
+     "left": "32",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "48",
+     "right": "24",
+     "bottom": "48",
+     "left": "24",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#ffffff",
+    "flex_gap": {
+     "unit": "px",
+     "size": 16,
+     "column": "16",
+     "row": "16",
+     "isLinked": true
+    }
+   },
+   "elements": [
+    {
+     "id": "a0000b5",
+     "elType": "widget",
+     "settings": {
+      "anchor": "divisiones"
+     },
+     "elements": [],
+     "widgetType": "menu-anchor"
+    },
+    {
+     "id": "a0000b6",
+     "elType": "widget",
+     "settings": {
+      "title": "2 productos",
+      "header_size": "h6",
+      "title_color": "#f34a23",
+      "typography_typography": "custom",
+      "typography_font_family": "Monoblock",
+      "typography_font_weight": "600",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 11
+      },
+      "typography_letter_spacing": {
+       "unit": "px",
+       "size": 1.4
+      },
+      "typography_text_transform": "uppercase"
+     },
+     "elements": [],
+     "widgetType": "heading"
+    },
+    {
+     "id": "a0000b7",
+     "elType": "widget",
+     "settings": {
+      "title": "Divisiones de Ambientes",
+      "header_size": "h2",
+      "title_color": "#161616",
+      "typography_typography": "custom",
+      "typography_font_family": "Clash Grotesk",
+      "typography_font_weight": "500",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 44
+      },
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1.0
+      },
+      "typography_text_transform": "uppercase",
+      "typography_letter_spacing": {
+       "unit": "px",
+       "size": -0.5
+      },
+      "typography_font_size_tablet": {
+       "unit": "px",
+       "size": 36
+      },
+      "typography_font_size_mobile": {
+       "unit": "px",
+       "size": 30
+      }
+     },
+     "elements": [],
+     "widgetType": "heading"
+    },
+    {
+     "id": "a0000b8",
+     "elType": "widget",
+     "settings": {
+      "editor": "<p>Divisiones modulares y de vidrio para reconfigurar espacios sin perder amplitud ni entrada de luz natural.</p>",
+      "text_color": "#6f6f6f",
+      "width": {
+       "unit": "px",
+       "size": 720
+      },
+      "width_mobile": {
+       "unit": "%",
+       "size": 100
+      },
+      "typography_typography": "custom",
+      "typography_font_family": "Clash Grotesk",
+      "typography_font_weight": "400",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 16
+      },
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1.6
+      }
+     },
+     "elements": [],
+     "widgetType": "text-editor"
+    },
+    {
+     "id": "a0000c2",
+     "elType": "widget",
+     "settings": {
+      "color": "#e5e3e4",
+      "weight": {
+       "unit": "px",
+       "size": 1
+      },
+      "gap": {
+       "unit": "px",
+       "size": 0
+      }
+     },
+     "elements": [],
+     "widgetType": "divider"
+    },
+    {
+     "id": "a0000c1",
+     "elType": "container",
+     "settings": {
+      "flex_direction": "row",
+      "flex_wrap": "wrap",
+      "flex_gap": {
+       "unit": "px",
+       "size": 24,
+       "column": "24",
+       "row": "32",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "a0000bc",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a0000b9",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/divisiones/division-modular/01.webp",
+           "id": "",
+           "size": "",
+           "alt": "División Modular",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a0000ba",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Divisiones modulares</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a0000bb",
+         "elType": "widget",
+         "settings": {
+          "title": "División Modular",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a0000c0",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a0000bd",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/divisiones/division-aluminio-y-vidrio/01.webp",
+           "id": "",
+           "size": "",
+           "alt": "División de Aluminio y Vidrio",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a0000be",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Divisiones de vidrio</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a0000bf",
+         "elType": "widget",
+         "settings": {
+          "title": "División de Aluminio y Vidrio",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "a0000d6",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1600
+    },
+    "flex_direction": "column",
+    "padding": {
+     "unit": "px",
+     "top": "80",
+     "right": "48",
+     "bottom": "80",
+     "left": "48",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "unit": "px",
+     "top": "64",
+     "right": "32",
+     "bottom": "64",
+     "left": "32",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "48",
+     "right": "24",
+     "bottom": "48",
+     "left": "24",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#ffffff",
+    "flex_gap": {
+     "unit": "px",
+     "size": 16,
+     "column": "16",
+     "row": "16",
+     "isLinked": true
+    }
+   },
+   "elements": [
+    {
+     "id": "a0000c4",
+     "elType": "widget",
+     "settings": {
+      "anchor": "recepciones"
+     },
+     "elements": [],
+     "widgetType": "menu-anchor"
+    },
+    {
+     "id": "a0000c5",
+     "elType": "widget",
+     "settings": {
+      "title": "3 productos",
+      "header_size": "h6",
+      "title_color": "#f34a23",
+      "typography_typography": "custom",
+      "typography_font_family": "Monoblock",
+      "typography_font_weight": "600",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 11
+      },
+      "typography_letter_spacing": {
+       "unit": "px",
+       "size": 1.4
+      },
+      "typography_text_transform": "uppercase"
+     },
+     "elements": [],
+     "widgetType": "heading"
+    },
+    {
+     "id": "a0000c6",
+     "elType": "widget",
+     "settings": {
+      "title": "Recepciones",
+      "header_size": "h2",
+      "title_color": "#161616",
+      "typography_typography": "custom",
+      "typography_font_family": "Clash Grotesk",
+      "typography_font_weight": "500",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 44
+      },
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1.0
+      },
+      "typography_text_transform": "uppercase",
+      "typography_letter_spacing": {
+       "unit": "px",
+       "size": -0.5
+      },
+      "typography_font_size_tablet": {
+       "unit": "px",
+       "size": 36
+      },
+      "typography_font_size_mobile": {
+       "unit": "px",
+       "size": 30
+      }
+     },
+     "elements": [],
+     "widgetType": "heading"
+    },
+    {
+     "id": "a0000c7",
+     "elType": "widget",
+     "settings": {
+      "editor": "<p>La recepción es el punto de bienvenida de tu empresa y refleja su identidad. Estas recepciones están diseñadas para ofrecer una presencia sólida, combinando líneas modernas con soluciones prácticas para la atención diaria.</p>",
+      "text_color": "#6f6f6f",
+      "width": {
+       "unit": "px",
+       "size": 720
+      },
+      "width_mobile": {
+       "unit": "%",
+       "size": 100
+      },
+      "typography_typography": "custom",
+      "typography_font_family": "Clash Grotesk",
+      "typography_font_weight": "400",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 16
+      },
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1.6
+      }
+     },
+     "elements": [],
+     "widgetType": "text-editor"
+    },
+    {
+     "id": "a0000d5",
+     "elType": "widget",
+     "settings": {
+      "color": "#e5e3e4",
+      "weight": {
+       "unit": "px",
+       "size": 1
+      },
+      "gap": {
+       "unit": "px",
+       "size": 0
+      }
+     },
+     "elements": [],
+     "widgetType": "divider"
+    },
+    {
+     "id": "a0000d4",
+     "elType": "container",
+     "settings": {
+      "flex_direction": "row",
+      "flex_wrap": "wrap",
+      "flex_gap": {
+       "unit": "px",
+       "size": 24,
+       "column": "24",
+       "row": "32",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "a0000cb",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a0000c8",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/recepciones/recepcion-en-l/01.webp",
+           "id": "",
+           "size": "",
+           "alt": "Recepción en L",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a0000c9",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Counters de recepción</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a0000ca",
+         "elType": "widget",
+         "settings": {
+          "title": "Recepción en L",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a0000cf",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a0000cc",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/recepciones/recepcion-recta-madera/01.webp",
+           "id": "",
+           "size": "",
+           "alt": "Recepción Recta Madera",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a0000cd",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Counters de recepción</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a0000ce",
+         "elType": "widget",
+         "settings": {
+          "title": "Recepción Recta Madera",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a0000d3",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 8,
+         "column": "8",
+         "row": "8",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a0000d0",
+         "elType": "widget",
+         "settings": {
+          "image": {
+           "url": "https://crpozo.github.io/maach-site/assets/productos/recepciones/recepcion-recta-metal/01.webp",
+           "id": "",
+           "size": "",
+           "alt": "Recepción Recta Metal",
+           "source": "url"
+          },
+          "image_size": "full",
+          "link_to": "custom",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "width": {
+           "unit": "%",
+           "size": 100
+          },
+          "height": {
+           "unit": "px",
+           "size": 340
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 300
+          },
+          "object-fit": "contain",
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "image_border_color": "#e5e3e4",
+          "image_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a0000d1",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Counters de recepción</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.1
+          },
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a0000d2",
+         "elType": "widget",
+         "settings": {
+          "title": "Recepción Recta Metal",
+          "header_size": "h3",
+          "title_color": "#161616",
+          "link": {
+           "url": "/productos/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_text_transform": "uppercase",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  }
+ ],
+ "page_settings": {
+  "hide_title": "yes",
+  "template": "elementor_header_footer"
+ },
+ "version": "0.4",
+ "title": "MAACH — Productos",
+ "type": "page"
+}

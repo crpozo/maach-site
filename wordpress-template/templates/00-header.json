@@ -1,0 +1,130 @@
+{
+ "content": [
+  {
+   "id": "a000001",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {"unit": "px", "size": 1600},
+    "flex_direction": "row",
+    "flex_align_items": "center",
+    "flex_justify_content": "space-between",
+    "flex_wrap": "wrap",
+    "flex_gap": {"unit": "px", "size": 16, "column": "16", "row": "16", "isLinked": true},
+    "min_height": {"unit": "px", "size": 80},
+    "background_background": "classic",
+    "background_color": "#ffffff",
+    "border_border": "solid",
+    "border_width": {"unit": "px", "top": "0", "right": "0", "bottom": "1", "left": "0", "isLinked": false},
+    "border_color": "#e5e3e4",
+    "padding": {"unit": "px", "top": "0", "right": "48", "bottom": "0", "left": "48", "isLinked": false},
+    "padding_tablet": {"unit": "px", "top": "12", "right": "32", "bottom": "12", "left": "32", "isLinked": false},
+    "padding_mobile": {"unit": "px", "top": "12", "right": "24", "bottom": "12", "left": "24", "isLinked": false}
+   },
+   "elements": [
+    {
+     "id": "a000002",
+     "elType": "container",
+     "settings": {
+      "content_width": "full",
+      "width": {"unit": "%", "size": 78},
+      "width_tablet": {"unit": "%", "size": 100},
+      "width_mobile": {"unit": "%", "size": 100},
+      "flex_direction": "row",
+      "flex_align_items": "center",
+      "flex_wrap": "wrap",
+      "flex_gap": {"unit": "px", "size": 56, "column": "56", "row": "16", "isLinked": false},
+      "padding": {"unit": "px", "top": "0", "right": "0", "bottom": "0", "left": "0", "isLinked": true}
+     },
+     "elements": [
+      {
+       "id": "a000003",
+       "elType": "widget",
+       "settings": {
+        "image": {"url": "https://crpozo.github.io/maach-site/assets/logo-bicolor.png", "id": "", "size": "", "alt": "MAACH", "source": "url"},
+        "image_size": "full",
+        "width": {"unit": "px", "size": 90},
+        "height": {"unit": "px", "size": 26},
+        "object-fit": "contain",
+        "link_to": "custom",
+        "link": {"url": "/", "is_external": "", "nofollow": ""},
+        "_element_width": "auto"
+       },
+       "elements": [],
+       "widgetType": "image"
+      },
+      {
+       "id": "a000004",
+       "elType": "widget",
+       "settings": {
+        "view": "inline",
+        "icon_list": [
+         {"_id": "b000001", "text": "PRODUCTOS", "link": {"url": "/productos/", "is_external": "", "nofollow": ""}, "selected_icon": {"value": "", "library": ""}},
+         {"_id": "b000002", "text": "ESPACIOS", "link": {"url": "/espacios/", "is_external": "", "nofollow": ""}, "selected_icon": {"value": "", "library": ""}},
+         {"_id": "b000003", "text": "PORTAFOLIO", "link": {"url": "/portafolio/", "is_external": "", "nofollow": ""}, "selected_icon": {"value": "", "library": ""}},
+         {"_id": "b000004", "text": "INVESTIGACIÓN", "link": {"url": "/investigacion/", "is_external": "", "nofollow": ""}, "selected_icon": {"value": "", "library": ""}},
+         {"_id": "b000005", "text": "SOBRE MAACH", "link": {"url": "/sobre-maach/", "is_external": "", "nofollow": ""}, "selected_icon": {"value": "", "library": ""}},
+         {"_id": "b000006", "text": "CONTACTO", "link": {"url": "/contacto/", "is_external": "", "nofollow": ""}, "selected_icon": {"value": "", "library": ""}}
+        ],
+        "space_between": {"unit": "px", "size": 28},
+        "text_color": "#161616",
+        "text_color_hover": "#f34a23",
+        "icon_typography_typography": "custom",
+        "icon_typography_font_family": "Monoblock",
+        "icon_typography_font_weight": "600",
+        "icon_typography_font_size": {"unit": "px", "size": 12},
+        "icon_typography_letter_spacing": {"unit": "px", "size": 1},
+        "icon_typography_text_transform": "uppercase",
+        "_element_width": "auto"
+       },
+       "elements": [],
+       "widgetType": "icon-list"
+      }
+     ],
+     "isInner": true
+    },
+    {
+     "id": "a000005",
+     "elType": "container",
+     "settings": {
+      "content_width": "full",
+      "width": {"unit": "%", "size": 20},
+      "width_tablet": {"unit": "%", "size": 100},
+      "width_mobile": {"unit": "%", "size": 100},
+      "flex_direction": "row",
+      "flex_align_items": "center",
+      "flex_justify_content": "flex-end",
+      "padding": {"unit": "px", "top": "0", "right": "0", "bottom": "0", "left": "0", "isLinked": true}
+     },
+     "elements": [
+      {
+       "id": "a000006",
+       "elType": "widget",
+       "settings": {
+        "title": "<span style=\"color:#f34a23;font-weight:700;\">ES</span> <span style=\"color:#6f6f6f;\">/ EN</span>",
+        "header_size": "div",
+        "align": "right",
+        "title_color": "#161616",
+        "typography_typography": "custom",
+        "typography_font_family": "Monoblock",
+        "typography_font_weight": "500",
+        "typography_font_size": {"unit": "px", "size": 11},
+        "typography_letter_spacing": {"unit": "px", "size": 1},
+        "typography_text_transform": "uppercase",
+        "_element_width": "auto"
+       },
+       "elements": [],
+       "widgetType": "heading"
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  }
+ ],
+ "page_settings": {},
+ "version": "0.4",
+ "title": "MAACH — Header",
+ "type": "section"
+}

@@ -1,0 +1,1713 @@
+{
+ "content": [
+  {
+   "id": "a000011",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1600
+    },
+    "min_height": {
+     "unit": "vh",
+     "size": 86
+    },
+    "flex_direction": "column",
+    "flex_justify_content": "space-between",
+    "flex_gap": {
+     "unit": "px",
+     "size": 56,
+     "column": "56",
+     "row": "56",
+     "isLinked": true
+    },
+    "background_background": "classic",
+    "background_image": {
+     "url": "https://crpozo.github.io/maach-site/assets/bg-investigacion.webp",
+     "id": "",
+     "size": "",
+     "alt": "MAACH",
+     "source": "url"
+    },
+    "background_size": "cover",
+    "background_position": "center center",
+    "background_overlay_background": "classic",
+    "background_overlay_color": "#161616",
+    "background_overlay_opacity": {
+     "unit": "px",
+     "size": 0.55
+    },
+    "padding": {
+     "unit": "px",
+     "top": "40",
+     "right": "48",
+     "bottom": "72",
+     "left": "48",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "unit": "px",
+     "top": "32",
+     "right": "32",
+     "bottom": "56",
+     "left": "32",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "24",
+     "right": "24",
+     "bottom": "40",
+     "left": "24",
+     "isLinked": false
+    },
+    "border_border": "solid",
+    "border_width": {
+     "unit": "px",
+     "top": "0",
+     "right": "0",
+     "bottom": "1",
+     "left": "0",
+     "isLinked": false
+    },
+    "border_color": "rgba(228,226,227,0.18)"
+   },
+   "elements": [
+    {
+     "id": "a000003",
+     "elType": "container",
+     "settings": {
+      "flex_direction": "row",
+      "flex_justify_content": "space-between",
+      "flex_align_items": "center",
+      "flex_gap": {
+       "unit": "px",
+       "size": 16,
+       "column": "16",
+       "row": "16",
+       "isLinked": true
+      }
+     },
+     "elements": [
+      {
+       "id": "a000001",
+       "elType": "widget",
+       "settings": {
+        "title": "MAACH · WORK INSIGHTS 2026",
+        "header_size": "h6",
+        "typography_typography": "custom",
+        "typography_font_family": "Monoblock",
+        "typography_font_weight": "600",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 11
+        },
+        "typography_letter_spacing": {
+         "unit": "px",
+         "size": 1.4
+        },
+        "typography_text_transform": "uppercase",
+        "title_color": "#f34a23",
+        "_element_width": "auto"
+       },
+       "elements": [],
+       "widgetType": "heading"
+      },
+      {
+       "id": "a000002",
+       "elType": "widget",
+       "settings": {
+        "title": "Investigación",
+        "header_size": "h6",
+        "typography_typography": "custom",
+        "typography_font_family": "Monoblock",
+        "typography_font_weight": "600",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 11
+        },
+        "typography_letter_spacing": {
+         "unit": "px",
+         "size": 1.4
+        },
+        "typography_text_transform": "uppercase",
+        "title_color": "#ffffff",
+        "_element_width": "auto"
+       },
+       "elements": [],
+       "widgetType": "heading"
+      }
+     ],
+     "isInner": true
+    },
+    {
+     "id": "a000010",
+     "elType": "container",
+     "settings": {
+      "flex_direction": "row",
+      "flex_wrap": "wrap",
+      "flex_align_items": "flex-end",
+      "flex_justify_content": "space-between",
+      "flex_gap": {
+       "unit": "px",
+       "size": 48,
+       "column": "48",
+       "row": "48",
+       "isLinked": true
+      }
+     },
+     "elements": [
+      {
+       "id": "a000006",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 52
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 100
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "unit": "px",
+         "size": 28,
+         "column": "28",
+         "row": "28",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a000004",
+         "elType": "widget",
+         "settings": {
+          "title": "Investigación<br><span style=\"color:#f34a23\">y contexto</span>",
+          "header_size": "h1",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 90
+          },
+          "typography_font_size_tablet": {
+           "unit": "px",
+           "size": 56
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 40
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 0.92
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -2
+          },
+          "title_color": "#ffffff",
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "a000005",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>El diseño de nuestro mobiliario no surge de la intuición, sino de la observación sistemática y el análisis de cómo cambian las dinámicas laborales a nivel global.</p>",
+          "text_color": "#ffffff",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "400",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 20
+          },
+          "typography_font_size_tablet": {
+           "unit": "px",
+           "size": 18
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 16
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.5
+          }
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a000009",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 40
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 100
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "unit": "px",
+         "size": 20,
+         "column": "20",
+         "row": "20",
+         "isLinked": true
+        },
+        "background_background": "classic",
+        "background_color": "rgba(228,226,227,0.06)",
+        "border_border": "solid",
+        "border_width": {
+         "unit": "px",
+         "top": "1",
+         "right": "1",
+         "bottom": "1",
+         "left": "1",
+         "isLinked": true
+        },
+        "border_color": "rgba(228,226,227,0.25)",
+        "padding": {
+         "unit": "px",
+         "top": "40",
+         "right": "40",
+         "bottom": "40",
+         "left": "40",
+         "isLinked": false
+        },
+        "padding_mobile": {
+         "unit": "px",
+         "top": "28",
+         "right": "24",
+         "bottom": "28",
+         "left": "24",
+         "isLinked": false
+        }
+       },
+       "elements": [
+        {
+         "id": "a000007",
+         "elType": "widget",
+         "settings": {
+          "title": "68% de las oficinas hoy requieren configuraciones adaptables a equipos híbridos.",
+          "header_size": "h3",
+          "title_color": "#ffffff",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 28
+          },
+          "typography_font_size_tablet": {
+           "unit": "px",
+           "size": 24
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 21
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.15
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.3
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "a000008",
+         "elType": "widget",
+         "settings": {
+          "title": "— Reporte MAACH Work Insights 2025",
+          "header_size": "h6",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "600",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.4
+          },
+          "typography_text_transform": "uppercase",
+          "title_color": "#a9aaac"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "a000048",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1600
+    },
+    "flex_direction": "column",
+    "flex_gap": {
+     "unit": "px",
+     "size": 56,
+     "column": "56",
+     "row": "56",
+     "isLinked": true
+    },
+    "padding": {
+     "unit": "px",
+     "top": "112",
+     "right": "48",
+     "bottom": "112",
+     "left": "48",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "unit": "px",
+     "top": "64",
+     "right": "32",
+     "bottom": "64",
+     "left": "32",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "48",
+     "right": "24",
+     "bottom": "48",
+     "left": "24",
+     "isLinked": false
+    },
+    "border_border": "solid",
+    "border_width": {
+     "unit": "px",
+     "top": "0",
+     "right": "0",
+     "bottom": "1",
+     "left": "0",
+     "isLinked": false
+    },
+    "border_color": "#e5e3e4"
+   },
+   "elements": [
+    {
+     "id": "a000016",
+     "elType": "container",
+     "settings": {
+      "flex_direction": "row",
+      "flex_wrap": "wrap",
+      "flex_justify_content": "space-between",
+      "flex_align_items": "flex-end",
+      "flex_gap": {
+       "unit": "px",
+       "size": 16,
+       "column": "16",
+       "row": "16",
+       "isLinked": true
+      }
+     },
+     "elements": [
+      {
+       "id": "a000014",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 70
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "unit": "px",
+         "size": 12,
+         "column": "12",
+         "row": "12",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a000012",
+         "elType": "widget",
+         "settings": {
+          "title": "Editorial · MAACH Research",
+          "header_size": "h6",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "600",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.4
+          },
+          "typography_text_transform": "uppercase",
+          "title_color": "#6f6f6f"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "a000013",
+         "elType": "widget",
+         "settings": {
+          "title": "Lecturas <span style=\"color:#f34a23\">recomendadas</span>",
+          "header_size": "h2",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 88
+          },
+          "typography_font_size_tablet": {
+           "unit": "px",
+           "size": 56
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 40
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 0.92
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -2
+          },
+          "title_color": "#161616",
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a000015",
+       "elType": "widget",
+       "settings": {
+        "title": "03 artículos · MAACH 2026",
+        "header_size": "h6",
+        "typography_typography": "custom",
+        "typography_font_family": "Monoblock",
+        "typography_font_weight": "600",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 11
+        },
+        "typography_letter_spacing": {
+         "unit": "px",
+         "size": 1.4
+        },
+        "typography_text_transform": "uppercase",
+        "title_color": "#6f6f6f",
+        "_element_width": "auto"
+       },
+       "elements": [],
+       "widgetType": "heading"
+      }
+     ],
+     "isInner": true
+    },
+    {
+     "id": "a000047",
+     "elType": "container",
+     "settings": {
+      "flex_direction": "row",
+      "flex_wrap": "wrap",
+      "flex_justify_content": "space-between",
+      "flex_gap": {
+       "unit": "px",
+       "size": 32,
+       "column": "32",
+       "row": "56",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "a000026",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "unit": "px",
+         "size": 14,
+         "column": "14",
+         "row": "14",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a000021",
+         "elType": "container",
+         "settings": {
+          "flex_direction": "column",
+          "flex_justify_content": "space-between",
+          "min_height": {
+           "unit": "px",
+           "size": 360
+          },
+          "min_height_tablet": {
+           "unit": "px",
+           "size": 320
+          },
+          "min_height_mobile": {
+           "unit": "px",
+           "size": 260
+          },
+          "background_background": "classic",
+          "background_image": {
+           "url": "https://crpozo.github.io/maach-site/assets/biblioteca-3.webp",
+           "id": "",
+           "size": "",
+           "alt": "Cómo elegir el mobiliario de oficina para mejorar la productividad",
+           "source": "url"
+          },
+          "background_size": "cover",
+          "background_position": "center center",
+          "border_border": "solid",
+          "border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "border_color": "#e5e3e4",
+          "padding": {
+           "unit": "px",
+           "top": "14",
+           "right": "14",
+           "bottom": "14",
+           "left": "14",
+           "isLinked": false
+          }
+         },
+         "elements": [
+          {
+           "id": "a000018",
+           "elType": "container",
+           "settings": {
+            "flex_direction": "row",
+            "flex_justify_content": "flex-start"
+           },
+           "elements": [
+            {
+             "id": "a000017",
+             "elType": "widget",
+             "settings": {
+              "title": "BLOG · 01",
+              "header_size": "h6",
+              "typography_typography": "custom",
+              "typography_font_family": "Monoblock",
+              "typography_font_weight": "600",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 11
+              },
+              "typography_letter_spacing": {
+               "unit": "px",
+               "size": 1.2
+              },
+              "typography_text_transform": "uppercase",
+              "title_color": "#ffffff",
+              "_element_width": "auto",
+              "_background_background": "classic",
+              "_background_color": "#161616",
+              "_padding": {
+               "unit": "px",
+               "top": "5",
+               "right": "10",
+               "bottom": "5",
+               "left": "10",
+               "isLinked": false
+              }
+             },
+             "elements": [],
+             "widgetType": "heading"
+            }
+           ],
+           "isInner": true
+          },
+          {
+           "id": "a000020",
+           "elType": "container",
+           "settings": {
+            "flex_direction": "row",
+            "flex_justify_content": "flex-end"
+           },
+           "elements": [
+            {
+             "id": "a000019",
+             "elType": "widget",
+             "settings": {
+              "title": "06 min",
+              "header_size": "h6",
+              "typography_typography": "custom",
+              "typography_font_family": "Monoblock",
+              "typography_font_weight": "600",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 11
+              },
+              "typography_letter_spacing": {
+               "unit": "px",
+               "size": 1.2
+              },
+              "typography_text_transform": "uppercase",
+              "title_color": "#ffffff",
+              "_element_width": "auto",
+              "_background_background": "classic",
+              "_background_color": "#f34a23",
+              "_padding": {
+               "unit": "px",
+               "top": "5",
+               "right": "10",
+               "bottom": "5",
+               "left": "10",
+               "isLinked": false
+              }
+             },
+             "elements": [],
+             "widgetType": "heading"
+            }
+           ],
+           "isInner": true
+          }
+         ],
+         "isInner": true
+        },
+        {
+         "id": "a000022",
+         "elType": "widget",
+         "settings": {
+          "title": "Productividad",
+          "header_size": "h6",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "600",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.4
+          },
+          "typography_text_transform": "uppercase",
+          "title_color": "#f34a23",
+          "_margin": {
+           "unit": "px",
+           "top": "6",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": false
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "a000023",
+         "elType": "widget",
+         "settings": {
+          "title": "Cómo elegir el mobiliario de oficina para mejorar la productividad",
+          "header_size": "h3",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 28
+          },
+          "typography_font_size_tablet": {
+           "unit": "px",
+           "size": 25
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.3
+          },
+          "title_color": "#161616",
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "a000024",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>El mobiliario de oficina no es un detalle decorativo. Es una decisión estratégica que define cómo trabaja un equipo, cómo se siente y hasta dónde puede llegar su rendimiento. Elegi…</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "400",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 15
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.55
+          }
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a000025",
+         "elType": "widget",
+         "settings": {
+          "text": "Leer artículo",
+          "link": {
+           "url": "/investigacion/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "align": "left",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "600",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 2
+          },
+          "typography_text_transform": "uppercase",
+          "background_color": "#02010100",
+          "button_text_color": "#161616",
+          "border_border": "solid",
+          "border_width": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "2",
+           "left": "0",
+           "isLinked": false
+          },
+          "border_color": "#161616",
+          "border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          },
+          "text_padding": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "6",
+           "left": "0",
+           "isLinked": false
+          },
+          "hover_color": "#f34a23",
+          "button_background_hover_color": "#02010100",
+          "button_hover_border_color": "#f34a23",
+          "selected_icon": {
+           "value": "fas fa-arrow-right",
+           "library": "fa-solid"
+          },
+          "icon_align": "right",
+          "icon_indent": {
+           "unit": "px",
+           "size": 10
+          },
+          "_margin": {
+           "unit": "px",
+           "top": "10",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": false
+          }
+         },
+         "elements": [],
+         "widgetType": "button"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a000036",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "unit": "px",
+         "size": 14,
+         "column": "14",
+         "row": "14",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a000031",
+         "elType": "container",
+         "settings": {
+          "flex_direction": "column",
+          "flex_justify_content": "space-between",
+          "min_height": {
+           "unit": "px",
+           "size": 360
+          },
+          "min_height_tablet": {
+           "unit": "px",
+           "size": 320
+          },
+          "min_height_mobile": {
+           "unit": "px",
+           "size": 260
+          },
+          "background_background": "classic",
+          "background_image": {
+           "url": "https://crpozo.github.io/maach-site/assets/biblioteca-4.webp",
+           "id": "",
+           "size": "",
+           "alt": "Beneficios de invertir en mobiliario de oficina de alta calidad",
+           "source": "url"
+          },
+          "background_size": "cover",
+          "background_position": "center center",
+          "border_border": "solid",
+          "border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "border_color": "#e5e3e4",
+          "padding": {
+           "unit": "px",
+           "top": "14",
+           "right": "14",
+           "bottom": "14",
+           "left": "14",
+           "isLinked": false
+          }
+         },
+         "elements": [
+          {
+           "id": "a000028",
+           "elType": "container",
+           "settings": {
+            "flex_direction": "row",
+            "flex_justify_content": "flex-start"
+           },
+           "elements": [
+            {
+             "id": "a000027",
+             "elType": "widget",
+             "settings": {
+              "title": "BLOG · 02",
+              "header_size": "h6",
+              "typography_typography": "custom",
+              "typography_font_family": "Monoblock",
+              "typography_font_weight": "600",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 11
+              },
+              "typography_letter_spacing": {
+               "unit": "px",
+               "size": 1.2
+              },
+              "typography_text_transform": "uppercase",
+              "title_color": "#ffffff",
+              "_element_width": "auto",
+              "_background_background": "classic",
+              "_background_color": "#161616",
+              "_padding": {
+               "unit": "px",
+               "top": "5",
+               "right": "10",
+               "bottom": "5",
+               "left": "10",
+               "isLinked": false
+              }
+             },
+             "elements": [],
+             "widgetType": "heading"
+            }
+           ],
+           "isInner": true
+          },
+          {
+           "id": "a000030",
+           "elType": "container",
+           "settings": {
+            "flex_direction": "row",
+            "flex_justify_content": "flex-end"
+           },
+           "elements": [
+            {
+             "id": "a000029",
+             "elType": "widget",
+             "settings": {
+              "title": "08 min",
+              "header_size": "h6",
+              "typography_typography": "custom",
+              "typography_font_family": "Monoblock",
+              "typography_font_weight": "600",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 11
+              },
+              "typography_letter_spacing": {
+               "unit": "px",
+               "size": 1.2
+              },
+              "typography_text_transform": "uppercase",
+              "title_color": "#ffffff",
+              "_element_width": "auto",
+              "_background_background": "classic",
+              "_background_color": "#f34a23",
+              "_padding": {
+               "unit": "px",
+               "top": "5",
+               "right": "10",
+               "bottom": "5",
+               "left": "10",
+               "isLinked": false
+              }
+             },
+             "elements": [],
+             "widgetType": "heading"
+            }
+           ],
+           "isInner": true
+          }
+         ],
+         "isInner": true
+        },
+        {
+         "id": "a000032",
+         "elType": "widget",
+         "settings": {
+          "title": "Inversión",
+          "header_size": "h6",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "600",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.4
+          },
+          "typography_text_transform": "uppercase",
+          "title_color": "#f34a23",
+          "_margin": {
+           "unit": "px",
+           "top": "6",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": false
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "a000033",
+         "elType": "widget",
+         "settings": {
+          "title": "Beneficios de invertir en mobiliario de oficina de alta calidad",
+          "header_size": "h3",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 28
+          },
+          "typography_font_size_tablet": {
+           "unit": "px",
+           "size": 25
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.3
+          },
+          "title_color": "#161616",
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "a000034",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Muchas empresas tratan el mobiliario de oficina como un gasto. Es un error estratégico. Los muebles definen cómo trabajan las personas, cómo se sienten y cómo perciben su entorno.…</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "400",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 15
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.55
+          }
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a000035",
+         "elType": "widget",
+         "settings": {
+          "text": "Leer artículo",
+          "link": {
+           "url": "/investigacion/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "align": "left",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "600",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 2
+          },
+          "typography_text_transform": "uppercase",
+          "background_color": "#02010100",
+          "button_text_color": "#161616",
+          "border_border": "solid",
+          "border_width": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "2",
+           "left": "0",
+           "isLinked": false
+          },
+          "border_color": "#161616",
+          "border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          },
+          "text_padding": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "6",
+           "left": "0",
+           "isLinked": false
+          },
+          "hover_color": "#f34a23",
+          "button_background_hover_color": "#02010100",
+          "button_hover_border_color": "#f34a23",
+          "selected_icon": {
+           "value": "fas fa-arrow-right",
+           "library": "fa-solid"
+          },
+          "icon_align": "right",
+          "icon_indent": {
+           "unit": "px",
+           "size": 10
+          },
+          "_margin": {
+           "unit": "px",
+           "top": "10",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": false
+          }
+         },
+         "elements": [],
+         "widgetType": "button"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a000046",
+       "elType": "container",
+       "settings": {
+        "width": {
+         "unit": "%",
+         "size": 31.5
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 47
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "unit": "px",
+         "size": 14,
+         "column": "14",
+         "row": "14",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a000041",
+         "elType": "container",
+         "settings": {
+          "flex_direction": "column",
+          "flex_justify_content": "space-between",
+          "min_height": {
+           "unit": "px",
+           "size": 360
+          },
+          "min_height_tablet": {
+           "unit": "px",
+           "size": 320
+          },
+          "min_height_mobile": {
+           "unit": "px",
+           "size": 260
+          },
+          "background_background": "classic",
+          "background_image": {
+           "url": "https://crpozo.github.io/maach-site/assets/biblioteca-5.webp",
+           "id": "",
+           "size": "",
+           "alt": "Tendencias en mobiliario de oficina para espacios modernos",
+           "source": "url"
+          },
+          "background_size": "cover",
+          "background_position": "center center",
+          "border_border": "solid",
+          "border_width": {
+           "unit": "px",
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "isLinked": true
+          },
+          "border_color": "#e5e3e4",
+          "padding": {
+           "unit": "px",
+           "top": "14",
+           "right": "14",
+           "bottom": "14",
+           "left": "14",
+           "isLinked": false
+          }
+         },
+         "elements": [
+          {
+           "id": "a000038",
+           "elType": "container",
+           "settings": {
+            "flex_direction": "row",
+            "flex_justify_content": "flex-start"
+           },
+           "elements": [
+            {
+             "id": "a000037",
+             "elType": "widget",
+             "settings": {
+              "title": "BLOG · 03",
+              "header_size": "h6",
+              "typography_typography": "custom",
+              "typography_font_family": "Monoblock",
+              "typography_font_weight": "600",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 11
+              },
+              "typography_letter_spacing": {
+               "unit": "px",
+               "size": 1.2
+              },
+              "typography_text_transform": "uppercase",
+              "title_color": "#ffffff",
+              "_element_width": "auto",
+              "_background_background": "classic",
+              "_background_color": "#161616",
+              "_padding": {
+               "unit": "px",
+               "top": "5",
+               "right": "10",
+               "bottom": "5",
+               "left": "10",
+               "isLinked": false
+              }
+             },
+             "elements": [],
+             "widgetType": "heading"
+            }
+           ],
+           "isInner": true
+          },
+          {
+           "id": "a000040",
+           "elType": "container",
+           "settings": {
+            "flex_direction": "row",
+            "flex_justify_content": "flex-end"
+           },
+           "elements": [
+            {
+             "id": "a000039",
+             "elType": "widget",
+             "settings": {
+              "title": "09 min",
+              "header_size": "h6",
+              "typography_typography": "custom",
+              "typography_font_family": "Monoblock",
+              "typography_font_weight": "600",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 11
+              },
+              "typography_letter_spacing": {
+               "unit": "px",
+               "size": 1.2
+              },
+              "typography_text_transform": "uppercase",
+              "title_color": "#ffffff",
+              "_element_width": "auto",
+              "_background_background": "classic",
+              "_background_color": "#f34a23",
+              "_padding": {
+               "unit": "px",
+               "top": "5",
+               "right": "10",
+               "bottom": "5",
+               "left": "10",
+               "isLinked": false
+              }
+             },
+             "elements": [],
+             "widgetType": "heading"
+            }
+           ],
+           "isInner": true
+          }
+         ],
+         "isInner": true
+        },
+        {
+         "id": "a000042",
+         "elType": "widget",
+         "settings": {
+          "title": "Tendencias",
+          "header_size": "h6",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "600",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.4
+          },
+          "typography_text_transform": "uppercase",
+          "title_color": "#f34a23",
+          "_margin": {
+           "unit": "px",
+           "top": "6",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": false
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "a000043",
+         "elType": "widget",
+         "settings": {
+          "title": "Tendencias en mobiliario de oficina para espacios modernos",
+          "header_size": "h3",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 28
+          },
+          "typography_font_size_tablet": {
+           "unit": "px",
+           "size": 25
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 22
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.3
+          },
+          "title_color": "#161616",
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "a000044",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>El mundo del trabajo está cambiando, y los espacios de trabajo también. Las nuevas tendencias en mobiliario de oficina no siguen modas: responden a cómo trabajan realmente las pers…</p>",
+          "text_color": "#6f6f6f",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "400",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 15
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.55
+          }
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a000045",
+         "elType": "widget",
+         "settings": {
+          "text": "Leer artículo",
+          "link": {
+           "url": "/investigacion/",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "align": "left",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "600",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 2
+          },
+          "typography_text_transform": "uppercase",
+          "background_color": "#02010100",
+          "button_text_color": "#161616",
+          "border_border": "solid",
+          "border_width": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "2",
+           "left": "0",
+           "isLinked": false
+          },
+          "border_color": "#161616",
+          "border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          },
+          "text_padding": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "6",
+           "left": "0",
+           "isLinked": false
+          },
+          "hover_color": "#f34a23",
+          "button_background_hover_color": "#02010100",
+          "button_hover_border_color": "#f34a23",
+          "selected_icon": {
+           "value": "fas fa-arrow-right",
+           "library": "fa-solid"
+          },
+          "icon_align": "right",
+          "icon_indent": {
+           "unit": "px",
+           "size": 10
+          },
+          "_margin": {
+           "unit": "px",
+           "top": "10",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": false
+          }
+         },
+         "elements": [],
+         "widgetType": "button"
+        }
+       ],
+       "isInner": true
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "a000052",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1100
+    },
+    "flex_direction": "column",
+    "flex_align_items": "center",
+    "flex_gap": {
+     "unit": "px",
+     "size": 28,
+     "column": "28",
+     "row": "28",
+     "isLinked": true
+    },
+    "background_background": "classic",
+    "background_color": "#161616",
+    "padding": {
+     "unit": "px",
+     "top": "128",
+     "right": "48",
+     "bottom": "128",
+     "left": "48",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "unit": "px",
+     "top": "80",
+     "right": "32",
+     "bottom": "80",
+     "left": "32",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "56",
+     "right": "24",
+     "bottom": "56",
+     "left": "24",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "a000049",
+     "elType": "widget",
+     "settings": {
+      "title": "Manifiesto · MAACH 2026",
+      "header_size": "h6",
+      "typography_typography": "custom",
+      "typography_font_family": "Monoblock",
+      "typography_font_weight": "600",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 11
+      },
+      "typography_letter_spacing": {
+       "unit": "px",
+       "size": 1.4
+      },
+      "typography_text_transform": "uppercase",
+      "title_color": "#a9aaac",
+      "align": "center"
+     },
+     "elements": [],
+     "widgetType": "heading"
+    },
+    {
+     "id": "a000050",
+     "elType": "widget",
+     "settings": {
+      "title": "\"Investigamos el trabajo real para diseñar<span style=\"color:#f34a23\"> mobiliario que responda</span> a sus exigencias verdaderas — <span style=\"color:#a9aaac\">no a tendencias estéticas.\"</span>",
+      "header_size": "h2",
+      "typography_typography": "custom",
+      "typography_font_family": "Clash Grotesk",
+      "typography_font_weight": "500",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 54
+      },
+      "typography_font_size_tablet": {
+       "unit": "px",
+       "size": 40
+      },
+      "typography_font_size_mobile": {
+       "unit": "px",
+       "size": 28
+      },
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1.15
+      },
+      "typography_letter_spacing": {
+       "unit": "px",
+       "size": -0.5
+      },
+      "title_color": "#ffffff",
+      "typography_text_transform": "uppercase",
+      "align": "center"
+     },
+     "elements": [],
+     "widgetType": "heading"
+    },
+    {
+     "id": "a000051",
+     "elType": "widget",
+     "settings": {
+      "title": "— Equipo MAACH Research",
+      "header_size": "h6",
+      "typography_typography": "custom",
+      "typography_font_family": "Monoblock",
+      "typography_font_weight": "600",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 11
+      },
+      "typography_letter_spacing": {
+       "unit": "px",
+       "size": 1.4
+      },
+      "typography_text_transform": "uppercase",
+      "title_color": "#a9aaac",
+      "align": "center"
+     },
+     "elements": [],
+     "widgetType": "heading"
+    }
+   ],
+   "isInner": false
+  }
+ ],
+ "page_settings": {
+  "hide_title": "yes",
+  "template": "elementor_header_footer"
+ },
+ "version": "0.4",
+ "title": "MAACH — Investigación",
+ "type": "page"
+}

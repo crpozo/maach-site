@@ -1,0 +1,631 @@
+{
+ "content": [
+  {
+   "id": "a000001",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {"unit": "px", "size": 1600},
+    "background_background": "classic",
+    "background_color": "#161616",
+    "flex_direction": "column",
+    "flex_gap": {"unit": "px", "size": 0, "column": "0", "row": "0", "isLinked": true},
+    "padding": {"unit": "px", "top": "96", "right": "48", "bottom": "48", "left": "48", "isLinked": false},
+    "padding_tablet": {"unit": "px", "top": "64", "right": "32", "bottom": "32", "left": "32", "isLinked": false},
+    "padding_mobile": {"unit": "px", "top": "48", "right": "24", "bottom": "24", "left": "24", "isLinked": false}
+   },
+   "elements": [
+    {
+     "id": "a000002",
+     "elType": "container",
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "flex_wrap": "wrap",
+      "flex_align_items": "flex-end",
+      "flex_justify_content": "space-between",
+      "flex_gap": {"unit": "px", "size": 48, "column": "48", "row": "40", "isLinked": false},
+      "padding": {"unit": "px", "top": "0", "right": "0", "bottom": "64", "left": "0", "isLinked": false},
+      "padding_mobile": {"unit": "px", "top": "0", "right": "0", "bottom": "48", "left": "0", "isLinked": false}
+     },
+     "elements": [
+      {
+       "id": "a000003",
+       "elType": "container",
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "flex_gap": {"unit": "px", "size": 16, "column": "16", "row": "16", "isLinked": true},
+        "width": {"unit": "%", "size": 56},
+        "width_tablet": {"unit": "%", "size": 100},
+        "width_mobile": {"unit": "%", "size": 100}
+       },
+       "elements": [
+        {
+         "id": "a000004",
+         "elType": "widget",
+         "settings": {
+          "title": "MAACH / 2026",
+          "header_size": "h6",
+          "title_color": "#f34a23",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {"unit": "px", "size": 11},
+          "typography_letter_spacing": {"unit": "px", "size": 0.9},
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "a000005",
+         "elType": "widget",
+         "settings": {
+          "title": "Ingeniería <span style=\"color:#f34a23\">para el trabajo</span><br>Diseñado para durar",
+          "header_size": "h2",
+          "title_color": "#ffffff",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "500",
+          "typography_font_size": {"unit": "px", "size": 60},
+          "typography_font_size_tablet": {"unit": "px", "size": 44},
+          "typography_font_size_mobile": {"unit": "px", "size": 32},
+          "typography_line_height": {"unit": "em", "size": 1.08},
+          "typography_letter_spacing": {"unit": "px", "size": -0.6},
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a000006",
+       "elType": "container",
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "flex_align_items": "flex-start",
+        "flex_gap": {"unit": "px", "size": 24, "column": "24", "row": "24", "isLinked": true},
+        "width": {"unit": "%", "size": 38},
+        "width_tablet": {"unit": "%", "size": 100},
+        "width_mobile": {"unit": "%", "size": 100}
+       },
+       "elements": [
+        {
+         "id": "a000007",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Mobiliario corporativo diseñado para el trabajo real. Diseño funcional, ingeniería aplicada y fabricación industrial.</p>",
+          "text_color": "#a9aaac",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "400",
+          "typography_font_size": {"unit": "px", "size": 18},
+          "typography_font_size_mobile": {"unit": "px", "size": 16},
+          "typography_line_height": {"unit": "em", "size": 1.5}
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a000008",
+         "elType": "widget",
+         "settings": {
+          "text": "Iniciar proyecto",
+          "align": "left",
+          "link": {"url": "/contacto/", "is_external": "", "nofollow": ""},
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "600",
+          "typography_font_size": {"unit": "px", "size": 11},
+          "typography_letter_spacing": {"unit": "px", "size": 2},
+          "typography_text_transform": "uppercase",
+          "background_color": "#ffffff",
+          "button_text_color": "#161616",
+          "border_border": "solid",
+          "border_width": {"unit": "px", "top": "1", "right": "1", "bottom": "1", "left": "1", "isLinked": true},
+          "border_color": "#ffffff",
+          "border_radius": {"unit": "px", "top": "0", "right": "0", "bottom": "0", "left": "0", "isLinked": true},
+          "text_padding": {"unit": "px", "top": "16", "right": "28", "bottom": "16", "left": "28", "isLinked": false},
+          "hover_color": "#ffffff",
+          "button_background_hover_color": "#02010100",
+          "button_hover_border_color": "#ffffff",
+          "selected_icon": {"value": "fas fa-arrow-right", "library": "fa-solid"},
+          "icon_align": "right",
+          "icon_indent": {"unit": "px", "size": 12}
+         },
+         "elements": [],
+         "widgetType": "button"
+        }
+       ],
+       "isInner": true
+      }
+     ],
+     "isInner": true
+    },
+    {
+     "id": "a000009",
+     "elType": "widget",
+     "settings": {
+      "color": "rgba(228,226,227,0.18)",
+      "weight": {"unit": "px", "size": 1},
+      "gap": {"unit": "px", "size": 0}
+     },
+     "elements": [],
+     "widgetType": "divider"
+    },
+    {
+     "id": "a00000a",
+     "elType": "container",
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "flex_wrap": "wrap",
+      "flex_gap": {"unit": "px", "size": 48, "column": "48", "row": "40", "isLinked": false},
+      "padding": {"unit": "px", "top": "64", "right": "0", "bottom": "64", "left": "0", "isLinked": false},
+      "padding_mobile": {"unit": "px", "top": "48", "right": "0", "bottom": "48", "left": "0", "isLinked": false}
+     },
+     "elements": [
+      {
+       "id": "a00000b",
+       "elType": "container",
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "flex_align_items": "flex-start",
+        "flex_gap": {"unit": "px", "size": 24, "column": "24", "row": "24", "isLinked": true},
+        "width": {"unit": "%", "size": 30},
+        "width_tablet": {"unit": "%", "size": 100},
+        "width_mobile": {"unit": "%", "size": 100}
+       },
+       "elements": [
+        {
+         "id": "a00000c",
+         "elType": "widget",
+         "settings": {
+          "image": {"url": "https://crpozo.github.io/maach-site/assets/maach-logo-transparent.png", "id": "", "size": "", "alt": "MAACH", "source": "url"},
+          "image_size": "full",
+          "align": "left",
+          "width": {"unit": "px", "size": 140}
+         },
+         "elements": [],
+         "widgetType": "image"
+        },
+        {
+         "id": "a00000d",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Quito · Ecuador</p>",
+          "text_color": "#a9aaac",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "400",
+          "typography_font_size": {"unit": "px", "size": 16},
+          "typography_line_height": {"unit": "em", "size": 1.5}
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a00000e",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p><a href=\"mailto:ventas@maach.ec\" style=\"color:#a9aaac\">ventas@maach.ec</a><br><a href=\"tel:+593997200455\" style=\"color:#a9aaac\">+593 99 720 0455</a></p>",
+          "text_color": "#a9aaac",
+          "typography_typography": "custom",
+          "typography_font_family": "Clash Grotesk",
+          "typography_font_weight": "400",
+          "typography_font_size": {"unit": "px", "size": 16},
+          "typography_line_height": {"unit": "em", "size": 1.5}
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "a00000f",
+         "elType": "container",
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "row",
+          "flex_gap": {"unit": "px", "size": 8, "column": "8", "row": "8", "isLinked": true},
+          "margin": {"unit": "px", "top": "8", "right": "0", "bottom": "0", "left": "0", "isLinked": false}
+         },
+         "elements": [
+          {
+           "id": "a000010",
+           "elType": "container",
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "flex_justify_content": "center",
+            "flex_align_items": "center",
+            "width": {"unit": "px", "size": 40},
+            "min_height": {"unit": "px", "size": 40},
+            "border_border": "solid",
+            "border_width": {"unit": "px", "top": "1", "right": "1", "bottom": "1", "left": "1", "isLinked": true},
+            "border_color": "rgba(228,226,227,0.18)"
+           },
+           "elements": [
+            {
+             "id": "a000011",
+             "elType": "widget",
+             "settings": {
+              "title": "IG",
+              "header_size": "h6",
+              "align": "center",
+              "title_color": "#ffffff",
+              "typography_typography": "custom",
+              "typography_font_family": "Monoblock",
+              "typography_font_weight": "500",
+              "typography_font_size": {"unit": "px", "size": 11},
+              "typography_letter_spacing": {"unit": "px", "size": 0.9},
+              "typography_text_transform": "uppercase"
+             },
+             "elements": [],
+             "widgetType": "heading"
+            }
+           ],
+           "isInner": true
+          },
+          {
+           "id": "a000012",
+           "elType": "container",
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "flex_justify_content": "center",
+            "flex_align_items": "center",
+            "width": {"unit": "px", "size": 40},
+            "min_height": {"unit": "px", "size": 40},
+            "border_border": "solid",
+            "border_width": {"unit": "px", "top": "1", "right": "1", "bottom": "1", "left": "1", "isLinked": true},
+            "border_color": "rgba(228,226,227,0.18)"
+           },
+           "elements": [
+            {
+             "id": "a000013",
+             "elType": "widget",
+             "settings": {
+              "title": "Li",
+              "header_size": "h6",
+              "align": "center",
+              "title_color": "#ffffff",
+              "typography_typography": "custom",
+              "typography_font_family": "Monoblock",
+              "typography_font_weight": "500",
+              "typography_font_size": {"unit": "px", "size": 11},
+              "typography_letter_spacing": {"unit": "px", "size": 0.9},
+              "typography_text_transform": "uppercase"
+             },
+             "elements": [],
+             "widgetType": "heading"
+            }
+           ],
+           "isInner": true
+          },
+          {
+           "id": "a000014",
+           "elType": "container",
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "flex_justify_content": "center",
+            "flex_align_items": "center",
+            "width": {"unit": "px", "size": 40},
+            "min_height": {"unit": "px", "size": 40},
+            "border_border": "solid",
+            "border_width": {"unit": "px", "top": "1", "right": "1", "bottom": "1", "left": "1", "isLinked": true},
+            "border_color": "rgba(228,226,227,0.18)"
+           },
+           "elements": [
+            {
+             "id": "a000015",
+             "elType": "widget",
+             "settings": {
+              "title": "Be",
+              "header_size": "h6",
+              "align": "center",
+              "title_color": "#ffffff",
+              "typography_typography": "custom",
+              "typography_font_family": "Monoblock",
+              "typography_font_weight": "500",
+              "typography_font_size": {"unit": "px", "size": 11},
+              "typography_letter_spacing": {"unit": "px", "size": 0.9},
+              "typography_text_transform": "uppercase"
+             },
+             "elements": [],
+             "widgetType": "heading"
+            }
+           ],
+           "isInner": true
+          },
+          {
+           "id": "a000016",
+           "elType": "container",
+           "settings": {
+            "content_width": "full",
+            "flex_direction": "column",
+            "flex_justify_content": "center",
+            "flex_align_items": "center",
+            "width": {"unit": "px", "size": 40},
+            "min_height": {"unit": "px", "size": 40},
+            "border_border": "solid",
+            "border_width": {"unit": "px", "top": "1", "right": "1", "bottom": "1", "left": "1", "isLinked": true},
+            "border_color": "rgba(228,226,227,0.18)"
+           },
+           "elements": [
+            {
+             "id": "a000017",
+             "elType": "widget",
+             "settings": {
+              "title": "Pi",
+              "header_size": "h6",
+              "align": "center",
+              "title_color": "#ffffff",
+              "typography_typography": "custom",
+              "typography_font_family": "Monoblock",
+              "typography_font_weight": "500",
+              "typography_font_size": {"unit": "px", "size": 11},
+              "typography_letter_spacing": {"unit": "px", "size": 0.9},
+              "typography_text_transform": "uppercase"
+             },
+             "elements": [],
+             "widgetType": "heading"
+            }
+           ],
+           "isInner": true
+          }
+         ],
+         "isInner": true
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a000018",
+       "elType": "container",
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "flex_gap": {"unit": "px", "size": 24, "column": "24", "row": "24", "isLinked": true},
+        "width": {"unit": "%", "size": 20},
+        "width_tablet": {"unit": "%", "size": 30},
+        "width_mobile": {"unit": "%", "size": 100}
+       },
+       "elements": [
+        {
+         "id": "a000019",
+         "elType": "widget",
+         "settings": {
+          "title": "Productos",
+          "header_size": "h4",
+          "title_color": "#a9aaac",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {"unit": "px", "size": 11},
+          "typography_letter_spacing": {"unit": "px", "size": 0.9},
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "a00001a",
+         "elType": "widget",
+         "settings": {
+          "icon_list": [
+           {"_id": "b000001", "text": "Sillonería", "link": {"url": "/productos/#silloneria", "is_external": "", "nofollow": ""}, "selected_icon": {"value": "", "library": ""}},
+           {"_id": "b000002", "text": "Escritorios", "link": {"url": "/productos/#escritorios", "is_external": "", "nofollow": ""}, "selected_icon": {"value": "", "library": ""}},
+           {"_id": "b000003", "text": "Mesas", "link": {"url": "/productos/#mesas", "is_external": "", "nofollow": ""}, "selected_icon": {"value": "", "library": ""}},
+           {"_id": "b000004", "text": "Almacenamiento", "link": {"url": "/productos/#almacenamiento", "is_external": "", "nofollow": ""}, "selected_icon": {"value": "", "library": ""}},
+           {"_id": "b000005", "text": "Divisiones de Ambientes", "link": {"url": "/productos/#divisiones", "is_external": "", "nofollow": ""}, "selected_icon": {"value": "", "library": ""}},
+           {"_id": "b000006", "text": "Recepciones", "link": {"url": "/productos/#recepciones", "is_external": "", "nofollow": ""}, "selected_icon": {"value": "", "library": ""}}
+          ],
+          "space_between": {"unit": "px", "size": 14},
+          "text_color": "#ffffff",
+          "text_color_hover": "#f34a23",
+          "icon_typography_typography": "custom",
+          "icon_typography_font_family": "Clash Grotesk",
+          "icon_typography_font_weight": "400",
+          "icon_typography_font_size": {"unit": "px", "size": 16},
+          "icon_typography_line_height": {"unit": "em", "size": 1.4}
+         },
+         "elements": [],
+         "widgetType": "icon-list"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a00001b",
+       "elType": "container",
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "flex_gap": {"unit": "px", "size": 24, "column": "24", "row": "24", "isLinked": true},
+        "width": {"unit": "%", "size": 20},
+        "width_tablet": {"unit": "%", "size": 30},
+        "width_mobile": {"unit": "%", "size": 100}
+       },
+       "elements": [
+        {
+         "id": "a00001c",
+         "elType": "widget",
+         "settings": {
+          "title": "Compañía",
+          "header_size": "h4",
+          "title_color": "#a9aaac",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {"unit": "px", "size": 11},
+          "typography_letter_spacing": {"unit": "px", "size": 0.9},
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "a00001d",
+         "elType": "widget",
+         "settings": {
+          "icon_list": [
+           {"_id": "b000007", "text": "Sobre MAACH", "link": {"url": "/sobre-maach/", "is_external": "", "nofollow": ""}, "selected_icon": {"value": "", "library": ""}},
+           {"_id": "b000008", "text": "Investigación", "link": {"url": "/investigacion/", "is_external": "", "nofollow": ""}, "selected_icon": {"value": "", "library": ""}},
+           {"_id": "b000009", "text": "Portafolio", "link": {"url": "/portafolio/", "is_external": "", "nofollow": ""}, "selected_icon": {"value": "", "library": ""}},
+           {"_id": "b00000a", "text": "Contacto", "link": {"url": "/contacto/", "is_external": "", "nofollow": ""}, "selected_icon": {"value": "", "library": ""}}
+          ],
+          "space_between": {"unit": "px", "size": 14},
+          "text_color": "#ffffff",
+          "text_color_hover": "#f34a23",
+          "icon_typography_typography": "custom",
+          "icon_typography_font_family": "Clash Grotesk",
+          "icon_typography_font_weight": "400",
+          "icon_typography_font_size": {"unit": "px", "size": 16},
+          "icon_typography_line_height": {"unit": "em", "size": 1.4}
+         },
+         "elements": [],
+         "widgetType": "icon-list"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a00001e",
+       "elType": "container",
+       "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "flex_gap": {"unit": "px", "size": 24, "column": "24", "row": "24", "isLinked": true},
+        "width": {"unit": "%", "size": 20},
+        "width_tablet": {"unit": "%", "size": 30},
+        "width_mobile": {"unit": "%", "size": 100}
+       },
+       "elements": [
+        {
+         "id": "a00001f",
+         "elType": "widget",
+         "settings": {
+          "title": "Recursos",
+          "header_size": "h4",
+          "title_color": "#a9aaac",
+          "typography_typography": "custom",
+          "typography_font_family": "Monoblock",
+          "typography_font_weight": "500",
+          "typography_font_size": {"unit": "px", "size": 11},
+          "typography_letter_spacing": {"unit": "px", "size": 0.9},
+          "typography_text_transform": "uppercase"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "a000020",
+         "elType": "widget",
+         "settings": {
+          "icon_list": [
+           {"_id": "b00000b", "text": "Biblioteca de documentos", "link": {"url": "/recursos-diseno-biblioteca/", "is_external": "", "nofollow": ""}, "selected_icon": {"value": "", "library": ""}},
+           {"_id": "b00000c", "text": "Modelos 3D / CAD", "link": {"url": "/recursos-diseno-biblioteca/", "is_external": "", "nofollow": ""}, "selected_icon": {"value": "", "library": ""}},
+           {"_id": "b00000d", "text": "Fichas técnicas", "link": {"url": "/recursos-diseno-biblioteca/", "is_external": "", "nofollow": ""}, "selected_icon": {"value": "", "library": ""}},
+           {"_id": "b00000e", "text": "Materiales y acabados", "link": {"url": "/recursos-diseno-biblioteca/", "is_external": "", "nofollow": ""}, "selected_icon": {"value": "", "library": ""}}
+          ],
+          "space_between": {"unit": "px", "size": 14},
+          "text_color": "#ffffff",
+          "text_color_hover": "#f34a23",
+          "icon_typography_typography": "custom",
+          "icon_typography_font_family": "Clash Grotesk",
+          "icon_typography_font_weight": "400",
+          "icon_typography_font_size": {"unit": "px", "size": 16},
+          "icon_typography_line_height": {"unit": "em", "size": 1.4}
+         },
+         "elements": [],
+         "widgetType": "icon-list"
+        }
+       ],
+       "isInner": true
+      }
+     ],
+     "isInner": true
+    },
+    {
+     "id": "a000021",
+     "elType": "widget",
+     "settings": {
+      "color": "rgba(228,226,227,0.18)",
+      "weight": {"unit": "px", "size": 1},
+      "gap": {"unit": "px", "size": 0}
+     },
+     "elements": [],
+     "widgetType": "divider"
+    },
+    {
+     "id": "a000022",
+     "elType": "container",
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "flex_wrap": "wrap",
+      "flex_justify_content": "space-between",
+      "flex_align_items": "center",
+      "flex_gap": {"unit": "px", "size": 16, "column": "16", "row": "16", "isLinked": true},
+      "padding": {"unit": "px", "top": "32", "right": "0", "bottom": "0", "left": "0", "isLinked": false}
+     },
+     "elements": [
+      {
+       "id": "a000023",
+       "elType": "widget",
+       "settings": {
+        "title": "© 2026 MAACH · Diseño Industrial, Rendimiento Real",
+        "header_size": "h6",
+        "title_color": "#a9aaac",
+        "_element_width": "auto",
+        "typography_typography": "custom",
+        "typography_font_family": "Monoblock",
+        "typography_font_weight": "500",
+        "typography_font_size": {"unit": "px", "size": 11},
+        "typography_letter_spacing": {"unit": "px", "size": 0.9},
+        "typography_text_transform": "uppercase"
+       },
+       "elements": [],
+       "widgetType": "heading"
+      },
+      {
+       "id": "a000024",
+       "elType": "widget",
+       "settings": {
+        "view": "inline",
+        "icon_list": [
+         {"_id": "b00000f", "text": "Términos", "link": {"url": "#", "is_external": "", "nofollow": ""}, "selected_icon": {"value": "", "library": ""}},
+         {"_id": "b000010", "text": "Privacidad", "link": {"url": "#", "is_external": "", "nofollow": ""}, "selected_icon": {"value": "", "library": ""}},
+         {"_id": "b000011", "text": "Cookies", "link": {"url": "#", "is_external": "", "nofollow": ""}, "selected_icon": {"value": "", "library": ""}}
+        ],
+        "space_between": {"unit": "px", "size": 32},
+        "text_color": "#a9aaac",
+        "text_color_hover": "#ffffff",
+        "_element_width": "auto",
+        "icon_typography_typography": "custom",
+        "icon_typography_font_family": "Monoblock",
+        "icon_typography_font_weight": "500",
+        "icon_typography_font_size": {"unit": "px", "size": 11},
+        "icon_typography_letter_spacing": {"unit": "px", "size": 0.9},
+        "icon_typography_text_transform": "uppercase"
+       },
+       "elements": [],
+       "widgetType": "icon-list"
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  }
+ ],
+ "page_settings": {},
+ "version": "0.4",
+ "title": "MAACH — Footer",
+ "type": "section"
+}
