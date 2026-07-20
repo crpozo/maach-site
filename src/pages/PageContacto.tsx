@@ -172,7 +172,7 @@ export default function PageContacto() {
               }}
             >
               <img
-                src={asset('proyectos/wesco/03.webp')}
+                src={asset('brand/contacto-obra.webp')}
                 alt=""
                 aria-hidden
                 style={{

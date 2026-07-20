@@ -23,7 +23,7 @@ export default function PageHome() {
       >
         {/* Background photo */}
         <img
-          src={asset("biblioteca-1.webp")}
+          src={asset("brand/hero-red-room.webp")}
           alt=""
           aria-hidden
           style={{
@@ -198,12 +198,12 @@ export default function PageHome() {
             }}
           >
             {[
-              { id: '01', slug: 'silloneria',    name: t('home.cat.01.name'), desc: t('home.cat.01.desc'), img: asset('biblioteca-1.webp') },
-              { id: '02', slug: 'escritorios',   name: t('home.cat.02.name'), desc: t('home.cat.02.desc'), img: asset('biblioteca-2.webp') },
-              { id: '03', slug: 'mesas',         name: t('home.cat.03.name'), desc: t('home.cat.03.desc'), img: asset('perspectiva-2.webp') },
-              { id: '04', slug: 'almacenamiento', name: t('home.cat.04.name'), desc: t('home.cat.04.desc'), img: asset('biblioteca-3.webp') },
-              { id: '05', slug: 'divisiones',    name: t('home.cat.05.name'), desc: t('home.cat.05.desc'), img: asset('biblioteca-4.webp') },
-              { id: '06', slug: 'recepciones',   name: t('home.cat.06.name'), desc: t('home.cat.06.desc'), img: asset('biblioteca-5.webp') },
+              { id: '01', slug: 'silloneria',    name: t('home.cat.01.name'), desc: t('home.cat.01.desc'), img: asset('brand/cat-silloneria.webp') },
+              { id: '02', slug: 'escritorios',   name: t('home.cat.02.name'), desc: t('home.cat.02.desc'), img: asset('brand/cat-escritorios.webp') },
+              { id: '03', slug: 'mesas',         name: t('home.cat.03.name'), desc: t('home.cat.03.desc'), img: asset('brand/cat-mesas.webp') },
+              { id: '04', slug: 'almacenamiento', name: t('home.cat.04.name'), desc: t('home.cat.04.desc'), img: asset('brand/cat-almacenamiento.webp') },
+              { id: '05', slug: 'divisiones',    name: t('home.cat.05.name'), desc: t('home.cat.05.desc'), img: asset('brand/cat-divisiones.webp') },
+              { id: '06', slug: 'recepciones',   name: t('home.cat.06.name'), desc: t('home.cat.06.desc'), img: asset('brand/cat-recepciones.webp') },
             ].map((cat, i) => {
               return (
                 <Link
@@ -463,10 +463,10 @@ export default function PageHome() {
             }}
           >
             {[
-              { n: '01', img: asset('bg-investigacion.webp'), title: t('home.planta.01.title'), body: t('home.planta.01.body') },
-              { n: '02', img: asset('perspectiva-2.webp'), title: t('home.planta.02.title'), body: t('home.planta.02.body') },
-              { n: '03', img: asset('biblioteca-4.webp'), title: t('home.planta.03.title'), body: t('home.planta.03.body') },
-              { n: '04', img: asset('biblioteca-5.webp'), title: t('home.planta.04.title'), body: t('home.planta.04.body') },
+              { n: '01', img: asset('brand/planta-corte-cnc.webp'), title: t('home.planta.01.title'), body: t('home.planta.01.body') },
+              { n: '02', img: asset('brand/planta-soldadura.webp'), title: t('home.planta.02.title'), body: t('home.planta.02.body') },
+              { n: '03', img: asset('brand/planta-pintura.webp'), title: t('home.planta.03.title'), body: t('home.planta.03.body') },
+              { n: '04', img: asset('brand/planta-ensamble.webp'), title: t('home.planta.04.title'), body: t('home.planta.04.body') },
             ].map((p) => (
               <div
                 key={p.n}

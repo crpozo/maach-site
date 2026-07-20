@@ -46,7 +46,7 @@ export default function PageAbout() {
       >
         {/* Background photo */}
         <img
-          src={asset('biblioteca-1.webp')}
+          src={asset('brand/about-hero-chairs.webp')}
           alt=""
           aria-hidden
           style={{
@@ -398,7 +398,7 @@ export default function PageAbout() {
                 }}
               >
                 <img
-                  src={asset('biblioteca-4.webp')}
+                  src={asset('brand/about-nosotros.webp')}
                   alt=""
                   style={{
                     position: 'absolute',
@@ -673,7 +673,7 @@ export default function PageAbout() {
               }}
             >
               <img
-                src={asset('biblioteca-3.webp')}
+                src={asset('brand/about-historia.webp')}
                 alt=""
                 style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
               />
@@ -769,10 +769,10 @@ export default function PageAbout() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 8 }}>
             {[
-              { n: '01', img: asset('bg-investigacion.webp'), title: t('home.planta.01.title'), body: t('home.planta.01.body') },
-              { n: '02', img: asset('perspectiva-2.webp'), title: t('home.planta.02.title'), body: t('home.planta.02.body') },
-              { n: '03', img: asset('biblioteca-4.webp'), title: t('home.planta.03.title'), body: t('home.planta.03.body') },
-              { n: '04', img: asset('biblioteca-5.webp'), title: t('home.planta.04.title'), body: t('home.planta.04.body') },
+              { n: '01', img: asset('brand/planta-corte-cnc.webp'), title: t('home.planta.01.title'), body: t('home.planta.01.body') },
+              { n: '02', img: asset('brand/planta-soldadura.webp'), title: t('home.planta.02.title'), body: t('home.planta.02.body') },
+              { n: '03', img: asset('brand/planta-pintura.webp'), title: t('home.planta.03.title'), body: t('home.planta.03.body') },
+              { n: '04', img: asset('brand/planta-ensamble.webp'), title: t('home.planta.04.title'), body: t('home.planta.04.body') },
             ].map((p) => (
               <div
                 key={p.n}

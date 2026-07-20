@@ -107,7 +107,7 @@ export const BLOGS: Blog[] = [
       secondaryLabel: 'Solicita asesoría personalizada',
       secondaryHref: '/contacto',
     },
-    img: 'biblioteca-3.webp',
+    img: 'brand/blog-productividad.webp',
     readTime: '06 min',
   },
 
@@ -185,7 +185,7 @@ export const BLOGS: Blog[] = [
       secondaryLabel: 'Solicita asesoría personalizada',
       secondaryHref: '/contacto',
     },
-    img: 'biblioteca-4.webp',
+    img: 'brand/blog-calidad.webp',
     readTime: '08 min',
   },
 
@@ -274,7 +274,7 @@ export const BLOGS: Blog[] = [
       secondaryLabel: 'Solicita asesoría personalizada',
       secondaryHref: '/contacto',
     },
-    img: 'biblioteca-5.webp',
+    img: 'brand/blog-tendencias.webp',
     readTime: '09 min',
   },
 ];

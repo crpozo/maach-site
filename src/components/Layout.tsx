@@ -165,7 +165,7 @@ function MegaMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
             }}
           >
             <img
-              src={asset("biblioteca-1.webp")}
+              src={asset("brand/megamenu-silloneria.webp")}
               alt="Catálogo MAACH"
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
