@@ -69,21 +69,6 @@ export default function PageAbout() {
             zIndex: 1,
           }}
         />
-        {/* Texture overlay on the hero image — same pattern as home hero */}
-        <div
-          aria-hidden
-          style={{
-            position: 'absolute',
-            inset: 0,
-            zIndex: 1,
-            opacity: 0.22,
-            pointerEvents: 'none',
-            backgroundImage: `url(${asset('hero-patron.png')})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-          }}
-        />
         {/* Bold orange edge bar */}
         <div
           aria-hidden

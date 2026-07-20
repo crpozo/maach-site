@@ -75,21 +75,6 @@ export default function PageCategory() {
             zIndex: 1,
           }}
         />
-        {/* Texture overlay — distinct per category */}
-        <div
-          aria-hidden
-          style={{
-            position: 'absolute',
-            inset: 0,
-            zIndex: 1,
-            opacity: 0.16,
-            pointerEvents: 'none',
-            backgroundImage: `url(${asset('texture-5.png')})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-          }}
-        />
         {/* Orange edge bar */}
         <div
           aria-hidden
