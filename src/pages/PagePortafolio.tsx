@@ -27,15 +27,7 @@ export default function PagePortafolio() {
       year: '2025',
       img: asset('proyectos/cpn/01.webp'),
     },
-    {
-      id: '02',
-      title: 'Palladium',
-      location: 'Quito, EC',
-      scope: 'Estaciones operativas, mesas de juntas y zonas privadas',
-      area: '1,200 m²',
-      year: '2024',
-      img: asset('proyectos/palladium/00.webp'),
-    },
+    // Palladium ('02') está oculto de toda la web por pedido del cliente.
     {
       id: '03',
       title: 'Wesco',
@@ -43,6 +35,13 @@ export default function PagePortafolio() {
       scope: 'Edificio administrativo · Mobiliario estándar y a medida',
       year: '2026',
       img: asset('proyectos/wesco/01.webp'),
+    },
+    {
+      id: '06',
+      title: 'CAME',
+      location: 'Quito, EC',
+      scope: 'Oficinas corporativas · Mobiliario estándar y a medida',
+      img: asset('proyectos/came/01.webp'),
     },
   ];
 

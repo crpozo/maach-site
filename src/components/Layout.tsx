@@ -48,10 +48,11 @@ const NAV_LINKS: { key: string; path: string; mega?: boolean; submenu?: boolean 
   { key: 'nav.contacto', path: '/contacto' },
 ];
 
+// Palladium ('02') está oculto de toda la web por pedido del cliente.
 export const PROJECTS: { id: string; name: string; status?: 'paused' }[] = [
   { id: '01', name: 'CPN' },
-  { id: '02', name: 'Palladium' },
   { id: '03', name: 'Wesco' },
+  { id: '06', name: 'CAME' },
 ];
 
 function MegaMenu({ open, onClose }: { open: boolean; onClose: () => void }) {

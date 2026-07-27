@@ -1,8 +1,8 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { asset } from '../lib/asset';
 import { Link, useParams } from 'react-router-dom';
 import { Layout } from '../components/Layout';
-import { IconArrow, IconClose, IconChevronRight } from '../components/icons';
+import { IconArrow, IconClose, IconChevronRight, IconPlus } from '../components/icons';
 
 type ProjectContent = {
   desafio: string[];
@@ -49,34 +49,7 @@ const DATA: Record<string, ProjectData> = {
       ],
     },
   },
-  '02': {
-    title: 'Palladium',
-    hero: asset('proyectos/palladium/00.webp'),
-    gallery: [
-      asset('proyectos/palladium/05.webp'),
-      asset('proyectos/palladium/03.webp'),
-      asset('proyectos/palladium/01.webp'),
-    ],
-    content: {
-      desafio: [
-        'Adaptar los lineamientos y estándares de una multinacional a un contexto local, asegurando que la ejecución del mobiliario mantenga coherencia con los espacios implementados por la marca en otros países.',
-        'El reto estaba en interpretar requerimientos internacionales y trasladarlos a soluciones técnicas y constructivas viables, sin perder calidad ni consistencia en el resultado final.',
-      ],
-      propuesta: {
-        intro:
-          'Desarrollo de soluciones de mobiliario alineadas a estándares globales, adaptadas a las condiciones operativas y constructivas del entorno local.',
-        bullets: [
-          'Interpretación de lineamientos internacionales para asegurar coherencia con la identidad global de la marca.',
-          'Adaptación técnica de los diseños a la realidad local, garantizando viabilidad constructiva y funcional.',
-          'Ejecución cuidada en materiales, acabados y detalles, manteniendo un nivel consistente con espacios implementados en otros mercados.',
-        ],
-      },
-      resultado: [
-        'Un espacio que mantiene coherencia con los estándares internacionales de la marca, logrando una experiencia alineada con sus oficinas en otros países.',
-        'El proyecto demuestra la capacidad de MAACH para adaptarse a requerimientos globales y ejecutarlos con precisión en el contexto local, cumpliendo con niveles de calidad, funcionalidad y detalle exigidos por una multinacional.',
-      ],
-    },
-  },
+  // '02' Palladium está oculto de toda la web por pedido del cliente.
   '03': {
     title: 'Wesco',
     hero: asset('proyectos/wesco/01.webp'),
@@ -85,9 +58,19 @@ const DATA: Record<string, ProjectData> = {
       asset('proyectos/wesco/03.webp'),
       asset('proyectos/wesco/04.webp'),
     ],
-    photos: Array.from({ length: 39 }, (_, i) =>
-      asset(`proyectos/wesco/${String(i + 1).padStart(2, '0')}.webp`),
-    ),
+    // Selección editorial: 8 fotos que cubren todo el alcance del proyecto
+    // (recepción, counter, área operativa, sala de reunión, colaborativo,
+    // auditorio y comedor) en vez de las 39 del set completo.
+    photos: [
+      asset('proyectos/wesco/02.webp'),
+      asset('proyectos/wesco/01.webp'),
+      asset('proyectos/wesco/33.webp'),
+      asset('proyectos/wesco/10.webp'),
+      asset('proyectos/wesco/03.webp'),
+      asset('proyectos/wesco/12.webp'),
+      asset('proyectos/wesco/27.webp'),
+      asset('proyectos/wesco/37.webp'),
+    ],
     content: {
       desafio: [
         'Materializar fielmente la propuesta arquitectónica de un edificio administrativo, asegurando que cada decisión de mobiliario responda tanto a criterios estéticos como funcionales.',
@@ -154,7 +137,21 @@ const DATA: Record<string, ProjectData> = {
   },
   '06': {
     title: 'CAME',
-    status: 'paused',
+    hero: asset('proyectos/came/01.webp'),
+    // Selección de 8 fotos (mismo criterio que Wesco): recepción como pieza
+    // destacada, luego reunión, privadas y operativas. Se dejan fuera 08 y 10
+    // por repetir encuadre con 09 y 03. El copy del proyecto aún no está
+    // entregado, así que la página publica hero + galería.
+    photos: [
+      asset('proyectos/came/01.webp'),
+      asset('proyectos/came/06.webp'),
+      asset('proyectos/came/05.webp'),
+      asset('proyectos/came/04.webp'),
+      asset('proyectos/came/02.webp'),
+      asset('proyectos/came/03.webp'),
+      asset('proyectos/came/07.webp'),
+      asset('proyectos/came/09.webp'),
+    ],
   },
 };
 
@@ -393,98 +390,11 @@ function ContentSection({
   );
 }
 
-export default function PagePortafolioDetail() {
-  const { id = '01' } = useParams();
-  const p = DATA[id] || DATA['01'];
-  const paused = p.status === 'paused';
-
-  // Lightbox for the elaborate photo gallery
-  const photos = p.photos;
-  const [lightbox, setLightbox] = useState<number | null>(null);
-  useEffect(() => {
-    if (lightbox === null || !photos) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setLightbox(null);
-      else if (e.key === 'ArrowRight') setLightbox((i) => (i === null ? i : (i + 1) % photos.length));
-      else if (e.key === 'ArrowLeft') setLightbox((i) => (i === null ? i : (i - 1 + photos.length) % photos.length));
-    };
-    window.addEventListener('keydown', onKey);
-    document.body.style.overflow = 'hidden';
-    return () => {
-      window.removeEventListener('keydown', onKey);
-      document.body.style.overflow = '';
-    };
-  }, [lightbox, photos]);
-
-  // Horizontal carousel: track which slide is centered
-  const carRef = useRef<HTMLDivElement>(null);
-  const [active, setActive] = useState(0);
-  const centerSlide = (i: number) => {
-    const sc = carRef.current;
-    const el = sc?.children[i] as HTMLElement | undefined;
-    if (!sc || !el) return;
-    sc.scrollTo({ left: el.offsetLeft + el.offsetWidth / 2 - sc.clientWidth / 2, behavior: 'smooth' });
-  };
-  const stepSlide = (dir: number) => {
-    const n = photos?.length ?? 0;
-    if (!n) return;
-    centerSlide(Math.max(0, Math.min(n - 1, active + dir)));
-  };
-  const onCarScroll = () => {
-    const sc = carRef.current;
-    if (!sc) return;
-    const mid = sc.scrollLeft + sc.clientWidth / 2;
-    let best = 0;
-    let bestDist = Infinity;
-    Array.from(sc.children).forEach((ch, i) => {
-      const el = ch as HTMLElement;
-      const c = el.offsetLeft + el.offsetWidth / 2;
-      const d = Math.abs(c - mid);
-      if (d < bestDist) {
-        bestDist = d;
-        best = i;
-      }
-    });
-    setActive(best);
-  };
-
-  // If no content (CAME), show paused/coming-soon screen
-  if (!p.content) {
-    return (
-      <Layout screenLabel={'09 Proyecto · ' + p.title}>
-        <ProjectHero p={p} id={id} />
-        <section style={{ padding: '120px 0', borderBottom: '1px solid var(--line)' }}>
-          <div className="maach-container" style={{ textAlign: 'center', maxWidth: 720, margin: '0 auto' }}>
-            <p style={{ fontSize: 20, color: 'var(--muted)', lineHeight: 1.6, marginBottom: 40 }}>
-              {paused
-                ? 'Este proyecto se encuentra actualmente pausado. Más información estará disponible próximamente.'
-                : 'La documentación de este proyecto estará disponible próximamente.'}
-            </p>
-            <Link
-              to="/portafolio"
-              className="maach-mono"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 12,
-                borderBottom: '1.5px solid var(--lava-orange)',
-                paddingBottom: 4,
-              }}
-            >
-              <IconArrow size={14} rotate={180} /> Volver al portafolio
-            </Link>
-          </div>
-        </section>
-      </Layout>
-    );
-  }
-
-  const { desafio, propuesta, resultado } = p.content;
-
+/** Las tres secciones editoriales del proyecto. Sólo se renderizan cuando el
+ *  proyecto tiene copy; los que sólo tienen fotos publican hero + galería. */
+function ProjectStory({ desafio, propuesta, resultado }: ProjectContent) {
   return (
-    <Layout screenLabel={'09 Proyecto · ' + p.title}>
-      <ProjectHero p={p} id={id} />
-
+    <>
       {/* EL DESAFÍO */}
       <ContentSection num="01" eyebrow="El Desafío" title="El Desafío">
         <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
@@ -540,16 +450,7 @@ export default function PagePortafolioDetail() {
               >
                 0{i + 1}
               </span>
-              <p
-                style={{
-                  fontSize: 17,
-                  lineHeight: 1.6,
-                  color: 'var(--sand-grey)',
-                  margin: 0,
-                }}
-              >
-                {b}
-              </p>
+              <p style={{ fontSize: 17, lineHeight: 1.6, color: 'var(--sand-grey)', margin: 0 }}>{b}</p>
             </li>
           ))}
         </ul>
@@ -566,61 +467,105 @@ export default function PagePortafolioDetail() {
           ) : null}
         </div>
       </ContentSection>
+    </>
+  );
+}
+
+export default function PagePortafolioDetail() {
+  const { id = '01' } = useParams();
+  const p = DATA[id] || DATA['01'];
+  const paused = p.status === 'paused';
+
+  // Lightbox for the elaborate photo gallery
+  const photos = p.photos;
+  const [lightbox, setLightbox] = useState<number | null>(null);
+  useEffect(() => {
+    if (lightbox === null || !photos) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setLightbox(null);
+      else if (e.key === 'ArrowRight') setLightbox((i) => (i === null ? i : (i + 1) % photos.length));
+      else if (e.key === 'ArrowLeft') setLightbox((i) => (i === null ? i : (i - 1 + photos.length) % photos.length));
+    };
+    window.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [lightbox, photos]);
+
+  // Coming-soon screen only when there is nothing to show: sin texto y sin fotos.
+  // Un proyecto con fotos se publica aunque su copy editorial aún no exista.
+  if (!p.content && !p.photos) {
+    return (
+      <Layout screenLabel={'09 Proyecto · ' + p.title}>
+        <ProjectHero p={p} id={id} />
+        <section style={{ padding: '120px 0', borderBottom: '1px solid var(--line)' }}>
+          <div className="maach-container" style={{ textAlign: 'center', maxWidth: 720, margin: '0 auto' }}>
+            <p style={{ fontSize: 20, color: 'var(--muted)', lineHeight: 1.6, marginBottom: 40 }}>
+              {paused
+                ? 'Este proyecto se encuentra actualmente pausado. Más información estará disponible próximamente.'
+                : 'La documentación de este proyecto estará disponible próximamente.'}
+            </p>
+            <Link
+              to="/portafolio"
+              className="maach-mono"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 12,
+                borderBottom: '1.5px solid var(--lava-orange)',
+                paddingBottom: 4,
+              }}
+            >
+              <IconArrow size={14} rotate={180} /> Volver al portafolio
+            </Link>
+          </div>
+        </section>
+      </Layout>
+    );
+  }
+
+  const content = p.content;
+
+  return (
+    <Layout screenLabel={'09 Proyecto · ' + p.title}>
+      <ProjectHero p={p} id={id} />
+
+      {content ? (
+        <ProjectStory desafio={content.desafio} propuesta={content.propuesta} resultado={content.resultado} />
+      ) : null}
 
       {/* GALLERY — full grid when a complete photo set exists, else the 3-up layout */}
       {p.photos ? (
         <section style={{ padding: '120px 0', borderBottom: '1px solid var(--line)' }}>
           <div className="maach-container">
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'baseline',
-                marginBottom: 28,
-                gap: 16,
-              }}
+            <span
+              className="maach-mono"
+              style={{ color: 'var(--muted)', display: 'block', marginBottom: 24, letterSpacing: '.1em' }}
             >
-              <span className="maach-mono" style={{ color: 'var(--muted)', letterSpacing: '.1em' }}>
-                GALERÍA
-              </span>
-              <span className="maach-mono" style={{ color: 'var(--muted)' }}>
-                {String(active + 1).padStart(2, '0')} / {String(p.photos.length).padStart(2, '0')}
-              </span>
+              GALERÍA
+            </span>
+            <div className="maach-mosaic">
+              {p.photos.map((src, i) => {
+                const variant = i % 7 === 0 ? ' feat' : i % 7 === 4 ? ' tall' : '';
+                return (
+                  <button
+                    key={i}
+                    type="button"
+                    className={'maach-tile' + variant}
+                    onClick={() => setLightbox(i)}
+                    aria-label={`Ampliar foto ${i + 1} de ${p.photos!.length}`}
+                  >
+                    <img src={src} alt="" loading="lazy" />
+                    <span className="maach-tile-idx maach-mono">{String(i + 1).padStart(2, '0')}</span>
+                    <span className="maach-tile-zoom" aria-hidden>
+                      <IconPlus size={16} />
+                    </span>
+                  </button>
+                );
+              })}
             </div>
-          </div>
-          <div style={{ position: 'relative' }}>
-            <div className="maach-carousel" ref={carRef} onScroll={onCarScroll}>
-              {p.photos.map((src, i) => (
-                <button
-                  key={i}
-                  type="button"
-                  className={'car-slide' + (i === active ? ' is-active' : '')}
-                  onClick={() => (i === active ? setLightbox(i) : centerSlide(i))}
-                  aria-label={
-                    i === active ? `Ampliar foto ${i + 1}` : `Ver foto ${i + 1} de ${p.photos!.length}`
-                  }
-                >
-                  <img src={src} alt="" loading="lazy" />
-                  <span className="maach-tile-idx maach-mono">{String(i + 1).padStart(2, '0')}</span>
-                </button>
-              ))}
-            </div>
-            <button
-              type="button"
-              className="car-nav car-prev"
-              onClick={() => stepSlide(-1)}
-              aria-label="Anterior"
-            >
-              <IconChevronRight size={18} style={{ transform: 'rotate(180deg)' }} />
-            </button>
-            <button
-              type="button"
-              className="car-nav car-next"
-              onClick={() => stepSlide(1)}
-              aria-label="Siguiente"
-            >
-              <IconChevronRight size={18} />
-            </button>
           </div>
         </section>
       ) : p.gallery ? (
