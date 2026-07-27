@@ -41,27 +41,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</div>
 
 				<?php
-				$menu_items = wp_get_nav_menu_items( maach_menu_id( 'principal' ) );
-				if ( $menu_items ) :
-					foreach ( $menu_items as $item ) :
-						$titulo = $item->title;
-						// "Productos" y "Portafolio" tienen su propio desplegable.
-						if ( 0 === strcasecmp( $titulo, 'Productos' ) ) {
-							continue;
-						}
-						$es_portafolio = 0 === strcasecmp( $titulo, 'Portafolio' );
-						$activo        = maach_menu_activo( $item->url );
-						?>
-						<div class="maach-nav-item <?php echo $activo ? 'is-active' : ''; ?>"
-							<?php echo $es_portafolio ? 'data-dropdown="portafolio"' : ''; ?>
-							style="height:100%;display:flex;align-items:center">
-							<a href="<?php echo esc_url( $item->url ); ?>" class="maach-mono" style="font-size:12px;font-weight:600">
-								<?php echo esc_html( $titulo ); ?>
-							</a>
-						</div>
-						<?php
-					endforeach;
-				endif;
+				foreach ( maach_nav_principal() as $item ) :
+					$titulo = $item['titulo'];
+					// "Productos" y "Portafolio" tienen su propio desplegable.
+					if ( 0 === strcasecmp( $titulo, 'Productos' ) ) {
+						continue;
+					}
+					$es_portafolio = 0 === strcasecmp( $titulo, 'Portafolio' );
+					$activo        = maach_menu_activo( $item['url'] );
+					?>
+					<div class="maach-nav-item <?php echo $activo ? 'is-active' : ''; ?>"
+						<?php echo $es_portafolio ? 'data-dropdown="portafolio"' : ''; ?>
+						style="height:100%;display:flex;align-items:center">
+						<a href="<?php echo esc_url( $item['url'] ); ?>" class="maach-mono" style="font-size:12px;font-weight:600">
+							<?php echo esc_html( $titulo ); ?>
+						</a>
+					</div>
+					<?php
+				endforeach;
 				?>
 			</div>
 		</div>

@@ -301,7 +301,8 @@ function maach_importar_producto( $p ) {
 	wp_set_object_terms( $id, array( $p['categoria'] ), 'maach_categoria' );
 	wp_set_object_terms( $id, array( sanitize_title( $p['subcategoria'] ) ), 'maach_subcategoria' );
 
-	// Fotos.
+	// Fotos. Si alguna no se puede descargar (servidor sin salida a internet,
+	// por ejemplo) se guarda su URL de origen para que la ficha no quede vacía.
 	$ids = array();
 	foreach ( $p['galeria'] as $url ) {
 		$adjunto = maach_traer_medio( $url, $id, $p['nombre'] );
@@ -312,6 +313,11 @@ function maach_importar_producto( $p ) {
 	if ( $ids ) {
 		update_post_meta( $id, 'maach_galeria', implode( ',', $ids ) );
 		set_post_thumbnail( $id, reset( $ids ) );
+	}
+	if ( count( $ids ) < count( $p['galeria'] ) ) {
+		update_post_meta( $id, 'maach_galeria_urls', implode( "\n", $p['galeria'] ) );
+	} else {
+		delete_post_meta( $id, 'maach_galeria_urls' );
 	}
 
 	// Documentos: se descargan a Medios para que el sitio sea autónomo.
@@ -373,6 +379,14 @@ function maach_importar_proyecto( $pr ) {
 	}
 	if ( $ids ) {
 		update_post_meta( $id, 'maach_galeria', implode( ',', $ids ) );
+	}
+	if ( count( $ids ) < count( $pr['galeria'] ) ) {
+		update_post_meta( $id, 'maach_galeria_urls', implode( "\n", $pr['galeria'] ) );
+	} else {
+		delete_post_meta( $id, 'maach_galeria_urls' );
+	}
+	if ( ! $portada && ! empty( $pr['portada'] ) ) {
+		update_post_meta( $id, 'maach_portada_url', $pr['portada'] );
 	}
 }
 

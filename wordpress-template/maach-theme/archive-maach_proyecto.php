@@ -34,8 +34,10 @@ get_header();
 			?>
 			<a href="<?php the_permalink(); ?>" style="display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center;padding-bottom:64px;border-bottom:1px solid var(--line)">
 				<div style="position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--jet-black)">
-					<?php if ( has_post_thumbnail() ) : ?>
-						<?php the_post_thumbnail( 'maach-hero', array( 'style' => 'width:100%;height:100%;object-fit:cover' ) ); ?>
+					<?php $maach_portada = maach_portada( $maach_id ); ?>
+					<?php if ( $maach_portada ) : ?>
+						<img src="<?php echo esc_url( $maach_portada ); ?>" alt="<?php the_title_attribute(); ?>" loading="lazy"
+							style="width:100%;height:100%;object-fit:cover">
 					<?php endif; ?>
 				</div>
 				<div>

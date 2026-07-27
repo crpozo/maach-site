@@ -39,7 +39,12 @@ function maach_galeria( $post_id, $size = 'maach-producto' ) {
 			$urls[] = $src;
 		}
 	}
-	return $urls;
+	if ( $urls ) {
+		return $urls;
+	}
+	// Respaldo: fotos que no se pudieron descargar a Medios durante la
+	// importación. Se sirven desde su origen para que la ficha no quede vacía.
+	return maach_lineas( get_post_meta( $post_id, 'maach_galeria_urls', true ) );
 }
 
 /**
@@ -301,7 +306,7 @@ function maach_menu_activo( $url ) {
  * @param string $ubicacion Ubicación.
  */
 function maach_lista_menu( $ubicacion ) {
-	$items = wp_get_nav_menu_items( maach_menu_id( $ubicacion ) );
+	$items = maach_enlaces_pie( $ubicacion );
 	if ( ! $items ) {
 		return;
 	}
@@ -309,8 +314,8 @@ function maach_lista_menu( $ubicacion ) {
 	foreach ( $items as $item ) {
 		printf(
 			'<li><a href="%s" style="color:var(--off-white)">%s</a></li>',
-			esc_url( $item->url ),
-			esc_html( $item->title )
+			esc_url( $item['url'] ),
+			esc_html( $item['titulo'] )
 		);
 	}
 	echo '</ul>';
@@ -438,4 +443,111 @@ function maach_productos_agrupados( $categoria ) {
 		return ! empty( $g['posts'] );
 	} );
 	return array_values( $grupos );
+}
+
+/**
+ * Enlaces del menú principal. Usa el menú de WordPress si hay uno asignado;
+ * si no, arma la navegación del sitio original para que la cabecera nunca
+ * aparezca vacía.
+ *
+ * @return array<int,array{titulo:string,url:string}>
+ */
+function maach_nav_principal() {
+	$items = wp_get_nav_menu_items( maach_menu_id( 'principal' ) );
+	if ( $items ) {
+		$salida = array();
+		foreach ( $items as $item ) {
+			$salida[] = array( 'titulo' => $item->title, 'url' => $item->url );
+		}
+		return $salida;
+	}
+
+	$pagina = function ( $slug ) {
+		$p = get_page_by_path( $slug );
+		return $p ? get_permalink( $p ) : '';
+	};
+
+	$defecto = array(
+		array( 'titulo' => __( 'Productos', 'maach' ), 'url' => get_post_type_archive_link( 'maach_producto' ) ),
+		array( 'titulo' => __( 'Espacios', 'maach' ), 'url' => $pagina( 'espacios' ) ),
+		array( 'titulo' => __( 'Portafolio', 'maach' ), 'url' => get_post_type_archive_link( 'maach_proyecto' ) ),
+		array( 'titulo' => __( 'Investigación', 'maach' ), 'url' => $pagina( 'investigacion' ) ),
+		array( 'titulo' => __( 'Sobre MAACH', 'maach' ), 'url' => $pagina( 'sobre-maach' ) ),
+		array( 'titulo' => __( 'Contacto', 'maach' ), 'url' => $pagina( 'contacto' ) ),
+	);
+
+	return array_values( array_filter( $defecto, function ( $i ) {
+		return ! empty( $i['url'] );
+	} ) );
+}
+
+/**
+ * Enlaces de una columna del pie, con respaldo si no hay menú asignado.
+ *
+ * @param string $ubicacion Ubicación del menú.
+ * @return array<int,array{titulo:string,url:string}>
+ */
+function maach_enlaces_pie( $ubicacion ) {
+	$items = wp_get_nav_menu_items( maach_menu_id( $ubicacion ) );
+	if ( $items ) {
+		$salida = array();
+		foreach ( $items as $item ) {
+			$salida[] = array( 'titulo' => $item->title, 'url' => $item->url );
+		}
+		return $salida;
+	}
+
+	$pagina = function ( $slug ) {
+		$p = get_page_by_path( $slug );
+		return $p ? get_permalink( $p ) : '';
+	};
+
+	if ( 'footer_1' === $ubicacion ) {
+		$salida = array();
+		foreach ( maach_categorias() as $cat ) {
+			$salida[] = array( 'titulo' => $cat->name, 'url' => get_term_link( $cat ) );
+		}
+		return $salida;
+	}
+
+	if ( 'footer_2' === $ubicacion ) {
+		$defecto = array(
+			array( 'titulo' => __( 'Sobre MAACH', 'maach' ), 'url' => $pagina( 'sobre-maach' ) ),
+			array( 'titulo' => __( 'Investigación', 'maach' ), 'url' => $pagina( 'investigacion' ) ),
+			array( 'titulo' => __( 'Portafolio', 'maach' ), 'url' => get_post_type_archive_link( 'maach_proyecto' ) ),
+			array( 'titulo' => __( 'Contacto', 'maach' ), 'url' => $pagina( 'contacto' ) ),
+		);
+	} else {
+		$biblio  = $pagina( 'biblioteca' );
+		$defecto = array(
+			array( 'titulo' => __( 'Biblioteca de documentos', 'maach' ), 'url' => $biblio ),
+			array( 'titulo' => __( 'Modelos 3D / CAD', 'maach' ), 'url' => $biblio ? add_query_arg( 'tipo', 'modelos', $biblio ) : '' ),
+			array( 'titulo' => __( 'Fichas técnicas', 'maach' ), 'url' => $biblio ? add_query_arg( 'tipo', 'fichas', $biblio ) : '' ),
+		);
+	}
+
+	return array_values( array_filter( $defecto, function ( $i ) {
+		return ! empty( $i['url'] ) && ! is_wp_error( $i['url'] );
+	} ) );
+}
+
+/**
+ * Portada de un proyecto, con respaldo a su URL de origen si la imagen no se
+ * pudo descargar durante la importación.
+ *
+ * @param int    $post_id Post.
+ * @param string $size    Tamaño.
+ * @return string
+ */
+function maach_portada( $post_id, $size = 'maach-hero' ) {
+	$url = get_the_post_thumbnail_url( $post_id, $size );
+	if ( $url ) {
+		return $url;
+	}
+	$respaldo = (string) get_post_meta( $post_id, 'maach_portada_url', true );
+	if ( $respaldo ) {
+		return $respaldo;
+	}
+	$galeria = maach_galeria( $post_id, $size );
+	return $galeria ? $galeria[0] : '';
 }

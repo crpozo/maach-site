@@ -100,6 +100,111 @@ $maach_hero = maach_opcion( 'maach_hero_img' ) ? maach_opcion( 'maach_hero_img' 
 	</div>
 </section>
 
+<!-- ADN -->
+<?php
+$maach_adn = apply_filters( 'maach_adn', array(
+	array(
+		'n'     => '01',
+		'titulo' => __( 'Integridad Estructural', 'maach' ),
+		'texto'  => __( 'Ingeniería sólida pensada para el uso intensivo. Mobiliario que no se deforma y mantiene sus propiedades a lo largo de los años.', 'maach' ),
+	),
+	array(
+		'n'     => '02',
+		'titulo' => __( 'Funcionalidad Consciente', 'maach' ),
+		'texto'  => __( 'Diseño centrado en resolver exigencias operativas reales. Si una pieza no cumple un propósito técnico, se elimina del esquema.', 'maach' ),
+	),
+	array(
+		'n'     => '03',
+		'titulo' => __( 'Escalabilidad Modular', 'maach' ),
+		'texto'  => __( 'Sistemas creados para crecer y reconfigurarse. Componentes que se integran mediante ingeniería de nodos.', 'maach' ),
+	),
+	array(
+		'n'     => '04',
+		'titulo' => __( 'Co-diseño con arquitectos', 'maach' ),
+		'texto'  => __( 'Trabajamos junto a estudios y clientes para resolver requerimientos técnicos específicos. El diseño se construye en conjunto.', 'maach' ),
+	),
+) );
+?>
+<section class="invert" style="background:var(--jet-black);color:var(--off-white);padding:72px 0;position:relative;overflow:hidden;min-height:calc(100vh - 80px);display:flex;align-items:center">
+	<div class="tex-load-line" style="position:absolute;inset:0;color:var(--off-white);pointer-events:none"></div>
+	<div class="maach-container" style="position:relative;z-index:2;width:100%">
+		<div style="display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center">
+			<div>
+				<span class="maach-mono" style="color:var(--sand-grey);margin-bottom:16px;display:block"><?php esc_html_e( 'Filosofía', 'maach' ); ?></span>
+				<h2 class="h-display" style="font-size:clamp(56px,8vw,90px);margin-bottom:24px">
+					<?php esc_html_e( 'ADN', 'maach' ); ?><br>
+					<span class="h-italic" style="color:var(--sand-grey)"><?php esc_html_e( 'Industrial', 'maach' ); ?></span>
+				</h2>
+				<p style="font-size:17px;color:var(--sand-grey);line-height:1.45;max-width:380px;margin-bottom:32px">
+					<?php esc_html_e( 'Cada decisión responde a ingeniería, durabilidad y desempeño en el tiempo.', 'maach' ); ?>
+				</p>
+				<div style="width:110px;height:110px;border:1px solid rgba(228,226,227,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;animation:spin-slow 24s linear infinite">
+					<svg viewBox="0 0 200 200" style="width:100%;height:100%;position:absolute" aria-hidden="true">
+						<defs><path id="maach-circ" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0"></path></defs>
+						<text fill="var(--sand-grey)" font-size="11" letter-spacing="3" font-family="var(--mono)">
+							<textPath href="#maach-circ">MAACH · SISTEMA <?php echo esc_html( gmdate( 'Y' ) ); ?> · INDUSTRIAL DESIGN · REAL PERFORMANCE · </textPath>
+						</text>
+					</svg>
+					<div style="width:16px;height:16px;background:var(--lava-orange)"></div>
+				</div>
+			</div>
+
+			<div class="keep-grid" style="--keep-cols:repeat(2,1fr);display:grid;grid-template-columns:1fr 1fr;gap:32px">
+				<?php foreach ( $maach_adn as $maach_p ) : ?>
+					<div>
+						<div style="display:flex;align-items:center;gap:16px;margin-bottom:14px">
+							<span class="maach-mono" style="font-size:14px;letter-spacing:0;color:var(--lava-orange);font-weight:700"><?php echo esc_html( $maach_p['n'] ); ?></span>
+							<div style="flex:1;height:1px;background:rgba(228,226,227,.25)"></div>
+						</div>
+						<h3 style="font-family:var(--display);font-size:26px;line-height:.95;margin-bottom:10px;text-transform:uppercase;letter-spacing:-.02em">
+							<?php echo esc_html( $maach_p['titulo'] ); ?>
+						</h3>
+						<p style="font-size:13px;line-height:1.5;color:var(--sand-grey)"><?php echo esc_html( $maach_p['texto'] ); ?></p>
+					</div>
+				<?php endforeach; ?>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- NUESTRA PLANTA -->
+<?php
+$maach_planta = apply_filters( 'maach_planta', array(
+	array( 'n' => '01', 'img' => 'brand/planta-corte-cnc.webp', 'titulo' => __( 'Corte CNC', 'maach' ), 'texto' => __( 'Corte y mecanizado de precisión sobre metal y madera.', 'maach' ) ),
+	array( 'n' => '02', 'img' => 'brand/planta-soldadura.webp', 'titulo' => __( 'Soldadura estructural', 'maach' ), 'texto' => __( 'Uniones controladas para estructuras de alto desempeño.', 'maach' ) ),
+	array( 'n' => '03', 'img' => 'brand/planta-pintura.webp', 'titulo' => __( 'Pintura electrostática', 'maach' ), 'texto' => __( 'Recubrimiento en polvo horneado para máxima durabilidad.', 'maach' ) ),
+	array( 'n' => '04', 'img' => 'brand/planta-ensamble.webp', 'titulo' => __( 'Ensamble y control', 'maach' ), 'texto' => __( 'Armado, verificación dimensional y control de calidad final.', 'maach' ) ),
+) );
+?>
+<section class="invert" style="padding:128px 0;background:var(--jet-black);color:var(--off-white);border-bottom:1px solid var(--line)">
+	<div class="maach-container">
+		<div style="max-width:560px;margin-bottom:64px">
+			<span class="maach-mono" style="color:var(--lava-orange);display:block;margin-bottom:16px"><?php esc_html_e( 'Infraestructura · Tecnología', 'maach' ); ?></span>
+			<h2 class="h-display" style="font-size:clamp(48px,6.5vw,90px);margin-bottom:24px"><?php esc_html_e( 'Nuestra planta', 'maach' ); ?></h2>
+			<p style="font-size:17px;color:var(--sand-grey);line-height:1.5">
+				<?php esc_html_e( 'Fabricamos con maquinaria de control numérico y procesos industriales que garantizan precisión, repetibilidad y acabados de estándar internacional.', 'maach' ); ?>
+			</p>
+		</div>
+
+		<div class="keep-grid" style="--keep-cols:repeat(2,1fr);display:grid;grid-template-columns:repeat(2,1fr);gap:8px">
+			<?php foreach ( $maach_planta as $maach_p ) : ?>
+				<div style="position:relative;aspect-ratio:16/10;overflow:hidden;background:#0f0f0f">
+					<img src="<?php echo esc_url( maach_img( $maach_p['img'] ) ); ?>" alt="<?php echo esc_attr( $maach_p['titulo'] ); ?>" loading="lazy"
+						style="width:100%;height:100%;object-fit:cover">
+					<div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,22,22,0) 35%,rgba(22,22,22,.85) 100%)"></div>
+					<div style="position:absolute;left:24px;right:24px;bottom:24px">
+						<span class="maach-mono" style="color:var(--lava-orange);display:block;margin-bottom:8px;font-size:16px"><?php echo esc_html( $maach_p['n'] ); ?></span>
+						<h3 style="font-family:var(--display);font-size:clamp(22px,2.4vw,30px);text-transform:uppercase;letter-spacing:-.01em;line-height:1;margin-bottom:8px;color:var(--off-white)">
+							<?php echo esc_html( $maach_p['titulo'] ); ?>
+						</h3>
+						<p style="font-size:14px;color:var(--sand-grey);line-height:1.45;max-width:360px"><?php echo esc_html( $maach_p['texto'] ); ?></p>
+					</div>
+				</div>
+			<?php endforeach; ?>
+		</div>
+	</div>
+</section>
+
 <!-- PROYECTOS DESTACADOS -->
 <?php
 $maach_proyectos = get_posts( array(
@@ -125,8 +230,10 @@ if ( $maach_proyectos ) :
 			<div class="keep-grid" style="--keep-cols:repeat(2,1fr);display:grid;grid-template-columns:repeat(2,1fr);gap:8px">
 				<?php foreach ( $maach_proyectos as $maach_p ) : ?>
 					<a href="<?php echo esc_url( get_permalink( $maach_p ) ); ?>" style="position:relative;aspect-ratio:16/10;overflow:hidden;display:block;background:var(--jet-black)">
-						<?php if ( has_post_thumbnail( $maach_p ) ) : ?>
-							<?php echo get_the_post_thumbnail( $maach_p, 'maach-hero', array( 'style' => 'width:100%;height:100%;object-fit:cover' ) ); ?>
+						<?php $maach_portada = maach_portada( $maach_p->ID ); ?>
+						<?php if ( $maach_portada ) : ?>
+							<img src="<?php echo esc_url( $maach_portada ); ?>" alt="<?php echo esc_attr( $maach_p->post_title ); ?>" loading="lazy"
+								style="width:100%;height:100%;object-fit:cover">
 						<?php endif; ?>
 						<div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(22,22,22,.85) 100%)"></div>
 						<div style="position:absolute;left:0;right:0;bottom:0;padding:32px;color:var(--off-white)">

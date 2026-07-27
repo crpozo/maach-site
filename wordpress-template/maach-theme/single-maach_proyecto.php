@@ -21,7 +21,7 @@ while ( have_posts() ) :
 	$propuesta = maach_lineas( get_post_meta( $proyecto, 'maach_propuesta', true ) );
 	$resultado = maach_lineas( get_post_meta( $proyecto, 'maach_resultado', true ) );
 	$fotos     = maach_galeria( $proyecto, 'maach-hero' );
-	$portada   = get_the_post_thumbnail_url( $proyecto, 'maach-hero' );
+	$portada   = maach_portada( $proyecto );
 	?>
 
 	<section style="position:relative;min-height:calc(100vh - 80px);overflow:hidden;border-bottom:1px solid var(--line);background:var(--jet-black)">

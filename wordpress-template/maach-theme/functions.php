@@ -22,6 +22,7 @@ require_once MAACH_DIR . '/inc/meta.php';
 require_once MAACH_DIR . '/inc/helpers.php';
 require_once MAACH_DIR . '/inc/customizer.php';
 require_once MAACH_DIR . '/inc/importer.php';
+require_once MAACH_DIR . '/inc/bootstrap.php';
 
 /**
  * Capacidades del tema.

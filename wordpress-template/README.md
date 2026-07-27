@@ -24,15 +24,22 @@ wordpress-template/
 2. En WordPress: **Apariencia → Temas → Añadir nuevo → Subir tema**, elige el zip
    y pulsa **Instalar** y luego **Activar**.
 
+   Al activarlo, el tema arma solo la estructura del sitio: las 6 categorías,
+   las páginas, los 4 menús y los textos de portada y pie. Es instantáneo y no
+   descarga nada. **El inicio ya se ve completo en este punto**, sin productos.
+
 3. Ve a **Productos → Importar catálogo** y pulsa **Importar todo**.
-   Tarda varios minutos: descarga las fotos y los archivos CAD desde el sitio
-   publicado y los guarda en la Biblioteca de medios de tu instalación.
-   No cierres la pestaña; la barra de progreso avanza sola.
+   Este es el paso pesado: trae los 84 productos, el portafolio y los artículos,
+   descargando sus fotos y archivos CAD a la Biblioteca de medios.
+   Tarda varios minutos; no cierres la pestaña, la barra avanza sola.
 
 4. **Ajustes → Enlaces permanentes** → pulsa **Guardar cambios**
    (esto refresca las direcciones de productos y proyectos).
 
 5. Listo. El sitio queda idéntico al original.
+
+> Mientras falte el paso 3 verás un aviso naranja en el administrador con un
+> botón directo al importador.
 
 > **Requisitos**: WordPress 6.0+, PHP 7.4+, y que el servidor tenga salida a
 > internet durante la importación. No hace falta ningún plugin.
