@@ -551,3 +551,77 @@ function maach_portada( $post_id, $size = 'maach-hero' ) {
 	$galeria = maach_galeria( $post_id, $size );
 	return $galeria ? $galeria[0] : '';
 }
+
+/**
+ * Enlace a una subcategoría dentro de la página de su categoría, con ancla,
+ * igual que el sitio original (/categorias/escritorios#escritorios-gerente).
+ *
+ * @param WP_Term $categoria    Categoría.
+ * @param WP_Term $subcategoria Subcategoría.
+ * @return string
+ */
+function maach_enlace_subcategoria( $categoria, $subcategoria ) {
+	$base = get_term_link( $categoria );
+	if ( is_wp_error( $base ) ) {
+		return '#';
+	}
+	$ancla = get_term_meta( $subcategoria->term_id, 'maach_seccion', true );
+	return $base . '#' . ( $ancla ? $ancla : $subcategoria->slug );
+}
+
+/**
+ * Idiomas del selector ES / EN de la cabecera.
+ *
+ * Si hay un plugin de traducción activo (Polylang o WPML) devuelve sus idiomas
+ * reales con sus enlaces. Si no, devuelve el par ES/EN del sitio original con
+ * el español activo, de modo que la cabecera se vea igual; el inglés queda
+ * inerte hasta que exista una traducción.
+ *
+ * Se puede ocultar por completo en Personalizar → MAACH → Cabecera.
+ *
+ * @return array<int,array{codigo:string,etiqueta:string,url:string,activo:bool}>
+ */
+function maach_idiomas() {
+	if ( 'no' === maach_opcion( 'maach_selector_idioma', 'si' ) ) {
+		return array();
+	}
+
+	// Polylang.
+	if ( function_exists( 'pll_the_languages' ) ) {
+		$lista = pll_the_languages( array( 'raw' => 1 ) );
+		if ( $lista ) {
+			$salida = array();
+			foreach ( $lista as $lang ) {
+				$salida[] = array(
+					'codigo'   => $lang['slug'],
+					'etiqueta' => strtoupper( $lang['slug'] ),
+					'url'      => $lang['url'],
+					'activo'   => ! empty( $lang['current_lang'] ),
+				);
+			}
+			return $salida;
+		}
+	}
+
+	// WPML.
+	if ( has_filter( 'wpml_active_languages' ) ) {
+		$lista = apply_filters( 'wpml_active_languages', null, array( 'skip_missing' => 0 ) );
+		if ( $lista ) {
+			$salida = array();
+			foreach ( $lista as $lang ) {
+				$salida[] = array(
+					'codigo'   => $lang['language_code'],
+					'etiqueta' => strtoupper( $lang['language_code'] ),
+					'url'      => $lang['url'],
+					'activo'   => ! empty( $lang['active'] ),
+				);
+			}
+			return $salida;
+		}
+	}
+
+	return array(
+		array( 'codigo' => 'es', 'etiqueta' => 'ES', 'url' => '', 'activo' => true ),
+		array( 'codigo' => 'en', 'etiqueta' => 'EN', 'url' => '', 'activo' => false ),
+	);
+}

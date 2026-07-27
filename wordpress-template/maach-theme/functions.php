@@ -213,3 +213,81 @@ function maach_screen_label() {
 	}
 	return '';
 }
+
+/**
+ * Procesa el formulario de contacto y lo envía por correo.
+ *
+ * El destinatario es el correo configurado en Personalizar → MAACH → Contacto
+ * (ventas@maach.ec por defecto). Cada envío queda además guardado en
+ * Productos → Descargas para que no se pierda si el correo falla.
+ */
+function maach_procesar_contacto() {
+	if ( empty( $_POST['maach_contacto_nonce'] ) ) {
+		return;
+	}
+	if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['maach_contacto_nonce'] ) ), 'maach_contacto' ) ) {
+		return;
+	}
+
+	$datos = array(
+		'nombre'   => sanitize_text_field( wp_unslash( $_POST['c_nombre'] ?? '' ) ),
+		'correo'   => sanitize_email( wp_unslash( $_POST['c_correo'] ?? '' ) ),
+		'empresa'  => sanitize_text_field( wp_unslash( $_POST['c_empresa'] ?? '' ) ),
+		'telefono' => sanitize_text_field( wp_unslash( $_POST['c_telefono'] ?? '' ) ),
+		'mensaje'  => sanitize_textarea_field( wp_unslash( $_POST['c_mensaje'] ?? '' ) ),
+	);
+
+	if ( ! $datos['nombre'] || ! is_email( $datos['correo'] ) || ! $datos['mensaje'] ) {
+		$GLOBALS['maach_contacto_estado'] = 'error';
+		return;
+	}
+
+	$destino = maach_opcion( 'maach_email', 'ventas@maach.ec' );
+	$asunto  = sprintf(
+		/* translators: %s: nombre de quien escribe. */
+		__( 'Nuevo mensaje desde la web · %s', 'maach' ),
+		$datos['nombre']
+	);
+	$cuerpo = sprintf(
+		"%s: %s\n%s: %s\n%s: %s\n%s: %s\n\n%s\n%s\n",
+		__( 'Nombre', 'maach' ),
+		$datos['nombre'],
+		__( 'Correo', 'maach' ),
+		$datos['correo'],
+		__( 'Empresa', 'maach' ),
+		$datos['empresa'] ? $datos['empresa'] : '—',
+		__( 'Teléfono', 'maach' ),
+		$datos['telefono'] ? $datos['telefono'] : '—',
+		__( 'Mensaje:', 'maach' ),
+		$datos['mensaje']
+	);
+
+	// Remitente del propio dominio para que no lo marquen como suplantación;
+	// «Responder a» apunta a quien escribió.
+	$dominio    = wp_parse_url( home_url(), PHP_URL_HOST );
+	$cabeceras  = array(
+		'From: MAACH web <no-reply@' . preg_replace( '/^www\./', '', (string) $dominio ) . '>',
+		'Reply-To: ' . $datos['nombre'] . ' <' . $datos['correo'] . '>',
+		'Content-Type: text/plain; charset=UTF-8',
+	);
+
+	$enviado = wp_mail( $destino, $asunto, $cuerpo, $cabeceras );
+
+	// Copia interna, por si el servidor no puede enviar correo.
+	wp_insert_post( array(
+		'post_type'   => 'maach_descarga',
+		'post_status' => 'private',
+		'post_title'  => sprintf( '%s · %s', __( 'Contacto', 'maach' ), $datos['nombre'] ),
+		'meta_input'  => array(
+			'nombre'    => $datos['nombre'],
+			'correo'    => $datos['correo'],
+			'empresa'   => $datos['empresa'],
+			'ocupacion' => $datos['telefono'],
+			'producto'  => __( 'Formulario de contacto', 'maach' ),
+			'documento' => $datos['mensaje'],
+		),
+	) );
+
+	$GLOBALS['maach_contacto_estado'] = $enviado ? 'ok' : 'sin_correo';
+}
+add_action( 'template_redirect', 'maach_procesar_contacto' );

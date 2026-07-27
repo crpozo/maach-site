@@ -66,6 +66,41 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="nav-right" style="display:flex;align-items:center;gap:24px">
 			<button type="button" class="maach-buscar-abrir" aria-label="<?php esc_attr_e( 'Buscar', 'maach' ); ?>"
 				style="display:flex;align-items:center"><?php maach_icono( 'search', 18 ); ?></button>
+
+			<?php if ( maach_idiomas() ) : ?>
+				<div style="width:1px;height:24px;background:var(--line)" aria-hidden="true"></div>
+				<span style="display:inline-flex;align-items:center;gap:8px" class="maach-mono">
+					<?php
+					$maach_langs = maach_idiomas();
+					$maach_total = count( $maach_langs );
+					foreach ( array_values( $maach_langs ) as $maach_i => $maach_lang ) :
+						$maach_estilo = sprintf(
+							'padding:0 4px;color:%s;font-weight:%d',
+							$maach_lang['activo'] ? 'var(--lava-orange)' : 'var(--muted)',
+							$maach_lang['activo'] ? 700 : 500
+						);
+						if ( $maach_lang['url'] && ! $maach_lang['activo'] ) {
+							printf(
+								'<a href="%s" class="maach-mono" style="%s">%s</a>',
+								esc_url( $maach_lang['url'] ),
+								esc_attr( $maach_estilo ),
+								esc_html( $maach_lang['etiqueta'] )
+							);
+						} else {
+							printf(
+								'<span class="maach-mono" style="%s"%s>%s</span>',
+								esc_attr( $maach_estilo ),
+								$maach_lang['activo'] ? ' aria-current="true"' : ' aria-disabled="true"',
+								esc_html( $maach_lang['etiqueta'] )
+							);
+						}
+						if ( $maach_i < $maach_total - 1 ) {
+							echo '<span style="color:var(--muted)">/</span>';
+						}
+					endforeach;
+					?>
+				</span>
+			<?php endif; ?>
 		</div>
 
 		<button type="button" class="nav-burger" aria-label="<?php esc_attr_e( 'Menú', 'maach' ); ?>" aria-expanded="false">

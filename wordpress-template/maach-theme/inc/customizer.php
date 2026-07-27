@@ -65,6 +65,21 @@ function maach_customizer( $wp_customize ) {
 	) ) );
 	$campo( 'maach_marquee', 'maach_portada', __( 'Marquesina (una frase por línea)', 'maach' ), 'textarea' );
 
+	$wp_customize->add_setting( 'maach_selector_idioma', array(
+		'default'           => 'si',
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+	$wp_customize->add_control( 'maach_selector_idioma', array(
+		'label'       => __( 'Mostrar el selector ES / EN en la cabecera', 'maach' ),
+		'section'     => 'maach_portada',
+		'type'        => 'radio',
+		'choices'     => array(
+			'si' => __( 'Sí (igual que el sitio original)', 'maach' ),
+			'no' => __( 'No', 'maach' ),
+		),
+		'description' => __( 'Con Polylang o WPML instalados el selector usa los idiomas reales. Sin ellos, el inglés se muestra pero no lleva a ninguna parte.', 'maach' ),
+	) );
+
 	// ─── Contacto ─────────────────────────────────────────────────────────
 	$wp_customize->add_section( 'maach_contacto', array(
 		'title' => __( 'Contacto y redes', 'maach' ),

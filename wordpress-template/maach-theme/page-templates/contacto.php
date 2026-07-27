@@ -40,8 +40,20 @@ $maach_tiene_shortcode = has_shortcode( get_the_content(), 'contact-form-7' ) ||
 					the_content();
 					echo '</div>';
 				} else {
-					// Formulario simple: envía por correo al administrador.
+					// Formulario propio: envía a ventas@maach.ec (Personalizar → MAACH).
 					?>
+					<?php $maach_estado = $GLOBALS['maach_contacto_estado'] ?? ''; ?>
+					<?php if ( 'ok' === $maach_estado || 'sin_correo' === $maach_estado ) : ?>
+						<div style="border:1px solid var(--lava-orange);padding:24px;margin-bottom:32px">
+							<p class="maach-mono" style="color:var(--lava-orange);margin:0 0 8px"><?php esc_html_e( 'Mensaje recibido', 'maach' ); ?></p>
+							<p style="margin:0;font-size:16px"><?php esc_html_e( 'Gracias por escribirnos. Te respondemos a la brevedad.', 'maach' ); ?></p>
+						</div>
+					<?php elseif ( 'error' === $maach_estado ) : ?>
+						<div style="border:1px solid var(--fg);padding:24px;margin-bottom:32px">
+							<p style="margin:0;font-size:16px"><?php esc_html_e( 'Revisa los campos obligatorios: nombre, correo y mensaje.', 'maach' ); ?></p>
+						</div>
+					<?php endif; ?>
+
 					<form method="post" style="display:flex;flex-direction:column;gap:28px">
 						<?php wp_nonce_field( 'maach_contacto', 'maach_contacto_nonce' ); ?>
 						<div>
@@ -55,6 +67,10 @@ $maach_tiene_shortcode = has_shortcode( get_the_content(), 'contact-form-7' ) ||
 						<div>
 							<label class="maach-label" for="c-empresa"><?php esc_html_e( 'Empresa', 'maach' ); ?></label>
 							<input class="maach-input" type="text" id="c-empresa" name="c_empresa">
+						</div>
+						<div>
+							<label class="maach-label" for="c-telefono"><?php esc_html_e( 'Teléfono', 'maach' ); ?></label>
+							<input class="maach-input" type="tel" id="c-telefono" name="c_telefono">
 						</div>
 						<div>
 							<label class="maach-label" for="c-mensaje"><?php esc_html_e( 'Mensaje', 'maach' ); ?></label>

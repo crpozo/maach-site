@@ -56,7 +56,7 @@ if ( ! $maach_cats ) {
 						foreach ( $maach_subs as $maach_sub ) :
 							?>
 							<li>
-								<a href="<?php echo esc_url( get_term_link( $maach_sub ) ); ?>" style="font-size:14px;color:var(--muted)">
+								<a href="<?php echo esc_url( maach_enlace_subcategoria( $maach_cat, $maach_sub ) ); ?>" style="font-size:14px;color:var(--muted)">
 									<?php echo esc_html( $maach_sub->name ); ?>
 								</a>
 							</li>
