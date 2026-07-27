@@ -1,87 +1,173 @@
-# MAACH — Plantilla WordPress editable en Elementor
+# MAACH — Plantilla de WordPress
 
-Réplica del sitio [maach-site](https://crpozo.github.io/maach-site/) como plantillas de
-Elementor (gratis, sin Pro), 100% editables desde el editor visual.
+Réplica del sitio [maach-site](https://crpozo.github.io/maach-site/) como **tema de
+WordPress**, con todo el contenido editable desde el administrador: productos,
+portafolio, artículos, textos y fotos.
 
-## Contenido
+```
+wordpress-template/
+├── maach-theme/            ← el tema (esto es lo que se instala)
+├── build-content.mjs       ← regenera el catálogo desde src/data
+└── elementor-kit-legacy/   ← kit de Elementor anterior (obsoleto)
+```
 
-| Archivo | Qué es |
-|---|---|
-| `templates/00-header.json` | Barra de navegación (plantilla de sección) |
-| `templates/01-footer.json` | Footer negro con manifiesto (plantilla de sección) |
-| `templates/10-inicio.json` | Página de inicio |
-| `templates/11-productos.json` | Catálogo / Productos (con anclas por categoría) |
-| `templates/12-espacios.json` | Espacios |
-| `templates/13-portafolio.json` | Portafolio |
-| `templates/14-investigacion.json` | Investigación (blog) |
-| `templates/15-sobre-maach.json` | Sobre MAACH |
-| `templates/16-contacto.json` | Contacto |
-| `templates/17-recursos-biblioteca.json` | Recursos de diseño / Biblioteca |
-| `maach-custom.css` | Tipografías de marca + utilidades (obligatorio) |
+---
 
-## Instalación (WordPress + Elementor gratis)
+## Instalación en 5 pasos
 
-1. **Tema**: instala y activa **Hello Elementor** (Apariencia → Temas → Añadir nuevo).
-2. **Plugin**: instala **Elementor** (gratis).
-3. **CSS de marca** (obligatorio): copia todo `maach-custom.css` en
-   **Apariencia → Personalizar → CSS adicional**. Esto carga las tipografías
-   *Clash Grotesk* y *Monoblock* desde el sitio en vivo.
-4. **Importar plantillas**: en **Plantillas → Plantillas guardadas → Importar plantillas**,
-   sube los 10 archivos `.json` de la carpeta `templates/`.
-5. **Crear las páginas** (Páginas → Añadir nueva, con estos slugs exactos):
+1. **Comprime la carpeta** `maach-theme` en un `.zip`.
 
-   | Página | Slug | Plantilla a insertar |
-   |---|---|---|
-   | Inicio | `/` (marcar como portada) | 10-inicio |
-   | Productos | `productos` | 11-productos |
-   | Espacios | `espacios` | 12-espacios |
-   | Portafolio | `portafolio` | 13-portafolio |
-   | Investigación | `investigacion` | 14-investigacion |
-   | Sobre MAACH | `sobre-maach` | 15-sobre-maach |
-   | Contacto | `contacto` | 16-contacto |
-   | Recursos | `recursos-diseno-biblioteca` | 17-recursos-biblioteca |
+   ```bash
+   cd wordpress-template && zip -r maach-theme.zip maach-theme
+   ```
 
-   En cada página: **Editar con Elementor → icono de carpeta (Añadir plantilla) →
-   Mis plantillas → Insertar**. Los enlaces internos entre páginas ya apuntan a esos slugs.
+2. En WordPress: **Apariencia → Temas → Añadir nuevo → Subir tema**, elige el zip
+   y pulsa **Instalar** y luego **Activar**.
 
-6. **Header y footer en todo el sitio** — dos opciones:
-   - **Gratis**: plugin **Elementor Header & Footer Builder** (Brainstorm Force).
-     Crea un header nuevo, edítalo con Elementor e inserta la plantilla `00-header`
-     (igual con `01-footer` como footer). Display: todo el sitio.
-   - **Con Elementor Pro**: Theme Builder → Header/Footer → insertar las mismas plantillas.
+3. Ve a **Productos → Importar catálogo** y pulsa **Importar todo**.
+   Tarda varios minutos: descarga las fotos y los archivos CAD desde el sitio
+   publicado y los guarda en la Biblioteca de medios de tu instalación.
+   No cierres la pestaña; la barra de progreso avanza sola.
+
+4. **Ajustes → Enlaces permanentes** → pulsa **Guardar cambios**
+   (esto refresca las direcciones de productos y proyectos).
+
+5. Listo. El sitio queda idéntico al original.
+
+> **Requisitos**: WordPress 6.0+, PHP 7.4+, y que el servidor tenga salida a
+> internet durante la importación. No hace falta ningún plugin.
+
+### Alternativa por línea de comandos
+
+Si tienes WP-CLI, todo el paso 3 es:
+
+```bash
+wp maach importar
+```
+
+---
+
+## Qué crea el importador
+
+| Contenido | Cantidad | Dónde se edita |
+|---|---|---|
+| Productos | 84 | Productos |
+| Categorías | 6 | Productos → Categorías |
+| Subcategorías | 21 | Productos → Subcategorías |
+| Proyectos | 3 | Portafolio |
+| Artículos | 3 | Entradas |
+| Páginas | 6 | Páginas |
+| Menús | 4 | Apariencia → Menús |
+
+Volver a ejecutarlo **no duplica nada**: actualiza lo que ya existe. Las imágenes
+ya descargadas se reutilizan, así que la segunda vez es mucho más rápida.
+
+---
+
+## Cómo se edita cada cosa
+
+### Un producto
+
+**Productos → (elegir uno)**. Todo está en la misma pantalla:
+
+- **Título** y **Extracto** → nombre y descripción que salen en la tarjeta negra.
+- **Datos del producto** → SKU, características técnicas (una por línea) y el
+  texto de dimensiones.
+- **Galería de fotos** → añadir, quitar y **arrastrar para reordenar**. La primera
+  foto es la portada del catálogo.
+- **Documentos descargables** → pega la URL del `.pdf`, `.dwg`, `.rfa` o `.skp`.
+  Los formatos que dejes vacíos no aparecen; si no hay ningún CAD/BIM, el botón
+  «BIM / CAD» tampoco se muestra.
+- **Categorías / Subcategorías** → a la derecha.
+
+Si dejas las **características vacías**, la ficha muestra automáticamente las de
+su subcategoría — el mismo comportamiento del sitio original.
+
+### Una categoría o subcategoría
+
+**Productos → Categorías**. Cada una tiene dos campos propios: la
+**introducción** (el párrafo bajo el título) y las **características técnicas**,
+que heredan todos sus productos.
+
+### Un proyecto del portafolio
+
+**Portafolio → (elegir uno)**. Ubicación, alcance, área, año, la galería y las
+tres secciones editoriales (Desafío / Propuesta / Resultado). Si dejas las tres
+vacías, el proyecto se publica sólo con portada y galería — así está CAME hoy.
+
+### Textos del sitio
+
+**Apariencia → Personalizar → MAACH**: portada, contacto, redes, pie y el texto
+de dimensiones por defecto. Ahí también se decide si se piden datos antes de
+descargar un documento.
+
+### Menús
+
+**Apariencia → Menús**. Hay cuatro ubicaciones: menú principal y las tres
+columnas del pie. El mega menú de Productos se arma solo con las categorías que
+existan, así que crear una categoría nueva la agrega al menú sin tocar nada.
+
+---
+
+## Descargas de documentos
+
+Cuando alguien baja un `.dwg`, `.rfa`, `.skp` o la ficha en PDF, primero completa
+un formulario corto. Esos datos quedan en **Productos → Descargas** (nombre,
+correo, empresa, ocupación, qué documento y de qué producto).
+
+Para desactivarlo y que la descarga sea directa:
+**Personalizar → MAACH → Ficha de producto → Pedir datos antes de descargar → No**.
+
+WordPress no permite subir archivos `.dwg`/`.rfa`/`.skp` por defecto; el tema los
+habilita en la Biblioteca de medios.
+
+---
+
+## Regenerar el catálogo
+
+`maach-theme/data/maach-content.json` es la foto del catálogo que usa el
+importador. Si cambia el sitio original (`src/data/*`), se regenera con:
+
+```bash
+node wordpress-template/build-content.mjs
+```
+
+Lee `src/data/productos.ts`, `categorias.ts` y `blogs.ts`, toma los textos en
+español del diccionario i18n y arma el JSON con URLs absolutas a las imágenes y
+archivos publicados.
+
+---
+
+## Detalles de la réplica
+
+- **Tipografías**: las 16 fuentes de marca (Clash Grotesk, Monoblock y las
+  secundarias) van dentro del tema. No se cargan desde ningún servicio externo.
+- **CSS**: `style.css` es el mismo `src/index.css` del sitio original, portado
+  tal cual, más un bloque final con lo específico de WordPress.
+- **Comportamiento**: los mega menús, la galería con miniaturas, el lightbox del
+  portafolio y el formulario de descarga están reescritos en JavaScript sin
+  dependencias (`assets/js/maach.js`).
+- **Diferencias a propósito**:
+  - **Sólo español**. El sitio original es bilingüe; el tema no incluye el
+    selector ES/EN. Se puede añadir después con Polylang.
+  - **La Biblioteca de documentos es real**: recorre los productos y lista los
+    archivos que existen de verdad, en vez de la tabla de ejemplo del original.
+  - **Palladium** no se importa, igual que en el sitio.
+
+---
 
 ## Formulario de contacto
 
-La página Contacto trae un widget *Shortcode* con `[contact-form-7 id="TODO"]`.
-Instala **Contact Form 7**, crea el formulario (Nombre, Email, Teléfono, Empresa, Mensaje)
-y reemplaza `TODO` por el ID real del formulario.
+La página Contacto trae un formulario propio que envía por correo. Si prefieres
+Contact Form 7 (o cualquier otro), instala el plugin y pega su shortcode en el
+contenido de la página: el tema detecta que hay contenido y muestra ese en lugar
+del formulario propio.
 
-## Imágenes y fuentes
+---
 
-Las imágenes y las fuentes se cargan por URL directa desde
-`https://crpozo.github.io/maach-site/assets/…` (el sitio en vivo en GitHub Pages).
-Ventaja: la importación funciona de una y pesa poco.
-Para independizarte de GitHub Pages: sube las imágenes a la Biblioteca de medios y
-reemplázalas desde Elementor (clic en la imagen → elegir de la biblioteca), y sube los
-`.woff2` al servidor ajustando las URLs del CSS.
+## Kit de Elementor anterior
 
-## Colores globales (opcional, recomendado)
-
-En Elementor → **Site Settings → Global Colors** registra la paleta para tenerla a un clic:
-
-- Jet Black `#161616` · Blanco `#FFFFFF` · Lava Orange `#F34A23`
-- Mid Grey `#6F6F6F` · Sand Grey `#A9AAAC` · Line Grey `#E5E3E4`
-
-Y en **Global Fonts**: títulos *Clash Grotesk* (peso 500, mayúsculas),
-texto *Clash Grotesk* 400, acentos/botones *Monoblock* 600.
-
-## Límites conocidos
-
-- El **mega-menú** de Productos y el menú móvil del sitio original usan JavaScript propio;
-  el header de la plantilla usa enlaces simples (con Elementor Pro puedes montar el
-  mega-menú con el widget Nav Menu).
-- Los efectos *hover-reveal* de algunas tarjetas se muestran en su estado fijo.
-- Las páginas de detalle (producto, proyecto, artículo) no se incluyen; sus enlaces
-  apuntan a la página lista correspondiente.
-- El sitio original es bilingüe ES/EN; la plantilla usa el español. Para EN: Polylang o WPML
-  duplicando páginas.
+`elementor-kit-legacy/` es la versión previa: ocho páginas sueltas como
+plantillas de Elementor, sin productos ni fichas. Se conserva sólo por
+referencia; **el tema lo reemplaza por completo**. No hace falta instalarlo ni
+tener Elementor.
