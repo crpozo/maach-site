@@ -418,36 +418,17 @@ export default function PageProductDetail() {
             </div>
           </div>
 
-          {/* DIMENSIONES GENERALES — full-width */}
+          {/* DIMENSIONES — full-width. MAACH fabrica a medida, así que en lugar
+              de una tabla de medidas fijas se indica que son adaptables. */}
           <div style={{ marginTop: 64, paddingTop: 40, borderTop: '1px solid var(--line)' }}>
-            <h3 style={{ marginBottom: 32 }} className="maach-mono">
+            <h3 style={{ marginBottom: 20 }} className="maach-mono">
               <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
                 <IconRuler size={14} /> {t('pd.dimensions')}
               </span>
             </h3>
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
-                gap: 32,
-              }}
-            >
-              {[
-                [t('pd.dim.height'), '750 mm'],
-                [t('pd.dim.width'), '1200 — 1800 mm'],
-                [t('pd.dim.depth'), '450 — 500 mm'],
-                [t('pd.dim.tolerance'), '± 2 mm'],
-                [t('pd.dim.weight'), '32 kg'],
-                [t('pd.dim.load'), '120 kg'],
-              ].map(([k, v]) => (
-                <div key={k}>
-                  <span className="maach-mono" style={{ color: 'var(--muted)', display: 'block', marginBottom: 6 }}>
-                    {k}
-                  </span>
-                  <span style={{ fontFamily: 'var(--mono)', fontSize: 20, fontWeight: 600 }}>{v}</span>
-                </div>
-              ))}
-            </div>
+            <p style={{ fontSize: 18, lineHeight: 1.55, color: 'var(--fg)', margin: 0, maxWidth: 620 }}>
+              {t('pd.dim.adaptable')}
+            </p>
           </div>
 
         </div>
