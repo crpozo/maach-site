@@ -89,7 +89,10 @@ export default function PageProductDetail() {
   ).filter((d) => !!d.href);
 
   // The BIM/CAD button only handles CAD/BIM files (DWG/RFA/SKP) — never PDFs.
+  // No descarga uno solo: lleva a la lista de documentos para que el usuario
+  // elija el formato (antes bajaba en silencio el primero, siempre .skp).
   const cadDocs = docs.filter((d) => d.ext === 'DWG' || d.ext === 'RFA' || d.ext === 'SKP');
+  const docsId = 'documentos';
 
   function handleGateSubmit(e: FormEvent) {
     e.preventDefault();
@@ -341,7 +344,9 @@ export default function PageProductDetail() {
                   <button
                     className="btn-ghost"
                     style={{ flex: 1, justifyContent: 'center' }}
-                    onClick={() => setGateDoc({ href: cadDocs[0].href!, fileName: cadDocs[0].fileName })}
+                    onClick={() =>
+                      document.getElementById(docsId)?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                    }
                   >
                     <IconDownload size={14} /> {t('pd.bim_cad')}
                   </button>
@@ -375,7 +380,7 @@ export default function PageProductDetail() {
               {/* DOCUMENTOS — right column. Only docs that actually exist;
                   each opens a lead-gate form before downloading. */}
               {docs.length > 0 ? (
-                <div style={{ marginTop: 12, paddingTop: 28, borderTop: '1px solid var(--line)' }}>
+                <div id={docsId} style={{ marginTop: 12, paddingTop: 28, borderTop: '1px solid var(--line)' }}>
                   <h3 style={{ marginBottom: 20 }} className="maach-mono">
                     <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
                       <IconFile size={14} /> {t('pd.docs')}

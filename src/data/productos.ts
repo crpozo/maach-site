@@ -37,19 +37,22 @@ export type Product = {
 };
 
 // Helper for Escritorios products that follow the same disk layout as
-// Almacenamiento: NN.webp photos + optional .dwg next to the slug.
+// Almacenamiento: NN.webp photos + .dwg/.rfa/.skp junto al slug.
+// `cad: false` para los modelos que sólo tienen fotos (Escritorio Regulable).
 const escritorio = (
   slug: string,
   name: string,
   subcategory: 'Escritorios gerente' | 'Escritorios operativos' | 'Estaciones de trabajo' | 'Escritorios regulables',
   sku: string,
   description: string,
-  opts: { photos?: number; dwg?: boolean } = {},
+  opts: { photos?: number; cad?: boolean } = {},
 ): Product => {
   const photos = opts.photos ?? 6;
   const sheets: ProductSheets = {};
-  if (opts.dwg !== false) {
+  if (opts.cad !== false) {
     sheets.dwg = asset(`productos/escritorios/${slug}/${slug}.dwg`);
+    sheets.rfa = asset(`productos/escritorios/${slug}/${slug}.rfa`);
+    sheets.skp = asset(`productos/escritorios/${slug}/${slug}.skp`);
   }
   return {
     slug,
@@ -353,7 +356,7 @@ export const PRODUCTS: Product[] = [
     'Escritorios regulables',
     'MCH-ERG-01',
     'Escritorio con mecanismo de altura regulable y memoria de ajuste. Permite alternar entre posición sentada y de pie a lo largo de la jornada para una postura más saludable.',
-    { dwg: false },
+    { cad: false },
   ),
 
   // ─── ALMACENAMIENTO ──────────────────────────────────────────
