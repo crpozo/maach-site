@@ -11,6 +11,7 @@ import {
   IconTool,
 } from '../components/icons';
 import { getProductBySlug, getProductsByCategory } from '../data/productos';
+import { getSectionForSubcategory } from '../data/categorias';
 import { useT } from '../i18n/i18n';
 
 function slugify(s: string): string {
@@ -58,6 +59,16 @@ export default function PageProductDetail() {
         asset('biblioteca-5.webp'),
       ];
   const description = real ? t('prod.desc.' + real.slug) : undefined;
+
+  // Real characteristics for this product, taken from the editorial section
+  // its subcategory belongs to — the same list the category page renders.
+  const sectionInfo = real ? getSectionForSubcategory(real.subcategory) : undefined;
+  const features = sectionInfo
+    ? sectionInfo.section.caracteristicas.map((_, i) =>
+        t(`cat.${sectionInfo.category.slug}.sec.${sectionInfo.index}.feat.${i}`),
+      )
+    : [];
+
   const [idx, setIdx] = useState(0);
   const [zoom, setZoom] = useState(false);
 
@@ -297,37 +308,17 @@ export default function PageProductDetail() {
 
                 <div style={{ height: 1, background: 'rgba(228,226,227,.22)', width: '100%' }} />
 
-                <div style={{ display: 'flex', alignItems: 'flex-end', gap: 24, flexWrap: 'wrap' }}>
-                  <div style={{ flexShrink: 0 }}>
-                    <div
-                      style={{
-                        width: 64,
-                        height: 64,
-                        background: 'var(--off-white)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        overflow: 'hidden',
-                        marginBottom: 10,
-                      }}
-                    >
-                      <img
-                        src={images[0]}
-                        alt=""
-                        style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 6, boxSizing: 'border-box' }}
-                      />
-                    </div>
-                    <span className="maach-mono" style={{ color: 'var(--lava-orange)', letterSpacing: '.08em' }}>
-                      {category}
-                    </span>
-                  </div>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 12 }}>
+                  <span className="maach-mono" style={{ color: 'var(--lava-orange)', letterSpacing: '.08em' }}>
+                    {category}
+                  </span>
                   <h1
                     className="h-display"
                     style={{
                       fontSize: titleFontSize,
                       lineHeight: 0.92,
                       margin: 0,
-                      flex: 1,
+                      alignSelf: 'stretch',
                       minWidth: 0,
                       overflowWrap: 'break-word',
                     }}
@@ -358,6 +349,7 @@ export default function PageProductDetail() {
               </div>
 
               {/* CARACTERÍSTICAS TÉCNICAS — under the actions, right column */}
+              {features.length > 0 ? (
               <div style={{ marginTop: 12, paddingTop: 28, borderTop: '1px solid var(--line)' }}>
                 <h3 style={{ marginBottom: 24 }} className="maach-mono">
                   <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
@@ -365,13 +357,7 @@ export default function PageProductDetail() {
                   </span>
                 </h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
-                  {[
-                    t('pd.feat.1'),
-                    t('pd.feat.2'),
-                    t('pd.feat.3'),
-                    t('pd.feat.4'),
-                    t('pd.feat.5'),
-                  ].map((feat, i) => (
+                  {features.map((feat, i) => (
                     <div key={i} style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
                       <span
                         className="maach-mono"
@@ -384,6 +370,7 @@ export default function PageProductDetail() {
                   ))}
                 </div>
               </div>
+              ) : null}
 
               {/* DOCUMENTOS — right column. Only docs that actually exist;
                   each opens a lead-gate form before downloading. */}

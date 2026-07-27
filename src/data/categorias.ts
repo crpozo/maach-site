@@ -324,3 +324,25 @@ export const CATEGORIES: Category[] = [
 
 export const getCategoryBySlug = (slug: string): Category | undefined =>
   CATEGORIES.find((c) => c.slug === slug);
+
+/**
+ * Editorial section that covers a catalog product's subcategory, plus the
+ * category and section index needed to build its i18n keys
+ * (`cat.<category>.sec.<index>.…`). Lets the product detail page reuse the
+ * same real characteristics the category page shows, instead of duplicating
+ * them. Returns undefined for subcategories with no editorial section
+ * (e.g. Sofás).
+ */
+export function getSectionForSubcategory(
+  subcategory: string,
+): { category: Category; section: CategorySection; index: number } | undefined {
+  for (const category of CATEGORIES) {
+    const index = category.sections.findIndex((s) => {
+      const subs = s.productSubcategory;
+      if (!subs) return false;
+      return Array.isArray(subs) ? subs.includes(subcategory) : subs === subcategory;
+    });
+    if (index >= 0) return { category, section: category.sections[index], index };
+  }
+  return undefined;
+}
