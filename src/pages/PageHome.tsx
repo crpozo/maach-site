@@ -759,7 +759,7 @@ export default function PageHome() {
               { name: 'Banco ProCredit', file: 'banco-procredit.png' },
               { name: 'Grupo Puentes', file: 'grupo-puentes.png' },
               { name: 'Wesco', file: 'wesco.webp' },
-              { name: 'Palladium', file: 'palladium.jpg' },
+              // Palladium está oculto de toda la web por pedido del cliente.
               { name: 'Tropi Burger', file: 'tropi-burger.webp' },
             ];
 
