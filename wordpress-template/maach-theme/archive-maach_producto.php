@@ -45,6 +45,14 @@ $maach_filtro = isset( $_GET['cat'] ) ? sanitize_title( wp_unslash( $_GET['cat']
 <section style="padding:64px 0 128px">
 	<div class="maach-container">
 		<?php
+		$maach_hay = (int) wp_count_posts( 'maach_producto' )->publish;
+		if ( ! $maach_hay ) {
+			printf(
+				'<p style="font-size:18px;color:var(--muted);max-width:640px;line-height:1.6">%s</p>',
+				esc_html__( 'Todavía no hay productos cargados. En el administrador, entra a Productos → Importar catálogo y pulsa «Importar todo»: se crean los 84 productos con sus fotos y archivos CAD.', 'maach' )
+			);
+		}
+
 		foreach ( $maach_cats as $maach_cat ) {
 			if ( $maach_filtro && $maach_filtro !== $maach_cat->slug ) {
 				continue;

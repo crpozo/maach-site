@@ -1236,3 +1236,15 @@ html {
 /* La barra de administración no debe tapar el header fijo */
 .admin-bar .maach-nav { top: 32px; }
 @media (max-width: 782px) { .admin-bar .maach-nav { top: 46px; } }
+
+/* La animación de entrada del sitio original desplaza el contenido 8px hacia
+   abajo (translateY) y, según el navegador, ese desplazamiento se queda fijo:
+   deja una franja en blanco bajo la barra y descuadra la medición. Aquí sólo
+   se hace el fundido, sin mover nada. */
+@keyframes maachEntrada {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+main.page {
+  animation: maachEntrada 0.4s ease backwards;
+}

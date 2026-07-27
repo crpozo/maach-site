@@ -15,6 +15,28 @@
 		return Array.prototype.slice.call((ctx || document).querySelectorAll(sel));
 	};
 
+	/* ─── El contenido arranca justo bajo la barra fija ──────────────── */
+	/* La barra es `position:fixed` y el contenido la compensa con un
+	   padding. Si un plugin inyecta algo antes del contenido (banners de
+	   cookies, contenedores de analítica), ese padding deja de cuadrar y
+	   aparece una franja en blanco bajo el menú. Aquí se mide la posición
+	   real de ambos y se ajusta, así el resultado es el mismo con o sin
+	   plugins de por medio. */
+	function alinearCabecera() {
+		var nav = $('.maach-nav');
+		var main = $('main.page');
+		if (!nav || !main) return;
+
+		// Se mide sin animación para que ningún desplazamiento en curso
+		// falsee el cálculo.
+		var animacion = main.style.animation;
+		main.style.animation = 'none';
+		main.style.paddingTop = '0px';
+		var distancia = nav.getBoundingClientRect().bottom - main.getBoundingClientRect().top;
+		main.style.paddingTop = Math.max(0, Math.round(distancia)) + 'px';
+		main.style.animation = animacion;
+	}
+
 	/* ─── Menús desplegables del header ──────────────────────────────── */
 	function menus() {
 		var nav = $('.maach-nav');
@@ -273,6 +295,7 @@
 	}
 
 	document.addEventListener('DOMContentLoaded', function () {
+		alinearCabecera();
 		menus();
 		drawer();
 		buscador();
@@ -280,4 +303,11 @@
 		lightbox();
 		descargas();
 	});
+
+	// Se repite cuando ya cargó todo y tras la animación de entrada, porque
+	// algunos plugins insertan su banner después del DOMContentLoaded.
+	window.addEventListener('load', alinearCabecera);
+	window.addEventListener('resize', alinearCabecera);
+	setTimeout(alinearCabecera, 800);
+	setTimeout(alinearCabecera, 2500);
 })();

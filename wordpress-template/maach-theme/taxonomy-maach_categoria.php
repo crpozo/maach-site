@@ -75,7 +75,15 @@ foreach ( $maach_grupos as $maach_i => $maach_grupo ) :
 				<?php endif; ?>
 			</div>
 
-			<?php maach_grid_productos( $maach_grupo['posts'], 4 ); ?>
+			<?php
+			if ( $maach_grupo['posts'] ) {
+				maach_grid_productos( $maach_grupo['posts'], 4 );
+			} else {
+				echo '<p style="font-size:17px;color:var(--muted)">' .
+					esc_html__( 'Todavía no hay productos cargados en esta línea. Ve a Productos → Importar catálogo en el administrador.', 'maach' ) .
+					'</p>';
+			}
+			?>
 		</div>
 	</section>
 	<?php
