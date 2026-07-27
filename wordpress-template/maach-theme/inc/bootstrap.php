@@ -25,12 +25,21 @@ define( 'MAACH_BOOTSTRAP_VERSION', 1 );
  * @param bool $forzar Repetirla aunque ya se haya hecho.
  */
 function maach_bootstrap( $forzar = false ) {
-	if ( ! $forzar && (int) get_option( 'maach_bootstrap', 0 ) >= MAACH_BOOTSTRAP_VERSION ) {
+	// La marca sólo evita repetir trabajo cuando la estructura sigue en pie.
+	if ( ! $forzar
+		&& (int) get_option( 'maach_bootstrap', 0 ) >= MAACH_BOOTSTRAP_VERSION
+		&& maach_estructura_lista() ) {
 		return;
 	}
+	// Candado para que dos peticiones simultáneas no dupliquen contenido.
+	if ( ! $forzar && get_transient( 'maach_bootstrap_corriendo' ) ) {
+		return;
+	}
+	set_transient( 'maach_bootstrap_corriendo', 1, 2 * MINUTE_IN_SECONDS );
 
 	$datos = maach_datos();
 	if ( ! $datos ) {
+		delete_transient( 'maach_bootstrap_corriendo' );
 		return;
 	}
 
@@ -41,6 +50,7 @@ function maach_bootstrap( $forzar = false ) {
 	maach_limpiar_widgets();
 
 	update_option( 'maach_bootstrap', MAACH_BOOTSTRAP_VERSION );
+	delete_transient( 'maach_bootstrap_corriendo' );
 }
 
 /**
@@ -57,12 +67,31 @@ add_action( 'after_switch_theme', 'maach_al_activar' );
  * al administrador.
  */
 function maach_bootstrap_tardio() {
-	if ( ! is_admin() || wp_doing_ajax() ) {
+	if ( wp_doing_ajax() || wp_doing_cron() || ( defined( 'REST_REQUEST' ) && REST_REQUEST ) ) {
 		return;
 	}
 	maach_bootstrap();
 }
 add_action( 'admin_init', 'maach_bootstrap_tardio' );
+// También en la primera visita al sitio público: si el tema se copió por FTP o
+// se actualizó encima de otra versión, `after_switch_theme` no se dispara y
+// sin esto la portada se vería a medias.
+add_action( 'wp', 'maach_bootstrap_tardio' );
+
+/**
+ * ¿Está la estructura realmente creada? Se comprueba el resultado, no la marca
+ * de «ya se ejecutó»: si alguien borra las páginas o el import quedó a medias,
+ * la siguiente carga lo repara.
+ *
+ * @return bool
+ */
+function maach_estructura_lista() {
+	if ( ! get_page_by_path( 'contacto' ) || ! get_page_by_path( 'sobre-maach' ) ) {
+		return false;
+	}
+	$cats = get_terms( array( 'taxonomy' => 'maach_categoria', 'hide_empty' => false, 'fields' => 'ids' ) );
+	return ! is_wp_error( $cats ) && count( $cats ) >= 6;
+}
 
 /**
  * Aviso mientras el catálogo no esté cargado.

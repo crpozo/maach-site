@@ -57,10 +57,10 @@ add_action( 'admin_menu', 'maach_menu_importador' );
 function maach_pasos() {
 	return array(
 		'categorias' => __( 'Categorías y subcategorías', 'maach' ),
+		'paginas'    => __( 'Páginas y menús', 'maach' ),
 		'productos'  => __( 'Productos (fotos + documentos)', 'maach' ),
 		'proyectos'  => __( 'Portafolio', 'maach' ),
 		'articulos'  => __( 'Investigación', 'maach' ),
-		'paginas'    => __( 'Páginas y menús', 'maach' ),
 	);
 }
 
@@ -82,7 +82,18 @@ function maach_pantalla_importador() {
 		return;
 	}
 
+	// Botón «rehacer estructura»: crea categorías, páginas y menús al momento,
+	// sin descargar nada. Es la reparación rápida cuando el sitio se ve a medias.
+	if ( isset( $_GET['estructura'] ) && check_admin_referer( 'maach_estructura' ) ) {
+		maach_bootstrap( true );
+		echo '<div class="notice notice-success"><p>' .
+			esc_html__( 'Estructura creada: categorías, páginas y menús.', 'maach' ) .
+			'</p></div>';
+	}
+
 	if ( ! $correr ) {
+		maach_panel_estado( $datos );
+
 		printf(
 			'<p>%s</p><ul class="ul-disc"><li>%d %s</li><li>%d %s</li><li>%d %s</li><li>%d %s</li></ul>',
 			esc_html__( 'Se creará en esta instalación todo el contenido del sitio original. Puedes volver a ejecutarlo cuando quieras: actualiza lo que ya existe en lugar de duplicarlo.', 'maach' ),
@@ -97,9 +108,12 @@ function maach_pantalla_importador() {
 		);
 		echo '<p class="description">' . esc_html__( 'Las imágenes se descargan desde el sitio publicado, así que el servidor necesita salida a internet. Puede tardar varios minutos; no cierres la pestaña.', 'maach' ) . '</p>';
 		printf(
-			'<p><a href="%s" class="button button-primary button-hero">%s</a></p>',
+			'<p><a href="%s" class="button button-primary button-hero">%s</a>
+			 &nbsp;<a href="%s" class="button">%s</a></p>',
 			esc_url( add_query_arg( array( 'correr' => 1, 'paso' => 'categorias', 'desde' => 0 ) ) ),
-			esc_html__( 'Importar todo', 'maach' )
+			esc_html__( 'Importar todo', 'maach' ),
+			esc_url( wp_nonce_url( add_query_arg( 'estructura', 1 ), 'maach_estructura' ) ),
+			esc_html__( 'Sólo rehacer la estructura (rápido, sin descargas)', 'maach' )
 		);
 		echo '</div>';
 		return;
@@ -718,4 +732,53 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
 		}
 		WP_CLI::success( 'Catálogo importado.' );
 	} );
+}
+
+/**
+ * Panel de estado: qué hay creado en esta instalación y qué falta.
+ * Sirve para ver de un vistazo por qué el sitio puede verse incompleto.
+ *
+ * @param array $datos Manifiesto.
+ */
+function maach_panel_estado( $datos ) {
+	$paginas = array( 'espacios', 'sobre-maach', 'contacto', 'biblioteca', 'investigacion' );
+	$creadas = 0;
+	foreach ( $paginas as $slug ) {
+		if ( get_page_by_path( $slug ) ) {
+			++$creadas;
+		}
+	}
+
+	$menus = 0;
+	foreach ( array( 'principal', 'footer_1', 'footer_2', 'footer_3' ) as $ubicacion ) {
+		if ( maach_menu_id( $ubicacion ) ) {
+			++$menus;
+		}
+	}
+
+	$cats      = get_terms( array( 'taxonomy' => 'maach_categoria', 'hide_empty' => false, 'fields' => 'count' ) );
+	$cats      = is_wp_error( $cats ) ? 0 : (int) $cats;
+	$productos = (int) wp_count_posts( 'maach_producto' )->publish;
+	$proyectos = (int) wp_count_posts( 'maach_proyecto' )->publish;
+
+	$filas = array(
+		array( __( 'Archivo de catálogo (data/maach-content.json)', 'maach' ), $datos ? __( 'encontrado', 'maach' ) : __( 'NO encontrado', 'maach' ), (bool) $datos ),
+		array( __( 'Categorías', 'maach' ), $cats . ' / ' . count( $datos['categorias'] ), $cats >= count( $datos['categorias'] ) ),
+		array( __( 'Páginas del sitio', 'maach' ), $creadas . ' / ' . count( $paginas ), $creadas >= count( $paginas ) ),
+		array( __( 'Menús asignados', 'maach' ), $menus . ' / 4', $menus >= 4 ),
+		array( __( 'Productos', 'maach' ), $productos . ' / ' . count( $datos['productos'] ), $productos >= count( $datos['productos'] ) ),
+		array( __( 'Proyectos', 'maach' ), $proyectos . ' / ' . count( $datos['proyectos'] ), $proyectos >= count( $datos['proyectos'] ) ),
+	);
+
+	echo '<h2>' . esc_html__( 'Estado de esta instalación', 'maach' ) . '</h2>';
+	echo '<table class="widefat striped" style="max-width:640px;margin-bottom:24px"><tbody>';
+	foreach ( $filas as $fila ) {
+		printf(
+			'<tr><td style="width:60%%">%s</td><td><strong>%s</strong></td><td style="width:40px;font-size:16px">%s</td></tr>',
+			esc_html( $fila[0] ),
+			esc_html( $fila[1] ),
+			$fila[2] ? '✅' : '⚠️'
+		);
+	}
+	echo '</tbody></table>';
 }
