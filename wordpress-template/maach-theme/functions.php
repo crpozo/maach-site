@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'MAACH_VERSION', '1.0.0' );
+define( 'MAACH_VERSION', '1.5.0' );
 define( 'MAACH_DIR', get_template_directory() );
 define( 'MAACH_URI', get_template_directory_uri() );
 
@@ -64,8 +64,11 @@ add_action( 'after_setup_theme', 'maach_setup' );
  * Hojas de estilo y scripts.
  */
 function maach_assets() {
-	wp_enqueue_style( 'maach', get_stylesheet_uri(), array(), MAACH_VERSION );
-	wp_enqueue_script( 'maach', MAACH_URI . '/assets/js/maach.js', array(), MAACH_VERSION, true );
+	// La versión sale de la fecha del archivo: cada vez que se actualiza el
+	// tema cambia la URL y ni el navegador ni los plugins de caché pueden
+	// seguir sirviendo la versión vieja.
+	wp_enqueue_style( 'maach', get_stylesheet_uri(), array(), maach_version_archivo( 'style.css' ) );
+	wp_enqueue_script( 'maach', MAACH_URI . '/assets/js/maach.js', array(), maach_version_archivo( 'assets/js/maach.js' ), true );
 	wp_localize_script( 'maach', 'MAACH', array(
 		'ajax'  => admin_url( 'admin-ajax.php' ),
 		'nonce' => wp_create_nonce( 'maach_lead' ),
@@ -291,3 +294,17 @@ function maach_procesar_contacto() {
 	$GLOBALS['maach_contacto_estado'] = $enviado ? 'ok' : 'sin_correo';
 }
 add_action( 'template_redirect', 'maach_procesar_contacto' );
+
+
+/**
+ * Versión de un archivo del tema basada en su fecha de modificación.
+ * Evita que una caché sirva CSS o JS obsoletos tras actualizar el tema.
+ *
+ * @param string $ruta Ruta relativa dentro del tema.
+ * @return string
+ */
+function maach_version_archivo( $ruta ) {
+	$archivo = MAACH_DIR . '/' . ltrim( $ruta, '/' );
+	$fecha   = file_exists( $archivo ) ? filemtime( $archivo ) : 0;
+	return MAACH_VERSION . ( $fecha ? '.' . $fecha : '' );
+}

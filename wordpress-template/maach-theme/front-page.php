@@ -254,31 +254,73 @@ if ( $maach_proyectos ) :
 <?php endif; ?>
 
 <!-- CLIENTES -->
+<?php
+// Lista real de clientes del sitio. Los logos viven en assets/img/clientes;
+// una entrada sin archivo se muestra con su nombre, como en el original.
+$maach_clientes = apply_filters( 'maach_clientes', array(
+	array( 'Gran Comercio', 'gran-comercio.png' ),
+	array( 'Contract Workplaces', 'contract-workplaces.png' ),
+	array( 'Induvallas', 'induvallas.png' ),
+	array( 'Sarmiento', 'sarmiento.jpeg' ),
+	array( 'Grupo KFC', 'grupo-kfc.jpeg' ),
+	array( 'UDLA', 'udla.png' ),
+	array( 'Cooperativa Policía Nacional', '' ),
+	array( 'ConstruEcuador', 'construecuador.jpg' ),
+	array( 'Liga Deportiva U.', 'liga-deportiva-u.jpeg' ),
+	array( 'PUCE', 'puce.png' ),
+	array( 'Zaimella', 'zaimella.png' ),
+	array( 'Corporación Maresa', 'corporacion-maresa.avif' ),
+	array( 'Kruger', 'kruger.png' ),
+	array( 'Arroyo & Arroyo', 'arroyo-arroyo.jpg' ),
+	array( 'Carsnack', 'carsnack.jpg' ),
+	array( 'UIDE', 'uide.webp' ),
+	array( 'PMJ Arquitectos', 'pmj-arquitectos.png' ),
+	array( 'Banco ProCredit', 'banco-procredit.png' ),
+	array( 'Grupo Puentes', 'grupo-puentes.png' ),
+	array( 'Wesco', 'wesco.webp' ),
+	array( 'Tropi Burger', 'tropi-burger.webp' ),
+) );
+?>
 <section style="padding:128px 0;border-bottom:1px solid var(--line)">
-	<div class="maach-container" style="margin-bottom:48px">
-		<span class="maach-mono" style="color:var(--muted);display:block;margin-bottom:16px"><?php esc_html_e( 'Confían en MAACH', 'maach' ); ?></span>
-		<h2 class="h-display" style="font-size:clamp(28px,4vw,56px)"><?php esc_html_e( 'Clientes', 'maach' ); ?></h2>
+	<div class="maach-container" style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;flex-wrap:wrap;gap:16px">
+		<div>
+			<span class="maach-mono" style="color:var(--muted);display:block;margin-bottom:16px"><?php esc_html_e( 'Clientes', 'maach' ); ?></span>
+			<h2 class="h-display" style="font-size:clamp(40px,6vw,88px)">
+				<?php esc_html_e( 'Confianza', 'maach' ); ?>
+				<span class="h-italic" style="color:var(--lava-orange)"><?php esc_html_e( 'industrial', 'maach' ); ?></span>
+			</h2>
+		</div>
+		<span class="maach-mono" style="color:var(--muted)">
+			<?php
+			printf(
+				/* translators: %d: número de organizaciones. */
+				esc_html__( '+%d organizaciones · Ecuador', 'maach' ),
+				count( $maach_clientes )
+			);
+			?>
+		</span>
 	</div>
-	<?php
-	// Los logos viven en assets/img/clientes; para cambiarlos basta con
-	// reemplazar los archivos o subir los propios y editar esta lista desde
-	// el administrador (Medios) usando el filtro maach_logos_clientes.
-	$maach_logos = apply_filters( 'maach_logos_clientes', array(
-		'zaimella.png', 'corporacion-maresa.avif', 'kruger.png', 'arroyo-arroyo.jpg',
-		'carsnack.jpg', 'uide.webp', 'pmj-arquitectos.png', 'banco-procredit.png',
-		'grupo-puentes.png', 'wesco.webp', 'tropi-burger.webp',
-	) );
-	?>
+
 	<div class="logos-marquee">
 		<?php for ( $maach_i = 0; $maach_i < 2; $maach_i++ ) : ?>
 			<div class="logos-track" <?php echo $maach_i ? 'aria-hidden="true"' : ''; ?>>
-				<?php foreach ( $maach_logos as $maach_logo ) : ?>
-					<div class="logos-cell">
-						<img src="<?php echo esc_url( maach_img( 'clientes/' . $maach_logo ) ); ?>" alt="" loading="lazy">
+				<?php foreach ( $maach_clientes as $maach_cli ) : ?>
+					<div class="logos-cell" title="<?php echo esc_attr( $maach_cli[0] ); ?>">
+						<?php if ( $maach_cli[1] ) : ?>
+							<img src="<?php echo esc_url( maach_img( 'clientes/' . $maach_cli[1] ) ); ?>" alt="<?php echo esc_attr( $maach_cli[0] ); ?>" loading="lazy">
+						<?php else : ?>
+							<span class="maach-mono" style="color:var(--fg);text-align:center;line-height:1.4"><?php echo esc_html( $maach_cli[0] ); ?></span>
+						<?php endif; ?>
 					</div>
 				<?php endforeach; ?>
 			</div>
 		<?php endfor; ?>
+	</div>
+
+	<div class="maach-container" style="margin-top:32px;text-align:center">
+		<span class="maach-mono" style="color:var(--muted)">
+			<?php esc_html_e( 'Marcas y organizaciones con las que MAACH ha colaborado · 2018 — 2026', 'maach' ); ?>
+		</span>
 	</div>
 </section>
 
