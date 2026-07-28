@@ -39,7 +39,20 @@ jobs:
       - name: Compilar para el dominio propio
         run: npm run build -- --base=/
 
+      # Mientras no existan los secretos FTP el despliegue se salta en vez de
+      # marcar el push en rojo. En cuanto se añadan, empieza a publicar solo.
+      - name: ¿Hay credenciales FTP?
+        id: cred
+        run: echo "ok=${{ secrets.FTP_SERVER != '' && secrets.FTP_USERNAME != '' }}" >> "$GITHUB_OUTPUT"
+
+      - name: Aviso si faltan credenciales
+        if: steps.cred.outputs.ok != 'true'
+        run: |
+          echo "::notice::Faltan los secretos FTP_SERVER / FTP_USERNAME / FTP_PASSWORD."
+          echo "::notice::Se añaden en Settings → Secrets and variables → Actions."
+
       - name: Subir por FTP
+        if: steps.cred.outputs.ok == 'true'
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
