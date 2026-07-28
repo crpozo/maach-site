@@ -1,0 +1,55 @@
+# Publica el sitio en maach.ec (hosting cPanel) por FTP en cada push a main.
+#
+# Requiere tres secretos en GitHub → Settings → Secrets and variables →
+# Actions → New repository secret:
+#
+#   FTP_SERVER    ftp.maach.ec   (o la IP del servidor: 154.16.200.27)
+#   FTP_USERNAME  el usuario FTP creado en cPanel → Cuentas FTP
+#   FTP_PASSWORD  su contraseña
+#
+# El despliegue borra y reemplaza el contenido de la carpeta destino, así que
+# `server-dir` debe apuntar sólo a donde vive el sitio.
+
+name: Deploy to maach.ec
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: maach-ec
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      # base=/ porque el sitio vive en la raíz del dominio, no en un subpath
+      # como en GitHub Pages.
+      - name: Compilar para el dominio propio
+        run: npm run build -- --base=/
+
+      - name: Subir por FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/
+          server-dir: /public_html/
+          # Se conserva lo que no forma parte del sitio compilado.
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/cgi-bin/**
+            **/.well-known/**

@@ -1,127 +1,17 @@
+/* Las @font-face viven en public/assets/fonts/fonts.css — ver index.html. */
+
 /* ────────────────────────────────────────────────────────────
    MAACH — BRAND TYPOGRAPHY (Brand Book 2026)
    Principal:  Monoblock     · display, headlines
    Secundaria: ClashGrotesk  · body
    Auxiliar:   Segoe UI      · labels, mono-style metadata
    ──────────────────────────────────────────────────────────── */
-@font-face {
-  font-family: 'Monoblock';
-  src: url('/maach-site/assets/fonts/monoblock-light.woff2') format('woff2');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Monoblock';
-  src: url('/maach-site/assets/fonts/monoblock-regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Monoblock';
-  src: url('/maach-site/assets/fonts/monoblock-medium.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Monoblock';
-  src: url('/maach-site/assets/fonts/monoblock-semibold.woff2') format('woff2');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Monoblock';
-  src: url('/maach-site/assets/fonts/monoblock-bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Monoblock';
-  src: url('/maach-site/assets/fonts/monoblock-extrabold.woff2') format('woff2');
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Clash Grotesk';
-  src: url('/maach-site/assets/fonts/clashgrotesk-variable.woff2') format('woff2-variations'),
-       url('/maach-site/assets/fonts/clashgrotesk-variable.woff2') format('woff2');
-  font-weight: 200 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Segoe UI';
-  src: url('/maach-site/assets/fonts/segoe-ui-variable.woff2') format('woff2-variations'),
-       url('/maach-site/assets/fonts/segoe-ui-variable.woff2') format('woff2');
-  font-weight: 300 700;
-  font-style: normal;
-  font-display: swap;
-}
+
 /* Monoblock — extra weights to complete the 100–800 range */
-@font-face {
-  font-family: 'Monoblock';
-  src: url('/maach-site/assets/fonts/monoblock-thin.woff2') format('woff2');
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Monoblock';
-  src: url('/maach-site/assets/fonts/monoblock-extralight.woff2') format('woff2');
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
-}
+
 /* Brand-book secondary families — declared so utility classes /
    var(--font-*) tokens below can target them where the design calls
    for the specific face. */
-@font-face {
-  font-family: 'Archivo';
-  src: url('/maach-site/assets/fonts/archivo-regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Blauer Nue';
-  src: url('/maach-site/assets/fonts/blauernue-light.woff2') format('woff2');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Blauer Nue';
-  src: url('/maach-site/assets/fonts/blauernue-medium.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Glancyr';
-  src: url('/maach-site/assets/fonts/glancyr-medium.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Myriad Pro';
-  src: url('/maach-site/assets/fonts/myriadpro-regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Neuething Sans';
-  src: url('/maach-site/assets/fonts/neuethingsans-medium.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
 
 :root {
   --jet-black: #161616;

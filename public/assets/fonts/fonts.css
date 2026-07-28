@@ -1,0 +1,119 @@
+/* Tipografías de marca MAACH.
+   Vive fuera del bundle, junto a los .woff2, y se enlaza desde index.html con
+   %BASE_URL%. Así las rutas funcionan igual en desarrollo, en GitHub Pages
+   (/maach-site/) y en el dominio propio (/), sin tocar nada. */
+
+@font-face {
+  font-family: 'Monoblock';
+  src: url('monoblock-light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Monoblock';
+  src: url('monoblock-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Monoblock';
+  src: url('monoblock-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Monoblock';
+  src: url('monoblock-semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Monoblock';
+  src: url('monoblock-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Monoblock';
+  src: url('monoblock-extrabold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Clash Grotesk';
+  src: url('clashgrotesk-variable.woff2') format('woff2-variations'),
+       url('clashgrotesk-variable.woff2') format('woff2');
+  font-weight: 200 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Segoe UI';
+  src: url('segoe-ui-variable.woff2') format('woff2-variations'),
+       url('segoe-ui-variable.woff2') format('woff2');
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Monoblock';
+  src: url('monoblock-thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Monoblock';
+  src: url('monoblock-extralight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Archivo';
+  src: url('archivo-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Blauer Nue';
+  src: url('blauernue-light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Blauer Nue';
+  src: url('blauernue-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Glancyr';
+  src: url('glancyr-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Myriad Pro';
+  src: url('myriadpro-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Neuething Sans';
+  src: url('neuethingsans-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}

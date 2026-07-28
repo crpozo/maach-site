@@ -1,0 +1,70 @@
+# Configuración para servir el sitio en un hosting Apache/cPanel (maach.ec).
+# Vite copia este archivo a dist/ en cada build, así que sube con el sitio.
+
+# ─── Rutas de la aplicación ────────────────────────────────────────────────
+# El sitio es una SPA: /productos, /contacto, etc. no son carpetas reales.
+# Si la ruta pedida no existe como archivo, se entrega index.html y React
+# resuelve la navegación. Sin esto, recargar cualquier página da 404.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Forzar HTTPS
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Archivos y carpetas reales se sirven tal cual
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Todo lo demás va a la aplicación
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# ─── Tipos de archivo ──────────────────────────────────────────────────────
+# El catálogo ofrece descargas CAD/BIM que Apache no conoce por defecto.
+<IfModule mod_mime.c>
+  AddType image/webp                 .webp
+  AddType font/woff2                 .woff2
+  AddType application/acad           .dwg
+  AddType application/octet-stream   .rfa
+  AddType application/octet-stream   .skp
+</IfModule>
+
+# ─── Caché ─────────────────────────────────────────────────────────────────
+# Los assets llevan hash en el nombre, así que pueden cachearse un año.
+# index.html nunca se cachea para que un despliegue se vea de inmediato.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css              "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/webp            "access plus 1 year"
+  ExpiresByType image/png             "access plus 1 year"
+  ExpiresByType image/jpeg            "access plus 1 year"
+  ExpiresByType font/woff2            "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "\.(css|js|webp|png|jpe?g|woff2|avif)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
+
+# ─── Compresión ────────────────────────────────────────────────────────────
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml application/json
+</IfModule>
+
+# ─── Seguridad básica ──────────────────────────────────────────────────────
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Sin listado de directorios
+Options -Indexes
