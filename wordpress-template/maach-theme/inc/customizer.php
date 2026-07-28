@@ -89,6 +89,7 @@ function maach_customizer( $wp_customize ) {
 	$campo( 'maach_direccion_2', 'maach_contacto', __( 'Dirección · línea 2', 'maach' ) );
 	$campo( 'maach_email', 'maach_contacto', __( 'Correo', 'maach' ), 'text', 'ventas@maach.ec' );
 	$campo( 'maach_telefono', 'maach_contacto', __( 'Teléfono', 'maach' ), 'text', '+593 99 720 0455' );
+	$campo( 'maach_telefonos', 'maach_contacto', __( 'Teléfonos de la página de contacto (uno por línea)', 'maach' ), 'textarea', '', __( 'Se muestran como lista con el signo + naranja, igual que el sitio original.', 'maach' ) );
 	$campo( 'maach_instagram', 'maach_contacto', __( 'Instagram (URL)', 'maach' ), 'url' );
 	$campo( 'maach_linkedin', 'maach_contacto', __( 'LinkedIn (URL)', 'maach' ), 'url' );
 	$campo( 'maach_behance', 'maach_contacto', __( 'Behance (URL)', 'maach' ), 'url' );

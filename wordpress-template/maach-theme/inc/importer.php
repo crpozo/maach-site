@@ -72,6 +72,7 @@ function maach_pantalla_importador() {
 	$paso  = isset( $_GET['paso'] ) ? sanitize_key( wp_unslash( $_GET['paso'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 	$desde = isset( $_GET['desde'] ) ? absint( wp_unslash( $_GET['desde'] ) ) : 0; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 	$correr = isset( $_GET['correr'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+	$rapido = isset( $_GET['modo'] ) && 'rapido' === $_GET['modo']; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 
 	echo '<div class="wrap"><h1>' . esc_html__( 'Importar el catálogo MAACH', 'maach' ) . '</h1>';
 
@@ -108,13 +109,21 @@ function maach_pantalla_importador() {
 		);
 		echo '<p class="description">' . esc_html__( 'Las imágenes se descargan desde el sitio publicado, así que el servidor necesita salida a internet. Puede tardar varios minutos; no cierres la pestaña.', 'maach' ) . '</p>';
 		printf(
-			'<p><a href="%s" class="button button-primary button-hero">%s</a>
-			 &nbsp;<a href="%s" class="button">%s</a></p>',
-			esc_url( add_query_arg( array( 'correr' => 1, 'paso' => 'categorias', 'desde' => 0 ) ) ),
-			esc_html__( 'Importar todo', 'maach' ),
+			'<p style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+			 <a href="%s" class="button button-primary button-hero">%s</a>
+			 <a href="%s" class="button button-hero">%s</a>
+			 <a href="%s" class="button">%s</a></p>',
+			esc_url( add_query_arg( array( 'correr' => 1, 'paso' => 'categorias', 'desde' => 0, 'modo' => 'rapido' ) ) ),
+			esc_html__( 'Cargar el catálogo ya (rápido)', 'maach' ),
+			esc_url( add_query_arg( array( 'correr' => 1, 'paso' => 'categorias', 'desde' => 0, 'modo' => 'completo' ) ) ),
+			esc_html__( 'Importar todo con fotos y archivos', 'maach' ),
 			esc_url( wp_nonce_url( add_query_arg( 'estructura', 1 ), 'maach_estructura' ) ),
-			esc_html__( 'Sólo rehacer la estructura (rápido, sin descargas)', 'maach' )
+			esc_html__( 'Sólo rehacer la estructura', 'maach' )
 		);
+		echo '<p class="description" style="max-width:720px">' . esc_html__(
+			'«Cargar el catálogo ya» crea los 84 productos en segundos y muestra sus fotos desde el sitio publicado, sin descargar nada: úsalo si la importación completa se corta o el servidor es lento. Después puedes ejecutar «Importar todo» para traer las imágenes y los archivos CAD a tu propia biblioteca de medios.',
+			'maach'
+		) . '</p>';
 		echo '</div>';
 		return;
 	}
@@ -133,7 +142,7 @@ function maach_pantalla_importador() {
 	}
 
 	$total     = maach_total_paso( $paso, $datos );
-	$procesado = maach_correr_paso( $paso, $desde, $datos );
+	$procesado = maach_correr_paso( $paso, $desde, $datos, $rapido );
 	$siguiente = $desde + $procesado;
 	$fin       = $siguiente >= $total;
 
@@ -154,7 +163,7 @@ function maach_pantalla_importador() {
 		$total ? (int) ( 100 * min( $siguiente, $total ) / $total ) : 100
 	);
 
-	$url = add_query_arg( array( 'correr' => 1, 'paso' => $sig_paso, 'desde' => $sig_desde ) );
+	$url = add_query_arg( array( 'correr' => 1, 'paso' => $sig_paso, 'desde' => $sig_desde, 'modo' => $rapido ? 'rapido' : 'completo' ) );
 	printf(
 		'<p class="description">%s</p><meta http-equiv="refresh" content="1;url=%s"><p><a href="%s">%s</a></p></div>',
 		esc_html__( 'Continuando automáticamente…', 'maach' ),
@@ -195,7 +204,7 @@ function maach_total_paso( $paso, $datos ) {
  * @param array  $datos Manifiesto.
  * @return int Elementos procesados.
  */
-function maach_correr_paso( $paso, $desde, $datos ) {
+function maach_correr_paso( $paso, $desde, $datos, $sin_medios = false ) {
 	@set_time_limit( 300 ); // phpcs:ignore WordPress.PHP.NoSilencedErrors
 
 	if ( 'paginas' === $paso ) {
@@ -226,13 +235,13 @@ function maach_correr_paso( $paso, $desde, $datos ) {
 				maach_importar_categoria( $item );
 				break;
 			case 'productos':
-				maach_importar_producto( $item );
+				maach_importar_producto( $item, $sin_medios );
 				break;
 			case 'proyectos':
-				maach_importar_proyecto( $item );
+				maach_importar_proyecto( $item, $sin_medios );
 				break;
 			case 'articulos':
-				maach_importar_articulo( $item );
+				maach_importar_articulo( $item, $sin_medios );
 				break;
 		}
 	}
@@ -288,7 +297,7 @@ function maach_importar_categoria( $cat ) {
  *
  * @param array $p Producto del manifiesto.
  */
-function maach_importar_producto( $p ) {
+function maach_importar_producto( $p, $sin_medios = false ) {
 	$id = maach_post_por_slug( $p['slug'], 'maach_producto' );
 
 	$args = array(
@@ -314,6 +323,22 @@ function maach_importar_producto( $p ) {
 
 	wp_set_object_terms( $id, array( $p['categoria'] ), 'maach_categoria' );
 	wp_set_object_terms( $id, array( sanitize_title( $p['subcategoria'] ) ), 'maach_subcategoria' );
+
+	// En modo rápido no se descarga nada: las fotos y los documentos se
+	// sirven desde el sitio publicado, así los productos aparecen al
+	// instante aunque el servidor sea lento o no tenga salida a internet.
+	if ( $sin_medios ) {
+		update_post_meta( $id, 'maach_galeria_urls', implode( "\n", $p['galeria'] ) );
+		foreach ( array( 'pdf', 'dwg', 'rfa', 'skp' ) as $ext ) {
+			$url = $p['archivos'][ $ext ] ?? '';
+			if ( $url ) {
+				update_post_meta( $id, 'maach_' . $ext, $url );
+			} else {
+				delete_post_meta( $id, 'maach_' . $ext );
+			}
+		}
+		return;
+	}
 
 	// Fotos. Si alguna no se puede descargar (servidor sin salida a internet,
 	// por ejemplo) se guarda su URL de origen para que la ficha no quede vacía.
@@ -351,7 +376,7 @@ function maach_importar_producto( $p ) {
  *
  * @param array $pr Proyecto del manifiesto.
  */
-function maach_importar_proyecto( $pr ) {
+function maach_importar_proyecto( $pr, $sin_medios = false ) {
 	$id   = maach_post_por_slug( $pr['slug'], 'maach_proyecto' );
 	$args = array(
 		'post_type'   => 'maach_proyecto',
@@ -378,6 +403,12 @@ function maach_importar_proyecto( $pr ) {
 	update_post_meta( $id, 'maach_propuesta_intro', $pr['propuesta_intro'] ?? '' );
 	update_post_meta( $id, 'maach_propuesta', implode( "\n", $pr['propuesta'] ?? array() ) );
 	update_post_meta( $id, 'maach_resultado', implode( "\n", $pr['resultado'] ?? array() ) );
+
+	if ( $sin_medios ) {
+		update_post_meta( $id, 'maach_portada_url', $pr['portada'] );
+		update_post_meta( $id, 'maach_galeria_urls', implode( "\n", $pr['galeria'] ) );
+		return;
+	}
 
 	$portada = maach_traer_medio( $pr['portada'], $id, $pr['titulo'] );
 	if ( $portada ) {
@@ -409,7 +440,7 @@ function maach_importar_proyecto( $pr ) {
  *
  * @param array $a Artículo del manifiesto.
  */
-function maach_importar_articulo( $a ) {
+function maach_importar_articulo( $a, $sin_medios = false ) {
 	$contenido  = '<!-- wp:paragraph --><p>' . esc_html( $a['intro'] ) . '</p><!-- /wp:paragraph -->';
 	foreach ( $a['secciones'] as $sec ) {
 		switch ( $sec['tipo'] ) {
@@ -460,6 +491,10 @@ function maach_importar_articulo( $a ) {
 	update_post_meta( $id, 'maach_numero', $a['numero'] );
 	if ( ! empty( $a['categoria'] ) ) {
 		wp_set_object_terms( $id, array( $a['categoria'] ), 'category' );
+	}
+	if ( $sin_medios ) {
+		update_post_meta( $id, 'maach_portada_url', $a['portada'] );
+		return;
 	}
 	$portada = maach_traer_medio( $a['portada'], $id, $a['titulo'] );
 	if ( $portada ) {

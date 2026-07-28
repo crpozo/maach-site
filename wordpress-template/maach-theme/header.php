@@ -53,8 +53,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<div class="maach-nav-item <?php echo $activo ? 'is-active' : ''; ?>"
 						<?php echo $es_portafolio ? 'data-dropdown="portafolio"' : ''; ?>
 						style="height:100%;display:flex;align-items:center">
-						<a href="<?php echo esc_url( $item['url'] ); ?>" class="maach-mono" style="font-size:12px;font-weight:600">
-							<?php echo esc_html( $titulo ); ?>
+						<a href="<?php echo esc_url( $item['url'] ); ?>" class="maach-mono"
+							style="font-size:12px;font-weight:600;display:inline-flex;align-items:center;gap:6px">
+							<?php echo esc_html( $titulo ); ?><?php if ( $es_portafolio ) { maach_icono( 'down', 11 ); } ?>
 						</a>
 					</div>
 					<?php

@@ -31,9 +31,15 @@
 		// falsee el cálculo.
 		var animacion = main.style.animation;
 		main.style.animation = 'none';
+		// Se mide sólo la barra, no el <nav> entero: los mega menús viven
+		// dentro y, si están desplegados, falsearían la altura.
+		var barra = nav.querySelector('.maach-container') || nav;
 		main.style.paddingTop = '0px';
-		var distancia = nav.getBoundingClientRect().bottom - main.getBoundingClientRect().top;
-		main.style.paddingTop = Math.max(0, Math.round(distancia)) + 'px';
+		var distancia = barra.getBoundingClientRect().bottom - main.getBoundingClientRect().top;
+		// Nunca más de la altura de la barra: si algo sale mal, se queda en el
+		// valor de siempre en vez de abrir un hueco enorme.
+		var tope = barra.offsetHeight + 40;
+		main.style.paddingTop = Math.min( tope, Math.max(0, Math.round(distancia)) ) + 'px';
 		main.style.animation = animacion;
 	}
 

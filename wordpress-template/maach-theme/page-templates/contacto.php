@@ -92,103 +92,114 @@ $maach_shortcode = trim( wp_strip_all_tags( get_the_content( null, false, get_th
 <section class="invert" style="background:var(--jet-black);color:var(--off-white);padding:112px 0;position:relative;overflow:hidden;border-bottom:1px solid var(--line)">
 	<div class="tex-slats" aria-hidden="true" style="position:absolute;inset:0;z-index:0;pointer-events:none"></div>
 	<div class="maach-container" style="position:relative;z-index:1">
-		<div style="display:grid;grid-template-columns:1.3fr 1fr;gap:80px;align-items:start">
 
+		<div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;flex-wrap:wrap;gap:16px">
 			<div>
-				<span class="maach-mono" style="color:var(--lava-orange);display:block;margin-bottom:16px">
+				<span class="maach-mono" style="color:var(--lava-orange);display:block;margin-bottom:28px">
 					<?php esc_html_e( 'Formulario · Iniciar conversación', 'maach' ); ?>
 				</span>
-				<h2 class="h-display" style="font-size:clamp(40px,5vw,72px);color:var(--off-white);margin-bottom:12px">
+				<h2 class="h-display" style="font-size:clamp(40px,5.5vw,80px);color:var(--off-white);line-height:1;margin:0">
 					<?php esc_html_e( 'Escríbenos', 'maach' ); ?>
 				</h2>
-				<span class="maach-mono" style="color:var(--sand-grey);display:block;margin-bottom:48px">
-					<?php esc_html_e( 'Respuesta < 24 hrs', 'maach' ); ?>
-				</span>
+			</div>
+			<span class="maach-mono" style="color:var(--sand-grey)"><?php esc_html_e( 'Respuesta < 24 hrs', 'maach' ); ?></span>
+		</div>
 
-				<?php if ( 'ok' === $maach_estado || 'sin_correo' === $maach_estado ) : ?>
-					<div style="border:1px solid var(--lava-orange);padding:24px;margin-bottom:32px">
-						<p class="maach-mono" style="color:var(--lava-orange);margin:0 0 8px"><?php esc_html_e( 'Mensaje recibido', 'maach' ); ?></p>
-						<p style="margin:0;font-size:16px;color:var(--off-white)"><?php esc_html_e( 'Gracias por escribirnos. Te respondemos a la brevedad.', 'maach' ); ?></p>
-					</div>
-				<?php elseif ( 'error' === $maach_estado ) : ?>
-					<div style="border:1px solid var(--off-white);padding:24px;margin-bottom:32px">
-						<p style="margin:0;font-size:16px;color:var(--off-white)"><?php esc_html_e( 'Revisa los campos obligatorios: nombre, correo y mensaje.', 'maach' ); ?></p>
-					</div>
-				<?php endif; ?>
+		<div style="display:grid;grid-template-columns:1.5fr 1fr;gap:80px">
 
-				<?php if ( $maach_shortcode ) : ?>
-					<div class="maach-prose"><?php the_content(); ?></div>
-				<?php else : ?>
-					<form method="post" style="display:grid;gap:32px">
-						<?php wp_nonce_field( 'maach_contacto', 'maach_contacto_nonce' ); ?>
-						<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
-							<div>
-								<label class="maach-label" for="c-nombre"><?php esc_html_e( 'Nombre y apellido *', 'maach' ); ?></label>
-								<input class="maach-input" type="text" id="c-nombre" name="c_nombre" required placeholder="Roberto A. Salgado">
-							</div>
-							<div>
-								<label class="maach-label" for="c-correo"><?php esc_html_e( 'Correo electrónico *', 'maach' ); ?></label>
-								<input class="maach-input" type="email" id="c-correo" name="c_correo" required placeholder="r.salgado@empresa.com">
-							</div>
-							<div>
-								<label class="maach-label" for="c-empresa"><?php esc_html_e( 'Empresa', 'maach' ); ?></label>
-								<input class="maach-input" type="text" id="c-empresa" name="c_empresa" placeholder="Estudio Alba">
-							</div>
-							<div>
-								<label class="maach-label" for="c-telefono"><?php esc_html_e( 'Teléfono', 'maach' ); ?></label>
-								<input class="maach-input" type="tel" id="c-telefono" name="c_telefono">
-							</div>
+			<?php if ( $maach_shortcode ) : ?>
+				<div class="maach-prose" style="background:#1c1c1c;border:1px solid rgba(228,226,227,.15);padding:40px"><?php the_content(); ?></div>
+			<?php else : ?>
+				<form method="post" style="background:#1c1c1c;border:1px solid rgba(228,226,227,.15);padding:40px 40px 32px">
+					<?php wp_nonce_field( 'maach_contacto', 'maach_contacto_nonce' ); ?>
+
+					<?php if ( 'ok' === $maach_estado || 'sin_correo' === $maach_estado ) : ?>
+						<div style="border:1px solid var(--lava-orange);padding:20px;margin-bottom:28px">
+							<p class="maach-mono" style="color:var(--lava-orange);margin:0 0 8px"><?php esc_html_e( 'Mensaje recibido', 'maach' ); ?></p>
+							<p style="margin:0;font-size:15px;color:var(--off-white)"><?php esc_html_e( 'Gracias por escribirnos. Te respondemos a la brevedad.', 'maach' ); ?></p>
+						</div>
+					<?php elseif ( 'error' === $maach_estado ) : ?>
+						<div style="border:1px solid var(--off-white);padding:20px;margin-bottom:28px">
+							<p style="margin:0;font-size:15px;color:var(--off-white)"><?php esc_html_e( 'Revisa los campos obligatorios: nombre, correo y mensaje.', 'maach' ); ?></p>
+						</div>
+					<?php endif; ?>
+
+					<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:28px">
+						<div>
+							<label class="maach-label" for="c-nombre" style="color:var(--sand-grey)"><?php esc_html_e( 'Nombre y apellido *', 'maach' ); ?></label>
+							<input class="maach-input" style="border-color:rgba(228,226,227,.4);color:var(--off-white)" type="text" id="c-nombre" name="c_nombre" required placeholder="Roberto A. Salgado">
 						</div>
 						<div>
-							<label class="maach-label" for="c-mensaje"><?php esc_html_e( 'Mensaje *', 'maach' ); ?></label>
-							<textarea class="maach-input" id="c-mensaje" name="c_mensaje" rows="4" required
-								placeholder="<?php esc_attr_e( 'Cuéntanos sobre tu proyecto: volumen estimado, plazos, sede, m² aprox...', 'maach' ); ?>"><?php
-								echo $maach_producto ? esc_textarea( __( 'Hola, me interesa el producto:', 'maach' ) . ' ' . $maach_producto ) : '';
-							?></textarea>
+							<label class="maach-label" for="c-correo" style="color:var(--sand-grey)"><?php esc_html_e( 'Correo electrónico *', 'maach' ); ?></label>
+							<input class="maach-input" style="border-color:rgba(228,226,227,.4);color:var(--off-white)" type="email" id="c-correo" name="c_correo" required placeholder="r.salgado@empresa.com">
 						</div>
-						<label style="display:inline-flex;align-items:center;gap:10px;color:var(--sand-grey);font-size:14px">
-							<input type="checkbox" name="c_privacidad" required>
-							<?php esc_html_e( 'Acepto el aviso de privacidad', 'maach' ); ?>
-						</label>
-						<button type="submit" class="btn-primary" style="justify-self:start">
-							<?php esc_html_e( 'Enviar mensaje', 'maach' ); ?><?php maach_icono( 'arrow', 14 ); ?>
-						</button>
-					</form>
-				<?php endif; ?>
-			</div>
+					</div>
 
-			<aside style="display:flex;flex-direction:column;gap:40px">
-				<div>
-					<span class="maach-mono" style="color:var(--lava-orange);display:block;margin-bottom:20px">
+					<div style="margin-bottom:28px">
+						<label class="maach-label" for="c-empresa" style="color:var(--sand-grey)"><?php esc_html_e( 'Empresa', 'maach' ); ?></label>
+						<input class="maach-input" style="border-color:rgba(228,226,227,.4);color:var(--off-white)" type="text" id="c-empresa" name="c_empresa" placeholder="Estudio Alba">
+					</div>
+
+					<div style="margin-bottom:32px">
+						<label class="maach-label" for="c-mensaje" style="color:var(--sand-grey)"><?php esc_html_e( 'Mensaje *', 'maach' ); ?></label>
+						<textarea class="maach-input" style="resize:vertical;border-color:rgba(228,226,227,.4);color:var(--off-white)" id="c-mensaje" name="c_mensaje" rows="5" required
+							placeholder="<?php esc_attr_e( 'Cuéntanos sobre tu proyecto: volumen estimado, plazos, sede, m² aprox...', 'maach' ); ?>"><?php
+							echo $maach_producto ? esc_textarea( __( 'Hola, me interesa el producto:', 'maach' ) . ' ' . $maach_producto ) : '';
+						?></textarea>
+					</div>
+
+					<div style="display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:24px;flex-wrap:wrap">
+						<label style="display:inline-flex;align-items:center;gap:10px;cursor:pointer">
+							<input type="checkbox" name="c_privacidad" checked required style="width:16px;height:16px;accent-color:var(--lava-orange)">
+							<span class="maach-mono" style="color:var(--sand-grey)"><?php esc_html_e( 'Acepto el aviso de privacidad', 'maach' ); ?></span>
+						</label>
+					</div>
+
+					<button type="submit" class="btn-primary" style="width:100%;justify-content:space-between;padding:20px 28px">
+						<?php esc_html_e( 'Enviar mensaje', 'maach' ); ?><?php maach_icono( 'arrow', 14 ); ?>
+					</button>
+				</form>
+			<?php endif; ?>
+
+			<aside style="display:flex;flex-direction:column;gap:20px">
+				<div style="background:#1c1c1c;border:1px solid rgba(228,226,227,.15);padding:32px">
+					<span class="maach-mono" style="color:var(--lava-orange);display:block;margin-bottom:24px">
 						<?php esc_html_e( 'Información de contacto', 'maach' ); ?>
 					</span>
-					<span class="maach-label" style="color:var(--sand-grey)"><?php esc_html_e( 'Dirección', 'maach' ); ?></span>
-					<p style="font-size:17px;line-height:1.6;color:var(--off-white);margin:0 0 24px">
+					<a href="mailto:<?php echo esc_attr( maach_opcion( 'maach_email', 'ventas@maach.ec' ) ); ?>"
+						style="font-family:var(--display);font-weight:700;font-size:26px;color:var(--off-white);border-bottom:2px solid var(--lava-orange);padding-bottom:4px;display:inline-block">
+						<?php echo esc_html( maach_opcion( 'maach_email', 'ventas@maach.ec' ) ); ?>
+					</a>
+				</div>
+
+				<div style="background:#1c1c1c;border:1px solid rgba(228,226,227,.15);padding:32px">
+					<span class="maach-mono" style="color:var(--sand-grey);display:block;margin-bottom:20px"><?php esc_html_e( 'Teléfonos', 'maach' ); ?></span>
+					<?php
+					$maach_tels = maach_opcion_lista( 'maach_telefonos', array( '0997 200 455', '0979 514 286', '0999 441 139' ) );
+					foreach ( $maach_tels as $maach_tel ) :
+						?>
+						<div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+							<span style="color:var(--lava-orange);font-family:var(--mono);font-weight:700">+</span>
+							<a href="tel:<?php echo esc_attr( preg_replace( '/\s+/', '', $maach_tel ) ); ?>"
+								style="font-family:var(--mono);font-size:18px;letter-spacing:.06em;color:var(--off-white)">
+								<?php echo esc_html( $maach_tel ); ?>
+							</a>
+						</div>
+					<?php endforeach; ?>
+				</div>
+
+				<div style="background:#1c1c1c;border:1px solid rgba(228,226,227,.15);padding:32px">
+					<span class="maach-mono" style="color:var(--sand-grey);display:block;margin-bottom:16px"><?php esc_html_e( 'Tiempo de respuesta', 'maach' ); ?></span>
+					<div style="font-family:var(--display);font-weight:700;font-size:clamp(40px,4vw,56px);line-height:1;color:var(--lava-orange);letter-spacing:-.02em;margin-bottom:12px">&lt; 24 hrs</div>
+					<span class="maach-mono" style="color:var(--sand-grey)"><?php esc_html_e( 'Para solicitudes técnicas', 'maach' ); ?></span>
+				</div>
+
+				<div style="background:#1c1c1c;border:1px solid rgba(228,226,227,.15);padding:32px">
+					<span class="maach-mono" style="color:var(--sand-grey);display:block;margin-bottom:12px"><?php esc_html_e( 'Dirección', 'maach' ); ?></span>
+					<p style="font-size:17px;line-height:1.6;color:var(--off-white);margin:0">
 						<?php echo esc_html( maach_opcion( 'maach_direccion_1', 'Quito · Ecuador' ) ); ?>
 						<?php if ( maach_opcion( 'maach_direccion_2' ) ) : ?><br><?php echo esc_html( maach_opcion( 'maach_direccion_2' ) ); ?><?php endif; ?>
 					</p>
-
-					<span class="maach-label" style="color:var(--sand-grey)"><?php esc_html_e( 'Correo', 'maach' ); ?></span>
-					<p style="margin:0 0 24px">
-						<a href="mailto:<?php echo esc_attr( maach_opcion( 'maach_email', 'ventas@maach.ec' ) ); ?>" style="font-size:17px;color:var(--off-white)">
-							<?php echo esc_html( maach_opcion( 'maach_email', 'ventas@maach.ec' ) ); ?>
-						</a>
-					</p>
-
-					<span class="maach-label" style="color:var(--sand-grey)"><?php esc_html_e( 'Teléfonos', 'maach' ); ?></span>
-					<p style="margin:0">
-						<a href="tel:<?php echo esc_attr( preg_replace( '/\s+/', '', maach_opcion( 'maach_telefono', '+593997200455' ) ) ); ?>" style="font-size:17px;color:var(--off-white)">
-							<?php echo esc_html( maach_opcion( 'maach_telefono', '+593 99 720 0455' ) ); ?>
-						</a>
-					</p>
-				</div>
-
-				<div style="padding-top:32px;border-top:1px solid rgba(228,226,227,.18)">
-					<span class="maach-mono" style="color:var(--sand-grey);display:block;margin-bottom:10px">
-						<?php esc_html_e( 'Tiempo de respuesta', 'maach' ); ?>
-					</span>
-					<div style="font-family:var(--display);font-weight:700;font-size:44px;line-height:1;color:var(--lava-orange);letter-spacing:-.02em">&lt; 24h</div>
-					<span class="maach-mono" style="color:var(--sand-grey)"><?php esc_html_e( 'Para solicitudes técnicas', 'maach' ); ?></span>
 				</div>
 			</aside>
 		</div>
