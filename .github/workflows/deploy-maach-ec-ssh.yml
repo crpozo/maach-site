@@ -1,0 +1,76 @@
+# Publica el sitio en maach.ec por SSH (sin FTP), en cada push a main.
+#
+# Usa rsync sobre SSH: sube sólo lo que cambió, así el primer despliegue tarda
+# unos minutos y los siguientes segundos.
+#
+# Requiere tres secretos en GitHub → Settings → Secrets and variables →
+# Actions → New repository secret:
+#
+#   SSH_HOST   maach.ec   (o 154.16.200.27)
+#   SSH_USER   maach      (el «Current User» que muestra cPanel)
+#   SSH_KEY    la clave PRIVADA generada en cPanel → Acceso SSH
+#
+# Y en cPanel → Acceso SSH → Administrar claves SSH: autorizar la clave
+# pública correspondiente.
+
+name: Deploy to maach.ec (SSH)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: maach-ec-ssh
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      # base=/ porque el sitio vive en la raíz del dominio.
+      - name: Compilar para el dominio propio
+        run: npm run build -- --base=/
+
+      - name: ¿Hay credenciales SSH?
+        id: cred
+        run: echo "ok=${{ secrets.SSH_HOST != '' && secrets.SSH_USER != '' }}" >> "$GITHUB_OUTPUT"
+
+      - name: Aviso si faltan credenciales
+        if: steps.cred.outputs.ok != 'true'
+        run: |
+          echo "::notice::Faltan los secretos SSH_HOST / SSH_USER / SSH_KEY."
+          echo "::notice::Se añaden en Settings → Secrets and variables → Actions."
+
+      - name: Preparar la clave
+        if: steps.cred.outputs.ok == 'true'
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.SSH_KEY }}" > ~/.ssh/id_deploy
+          chmod 600 ~/.ssh/id_deploy
+          # El puerto SSH de muchos cPanel no es el 22; se puede fijar con el
+          # secreto opcional SSH_PORT.
+          ssh-keyscan -p "${{ secrets.SSH_PORT || 22 }}" -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts 2>/dev/null
+
+      - name: Subir con rsync
+        if: steps.cred.outputs.ok == 'true'
+        run: |
+          rsync -az --delete \
+            -e "ssh -i ~/.ssh/id_deploy -p ${{ secrets.SSH_PORT || 22 }} -o StrictHostKeyChecking=accept-new" \
+            --exclude '.well-known' \
+            --exclude 'cgi-bin' \
+            ./dist/ \
+            "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:~/public_html/"
+
+      - name: Resumen
+        if: steps.cred.outputs.ok == 'true'
+        run: echo "::notice::Sitio publicado en https://maach.ec"
