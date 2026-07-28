@@ -1,0 +1,69 @@
+# Deja el sitio compilado dentro del propio repositorio, en `dist-static/`,
+# para que cPanel (Git™ Version Control) pueda publicarlo sin ejecutar npm.
+#
+# Sólo se versiona el HTML y el bundle (unos cientos de KB). Las fotos, las
+# tipografías y los archivos CAD ya viven en `public/` y el despliegue de
+# cPanel los copia desde ahí — no se duplican.
+#
+# Flujo completo:
+#   push a main → este workflow compila y commitea dist-static/
+#   → en cPanel: «Update from Remote» + «Deploy HEAD Commit»
+
+name: Build for cPanel
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'dist-static/**'
+      - 'wordpress-template/**'
+      - '**.md'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-cpanel
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      # base=/ porque en maach.ec el sitio vive en la raíz del dominio.
+      - name: Compilar para el dominio propio
+        run: npm run build -- --base=/
+
+      # De dist/ sólo interesan el HTML y el bundle: el resto es una copia de
+      # public/, que cPanel ya tiene en el repositorio.
+      - name: Preparar dist-static/
+        run: |
+          rm -rf dist-static
+          mkdir -p dist-static/assets
+          cp dist/index.html dist-static/
+          cp dist/assets/index-*.js dist-static/assets/ 2>/dev/null || true
+          cp dist/assets/index-*.css dist-static/assets/ 2>/dev/null || true
+          echo "Contenido de dist-static:"
+          find dist-static -type f | sed 's/^/  /'
+
+      - name: Commitear si cambió
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A dist-static
+          if git diff --cached --quiet; then
+            echo "Sin cambios en el bundle."
+            exit 0
+          fi
+          git commit -m "Build para cPanel [skip ci]"
+          git push

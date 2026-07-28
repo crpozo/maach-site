@@ -1,0 +1,20 @@
+---
+# Despliegue de cPanel (Git™ Version Control).
+#
+# cPanel sólo copia archivos: no puede ejecutar `npm run build`. Por eso el
+# bundle compilado (index.html + assets/index-*.js/css) lo genera GitHub
+# Actions y lo deja versionado en `dist-static/`. Aquí sólo se copian las dos
+# piezas a public_html:
+#
+#   public/       fotos, tipografías, archivos CAD y el .htaccess
+#   dist-static/  el HTML y el bundle ya compilados
+#
+# Uso: cPanel → Git Version Control → Administrar → «Update from Remote» y
+# después «Deploy HEAD Commit».
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/maach/public_html
+    - /bin/mkdir -p $DEPLOYPATH
+    - /bin/cp -R public/. $DEPLOYPATH/
+    - /bin/cp -R dist-static/. $DEPLOYPATH/
+    - /bin/echo "Sitio desplegado en $DEPLOYPATH"

@@ -5,6 +5,10 @@
 # El sitio es una SPA: /productos, /contacto, etc. no son carpetas reales.
 # Si la ruta pedida no existe como archivo, se entrega index.html y React
 # resuelve la navegación. Sin esto, recargar cualquier página da 404.
+# Si quedan restos de una instalación anterior de WordPress, su index.php
+# tomaría precedencia sobre el sitio. Esto asegura que mande index.html.
+DirectoryIndex index.html index.php
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
