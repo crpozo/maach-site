@@ -17,4 +17,6 @@ deployment:
     - /bin/mkdir -p $DEPLOYPATH
     - /bin/cp -R public/. $DEPLOYPATH/
     - /bin/cp -R dist-static/. $DEPLOYPATH/
+    - /bin/rm -rf $DEPLOYPATH/wp-admin $DEPLOYPATH/wp-includes $DEPLOYPATH/wp-content
+    - /bin/rm -f $DEPLOYPATH/index.php $DEPLOYPATH/wp-config.php $DEPLOYPATH/wp-login.php $DEPLOYPATH/xmlrpc.php $DEPLOYPATH/wp-cron.php $DEPLOYPATH/wp-settings.php $DEPLOYPATH/wp-load.php $DEPLOYPATH/wp-blog-header.php $DEPLOYPATH/readme.html $DEPLOYPATH/license.txt
     - /bin/echo "Sitio desplegado en $DEPLOYPATH"
