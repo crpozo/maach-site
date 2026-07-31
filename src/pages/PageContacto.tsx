@@ -1,5 +1,5 @@
 import { asset } from '../lib/asset';
-import { useState } from 'react';
+import { useState, type FormEvent } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Layout } from '../components/Layout';
 import { IconArrow } from '../components/icons';
@@ -9,6 +9,7 @@ type FormState = {
   nombre: string;
   correo: string;
   empresa: string;
+  telefono: string;
   mensaje: string;
 };
 
@@ -20,10 +21,42 @@ export default function PageContacto() {
     nombre: '',
     correo: '',
     empresa: '',
+    telefono: '',
     mensaje: producto ? `${t('cont.prefill_product')} ${producto}` : '',
   });
   const set = <K extends keyof FormState>(k: K, v: FormState[K]) =>
     setForm((f) => ({ ...f, [k]: v }));
+
+  // El sitio es estático; el envío lo atiende public/api/contacto.php, que
+  // vive en el mismo hosting y manda el correo a ventas@maach.ec.
+  const [envio, setEnvio] = useState<'idle' | 'enviando' | 'ok' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
+  const [trampa, setTrampa] = useState('');
+
+  async function enviar(e: FormEvent) {
+    e.preventDefault();
+    if (envio === 'enviando') return;
+    setEnvio('enviando');
+    setErrorMsg('');
+    try {
+      const res = await fetch(asset('api/contacto.php'), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...form, web: trampa }),
+      });
+      const data = (await res.json().catch(() => null)) as { ok?: boolean; error?: string } | null;
+      if (res.ok && data?.ok) {
+        setEnvio('ok');
+        setForm({ nombre: '', correo: '', empresa: '', telefono: '', mensaje: '' });
+      } else {
+        setEnvio('error');
+        setErrorMsg(data?.error ?? 'No se pudo enviar el mensaje.');
+      }
+    } catch {
+      setEnvio('error');
+      setErrorMsg('No se pudo conectar con el servidor.');
+    }
+  }
 
   return (
     <Layout screenLabel="14 Contacto">
@@ -140,7 +173,7 @@ export default function PageContacto() {
                     <div
                       style={{
                         fontFamily: 'var(--display)',
-                        fontWeight: 700,
+                        fontWeight: 500,
                         fontSize: 36,
                         lineHeight: 1,
                         marginBottom: 6,
@@ -284,10 +317,7 @@ export default function PageContacto() {
           <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: 80 }}>
             {/* FORM */}
             <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                alert('Mock: formulario enviado');
-              }}
+              onSubmit={enviar}
               style={{
                 background: '#1c1c1c',
                 border: '1px solid rgba(228,226,227,.15)',
@@ -391,12 +421,58 @@ export default function PageContacto() {
                 </label>
               </div>
 
+              {envio === 'ok' ? (
+                <div
+                  style={{
+                    border: '1px solid var(--lava-orange)',
+                    padding: 20,
+                    marginBottom: 20,
+                  }}
+                >
+                  <span className="maach-mono" style={{ color: 'var(--lava-orange)', display: 'block', marginBottom: 8 }}>
+                    Mensaje enviado
+                  </span>
+                  <span style={{ fontSize: 15, color: 'var(--off-white)' }}>
+                    Gracias por escribirnos. Te respondemos a la brevedad.
+                  </span>
+                </div>
+              ) : null}
+              {envio === 'error' ? (
+                <div
+                  style={{
+                    border: '1px solid rgba(228,226,227,.5)',
+                    padding: 20,
+                    marginBottom: 20,
+                  }}
+                >
+                  <span style={{ fontSize: 15, color: 'var(--off-white)' }}>{errorMsg}</span>
+                </div>
+              ) : null}
+
+              {/* Campo señuelo: los bots lo rellenan, las personas no lo ven. */}
+              <input
+                type="text"
+                name="web"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden
+                value={trampa}
+                onChange={(e) => setTrampa(e.target.value)}
+                style={{ position: 'absolute', left: '-9999px', width: 1, height: 1 }}
+              />
+
               <button
                 type="submit"
                 className="btn-primary"
-                style={{ width: '100%', justifyContent: 'space-between', padding: '20px 28px' }}
+                disabled={envio === 'enviando'}
+                style={{
+                  width: '100%',
+                  justifyContent: 'space-between',
+                  padding: '20px 28px',
+                  opacity: envio === 'enviando' ? 0.6 : 1,
+                }}
               >
-                {t('cta.send_message')} <IconArrow size={14} />
+                {envio === 'enviando' ? 'Enviando…' : t('cta.send_message')} <IconArrow size={14} />
               </button>
             </form>
 
@@ -480,7 +556,7 @@ export default function PageContacto() {
                 <div
                   style={{
                     fontFamily: 'var(--display)',
-                    fontWeight: 700,
+                    fontWeight: 500,
                     fontSize: 56,
                     lineHeight: 1,
                     marginBottom: 8,

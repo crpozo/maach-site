@@ -770,7 +770,7 @@ export default function PageAbout() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 8 }}>
             {[
               { n: '01', img: asset('brand/planta-corte-cnc.webp'), title: t('home.planta.01.title'), body: t('home.planta.01.body') },
-              { n: '02', img: asset('brand/planta-soldadura.webp'), title: t('home.planta.02.title'), body: t('home.planta.02.body') },
+              { n: '02', img: asset('brand/planta-enchapado.webp'), title: t('home.planta.02.title'), body: t('home.planta.02.body') },
               { n: '03', img: asset('brand/planta-pintura.webp'), title: t('home.planta.03.title'), body: t('home.planta.03.body') },
               { n: '04', img: asset('brand/planta-ensamble.webp'), title: t('home.planta.04.title'), body: t('home.planta.04.body') },
             ].map((p) => (

@@ -49,8 +49,13 @@ export default function PageProductDetail() {
         ? 'clamp(30px, 3.6vw, 50px)'
         : 'clamp(26px, 3vw, 40px)';
 
+  // En la ficha se muestran primero los renders ambientados y de último la
+  // foto del producto sobre fondo blanco. Esa primera foto sigue siendo la
+  // portada en el catálogo y en las cuadrículas (real.gallery[0]).
   const images = real
-    ? real.gallery
+    ? real.gallery.length > 1
+      ? [...real.gallery.slice(1), real.gallery[0]]
+      : real.gallery
     : [
         asset('biblioteca-1.webp'),
         asset('biblioteca-2.webp'),
@@ -88,11 +93,6 @@ export default function PageProductDetail() {
     ] as Array<{ name: string; ext: string; href?: string; fileName?: string }>
   ).filter((d) => !!d.href);
 
-  // The BIM/CAD button only handles CAD/BIM files (DWG/RFA/SKP) — never PDFs.
-  // No descarga uno solo: lleva a la lista de documentos para que el usuario
-  // elija el formato (antes bajaba en silencio el primero, siempre .skp).
-  const cadDocs = docs.filter((d) => d.ext === 'DWG' || d.ext === 'RFA' || d.ext === 'SKP');
-  const docsId = 'documentos';
 
   function handleGateSubmit(e: FormEvent) {
     e.preventDefault();
@@ -340,17 +340,7 @@ export default function PageProductDetail() {
                 >
                   {t('pd.contact_advisor')}
                 </Link>
-                {cadDocs.length > 0 ? (
-                  <button
-                    className="btn-ghost"
-                    style={{ flex: 1, justifyContent: 'center' }}
-                    onClick={() =>
-                      document.getElementById(docsId)?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-                    }
-                  >
-                    <IconDownload size={14} /> {t('pd.bim_cad')}
-                  </button>
-                ) : null}
+
               </div>
 
               {/* CARACTERÍSTICAS TÉCNICAS — under the actions, right column */}
@@ -380,7 +370,7 @@ export default function PageProductDetail() {
               {/* DOCUMENTOS — right column. Only docs that actually exist;
                   each opens a lead-gate form before downloading. */}
               {docs.length > 0 ? (
-                <div id={docsId} style={{ marginTop: 12, paddingTop: 28, borderTop: '1px solid var(--line)' }}>
+                <div id="documentos" style={{ marginTop: 12, paddingTop: 28, borderTop: '1px solid var(--line)' }}>
                   <h3 style={{ marginBottom: 20 }} className="maach-mono">
                     <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
                       <IconFile size={14} /> {t('pd.docs')}
