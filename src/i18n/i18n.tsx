@@ -570,8 +570,8 @@ const T: Translations = {
     'home.planta.02.body': 'Canteado automático de alta precisión para bordes uniformes y duraderos.',
     'home.planta.03.title': 'Pintura electrostática',
     'home.planta.03.body': 'Recubrimiento en polvo horneado para máxima durabilidad.',
-    'home.planta.04.title': 'Ensamble y control',
-    'home.planta.04.body': 'Armado, verificación dimensional y control de calidad final.',
+    'home.planta.04.title': 'Área de Metal Mecánica',
+    'home.planta.04.body': 'Ensamble y control de calidad',
     // Casos de Estudio
     'home.cases.eyebrow': 'Portafolio',
     'home.cases.title': 'Casos de Estudio',
@@ -1520,8 +1520,8 @@ const T: Translations = {
     'home.planta.02.body': 'Automated high-precision edge banding for uniform, durable edges.',
     'home.planta.03.title': 'Powder coating',
     'home.planta.03.body': 'Baked powder coating for maximum durability.',
-    'home.planta.04.title': 'Assembly & control',
-    'home.planta.04.body': 'Assembly, dimensional verification and final quality control.',
+    'home.planta.04.title': 'Metalworking area',
+    'home.planta.04.body': 'Assembly and quality control',
     // Casos de Estudio
     'home.cases.eyebrow': 'Portfolio',
     'home.cases.title': 'Case Studies',

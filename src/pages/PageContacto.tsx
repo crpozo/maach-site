@@ -173,7 +173,7 @@ export default function PageContacto() {
                     <div
                       style={{
                         fontFamily: 'var(--display)',
-                        fontWeight: 500,
+                        fontWeight: 400,
                         fontSize: 36,
                         lineHeight: 1,
                         marginBottom: 6,
@@ -556,7 +556,7 @@ export default function PageContacto() {
                 <div
                   style={{
                     fontFamily: 'var(--display)',
-                    fontWeight: 500,
+                    fontWeight: 400,
                     fontSize: 56,
                     lineHeight: 1,
                     marginBottom: 8,
