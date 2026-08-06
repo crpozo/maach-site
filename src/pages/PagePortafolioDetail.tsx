@@ -23,7 +23,7 @@ type ProjectData = {
 const DATA: Record<string, ProjectData> = {
   '01': {
     title: 'CPN',
-    hero: asset('proyectos/cpn/01.webp'),
+    hero: asset('proyectos/cpn/portada.webp'),
     gallery: [
       asset('proyectos/cpn/02.webp'),
       asset('proyectos/cpn/03.webp'),
@@ -52,7 +52,7 @@ const DATA: Record<string, ProjectData> = {
   // '02' Palladium está oculto de toda la web por pedido del cliente.
   '03': {
     title: 'Wesco',
-    hero: asset('proyectos/wesco/01.webp'),
+    hero: asset('proyectos/wesco/portada.webp'),
     gallery: [
       asset('proyectos/wesco/02.webp'),
       asset('proyectos/wesco/03.webp'),
@@ -137,7 +137,7 @@ const DATA: Record<string, ProjectData> = {
   },
   '06': {
     title: 'CAME',
-    hero: asset('proyectos/came/01.webp'),
+    hero: asset('proyectos/came/portada.webp'),
     // Selección de 8 fotos (mismo criterio que Wesco): recepción como pieza
     // destacada, luego reunión, privadas y operativas. Se dejan fuera 08 y 10
     // por repetir encuadre con 09 y 03. El copy del proyecto aún no está
@@ -163,7 +163,9 @@ function ProjectHero({ p }: { p: ProjectData; id?: string }) {
       <section
         style={{
           position: 'relative',
-          minHeight: 'calc(100vh - 80px)',
+          // 16:9 como la foto: se ve completa, sin recorte ni zoom.
+          aspectRatio: '16 / 9',
+          minHeight: 'min(calc(100vh - 80px), 56.25vw)',
           overflow: 'hidden',
           borderBottom: '1px solid var(--line)',
           background: 'var(--jet-black)',

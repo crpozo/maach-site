@@ -25,7 +25,7 @@ export default function PagePortafolio() {
       scope: 'Edificio corporativo matriz · Recepción, salas y áreas operativas',
       area: '2,400 m²',
       year: '2025',
-      img: asset('proyectos/cpn/01.webp'),
+      img: asset('proyectos/cpn/portada.webp'),
     },
     // Palladium ('02') está oculto de toda la web por pedido del cliente.
     {
@@ -34,14 +34,14 @@ export default function PagePortafolio() {
       location: 'Quito, EC',
       scope: 'Edificio administrativo · Mobiliario estándar y a medida',
       year: '2026',
-      img: asset('proyectos/wesco/01.webp'),
+      img: asset('proyectos/wesco/portada.webp'),
     },
     {
       id: '06',
       title: 'CAME',
       location: 'Quito, EC',
       scope: 'Oficinas corporativas · Mobiliario estándar y a medida',
-      img: asset('proyectos/came/01.webp'),
+      img: asset('proyectos/came/portada.webp'),
     },
   ];
 
@@ -253,8 +253,12 @@ export default function PagePortafolio() {
               position: 'relative',
               display: 'block',
               width: '100%',
-              height: hasPhoto ? '85vh' : '60vh',
-              minHeight: hasPhoto ? 600 : 440,
+              // Las portadas son 16:9. El contenedor toma esa misma
+              // proporción para que la foto entre completa, sin recorte,
+              // y siga leyéndose como banner de ancho total.
+              aspectRatio: hasPhoto ? '16 / 9' : undefined,
+              height: hasPhoto ? undefined : '60vh',
+              minHeight: hasPhoto ? undefined : 440,
               overflow: 'hidden',
               borderBottom: '1px solid var(--line)',
               background: hasPhoto ? 'var(--jet-black)' : 'var(--jet-black)',
@@ -271,10 +275,7 @@ export default function PagePortafolio() {
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
-                    transition: 'transform 1.2s ease',
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.transform = '')}
                 />
                 <div
                   style={{
