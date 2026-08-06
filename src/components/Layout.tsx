@@ -396,7 +396,10 @@ function Nav() {
         className="maach-container"
         style={{ height: 80, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
       >
-        <div className="nav-left" style={{ display: 'flex', alignItems: 'center', gap: 56, height: '100%' }}>
+        <div
+          className="nav-left"
+          style={{ display: 'flex', alignItems: 'center', gap: 56, height: '100%', position: 'relative', zIndex: 2 }}
+        >
           <Link to="/" onClick={() => setMegaOpen(false)}>
             <Logo height={26} />
           </Link>
@@ -535,8 +538,10 @@ function Nav() {
         <button
           className="nav-burger"
           aria-label={drawerOpen ? 'Cerrar menú' : 'Abrir menú'}
+          aria-expanded={drawerOpen}
           onClick={() => setDrawerOpen((v) => !v)}
-          style={{ padding: 10, display: 'none' }}
+          // 44px de área táctil y por encima del cajón.
+          style={{ padding: 12, display: 'none', position: 'relative', zIndex: 2 }}
         >
           {drawerOpen ? <IconClose size={20} /> : <IconMenu size={20} />}
         </button>
@@ -557,7 +562,11 @@ function Nav() {
           background: 'var(--off-white)',
           borderTop: '1px solid var(--line)',
           transform: drawerOpen ? 'translateY(0)' : 'translateY(-100%)',
-          transition: 'transform .35s ease',
+          // Cerrado se oculta de verdad: si sólo se desplaza, sigue cubriendo
+          // la barra —tapa el logo y el botón, y se traga el toque—.
+          visibility: drawerOpen ? 'visible' : 'hidden',
+          pointerEvents: drawerOpen ? 'auto' : 'none',
+          transition: 'transform .35s ease, visibility .35s ease',
           zIndex: 80,
           overflowY: 'auto',
           display: 'none',
