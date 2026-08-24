@@ -1,0 +1,12 @@
+# El panel es una aplicación PHP: las rutas de la SPA no deben capturarlo.
+<IfModule mod_rewrite.c>
+  RewriteEngine Off
+</IfModule>
+
+# Nunca servir por HTTP los archivos internos del panel.
+<FilesMatch "^(usuarios|config)\.php$">
+  Require all denied
+</FilesMatch>
+
+DirectoryIndex index.php
+Options -Indexes

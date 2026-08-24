@@ -1,0 +1,6 @@
+# El contenido se sirve como JSON (el sitio lo lee al arrancar), pero los
+# respaldos y el registro no deben ser públicos.
+<FilesMatch "\.(log)$">
+  Require all denied
+</FilesMatch>
+RedirectMatch 404 ^/contenido/respaldos/

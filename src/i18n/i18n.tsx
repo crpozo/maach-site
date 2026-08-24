@@ -7,6 +7,7 @@ import {
   useState,
   type ReactNode,
 } from 'react';
+import { textoEditado } from '../lib/contenido';
 
 export type Lang = 'es' | 'en';
 
@@ -1945,6 +1946,12 @@ export function I18nProvider({ children }: { children: ReactNode }) {
 
   const t = useCallback<I18nValue['t']>(
     (key) => {
+      // Lo editado desde /admin manda sobre lo compilado (sólo en español,
+      // que es el idioma que administra el panel).
+      if (lang === 'es') {
+        const editado = textoEditado(key as string);
+        if (editado !== undefined) return editado;
+      }
       const dict = T[lang] as Dict;
       return dict[key as string] ?? (T.es as Dict)[key as string] ?? String(key);
     },

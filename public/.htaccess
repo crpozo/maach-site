@@ -17,6 +17,9 @@ DirectoryIndex index.html index.php
   RewriteCond %{HTTPS} !=on
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+  # El panel de administración es PHP: se deja pasar tal cual.
+  RewriteRule ^admin(/|$) - [L]
+
   # Archivos y carpetas reales se sirven tal cual
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d

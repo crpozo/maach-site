@@ -1,0 +1,45 @@
+/* Panel MAACH — sobrio, con la paleta de la marca. */
+:root{--negro:#161616;--naranja:#f34a23;--gris:#6f6f6f;--linea:#e5e3e4;--fondo:#fafafa}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;background:var(--fondo);color:var(--negro)}
+a{color:var(--negro)}
+header.barra{background:var(--negro);color:#fff;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;position:sticky;top:0;z-index:10}
+header.barra .marca{font-weight:700;letter-spacing:.12em;font-size:13px;text-transform:uppercase}
+header.barra .marca b{color:var(--naranja)}
+header.barra nav{display:flex;gap:6px;flex-wrap:wrap}
+header.barra nav a{color:#fff;text-decoration:none;padding:8px 14px;border-radius:4px;font-size:14px}
+header.barra nav a:hover{background:rgba(255,255,255,.12)}
+header.barra nav a.activo{background:var(--naranja)}
+header.barra .sesion{font-size:13px;color:#bdbdbd;display:flex;align-items:center;gap:12px}
+main{max-width:1100px;margin:0 auto;padding:28px 24px 80px}
+h1{font-size:26px;margin:0 0 6px}
+h2{font-size:19px;margin:36px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--linea)}
+.ayuda{color:var(--gris);font-size:14px;margin:0 0 24px}
+.campo{margin-bottom:18px}
+.campo label{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--gris);margin-bottom:6px}
+input[type=text],input[type=password],textarea,select{width:100%;padding:10px 12px;border:1px solid var(--linea);border-radius:4px;font:inherit;background:#fff}
+textarea{min-height:80px;resize:vertical}
+input:focus,textarea:focus{outline:2px solid var(--naranja);outline-offset:-1px;border-color:transparent}
+.boton{display:inline-block;background:var(--negro);color:#fff;border:0;padding:12px 22px;border-radius:4px;font:inherit;font-weight:600;cursor:pointer;text-decoration:none}
+.boton:hover{background:#000}
+.boton.naranja{background:var(--naranja)}
+.boton.claro{background:#fff;color:var(--negro);border:1px solid var(--linea)}
+.aviso{padding:14px 16px;border-radius:4px;margin-bottom:20px;font-size:15px}
+.aviso.ok{background:#e8f5e9;border:1px solid #a5d6a7}
+.aviso.error{background:#ffebee;border:1px solid #ef9a9a}
+.tarjeta{background:#fff;border:1px solid var(--linea);border-radius:6px;padding:20px;margin-bottom:16px}
+.grupo{background:#fff;border:1px solid var(--linea);border-radius:6px;margin-bottom:12px;overflow:hidden}
+.grupo>summary{padding:14px 18px;cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.grupo>summary::-webkit-details-marker{display:none}
+.grupo>summary .cuenta{font-weight:400;color:var(--gris);font-size:13px}
+.grupo>div{padding:0 18px 18px}
+.clave{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:var(--gris);word-break:break-all}
+.guardar-fijo{position:sticky;bottom:0;background:#fff;border-top:1px solid var(--linea);padding:14px 24px;margin:0 -24px;display:flex;gap:12px;align-items:center;justify-content:flex-end}
+table{width:100%;border-collapse:collapse;background:#fff}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--linea);font-size:14px}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--gris)}
+.buscador{margin:0 0 18px}
+.registro{font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--gris);line-height:1.8}
+.login{max-width:380px;margin:12vh auto;background:#fff;border:1px solid var(--linea);border-radius:8px;padding:32px}
+.login .marca{font-size:22px;font-weight:700;margin-bottom:4px}
+.login .marca b{color:var(--naranja)}

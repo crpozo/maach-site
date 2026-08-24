@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Contenido y cuentas que escribe el panel /admin en el servidor.
+# Nunca deben viajar en el repositorio: si lo hicieran, un despliegue
+# sobrescribiría lo que se editó desde el panel.
+public/contenido/contenido.json
+public/contenido/respaldos/
+public/contenido/registro.log
+public/admin/usuarios.php
