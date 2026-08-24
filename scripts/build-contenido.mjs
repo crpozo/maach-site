@@ -32,6 +32,29 @@ const { PRODUCTS } = await cargar('src/data/productos.ts');
 
 // ─── Textos ────────────────────────────────────────────────────────────────
 const fuente = readFileSync(join(root, 'src/i18n/i18n.tsx'), 'utf8');
+
+/** Extrae el diccionario de un idioma del archivo de traducciones. */
+function extraer(idioma) {
+  const dict = {};
+  const inicio = fuente.indexOf(`  ${idioma}: {`);
+  if (inicio < 0) return dict;
+  let nivel = 0;
+  let fin = inicio;
+  for (let i = fuente.indexOf('{', inicio); i < fuente.length; i++) {
+    if (fuente[i] === '{') nivel++;
+    else if (fuente[i] === '}') {
+      nivel--;
+      if (nivel === 0) { fin = i; break; }
+    }
+  }
+  const cuerpo = fuente.slice(inicio, fin);
+  for (const m of cuerpo.matchAll(/'([^']+)':\s*(?:'((?:[^'\\]|\\.)*)'|"((?:[^"\\]|\\.)*)")/g)) {
+    dict[m[1]] = (m[2] ?? m[3]).replace(/\\'/g, "'").replace(/\\"/g, '"').replace(/\\n/g, '\n');
+  }
+  return dict;
+}
+
+const textos_en = extraer('en');
 const textos = {};
 {
   const inicio = fuente.indexOf('  es: {');
@@ -66,6 +89,7 @@ const salida = {
   version: 1,
   generado: new Date().toISOString().slice(0, 10),
   textos,
+  textos_en,
   productos,
 };
 
@@ -73,4 +97,7 @@ mkdirSync(join(root, 'public/contenido'), { recursive: true });
 const destino = join(root, 'public/contenido/contenido.seed.json');
 writeFileSync(destino, JSON.stringify(salida, null, 1));
 console.log(`OK  ${destino}`);
-console.log(`    ${Object.keys(textos).length} textos · ${Object.keys(productos).length} productos`);
+console.log(
+  `    ${Object.keys(textos).length} textos ES · ${Object.keys(textos_en).length} textos EN · ` +
+    `${Object.keys(productos).length} productos`,
+);

@@ -14,15 +14,19 @@
 
 type Contenido = {
   version?: number;
+  /** Textos en español. */
   textos?: Record<string, string>;
+  /** Textos en inglés. */
+  textos_en?: Record<string, string>;
   productos?: Record<string, { nombre?: string; sku?: string; descripcion?: string }>;
 };
 
 let contenido: Contenido = {};
 
-/** Texto editado desde el panel, si existe. */
-export function textoEditado(clave: string): string | undefined {
-  const valor = contenido.textos?.[clave];
+/** Texto editado desde el panel para ese idioma, si existe. */
+export function textoEditado(clave: string, idioma: 'es' | 'en' = 'es'): string | undefined {
+  const diccionario = 'en' === idioma ? contenido.textos_en : contenido.textos;
+  const valor = diccionario?.[clave];
   return typeof valor === 'string' && valor.length > 0 ? valor : undefined;
 }
 

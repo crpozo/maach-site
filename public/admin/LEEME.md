@@ -36,11 +36,24 @@ carpetas `contenido/` y `admin/` desde el Administrador de archivos de cPanel
 
 | Pantalla | Qué cambia |
 |---|---|
-| **Textos** | Los 864 textos del sitio, agrupados por sección y con buscador |
+| **Textos** | Los 864 textos, en español e inglés, con buscador por lo que dice el texto |
 | **Productos** | Nombre y descripción de los 84 productos |
 | **Fotos** | Reemplaza cualquier imagen por otra, conservando su sitio |
 | **Usuarios** | Altas, bajas y cambios de contraseña |
 | **Historial** | Quién cambió qué, y restaurar una versión anterior |
+
+## Sobre los dos idiomas
+
+El sitio es bilingüe y **las traducciones no son automáticas**. Cada texto tiene
+su campo en español y su campo en inglés, uno al lado del otro: si cambias uno,
+cambia también el otro o el visitante en inglés seguirá viendo lo anterior.
+
+## Buscar un texto
+
+Busca **por lo que dice el texto en la web**, no por nombres técnicos. Si
+escribes «Rendimiento Real» aparece el título de la portada, aunque por dentro
+esté partido en cuatro campos para poder pintar una parte en naranja. El panel
+te muestra cómo queda la frase completa antes de que edites.
 
 ## Seguridad y red de protección
 
