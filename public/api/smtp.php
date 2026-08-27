@@ -47,8 +47,10 @@ class EnvioSmtp {
 	 * Envía el mensaje. Lanza RuntimeException con el motivo si falla.
 	 *
 	 * @param string[] $destinatarios Correos de destino.
+	 * @param string   $cuerpo        Versión en texto plano.
+	 * @param string   $html          Versión con formato; opcional.
 	 */
-	public function enviar( array $destinatarios, string $asunto, string $cuerpo, string $responder_a = '' ): void {
+	public function enviar( array $destinatarios, string $asunto, string $cuerpo, string $responder_a = '', string $html = '' ): void {
 		$host   = (string) $this->config['host'];
 		$puerto = (int) $this->config['puerto'];
 		$seguro = (string) ( $this->config['seguridad'] ?? 'tls' ); // tls | ssl
@@ -107,17 +109,45 @@ class EnvioSmtp {
 			'To: ' . implode( ', ', $destinatarios ),
 			'Subject: =?UTF-8?B?' . base64_encode( $asunto ) . '?=',
 			'MIME-Version: 1.0',
-			'Content-Type: text/plain; charset=UTF-8',
-			'Content-Transfer-Encoding: 8bit',
 			'Date: ' . date( 'r' ),
 		);
 		if ( '' !== $responder_a ) {
 			$cabeceras[] = 'Reply-To: ' . $responder_a;
 		}
 
-		// Un punto solo en una línea cierra el mensaje: hay que escaparlo.
-		$texto = preg_replace( '/^\./m', '..', $cuerpo );
-		fwrite( $this->conexion, implode( "\r\n", $cabeceras ) . "\r\n\r\n" . $texto . "\r\n.\r\n" );
+		// Los saltos de línea del correo son CRLF: con sólo \n, muchos
+		// clientes juntan todo el texto en un párrafo.
+		$crlf = static fn( string $t ): string => preg_replace( '/\r\n|\r|\n/', "\r\n", $t );
+		// Un punto solo al principio de línea cierra el mensaje: se escapa.
+		$punto = static fn( string $t ): string => preg_replace( '/^\./m', '..', $t );
+
+		if ( '' !== $html ) {
+			$frontera    = 'maach-' . bin2hex( random_bytes( 8 ) );
+			$cabeceras[] = 'Content-Type: multipart/alternative; boundary="' . $frontera . '"';
+			$partes      = implode(
+				"\r\n",
+				array(
+					'--' . $frontera,
+					'Content-Type: text/plain; charset=UTF-8',
+					'Content-Transfer-Encoding: 8bit',
+					'',
+					$punto( $crlf( $cuerpo ) ),
+					'--' . $frontera,
+					'Content-Type: text/html; charset=UTF-8',
+					'Content-Transfer-Encoding: 8bit',
+					'',
+					$punto( $crlf( $html ) ),
+					'--' . $frontera . '--',
+				)
+			);
+			$mensaje = implode( "\r\n", $cabeceras ) . "\r\n\r\n" . $partes . "\r\n.\r\n";
+		} else {
+			$cabeceras[] = 'Content-Type: text/plain; charset=UTF-8';
+			$cabeceras[] = 'Content-Transfer-Encoding: 8bit';
+			$mensaje     = implode( "\r\n", $cabeceras ) . "\r\n\r\n" . $punto( $crlf( $cuerpo ) ) . "\r\n.\r\n";
+		}
+
+		fwrite( $this->conexion, $mensaje );
 		$this->traza[] = '> (mensaje)';
 		$this->leer( '250' );
 

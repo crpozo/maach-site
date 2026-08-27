@@ -116,18 +116,69 @@ $envios[] = $ahora;
 
 // ─── Mensaje ───────────────────────────────────────────────────────────────
 $asunto = sprintf( 'Nuevo mensaje desde maach.ec · %s', $nombre );
-$cuerpo = implode( "\n", array(
-	'Nombre:   ' . $nombre,
-	'Correo:   ' . $correo,
-	'Empresa:  ' . ( '' !== $empresa ? $empresa : '—' ),
-	'Teléfono: ' . ( '' !== $telefono ? $telefono : '—' ),
-	'',
-	'Mensaje:',
-	$mensaje,
-	'',
-	'---',
-	'Enviado el ' . date( 'd/m/Y H:i' ) . ' desde ' . $ip,
+$fecha  = date( 'd/m/Y H:i' );
+
+$campos = array(
+	'Nombre'   => $nombre,
+	'Correo'   => $correo,
+	'Empresa'  => '' !== $empresa ? $empresa : '—',
+	'Teléfono' => '' !== $telefono ? $telefono : '—',
+);
+
+// Versión en texto, para clientes que no muestran HTML.
+$lineas = array();
+foreach ( $campos as $etiqueta => $valor ) {
+	$lineas[] = str_pad( $etiqueta . ':', 10 ) . $valor;
+}
+$cuerpo = implode( "\n", array_merge(
+	$lineas,
+	array( '', 'MENSAJE', '', $mensaje, '', str_repeat( '-', 40 ), 'Enviado el ' . $fecha . ' desde ' . $ip )
 ) );
+
+// Versión con formato. Estilos en línea: es lo único que respetan los
+// clientes de correo. Tabla de ancho fijo para que se vea igual en Outlook.
+$filas = '';
+foreach ( $campos as $etiqueta => $valor ) {
+	$enlace = 'Correo' === $etiqueta
+		? sprintf( '<a href="mailto:%1$s" style="color:#f34a23;text-decoration:none">%1$s</a>', htmlspecialchars( $valor, ENT_QUOTES, 'UTF-8' ) )
+		: htmlspecialchars( $valor, ENT_QUOTES, 'UTF-8' );
+	$filas .= sprintf(
+		'<tr>
+			<td style="padding:10px 0;border-bottom:1px solid #eeeeee;color:#6f6f6f;font-size:12px;letter-spacing:.08em;text-transform:uppercase;width:110px;vertical-align:top">%s</td>
+			<td style="padding:10px 0;border-bottom:1px solid #eeeeee;color:#161616;font-size:15px">%s</td>
+		</tr>',
+		htmlspecialchars( $etiqueta, ENT_QUOTES, 'UTF-8' ),
+		$enlace
+	);
+}
+
+$html = sprintf(
+	'<!doctype html><html lang="es"><body style="margin:0;padding:0;background:#f4f4f4">
+	<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;padding:32px 16px">
+	<tr><td align="center">
+		<table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%%;background:#ffffff;border:1px solid #e5e3e4">
+			<tr><td style="background:#161616;padding:24px 32px">
+				<div style="color:#f34a23;font-size:12px;letter-spacing:.14em;text-transform:uppercase">MAACH · Formulario web</div>
+				<div style="color:#ffffff;font-size:22px;font-weight:700;margin-top:6px">Nuevo mensaje de contacto</div>
+			</td></tr>
+			<tr><td style="padding:28px 32px 8px">
+				<table role="presentation" width="100%%" cellpadding="0" cellspacing="0">%s</table>
+			</td></tr>
+			<tr><td style="padding:20px 32px 28px">
+				<div style="color:#6f6f6f;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px">Mensaje</div>
+				<div style="color:#161616;font-size:15px;line-height:1.65;white-space:pre-wrap">%s</div>
+			</td></tr>
+			<tr><td style="padding:16px 32px;background:#fafafa;border-top:1px solid #e5e3e4;color:#6f6f6f;font-size:12px">
+				Enviado el %s · %s<br>
+				Responde a este correo para contestarle directamente.
+			</td></tr>
+		</table>
+	</td></tr></table></body></html>',
+	$filas,
+	nl2br( htmlspecialchars( $mensaje, ENT_QUOTES, 'UTF-8' ) ),
+	htmlspecialchars( $fecha, ENT_QUOTES, 'UTF-8' ),
+	htmlspecialchars( $ip, ENT_QUOTES, 'UTF-8' )
+);
 
 $destinatarios = array_values( array_unique( array_filter( array_merge(
 	(array) $config['destinatarios'],
@@ -141,7 +192,7 @@ if ( $por_smtp ) {
 	require_once __DIR__ . '/smtp.php';
 	try {
 		$smtp = new EnvioSmtp( $config );
-		$smtp->enviar( $destinatarios, $asunto, $cuerpo, sprintf( '%s <%s>', $nombre, $correo ) );
+		$smtp->enviar( $destinatarios, $asunto, $cuerpo, sprintf( '%s <%s>', $nombre, $correo ), $html );
 		$enviado = true;
 	} catch ( Throwable $e ) {
 		$motivo = $e->getMessage();
