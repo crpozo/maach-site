@@ -30,3 +30,7 @@ public/contenido/contenido.json
 public/contenido/respaldos/
 public/contenido/registro.log
 public/admin/usuarios.php
+
+# Configuración de correo del formulario: vive sólo en el servidor
+public/api/correo-config.php
+public/api/mensajes.log
