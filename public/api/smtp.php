@@ -54,8 +54,16 @@ class EnvioSmtp {
 		$seguro = (string) ( $this->config['seguridad'] ?? 'tls' ); // tls | ssl
 
 		$destino = ( 'ssl' === $seguro ? 'ssl://' : '' ) . $host;
-		$contexto = stream_context_create( array(
-			'ssl' => array( 'verify_peer' => true, 'verify_peer_name' => true ),
+		// En muchos cPanel el certificado del servidor de correo está emitido
+		// para el nombre del servidor, no para mail.tudominio.com. Si ese es el
+		// caso, se pone 'verificar_certificado' => false en la configuración.
+		$verificar = (bool) ( $this->config['verificar_certificado'] ?? true );
+		$contexto  = stream_context_create( array(
+			'ssl' => array(
+				'verify_peer'       => $verificar,
+				'verify_peer_name'  => $verificar,
+				'allow_self_signed' => ! $verificar,
+			),
 		) );
 
 		$this->conexion = @stream_socket_client(

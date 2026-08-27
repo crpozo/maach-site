@@ -30,4 +30,9 @@ return array(
 	'usuario'       => 'web@maach.ec',
 	'clave'         => 'PON-AQUI-LA-CONTRASENA',
 	'dominio'       => 'maach.ec',
+
+	// Si el envío falla con un error de certificado, pon esto en false:
+	// el servidor de correo del hosting suele usar un certificado a nombre
+	// del servidor y no del dominio.
+	'verificar_certificado' => true,
 );
