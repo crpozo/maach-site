@@ -17,7 +17,7 @@ return array(
 	'destinatarios' => array( 'ventas@maach.ec' ),
 
 	// Copia adicional. Útil para pruebas; deja el array vacío para quitarla.
-	'copia'         => array( 'carlos@mindfultech.ec' ),
+	'copia'         => array(),
 
 	// Cuenta desde la que sale el correo. Debe ser del propio dominio.
 	'remitente'     => 'web@maach.ec',
