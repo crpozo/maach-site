@@ -39,7 +39,7 @@ export default function PageContacto() {
     setEnvio('enviando');
     setErrorMsg('');
     try {
-      const res = await fetch(asset('api/contacto.php'), {
+      const res = await fetch(import.meta.env.BASE_URL + 'api/contacto.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...form, web: trampa }),
