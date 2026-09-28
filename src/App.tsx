@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import PageHome from './pages/PageHome';
 import PageNuevo from './pages/PageNuevo';
 import PageProducts from './pages/PageProducts';
@@ -15,9 +15,20 @@ import PageBlogPost from './pages/PageBlogPost';
 import PageRecursos from './pages/PageRecursos';
 import PageAbout from './pages/PageAbout';
 import PageContacto from './pages/PageContacto';
+import { pixel } from './lib/pixel';
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
+  const primeraRuta = useRef(true);
+  // Es una SPA: index.html ya envió el primer PageView, los siguientes cambios
+  // de ruta los avisamos aquí.
+  useEffect(() => {
+    if (primeraRuta.current) {
+      primeraRuta.current = false;
+      return;
+    }
+    pixel('PageView');
+  }, [pathname]);
   useEffect(() => {
     if (hash) {
       // Defer until the new route renders, then scroll to the anchored element

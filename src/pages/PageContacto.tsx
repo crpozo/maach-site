@@ -1,4 +1,5 @@
 import { asset } from '../lib/asset';
+import { pixel } from '../lib/pixel';
 import { useState, type FormEvent } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Layout } from '../components/Layout';
@@ -47,6 +48,7 @@ export default function PageContacto() {
       const data = (await res.json().catch(() => null)) as { ok?: boolean; error?: string } | null;
       if (res.ok && data?.ok) {
         setEnvio('ok');
+        pixel('Lead');
         setForm({ nombre: '', correo: '', empresa: '', telefono: '', mensaje: '' });
       } else {
         setEnvio('error');
