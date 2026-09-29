@@ -67,3 +67,30 @@ jobs:
           fi
           git commit -m "Build para cPanel [skip ci]"
           git push
+
+      # Publicación automática en maach.ec por la API de cPanel (equivale a
+      # pulsar «Update from Remote» y «Deploy HEAD Commit»). Sólo corre si
+      # existen los secretos CPANEL_HOST, CPANEL_USER y CPANEL_TOKEN; si no,
+      # el paso avisa y el deploy queda manual como hasta ahora.
+      - name: Publicar en maach.ec (cPanel)
+        env:
+          CPANEL_HOST: ${{ secrets.CPANEL_HOST }}
+          CPANEL_USER: ${{ secrets.CPANEL_USER }}
+          CPANEL_TOKEN: ${{ secrets.CPANEL_TOKEN }}
+          REPO_ROOT: /home/maach/repositories/maach-site
+        run: |
+          if [ -z "$CPANEL_HOST" ] || [ -z "$CPANEL_USER" ] || [ -z "$CPANEL_TOKEN" ]; then
+            echo "Sin secretos CPANEL_*: el deploy en cPanel sigue siendo manual."
+            exit 0
+          fi
+          api() {
+            curl -sS --fail-with-body -H "Authorization: cpanel $CPANEL_USER:$CPANEL_TOKEN" \
+              "https://$CPANEL_HOST:2083/execute/$1" "${@:2}"
+          }
+          echo "Update from Remote…"
+          api VersionControl/update --data-urlencode "repository_root=$REPO_ROOT" --data-urlencode "branch=main" \
+            | tee /tmp/update.json | grep -q '"status":1' || { cat /tmp/update.json; exit 1; }
+          echo "Deploy HEAD Commit…"
+          api VersionControlDeployment/create --data-urlencode "repository_root=$REPO_ROOT" \
+            | tee /tmp/deploy.json | grep -q '"status":1' || { cat /tmp/deploy.json; exit 1; }
+          echo "Deploy lanzado en cPanel."
