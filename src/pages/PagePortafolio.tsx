@@ -43,6 +43,13 @@ export default function PagePortafolio() {
       scope: 'Oficinas corporativas · Mobiliario estándar y a medida',
       img: asset('proyectos/came/portada.webp'),
     },
+    {
+      id: '07',
+      title: 'Corporación Maresa',
+      location: 'Quito, EC',
+      scope: 'Concesionarios · Catálogo de mobiliario a medida para sus marcas',
+      img: asset('proyectos/maresa/portada.webp'),
+    },
   ];
 
   return (
@@ -330,7 +337,7 @@ export default function PagePortafolio() {
                 >
                   PAUSADO
                 </span>
-              ) : (
+              ) : hasPhoto ? null : (
                 <span
                   className="maach-mono"
                   style={{

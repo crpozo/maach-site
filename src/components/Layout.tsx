@@ -53,6 +53,7 @@ export const PROJECTS: { id: string; name: string; status?: 'paused' }[] = [
   { id: '01', name: 'CPN' },
   { id: '03', name: 'Wesco' },
   { id: '06', name: 'CAME' },
+  { id: '07', name: 'Corporación Maresa' },
 ];
 
 function MegaMenu({ open, onClose }: { open: boolean; onClose: () => void }) {

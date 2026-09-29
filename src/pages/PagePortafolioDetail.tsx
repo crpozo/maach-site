@@ -153,6 +153,45 @@ const DATA: Record<string, ProjectData> = {
       asset('proyectos/came/09.webp'),
     ],
   },
+  '07': {
+    title: 'Corporación Maresa',
+    hero: asset('proyectos/maresa/portada.webp'),
+    // Concesionarios de las marcas del grupo. Orden: puestos de atención como
+    // pieza destacada, showroom, puesto en detalle, reunión, escritorio, espera,
+    // y al final los detalles (puerta, silla, cajón, revistero).
+    photos: [
+      asset('proyectos/maresa/01.webp'),
+      asset('proyectos/maresa/02.webp'),
+      asset('proyectos/maresa/03.webp'),
+      asset('proyectos/maresa/04.webp'),
+      asset('proyectos/maresa/05.webp'),
+      asset('proyectos/maresa/06.webp'),
+      asset('proyectos/maresa/07.webp'),
+      asset('proyectos/maresa/08.webp'),
+      asset('proyectos/maresa/09.webp'),
+      asset('proyectos/maresa/10.webp'),
+    ],
+    content: {
+      desafio: [
+        'En MAACH hemos desarrollado una relación de trabajo enfocada en crear soluciones de mobiliario para las diferentes marcas que forman parte de Corporación Maresa, entendiendo que cada una posee su propia identidad, lenguaje visual y estándares de diseño.',
+        'Uno de los principales desafíos de trabajar con marcas de reconocimiento internacional es garantizar que cada elemento fabricado localmente esté a la altura de la imagen y los estándares que estas representan.',
+      ],
+      propuesta: {
+        intro:
+          'Desarrollo de un catálogo de mobiliario único y personalizado, concebido para brindar soporte a los distintos requerimientos de la Corporación y facilitar la implementación de soluciones consistentes en sus diferentes espacios.',
+        bullets: [
+          'Este catálogo nos permite responder de manera eficiente a nuevos proyectos, manteniendo criterios definidos de diseño, funcionalidad, materiales, acabados y calidad.',
+          'Detrás de cada producto existe un exhaustivo proceso de diseño, ingeniería y desarrollo, en el que nuestro equipo analiza cada detalle antes de llevarlo a fabricación: desde la conceptualización y adaptación del mobiliario hasta el desarrollo constructivo, selección de materiales, definición de acabados y optimización de los procesos productivos, buscando siempre el equilibrio entre estética, funcionalidad, durabilidad y eficiencia.',
+          'Atención especial en la precisión constructiva, calidad de los materiales y nivel de los acabados, logrando mobiliario que se integra naturalmente a cada concepto de marca y mantiene una imagen consistente en los diferentes proyectos.',
+          'Capacidad de integrar diseño, ingeniería, fabricación, logística e instalación dentro de un mismo proceso, ofreciendo un soporte integral con capacidad de adaptación a las necesidades particulares de cada espacio y de cada una de sus marcas.',
+        ],
+      },
+      resultado: [
+        'Un mobiliario desarrollado en Ecuador con calidad y estándares de nivel internacional, preparado para representar adecuadamente la identidad, experiencia y posicionamiento de cada una de las marcas que conforman Corporación Maresa.',
+        'Más que fabricar mobiliario, buscamos convertirnos en un aliado estratégico para el desarrollo y estandarización de sus espacios, aportando conocimiento técnico, capacidad productiva y atención al detalle en cada etapa del proyecto.',
+      ],
+    },
+  },
 };
 
 function ProjectHero({ p }: { p: ProjectData; id?: string }) {
