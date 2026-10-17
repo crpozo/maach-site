@@ -13,6 +13,7 @@ import {
 import { getProductBySlug, getProductsByCategory } from '../data/productos';
 import { getSectionForSubcategory } from '../data/categorias';
 import { useT } from '../i18n/i18n';
+import { pixel } from '../lib/pixel';
 
 function slugify(s: string): string {
   return s
@@ -79,9 +80,8 @@ export default function PageProductDetail() {
 
   // Lead-gate: clicking a document opens a form that must be completed
   // before the download starts.
-  const [gateDoc, setGateDoc] = useState<{ href: string; fileName?: string } | null>(null);
-  const emptyForm = { nombre: '', correo: '', empresa: '', ocupacion: '' };
-  const [form, setForm] = useState(emptyForm);
+  const [gateDoc, setGateDoc] = useState<{ href: string; fileName?: string; ext?: string } | null>(null);
+  const [form, setForm] = useState({ nombre: '', correo: '', empresa: '', ocupacion: '' });
 
   // Downloadable spec files for this product — only those that actually exist.
   const docs = (
@@ -97,14 +97,30 @@ export default function PageProductDetail() {
   function handleGateSubmit(e: FormEvent) {
     e.preventDefault();
     if (!gateDoc) return;
+    // Aviso a ventas@maach.ec con los datos de quien descarga. No se espera la
+    // respuesta: la descarga nunca se bloquea si el correo falla (el servidor
+    // igual lo deja en mensajes.log). keepalive asegura que el envío termine.
+    fetch(import.meta.env.BASE_URL + 'api/contacto.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      keepalive: true,
+      body: JSON.stringify({
+        tipo: 'descarga',
+        ...form,
+        producto: productName,
+        archivo: [gateDoc.ext, gateDoc.fileName].filter(Boolean).join(' · '),
+        pagina: window.location.href,
+      }),
+    }).catch(() => {});
+    pixel('Lead', { content_name: productName, content_category: 'descarga' });
     const a = document.createElement('a');
     a.href = gateDoc.href;
     if (gateDoc.fileName) a.download = gateDoc.fileName;
     document.body.appendChild(a);
     a.click();
     a.remove();
+    // Se conservan los datos: si descarga otro formato, el formulario ya viene lleno.
     setGateDoc(null);
-    setForm(emptyForm);
   }
 
   // Real related products from the same category (excluding the current one).
@@ -381,7 +397,7 @@ export default function PageProductDetail() {
                       <button
                         key={d.name}
                         type="button"
-                        onClick={() => setGateDoc({ href: d.href!, fileName: d.fileName })}
+                        onClick={() => setGateDoc({ href: d.href!, fileName: d.fileName, ext: d.ext })}
                         style={{
                           background: 'var(--surface)',
                           border: '1px solid var(--line)',

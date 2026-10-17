@@ -1,6 +1,7 @@
 <?php
 /**
- * Recepción del formulario de contacto de maach.ec.
+ * Recepción de los formularios de maach.ec: contacto y descarga de planos
+ * (tipo = "descarga", que no lleva mensaje sino el producto y el archivo).
  *
  * Envía por SMTP autenticado con una cuenta del propio dominio (configurado en
  * correo-config.php). Si esa configuración no existe, cae a la función mail()
@@ -13,7 +14,7 @@
 declare( strict_types = 1 );
 
 const REGISTRO   = __DIR__ . '/mensajes.log';
-const LIMITE_MIN = 3; // Envíos por IP cada 10 minutos.
+const LIMITES   = array( 'contacto' => 3, 'descarga' => 15 ); // Envíos por IP cada 10 minutos.
 
 header( 'Content-Type: application/json; charset=utf-8' );
 
@@ -83,23 +84,32 @@ $limpia = static function ( string $clave ) use ( $entrada ): string {
 	return str_replace( array( "\r", "\n" ), ' ', $valor );
 };
 
+$tipo     = 'descarga' === ( $entrada['tipo'] ?? '' ) ? 'descarga' : 'contacto';
 $nombre   = mb_substr( $limpia( 'nombre' ), 0, 120 );
 $correo   = mb_substr( $limpia( 'correo' ), 0, 160 );
 $empresa  = mb_substr( $limpia( 'empresa' ), 0, 120 );
 $telefono = mb_substr( $limpia( 'telefono' ), 0, 60 );
 $mensaje  = mb_substr( trim( (string) ( $entrada['mensaje'] ?? '' ) ), 0, 4000 );
 $trampa   = trim( (string) ( $entrada['web'] ?? '' ) );
+$ocupacion = mb_substr( $limpia( 'ocupacion' ), 0, 120 );
+$producto  = mb_substr( $limpia( 'producto' ), 0, 160 );
+$archivo   = mb_substr( $limpia( 'archivo' ), 0, 160 );
+$pagina    = mb_substr( $limpia( 'pagina' ), 0, 300 );
 
 if ( '' !== $trampa ) {
 	responder( 200, array( 'ok' => true ) ); // Bot: se le responde bien y no se envía.
 }
-if ( '' === $nombre || '' === $mensaje || ! filter_var( $correo, FILTER_VALIDATE_EMAIL ) ) {
+if ( 'descarga' === $tipo ) {
+	if ( '' === $nombre || ! filter_var( $correo, FILTER_VALIDATE_EMAIL ) ) {
+		responder( 422, array( 'ok' => false, 'error' => 'Faltan datos: nombre y correo válido.' ) );
+	}
+} elseif ( '' === $nombre || '' === $mensaje || ! filter_var( $correo, FILTER_VALIDATE_EMAIL ) ) {
 	responder( 422, array( 'ok' => false, 'error' => 'Faltan datos: nombre, correo válido y mensaje.' ) );
 }
 
 // ─── Límite por IP ─────────────────────────────────────────────────────────
 $ip     = (string) ( $_SERVER['REMOTE_ADDR'] ?? 'desconocida' );
-$marca  = sys_get_temp_dir() . '/maach_' . md5( $ip );
+$marca  = sys_get_temp_dir() . '/maach_' . $tipo . '_' . md5( $ip );
 $ahora  = time();
 $envios = array();
 if ( is_readable( $marca ) ) {
@@ -108,31 +118,51 @@ if ( is_readable( $marca ) ) {
 		static fn( int $t ): bool => $t > $ahora - 600
 	);
 }
-if ( count( $envios ) >= LIMITE_MIN ) {
+if ( count( $envios ) >= LIMITES[ $tipo ] ) {
 	responder( 429, array( 'ok' => false, 'error' => 'Demasiados envíos seguidos. Intenta en unos minutos.' ) );
 }
 $envios[] = $ahora;
 @file_put_contents( $marca, implode( ',', $envios ) );
 
 // ─── Mensaje ───────────────────────────────────────────────────────────────
-$asunto = sprintf( 'Nuevo mensaje desde maach.ec · %s', $nombre );
-$fecha  = date( 'd/m/Y H:i' );
+$fecha = date( 'd/m/Y H:i' );
 
-$campos = array(
-	'Nombre'   => $nombre,
-	'Correo'   => $correo,
-	'Empresa'  => '' !== $empresa ? $empresa : '—',
-	'Teléfono' => '' !== $telefono ? $telefono : '—',
-);
+if ( 'descarga' === $tipo ) {
+	$asunto = sprintf( 'Descarga de planos · %s · %s', '' !== $producto ? $producto : 'producto', $nombre );
+	$titulo = 'Nueva descarga de planos';
+	$campos = array(
+		'Nombre'    => $nombre,
+		'Correo'    => $correo,
+		'Empresa'   => '' !== $empresa ? $empresa : '—',
+		'Ocupación' => '' !== $ocupacion ? $ocupacion : '—',
+		'Producto'  => '' !== $producto ? $producto : '—',
+		'Archivo'   => '' !== $archivo ? $archivo : '—',
+	);
+	$mensaje = sprintf(
+		'Descargó %s de %s.%s',
+		'' !== $archivo ? $archivo : 'un archivo',
+		'' !== $producto ? $producto : 'un producto',
+		'' !== $pagina ? "\nPágina: " . $pagina : ''
+	);
+} else {
+	$asunto = sprintf( 'Nuevo mensaje desde maach.ec · %s', $nombre );
+	$titulo = 'Nuevo mensaje de contacto';
+	$campos = array(
+		'Nombre'   => $nombre,
+		'Correo'   => $correo,
+		'Empresa'  => '' !== $empresa ? $empresa : '—',
+		'Teléfono' => '' !== $telefono ? $telefono : '—',
+	);
+}
 
 // Versión en texto, para clientes que no muestran HTML.
 $lineas = array();
 foreach ( $campos as $etiqueta => $valor ) {
-	$lineas[] = str_pad( $etiqueta . ':', 10 ) . $valor;
+	$lineas[] = str_pad( $etiqueta . ':', 12 ) . $valor;
 }
 $cuerpo = implode( "\n", array_merge(
 	$lineas,
-	array( '', 'MENSAJE', '', $mensaje, '', str_repeat( '-', 40 ), 'Enviado el ' . $fecha . ' desde ' . $ip )
+	array( '', 'descarga' === $tipo ? 'DETALLE' : 'MENSAJE', '', $mensaje, '', str_repeat( '-', 40 ), 'Enviado el ' . $fecha . ' desde ' . $ip )
 ) );
 
 // Versión con formato. Estilos en línea: es lo único que respetan los
@@ -159,13 +189,13 @@ $html = sprintf(
 		<table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%%;background:#ffffff;border:1px solid #e5e3e4">
 			<tr><td style="background:#161616;padding:24px 32px">
 				<div style="color:#f34a23;font-size:12px;letter-spacing:.14em;text-transform:uppercase">MAACH · Formulario web</div>
-				<div style="color:#ffffff;font-size:22px;font-weight:700;margin-top:6px">Nuevo mensaje de contacto</div>
+				<div style="color:#ffffff;font-size:22px;font-weight:700;margin-top:6px">%s</div>
 			</td></tr>
 			<tr><td style="padding:28px 32px 8px">
 				<table role="presentation" width="100%%" cellpadding="0" cellspacing="0">%s</table>
 			</td></tr>
 			<tr><td style="padding:20px 32px 28px">
-				<div style="color:#6f6f6f;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px">Mensaje</div>
+				<div style="color:#6f6f6f;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px">%s</div>
 				<div style="color:#161616;font-size:15px;line-height:1.65;white-space:pre-wrap">%s</div>
 			</td></tr>
 			<tr><td style="padding:16px 32px;background:#fafafa;border-top:1px solid #e5e3e4;color:#6f6f6f;font-size:12px">
@@ -174,7 +204,9 @@ $html = sprintf(
 			</td></tr>
 		</table>
 	</td></tr></table></body></html>',
+	htmlspecialchars( $titulo, ENT_QUOTES, 'UTF-8' ),
 	$filas,
+	'descarga' === $tipo ? 'Detalle' : 'Mensaje',
 	nl2br( htmlspecialchars( $mensaje, ENT_QUOTES, 'UTF-8' ) ),
 	htmlspecialchars( $fecha, ENT_QUOTES, 'UTF-8' ),
 	htmlspecialchars( $ip, ENT_QUOTES, 'UTF-8' )
@@ -217,8 +249,9 @@ if ( $por_smtp ) {
 @file_put_contents(
 	REGISTRO,
 	sprintf(
-		"[%s] %s <%s> · enviado=%s%s\n%s\n\n",
+		"[%s] %s · %s <%s> · enviado=%s%s\n%s\n\n",
 		date( 'c' ),
+		$tipo,
 		$nombre,
 		$correo,
 		$enviado ? 'si' : 'NO',

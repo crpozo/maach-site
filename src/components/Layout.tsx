@@ -48,6 +48,13 @@ const NAV_LINKS: { key: string; path: string; mega?: boolean; submenu?: boolean 
   { key: 'nav.contacto', path: '/contacto' },
 ];
 
+// Redes del footer. Solo cuentas reales y verificadas de MAACH: para sumar
+// LinkedIn u otra, agregar aquí su URL.
+const REDES: { corto: string; nombre: string; url: string }[] = [
+  { corto: 'IG', nombre: 'Instagram · @maach.ec', url: 'https://www.instagram.com/maach.ec/' },
+  { corto: 'WA', nombre: 'WhatsApp · +593 99 720 0455', url: 'https://wa.me/593997200455' },
+];
+
 // Palladium ('02') está oculto de toda la web por pedido del cliente.
 export const PROJECTS: { id: string; name: string; status?: 'paused' }[] = [
   { id: '01', name: 'CPN' },
@@ -786,10 +793,14 @@ function Footer() {
               </a>
             </p>
             <div style={{ display: 'flex', gap: 8, marginTop: 32 }}>
-              {['IG', 'Li', 'Be', 'Pi'].map((s) => (
+              {REDES.map((r) => (
                 <a
-                  key={s}
-                  href="#"
+                  key={r.corto}
+                  href={r.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={r.nombre}
+                  title={r.nombre}
                   className="maach-mono"
                   style={{
                     width: 40,
@@ -810,7 +821,7 @@ function Footer() {
                     e.currentTarget.style.color = '';
                   }}
                 >
-                  {s}
+                  {r.corto}
                 </a>
               ))}
             </div>
