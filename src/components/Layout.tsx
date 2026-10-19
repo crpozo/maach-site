@@ -48,10 +48,12 @@ const NAV_LINKS: { key: string; path: string; mega?: boolean; submenu?: boolean 
   { key: 'nav.contacto', path: '/contacto' },
 ];
 
-// Redes del footer. Solo cuentas reales y verificadas de MAACH: para sumar
-// LinkedIn u otra, agregar aquí su URL.
+// Redes del footer (cuentas oficiales entregadas por MAACH). Para sumar otra,
+// agregar aquí su URL.
 const REDES: { corto: string; nombre: string; url: string }[] = [
   { corto: 'IG', nombre: 'Instagram · @maach.ec', url: 'https://www.instagram.com/maach.ec/' },
+  { corto: 'FB', nombre: 'Facebook · MAACH', url: 'https://www.facebook.com/profile.php?id=61593389763643' },
+  { corto: 'LI', nombre: 'LinkedIn · MAACH', url: 'https://www.linkedin.com/company/maach-corp/' },
   { corto: 'WA', nombre: 'WhatsApp · +593 99 720 0455', url: 'https://wa.me/593997200455' },
 ];
 
